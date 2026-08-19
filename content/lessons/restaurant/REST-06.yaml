@@ -1,0 +1,273 @@
+schema_version: 1
+code: REST-06
+slug: di-ung-an-chay-va-yeu-cau-dac-biet
+title_vi: "Dị ứng, ăn chay và yêu cầu đặc biệt"
+title_en: "Allergies, vegetarian food, and special requests"
+
+layer: Life
+track: Restaurant
+level: A2
+unit_code: U-R2
+order_index: 6
+estimated_minutes: 12
+
+illustration: food-order
+
+objective_vi: >
+  Báo dị ứng cho đúng cách, hỏi món có thành phần gì, và xin đổi hoặc bỏ một
+  nguyên liệu — nhóm câu duy nhất trong nhánh này mà nói sai có thể nguy hiểm.
+
+objective_observable: >
+  Báo được một dị ứng kèm yêu cầu kiểm tra món trong 3 trên 4 drill, và đọc đúng
+  bảng ký hiệu dị ứng trên thực đơn.
+
+mastery_weights:
+  Listening: 0.25
+  Speaking: 0.35
+  Reading: 0.25
+  Writing: 0.15
+
+prerequisites:
+  - lesson: REST-05
+    min_mastery: 60
+    kind: Hard
+
+vocabulary:
+  - term: "I'm allergic to"
+    ipa: "/aɪm əˈlɜːrdʒɪk tuː/"
+    meaning_vi: "tôi bị dị ứng với"
+    chunk: "I'm allergic to peanuts."
+    tags: [restaurant, health]
+  - term: "Does this contain"
+    ipa: "/dʌz ðɪs kənˈteɪn/"
+    meaning_vi: "món này có chứa ... không"
+    chunk: "Does this contain dairy?"
+    tags: [restaurant, health]
+  - term: "vegetarian"
+    ipa: "/ˌvedʒəˈteriən/"
+    meaning_vi: "ăn chay (vẫn dùng trứng, sữa)"
+    chunk: "Do you have a vegetarian option?"
+    tags: [restaurant, diet]
+  - term: "without"
+    ipa: "/wɪˈðaʊt/"
+    meaning_vi: "không có, bỏ đi"
+    chunk: "Can I have it without onions?"
+    tags: [restaurant, diet]
+  - term: "on the side"
+    ipa: "/ɑːn ðə saɪd/"
+    meaning_vi: "để riêng ra đĩa nhỏ, không rưới lên món"
+    chunk: "Can I get the sauce on the side?"
+    tags: [restaurant, diet]
+  - term: "cross-contamination"
+    ipa: "/krɔːs kənˌtæmɪˈneɪʃn/"
+    meaning_vi: "lây nhiễm chéo (dùng chung dụng cụ với món có dị nguyên)"
+    chunk: "Is there a risk of cross-contamination?"
+    tags: [restaurant, health]
+
+sentence_patterns:
+  - pattern: "I'm allergic to {food}."
+    meaning_vi: "Tôi bị dị ứng với {food}."
+    slots:
+      food: ["peanuts", "shellfish", "dairy"]
+  - pattern: "Can I have it without {ingredient}?"
+    meaning_vi: "Cho tôi món đó nhưng bỏ {ingredient} được không?"
+    slots:
+      ingredient: ["onions", "cheese", "butter"]
+
+dialogue:
+  context_vi: >
+    Bạn đi ăn với đồng nghiệp, một người trong nhóm dị ứng hải sản. Ở đây báo dị ứng
+    không phải là làm phiền, nhà hàng có quy trình riêng và họ sẽ hỏi lại rất kỹ.
+  turns:
+    - speaker: "You"
+      en: "Before we order, I'm allergic to shellfish."
+      vi: "Trước khi gọi món, tôi bị dị ứng hải sản có vỏ ạ."
+    - speaker: "Server"
+      en: "Thanks for telling me. Is it a severe allergy?"
+      vi: "Cảm ơn anh đã báo. Dị ứng của anh có nặng không ạ?"
+    - speaker: "You"
+      en: "Yes. Does the fried rice contain shrimp?"
+      vi: "Nặng ạ. Món cơm chiên có tôm không ạ?"
+    - speaker: "Server"
+      en: "It does, but we can make it without."
+      vi: "Có ạ, nhưng bếp làm riêng không tôm được ạ."
+    - speaker: "You"
+      en: "Is there a risk of cross-contamination in the kitchen?"
+      vi: "Trong bếp có nguy cơ lây nhiễm chéo không ạ?"
+    - speaker: "Server"
+      en: "We use a separate pan for allergy orders. I'll note it down."
+      vi: "Bếp dùng chảo riêng cho đơn có dị ứng ạ. Tôi ghi chú lại ạ."
+
+listening:
+  context_vi: >
+    Nghe một khách báo dị ứng. Chú ý câu nhân viên hỏi lại sau khi nghe báo —
+    câu đó quyết định bếp xử lý bình thường hay theo quy trình riêng.
+  speed: 0.9
+  voice: en_US_female
+  transcript_en: "I'm allergic to peanuts. Thanks for telling me. Is it a severe allergy? Yes, it is. Then I'll mark it as a strict allergy order. Does the salad dressing contain nuts? It does, but I can bring it on the side."
+  transcript_vi: "Tôi bị dị ứng đậu phộng. Cảm ơn anh đã báo. Dị ứng có nặng không ạ? Nặng ạ. Vậy tôi đánh dấu đơn dị ứng nghiêm ngặt ạ. Nước sốt salad có hạt không ạ? Có ạ, nhưng tôi mang để riêng được ạ."
+  questions:
+    - kind: mcq_listen
+      prompt_vi: "Khách dị ứng với thứ gì?"
+      choices: ["Hải sản", "Đậu phộng", "Sữa"]
+      answer: 1
+      difficulty: 1
+      skill: Listening
+    - kind: mcq_listen
+      prompt_vi: "Nhân viên đề nghị xử lý nước sốt thế nào?"
+      choices: ["Bỏ hẳn nước sốt", "Đổi loại sốt khác", "Mang để riêng ra đĩa nhỏ"]
+      answer: 2
+      difficulty: 2
+      skill: Listening
+
+speaking_drills:
+  - kind: read_aloud
+    expected_text: "I'm allergic to peanuts."
+    prompt_vi: "Đọc to. Chữ allergic nhấn ở âm tiết thứ hai và có âm /dʒ/ ở giữa."
+    ipa: "/aɪm əˈlɜːrdʒɪk tuː ˈpiːnʌts/"
+    focus_phonemes: ["dʒ", "ɜːr"]
+  - kind: read_aloud
+    expected_text: "Does this contain dairy?"
+    prompt_vi: "Hỏi thành phần. Chữ contain nhấn âm tiết sau, không nhấn âm đầu."
+    ipa: "/dʌz ðɪs kənˈteɪn ˈderi/"
+    focus_phonemes: ["ð", "eɪ"]
+  - kind: shadow
+    expected_text: "Can I have it without onions?"
+    prompt_vi: "Xin bỏ nguyên liệu. Chữ without có âm /ð/ ở giữa, lưỡi chạm nhẹ răng trên."
+    ipa: "/kæn aɪ hæv ɪt wɪˈðaʊt ˈʌnjənz/"
+    focus_phonemes: ["ð", "aʊ"]
+  - kind: shadow
+    expected_text: "Can I get the sauce on the side?"
+    prompt_vi: "Xin để sốt riêng. Chữ sauce đọc /sɔːs/, nguyên âm dài và tròn môi."
+    ipa: "/kæn aɪ ɡet ðə sɔːs ɑːn ðə saɪd/"
+    focus_phonemes: ["ɔː", "s"]
+  - kind: respond
+    prompt_en: "Do you have any allergies?"
+    prompt_vi: "Nhân viên hỏi có dị ứng gì không. Trả lời có kèm tên món, hoặc trả lời không."
+    accept_patterns:
+      - "allergic to"
+      - "No allergies"
+      - "I don't have"
+      - "vegetarian"
+
+reading:
+  kind: note
+  context_vi: >
+    Phần chú thích dị ứng in cuối thực đơn. Đọc để biết ký hiệu nào là món mình
+    phải tránh, trước khi hỏi nhân viên.
+  text_en: |
+    ALLERGEN GUIDE
+
+    (G) contains gluten      (D) contains dairy
+    (N) contains nuts        (S) contains shellfish
+    (V) vegetarian           (VG) vegan
+
+    Grilled chicken salad (D)
+    Pad Thai (N) (S)
+    Mushroom risotto (D) (V)
+    Tomato pasta (G) (VG)
+
+    Please tell your server before ordering. Our kitchen handles
+    all allergens, so we cannot guarantee a fully allergen-free dish.
+  text_vi: |
+    CHÚ THÍCH DỊ NGUYÊN
+
+    (G) có gluten            (D) có sữa
+    (N) có hạt               (S) có hải sản có vỏ
+    (V) món chay             (VG) món thuần chay
+
+    Salad gà nướng (D)
+    Pad Thai (N) (S)
+    Risotto nấm (D) (V)
+    Mì sốt cà chua (G) (VG)
+
+    Vui lòng báo nhân viên trước khi gọi món. Bếp có xử lý mọi loại dị nguyên
+    nên không thể bảo đảm món hoàn toàn không lẫn dị nguyên.
+  questions:
+    - kind: mcq_read
+      prompt_en: "You are allergic to nuts and shellfish. Which dish must you avoid?"
+      choices: ["Pad Thai", "Mushroom risotto", "Tomato pasta"]
+      answer: 0
+      difficulty: 2
+      reading_skill: scan
+      skill: Reading
+    - kind: mcq_read
+      prompt_en: "What does the restaurant say about guarantees?"
+      choices: ["Every dish is allergen-free", "It cannot guarantee a fully allergen-free dish", "It has a separate allergy-free kitchen"]
+      answer: 1
+      difficulty: 2
+      reading_skill: detail
+      skill: Reading
+
+writing:
+  kind: FillBlank
+  prompt_vi: "Điền hai chỗ trống: câu báo dị ứng và câu xin bỏ một nguyên liệu."
+  prompt_en: "I'm ___ to shellfish. Can I have it ___ onions?"
+  blanks:
+    - ["allergic"]
+    - ["without"]
+  hint_vi: "Chỗ đầu là tính từ nghĩa là dị ứng. Chỗ sau là một chữ nghĩa là không có, bỏ đi."
+  sample_en: "I'm allergic to shellfish. Can I have it without onions?"
+
+quiz:
+  - kind: mcq
+    prompt_vi: "Báo dị ứng đúng cách là nói gì?"
+    choices: ["I can't eat this", "I don't like shellfish", "I'm allergic to shellfish"]
+    answer: 2
+    difficulty: 1
+    skill: Speaking
+  - kind: mcq
+    prompt_vi: "\"On the side\" khi gọi nước sốt nghĩa là gì?"
+    choices: ["Để riêng ra đĩa nhỏ", "Rưới nhiều lên món", "Đổi sang loại sốt khác"]
+    answer: 0
+    difficulty: 2
+    skill: Reading
+  - kind: mcq
+    prompt_vi: "\"Cross-contamination\" trong bếp là gì?"
+    choices: ["Món bị nấu quá lửa", "Dị nguyên lẫn sang món khác qua dụng cụ chung", "Món bị đổi nhầm bàn"]
+    answer: 1
+    difficulty: 2
+    skill: Reading
+  - kind: mcq
+    prompt_vi: "Ký hiệu (VG) trên thực đơn nghĩa là gì?"
+    choices: ["Món có sữa", "Món có gluten", "Món thuần chay"]
+    answer: 2
+    difficulty: 1
+    skill: Reading
+
+explanation:
+  why_vi: >
+    Đây là bài duy nhất trong nhánh mà nói sai có hậu quả về sức khoẻ. Người Việt
+    thường ngại làm phiền nên nói vòng kiểu tôi không ăn được cái này, và nhân viên
+    hiểu là bạn không thích chứ không phải bạn dị ứng. Hai cách hiểu đó dẫn tới hai
+    quy trình khác hẳn nhau trong bếp.
+  how_vi: >
+    Nói thẳng bằng công thức I'm allergic to rồi tên thực phẩm, ngay đầu lượt gọi
+    món chứ không đợi hỏi. Sau đó xác nhận từng món bằng Does this contain. Nếu dị
+    ứng nặng thì hỏi thêm về cross-contamination.
+  contrast_vi: >
+    "I don't eat pork" là lựa chọn cá nhân hoặc tôn giáo, bếp chỉ cần đổi món.
+    "I'm allergic to pork" là vấn đề y tế, bếp phải dùng dụng cụ riêng. Dùng nhầm
+    vế đầu khi thật sự dị ứng là tự bỏ mất lớp bảo vệ đó.
+
+common_mistakes:
+  - mistake: "Nói \"I can't eat seafood\" khi thật sự bị dị ứng"
+    why_vi: >
+      Người Việt tránh nói thẳng vì sợ làm phiền nhà bếp. Nhưng câu này được hiểu là
+      sở thích, nên nhân viên không kích hoạt quy trình xử lý dị ứng và món vẫn có thể
+      nấu chung chảo với hải sản.
+    fix_vi: "Dùng đúng chữ allergic. Nếu nặng thì nói thêm \"It's a severe allergy.\""
+  - mistake: "Tưởng \"vegetarian\" và \"vegan\" là một"
+    why_vi: >
+      Tiếng Việt gộp cả hai thành ăn chay. Vegetarian vẫn dùng trứng và sữa, vegan
+      thì bỏ hết mọi thứ từ động vật kể cả mật ong.
+    fix_vi: "Ăn chay có trứng sữa thì nói vegetarian. Chay tuyệt đối thì nói vegan."
+  - mistake: "Đọc \"allergic\" thành /ˈæ-lơ-gic/ với âm g cứng"
+    why_vi: >
+      Người học đọc theo mặt chữ và nhấn sai vào âm tiết đầu. Chữ g trước i đọc thành
+      /dʒ/, và trọng âm rơi vào âm tiết thứ hai.
+    fix_vi: "Đọc /əˈlɜːrdʒɪk/, nhấn mạnh phần giữa và để đuôi rung như chữ j."
+
+memory_trick_vi: >
+  Ba bước an toàn khi ăn ngoài: BÁO "I'm allergic to", HỎI "Does this contain",
+  XÁC NHẬN "cross-contamination". Bước một phải nói trước khi mở thực đơn.

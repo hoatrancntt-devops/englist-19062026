@@ -1,0 +1,279 @@
+schema_version: 1
+code: REST-07
+slug: phan-nan-lich-su-khi-mon-sai
+title_vi: "Phàn nàn lịch sự khi món sai hoặc nguội"
+title_en: "Complaining politely when the food is wrong"
+
+layer: Life
+track: Restaurant
+level: A2
+unit_code: U-R2
+order_index: 7
+estimated_minutes: 12
+
+illustration: confused-listener
+
+objective_vi: >
+  Báo món mang nhầm, món nguội hay hoá đơn tính sai bằng giọng bình tĩnh mà vẫn
+  được xử lý — kỹ năng quyết định bạn được đổi món hay bị coi là khách khó tính.
+
+objective_observable: >
+  Nêu được một vấn đề kèm đề nghị xử lý trong 3 trên 4 drill, và đọc đúng một
+  hoá đơn có dòng tính nhầm.
+
+mastery_weights:
+  Listening: 0.25
+  Speaking: 0.35
+  Reading: 0.25
+  Writing: 0.15
+
+prerequisites:
+  - lesson: REST-06
+    min_mastery: 60
+    kind: Hard
+
+vocabulary:
+  - term: "Excuse me, sorry to bother you"
+    ipa: "/ɪkˈskjuːz miː ˈsɑːri tə ˈbɑːðər juː/"
+    meaning_vi: "xin lỗi làm phiền anh chị một chút"
+    chunk: "Excuse me, sorry to bother you."
+    tags: [restaurant, complaint]
+  - term: "I think there's been a mix-up"
+    ipa: "/aɪ θɪŋk ðerz biːn ə ˈmɪks ʌp/"
+    meaning_vi: "hình như có nhầm lẫn"
+    chunk: "I think there's been a mix-up."
+    tags: [restaurant, complaint]
+  - term: "I ordered"
+    ipa: "/aɪ ˈɔːrdərd/"
+    meaning_vi: "tôi đã gọi"
+    chunk: "I ordered the beef, not the pork."
+    tags: [restaurant, complaint]
+  - term: "cold"
+    ipa: "/koʊld/"
+    meaning_vi: "nguội, lạnh (món lẽ ra phải nóng)"
+    chunk: "The soup is cold."
+    tags: [restaurant, complaint]
+  - term: "Could you check"
+    ipa: "/kʊd juː tʃek/"
+    meaning_vi: "anh chị kiểm tra giúp được không"
+    chunk: "Could you check the bill, please?"
+    tags: [restaurant, complaint]
+  - term: "No worries"
+    ipa: "/noʊ ˈwɜːriz/"
+    meaning_vi: "không sao đâu (nhận lời xin lỗi)"
+    chunk: "No worries, thanks for fixing it."
+    tags: [restaurant, complaint]
+
+sentence_patterns:
+  - pattern: "I ordered the {a}, not the {b}."
+    meaning_vi: "Tôi gọi món {a} chứ không phải {b}."
+    slots:
+      a: ["beef", "chicken", "fish"]
+      b: ["pork", "beef", "chicken"]
+  - pattern: "Could you check the {thing}, please?"
+    meaning_vi: "Anh chị kiểm tra giúp {thing} được không ạ?"
+    slots:
+      thing: ["bill", "order", "table number"]
+
+dialogue:
+  context_vi: >
+    Món vừa được mang ra không phải món bạn gọi. Ở Việt Nam nhiều người ngại nên ăn
+    luôn cho xong. Nhà hàng nước ngoài coi việc báo lại là bình thường, và họ đổi
+    món không tính thêm tiền, miễn là bạn báo ngay chứ không đợi ăn hết nửa đĩa.
+  turns:
+    - speaker: "You"
+      en: "Excuse me, sorry to bother you. I think there's been a mix-up."
+      vi: "Xin lỗi làm phiền anh một chút. Hình như có nhầm lẫn ạ."
+    - speaker: "Server"
+      en: "Oh, I'm sorry. What did you order?"
+      vi: "Ồ, tôi xin lỗi ạ. Anh gọi món gì ạ?"
+    - speaker: "You"
+      en: "I ordered the grilled beef, not the pork."
+      vi: "Tôi gọi bò nướng chứ không phải heo ạ."
+    - speaker: "Server"
+      en: "You're right. I'll bring the correct dish right away."
+      vi: "Anh nói đúng ạ. Tôi mang món đúng ra ngay ạ."
+    - speaker: "You"
+      en: "Thanks. Also, the soup was a bit cold."
+      vi: "Cảm ơn ạ. À, món súp hơi nguội ạ."
+    - speaker: "Server"
+      en: "I'm sorry about that. I'll have the kitchen make a fresh one."
+      vi: "Tôi xin lỗi ạ. Tôi báo bếp làm bát mới ạ."
+    - speaker: "You"
+      en: "No worries, thanks for fixing it."
+      vi: "Không sao ạ, cảm ơn anh đã xử lý."
+
+listening:
+  context_vi: >
+    Nghe một khách báo hoá đơn tính sai. Chú ý cách khách mở đầu — câu mở đầu quyết
+    định nhân viên nghe với thái độ nào.
+  speed: 0.9
+  voice: en_US_male
+  transcript_en: "Excuse me, sorry to bother you. Could you check the bill, please? I think there's been a mix-up. We had two coffees, not four. Let me look. You're right, I'm sorry. I'll fix it now. No worries, thanks."
+  transcript_vi: "Xin lỗi làm phiền anh. Anh kiểm tra giúp hoá đơn được không ạ? Hình như có nhầm lẫn ạ. Bọn tôi uống hai cà phê chứ không phải bốn ạ. Để tôi xem ạ. Anh nói đúng, tôi xin lỗi ạ. Tôi sửa ngay ạ. Không sao ạ, cảm ơn."
+  questions:
+    - kind: mcq_listen
+      prompt_vi: "Hoá đơn tính nhầm ở chỗ nào?"
+      choices: ["Số cà phê", "Phí dịch vụ", "Số bàn"]
+      answer: 0
+      difficulty: 1
+      skill: Listening
+    - kind: mcq_listen
+      prompt_vi: "Nhân viên phản ứng thế nào?"
+      choices: ["Từ chối sửa", "Xin lỗi và sửa ngay", "Bảo khách chờ quản lý"]
+      answer: 1
+      difficulty: 1
+      skill: Listening
+
+speaking_drills:
+  - kind: read_aloud
+    expected_text: "Excuse me, sorry to bother you."
+    prompt_vi: "Đọc to với giọng đi xuống ở cuối. Giọng lên cao nghe như đang trách."
+    ipa: "/ɪkˈskjuːz miː ˈsɑːri tə ˈbɑːðər juː/"
+    focus_phonemes: ["k", "ð"]
+  - kind: read_aloud
+    expected_text: "I think there's been a mix-up."
+    prompt_vi: "Câu này đổ lỗi cho tình huống chứ không cho ai. Nhấn nhẹ vào mix-up."
+    ipa: "/aɪ θɪŋk ðerz biːn ə ˈmɪks ʌp/"
+    focus_phonemes: ["θ", "ks"]
+  - kind: shadow
+    expected_text: "I ordered the grilled beef, not the pork."
+    prompt_vi: "Nêu sự thật, không nêu cảm xúc. Nhấn vào beef và pork để làm rõ hai vế."
+    ipa: "/aɪ ˈɔːrdərd ðə ɡrɪld biːf nɑːt ðə pɔːrk/"
+    focus_phonemes: ["ɔːr", "r"]
+  - kind: shadow
+    expected_text: "Could you check the bill, please?"
+    prompt_vi: "Đề nghị kiểm tra. Dùng could chứ không dùng can thì nghe mềm hơn hẳn."
+    ipa: "/kʊd juː tʃek ðə bɪl pliːz/"
+    focus_phonemes: ["tʃ", "l"]
+  - kind: respond
+    prompt_en: "Is everything all right with your meal?"
+    prompt_vi: "Nhân viên hỏi bữa ăn ổn không. Trả lời ổn, hoặc nêu một vấn đề lịch sự."
+    accept_patterns:
+      - "mix-up"
+      - "I ordered"
+      - "is cold"
+      - "everything is fine"
+      - "all good"
+
+reading:
+  kind: chat
+  context_vi: >
+    Hoá đơn của bàn bạn. Có một dòng không đúng với những gì cả bàn đã gọi. Tìm ra
+    dòng đó trước khi trả tiền.
+  text_en: |
+    HARBOUR GRILL — Table 12
+
+    2 x Grilled beef        360,000
+    1 x Mushroom risotto    190,000
+    4 x Espresso            120,000
+    1 x Bottled water        30,000
+    --------------------------------
+    Subtotal                700,000
+    Service charge (5%)      35,000
+    --------------------------------
+    TOTAL                   735,000
+
+    Note: we ordered two espressos, not four.
+  text_vi: |
+    HARBOUR GRILL — Bàn 12
+
+    2 x Bò nướng            360.000
+    1 x Risotto nấm         190.000
+    4 x Espresso            120.000
+    1 x Nước đóng chai       30.000
+    --------------------------------
+    Tạm tính                700.000
+    Phí dịch vụ (5%)         35.000
+    --------------------------------
+    TỔNG                    735.000
+
+    Ghi chú: bàn gọi hai espresso chứ không phải bốn.
+  questions:
+    - kind: mcq_read
+      prompt_en: "Which line is wrong?"
+      choices: ["The water", "The risotto", "The espresso"]
+      answer: 2
+      difficulty: 2
+      reading_skill: scan
+      skill: Reading
+    - kind: mcq_read
+      prompt_en: "How much should be removed from the subtotal?"
+      choices: ["60,000", "120,000", "30,000"]
+      answer: 0
+      difficulty: 2
+      reading_skill: detail
+      skill: Reading
+
+writing:
+  kind: FillBlank
+  prompt_vi: "Điền hai chỗ trống: câu mở đầu lịch sự và câu nêu món đúng."
+  prompt_en: "Sorry to ___ you. I ___ the beef, not the pork."
+  blanks:
+    - ["bother"]
+    - ["ordered"]
+  hint_vi: "Chỗ đầu là động từ nghĩa là làm phiền. Chỗ sau là dạng quá khứ của động từ gọi món."
+  sample_en: "Sorry to bother you. I ordered the beef, not the pork."
+
+quiz:
+  - kind: mcq
+    prompt_vi: "Mở đầu lời phàn nàn thế nào cho lịch sự nhất?"
+    choices: ["This is wrong food", "Sorry to bother you, I think there's been a mix-up", "You bring me bad dish"]
+    answer: 1
+    difficulty: 2
+    skill: Speaking
+  - kind: mcq
+    prompt_vi: "Món súp mang ra bị nguội thì nói gì?"
+    choices: ["The soup is bad", "The soup is not hot enough for me now", "The soup is a bit cold"]
+    answer: 2
+    difficulty: 2
+    skill: Speaking
+  - kind: mcq
+    prompt_vi: "\"There's been a mix-up\" nghĩa là gì?"
+    choices: ["Có nhầm lẫn", "Món bị trộn lẫn nguyên liệu", "Nhà hàng đang quá tải"]
+    answer: 0
+    difficulty: 2
+    skill: Reading
+  - kind: mcq
+    prompt_vi: "Nhân viên xin lỗi và sửa xong, bạn đáp lại thế nào?"
+    choices: ["Never mind you", "No worries, thanks for fixing it", "It is okay for me now"]
+    answer: 1
+    difficulty: 1
+    skill: Speaking
+
+explanation:
+  why_vi: >
+    Người Việt hay chọn im lặng khi món sai, vì sợ bị coi là khó tính. Kết quả là trả
+    tiền cho món mình không gọi, hoặc ăn món nguội. Ở nhà hàng nước ngoài, báo lại là
+    việc bình thường và nhân viên được huấn luyện để xử lý, miễn là cách nói không
+    biến thành lời buộc tội.
+  how_vi: >
+    Công thức ba phần: xin lỗi trước, nêu sự việc bằng câu không đổ lỗi, rồi đề nghị
+    cụ thể. Sorry to bother you. I think there's been a mix-up. I ordered the beef.
+    Đừng dùng chữ you trong phần nêu sự việc, vì you làm câu thành lời buộc tội.
+  contrast_vi: >
+    "You brought the wrong dish" chĩa thẳng vào người phục vụ. "I think there's been
+    a mix-up" nói về sự việc. Cùng một nội dung, nhưng vế sau khiến nhân viên đứng
+    về phía bạn để cùng sửa.
+
+common_mistakes:
+  - mistake: "Nói \"This is not my food\" bằng giọng phẳng"
+    why_vi: >
+      Tiếng Việt dựa vào từ đệm như ạ, nhé để làm mềm câu, còn tiếng Anh dựa vào ngữ
+      điệu và cấu trúc câu. Dịch thẳng và giữ giọng phẳng thì câu nghe cộc lốc.
+    fix_vi: "Thêm lớp đệm bằng cấu trúc: \"Sorry, I think there's been a mix-up.\""
+  - mistake: "Đợi ăn gần hết mới báo món sai"
+    why_vi: >
+      Người học ngại nên ăn thử vài miếng rồi mới quyết định nói. Lúc đó nhà hàng
+      khó đổi món vì đĩa đã dùng, và câu chuyện chuyển thành tranh cãi về tiền.
+    fix_vi: "Báo ngay trong một phút đầu sau khi món được đặt xuống bàn."
+  - mistake: "Dùng \"Can you\" thay vì \"Could you\" khi đề nghị"
+    why_vi: >
+      Hai từ này trông giống nhau nên người học dùng lẫn. Trong tình huống phàn nàn,
+      can nghe như yêu cầu, còn could nghe như nhờ vả.
+    fix_vi: "Khi có vấn đề thì luôn chọn could: \"Could you check the bill, please?\""
+
+memory_trick_vi: >
+  Phàn nàn có ba nhịp và không nhịp nào có chữ you: ĐỆM "Sorry to bother you",
+  NÊU "I think there's been a mix-up", RÕ "I ordered the beef". Nhịp cuối mới là
+  thông tin nhân viên cần.

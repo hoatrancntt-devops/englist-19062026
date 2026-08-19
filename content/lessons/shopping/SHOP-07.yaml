@@ -1,0 +1,270 @@
+schema_version: 1
+code: SHOP-07
+slug: doi-tra-bao-hanh-va-hoan-tien
+title_vi: "Đổi trả, bảo hành và hoàn tiền"
+title_en: "Returns, warranty, and refunds"
+
+layer: Life
+track: Shopping
+level: A2
+unit_code: U-S2
+order_index: 7
+estimated_minutes: 12
+
+illustration: money-receipt
+
+objective_vi: >
+  Trả hàng đúng cách, phân biệt đổi hàng với hoàn tiền, và đọc điều kiện bảo hành —
+  ba việc quyết định bạn lấy lại được tiền hay chỉ nhận được phiếu mua hàng.
+
+objective_observable: >
+  Nêu được lý do trả hàng kèm yêu cầu cụ thể trong 3 trên 4 drill, và đọc đúng
+  một chính sách đổi trả có ngoại lệ.
+
+mastery_weights:
+  Listening: 0.25
+  Speaking: 0.30
+  Reading: 0.30
+  Writing: 0.15
+
+prerequisites:
+  - lesson: SHOP-06
+    min_mastery: 60
+    kind: Hard
+
+vocabulary:
+  - term: "return this"
+    ipa: "/rɪˈtɜːrn ðɪs/"
+    meaning_vi: "trả lại món hàng này"
+    chunk: "I'd like to return this."
+    tags: [shopping, return]
+  - term: "a refund"
+    ipa: "/ə ˈriːfʌnd/"
+    meaning_vi: "hoàn tiền"
+    chunk: "Can I get a refund?"
+    tags: [shopping, return]
+  - term: "an exchange"
+    ipa: "/ən ɪksˈtʃeɪndʒ/"
+    meaning_vi: "đổi sang món khác"
+    chunk: "I'd prefer an exchange."
+    tags: [shopping, return]
+  - term: "store credit"
+    ipa: "/stɔːr ˈkredɪt/"
+    meaning_vi: "phiếu mua hàng (không phải tiền mặt)"
+    chunk: "We can only offer store credit."
+    tags: [shopping, return]
+  - term: "under warranty"
+    ipa: "/ˈʌndər ˈwɔːrənti/"
+    meaning_vi: "còn trong thời hạn bảo hành"
+    chunk: "Is it still under warranty?"
+    tags: [shopping, warranty]
+  - term: "faulty"
+    ipa: "/ˈfɔːlti/"
+    meaning_vi: "bị lỗi, hỏng do sản phẩm"
+    chunk: "The item is faulty."
+    tags: [shopping, warranty]
+
+sentence_patterns:
+  - pattern: "I'd like to return this because it's {reason}."
+    meaning_vi: "Tôi muốn trả lại món này vì nó {reason}."
+    slots:
+      reason: ["faulty", "the wrong size", "not what I ordered"]
+  - pattern: "Can I get {outcome}?"
+    meaning_vi: "Tôi nhận {outcome} được không ạ?"
+    slots:
+      outcome: ["a refund", "an exchange", "store credit"]
+
+dialogue:
+  context_vi: >
+    Bạn mua một chiếc tai nghe tuần trước, tai phải không có tiếng. Bạn mang ra quầy
+    dịch vụ khách hàng cùng hộp và hoá đơn. Có hoá đơn hay không quyết định gần như
+    toàn bộ cuộc trò chuyện này.
+  turns:
+    - speaker: "You"
+      en: "Hi, I'd like to return this because it's faulty."
+      vi: "Chào chị, tôi muốn trả lại cái này vì nó bị lỗi ạ."
+    - speaker: "Staff"
+      en: "I'm sorry to hear that. Do you have the receipt?"
+      vi: "Tôi rất tiếc ạ. Anh có hoá đơn không ạ?"
+    - speaker: "You"
+      en: "Yes, here it is. I bought it eight days ago."
+      vi: "Có ạ, đây ạ. Tôi mua tám ngày trước ạ."
+    - speaker: "Staff"
+      en: "Thank you. Would you like an exchange or a refund?"
+      vi: "Cảm ơn anh ạ. Anh muốn đổi hàng hay hoàn tiền ạ?"
+    - speaker: "You"
+      en: "A refund, please. Will it go back to my card?"
+      vi: "Hoàn tiền ạ. Tiền có về lại thẻ của tôi không ạ?"
+    - speaker: "Staff"
+      en: "Yes, in three to five working days."
+      vi: "Có ạ, trong ba đến năm ngày làm việc ạ."
+
+listening:
+  context_vi: >
+    Nghe một lượt trả hàng không có hoá đơn. Chú ý cách nhân viên đổi phương án —
+    không có hoá đơn thì kết quả khác hẳn.
+  speed: 0.9
+  voice: en_US_female
+  transcript_en: "I'd like to return this jacket. Do you have the receipt? No, I'm afraid I lost it. Without a receipt we can only offer store credit, not a refund. Is it still under warranty? The warranty covers faults, but this one is just the wrong size."
+  transcript_vi: "Tôi muốn trả lại chiếc áo khoác này ạ. Anh có hoá đơn không ạ? Không ạ, tôi làm mất rồi. Không có hoá đơn thì bên tôi chỉ đổi được phiếu mua hàng, không hoàn tiền ạ. Nó còn bảo hành không ạ? Bảo hành chỉ áp dụng cho lỗi sản phẩm, còn cái này chỉ là sai cỡ ạ."
+  questions:
+    - kind: mcq_listen
+      prompt_vi: "Không có hoá đơn thì khách nhận được gì?"
+      choices: ["Phiếu mua hàng", "Hoàn tiền mặt", "Không nhận được gì"]
+      answer: 0
+      difficulty: 2
+      skill: Listening
+    - kind: mcq_listen
+      prompt_vi: "Vì sao bảo hành không áp dụng ở đây?"
+      choices: ["Đã quá hạn bảo hành", "Món hàng chỉ sai cỡ chứ không lỗi", "Khách đã dùng rồi"]
+      answer: 1
+      difficulty: 2
+      skill: Listening
+
+speaking_drills:
+  - kind: read_aloud
+    expected_text: "I'd like to return this because it's faulty."
+    prompt_vi: "Nêu lý do ngay câu đầu. Chữ faulty có nguyên âm /ɔː/ dài và tròn môi."
+    ipa: "/aɪd laɪk tə rɪˈtɜːrn ðɪs bɪˈkɔːz ɪts ˈfɔːlti/"
+    focus_phonemes: ["ɔː", "r"]
+  - kind: read_aloud
+    expected_text: "Can I get a refund?"
+    prompt_vi: "Chữ refund khi là danh từ thì nhấn âm đầu: RE-fund."
+    ipa: "/kæn aɪ ɡet ə ˈriːfʌnd/"
+    focus_phonemes: ["r", "f"]
+  - kind: shadow
+    expected_text: "I'd prefer an exchange."
+    prompt_vi: "Nói rõ mong muốn. Chữ exchange có /ks/ ở giữa và /dʒ/ ở cuối."
+    ipa: "/aɪd prɪˈfɜːr ən ɪksˈtʃeɪndʒ/"
+    focus_phonemes: ["ks", "dʒ"]
+  - kind: shadow
+    expected_text: "Is it still under warranty?"
+    prompt_vi: "Hỏi bảo hành. Chữ warranty nhấn âm đầu và có ba âm tiết."
+    ipa: "/ɪz ɪt stɪl ˈʌndər ˈwɔːrənti/"
+    focus_phonemes: ["w", "ɔː"]
+  - kind: respond
+    prompt_en: "Would you like an exchange or a refund?"
+    prompt_vi: "Nhân viên hỏi bạn muốn đổi hay hoàn tiền. Chọn một và nói rõ."
+    accept_patterns:
+      - "refund"
+      - "exchange"
+      - "store credit"
+
+reading:
+  kind: note
+  context_vi: >
+    Chính sách đổi trả in mặt sau hoá đơn. Phần quan trọng nhất nằm ở mấy dòng
+    ngoại lệ cuối cùng, chứ không ở dòng đầu.
+  text_en: |
+    RETURNS AND REFUNDS
+
+    - Unused items can be returned within 30 days with the receipt.
+    - Refunds go back to the original payment method.
+    - Without a receipt we can offer store credit only.
+    - Faulty items are covered by a 12-month warranty.
+
+    Exceptions
+    - Underwear, earphones and opened software cannot be returned
+      unless faulty.
+    - Sale items marked FINAL can be exchanged but not refunded.
+  text_vi: |
+    ĐỔI TRẢ VÀ HOÀN TIỀN
+
+    - Hàng chưa dùng được trả trong 30 ngày, phải có hoá đơn.
+    - Tiền hoàn về đúng phương thức thanh toán ban đầu.
+    - Không có hoá đơn thì chỉ đổi được phiếu mua hàng.
+    - Hàng lỗi được bảo hành 12 tháng.
+
+    Ngoại lệ
+    - Đồ lót, tai nghe và phần mềm đã mở không trả lại được,
+      trừ khi bị lỗi.
+    - Hàng giảm giá ghi FINAL được đổi nhưng không hoàn tiền.
+  questions:
+    - kind: mcq_read
+      prompt_en: "Your earphones are faulty. Can you return them?"
+      choices: ["No, earphones can never be returned", "Only for store credit", "Yes, because faulty items are an exception"]
+      answer: 2
+      difficulty: 2
+      reading_skill: detail
+      skill: Reading
+    - kind: mcq_read
+      prompt_en: "What can you do with a FINAL sale item?"
+      choices: ["Exchange it, but not get a refund", "Get a full refund within 30 days", "Nothing at all"]
+      answer: 0
+      difficulty: 2
+      reading_skill: detail
+      skill: Reading
+
+writing:
+  kind: FillBlank
+  prompt_vi: "Điền hai chỗ trống: lý do trả hàng và thứ bạn muốn nhận lại."
+  prompt_en: "I'd like to return this because it's ___. Can I get a ___?"
+  blanks:
+    - ["faulty", "broken"]
+    - ["refund"]
+  hint_vi: "Chỗ đầu là tính từ nghĩa là bị lỗi. Chỗ sau là danh từ nghĩa là tiền được trả lại."
+  sample_en: "I'd like to return this because it's faulty. Can I get a refund?"
+
+quiz:
+  - kind: mcq
+    prompt_vi: "\"Store credit\" là gì?"
+    choices: ["Tiền mặt trả lại", "Phiếu mua hàng chỉ dùng được ở cửa hàng đó", "Khoản vay mua trả góp"]
+    answer: 1
+    difficulty: 2
+    skill: Reading
+  - kind: mcq
+    prompt_vi: "\"Under warranty\" nghĩa là gì?"
+    choices: ["Đang được giảm giá", "Đã hết hạn dùng", "Còn trong thời hạn bảo hành"]
+    answer: 2
+    difficulty: 1
+    skill: Reading
+  - kind: mcq
+    prompt_vi: "Muốn đổi sang món khác chứ không lấy tiền thì nói gì?"
+    choices: ["I'd prefer an exchange", "I want change money", "Please give another thing"]
+    answer: 0
+    difficulty: 2
+    skill: Speaking
+  - kind: mcq
+    prompt_vi: "\"Faulty\" khác \"the wrong size\" ở chỗ nào?"
+    choices: ["Không khác gì, dùng thay nhau được", "Faulty là hàng lỗi nên được bảo hành, sai cỡ thì không", "Faulty chỉ dùng cho đồ điện tử"]
+    answer: 1
+    difficulty: 2
+    skill: Reading
+
+explanation:
+  why_vi: >
+    Trả hàng là lúc tiền của bạn đang nằm ở bên kia quầy, và ba từ refund, exchange,
+    store credit dẫn tới ba kết quả rất khác nhau. Người học thường chỉ nói tôi muốn
+    trả lại rồi chờ nhân viên quyết, và nhân viên gần như luôn chọn phương án có lợi
+    cho cửa hàng.
+  how_vi: >
+    Mở đầu bằng lý do chứ không chỉ bằng hành động: I'd like to return this because
+    it's faulty. Chữ faulty kích hoạt quyền bảo hành. Sau đó nói rõ mình muốn gì
+    bằng Can I get a refund, đừng đợi được hỏi.
+  contrast_vi: >
+    "Refund" là tiền quay lại thẻ hoặc ví của bạn. "Exchange" là đổi lấy món khác.
+    "Store credit" là phiếu chỉ tiêu được tại cửa hàng đó, tức là tiền vẫn nằm lại
+    chỗ họ. Ba thứ này không thay thế nhau được.
+
+common_mistakes:
+  - mistake: "Chỉ nói \"I want to return this\" mà không nêu lý do"
+    why_vi: >
+      Người học nghĩ nêu lý do là phải giải thích dài. Nhưng lý do chính là thứ quyết
+      định chính sách nào được áp dụng, và không nêu thì mặc định bị xếp vào nhóm
+      đổi ý, nhóm có ít quyền lợi nhất.
+    fix_vi: "Ghép lý do vào ngay câu đầu: \"because it's faulty\" hoặc \"because it's the wrong size.\""
+  - mistake: "Nhầm \"refund\" với \"store credit\" khi nhân viên đề nghị"
+    why_vi: >
+      Cả hai đều nghe như được trả lại giá trị món hàng. Nhưng phiếu mua hàng buộc
+      bạn phải quay lại tiêu ở đúng chỗ đó, và nhiều phiếu có hạn dùng.
+    fix_vi: "Hỏi thẳng một câu: \"Will the money go back to my card?\" Câu trả lời phân biệt ngay hai loại."
+  - mistake: "Vứt hoá đơn ngay sau khi mua"
+    why_vi: >
+      Ở Việt Nam nhiều nơi đổi trả dựa vào việc nhớ mặt khách. Ở cửa hàng nước ngoài
+      thì hoá đơn là chứng cứ duy nhất, không có nó thì mức tốt nhất chỉ là phiếu mua hàng.
+    fix_vi: "Chụp ảnh hoá đơn ngay tại quầy, hoặc xin hoá đơn điện tử gửi qua email."
+
+memory_trick_vi: >
+  Ra quầy trả hàng chỉ cần ba thứ: HOÁ ĐƠN trong tay, LÝ DO trong câu đầu
+  because it's faulty, và YÊU CẦU rõ ràng Can I get a refund. Thiếu thứ nào
+  thì mất phần đó.

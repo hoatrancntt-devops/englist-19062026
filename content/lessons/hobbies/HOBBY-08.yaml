@@ -1,0 +1,261 @@
+schema_version: 1
+code: HOBBY-08
+slug: noi-chuyen-phiem-voi-dong-nghiep-nuoc-ngoai
+title_vi: "Nói chuyện phiếm với đồng nghiệp nước ngoài"
+title_en: "Small talk with international colleagues"
+
+layer: Life
+track: Hobbies
+level: A2
+unit_code: U-H2
+order_index: 8
+estimated_minutes: 12
+
+illustration: coffee-chat
+
+objective_vi: >
+  Mở, giữ và kết thúc một cuộc nói chuyện phiếm ở chỗ làm — kỹ năng quyết định
+  bạn được nhớ tới như đồng nghiệp hay chỉ như người ngồi cạnh.
+
+objective_observable: >
+  Mở được một cuộc trò chuyện, đẩy nó qua ít nhất hai lượt, và kết thúc lịch sự
+  trong 3 trên 4 drill.
+
+mastery_weights:
+  Listening: 0.30
+  Speaking: 0.35
+  Reading: 0.20
+  Writing: 0.15
+
+prerequisites:
+  - lesson: HOBBY-07
+    min_mastery: 60
+    kind: Hard
+
+vocabulary:
+  - term: "How was your weekend"
+    ipa: "/haʊ wʌz jɔːr ˈwiːkend/"
+    meaning_vi: "cuối tuần của bạn thế nào"
+    chunk: "How was your weekend?"
+    tags: [hobbies, smalltalk]
+  - term: "How about you"
+    ipa: "/haʊ əˈbaʊt juː/"
+    meaning_vi: "còn bạn thì sao (đẩy lượt lại)"
+    chunk: "It was quiet. How about you?"
+    tags: [hobbies, smalltalk]
+  - term: "That sounds"
+    ipa: "/ðæt saʊndz/"
+    meaning_vi: "nghe có vẻ ..."
+    chunk: "That sounds fun."
+    tags: [hobbies, smalltalk]
+  - term: "Anyway"
+    ipa: "/ˈeniweɪ/"
+    meaning_vi: "thôi, dù sao thì (dấu hiệu sắp kết thúc)"
+    chunk: "Anyway, I should get back to it."
+    tags: [hobbies, smalltalk]
+  - term: "Catch you later"
+    ipa: "/kætʃ juː ˈleɪtər/"
+    meaning_vi: "gặp lại sau nhé"
+    chunk: "Catch you later!"
+    tags: [hobbies, smalltalk]
+  - term: "Have you tried"
+    ipa: "/hæv juː traɪd/"
+    meaning_vi: "bạn thử ... chưa"
+    chunk: "Have you tried the new coffee place?"
+    tags: [hobbies, smalltalk]
+
+sentence_patterns:
+  - pattern: "How was your {period}?"
+    meaning_vi: "{period} của bạn thế nào?"
+    slots:
+      period: ["weekend", "holiday", "trip"]
+  - pattern: "That sounds {reaction}. {follow_up}"
+    meaning_vi: "Nghe {reaction} đấy. {follow_up}"
+    slots:
+      reaction: ["fun", "tiring", "interesting"]
+      follow_up: ["Where was it?", "How long did it take?", "Would you go again?"]
+
+dialogue:
+  context_vi: >
+    Sáng thứ Hai, bạn và một đồng nghiệp người Úc đứng chờ máy pha cà phê. Có
+    khoảng chín mươi giây. Cuộc trò chuyện này không có nội dung công việc nào,
+    nhưng nó là thứ quyết định lần sau ai hỏi ai khi cần giúp.
+  turns:
+    - speaker: "You"
+      en: "Morning. How was your weekend?"
+      vi: "Chào buổi sáng. Cuối tuần của cậu thế nào?"
+    - speaker: "Colleague"
+      en: "Pretty good, thanks. We went camping near the lake. How about you?"
+      vi: "Khá ổn, cảm ơn. Bọn mình đi cắm trại gần hồ. Còn cậu?"
+    - speaker: "You"
+      en: "That sounds fun. Mine was quiet — I finally finished a book I started in March."
+      vi: "Nghe vui đấy. Cuối tuần mình yên tĩnh thôi, cuối cùng cũng đọc xong quyển sách bắt đầu từ tháng Ba."
+    - speaker: "Colleague"
+      en: "Ha, I know that feeling. Was it any good?"
+      vi: "Ha, mình hiểu cảm giác đó. Sách có hay không?"
+    - speaker: "You"
+      en: "Worth the wait. Have you tried the new coffee place downstairs?"
+      vi: "Đáng chờ. Cậu thử quán cà phê mới ở tầng dưới chưa?"
+    - speaker: "Colleague"
+      en: "Not yet. Anyway, I should get back to it. Catch you later."
+      vi: "Chưa. Thôi mình quay lại làm đây. Gặp cậu sau nhé."
+
+listening:
+  context_vi: >
+    Nghe một cuộc nói chuyện phiếm đầy đủ từ mở đến đóng. Chú ý chữ báo hiệu kết
+    thúc — người bản xứ không dừng đột ngột mà luôn có một từ đệm trước khi đi.
+  speed: 1.0
+  voice: en_US_female
+  transcript_en: "Morning. How was your holiday? Really good, thanks. We drove down the coast. That sounds fun. How long did it take? About six hours each way. Wow. Anyway, I've got a call in two minutes. Catch you later."
+  transcript_vi: "Chào buổi sáng. Kỳ nghỉ của cậu thế nào? Rất ổn, cảm ơn. Bọn mình lái xe dọc bờ biển. Nghe vui đấy. Đi mất bao lâu? Khoảng sáu tiếng mỗi chiều. Chà. Thôi, hai phút nữa mình có cuộc gọi. Gặp cậu sau nhé."
+  questions:
+    - kind: mcq_listen
+      prompt_vi: "Người kia đã làm gì trong kỳ nghỉ?"
+      choices: ["Đi cắm trại", "Ở nhà đọc sách", "Lái xe dọc bờ biển"]
+      answer: 2
+      difficulty: 1
+      skill: Listening
+    - kind: mcq_listen
+      prompt_vi: "Vì sao cuộc trò chuyện kết thúc?"
+      choices: ["Một người phải đi họp ngay", "Một người sắp có cuộc gọi", "Máy cà phê hỏng"]
+      answer: 1
+      difficulty: 2
+      skill: Listening
+
+speaking_drills:
+  - kind: read_aloud
+    expected_text: "Morning. How was your weekend?"
+    prompt_vi: "Câu mở. Ngữ điệu đi lên ở cuối, giọng nhẹ và nhanh chứ không trang trọng."
+    ipa: "/ˈmɔːrnɪŋ haʊ wʌz jɔːr ˈwiːkend/"
+    focus_phonemes: ["ŋ", "w"]
+  - kind: read_aloud
+    expected_text: "That sounds fun. How about you?"
+    prompt_vi: "Phản hồi rồi đẩy lượt lại. Cụm how about you nối thành /haʊ-ə-baʊ-tʃə/."
+    ipa: "/ðæt saʊndz fʌn haʊ əˈbaʊt juː/"
+    focus_phonemes: ["ð", "aʊ"]
+  - kind: shadow
+    expected_text: "Have you tried the new coffee place downstairs?"
+    prompt_vi: "Đổi chủ đề. Cụm have you đọc lướt gần như /həv-jə/."
+    ipa: "/hæv juː traɪd ðə nuː ˈkɔːfi pleɪs ˌdaʊnˈsterz/"
+    focus_phonemes: ["tr", "pl"]
+  - kind: shadow
+    expected_text: "Anyway, I should get back to it. Catch you later."
+    prompt_vi: "Câu đóng. Chữ Anyway phải nói trước, nếu không việc rời đi nghe cụt ngủn."
+    ipa: "/ˈeniweɪ aɪ ʃʊd ɡet bæk tuː ɪt kætʃ juː ˈleɪtər/"
+    focus_phonemes: ["tʃ", "eɪ"]
+  - kind: respond
+    prompt_en: "How was your weekend?"
+    prompt_vi: "Đồng nghiệp mở chuyện. Trả lời có chi tiết rồi đẩy lượt lại cho họ."
+    accept_patterns:
+      - "How about you"
+      - "What about you"
+      - "quiet"
+      - "good"
+      - "I went"
+
+reading:
+  kind: chat
+  context_vi: >
+    Vài dòng trong kênh chat chung của đội, không liên quan công việc. Đọc để thấy
+    nói chuyện phiếm bằng chữ viết cũng theo đúng ba nhịp như nói trực tiếp.
+  text_en: |
+    Sarah:  Morning all. Anyone else stuck in the rain this morning?
+    Raj:    Completely soaked. I gave up and took a taxi.
+    Sarah:  That sounds expensive. Was it bad on the bridge?
+    Raj:    Twenty minutes just to cross it.
+    Hoa:    Same here. Anyway, standup in five — see you there.
+  text_vi: |
+    Sarah:  Chào cả nhà. Sáng nay có ai mắc mưa như mình không?
+    Raj:    Ướt sạch. Mình bỏ cuộc, bắt taxi luôn.
+    Sarah:  Nghe tốn kém đấy. Trên cầu có tắc lắm không?
+    Raj:    Riêng qua cầu đã mất hai mươi phút.
+    Hoa:    Mình cũng vậy. Thôi, năm phút nữa họp nhanh — gặp mọi người ở đó nhé.
+  questions:
+    - kind: mcq_read
+      prompt_en: "How does Hoa end the conversation?"
+      choices: ["With Anyway and a reason to go", "By asking another question", "By leaving without a word"]
+      answer: 0
+      difficulty: 2
+      reading_skill: skim
+      skill: Reading
+    - kind: mcq_read
+      prompt_en: "What does Sarah do after Raj answers?"
+      choices: ["She changes the subject", "She ends the chat", "She reacts and asks a follow-up question"]
+      answer: 2
+      difficulty: 2
+      reading_skill: detail
+      skill: Reading
+
+writing:
+  kind: FillBlank
+  prompt_vi: "Điền hai chỗ trống: câu đẩy lượt lại và từ báo hiệu sắp kết thúc."
+  prompt_en: "It was quiet. How ___ you? ... ___, I should get back to it."
+  blanks:
+    - ["about"]
+    - ["Anyway", "anyway"]
+  hint_vi: "Chỗ đầu ghép với how và you thành câu hỏi ngược lại. Chỗ sau là một từ đệm báo sắp đi."
+  sample_en: "It was quiet. How about you? Anyway, I should get back to it."
+
+quiz:
+  - kind: mcq
+    prompt_vi: "Sau khi trả lời câu hỏi phiếm, nên làm gì để giữ cuộc trò chuyện?"
+    choices: ["Im lặng chờ họ hỏi tiếp", "Đẩy lượt lại bằng How about you?", "Chuyển sang nói chuyện công việc"]
+    answer: 1
+    difficulty: 2
+    skill: Speaking
+  - kind: mcq
+    prompt_vi: "\"Anyway\" trong cuộc trò chuyện phiếm báo hiệu điều gì?"
+    choices: ["Người nói sắp kết thúc và rời đi", "Người nói không đồng ý", "Người nói muốn nghe thêm"]
+    answer: 0
+    difficulty: 2
+    skill: Listening
+  - kind: mcq
+    prompt_vi: "Chủ đề nào an toàn nhất khi nói chuyện phiếm ở công ty?"
+    choices: ["Lương của đồng nghiệp", "Chính trị nước họ", "Thời tiết, cuối tuần, quán ăn mới"]
+    answer: 2
+    difficulty: 1
+    skill: Speaking
+  - kind: mcq
+    prompt_vi: "\"Catch you later\" nghĩa là gì?"
+    choices: ["Gặp lại sau nhé", "Đợi tôi một chút", "Tôi sẽ gọi cho bạn"]
+    answer: 0
+    difficulty: 1
+    skill: Listening
+
+explanation:
+  why_vi: >
+    Ở môi trường làm việc quốc tế, chín mươi giây bên máy cà phê làm được việc mà
+    mười email không làm được. Người Việt thường giỏi kỹ thuật nhưng bỏ qua phần này
+    vì thấy nó vô nghĩa, rồi trở thành người mà không ai nghĩ tới khi lập nhóm dự án.
+  how_vi: >
+    Cuộc nói chuyện phiếm có đúng ba nhịp. Mở bằng một câu hỏi về thời gian vừa qua.
+    Giữ bằng cách phản hồi rồi đẩy lượt lại: That sounds fun. How about you?
+    Đóng bằng Anyway kèm một lý do, rồi Catch you later.
+  contrast_vi: >
+    "How are you?" ở nước nói tiếng Anh gần như là lời chào, câu trả lời mặc định là
+    Good, thanks. "How was your weekend?" mới là câu hỏi thật, và người hỏi thật sự
+    chờ nghe một chi tiết.
+
+common_mistakes:
+  - mistake: "Trả lời \"Fine\" rồi im lặng"
+    why_vi: >
+      Người học nghĩ câu hỏi chỉ là phép lịch sự nên trả lời ngắn nhất có thể. Nhưng
+      trong nói chuyện phiếm, không đẩy lượt lại thì người kia phải gánh cả cuộc trò
+      chuyện, và lần sau họ sẽ không mở lời nữa.
+    fix_vi: "Luôn thêm một chi tiết rồi đẩy lượt: \"It was quiet, I read a lot. How about you?\""
+  - mistake: "Rời đi đột ngột khi hết chuyện"
+    why_vi: >
+      Tiếng Việt cho phép kết thúc bằng cách quay đi hoặc một tiếng ừ. Trong tiếng Anh,
+      dừng không báo trước bị hiểu là bạn thấy chán hoặc khó chịu với người kia.
+    fix_vi: "Dùng công thức ba phần: \"Anyway, I should get back to it. Catch you later.\""
+  - mistake: "Hỏi về lương, tuổi hoặc tôn giáo để làm quen"
+    why_vi: >
+      Ở Việt Nam các câu này thể hiện quan tâm và giúp xưng hô cho đúng. Trong môi
+      trường quốc tế thì đây là chủ đề riêng tư, và ở một số nơi còn là câu hỏi bị cấm
+      trong quan hệ đồng nghiệp.
+    fix_vi: "Giữ trong ba chủ đề an toàn: thời tiết, cuối tuần, và đồ ăn hay quán mới."
+
+memory_trick_vi: >
+  Nói chuyện phiếm có ba nhịp và nhịp nào cũng ngắn: MỞ How was your weekend,
+  GIỮ That sounds fun — how about you, ĐÓNG Anyway, catch you later. Thiếu nhịp
+  cuối là lần sau không còn nhịp đầu.

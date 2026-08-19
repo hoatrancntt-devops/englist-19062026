@@ -1,0 +1,273 @@
+schema_version: 1
+code: SHOP-08
+slug: mua-do-dien-tu-va-hoi-thong-so
+title_vi: "Mua đồ điện tử và hỏi thông số"
+title_en: "Buying electronics and asking about specs"
+
+layer: Life
+track: Shopping
+level: A2
+unit_code: U-S2
+order_index: 8
+estimated_minutes: 12
+
+illustration: desk-laptop
+
+objective_vi: >
+  Hỏi cấu hình máy, so sánh hai lựa chọn, và hiểu điều kiện bảo hành quốc tế —
+  bài duy nhất trong nhánh này dùng lại đúng từ vựng nghề của dân IT.
+
+objective_observable: >
+  Hỏi được ít nhất hai thông số kỹ thuật và một điều kiện bảo hành trong 3 trên 4
+  drill, và so sánh đúng hai máy từ một bảng thông số.
+
+mastery_weights:
+  Listening: 0.25
+  Speaking: 0.30
+  Reading: 0.30
+  Writing: 0.15
+
+prerequisites:
+  - lesson: SHOP-07
+    min_mastery: 60
+    kind: Hard
+
+vocabulary:
+  - term: "How much RAM does it have"
+    ipa: "/haʊ mʌtʃ ræm dʌz ɪt hæv/"
+    meaning_vi: "máy này có bao nhiêu RAM"
+    chunk: "How much RAM does it have?"
+    tags: [shopping, tech]
+  - term: "storage"
+    ipa: "/ˈstɔːrɪdʒ/"
+    meaning_vi: "dung lượng ổ cứng"
+    chunk: "It has 512 gigabytes of storage."
+    tags: [shopping, tech]
+  - term: "battery life"
+    ipa: "/ˈbætəri laɪf/"
+    meaning_vi: "thời lượng pin"
+    chunk: "What's the battery life like?"
+    tags: [shopping, tech]
+  - term: "What's the difference between"
+    ipa: "/wʌts ðə ˈdɪfrəns bɪˈtwiːn/"
+    meaning_vi: "khác nhau ở chỗ nào giữa"
+    chunk: "What's the difference between these two?"
+    tags: [shopping, tech]
+  - term: "international warranty"
+    ipa: "/ˌɪntərˈnæʃnəl ˈwɔːrənti/"
+    meaning_vi: "bảo hành toàn cầu"
+    chunk: "Does it come with an international warranty?"
+    tags: [shopping, tech]
+  - term: "worth the extra"
+    ipa: "/wɜːrθ ði ˈekstrə/"
+    meaning_vi: "đáng để trả thêm tiền"
+    chunk: "Is it worth the extra money?"
+    tags: [shopping, tech]
+
+sentence_patterns:
+  - pattern: "How much {spec} does it have?"
+    meaning_vi: "Máy này có bao nhiêu {spec}?"
+    slots:
+      spec: ["RAM", "storage", "memory"]
+  - pattern: "What's the difference between the {a} and the {b}?"
+    meaning_vi: "Bản {a} và bản {b} khác nhau chỗ nào?"
+    slots:
+      a: ["base model", "Pro", "14-inch"]
+      b: ["Pro", "Max", "16-inch"]
+
+dialogue:
+  context_vi: >
+    Bạn cần một máy để chạy máy ảo và container. Nhân viên bán hàng sẽ đẩy bạn về
+    phía máy đắt hơn, nên câu hỏi của bạn phải cụ thể về nhu cầu công việc chứ
+    không phải hỏi máy nào tốt.
+  turns:
+    - speaker: "You"
+      en: "What's the difference between these two models?"
+      vi: "Hai máy này khác nhau chỗ nào ạ?"
+    - speaker: "Staff"
+      en: "The second one has a faster chip and double the storage."
+      vi: "Máy thứ hai chip nhanh hơn và ổ cứng gấp đôi ạ."
+    - speaker: "You"
+      en: "How much RAM does each one have?"
+      vi: "Mỗi máy có bao nhiêu RAM ạ?"
+    - speaker: "Staff"
+      en: "Sixteen and thirty-two gigabytes."
+      vi: "Mười sáu và ba mươi hai gigabyte ạ."
+    - speaker: "You"
+      en: "I run virtual machines, so I need thirty-two. Is it worth the extra money?"
+      vi: "Tôi chạy máy ảo nên cần ba mươi hai ạ. Trả thêm tiền có đáng không ạ?"
+    - speaker: "Staff"
+      en: "For that workload, yes. And it comes with an international warranty."
+      vi: "Với công việc đó thì đáng ạ. Máy còn có bảo hành toàn cầu nữa ạ."
+
+listening:
+  context_vi: >
+    Nghe một khách hỏi mua điện thoại. Chú ý câu hỏi về pin — đó là thông số nhân
+    viên ít nói ra nếu không được hỏi.
+  speed: 0.9
+  voice: en_US_male
+  transcript_en: "How much storage does it have? This one has 256 gigabytes. What's the battery life like? About eighteen hours of video. Does it come with an international warranty? Yes, two years in most countries."
+  transcript_vi: "Máy này có bao nhiêu bộ nhớ ạ? Máy này 256 gigabyte ạ. Pin dùng được bao lâu ạ? Khoảng mười tám tiếng xem video ạ. Có bảo hành toàn cầu không ạ? Có ạ, hai năm ở hầu hết các nước ạ."
+  questions:
+    - kind: mcq_listen
+      prompt_vi: "Máy có bao nhiêu bộ nhớ?"
+      choices: ["128 GB", "512 GB", "256 GB"]
+      answer: 2
+      difficulty: 1
+      skill: Listening
+    - kind: mcq_listen
+      prompt_vi: "Bảo hành toàn cầu kéo dài bao lâu?"
+      choices: ["Một năm", "Hai năm", "Ba năm"]
+      answer: 1
+      difficulty: 2
+      skill: Listening
+
+speaking_drills:
+  - kind: read_aloud
+    expected_text: "How much RAM does it have?"
+    prompt_vi: "Đọc RAM thành một từ /ræm/, không đọc rời từng chữ cái."
+    ipa: "/haʊ mʌtʃ ræm dʌz ɪt hæv/"
+    focus_phonemes: ["r", "æ"]
+  - kind: read_aloud
+    expected_text: "What's the difference between these two?"
+    prompt_vi: "Chữ difference chỉ có hai âm tiết khi nói nhanh: /ˈdɪf-rəns/."
+    ipa: "/wʌts ðə ˈdɪfrəns bɪˈtwiːn ðiːz tuː/"
+    focus_phonemes: ["ð", "f"]
+  - kind: shadow
+    expected_text: "What's the battery life like?"
+    prompt_vi: "Chữ battery ở giọng Mỹ có âm t đọc mềm gần như /d/: /ˈbæd-ə-ri/."
+    ipa: "/wʌts ðə ˈbætəri laɪf laɪk/"
+    focus_phonemes: ["t", "aɪ"]
+  - kind: shadow
+    expected_text: "Does it come with an international warranty?"
+    prompt_vi: "Chữ international nhấn ở âm tiết thứ ba: in-ter-NA-tio-nal."
+    ipa: "/dʌz ɪt kʌm wɪð ən ˌɪntərˈnæʃnəl ˈwɔːrənti/"
+    focus_phonemes: ["ʃ", "w"]
+  - kind: respond
+    prompt_en: "What are you going to use it for?"
+    prompt_vi: "Nhân viên hỏi bạn dùng máy vào việc gì. Trả lời bằng công việc cụ thể."
+    accept_patterns:
+      - "virtual machines"
+      - "development"
+      - "coding"
+      - "I run"
+      - "for work"
+
+reading:
+  kind: note
+  context_vi: >
+    Bảng thông số dán cạnh hai máy trên kệ. Đọc để tự quyết định, thay vì hỏi
+    nhân viên máy nào tốt hơn.
+  text_en: |
+    COMPARE — DEV LAPTOPS
+
+                        Model A            Model B
+    Chip                8-core             12-core
+    RAM                 16 GB              32 GB
+    Storage             512 GB             1 TB
+    Battery             up to 15 h         up to 12 h
+    Weight              1.24 kg            1.61 kg
+    Price               32,900,000         44,500,000
+
+    Both include a 2-year international warranty.
+    RAM cannot be upgraded after purchase on either model.
+  text_vi: |
+    SO SÁNH — LAPTOP CHO LẬP TRÌNH
+
+                        Máy A              Máy B
+    Chip                8 nhân             12 nhân
+    RAM                 16 GB              32 GB
+    Ổ cứng              512 GB             1 TB
+    Pin                 tới 15 giờ         tới 12 giờ
+    Cân nặng            1,24 kg            1,61 kg
+    Giá                 32.900.000         44.500.000
+
+    Cả hai đều có bảo hành toàn cầu 2 năm.
+    Cả hai máy đều không nâng cấp RAM được sau khi mua.
+  questions:
+    - kind: mcq_read
+      prompt_en: "You travel a lot and need long battery life. Which model fits better?"
+      choices: ["Model A", "Model B", "Neither, they are the same"]
+      answer: 0
+      difficulty: 2
+      reading_skill: detail
+      skill: Reading
+    - kind: mcq_read
+      prompt_en: "Why does the RAM choice matter most at the time of purchase?"
+      choices: ["Because RAM affects the warranty", "Because the price changes later", "Because RAM cannot be upgraded afterwards"]
+      answer: 2
+      difficulty: 2
+      reading_skill: detail
+      skill: Reading
+
+writing:
+  kind: FillBlank
+  prompt_vi: "Điền hai chỗ trống: câu hỏi RAM và câu hỏi khác nhau giữa hai máy."
+  prompt_en: "How much ___ does it have? What's the ___ between these two?"
+  blanks:
+    - ["RAM", "ram"]
+    - ["difference"]
+  hint_vi: "Chỗ đầu là bộ nhớ tạm của máy. Chỗ sau là danh từ nghĩa là sự khác nhau."
+  sample_en: "How much RAM does it have? What's the difference between these two?"
+
+quiz:
+  - kind: mcq
+    prompt_vi: "\"Storage\" khi mua máy nghĩa là gì?"
+    choices: ["Bộ nhớ tạm khi chạy chương trình", "Dung lượng ổ cứng để lưu dữ liệu", "Kho hàng của cửa hàng"]
+    answer: 1
+    difficulty: 2
+    skill: Reading
+  - kind: mcq
+    prompt_vi: "Muốn hỏi thời lượng pin thì nói gì?"
+    choices: ["What's the battery life like?", "How long battery?", "Battery how many hour?"]
+    answer: 0
+    difficulty: 2
+    skill: Speaking
+  - kind: mcq
+    prompt_vi: "\"Is it worth the extra money?\" là hỏi gì?"
+    choices: ["Máy này có đắt không", "Có được trả góp không", "Trả thêm tiền cho bản cao hơn có đáng không"]
+    answer: 2
+    difficulty: 2
+    skill: Speaking
+  - kind: mcq
+    prompt_vi: "Vì sao nên hỏi \"international warranty\" khi mua máy?"
+    choices: ["Để được bảo hành cả khi ở nước khác", "Để được giảm giá", "Để đổi máy trong 30 ngày"]
+    answer: 0
+    difficulty: 1
+    skill: Reading
+
+explanation:
+  why_vi: >
+    Mua đồ điện tử là chỗ nhân viên bán hàng biết nhiều hơn bạn, và câu hỏi chung
+    chung kiểu máy nào tốt hơn luôn dẫn tới máy đắt hơn. Hỏi bằng thông số cụ thể
+    thì cuộc trò chuyện đổi chiều, vì bạn đang so sánh chứ không đang xin lời khuyên.
+  how_vi: >
+    Hỏi theo ba nhóm: cấu hình bằng How much RAM và How much storage, trải nghiệm
+    dùng bằng What's the battery life like, và điều kiện sau khi mua bằng
+    Does it come with an international warranty. Cuối cùng chốt bằng
+    Is it worth the extra money kèm mô tả công việc thật của bạn.
+  contrast_vi: >
+    "Memory" trong tiếng Anh thương mại thường chỉ RAM, còn "storage" là ổ cứng.
+    Người bán ở mỗi nước dùng hai từ này hơi khác nhau, nên khi nghe memory thì
+    hỏi lại cho chắc: Do you mean RAM or storage?
+
+common_mistakes:
+  - mistake: "Hỏi \"Which one is better?\" thay vì hỏi thông số"
+    why_vi: >
+      Người học muốn tiết kiệm câu chữ nên hỏi câu ngắn nhất. Nhưng câu đó không có
+      tiêu chí, nên người bán trả lời theo tiêu chí của họ, thường là giá cao hơn.
+    fix_vi: "Đặt tiêu chí vào câu hỏi: \"I run virtual machines. Is 16 gigabytes enough?\""
+  - mistake: "Đọc RAM thành ba chữ cái rời R-A-M"
+    why_vi: >
+      Người học quen đọc rời chữ viết tắt như CPU hay USB. RAM là từ viết tắt được
+      đọc thành một từ, giống NASA, nên đọc rời làm người nghe khựng lại.
+    fix_vi: "Đọc liền một âm tiết /ræm/, giống từ ram nghĩa là con cừu đực."
+  - mistake: "Không hỏi bảo hành có hiệu lực ở nước nào"
+    why_vi: >
+      Người học nghe thấy chữ warranty là yên tâm. Nhiều máy mua ở nước ngoài chỉ
+      bảo hành trong nước bán, mang về Việt Nam thì hỏng phải tự trả tiền sửa.
+    fix_vi: "Hỏi thẳng: \"Does the warranty cover Vietnam?\" và xin ghi câu trả lời vào hoá đơn."
+
+memory_trick_vi: >
+  Ba nhóm câu hỏi khi mua máy: TRONG MÁY RAM và storage, DÙNG THẾ NÀO battery life,
+  SAU KHI MUA international warranty. Hỏi đủ ba nhóm thì không cần hỏi máy nào tốt hơn.

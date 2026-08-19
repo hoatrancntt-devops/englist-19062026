@@ -1,0 +1,300 @@
+schema_version: 1
+code: REST-08
+slug: moi-doi-tac-di-an-va-noi-chuyen-tren-ban-an
+title_vi: "Mời đối tác đi ăn và nói chuyện trên bàn ăn"
+title_en: "Hosting a business dinner and table talk"
+
+layer: Life
+track: Restaurant
+level: A2
+unit_code: U-R2
+order_index: 8
+estimated_minutes: 12
+
+illustration: handshake-intro
+
+objective_vi: >
+  Mời khách hoặc đồng nghiệp nước ngoài đi ăn, gợi chuyện trên bàn ăn, và giành
+  trả tiền cho đúng cách — bữa ăn công việc là nơi quan hệ được quyết định.
+
+objective_observable: >
+  Đưa được một lời mời kèm đề xuất giờ và chỗ trong 3 trên 4 drill, và đọc đúng
+  một email xác nhận bữa tối công việc.
+
+mastery_weights:
+  Listening: 0.25
+  Speaking: 0.35
+  Reading: 0.20
+  Writing: 0.20
+
+prerequisites:
+  - lesson: REST-07
+    min_mastery: 60
+    kind: Hard
+
+vocabulary:
+  - term: "Would you like to join us for dinner"
+    ipa: "/wʊd juː laɪk tə dʒɔɪn ʌs fər ˈdɪnər/"
+    meaning_vi: "anh chị dùng bữa tối với chúng tôi nhé"
+    chunk: "Would you like to join us for dinner?"
+    tags: [restaurant, business]
+  - term: "my treat"
+    ipa: "/maɪ triːt/"
+    meaning_vi: "tôi mời (tôi trả tiền)"
+    chunk: "It's my treat tonight."
+    tags: [restaurant, business]
+  - term: "How is the project going"
+    ipa: "/haʊ ɪz ðə ˈprɑːdʒekt ˈɡoʊɪŋ/"
+    meaning_vi: "dự án đang thế nào rồi"
+    chunk: "How is the project going on your side?"
+    tags: [restaurant, smalltalk]
+  - term: "Have you been to"
+    ipa: "/hæv juː biːn tuː/"
+    meaning_vi: "anh chị đã tới ... chưa"
+    chunk: "Have you been to Da Nang before?"
+    tags: [restaurant, smalltalk]
+  - term: "Let me get this"
+    ipa: "/let miː ɡet ðɪs/"
+    meaning_vi: "để tôi trả (khi giành hoá đơn)"
+    chunk: "Please, let me get this."
+    tags: [restaurant, business]
+  - term: "Shall we"
+    ipa: "/ʃæl wiː/"
+    meaning_vi: "mình cùng ... nhé (đề nghị nhẹ nhàng)"
+    chunk: "Shall we order some starters?"
+    tags: [restaurant, business]
+
+sentence_patterns:
+  - pattern: "Would you like to join us for {meal} on {day}?"
+    meaning_vi: "{day} anh chị dùng {meal} với chúng tôi nhé?"
+    slots:
+      meal: ["dinner", "lunch"]
+      day: ["Thursday", "Friday", "Saturday"]
+  - pattern: "Have you been to {place} before?"
+    meaning_vi: "Anh chị đã tới {place} bao giờ chưa?"
+    slots:
+      place: ["Hanoi", "Da Nang", "Vietnam"]
+
+dialogue:
+  context_vi: >
+    Đối tác từ Singapore sang làm việc ba ngày. Tối thứ Năm bạn được giao mời họ đi ăn.
+    Đây không phải bữa xã giao suông — phần lớn quyết định hợp tác được nói ở bàn ăn
+    chứ không phải trong phòng họp.
+  turns:
+    - speaker: "You"
+      en: "Would you like to join us for dinner on Thursday? It's my treat."
+      vi: "Thứ Năm anh dùng bữa tối với chúng tôi nhé? Tôi mời ạ."
+    - speaker: "Partner"
+      en: "That sounds great. What time works for you?"
+      vi: "Nghe hay đấy. Mấy giờ thì tiện cho anh?"
+    - speaker: "You"
+      en: "Seven o'clock? There's a good Vietnamese place near your hotel."
+      vi: "Bảy giờ nhé? Có một quán Việt ngon gần khách sạn của anh."
+    - speaker: "Partner"
+      en: "Perfect. I've never had proper Vietnamese food before."
+      vi: "Tuyệt. Tôi chưa từng ăn món Việt đúng kiểu bao giờ."
+    - speaker: "You"
+      en: "Then shall we order a few dishes to share?"
+      vi: "Vậy mình gọi vài món để chia nhau nhé?"
+    - speaker: "Partner"
+      en: "I'd like that. And how is the project going on your side?"
+      vi: "Được đấy. À, bên anh dự án đang thế nào rồi?"
+
+listening:
+  context_vi: >
+    Nghe hai người kết thúc bữa ăn công việc. Chú ý đoạn giành trả tiền — cách từ chối
+    và cách nhận lời mời đều có công thức riêng.
+  speed: 0.9
+  voice: en_US_female
+  transcript_en: "Could we get the bill, please? Let me get this. No, please, you came all this way. It's my treat. That's very kind. Thank you for dinner. My pleasure. Shall we do this again next quarter?"
+  transcript_vi: "Cho xin hoá đơn ạ. Để tôi trả. Không, anh bay xa đến đây mà. Tôi mời ạ. Anh chu đáo quá. Cảm ơn anh về bữa tối. Hân hạnh ạ. Quý sau mình lại gặp nhau thế này nhé?"
+  questions:
+    - kind: mcq_listen
+      prompt_vi: "Cuối cùng ai trả tiền?"
+      choices: ["Người chủ nhà mời", "Người khách", "Chia đôi"]
+      answer: 0
+      difficulty: 2
+      skill: Listening
+    - kind: mcq_listen
+      prompt_vi: "Câu cuối cùng đề nghị điều gì?"
+      choices: ["Gửi hoá đơn qua email", "Gặp lại vào quý sau", "Đổi sang quán khác"]
+      answer: 1
+      difficulty: 1
+      skill: Listening
+
+speaking_drills:
+  - kind: read_aloud
+    expected_text: "Would you like to join us for dinner on Thursday?"
+    prompt_vi: "Lời mời. Chữ Thursday bắt đầu bằng /θ/, lưỡi phải chạm giữa hai hàm răng."
+    ipa: "/wʊd juː laɪk tə dʒɔɪn ʌs fər ˈdɪnər ɑːn ˈθɜːrzdeɪ/"
+    focus_phonemes: ["θ", "dʒ"]
+  - kind: read_aloud
+    expected_text: "Shall we order a few dishes to share?"
+    prompt_vi: "Đề nghị nhẹ. Chữ shall mở đầu bằng /ʃ/, môi hơi chu ra."
+    ipa: "/ʃæl wiː ˈɔːrdər ə fjuː ˈdɪʃɪz tə ʃer/"
+    focus_phonemes: ["ʃ", "ɔːr"]
+  - kind: shadow
+    expected_text: "Have you been to Vietnam before?"
+    prompt_vi: "Gợi chuyện. Cụm have you been đọc lướt thành /həv-jə-bɪn/."
+    ipa: "/hæv juː biːn tə ˌviːetˈnɑːm bɪˈfɔːr/"
+    focus_phonemes: ["h", "b"]
+  - kind: shadow
+    expected_text: "Please, let me get this."
+    prompt_vi: "Giành trả tiền. Nhấn vào chữ me để làm rõ ý mình mời."
+    ipa: "/pliːz let miː ɡet ðɪs/"
+    focus_phonemes: ["l", "ð"]
+  - kind: respond
+    prompt_en: "How is the project going on your side?"
+    prompt_vi: "Đối tác hỏi thăm dự án bên bạn. Trả lời ngắn kèm một chi tiết cụ thể."
+    accept_patterns:
+      - "going well"
+      - "on track"
+      - "a bit behind"
+      - "we finished"
+      - "we are"
+
+reading:
+  kind: email
+  context_vi: >
+    Email xác nhận bữa tối do trợ lý bên đối tác gửi. Đọc để biết mình phải xác nhận
+    lại điều gì trước khi đi.
+  text_en: |
+    Subject: Dinner on Thursday — confirmation
+
+    Hi Hoa,
+
+    Thank you for the invitation. Mr Tan is happy to join you for
+    dinner on Thursday at 19:00.
+
+    Two notes before you book:
+    - Mr Tan does not eat pork.
+    - He would prefer a quiet table, as we may discuss the contract.
+
+    Could you confirm the restaurant name and address by Wednesday noon?
+
+    Best regards,
+    Elaine
+  text_vi: |
+    Tiêu đề: Bữa tối thứ Năm — xác nhận
+
+    Chào Hoa,
+
+    Cảm ơn anh đã mời. Ông Tan rất vui được dùng bữa tối cùng anh
+    vào thứ Năm lúc 19:00.
+
+    Hai lưu ý trước khi anh đặt bàn:
+    - Ông Tan không ăn thịt heo.
+    - Ông muốn bàn yên tĩnh vì có thể sẽ bàn về hợp đồng.
+
+    Anh xác nhận giúp tên và địa chỉ nhà hàng trước trưa thứ Tư nhé?
+
+    Trân trọng,
+    Elaine
+  questions:
+    - kind: mcq_read
+      prompt_en: "What must you confirm, and by when?"
+      choices: ["The restaurant details by Wednesday noon", "The guest list by Thursday", "The menu by Wednesday evening"]
+      answer: 0
+      difficulty: 2
+      reading_skill: detail
+      skill: Reading
+    - kind: mcq_read
+      prompt_en: "Why does Mr Tan want a quiet table?"
+      choices: ["He does not like music", "He is tired after the flight", "They may discuss the contract"]
+      answer: 2
+      difficulty: 2
+      reading_skill: detail
+      skill: Reading
+
+writing:
+  kind: GuidedEmail
+  prompt_vi: >
+    Viết email trả lời Elaine: xác nhận tên nhà hàng, ghi rõ đã báo bếp không dùng
+    thịt heo, và nói bàn đã đặt ở khu yên tĩnh.
+  prompt_en: "Reply to Elaine confirming the restaurant, the no-pork note, and the quiet table."
+  required_points:
+    - "19:00"
+    - "does not eat pork"
+    - "quiet"
+  hint_vi: "Mở bằng Thanks for confirming. Mỗi lưu ý một dòng để người đọc lướt là thấy."
+  sample_en: |
+    Subject: Re: Dinner on Thursday — confirmation
+
+    Hi Elaine,
+
+    Thanks for confirming. Thursday at 19:00 works for us.
+
+    We have booked Sen Restaurant, 12 Ly Thuong Kiet, District 1.
+    I have told the kitchen that Mr Tan does not eat pork, and they
+    will prepare his dishes accordingly.
+
+    I have also reserved a table in the quiet area at the back, so we
+    can talk about the contract comfortably.
+
+    See you on Thursday.
+
+    Best regards,
+    Hoa
+
+quiz:
+  - kind: mcq
+    prompt_vi: "Mời đối tác đi ăn tối thì nói gì cho đúng mực?"
+    choices: ["You come eat with me tonight", "Would you like to join us for dinner?", "Do you want eat dinner?"]
+    answer: 1
+    difficulty: 2
+    skill: Speaking
+  - kind: mcq
+    prompt_vi: "\"It's my treat\" nghĩa là gì?"
+    choices: ["Tôi mời, tôi trả tiền", "Đây là món tráng miệng của tôi", "Đây là thói quen của tôi"]
+    answer: 0
+    difficulty: 1
+    skill: Reading
+  - kind: mcq
+    prompt_vi: "Muốn đề nghị gọi vài món chia nhau thì nói gì?"
+    choices: ["We must order many dish", "You choose food for us", "Shall we order a few dishes to share?"]
+    answer: 2
+    difficulty: 2
+    skill: Speaking
+  - kind: mcq
+    prompt_vi: "Câu gợi chuyện an toàn nhất trên bàn ăn công việc là gì?"
+    choices: ["Have you been to Vietnam before?", "How much do you earn?", "Why is your company so slow?"]
+    answer: 0
+    difficulty: 1
+    skill: Speaking
+
+explanation:
+  why_vi: >
+    Bữa ăn công việc là nơi quan hệ được xây, và người Việt thường mạnh ở khoản hiếu
+    khách nhưng yếu ở khoản diễn đạt. Mời bằng câu cụt hoặc gợi chuyện bằng câu hỏi
+    quá riêng tư là hai cách nhanh nhất làm không khí chùng xuống.
+  how_vi: >
+    Lời mời cần đủ ba thông tin trong một câu: việc gì, ngày nào, ai trả. Would you
+    like to join us for dinner on Thursday? It's my treat. Trên bàn ăn thì chọn câu
+    hỏi mở về nơi chốn và công việc, tránh tiền lương, tuổi tác và gia đình.
+  contrast_vi: >
+    "Shall we" là đề nghị làm cùng nhau, nghe rất lịch sự và hợp bàn ăn công việc.
+    "Let's" thân mật hơn, hợp với bạn bè. "We should" nghe như đang khuyên bảo,
+    dễ bị hiểu là áp đặt.
+
+common_mistakes:
+  - mistake: "Hỏi \"How old are you?\" hoặc \"Are you married?\" để gợi chuyện"
+    why_vi: >
+      Ở Việt Nam hai câu này là cách làm quen bình thường và còn thể hiện quan tâm.
+      Trong bối cảnh công việc quốc tế, đây là câu hỏi riêng tư và ở một số nước còn
+      là câu hỏi không được phép đặt ra.
+    fix_vi: "Đổi sang chủ đề trung tính: nơi đã đi qua, món ăn, dự án, chuyến bay."
+  - mistake: "Giành trả tiền bằng cách giật hoá đơn"
+    why_vi: >
+      Người Việt coi hành động này là nhiệt tình. Ở bàn ăn công việc quốc tế thì việc
+      giằng co làm cả hai bên khó xử, nhất là khi khách đã định trả để giữ thế cân bằng.
+    fix_vi: "Nói trước từ lúc mời: \"It's my treat.\" Đến cuối bữa chỉ cần nhắc \"Let me get this.\""
+  - mistake: "Đọc \"Thursday\" thành /ˈtɜːzdeɪ/ giống Tuesday"
+    why_vi: >
+      Tiếng Việt không có âm /θ/ nên người học thay bằng /t/, và hai ngày trong tuần
+      trở nên giống nhau. Đặt nhầm ngày một bữa ăn công việc là lỗi tốn kém.
+    fix_vi: "Đặt đầu lưỡi giữa hai hàm răng rồi thổi nhẹ: /ˈθɜːrzdeɪ/. Nói chậm lại một nhịp ở đầu từ."
+
+memory_trick_vi: >
+  Lời mời công việc gói trong một câu ba phần: VIỆC "join us for dinner",
+  NGÀY "on Thursday", TIỀN "It's my treat". Thiếu phần ba là khách phải đoán,
+  và đoán sai làm cuối bữa lúng túng.

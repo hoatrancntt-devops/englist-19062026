@@ -1,0 +1,278 @@
+schema_version: 1
+code: HOBBY-07
+slug: ke-mot-trai-nghiem-dang-nho
+title_vi: "Kể một trải nghiệm đáng nhớ"
+title_en: "Telling a short story about something that happened"
+
+layer: Life
+track: Hobbies
+level: A2
+unit_code: U-H2
+order_index: 7
+estimated_minutes: 12
+
+illustration: coffee-chat
+
+objective_vi: >
+  Kể lại một chuyện đã xảy ra theo trình tự có mở đầu, diễn biến và kết thúc —
+  kỹ năng khiến người nghe ở lại thay vì gật đầu cho qua.
+
+objective_observable: >
+  Kể được một câu chuyện ba câu dùng đúng thì quá khứ trong 3 trên 4 drill, và
+  sắp đúng thứ tự các câu của một chuyện kể.
+
+mastery_weights:
+  Listening: 0.25
+  Speaking: 0.35
+  Reading: 0.20
+  Writing: 0.20
+
+prerequisites:
+  - lesson: HOBBY-06
+    min_mastery: 60
+    kind: Hard
+
+vocabulary:
+  - term: "A few years ago"
+    ipa: "/ə fjuː jɪrz əˈɡoʊ/"
+    meaning_vi: "cách đây vài năm (mở đầu chuyện kể)"
+    chunk: "A few years ago, I went to Sapa."
+    tags: [hobbies, story]
+  - term: "At first"
+    ipa: "/æt fɜːrst/"
+    meaning_vi: "lúc đầu thì"
+    chunk: "At first, I didn't want to go."
+    tags: [hobbies, story]
+  - term: "Then suddenly"
+    ipa: "/ðen ˈsʌdnli/"
+    meaning_vi: "rồi bỗng nhiên"
+    chunk: "Then suddenly it started raining."
+    tags: [hobbies, story]
+  - term: "In the end"
+    ipa: "/ɪn ði end/"
+    meaning_vi: "cuối cùng thì"
+    chunk: "In the end, we made it."
+    tags: [hobbies, story]
+  - term: "It turned out"
+    ipa: "/ɪt tɜːrnd aʊt/"
+    meaning_vi: "hoá ra là"
+    chunk: "It turned out to be the best part."
+    tags: [hobbies, story]
+  - term: "I'll never forget"
+    ipa: "/aɪl ˈnevər fərˈɡet/"
+    meaning_vi: "tôi không bao giờ quên"
+    chunk: "I'll never forget that night."
+    tags: [hobbies, story]
+
+sentence_patterns:
+  - pattern: "A few years ago, I {past_action}."
+    meaning_vi: "Cách đây vài năm, tôi {past_action}."
+    slots:
+      past_action: ["went to Sapa", "learned to swim", "changed jobs"]
+  - pattern: "It turned out {result}."
+    meaning_vi: "Hoá ra {result}."
+    slots:
+      result: ["to be the best part", "we were on the wrong bus", "nobody minded"]
+
+dialogue:
+  context_vi: >
+    Bữa trưa với nhóm đồng nghiệp quốc tế. Ai cũng kể một chuyện của mình. Đến lượt
+    bạn — chuyện không cần hay, chỉ cần có mở đầu, có khúc quanh và có kết.
+  turns:
+    - speaker: "Colleague"
+      en: "Have you ever travelled somewhere really different?"
+      vi: "Cậu từng đi chỗ nào thật sự khác lạ chưa?"
+    - speaker: "You"
+      en: "A few years ago, I went to Sapa with two friends."
+      vi: "Cách đây vài năm mình đi Sa Pa với hai người bạn."
+    - speaker: "Colleague"
+      en: "How was it?"
+      vi: "Thế nào?"
+    - speaker: "You"
+      en: "At first it was fine, but then suddenly the fog came in and we lost the trail."
+      vi: "Lúc đầu ổn, nhưng rồi bỗng nhiên sương mù kéo tới và bọn mình lạc đường."
+    - speaker: "Colleague"
+      en: "That sounds scary. What did you do?"
+      vi: "Nghe đáng sợ đấy. Rồi các cậu làm gì?"
+    - speaker: "You"
+      en: "We followed a farmer down to his village. It turned out to be the best part of the trip."
+      vi: "Bọn mình theo một bác nông dân xuống bản. Hoá ra đó lại là phần hay nhất chuyến đi."
+    - speaker: "Colleague"
+      en: "What a story."
+      vi: "Chuyện hay thật."
+
+listening:
+  context_vi: >
+    Nghe một người kể chuyện ngắn. Chú ý bốn từ nối đánh dấu các khúc: mở đầu,
+    lúc đầu, bỗng nhiên, cuối cùng.
+  speed: 0.9
+  voice: en_US_female
+  transcript_en: "A few years ago I moved to Da Nang for a new job. At first I knew nobody there and it felt lonely. Then suddenly my neighbour invited me to a family dinner. In the end I stayed four years. I'll never forget that first dinner."
+  transcript_vi: "Cách đây vài năm mình chuyển vào Đà Nẵng nhận việc mới. Lúc đầu chẳng quen ai và thấy cô đơn. Rồi bỗng nhiên bác hàng xóm mời mình ăn cơm gia đình. Cuối cùng mình ở lại bốn năm. Mình không bao giờ quên bữa cơm đầu tiên đó."
+  questions:
+    - kind: mcq_listen
+      prompt_vi: "Vì sao người kể chuyển tới Đà Nẵng?"
+      choices: ["Vì công việc mới", "Vì gia đình ở đó", "Vì đi du lịch"]
+      answer: 0
+      difficulty: 1
+      skill: Listening
+    - kind: mcq_listen
+      prompt_vi: "Điều gì làm mọi thứ thay đổi?"
+      choices: ["Người kể đổi việc lần nữa", "Hàng xóm mời ăn cơm gia đình", "Người kể tìm được nhà mới"]
+      answer: 1
+      difficulty: 2
+      skill: Listening
+
+speaking_drills:
+  - kind: read_aloud
+    expected_text: "A few years ago, I went to Sapa with two friends."
+    prompt_vi: "Mở đầu chuyện kể. Ngắt một nhịp sau ago để người nghe biết chuyện bắt đầu."
+    ipa: "/ə fjuː jɪrz əˈɡoʊ aɪ went tə ˈsɑːpɑː wɪð tuː frendz/"
+    focus_phonemes: ["j", "oʊ"]
+  - kind: read_aloud
+    expected_text: "At first it was fine, but then suddenly the fog came in."
+    prompt_vi: "Khúc quanh. Nhấn vào suddenly để người nghe biết chuyện sắp đổi hướng."
+    ipa: "/æt fɜːrst ɪt wʌz faɪn bʌt ðen ˈsʌdnli ðə fɑːɡ keɪm ɪn/"
+    focus_phonemes: ["s", "ð"]
+  - kind: shadow
+    expected_text: "It turned out to be the best part of the trip."
+    prompt_vi: "Câu kết bất ngờ. Cụm turned out nối liền thành /tɜːrn-daʊt/."
+    ipa: "/ɪt tɜːrnd aʊt tə biː ðə best pɑːrt ʌv ðə trɪp/"
+    focus_phonemes: ["ɜːr", "aʊ"]
+  - kind: shadow
+    expected_text: "I'll never forget that night."
+    prompt_vi: "Câu đóng chuyện. Chữ forget nhấn ở âm tiết thứ hai."
+    ipa: "/aɪl ˈnevər fərˈɡet ðæt naɪt/"
+    focus_phonemes: ["f", "aɪ"]
+  - kind: respond
+    prompt_en: "Have you ever travelled somewhere really different?"
+    prompt_vi: "Đồng nghiệp mời bạn kể chuyện. Bắt đầu bằng một mốc thời gian trong quá khứ."
+    accept_patterns:
+      - "A few years ago"
+      - "Last year"
+      - "I went"
+      - "When I was"
+
+reading:
+  kind: chat
+  context_vi: >
+    Một bài đăng ngắn trong nhóm du lịch. Đọc để thấy một chuyện kể tốt được xếp
+    theo thứ tự nào, vì bạn sẽ dùng đúng khung đó khi kể chuyện của mình.
+  text_en: |
+    My worst and best travel day
+
+    Last summer I took the night bus to Ha Giang. At first everything
+    was fine, and I even slept a little.
+
+    Then suddenly, at four in the morning, the bus stopped. A tyre had
+    burst and we were two hours from anywhere.
+
+    A woman on the bus called her brother, who came with his truck and
+    drove eight of us to the next town.
+
+    In the end we arrived six hours late, but we had breakfast together
+    at a tiny roadside place. It turned out to be the best meal of the trip.
+  text_vi: |
+    Ngày tệ nhất và cũng đẹp nhất chuyến đi
+
+    Hè năm ngoái mình đi xe đêm lên Hà Giang. Lúc đầu mọi thứ ổn cả,
+    mình còn ngủ được một chút.
+
+    Rồi bỗng nhiên, bốn giờ sáng, xe dừng lại. Xe nổ lốp và chỗ đó
+    cách khu dân cư gần nhất hai tiếng.
+
+    Một chị trên xe gọi cho anh trai, anh ấy lái xe tải tới chở tám
+    người bọn mình ra thị trấn kế tiếp.
+
+    Cuối cùng bọn mình tới muộn sáu tiếng, nhưng cả nhóm ăn sáng cùng
+    nhau ở một quán ven đường bé xíu. Hoá ra đó lại là bữa ngon nhất chuyến đi.
+  questions:
+    - kind: mcq_read
+      prompt_en: "Why did the bus stop?"
+      choices: ["The driver was tired", "There was a police check", "A tyre had burst"]
+      answer: 2
+      difficulty: 1
+      reading_skill: scan
+      skill: Reading
+    - kind: mcq_read
+      prompt_en: "What makes the last paragraph a good ending?"
+      choices: ["It turns the bad day into something good", "It explains the ticket price", "It lists everyone's names"]
+      answer: 0
+      difficulty: 2
+      reading_skill: skim
+      skill: Reading
+
+writing:
+  kind: Reorder
+  prompt_vi: >
+    Sắp bốn câu sau thành một chuyện kể đúng thứ tự: mở đầu, lúc đầu, khúc quanh,
+    kết thúc.
+  prompt_en: "Sắp xếp: Then suddenly one member asked me to join a ten-kilometre race. / In the end I finished it, and I'll never forget that morning. / A few years ago, I joined a running club. / At first I could only run two kilometres."
+  correct_order:
+    - "A few years ago, I joined a running club."
+    - "At first I could only run two kilometres."
+    - "Then suddenly one member asked me to join a ten-kilometre race."
+    - "In the end I finished it, and I'll never forget that morning."
+  hint_vi: "Tìm bốn từ nối ở đầu mỗi câu. Chúng đã cho sẵn thứ tự."
+  sample_en: "A few years ago, I joined a running club. At first I could only run two kilometres. Then suddenly one member asked me to join a ten-kilometre race. In the end I finished it, and I'll never forget that morning."
+
+quiz:
+  - kind: mcq
+    prompt_vi: "\"It turned out to be the best part\" nghĩa là gì?"
+    choices: ["Nó quay lại phần đầu", "Hoá ra đó lại là phần hay nhất", "Nó biến thành phần khác"]
+    answer: 1
+    difficulty: 2
+    skill: Listening
+  - kind: mcq
+    prompt_vi: "Từ nối nào báo hiệu chuyện sắp đổi hướng?"
+    choices: ["At first", "In the end", "Then suddenly"]
+    answer: 2
+    difficulty: 1
+    skill: Reading
+  - kind: mcq
+    prompt_vi: "Mở đầu một chuyện kể thế nào cho tự nhiên?"
+    choices: ["A few years ago, I went to Sapa", "I want tell you one story", "Now I say about my trip"]
+    answer: 0
+    difficulty: 2
+    skill: Speaking
+  - kind: mcq
+    prompt_vi: "Câu nào dùng đúng thì quá khứ?"
+    choices: ["Yesterday I go to the market", "Last year I moved to Da Nang", "Last week I am very busy"]
+    answer: 1
+    difficulty: 2
+    skill: Writing
+
+explanation:
+  why_vi: >
+    Kể chuyện là thứ phân biệt người nói tiếng Anh đủ dùng với người nói tiếng Anh
+    dễ chịu. Người học thường có đủ từ nhưng kể lộn xộn, nhảy giữa hiện tại và quá
+    khứ, nên người nghe phải tự sắp lại và nhanh chóng mệt.
+  how_vi: >
+    Dùng bốn cái mốc cố định làm khung: A few years ago mở đầu, At first dựng bối
+    cảnh, Then suddenly tạo khúc quanh, In the end đóng lại. Chọn khung này rồi thì
+    chỉ cần điền nội dung, và toàn bộ câu chuyện tự có hình dạng.
+  contrast_vi: >
+    "In the end" là cuối cùng, sau tất cả mọi chuyện. "At the end" là ở cuối một
+    thứ cụ thể, như at the end of the film. Người học dùng lẫn hai cụm này nhiều
+    nhất trong tất cả các cặp giới từ.
+
+common_mistakes:
+  - mistake: "Kể chuyện quá khứ nhưng dùng thì hiện tại"
+    why_vi: >
+      Tiếng Việt không chia động từ theo thì, chỉ thêm từ đã hoặc rồi. Người học đã
+      đặt mốc thời gian ở đầu câu nên nghĩ là đủ, và các động từ sau đó vẫn ở hiện tại.
+    fix_vi: "Sau khi nói mốc quá khứ, kiểm tra mọi động từ chính: go thành went, is thành was."
+  - mistake: "Kể liền một mạch không có từ nối"
+    why_vi: >
+      Người học tập trung vào từ vựng nên bỏ qua các từ nối, tưởng chúng chỉ là đệm.
+      Nhưng từ nối là thứ báo cho người nghe biết chuyện đang ở khúc nào.
+    fix_vi: "Bắt buộc dùng đủ bốn mốc: A few years ago, At first, Then suddenly, In the end."
+  - mistake: "Đọc \"turned out\" tách rời thành hai từ riêng"
+    why_vi: >
+      Người học đọc theo mặt chữ nên ngắt giữa hai từ. Người bản xứ nối phụ âm cuối
+      của từ trước vào nguyên âm đầu của từ sau, thành một cụm liền.
+    fix_vi: "Nối lại thành /tɜːrn-daʊt/, chữ d nhảy sang làm âm đầu của từ sau."
+
+memory_trick_vi: >
+  Mọi chuyện kể đều lắp vừa bốn cái khung: MỞ A few years ago, DỰNG At first,
+  QUẶT Then suddenly, ĐÓNG In the end. Có khung rồi thì chỉ còn việc điền vào.

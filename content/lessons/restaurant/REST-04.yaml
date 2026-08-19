@@ -1,0 +1,259 @@
+schema_version: 1
+code: REST-04
+slug: quan-ca-phe-va-do-uong-mang-di
+title_vi: "Quán cà phê và đồ uống mang đi"
+title_en: "Coffee shops and takeaway drinks"
+
+layer: Life
+track: Restaurant
+level: A1
+unit_code: U-R2
+order_index: 4
+estimated_minutes: 11
+
+illustration: coffee-chat
+
+objective_vi: >
+  Gọi đồ uống ở quầy, chọn cỡ, và trả lời câu hỏi uống tại chỗ hay mang đi —
+  ba câu lặp lại mỗi sáng ở bất kỳ quán cà phê nào.
+
+objective_observable: >
+  Gọi được một ly đồ uống có cỡ và hình thức mang đi trong 3 trên 4 drill, và
+  đọc đúng bảng giá có ba cỡ.
+
+mastery_weights:
+  Listening: 0.30
+  Speaking: 0.35
+  Reading: 0.20
+  Writing: 0.15
+
+prerequisites:
+  - lesson: REST-03
+    min_mastery: 60
+    kind: Hard
+
+vocabulary:
+  - term: "to go"
+    ipa: "/tə ɡoʊ/"
+    meaning_vi: "mang đi (không ngồi lại quán)"
+    chunk: "One latte to go, please."
+    tags: [cafe, drink]
+  - term: "for here"
+    ipa: "/fər hɪr/"
+    meaning_vi: "uống tại quán"
+    chunk: "For here, please."
+    tags: [cafe, drink]
+  - term: "regular"
+    ipa: "/ˈreɡjələr/"
+    meaning_vi: "cỡ vừa, cỡ thường"
+    chunk: "A regular, please."
+    tags: [cafe, size]
+  - term: "iced"
+    ipa: "/aɪst/"
+    meaning_vi: "đá, lạnh"
+    chunk: "An iced coffee, please."
+    tags: [cafe, drink]
+  - term: "no sugar"
+    ipa: "/noʊ ˈʃʊɡər/"
+    meaning_vi: "không đường"
+    chunk: "No sugar, thanks."
+    tags: [cafe, drink]
+  - term: "Anything else"
+    ipa: "/ˈeniθɪŋ els/"
+    meaning_vi: "còn gì nữa không ạ"
+    chunk: "Anything else for you?"
+    tags: [cafe, service]
+
+sentence_patterns:
+  - pattern: "Can I get a {size} {drink}, please?"
+    meaning_vi: "Cho tôi một {drink} cỡ {size}."
+    slots:
+      size: ["small", "regular", "large"]
+      drink: ["coffee", "latte", "tea"]
+  - pattern: "{place}, please."
+    meaning_vi: "{place} ạ."
+    slots:
+      place: ["To go", "For here"]
+
+dialogue:
+  context_vi: >
+    Bảy giờ sáng, bạn ghé quán trước khi vào công ty. Hàng người xếp phía sau,
+    nên nhân viên hỏi rất nhanh và gọn. Biết trước ba câu hỏi thì không bị khựng.
+  turns:
+    - speaker: "Barista"
+      en: "Hi, what can I get you?"
+      vi: "Chào anh, anh dùng gì ạ?"
+    - speaker: "You"
+      en: "Can I get a regular iced coffee, please?"
+      vi: "Cho tôi một cà phê đá cỡ vừa ạ."
+    - speaker: "Barista"
+      en: "Sure. For here or to go?"
+      vi: "Vâng ạ. Anh uống tại quán hay mang đi ạ?"
+    - speaker: "You"
+      en: "To go, please. And no sugar."
+      vi: "Mang đi ạ. Và không đường."
+    - speaker: "Barista"
+      en: "Got it. Anything else for you?"
+      vi: "Vâng ạ. Anh còn dùng gì nữa không ạ?"
+    - speaker: "You"
+      en: "That's all, thanks."
+      vi: "Vậy thôi ạ, cảm ơn."
+
+listening:
+  context_vi: >
+    Nghe một lượt gọi đồ uống ở quầy. Chú ý câu nhân viên hỏi ngay sau khi bạn
+    gọi món — đó là câu quyết định họ rót vào ly giấy hay ly sứ.
+  speed: 0.9
+  voice: en_US_female
+  transcript_en: "Hi, what can I get you? Can I get a large latte, please? For here or to go? To go, please. Anything else for you? No, that's all. That's four fifty."
+  transcript_vi: "Chào anh, anh dùng gì ạ? Cho tôi một latte cỡ lớn ạ. Uống tại quán hay mang đi ạ? Mang đi ạ. Anh dùng gì nữa không ạ? Không, vậy thôi ạ. Của anh bốn đồng năm mươi ạ."
+  questions:
+    - kind: mcq_listen
+      prompt_vi: "Khách gọi cỡ nào?"
+      choices: ["Cỡ nhỏ", "Cỡ vừa", "Cỡ lớn"]
+      answer: 2
+      difficulty: 1
+      skill: Listening
+    - kind: mcq_listen
+      prompt_vi: "Khách uống tại quán hay mang đi?"
+      choices: ["Mang đi", "Uống tại quán", "Chưa quyết định"]
+      answer: 0
+      difficulty: 1
+      skill: Listening
+
+speaking_drills:
+  - kind: read_aloud
+    expected_text: "Can I get a regular iced coffee, please?"
+    prompt_vi: "Đọc to. \"Iced\" chỉ có một âm tiết, đuôi đọc là /t/ chứ không phải /ɪd/."
+    ipa: "/kæn aɪ ɡet ə ˈreɡjələr aɪst ˈkɔːfi pliːz/"
+    focus_phonemes: ["aɪ", "t"]
+  - kind: read_aloud
+    expected_text: "To go, please."
+    prompt_vi: "Trả lời gọn. Đừng nói \"take away\" ở quán Mỹ, họ nói to go."
+    ipa: "/tə ɡoʊ pliːz/"
+    focus_phonemes: ["oʊ"]
+  - kind: shadow
+    expected_text: "No sugar, thanks."
+    prompt_vi: "Chữ sugar bắt đầu bằng âm /ʃ/ như chữ s trong tiếng Việt kéo dài, không phải /s/."
+    ipa: "/noʊ ˈʃʊɡər θæŋks/"
+    focus_phonemes: ["ʃ", "θ"]
+  - kind: shadow
+    expected_text: "That's all, thanks."
+    prompt_vi: "Câu kết thúc lượt gọi. Âm /l/ cuối phải chạm lưỡi lên lợi trên."
+    ipa: "/ðæts ɔːl θæŋks/"
+    focus_phonemes: ["l", "ð"]
+  - kind: respond
+    prompt_en: "For here or to go?"
+    prompt_vi: "Nhân viên hỏi uống tại quán hay mang đi. Chọn một và trả lời."
+    accept_patterns:
+      - "To go"
+      - "For here"
+      - "Here"
+
+reading:
+  kind: note
+  context_vi: >
+    Bảng giá treo trên quầy. Đọc để biết cỡ nào giá nào và quán có tính thêm gì không.
+  text_en: |
+    MORNING BREW — DRINKS
+
+    Coffee        small 3.00   regular 3.50   large 4.00
+    Latte         small 3.50   regular 4.00   large 4.50
+    Tea           any size 2.50
+
+    Oat milk +0.60
+    Free refill for here only.
+  text_vi: |
+    MORNING BREW — ĐỒ UỐNG
+
+    Cà phê        nhỏ 3.00   vừa 3.50   lớn 4.00
+    Latte         nhỏ 3.50   vừa 4.00   lớn 4.50
+    Trà           mọi cỡ 2.50
+
+    Sữa yến mạch +0.60
+    Miễn phí rót thêm, chỉ khi uống tại quán.
+  questions:
+    - kind: mcq_read
+      prompt_en: "How much is a large latte?"
+      choices: ["4.00", "4.50", "3.50"]
+      answer: 1
+      difficulty: 1
+      reading_skill: scan
+      skill: Reading
+    - kind: mcq_read
+      prompt_en: "Who can get a free refill?"
+      choices: ["Everyone", "Only large size", "Only people staying in the shop"]
+      answer: 2
+      difficulty: 2
+      reading_skill: scan
+      skill: Reading
+
+writing:
+  kind: FillBlank
+  prompt_vi: "Điền hai chỗ trống: cỡ đồ uống và hình thức mang đi."
+  prompt_en: "Can I get a ___ iced coffee, please? ___ go, please."
+  blanks:
+    - ["regular", "large", "small"]
+    - ["To", "to"]
+  hint_vi: "Chỗ đầu là một trong ba cỡ. Chỗ sau ghép với chữ go thành cụm nghĩa là mang đi."
+  sample_en: "Can I get a regular iced coffee, please? To go, please."
+
+quiz:
+  - kind: mcq
+    prompt_vi: "Muốn mang đồ uống đi thì nói gì?"
+    choices: ["To go, please", "Outside, please", "Bring away, please"]
+    answer: 0
+    difficulty: 1
+    skill: Speaking
+  - kind: mcq
+    prompt_vi: "\"Regular\" trong quán cà phê nghĩa là gì?"
+    choices: ["Cỡ nhỏ", "Cỡ vừa", "Loại thường ngày"]
+    answer: 1
+    difficulty: 2
+    skill: Reading
+  - kind: mcq
+    prompt_vi: "Nhân viên hỏi \"Anything else for you?\" thì nghĩa là gì?"
+    choices: ["Anh trả bằng gì", "Anh tên gì", "Anh còn dùng gì nữa không"]
+    answer: 2
+    difficulty: 1
+    skill: Listening
+  - kind: mcq
+    prompt_vi: "Muốn cà phê không đường thì nói gì?"
+    choices: ["No sugar, thanks", "Sugar no have", "Not sugar inside"]
+    answer: 0
+    difficulty: 1
+    skill: Speaking
+
+explanation:
+  why_vi: >
+    Lượt gọi ở quán cà phê ngắn nhưng nhanh, và nhân viên hỏi đúng ba câu mỗi lần:
+    dùng gì, tại quán hay mang đi, còn gì nữa không. Người học nghe hụt một câu là
+    cả hàng phía sau phải chờ, nên áp lực lớn hơn hẳn so với ngồi ăn ở nhà hàng.
+  how_vi: >
+    Gói lượt gọi thành một câu duy nhất theo thứ tự cỡ rồi tên đồ uống:
+    Can I get a regular iced coffee. Sau đó chỉ cần hai từ cho câu hỏi thứ hai,
+    và một câu That's all cho câu hỏi thứ ba.
+  contrast_vi: >
+    "To go" dùng ở Mỹ, "takeaway" dùng ở Anh và Úc. Cả hai đều được hiểu, nhưng
+    dùng đúng từ địa phương thì nhân viên không phải hỏi lại.
+
+common_mistakes:
+  - mistake: "Nói \"I want a coffee\" khi gọi đồ uống"
+    why_vi: >
+      Tiếng Việt nói tôi muốn một ly cà phê là bình thường, nên người học dịch thẳng.
+      Trong tiếng Anh câu này nghe như ra lệnh, đặc biệt khi nói với người phục vụ.
+    fix_vi: "Đổi thành \"Can I get a coffee, please?\" hoặc \"I'll have a coffee, please.\""
+  - mistake: "Đọc \"iced\" thành hai âm tiết là /ˈaɪsɪd/"
+    why_vi: >
+      Người học thấy đuôi ed nên tự thêm một âm tiết. Đuôi ed sau âm /s/ chỉ đọc là
+      /t/ và dính liền vào từ, không tách ra.
+    fix_vi: "Đọc liền một hơi /aɪst/, giống như từ ice thêm một tiếng t gọn ở cuối."
+  - mistake: "Trả lời \"Yes\" cho câu \"For here or to go?\""
+    why_vi: >
+      Câu này là câu hỏi lựa chọn chứ không phải câu hỏi có không, nhưng ngữ điệu
+      cuối câu đi lên khiến người học tưởng là câu hỏi yes no.
+    fix_vi: "Nghe thấy chữ \"or\" ở giữa thì phải chọn một trong hai vế, không trả lời yes hay no."
+
+memory_trick_vi: >
+  Một lượt gọi cà phê chỉ có ba nhịp: GỌI "Can I get a regular iced coffee",
+  CHỌN "To go", CHỐT "That's all, thanks". Ba nhịp này dùng được ở mọi quán.

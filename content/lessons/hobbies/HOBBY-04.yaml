@@ -1,0 +1,266 @@
+schema_version: 1
+code: HOBBY-04
+slug: the-thao-va-di-tap-gym
+title_vi: "Thể thao và đi tập gym"
+title_en: "Sports and going to the gym"
+
+layer: Life
+track: Hobbies
+level: A1
+unit_code: U-H2
+order_index: 4
+estimated_minutes: 11
+
+illustration: clock-calendar
+
+objective_vi: >
+  Nói mình chơi môn gì, rủ người khác chơi cùng, và hỏi giờ mở cửa hay giá thẻ tập —
+  những câu dùng ngay trong tuần đầu tiên đến một phòng tập mới.
+
+objective_observable: >
+  Nói được một môn mình chơi kèm tần suất trong 3 trên 4 drill, và đọc đúng một
+  bảng giá thẻ tập có hai loại.
+
+mastery_weights:
+  Listening: 0.25
+  Speaking: 0.35
+  Reading: 0.25
+  Writing: 0.15
+
+prerequisites:
+  - lesson: HOBBY-03
+    min_mastery: 60
+    kind: Hard
+
+vocabulary:
+  - term: "work out"
+    ipa: "/wɜːrk aʊt/"
+    meaning_vi: "tập thể dục, tập gym"
+    chunk: "I work out twice a week."
+    tags: [hobbies, sport]
+  - term: "play football"
+    ipa: "/pleɪ ˈfʊtbɔːl/"
+    meaning_vi: "chơi bóng đá"
+    chunk: "I play football on Sundays."
+    tags: [hobbies, sport]
+  - term: "go running"
+    ipa: "/ɡoʊ ˈrʌnɪŋ/"
+    meaning_vi: "đi chạy bộ"
+    chunk: "I go running in the morning."
+    tags: [hobbies, sport]
+  - term: "membership"
+    ipa: "/ˈmembərʃɪp/"
+    meaning_vi: "thẻ hội viên, thẻ tập"
+    chunk: "How much is a membership?"
+    tags: [hobbies, gym]
+  - term: "book a court"
+    ipa: "/bʊk ə kɔːrt/"
+    meaning_vi: "đặt sân"
+    chunk: "I'd like to book a court."
+    tags: [hobbies, sport]
+  - term: "Do you want to join"
+    ipa: "/duː juː wɑːnt tə dʒɔɪn/"
+    meaning_vi: "bạn có muốn tham gia không"
+    chunk: "Do you want to join us?"
+    tags: [hobbies, invite]
+
+sentence_patterns:
+  - pattern: "I {activity} {frequency}."
+    meaning_vi: "Tôi {activity} {frequency}."
+    slots:
+      activity: ["work out", "go running", "play football"]
+      frequency: ["twice a week", "every morning", "on Sundays"]
+  - pattern: "Do you want to join us on {day}?"
+    meaning_vi: "{day} bạn tham gia với bọn mình không?"
+    slots:
+      day: ["Saturday", "Sunday", "Friday"]
+
+dialogue:
+  context_vi: >
+    Giờ nghỉ trưa ở công ty. Một đồng nghiệp thấy bạn mang túi thể thao và bắt chuyện.
+    Đây là kiểu hội thoại mở đầu quan hệ đồng nghiệp, nên trả lời cụt là mất cơ hội.
+  turns:
+    - speaker: "Colleague"
+      en: "Nice bag. Do you work out?"
+      vi: "Túi đẹp đấy. Cậu có tập gym à?"
+    - speaker: "You"
+      en: "Yes, I work out twice a week after work."
+      vi: "Có, mình tập hai buổi một tuần sau giờ làm."
+    - speaker: "Colleague"
+      en: "Same here. I also play football on Sundays."
+      vi: "Mình cũng vậy. Chủ nhật mình còn đá bóng nữa."
+    - speaker: "You"
+      en: "Really? Do you want to join us at the gym on Friday?"
+      vi: "Thật à? Thứ Sáu cậu đi tập với bọn mình không?"
+    - speaker: "Colleague"
+      en: "Sure. What time do you usually go?"
+      vi: "Được chứ. Bọn cậu thường đi lúc mấy giờ?"
+    - speaker: "You"
+      en: "Around six thirty. The gym is open until ten."
+      vi: "Khoảng sáu rưỡi. Phòng tập mở đến mười giờ."
+
+listening:
+  context_vi: >
+    Nghe hai đồng nghiệp nói về lịch tập. Chú ý con số đi kèm sau mỗi môn — đó là
+    phần cho biết họ chơi nhiều hay ít, chứ không phải chơi môn gì.
+  speed: 0.9
+  voice: en_US_male
+  transcript_en: "Do you work out? Yes, three times a week. I also go running every morning. That's a lot. I only play badminton on Saturdays. Do you want to join us this Saturday?"
+  transcript_vi: "Cậu có tập gym không? Có, ba buổi một tuần. Sáng nào mình cũng chạy bộ nữa. Nhiều thế. Mình chỉ đánh cầu lông thứ Bảy thôi. Thứ Bảy này cậu tham gia với bọn mình không?"
+  questions:
+    - kind: mcq_listen
+      prompt_vi: "Người thứ nhất tập gym mấy buổi một tuần?"
+      choices: ["Hai buổi", "Ba buổi", "Bốn buổi"]
+      answer: 1
+      difficulty: 1
+      skill: Listening
+    - kind: mcq_listen
+      prompt_vi: "Người thứ hai chơi môn gì?"
+      choices: ["Cầu lông", "Bóng đá", "Chạy bộ"]
+      answer: 0
+      difficulty: 1
+      skill: Listening
+
+speaking_drills:
+  - kind: read_aloud
+    expected_text: "I work out twice a week."
+    prompt_vi: "Đọc to. Hai chữ work out nối liền thành /wɜːr-kaʊt/, không tách rời."
+    ipa: "/aɪ wɜːrk aʊt twaɪs ə wiːk/"
+    focus_phonemes: ["ɜːr", "aʊ"]
+  - kind: read_aloud
+    expected_text: "I go running in the morning."
+    prompt_vi: "Đuôi ing đọc bằng âm /ŋ/ trong cổ họng, không thêm chữ g bật ra ở cuối."
+    ipa: "/aɪ ɡoʊ ˈrʌnɪŋ ɪn ðə ˈmɔːrnɪŋ/"
+    focus_phonemes: ["ŋ", "r"]
+  - kind: shadow
+    expected_text: "Do you want to join us?"
+    prompt_vi: "Lời rủ. Chữ join có âm /dʒ/ đầu từ, phải rung như chữ d nặng."
+    ipa: "/duː juː wɑːnt tə dʒɔɪn ʌs/"
+    focus_phonemes: ["dʒ", "ɔɪ"]
+  - kind: shadow
+    expected_text: "How much is a membership?"
+    prompt_vi: "Hỏi giá thẻ tập. Nhấn vào âm tiết đầu của membership."
+    ipa: "/haʊ mʌtʃ ɪz ə ˈmembərʃɪp/"
+    focus_phonemes: ["m", "ʃ"]
+  - kind: respond
+    prompt_en: "Do you work out?"
+    prompt_vi: "Đồng nghiệp hỏi bạn có tập không. Trả lời kèm tần suất hoặc kèm môn khác."
+    accept_patterns:
+      - "work out"
+      - "a week"
+      - "go running"
+      - "play"
+
+reading:
+  kind: note
+  context_vi: >
+    Bảng giá dán ở quầy lễ tân phòng tập. Đọc để biết nên mua thẻ tháng hay thẻ năm
+    và giờ nào được vào.
+  text_en: |
+    CITY FITNESS — MEMBERSHIP
+
+    Monthly       450,000 / month, cancel any time
+    Yearly      4,200,000 / year, two months free
+
+    Opening hours
+    Mon - Fri    05:30 - 22:00
+    Sat - Sun    07:00 - 20:00
+
+    Bring your own towel. Lockers are free.
+  text_vi: |
+    CITY FITNESS — THẺ HỘI VIÊN
+
+    Theo tháng      450.000 / tháng, huỷ lúc nào cũng được
+    Theo năm      4.200.000 / năm, tặng hai tháng
+
+    Giờ mở cửa
+    Thứ Hai - Thứ Sáu    05:30 - 22:00
+    Thứ Bảy - Chủ Nhật   07:00 - 20:00
+
+    Tự mang khăn. Tủ khoá miễn phí.
+  questions:
+    - kind: mcq_read
+      prompt_en: "You want to go at 21:00 on Sunday. Is the gym open?"
+      choices: ["Yes, until 22:00", "No, it closes at 20:00", "Only with a yearly card"]
+      answer: 1
+      difficulty: 2
+      reading_skill: detail
+      skill: Reading
+    - kind: mcq_read
+      prompt_en: "What do you have to bring yourself?"
+      choices: ["A locker", "Your own water bottle", "A towel"]
+      answer: 2
+      difficulty: 1
+      reading_skill: scan
+      skill: Reading
+
+writing:
+  kind: FillBlank
+  prompt_vi: "Điền hai chỗ trống: động từ chỉ việc tập gym và lời rủ đồng nghiệp."
+  prompt_en: "I ___ out twice a week. Do you want to ___ us on Friday?"
+  blanks:
+    - ["work"]
+    - ["join"]
+  hint_vi: "Chỗ đầu ghép với out thành cụm nghĩa là tập thể dục. Chỗ sau là động từ nghĩa là tham gia."
+  sample_en: "I work out twice a week. Do you want to join us on Friday?"
+
+quiz:
+  - kind: mcq
+    prompt_vi: "\"I work out twice a week\" nghĩa là gì?"
+    choices: ["Tôi làm việc ngoài giờ hai lần một tuần", "Tôi tập thể dục hai buổi một tuần", "Tôi ra ngoài hai lần một tuần"]
+    answer: 1
+    difficulty: 2
+    skill: Listening
+  - kind: mcq
+    prompt_vi: "Muốn đặt sân cầu lông thì nói gì?"
+    choices: ["I'd like to book a court", "I want order a field", "Please give me a place"]
+    answer: 0
+    difficulty: 2
+    skill: Speaking
+  - kind: mcq
+    prompt_vi: "Rủ đồng nghiệp đi tập cùng thì nói gì?"
+    choices: ["You go with me", "Come here Friday", "Do you want to join us?"]
+    answer: 2
+    difficulty: 1
+    skill: Speaking
+  - kind: mcq
+    prompt_vi: "\"Membership\" ở phòng tập là gì?"
+    choices: ["Thẻ hội viên", "Người hướng dẫn tập", "Buổi tập thử"]
+    answer: 0
+    difficulty: 1
+    skill: Reading
+
+explanation:
+  why_vi: >
+    Thể thao là chủ đề mở đầu quan hệ dễ nhất ở môi trường làm việc quốc tế, vì ai cũng
+    có một câu trả lời. Nhưng trả lời cụt kiểu Yes I do là hội thoại chết ngay, còn thêm
+    một chi tiết về tần suất hoặc môn khác là người kia có chỗ để nói tiếp.
+  how_vi: >
+    Ghép hai phần vào một câu: việc mình làm rồi tần suất. I work out twice a week.
+    I go running every morning. Sau đó nếu muốn kéo dài thì rủ luôn bằng
+    Do you want to join us, kèm một ngày cụ thể.
+  contrast_vi: >
+    "Play" đi với môn có bóng hoặc có đối thủ: play football, play badminton.
+    "Go" đi với môn kết thúc bằng ing: go running, go swimming. Còn "do" đi với
+    môn không thuộc hai nhóm trên: do yoga. Chọn sai động từ là lỗi nghe rõ nhất.
+
+common_mistakes:
+  - mistake: "Nói \"I play gym\" hoặc \"I play running\""
+    why_vi: >
+      Tiếng Việt dùng chung một chữ chơi cho mọi môn, nên người học chọn play cho tất cả.
+      Tiếng Anh chia ba nhóm động từ và dùng sai là người nghe khựng lại ngay.
+    fix_vi: "Nhớ theo nhóm: play + môn có bóng, go + môn đuôi ing, do + yoga hay võ."
+  - mistake: "Nói \"two times a week\" thay vì \"twice a week\""
+    why_vi: >
+      Người học đếm theo kiểu tiếng Việt là hai lần. Câu này không sai ngữ pháp nhưng
+      người bản xứ gần như luôn dùng twice cho số hai.
+    fix_vi: "Dùng once cho một lần, twice cho hai lần, từ ba trở lên mới dùng three times."
+  - mistake: "Đọc \"gym\" thành /ɡim/ với âm g cứng"
+    why_vi: >
+      Người học nhìn chữ g và đọc như tiếng Việt. Chữ g trước i và y trong tiếng Anh
+      thường đọc thành /dʒ/.
+    fix_vi: "Đọc /dʒɪm/, đầu từ giống hệt tên riêng Jim."
+
+memory_trick_vi: >
+  Một câu về thể thao luôn có hai nửa: LÀM GÌ rồi BAO NHIÊU. I work out — twice a week.
+  Muốn kéo dài hội thoại thì thêm nửa thứ ba: RỦ — Do you want to join us?

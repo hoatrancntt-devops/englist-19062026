@@ -1,0 +1,292 @@
+schema_version: 1
+code: SHOP-06
+slug: mua-hang-online-va-theo-doi-don
+title_vi: "Mua hàng online và theo dõi đơn"
+title_en: "Shopping online and tracking your order"
+
+layer: Life
+track: Shopping
+level: A2
+unit_code: U-S2
+order_index: 6
+estimated_minutes: 12
+
+illustration: email-inbox
+
+objective_vi: >
+  Đọc email xác nhận đơn, hiểu trạng thái vận chuyển, và viết thư hỏi khi đơn
+  chậm — mua online là nơi mọi giao tiếp diễn ra bằng chữ viết chứ không bằng lời.
+
+objective_observable: >
+  Hiểu đúng bốn trạng thái đơn hàng phổ biến, và viết được một email hỏi tình trạng
+  đơn có đủ mã đơn và mốc thời gian.
+
+mastery_weights:
+  Listening: 0.20
+  Speaking: 0.25
+  Reading: 0.30
+  Writing: 0.25
+
+prerequisites:
+  - lesson: SHOP-05
+    min_mastery: 60
+    kind: Hard
+
+vocabulary:
+  - term: "order number"
+    ipa: "/ˈɔːrdər ˈnʌmbər/"
+    meaning_vi: "mã đơn hàng"
+    chunk: "My order number is A2317."
+    tags: [shopping, online]
+  - term: "shipped"
+    ipa: "/ʃɪpt/"
+    meaning_vi: "đã gửi đi khỏi kho"
+    chunk: "Your order has been shipped."
+    tags: [shopping, online]
+  - term: "out for delivery"
+    ipa: "/aʊt fər dɪˈlɪvəri/"
+    meaning_vi: "shipper đang mang đi giao trong hôm nay"
+    chunk: "It's out for delivery today."
+    tags: [shopping, online]
+  - term: "tracking number"
+    ipa: "/ˈtrækɪŋ ˈnʌmbər/"
+    meaning_vi: "mã vận đơn để tra cứu"
+    chunk: "Could you send me the tracking number?"
+    tags: [shopping, online]
+  - term: "delayed"
+    ipa: "/dɪˈleɪd/"
+    meaning_vi: "bị chậm so với hẹn"
+    chunk: "My order seems to be delayed."
+    tags: [shopping, online]
+  - term: "estimated delivery"
+    ipa: "/ˈestɪmeɪtɪd dɪˈlɪvəri/"
+    meaning_vi: "ngày giao dự kiến"
+    chunk: "The estimated delivery was Monday."
+    tags: [shopping, online]
+
+sentence_patterns:
+  - pattern: "My order number is {code}."
+    meaning_vi: "Mã đơn của tôi là {code}."
+    slots:
+      code: ["A2317", "B4092", "C1185"]
+  - pattern: "Could you send me the {thing}?"
+    meaning_vi: "Anh chị gửi giúp tôi {thing} được không?"
+    slots:
+      thing: ["tracking number", "invoice", "new delivery date"]
+
+dialogue:
+  context_vi: >
+    Bạn đặt một bàn phím trên mạng, hẹn giao thứ Hai. Hôm nay là thứ Tư và vẫn chưa
+    thấy gì. Bạn gọi lên tổng đài chăm sóc khách hàng.
+  turns:
+    - speaker: "Agent"
+      en: "Thanks for calling. How can I help?"
+      vi: "Cảm ơn anh đã gọi. Tôi giúp gì được ạ?"
+    - speaker: "You"
+      en: "My order seems to be delayed. My order number is A2317."
+      vi: "Đơn của tôi hình như bị chậm ạ. Mã đơn là A2317 ạ."
+    - speaker: "Agent"
+      en: "Let me check. It was shipped on Sunday but it's stuck at the sorting centre."
+      vi: "Để tôi kiểm tra ạ. Đơn đã gửi hôm Chủ Nhật nhưng đang kẹt ở trung tâm phân loại ạ."
+    - speaker: "You"
+      en: "The estimated delivery was Monday. Could you send me the tracking number?"
+      vi: "Ngày giao dự kiến là thứ Hai ạ. Anh gửi giúp tôi mã vận đơn được không ạ?"
+    - speaker: "Agent"
+      en: "Of course. I'll email it now. It should be out for delivery tomorrow."
+      vi: "Được ạ. Tôi gửi email ngay ạ. Mai đơn sẽ được mang đi giao ạ."
+    - speaker: "You"
+      en: "Thank you. If it doesn't arrive, can I ask for a refund?"
+      vi: "Cảm ơn ạ. Nếu không tới thì tôi xin hoàn tiền được không ạ?"
+
+listening:
+  context_vi: >
+    Nghe một cuộc gọi hỏi đơn chậm. Chú ý hai mốc thời gian trong câu của nhân viên —
+    một mốc là ngày đã gửi, một mốc là ngày dự kiến tới.
+  speed: 0.9
+  voice: en_US_male
+  transcript_en: "My order seems to be delayed. Could you check? Sure, what is your order number? It's B4092. Thank you. It was shipped on Tuesday and it is out for delivery today. It should arrive before six."
+  transcript_vi: "Đơn của tôi hình như bị chậm ạ. Anh kiểm tra giúp được không? Được ạ, mã đơn của anh là gì ạ? B4092 ạ. Cảm ơn anh. Đơn đã gửi hôm thứ Ba và hôm nay đang được mang đi giao ạ. Trước sáu giờ sẽ tới ạ."
+  questions:
+    - kind: mcq_listen
+      prompt_vi: "Đơn hàng đang ở trạng thái nào?"
+      choices: ["Vẫn ở kho", "Đang được mang đi giao hôm nay", "Đã bị huỷ"]
+      answer: 1
+      difficulty: 2
+      skill: Listening
+    - kind: mcq_listen
+      prompt_vi: "Đơn được gửi đi vào ngày nào?"
+      choices: ["Thứ Hai", "Thứ Tư", "Thứ Ba"]
+      answer: 2
+      difficulty: 1
+      skill: Listening
+
+speaking_drills:
+  - kind: read_aloud
+    expected_text: "My order number is A2317."
+    prompt_vi: "Đọc từng chữ số rời, không đọc thành hai nghìn ba trăm mười bảy."
+    ipa: "/maɪ ˈɔːrdər ˈnʌmbər ɪz eɪ tuː θriː wʌn ˈsevn/"
+    focus_phonemes: ["ɔːr", "θ"]
+  - kind: read_aloud
+    expected_text: "My order seems to be delayed."
+    prompt_vi: "Nêu vấn đề mềm mại. Chữ seems làm câu thành nhận xét chứ không phải buộc tội."
+    ipa: "/maɪ ˈɔːrdər siːmz tə biː dɪˈleɪd/"
+    focus_phonemes: ["z", "eɪ"]
+  - kind: shadow
+    expected_text: "Could you send me the tracking number?"
+    prompt_vi: "Đề nghị. Chữ tracking có cụm /tr/ đầu từ, phát âm liền một hơi."
+    ipa: "/kʊd juː send miː ðə ˈtrækɪŋ ˈnʌmbər/"
+    focus_phonemes: ["tr", "ŋ"]
+  - kind: shadow
+    expected_text: "It's out for delivery today."
+    prompt_vi: "Trạng thái vận chuyển. Chữ delivery nhấn ở âm tiết thứ hai."
+    ipa: "/ɪts aʊt fər dɪˈlɪvəri təˈdeɪ/"
+    focus_phonemes: ["aʊ", "l"]
+  - kind: respond
+    prompt_en: "What is your order number?"
+    prompt_vi: "Nhân viên hỏi mã đơn. Đọc rõ từng ký tự."
+    accept_patterns:
+      - "order number is"
+      - "It's"
+      - "A"
+      - "B"
+
+reading:
+  kind: email
+  context_vi: >
+    Email cập nhật đơn hàng. Đọc để biết đơn đang ở đâu và bạn cần làm gì nếu
+    hôm đó không có nhà.
+  text_en: |
+    Subject: Update on order A2317
+
+    Hello,
+
+    Your order A2317 has left our warehouse and is now with the courier.
+
+    Current status: out for delivery
+    Estimated arrival: today, between 14:00 and 18:00
+    Tracking number: VN884213099
+
+    If nobody is home, the courier will try again the next working day.
+    After two failed attempts the parcel returns to us and we refund you
+    within seven working days.
+
+    Customer Care
+  text_vi: |
+    Tiêu đề: Cập nhật đơn hàng A2317
+
+    Xin chào,
+
+    Đơn A2317 đã rời kho của chúng tôi và hiện đang ở đơn vị vận chuyển.
+
+    Trạng thái hiện tại: đang mang đi giao
+    Dự kiến tới: hôm nay, trong khoảng 14:00 đến 18:00
+    Mã vận đơn: VN884213099
+
+    Nếu không có ai ở nhà, bên vận chuyển sẽ giao lại vào ngày làm việc kế tiếp.
+    Sau hai lần giao không thành, kiện hàng quay về chúng tôi và chúng tôi hoàn
+    tiền trong vòng bảy ngày làm việc.
+
+    Bộ phận Chăm sóc khách hàng
+  questions:
+    - kind: mcq_read
+      prompt_en: "What happens if nobody is home on the first attempt?"
+      choices: ["The courier tries again the next working day", "The parcel is returned immediately", "You must collect it at the warehouse"]
+      answer: 0
+      difficulty: 2
+      reading_skill: detail
+      skill: Reading
+    - kind: mcq_read
+      prompt_en: "When would you get a refund?"
+      choices: ["Within two working days", "After two failed delivery attempts, within seven working days", "Only if you call customer care"]
+      answer: 1
+      difficulty: 2
+      reading_skill: detail
+      skill: Reading
+
+writing:
+  kind: GuidedEmail
+  prompt_vi: >
+    Viết email hỏi về một đơn chậm: nêu mã đơn, ngày giao dự kiến, tình trạng hiện
+    tại, và xin mã vận đơn.
+  prompt_en: "Write a short email asking about a delayed order."
+  required_points:
+    - "order number"
+    - "estimated delivery"
+    - "tracking number"
+  hint_vi: "Mỗi thông tin một dòng. Đừng viết một đoạn dài, người xử lý đơn đọc lướt chứ không đọc kỹ."
+  sample_en: |
+    Subject: Order A2317 — still not delivered
+
+    Hello,
+
+    I would like to check the status of my order.
+
+    Order number: A2317
+    Estimated delivery: Monday, 12 May
+    Current status on the website: shipped
+
+    The parcel has not arrived yet. Could you send me the tracking
+    number so I can follow it, and let me know the new delivery date?
+
+    Thank you,
+    Hoa
+
+quiz:
+  - kind: mcq
+    prompt_vi: "\"Out for delivery\" nghĩa là gì?"
+    choices: ["Đơn đã bị trả về", "Đơn còn ở kho", "Shipper đang mang đi giao hôm nay"]
+    answer: 2
+    difficulty: 2
+    skill: Reading
+  - kind: mcq
+    prompt_vi: "\"Shipped\" trong email đơn hàng nghĩa là gì?"
+    choices: ["Đã gửi đi khỏi kho", "Đã giao tới tay khách", "Đang chờ thanh toán"]
+    answer: 0
+    difficulty: 1
+    skill: Reading
+  - kind: mcq
+    prompt_vi: "Muốn xin mã vận đơn thì viết gì?"
+    choices: ["Give me the number of ship", "Could you send me the tracking number?", "Where is my number code?"]
+    answer: 1
+    difficulty: 2
+    skill: Writing
+  - kind: mcq
+    prompt_vi: "Nêu đơn bị chậm thế nào cho nhã nhặn?"
+    choices: ["You are very late again", "Why my order not come?", "My order seems to be delayed"]
+    answer: 2
+    difficulty: 2
+    skill: Writing
+
+explanation:
+  why_vi: >
+    Mua online là nơi mọi giao tiếp diễn ra bằng chữ, và bốn trạng thái đơn hàng
+    lặp lại ở mọi sàn thương mại điện tử. Hiểu nhầm một trạng thái là hoặc ngồi chờ
+    vô ích, hoặc gọi khiếu nại khi đơn vẫn đang đúng lịch.
+  how_vi: >
+    Nhớ bốn trạng thái theo thứ tự: confirmed đã nhận đơn, shipped đã rời kho,
+    out for delivery đang trên xe giao trong hôm nay, delivered đã giao xong.
+    Khi hỏi thì luôn đưa mã đơn ngay câu đầu, vì không có mã thì không ai tra được gì.
+  contrast_vi: >
+    "Shipped" mới chỉ là rời kho, có thể còn vài ngày nữa. "Out for delivery" là
+    hôm nay sẽ tới. Nhiều người thấy chữ shipped là ở nhà chờ cả ngày, rồi thất vọng.
+
+common_mistakes:
+  - mistake: "Đọc mã đơn A2317 thành \"A two thousand three hundred seventeen\""
+    why_vi: >
+      Người học đọc số theo thói quen đọc số lượng. Mã đơn là chuỗi ký tự, người
+      nghe ghi từng ký tự một, nên đọc gộp là họ phải hỏi lại từ đầu.
+    fix_vi: "Đọc rời từng chữ số: A - two - three - one - seven, ngắt nhẹ giữa các số."
+  - mistake: "Viết email khiếu nại bằng một đoạn văn dài không xuống dòng"
+    why_vi: >
+      Người học viết theo cách viết văn ở trường. Nhân viên xử lý hàng trăm email
+      mỗi ngày và chỉ quét tìm mã đơn với ngày tháng, nên đoạn dài làm chậm việc xử lý.
+    fix_vi: "Tách từng thông tin thành một dòng riêng, đặt mã đơn ở dòng đầu tiên."
+  - mistake: "Nhầm \"delivery\" với \"deliver\" khi phát âm"
+    why_vi: >
+      Hai từ chỉ khác đuôi nhưng trọng âm giống nhau ở âm tiết thứ hai, người học
+      hay nhấn nhầm vào âm tiết đầu của cả hai từ.
+    fix_vi: "Nhấn vào phần liv ở giữa: /dɪˈlɪvəri/. Âm đầu đọc rất nhẹ."
+
+memory_trick_vi: >
+  Đơn hàng đi qua bốn cửa: NHẬN confirmed, RỜI KHO shipped, LÊN XE out for delivery,
+  TỚI NƠI delivered. Chỉ cửa thứ ba mới đáng ở nhà chờ.

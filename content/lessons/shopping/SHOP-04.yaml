@@ -1,0 +1,265 @@
+schema_version: 1
+code: SHOP-04
+slug: mua-quan-ao-va-thu-do
+title_vi: "Mua quần áo và thử đồ"
+title_en: "Buying clothes and trying things on"
+
+layer: Life
+track: Shopping
+level: A1
+unit_code: U-S2
+order_index: 4
+estimated_minutes: 11
+
+illustration: money-receipt
+
+objective_vi: >
+  Hỏi cỡ, xin thử đồ, và nói món đồ rộng hay chật — ba việc phải làm mỗi lần
+  mua quần áo mà chỉ vào món hàng thì không giải quyết được.
+
+objective_observable: >
+  Hỏi được cỡ khác và xin vào phòng thử trong 3 trên 4 drill, và đọc đúng một
+  bảng quy đổi cỡ.
+
+mastery_weights:
+  Listening: 0.25
+  Speaking: 0.35
+  Reading: 0.25
+  Writing: 0.15
+
+prerequisites:
+  - lesson: SHOP-03
+    min_mastery: 60
+    kind: Hard
+
+vocabulary:
+  - term: "try this on"
+    ipa: "/traɪ ðɪs ɑːn/"
+    meaning_vi: "thử món đồ này"
+    chunk: "Can I try this on?"
+    tags: [shopping, clothes]
+  - term: "fitting room"
+    ipa: "/ˈfɪtɪŋ ruːm/"
+    meaning_vi: "phòng thử đồ"
+    chunk: "Where is the fitting room?"
+    tags: [shopping, clothes]
+  - term: "a size up"
+    ipa: "/ə saɪz ʌp/"
+    meaning_vi: "cỡ lớn hơn một số"
+    chunk: "Do you have a size up?"
+    tags: [shopping, clothes]
+  - term: "too tight"
+    ipa: "/tuː taɪt/"
+    meaning_vi: "chật quá"
+    chunk: "It's a bit too tight."
+    tags: [shopping, clothes]
+  - term: "in another colour"
+    ipa: "/ɪn əˈnʌðər ˈkʌlər/"
+    meaning_vi: "màu khác"
+    chunk: "Do you have it in another colour?"
+    tags: [shopping, clothes]
+  - term: "I'll take it"
+    ipa: "/aɪl teɪk ɪt/"
+    meaning_vi: "tôi lấy món này"
+    chunk: "I'll take it, thanks."
+    tags: [shopping, clothes]
+
+sentence_patterns:
+  - pattern: "Do you have this in a {size}?"
+    meaning_vi: "Cái này có cỡ {size} không?"
+    slots:
+      size: ["small", "medium", "large"]
+  - pattern: "It's a bit too {problem}."
+    meaning_vi: "Cái này hơi {problem} quá."
+    slots:
+      problem: ["tight", "loose", "short"]
+
+dialogue:
+  context_vi: >
+    Bạn cầm một chiếc áo sơ mi trên tay, nhìn thấy chữ M nhưng không chắc cỡ M ở
+    đây có bằng cỡ M ở Việt Nam không. Nhân viên đang đứng gần đó.
+  turns:
+    - speaker: "You"
+      en: "Excuse me, can I try this on?"
+      vi: "Xin lỗi, tôi thử cái này được không ạ?"
+    - speaker: "Staff"
+      en: "Of course. The fitting room is over there."
+      vi: "Được ạ. Phòng thử ở đằng kia ạ."
+    - speaker: "You"
+      en: "Thanks. It's a bit too tight. Do you have a size up?"
+      vi: "Cảm ơn. Cái này hơi chật. Có cỡ lớn hơn không ạ?"
+    - speaker: "Staff"
+      en: "Let me check. Here is a large."
+      vi: "Để tôi xem ạ. Đây là cỡ lớn ạ."
+    - speaker: "You"
+      en: "That fits. Do you have it in another colour?"
+      vi: "Cái này vừa. Có màu khác không ạ?"
+    - speaker: "Staff"
+      en: "Only blue and black, I'm afraid."
+      vi: "Chỉ có xanh và đen thôi ạ."
+
+listening:
+  context_vi: >
+    Nghe một lượt mua áo. Chú ý câu khách nói sau khi bước ra khỏi phòng thử —
+    câu đó là lý do nhân viên đi lấy món khác.
+  speed: 0.9
+  voice: en_US_female
+  transcript_en: "Can I try this on? Sure, the fitting room is on your left. Thanks. It's a bit too loose. Do you have a size down? We have a small. Perfect, I'll take it."
+  transcript_vi: "Tôi thử cái này được không ạ? Được ạ, phòng thử ở bên trái ạ. Cảm ơn. Cái này hơi rộng. Có cỡ nhỏ hơn không ạ? Có cỡ nhỏ ạ. Vừa rồi, tôi lấy cái này."
+  questions:
+    - kind: mcq_listen
+      prompt_vi: "Món đồ bị làm sao?"
+      choices: ["Chật quá", "Rộng quá", "Ngắn quá"]
+      answer: 1
+      difficulty: 1
+      skill: Listening
+    - kind: mcq_listen
+      prompt_vi: "Cuối cùng khách có mua không?"
+      choices: ["Có mua", "Không mua", "Hẹn quay lại"]
+      answer: 0
+      difficulty: 1
+      skill: Listening
+
+speaking_drills:
+  - kind: read_aloud
+    expected_text: "Can I try this on?"
+    prompt_vi: "Đọc to. Chữ \"on\" đi liền sau \"this\" và được nhấn, không được nuốt."
+    ipa: "/kæn aɪ traɪ ðɪs ɑːn/"
+    focus_phonemes: ["ð", "aɪ"]
+  - kind: read_aloud
+    expected_text: "Do you have a size up?"
+    prompt_vi: "Hỏi cỡ lớn hơn. Chữ size có âm /z/ ở giữa, phải rung dây thanh."
+    ipa: "/duː juː hæv ə saɪz ʌp/"
+    focus_phonemes: ["z", "aɪ"]
+  - kind: shadow
+    expected_text: "It's a bit too tight."
+    prompt_vi: "Nói món đồ chật. Hai chữ bit và tight đều kết thúc bằng /t/ bật gọn."
+    ipa: "/ɪts ə bɪt tuː taɪt/"
+    focus_phonemes: ["t", "aɪ"]
+  - kind: shadow
+    expected_text: "Where is the fitting room?"
+    prompt_vi: "Hỏi phòng thử. Chữ where bắt đầu bằng /w/, không phải /v/."
+    ipa: "/wer ɪz ðə ˈfɪtɪŋ ruːm/"
+    focus_phonemes: ["w", "ŋ"]
+  - kind: respond
+    prompt_en: "How did it go? Does it fit?"
+    prompt_vi: "Nhân viên hỏi thử có vừa không. Trả lời vừa hoặc xin đổi cỡ."
+    accept_patterns:
+      - "fits"
+      - "too tight"
+      - "too loose"
+      - "size up"
+      - "size down"
+
+reading:
+  kind: note
+  context_vi: >
+    Bảng quy đổi cỡ dán trong phòng thử. Cỡ ghi trên nhãn không giống cỡ ở Việt Nam,
+    nên phải đối chiếu trước khi cầm ra quầy.
+  text_en: |
+    SIZE GUIDE — MEN'S SHIRTS
+
+    Label   Chest (cm)   Fits VN size
+    S       88 - 94      M
+    M       95 - 101     L
+    L       102 - 108    XL
+    XL      109 - 115    XXL
+
+    Exchange within 14 days with the receipt.
+    Items marked FINAL SALE cannot be exchanged.
+  text_vi: |
+    HƯỚNG DẪN CHỌN CỠ — ÁO SƠ MI NAM
+
+    Nhãn    Vòng ngực (cm)   Tương đương cỡ VN
+    S       88 - 94          M
+    M       95 - 101         L
+    L       102 - 108        XL
+    XL      109 - 115        XXL
+
+    Đổi hàng trong 14 ngày, phải có hoá đơn.
+    Hàng ghi FINAL SALE không đổi được.
+  questions:
+    - kind: mcq_read
+      prompt_en: "Your chest is 100 cm. Which label size do you need?"
+      choices: ["S", "M", "L"]
+      answer: 1
+      difficulty: 2
+      reading_skill: scan
+      skill: Reading
+    - kind: mcq_read
+      prompt_en: "Which item cannot be exchanged?"
+      choices: ["Any shirt after 14 days", "An item marked FINAL SALE", "An item without a label"]
+      answer: 1
+      difficulty: 2
+      reading_skill: detail
+      skill: Reading
+
+writing:
+  kind: FillBlank
+  prompt_vi: "Điền hai chỗ trống: câu xin thử đồ và câu xin cỡ lớn hơn."
+  prompt_en: "Can I ___ this on? Do you have a size ___?"
+  blanks:
+    - ["try"]
+    - ["up"]
+  hint_vi: "Chỗ đầu là động từ nghĩa là thử. Chỗ sau là một chữ nghĩa là lên, ghép thành cỡ lớn hơn."
+  sample_en: "Can I try this on? Do you have a size up?"
+
+quiz:
+  - kind: mcq
+    prompt_vi: "Muốn vào phòng thử đồ thì hỏi gì?"
+    choices: ["Where is the fitting room?", "Where is the change house?", "Where I wear clothes?"]
+    answer: 0
+    difficulty: 1
+    skill: Speaking
+  - kind: mcq
+    prompt_vi: "\"A size up\" nghĩa là gì?"
+    choices: ["Cỡ nhỏ hơn", "Cỡ lớn hơn", "Cỡ cao hơn về chiều dài"]
+    answer: 1
+    difficulty: 2
+    skill: Reading
+  - kind: mcq
+    prompt_vi: "Món đồ chật quá thì nói gì?"
+    choices: ["It's very small size", "It's narrow for me", "It's a bit too tight"]
+    answer: 2
+    difficulty: 2
+    skill: Speaking
+  - kind: mcq
+    prompt_vi: "Quyết định mua thì nói gì cho gọn?"
+    choices: ["I'll take it", "I buy this", "Give me this one"]
+    answer: 0
+    difficulty: 1
+    skill: Speaking
+
+explanation:
+  why_vi: >
+    Mua quần áo là chỗ duy nhất trong siêu thị mà chỉ tay không đủ. Bạn phải nói được
+    món đồ sai ở điểm nào thì nhân viên mới biết đi lấy cỡ nào, màu nào. Cỡ trên nhãn
+    lại không trùng với cỡ quen thuộc ở Việt Nam, nên nhìn chữ M mà tin là dễ mua nhầm.
+  how_vi: >
+    Ba câu là đủ cho cả lượt mua. Xin thử bằng Can I try this on. Sau khi thử thì mô tả
+    vấn đề bằng It's a bit too rồi thêm tight hoặc loose. Cuối cùng xin món khác bằng
+    Do you have a size up hoặc a size down.
+  contrast_vi: >
+    "Tight" là chật, bó sát người. "Small" là món đồ nhỏ nói chung. Nói It's too small
+    thì nhân viên hiểu là món hàng bé, còn It's too tight mới nói đúng là mặc vào bị bó.
+
+common_mistakes:
+  - mistake: "Nói \"I want bigger\" thay vì xin cỡ lớn hơn"
+    why_vi: >
+      Người học dịch thẳng từ tôi muốn cái to hơn. Câu này thiếu danh từ nên nhân viên
+      không biết bạn muốn cỡ lớn hơn hay món hàng khác to hơn.
+    fix_vi: "Dùng đúng cụm \"Do you have a size up?\" hoặc \"Do you have this in a large?\""
+  - mistake: "Đọc \"clothes\" thành hai âm tiết là /ˈklɒ-thɪz/"
+    why_vi: >
+      Người học thấy chữ dài nên tách ra đọc. Từ này chỉ có một âm tiết và phần đuôi
+      gần như trùng với từ close.
+    fix_vi: "Đọc gọn một hơi /kloʊz/, giống hệt từ close."
+  - mistake: "Cầm đồ vào phòng thử mà không hỏi ai"
+    why_vi: >
+      Ở Việt Nam thường tự vào thử. Ở nhiều cửa hàng nước ngoài nhân viên phải đếm số
+      món trước khi bạn vào, nên tự đi vào sẽ bị gọi lại và mất thời gian cả hai bên.
+    fix_vi: "Hỏi một câu trước: \"Can I try this on?\" rồi đợi nhân viên hướng dẫn."
+
+memory_trick_vi: >
+  Mua quần áo chỉ có ba nhịp: XIN "Can I try this on", TẢ "It's a bit too tight",
+  ĐỔI "Do you have a size up". Nhịp giữa là nhịp người học hay bỏ qua nhất.

@@ -1,0 +1,273 @@
+schema_version: 1
+code: REST-05
+slug: do-an-nhanh-mang-ve-va-dat-giao-hang
+title_vi: "Đồ ăn nhanh, mang về và đặt giao hàng"
+title_en: "Fast food, takeaway, and delivery orders"
+
+layer: Life
+track: Restaurant
+level: A1
+unit_code: U-R2
+order_index: 5
+estimated_minutes: 12
+
+illustration: food-order
+
+objective_vi: >
+  Gọi combo ở quầy đồ ăn nhanh, đọc đơn giao hàng trên ứng dụng, và gọi điện
+  hỏi đơn đến đâu — ba tình huống có tốc độ nói nhanh nhất trong cả nhánh này.
+
+objective_observable: >
+  Gọi được một combo có chọn món phụ và đồ uống trong 3 trên 4 drill, và đọc đúng
+  một đơn giao hàng có phí và thời gian dự kiến.
+
+mastery_weights:
+  Listening: 0.30
+  Speaking: 0.30
+  Reading: 0.25
+  Writing: 0.15
+
+prerequisites:
+  - lesson: REST-04
+    min_mastery: 60
+    kind: Hard
+
+vocabulary:
+  - term: "a combo"
+    ipa: "/ə ˈkɑːmboʊ/"
+    meaning_vi: "phần ăn gồm món chính, món phụ và đồ uống"
+    chunk: "I'll have the number two combo."
+    tags: [restaurant, fastfood]
+  - term: "a side"
+    ipa: "/ə saɪd/"
+    meaning_vi: "món phụ ăn kèm"
+    chunk: "Can I get fries as my side?"
+    tags: [restaurant, fastfood]
+  - term: "eat in"
+    ipa: "/iːt ɪn/"
+    meaning_vi: "ăn tại quán"
+    chunk: "Eat in, please."
+    tags: [restaurant, fastfood]
+  - term: "delivery fee"
+    ipa: "/dɪˈlɪvəri fiː/"
+    meaning_vi: "phí giao hàng"
+    chunk: "The delivery fee is fifteen thousand."
+    tags: [restaurant, delivery]
+  - term: "on its way"
+    ipa: "/ɑːn ɪts weɪ/"
+    meaning_vi: "đang trên đường tới"
+    chunk: "Your order is on its way."
+    tags: [restaurant, delivery]
+  - term: "How long will it take"
+    ipa: "/haʊ lɔːŋ wɪl ɪt teɪk/"
+    meaning_vi: "mất bao lâu"
+    chunk: "How long will it take?"
+    tags: [restaurant, delivery]
+
+sentence_patterns:
+  - pattern: "I'll have the {item}, please."
+    meaning_vi: "Cho tôi {item} ạ."
+    slots:
+      item: ["number two combo", "chicken burger", "large fries"]
+  - pattern: "Can I get {side} as my side?"
+    meaning_vi: "Món phụ cho tôi {side} được không?"
+    slots:
+      side: ["fries", "salad", "soup"]
+
+dialogue:
+  context_vi: >
+    Trưa thứ Tư, bạn chỉ có hai mươi phút nghỉ. Quầy đồ ăn nhanh đông và nhân viên
+    nói rất nhanh. Ở đây họ hỏi liên tiếp bốn câu, ai không biết trước là bị hụt.
+  turns:
+    - speaker: "Staff"
+      en: "Hi, what would you like?"
+      vi: "Chào anh, anh dùng gì ạ?"
+    - speaker: "You"
+      en: "I'll have the number two combo, please."
+      vi: "Cho tôi phần combo số hai ạ."
+    - speaker: "Staff"
+      en: "Sure. What side and what drink?"
+      vi: "Vâng ạ. Món phụ và đồ uống anh chọn gì ạ?"
+    - speaker: "You"
+      en: "Fries and a Coke, please. No ice."
+      vi: "Khoai tây chiên và một Coca ạ. Không đá."
+    - speaker: "Staff"
+      en: "Eat in or take away?"
+      vi: "Anh ăn tại quán hay mang về ạ?"
+    - speaker: "You"
+      en: "Take away. How long will it take?"
+      vi: "Mang về ạ. Mất khoảng bao lâu ạ?"
+    - speaker: "Staff"
+      en: "About five minutes. Order number forty-one."
+      vi: "Khoảng năm phút ạ. Số đơn bốn mươi mốt ạ."
+
+listening:
+  context_vi: >
+    Nghe một lượt gọi ở quầy đồ ăn nhanh, tốc độ gần như thật. Chú ý số đơn ở cuối —
+    đó là con số bạn phải nhớ để lên lấy đồ.
+  speed: 1.0
+  voice: en_US_male
+  transcript_en: "Hi, what would you like? I'll have the number three combo, please. What side and what drink? Salad and an orange juice. Eat in or take away? Take away, please. About seven minutes. Order number sixteen."
+  transcript_vi: "Chào anh, anh dùng gì ạ? Cho tôi combo số ba ạ. Món phụ và đồ uống ạ? Salad và một nước cam. Ăn tại quán hay mang về ạ? Mang về ạ. Khoảng bảy phút ạ. Số đơn mười sáu ạ."
+  questions:
+    - kind: mcq_listen
+      prompt_vi: "Khách chọn món phụ gì?"
+      choices: ["Khoai tây chiên", "Súp", "Salad"]
+      answer: 2
+      difficulty: 1
+      skill: Listening
+    - kind: mcq_listen
+      prompt_vi: "Số đơn của khách là bao nhiêu?"
+      choices: ["Mười sáu", "Sáu mươi", "Mười chín"]
+      answer: 0
+      difficulty: 2
+      skill: Listening
+
+speaking_drills:
+  - kind: read_aloud
+    expected_text: "I'll have the number two combo, please."
+    prompt_vi: "Đọc to. \"I'll\" chỉ một âm tiết, đừng tách thành hai chữ I will."
+    ipa: "/aɪl hæv ðə ˈnʌmbər tuː ˈkɑːmboʊ pliːz/"
+    focus_phonemes: ["aɪ", "l"]
+  - kind: read_aloud
+    expected_text: "Can I get fries as my side?"
+    prompt_vi: "Chọn món phụ. Chữ fries kết thúc bằng /z/ có rung, không phải /s/."
+    ipa: "/kæn aɪ ɡet fraɪz æz maɪ saɪd/"
+    focus_phonemes: ["z", "aɪ"]
+  - kind: shadow
+    expected_text: "Take away, please. No ice."
+    prompt_vi: "Hai yêu cầu ngắn liền nhau. Ngắt một nhịp nhỏ sau please."
+    ipa: "/teɪk əˈweɪ pliːz noʊ aɪs/"
+    focus_phonemes: ["eɪ", "s"]
+  - kind: shadow
+    expected_text: "How long will it take?"
+    prompt_vi: "Hỏi thời gian chờ. Nhấn vào chữ long, phần sau đọc lướt."
+    ipa: "/haʊ lɔːŋ wɪl ɪt teɪk/"
+    focus_phonemes: ["ŋ", "aʊ"]
+  - kind: respond
+    prompt_en: "Eat in or take away?"
+    prompt_vi: "Nhân viên hỏi ăn tại quán hay mang về. Chọn một và trả lời."
+    accept_patterns:
+      - "Take away"
+      - "Eat in"
+      - "To go"
+
+reading:
+  kind: chat
+  context_vi: >
+    Màn hình xác nhận đơn trên ứng dụng giao đồ ăn. Đọc để biết tổng tiền thật sự
+    và bao giờ đồ tới, vì phí giao hàng nằm tách khỏi giá món.
+  text_en: |
+    ORDER CONFIRMED — #A2317
+
+    1 x Chicken burger combo      95,000
+    1 x Extra fries               25,000
+    Subtotal                     120,000
+    Delivery fee                  15,000
+    Promo BURGER10               -12,000
+    ------------------------------------
+    TOTAL                        123,000
+
+    Estimated arrival: 25 - 35 minutes
+    Driver will call on arrival. Pay by card on delivery.
+  text_vi: |
+    ĐÃ XÁC NHẬN ĐƠN — #A2317
+
+    1 x Combo burger gà           95.000
+    1 x Khoai tây chiên thêm      25.000
+    Tạm tính                     120.000
+    Phí giao hàng                 15.000
+    Mã giảm BURGER10             -12.000
+    ------------------------------------
+    TỔNG                         123.000
+
+    Dự kiến giao: 25 - 35 phút
+    Tài xế sẽ gọi khi tới. Thanh toán bằng thẻ khi nhận hàng.
+  questions:
+    - kind: mcq_read
+      prompt_en: "How much is the delivery fee?"
+      choices: ["12,000", "15,000", "25,000"]
+      answer: 1
+      difficulty: 1
+      reading_skill: scan
+      skill: Reading
+    - kind: mcq_read
+      prompt_en: "What will the driver do when he arrives?"
+      choices: ["Leave the food at the door", "Send a message", "Call you"]
+      answer: 2
+      difficulty: 2
+      reading_skill: detail
+      skill: Reading
+
+writing:
+  kind: FillBlank
+  prompt_vi: "Điền hai chỗ trống: câu gọi combo và câu chọn hình thức mang về."
+  prompt_en: "I'll ___ the number two combo, please. Take ___, please."
+  blanks:
+    - ["have"]
+    - ["away"]
+  hint_vi: "Chỗ đầu là động từ đi sau I'll khi gọi món. Chỗ sau ghép với take thành cụm nghĩa là mang về."
+  sample_en: "I'll have the number two combo, please. Take away, please."
+
+quiz:
+  - kind: mcq
+    prompt_vi: "\"Combo\" ở quầy đồ ăn nhanh gồm những gì?"
+    choices: ["Món chính, món phụ và đồ uống", "Hai món chính", "Món chính và tráng miệng"]
+    answer: 0
+    difficulty: 1
+    skill: Reading
+  - kind: mcq
+    prompt_vi: "Nhân viên hỏi \"What side?\" là hỏi gì?"
+    choices: ["Ngồi bên nào", "Món phụ ăn kèm", "Bên nào của quầy"]
+    answer: 1
+    difficulty: 2
+    skill: Listening
+  - kind: mcq
+    prompt_vi: "Muốn hỏi đơn mất bao lâu thì nói gì?"
+    choices: ["How many time?", "When it come?", "How long will it take?"]
+    answer: 2
+    difficulty: 2
+    skill: Speaking
+  - kind: mcq
+    prompt_vi: "\"Your order is on its way\" nghĩa là gì?"
+    choices: ["Đơn đang trên đường tới", "Đơn đã bị huỷ", "Đơn đang chờ xác nhận"]
+    answer: 0
+    difficulty: 1
+    skill: Listening
+
+explanation:
+  why_vi: >
+    Quầy đồ ăn nhanh nói nhanh gấp rưỡi nhà hàng ngồi, vì nhân viên phải xử lý một
+    khách trong chưa đầy một phút. Họ hỏi bốn câu theo đúng một thứ tự cố định:
+    gọi gì, món phụ gì, đồ uống gì, ăn ở đây hay mang về. Biết trước thứ tự là nghe
+    được ngay cả khi không bắt kịp từng chữ.
+  how_vi: >
+    Chuẩn bị sẵn câu trả lời cho cả bốn câu trước khi tới lượt. Gọi món bằng
+    I'll have rồi số hiệu combo. Món phụ và đồ uống gộp chung một câu. Cuối cùng
+    hai chữ Take away là xong.
+  contrast_vi: >
+    "Take away" dùng ở Anh và Úc, "to go" dùng ở Mỹ, "eat in" và "for here" là cặp
+    ngược lại tương ứng. Trên ứng dụng giao hàng thì không dùng từ nào trong số này
+    mà dùng "delivery".
+
+common_mistakes:
+  - mistake: "Nghe \"What side?\" và hiểu là hỏi ngồi bên nào"
+    why_vi: >
+      Chữ side trong tiếng Anh phổ thông nghĩa là bên, nên người học dịch theo nghĩa
+      quen. Trong quán ăn thì side là món phụ ăn kèm, gần như luôn là khoai tây chiên,
+      salad hoặc súp.
+    fix_vi: "Nghe thấy side ở quầy đồ ăn thì trả lời tên một món phụ, không trả lời hướng."
+  - mistake: "Nói \"How much time?\" khi hỏi phải chờ bao lâu"
+    why_vi: >
+      Người học dịch thẳng từ mất bao nhiêu thời gian. Tiếng Anh dùng how long cho
+      khoảng thời gian, còn how much đi với tiền hoặc lượng không đếm được.
+    fix_vi: "Dùng \"How long will it take?\" — câu này dùng được cho cả đồ ăn lẫn giao hàng."
+  - mistake: "Đọc \"fries\" thành /fraɪs/ với đuôi s không rung"
+    why_vi: >
+      Tiếng Việt không có phụ âm rung ở cuối từ nên người học tự chuyển /z/ thành /s/.
+      Từ này lặp ở mọi bữa ăn nhanh nên sai một lần là sai mãi.
+    fix_vi: "Giữ dây thanh rung khi kết thúc: /fraɪz/, giống đuôi của từ prize."
+
+memory_trick_vi: >
+  Quầy đồ ăn nhanh luôn hỏi bốn câu theo thứ tự: MÓN CHÍNH, MÓN PHỤ, ĐỒ UỐNG,
+  TẠI QUÁN HAY MANG VỀ. Nhớ thứ tự này thì không cần nghe rõ từng chữ vẫn trả lời đúng.

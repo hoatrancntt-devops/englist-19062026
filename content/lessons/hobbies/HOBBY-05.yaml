@@ -1,0 +1,264 @@
+schema_version: 1
+code: HOBBY-05
+slug: phim-nhac-sach-va-game
+title_vi: "Phim, nhạc, sách và game"
+title_en: "Films, music, books, and games"
+
+layer: Life
+track: Hobbies
+level: A1
+unit_code: U-H2
+order_index: 5
+estimated_minutes: 11
+
+illustration: chat-message
+
+objective_vi: >
+  Nói mình thích gì, không thích gì, và quan trọng nhất là nói vì sao — phần lý do
+  mới là phần biến câu trả lời thành cuộc trò chuyện.
+
+objective_observable: >
+  Nêu được một sở thích kèm lý do trong 3 trên 4 drill, và đọc đúng một đoạn giới
+  thiệu phim để quyết định có xem hay không.
+
+mastery_weights:
+  Listening: 0.25
+  Speaking: 0.35
+  Reading: 0.25
+  Writing: 0.15
+
+prerequisites:
+  - lesson: HOBBY-04
+    min_mastery: 60
+    kind: Hard
+
+vocabulary:
+  - term: "I'm into"
+    ipa: "/aɪm ˈɪntuː/"
+    meaning_vi: "tôi mê, tôi thích lắm"
+    chunk: "I'm into sci-fi films."
+    tags: [hobbies, opinion]
+  - term: "I'm not really a fan of"
+    ipa: "/aɪm nɑːt ˈrɪəli ə fæn ʌv/"
+    meaning_vi: "tôi không thích lắm (cách chê nhẹ nhàng)"
+    chunk: "I'm not really a fan of horror."
+    tags: [hobbies, opinion]
+  - term: "What kind of"
+    ipa: "/wʌt kaɪnd ʌv/"
+    meaning_vi: "loại nào, thể loại gì"
+    chunk: "What kind of music do you like?"
+    tags: [hobbies, opinion]
+  - term: "It's worth watching"
+    ipa: "/ɪts wɜːrθ ˈwɑːtʃɪŋ/"
+    meaning_vi: "đáng xem"
+    chunk: "It's worth watching."
+    tags: [hobbies, opinion]
+  - term: "I'm halfway through"
+    ipa: "/aɪm ˈhæfweɪ θruː/"
+    meaning_vi: "tôi xem hoặc đọc được nửa rồi"
+    chunk: "I'm halfway through the book."
+    tags: [hobbies, opinion]
+  - term: "no spoilers"
+    ipa: "/noʊ ˈspɔɪlərz/"
+    meaning_vi: "đừng tiết lộ nội dung"
+    chunk: "No spoilers, please!"
+    tags: [hobbies, opinion]
+
+sentence_patterns:
+  - pattern: "I'm into {genre} because {reason}."
+    meaning_vi: "Tôi mê {genre} vì {reason}."
+    slots:
+      genre: ["sci-fi films", "indie music", "strategy games"]
+      reason: ["the stories are clever", "it helps me relax", "I like thinking ahead"]
+  - pattern: "What kind of {thing} do you like?"
+    meaning_vi: "Bạn thích {thing} loại nào?"
+    slots:
+      thing: ["music", "films", "books"]
+
+dialogue:
+  context_vi: >
+    Giờ nghỉ trưa, đồng nghiệp mới sang từ Ấn Độ hỏi bạn cuối tuần làm gì. Đây là
+    kiểu câu hỏi mà trả lời một chữ là hội thoại chết, còn thêm một lý do là mở ra
+    mười phút nói chuyện.
+  turns:
+    - speaker: "Colleague"
+      en: "What kind of films do you like?"
+      vi: "Cậu thích phim thể loại gì?"
+    - speaker: "You"
+      en: "I'm into sci-fi because the stories are clever."
+      vi: "Mình mê khoa học viễn tưởng vì cốt truyện thông minh."
+    - speaker: "Colleague"
+      en: "Same. Have you seen the new one about time travel?"
+      vi: "Mình cũng vậy. Cậu xem phim mới về du hành thời gian chưa?"
+    - speaker: "You"
+      en: "I'm halfway through it. No spoilers, please!"
+      vi: "Mình xem được nửa rồi. Đừng tiết lộ nhé!"
+    - speaker: "Colleague"
+      en: "Fair enough. What about horror?"
+      vi: "Được thôi. Còn phim kinh dị thì sao?"
+    - speaker: "You"
+      en: "I'm not really a fan of horror. It's too stressful for me."
+      vi: "Mình không thích phim kinh dị lắm. Căng thẳng quá."
+
+listening:
+  context_vi: >
+    Nghe hai người nói về nhạc. Chú ý câu chê — người bản xứ hiếm khi nói thẳng
+    là I don't like, họ dùng cách nói nhẹ đi.
+  speed: 0.9
+  voice: en_US_female
+  transcript_en: "What kind of music do you like? I'm into jazz because it helps me focus at work. Interesting. I'm not really a fan of jazz. I usually listen to rock. Do you play anything? I play a bit of guitar."
+  transcript_vi: "Cậu thích nhạc loại gì? Mình mê jazz vì nghe dễ tập trung khi làm việc. Hay đấy. Mình không mê jazz lắm. Mình hay nghe rock. Cậu có chơi nhạc cụ không? Mình chơi guitar chút chút."
+  questions:
+    - kind: mcq_listen
+      prompt_vi: "Người thứ nhất thích jazz vì lý do gì?"
+      choices: ["Vì nghe vui", "Vì bạn bè cũng nghe", "Vì giúp tập trung khi làm việc"]
+      answer: 2
+      difficulty: 2
+      skill: Listening
+    - kind: mcq_listen
+      prompt_vi: "Người thứ hai nói gì về jazz?"
+      choices: ["Không thích lắm", "Rất thích", "Chưa nghe bao giờ"]
+      answer: 0
+      difficulty: 1
+      skill: Listening
+
+speaking_drills:
+  - kind: read_aloud
+    expected_text: "I'm into sci-fi because the stories are clever."
+    prompt_vi: "Đọc to. Cụm I'm into nối liền thành /aɪm-ˈɪn-tə/, đừng tách rời."
+    ipa: "/aɪm ˈɪntuː ˈsaɪ faɪ bɪˈkɔːz ðə ˈstɔːriz ɑːr ˈklevər/"
+    focus_phonemes: ["aɪ", "kl"]
+  - kind: read_aloud
+    expected_text: "I'm not really a fan of horror."
+    prompt_vi: "Cách chê nhẹ. Chữ really kéo dài một chút để câu nghe mềm hơn."
+    ipa: "/aɪm nɑːt ˈrɪəli ə fæn ʌv ˈhɔːrər/"
+    focus_phonemes: ["r", "ɔː"]
+  - kind: shadow
+    expected_text: "What kind of music do you like?"
+    prompt_vi: "Câu hỏi mở. Cụm kind of nối thành /ˈkaɪn-də/ khi nói tự nhiên."
+    ipa: "/wʌt kaɪnd ʌv ˈmjuːzɪk duː juː laɪk/"
+    focus_phonemes: ["k", "j"]
+  - kind: shadow
+    expected_text: "I'm halfway through the book."
+    prompt_vi: "Chữ through chỉ có một âm tiết: /θruː/. Chữ gh hoàn toàn câm."
+    ipa: "/aɪm ˈhæfweɪ θruː ðə bʊk/"
+    focus_phonemes: ["θr", "ʊ"]
+  - kind: respond
+    prompt_en: "What do you usually do at the weekend?"
+    prompt_vi: "Đồng nghiệp hỏi cuối tuần bạn làm gì. Trả lời kèm một lý do."
+    accept_patterns:
+      - "I'm into"
+      - "because"
+      - "I usually"
+      - "I like"
+
+reading:
+  kind: chat
+  context_vi: >
+    Đoạn giới thiệu phim trên ứng dụng xem phim. Đọc để quyết định tối nay xem hay
+    để hôm khác, dựa vào thể loại và độ dài.
+  text_en: |
+    THE LONG SIGNAL (2024)
+    Sci-fi / Drama — 2 h 18 min — 12+
+
+    A radio engineer in a remote station picks up a message that
+    should not exist. Slow at the start, but the last forty minutes
+    are worth the wait.
+
+    Critics: 82%    Viewers: 74%
+    Also available with Vietnamese subtitles.
+  text_vi: |
+    THE LONG SIGNAL (2024)
+    Khoa học viễn tưởng / Chính kịch — 2 giờ 18 phút — 12+
+
+    Một kỹ sư vô tuyến ở trạm hẻo lánh bắt được một tín hiệu lẽ ra
+    không tồn tại. Mở đầu chậm, nhưng bốn mươi phút cuối đáng để chờ.
+
+    Nhà phê bình: 82%    Khán giả: 74%
+    Có phụ đề tiếng Việt.
+  questions:
+    - kind: mcq_read
+      prompt_en: "What does the review say about the beginning?"
+      choices: ["It is the best part", "It is slow", "It is confusing"]
+      answer: 1
+      difficulty: 1
+      reading_skill: scan
+      skill: Reading
+    - kind: mcq_read
+      prompt_en: "You have 90 minutes tonight. Can you finish the film?"
+      choices: ["Yes, easily", "Yes, if you skip the credits", "No, it is longer than that"]
+      answer: 2
+      difficulty: 2
+      reading_skill: detail
+      skill: Reading
+
+writing:
+  kind: FillBlank
+  prompt_vi: "Điền hai chỗ trống: cách nói mê một thứ và cách chê nhẹ nhàng."
+  prompt_en: "I'm ___ sci-fi films. I'm not really a ___ of horror."
+  blanks:
+    - ["into"]
+    - ["fan"]
+  hint_vi: "Chỗ đầu ghép với I'm thành cụm nghĩa là mê. Chỗ sau là danh từ nghĩa là người hâm mộ."
+  sample_en: "I'm into sci-fi films. I'm not really a fan of horror."
+
+quiz:
+  - kind: mcq
+    prompt_vi: "\"I'm into strategy games\" nghĩa là gì?"
+    choices: ["Tôi mê game chiến thuật", "Tôi đang ở trong một game", "Tôi mới bắt đầu chơi game"]
+    answer: 0
+    difficulty: 1
+    skill: Listening
+  - kind: mcq
+    prompt_vi: "Cách chê một thể loại mà không làm người kia phật ý là gì?"
+    choices: ["I hate that", "I'm not really a fan of it", "That is very bad"]
+    answer: 1
+    difficulty: 2
+    skill: Speaking
+  - kind: mcq
+    prompt_vi: "\"No spoilers, please!\" nghĩa là gì?"
+    choices: ["Đừng nói to quá", "Đừng nhắc lại chuyện đó", "Đừng tiết lộ nội dung phim"]
+    answer: 2
+    difficulty: 1
+    skill: Listening
+  - kind: mcq
+    prompt_vi: "Câu trả lời nào mở ra cuộc trò chuyện tốt nhất?"
+    choices: ["I'm into sci-fi because the stories are clever", "Yes, I like films", "Films are okay"]
+    answer: 0
+    difficulty: 2
+    skill: Speaking
+
+explanation:
+  why_vi: >
+    Câu hỏi về sở thích là cửa vào mọi cuộc trò chuyện xã giao, nhưng người học
+    thường trả lời đúng một chữ rồi im. Không phải vì thiếu từ mà vì không quen
+    thói quen kèm lý do — trong tiếng Việt, hỏi thích gì thì trả lời tên là đủ.
+  how_vi: >
+    Luôn ghép hai vế: sở thích rồi lý do, nối bằng because. I'm into sci-fi because
+    the stories are clever. Vế lý do cho người kia chỗ để hỏi tiếp, và đó là mục đích
+    thật sự của câu trả lời.
+  contrast_vi: >
+    "I like" là mức trung tính. "I'm into" mạnh hơn, nghĩa là đang mê. "I'm not
+    really a fan of" là chê nhưng vẫn giữ lịch sự. Người bản xứ hiếm khi nói thẳng
+    I don't like trong lần đầu nói chuyện.
+
+common_mistakes:
+  - mistake: "Trả lời \"Yes, I like film\" rồi dừng"
+    why_vi: >
+      Người học coi câu hỏi là câu kiểm tra và trả lời đúng là xong. Nhưng câu hỏi
+      sở thích là lời mời trò chuyện, trả lời cụt bị hiểu là không muốn nói chuyện.
+    fix_vi: "Thêm thể loại và một lý do: \"I'm into sci-fi because the stories are clever.\""
+  - mistake: "Nói \"I like very much this film\""
+    why_vi: >
+      Trật tự này giống tiếng Việt là tôi rất thích phim này. Trong tiếng Anh, cụm
+      very much phải đứng sau tân ngữ chứ không chen vào giữa động từ và tân ngữ.
+    fix_vi: "Đổi thành \"I like this film very much\", hoặc gọn hơn là \"I really like this film.\""
+  - mistake: "Đọc \"through\" thành /θroʊ/ giống throw"
+    why_vi: >
+      Hai từ chỉ khác một chữ cái nhưng nguyên âm khác hẳn. Người học đọc theo từ
+      quen thuộc hơn, và câu I'm halfway through thành ra vô nghĩa.
+    fix_vi: "Đọc /θruː/ với nguyên âm dài như từ true, còn throw đọc /θroʊ/."
+
+memory_trick_vi: >
+  Mỗi câu trả lời về sở thích có hai nửa: THÍCH GÌ I'm into sci-fi, VÌ SAO
+  because the stories are clever. Nửa sau mới là nửa giữ cho cuộc trò chuyện tiếp tục.

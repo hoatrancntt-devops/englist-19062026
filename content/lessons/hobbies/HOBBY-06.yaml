@@ -1,0 +1,261 @@
+schema_version: 1
+code: HOBBY-06
+slug: ban-ke-hoach-cuoi-tuan-voi-nhom
+title_vi: "Bàn kế hoạch cuối tuần với nhóm"
+title_en: "Making weekend plans with a group"
+
+layer: Life
+track: Hobbies
+level: A2
+unit_code: U-H2
+order_index: 6
+estimated_minutes: 12
+
+illustration: clock-calendar
+
+objective_vi: >
+  Đề xuất, phản hồi và chốt một kế hoạch chung — chỗ khó không phải từ vựng mà là
+  nói được câu vừa không đồng ý vừa không làm hỏng không khí.
+
+objective_observable: >
+  Đưa được một đề xuất kèm giờ và địa điểm, và phản đối một đề xuất khác một cách
+  lịch sự, trong 3 trên 4 drill.
+
+mastery_weights:
+  Listening: 0.30
+  Speaking: 0.35
+  Reading: 0.20
+  Writing: 0.15
+
+prerequisites:
+  - lesson: HOBBY-05
+    min_mastery: 60
+    kind: Hard
+
+vocabulary:
+  - term: "How about"
+    ipa: "/haʊ əˈbaʊt/"
+    meaning_vi: "hay là ... thì sao (đề xuất)"
+    chunk: "How about Saturday morning?"
+    tags: [hobbies, plan]
+  - term: "works for me"
+    ipa: "/wɜːrks fər miː/"
+    meaning_vi: "với tôi thì được"
+    chunk: "Saturday works for me."
+    tags: [hobbies, plan]
+  - term: "I'd rather"
+    ipa: "/aɪd ˈræðər/"
+    meaning_vi: "tôi thích ... hơn (từ chối nhẹ nhàng)"
+    chunk: "I'd rather go in the afternoon."
+    tags: [hobbies, plan]
+  - term: "count me in"
+    ipa: "/kaʊnt miː ɪn/"
+    meaning_vi: "cho tôi tham gia với"
+    chunk: "Count me in!"
+    tags: [hobbies, plan]
+  - term: "I might be late"
+    ipa: "/aɪ maɪt biː leɪt/"
+    meaning_vi: "chắc tôi tới muộn một chút"
+    chunk: "I might be late, start without me."
+    tags: [hobbies, plan]
+  - term: "Let's say"
+    ipa: "/lets seɪ/"
+    meaning_vi: "cứ chốt là (khi chốt giờ)"
+    chunk: "Let's say two o'clock then."
+    tags: [hobbies, plan]
+
+sentence_patterns:
+  - pattern: "How about {time}?"
+    meaning_vi: "Hay là {time} nhé?"
+    slots:
+      time: ["Saturday morning", "Sunday afternoon", "around seven"]
+  - pattern: "I'd rather {alternative}."
+    meaning_vi: "Tôi muốn {alternative} hơn."
+    slots:
+      alternative: ["go in the afternoon", "meet somewhere closer", "make it Sunday"]
+
+dialogue:
+  context_vi: >
+    Nhóm bốn người trong công ty rủ nhau đi leo núi cuối tuần. Trong nhóm chat ai
+    cũng nói được, nhưng ba tin nhắn sau là ba việc khác nhau: đề xuất, phản đối,
+    và chốt. Không ai chốt thì kế hoạch tan.
+  turns:
+    - speaker: "Minh"
+      en: "How about hiking on Saturday morning?"
+      vi: "Sáng thứ Bảy đi leo núi nhé?"
+    - speaker: "You"
+      en: "Saturday works for me, but I'd rather go in the afternoon."
+      vi: "Thứ Bảy thì mình được, nhưng mình muốn đi buổi chiều hơn."
+    - speaker: "Lan"
+      en: "Same here. Mornings are too hot at this time of year."
+      vi: "Mình cũng vậy. Mùa này buổi sáng nắng lắm."
+    - speaker: "Minh"
+      en: "Fair enough. Let's say two o'clock then."
+      vi: "Được thôi. Vậy chốt hai giờ nhé."
+    - speaker: "You"
+      en: "Count me in. Where should we meet?"
+      vi: "Cho mình tham gia. Mình gặp nhau ở đâu?"
+    - speaker: "Minh"
+      en: "At the car park by the entrance. I might be late, so start without me."
+      vi: "Ở bãi xe cạnh cổng. Chắc mình tới muộn, mọi người cứ đi trước."
+
+listening:
+  context_vi: >
+    Nghe một nhóm chốt kế hoạch. Chú ý câu chốt cuối — cả nhóm bàn nhiều nhưng chỉ
+    một câu chứa giờ và địa điểm thật sự.
+  speed: 0.9
+  voice: en_US_male
+  transcript_en: "How about the cinema on Friday? Friday works for me. I'd rather make it Saturday, I have a deadline on Friday. Fair enough. Let's say Saturday at six, at the mall entrance. Count me in."
+  transcript_vi: "Thứ Sáu đi xem phim nhé? Thứ Sáu mình được. Mình muốn để thứ Bảy hơn, thứ Sáu mình có hạn nộp bài. Được thôi. Vậy chốt thứ Bảy sáu giờ, ở cổng trung tâm thương mại. Cho mình tham gia."
+  questions:
+    - kind: mcq_listen
+      prompt_vi: "Cuối cùng nhóm chốt ngày nào?"
+      choices: ["Thứ Sáu", "Thứ Bảy", "Chủ Nhật"]
+      answer: 1
+      difficulty: 1
+      skill: Listening
+    - kind: mcq_listen
+      prompt_vi: "Vì sao một người muốn đổi ngày?"
+      choices: ["Vì bận việc gia đình", "Vì rạp hết vé", "Vì có hạn nộp bài vào thứ Sáu"]
+      answer: 2
+      difficulty: 2
+      skill: Listening
+
+speaking_drills:
+  - kind: read_aloud
+    expected_text: "How about Saturday afternoon?"
+    prompt_vi: "Đề xuất. Ngữ điệu cuối câu đi lên để nghe như hỏi ý chứ không phải ra lệnh."
+    ipa: "/haʊ əˈbaʊt ˈsætərdeɪ ˌæftərˈnuːn/"
+    focus_phonemes: ["aʊ", "n"]
+  - kind: read_aloud
+    expected_text: "I'd rather go in the afternoon."
+    prompt_vi: "Từ chối nhẹ. Chữ rather có âm /ð/ ở giữa, lưỡi chạm nhẹ răng trên."
+    ipa: "/aɪd ˈræðər ɡoʊ ɪn ði ˌæftərˈnuːn/"
+    focus_phonemes: ["ð", "r"]
+  - kind: shadow
+    expected_text: "Saturday works for me."
+    prompt_vi: "Đồng ý. Chữ works kết thúc bằng cụm /ks/, phải bật cả hai âm."
+    ipa: "/ˈsætərdeɪ wɜːrks fər miː/"
+    focus_phonemes: ["ks", "ɜːr"]
+  - kind: shadow
+    expected_text: "Let's say two o'clock then."
+    prompt_vi: "Câu chốt. Nhấn vào giờ để cả nhóm nghe rõ con số."
+    ipa: "/lets seɪ tuː əˈklɑːk ðen/"
+    focus_phonemes: ["s", "kl"]
+  - kind: respond
+    prompt_en: "How about hiking on Saturday morning?"
+    prompt_vi: "Bạn bận buổi sáng. Đồng ý ngày nhưng đề nghị đổi giờ."
+    accept_patterns:
+      - "I'd rather"
+      - "works for me"
+      - "How about"
+      - "afternoon"
+
+reading:
+  kind: chat
+  context_vi: >
+    Nhóm chat của cả đội. Đọc để biết cuối cùng chốt gì, vì thông tin nằm rải rác
+    qua nhiều tin nhắn chứ không gói trong một tin.
+  text_en: |
+    Minh:  Hiking this weekend? How about Saturday morning?
+    Lan:   Saturday works, but mornings are too hot now.
+    You:   Same. I'd rather go after lunch.
+    Minh:  Fair enough. Let's say 14:00 then.
+    Lan:   Count me in. Where do we meet?
+    Minh:  Car park by the north entrance. Bring water.
+    Tuan:  I might be late, start without me.
+  text_vi: |
+    Minh:  Cuối tuần leo núi không? Sáng thứ Bảy nhé?
+    Lan:   Thứ Bảy được, nhưng giờ này buổi sáng nắng lắm.
+    Bạn:   Mình cũng vậy. Mình muốn đi sau bữa trưa hơn.
+    Minh:  Được thôi. Vậy chốt 14:00 nhé.
+    Lan:   Cho mình tham gia. Gặp nhau ở đâu?
+    Minh:  Bãi xe cổng bắc. Nhớ mang nước.
+    Tuấn:  Chắc mình tới muộn, mọi người cứ đi trước.
+  questions:
+    - kind: mcq_read
+      prompt_en: "Where is the meeting point?"
+      choices: ["The car park by the north entrance", "The mall entrance", "Lan's house"]
+      answer: 0
+      difficulty: 1
+      reading_skill: scan
+      skill: Reading
+    - kind: mcq_read
+      prompt_en: "What does Tuan want the group to do?"
+      choices: ["Wait for him", "Change the time", "Start without him"]
+      answer: 2
+      difficulty: 2
+      reading_skill: detail
+      skill: Reading
+
+writing:
+  kind: FillBlank
+  prompt_vi: "Điền hai chỗ trống: câu đề xuất và câu từ chối nhẹ nhàng."
+  prompt_en: "___ about Saturday morning? I'd ___ go in the afternoon."
+  blanks:
+    - ["How"]
+    - ["rather"]
+  hint_vi: "Chỗ đầu ghép với about thành cụm đề xuất. Chỗ sau đi với I'd để nói thích cái khác hơn."
+  sample_en: "How about Saturday morning? I'd rather go in the afternoon."
+
+quiz:
+  - kind: mcq
+    prompt_vi: "\"Count me in\" nghĩa là gì?"
+    choices: ["Đếm giúp tôi", "Tính tiền phần tôi", "Cho tôi tham gia với"]
+    answer: 2
+    difficulty: 1
+    skill: Listening
+  - kind: mcq
+    prompt_vi: "Muốn từ chối một đề xuất mà không làm mất lòng thì nói gì?"
+    choices: ["I'd rather go in the afternoon", "No, morning is bad", "I cannot morning"]
+    answer: 0
+    difficulty: 2
+    skill: Speaking
+  - kind: mcq
+    prompt_vi: "\"Saturday works for me\" nghĩa là gì?"
+    choices: ["Thứ Bảy tôi phải đi làm", "Thứ Bảy thì tôi được", "Thứ Bảy tôi làm việc ở nhà"]
+    answer: 1
+    difficulty: 2
+    skill: Listening
+  - kind: mcq
+    prompt_vi: "Câu nào là câu chốt kế hoạch?"
+    choices: ["How about Saturday?", "I might be late", "Let's say two o'clock then"]
+    answer: 2
+    difficulty: 2
+    skill: Speaking
+
+explanation:
+  why_vi: >
+    Bàn kế hoạch nhóm cần ba loại câu khác nhau, và người học thường chỉ có loại thứ
+    nhất. Không có câu phản đối lịch sự thì hoặc im lặng đồng ý rồi khó chịu, hoặc
+    nói No thẳng và làm không khí chùng. Không có câu chốt thì cả nhóm bàn mãi
+    không đi tới đâu.
+  how_vi: >
+    Ba câu nên thuộc lòng: đề xuất bằng How about, phản đối bằng I'd rather, chốt
+    bằng Let's say. Khi phản đối, luôn đồng ý một phần trước rồi mới nêu ý mình:
+    Saturday works for me, but I'd rather go in the afternoon.
+  contrast_vi: >
+    "I'd rather" là nói mình thích phương án khác hơn, nghe rất nhẹ. "I don't want to"
+    là từ chối thẳng, dùng trong nhóm bạn thân thì được nhưng trong nhóm đồng nghiệp
+    thì nặng. "I can't" là không thể, tức là lý do khách quan chứ không phải sở thích.
+
+common_mistakes:
+  - mistake: "Nói \"No, I don't like morning\" khi muốn đổi giờ"
+    why_vi: >
+      Người học dịch thẳng ý không thích buổi sáng. Câu này phủ nhận cả đề xuất mà
+      không đưa phương án, nên người đề xuất phải nghĩ lại từ đầu và cảm thấy bị bác bỏ.
+    fix_vi: "Giữ công thức đồng ý một nửa rồi đề xuất: \"Saturday works for me, but I'd rather go in the afternoon.\""
+  - mistake: "Đợi người khác chốt giờ và địa điểm"
+    why_vi: >
+      Trong nhóm nói tiếng Anh, người học ngại nói câu quyết định vì sợ sai. Nhưng
+      câu chốt là câu ngắn nhất và dễ nhất trong cả cuộc bàn bạc.
+    fix_vi: "Dùng đúng một mẫu: \"Let's say two o'clock at the north gate then.\""
+  - mistake: "Đọc \"rather\" với âm /r/ đầu lưỡi rung như tiếng Việt"
+    why_vi: >
+      Tiếng Việt có âm r rung, tiếng Anh Mỹ thì lưỡi cuộn lại và không chạm vào đâu cả.
+      Rung lưỡi làm từ này nghe lạ ngay từ âm đầu tiên.
+    fix_vi: "Cuộn nhẹ đầu lưỡi về phía sau, không để chạm vòm miệng: /ˈræðər/."
+
+memory_trick_vi: >
+  Bàn kế hoạch nhóm có ba câu: ĐỀ XUẤT How about, PHẢN ĐỐI I'd rather,
+  CHỐT Let's say. Nhóm nào thiếu câu thứ ba là nhóm bàn cả tuần không đi được.

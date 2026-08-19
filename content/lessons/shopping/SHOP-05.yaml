@@ -1,0 +1,261 @@
+schema_version: 1
+code: SHOP-05
+slug: gia-khuyen-mai-va-so-sanh-gia
+title_vi: "Giá, khuyến mãi và so sánh giá"
+title_en: "Prices, promotions, and comparing value"
+
+layer: Life
+track: Shopping
+level: A1
+unit_code: U-S2
+order_index: 5
+estimated_minutes: 11
+
+illustration: money-receipt
+
+objective_vi: >
+  Đọc nhãn khuyến mãi cho đúng, hỏi giá và hỏi có giảm không, và tính xem gói to
+  hay gói nhỏ mới thật sự rẻ hơn.
+
+objective_observable: >
+  Hỏi được giá và điều kiện khuyến mãi trong 3 trên 4 drill, và chọn đúng gói rẻ
+  hơn từ một bảng giá có đơn giá.
+
+mastery_weights:
+  Listening: 0.25
+  Speaking: 0.30
+  Reading: 0.30
+  Writing: 0.15
+
+prerequisites:
+  - lesson: SHOP-04
+    min_mastery: 60
+    kind: Hard
+
+vocabulary:
+  - term: "on sale"
+    ipa: "/ɑːn seɪl/"
+    meaning_vi: "đang giảm giá"
+    chunk: "Is this on sale?"
+    tags: [shopping, price]
+  - term: "buy one get one free"
+    ipa: "/baɪ wʌn ɡet wʌn friː/"
+    meaning_vi: "mua một tặng một"
+    chunk: "It's buy one get one free."
+    tags: [shopping, price]
+  - term: "unit price"
+    ipa: "/ˈjuːnɪt praɪs/"
+    meaning_vi: "đơn giá (giá trên mỗi kg hoặc mỗi lít)"
+    chunk: "Check the unit price first."
+    tags: [shopping, price]
+  - term: "How much is this"
+    ipa: "/haʊ mʌtʃ ɪz ðɪs/"
+    meaning_vi: "cái này bao nhiêu tiền"
+    chunk: "Excuse me, how much is this?"
+    tags: [shopping, price]
+  - term: "member price"
+    ipa: "/ˈmembər praɪs/"
+    meaning_vi: "giá dành cho khách có thẻ thành viên"
+    chunk: "Is that the member price?"
+    tags: [shopping, price]
+  - term: "expires"
+    ipa: "/ɪkˈspaɪərz/"
+    meaning_vi: "hết hạn (khuyến mãi hoặc phiếu giảm giá)"
+    chunk: "The offer expires on Sunday."
+    tags: [shopping, price]
+
+sentence_patterns:
+  - pattern: "How much is this {item}?"
+    meaning_vi: "{item} này bao nhiêu tiền ạ?"
+    slots:
+      item: ["shampoo", "coffee", "rice"]
+  - pattern: "Is this {offer}?"
+    meaning_vi: "Cái này có {offer} không ạ?"
+    slots:
+      offer: ["on sale", "the member price", "included in the promotion"]
+
+dialogue:
+  context_vi: >
+    Bạn cầm hai hộp sữa, một hộp dán nhãn đỏ ghi giảm giá, một hộp gói lớn hơn không
+    có nhãn. Nhìn con số to trên nhãn thì hộp đỏ rẻ hơn, nhưng chưa chắc đúng.
+  turns:
+    - speaker: "You"
+      en: "Excuse me, how much is this box of milk?"
+      vi: "Xin lỗi, hộp sữa này bao nhiêu tiền ạ?"
+    - speaker: "Staff"
+      en: "That one is eighty-five thousand. It's on sale this week."
+      vi: "Hộp đó tám mươi lăm nghìn ạ. Tuần này đang giảm giá ạ."
+    - speaker: "You"
+      en: "And is that the member price or the normal price?"
+      vi: "Đó là giá thành viên hay giá thường ạ?"
+    - speaker: "Staff"
+      en: "The member price. Without a card it's ninety-five."
+      vi: "Giá thành viên ạ. Không có thẻ thì chín mươi lăm ạ."
+    - speaker: "You"
+      en: "I see. The big box has a lower unit price, doesn't it?"
+      vi: "Tôi hiểu rồi. Hộp lớn có đơn giá thấp hơn đúng không ạ?"
+    - speaker: "Staff"
+      en: "Yes, it works out cheaper per litre."
+      vi: "Đúng ạ, tính trên mỗi lít thì rẻ hơn ạ."
+
+listening:
+  context_vi: >
+    Nghe một khách hỏi giá và điều kiện khuyến mãi. Chú ý câu cuối — đó là điều kiện
+    làm cho khuyến mãi không áp dụng được ngay hôm nay.
+  speed: 0.9
+  voice: en_US_female
+  transcript_en: "How much is this shampoo? It's sixty thousand, and it's buy one get one free. Great, I'll take two. Sorry, the offer starts tomorrow. Then I'll come back tomorrow."
+  transcript_vi: "Chai dầu gội này bao nhiêu ạ? Sáu mươi nghìn ạ, và đang mua một tặng một ạ. Hay quá, tôi lấy hai chai. Xin lỗi ạ, khuyến mãi bắt đầu từ ngày mai ạ. Vậy mai tôi quay lại."
+  questions:
+    - kind: mcq_listen
+      prompt_vi: "Khuyến mãi ở đây là gì?"
+      choices: ["Giảm nửa giá", "Tặng phiếu mua hàng", "Mua một tặng một"]
+      answer: 2
+      difficulty: 1
+      skill: Listening
+    - kind: mcq_listen
+      prompt_vi: "Vì sao khách không mua hôm nay?"
+      choices: ["Khuyến mãi bắt đầu từ ngày mai", "Hết hàng", "Khách quên mang thẻ"]
+      answer: 0
+      difficulty: 2
+      skill: Listening
+
+speaking_drills:
+  - kind: read_aloud
+    expected_text: "Excuse me, how much is this?"
+    prompt_vi: "Đọc to. Chữ much có âm /tʃ/ cuối, phải bật ra chứ không nuốt."
+    ipa: "/ɪkˈskjuːz miː haʊ mʌtʃ ɪz ðɪs/"
+    focus_phonemes: ["tʃ", "aʊ"]
+  - kind: read_aloud
+    expected_text: "Is this on sale?"
+    prompt_vi: "Hỏi có giảm giá không. Ngữ điệu cuối câu đi lên."
+    ipa: "/ɪz ðɪs ɑːn seɪl/"
+    focus_phonemes: ["ð", "eɪ"]
+  - kind: shadow
+    expected_text: "Is that the member price?"
+    prompt_vi: "Hỏi loại giá. Chữ price có cụm /pr/ đầu từ, không chèn nguyên âm vào giữa."
+    ipa: "/ɪz ðæt ðə ˈmembər praɪs/"
+    focus_phonemes: ["pr", "ð"]
+  - kind: shadow
+    expected_text: "When does the offer expire?"
+    prompt_vi: "Hỏi hạn khuyến mãi. Chữ expire nhấn ở âm tiết thứ hai."
+    ipa: "/wen dʌz ði ˈɔːfər ɪkˈspaɪər/"
+    focus_phonemes: ["ks", "aɪ"]
+  - kind: respond
+    prompt_en: "Do you have a member card?"
+    prompt_vi: "Nhân viên hỏi bạn có thẻ thành viên không. Trả lời có hoặc hỏi cách đăng ký."
+    accept_patterns:
+      - "Yes"
+      - "No"
+      - "How can I get one"
+      - "sign up"
+
+reading:
+  kind: note
+  context_vi: >
+    Kệ hàng có ba lựa chọn cùng một loại gạo. Nhãn to ghi giá cả gói, nhãn nhỏ bên
+    dưới ghi đơn giá. Nhãn nhỏ mới là nhãn nói thật.
+  text_en: |
+    JASMINE RICE — SHELF LABELS
+
+    Pack A   2 kg    120,000     (60,000 / kg)
+    Pack B   5 kg    275,000     (55,000 / kg)
+    Pack C   5 kg    250,000     (50,000 / kg)  MEMBER ONLY
+
+    Buy 2 packs of A and get 10% off the second pack.
+    Member offer on Pack C expires 30 September.
+  text_vi: |
+    GẠO THƠM — NHÃN GIÁ TRÊN KỆ
+
+    Gói A   2 kg    120.000     (60.000 / kg)
+    Gói B   5 kg    275.000     (55.000 / kg)
+    Gói C   5 kg    250.000     (50.000 / kg)  CHỈ DÀNH CHO THÀNH VIÊN
+
+    Mua 2 gói A được giảm 10% cho gói thứ hai.
+    Ưu đãi thành viên cho gói C hết hạn ngày 30 tháng 9.
+  questions:
+    - kind: mcq_read
+      prompt_en: "You are not a member. Which pack has the lowest unit price for you?"
+      choices: ["Pack A", "Pack B", "Pack C"]
+      answer: 1
+      difficulty: 2
+      reading_skill: detail
+      skill: Reading
+    - kind: mcq_read
+      prompt_en: "What happens on 30 September?"
+      choices: ["Pack C is removed from the shelf", "All prices go up", "The member offer on Pack C ends"]
+      answer: 2
+      difficulty: 2
+      reading_skill: scan
+      skill: Reading
+
+writing:
+  kind: FillBlank
+  prompt_vi: "Điền hai chỗ trống: câu hỏi giá và câu hỏi có đang giảm giá không."
+  prompt_en: "How ___ is this? Is this on ___?"
+  blanks:
+    - ["much"]
+    - ["sale"]
+  hint_vi: "Chỗ đầu đi với how khi hỏi tiền. Chỗ sau ghép với on thành cụm nghĩa là đang giảm giá."
+  sample_en: "How much is this? Is this on sale?"
+
+quiz:
+  - kind: mcq
+    prompt_vi: "\"Unit price\" trên nhãn kệ là gì?"
+    choices: ["Giá trên mỗi kg hoặc mỗi lít", "Giá của cả gói", "Giá sau khi giảm"]
+    answer: 0
+    difficulty: 2
+    skill: Reading
+  - kind: mcq
+    prompt_vi: "\"Buy one get one free\" nghĩa là gì?"
+    choices: ["Giảm nửa giá món thứ hai", "Mua một tặng một", "Mua hai giảm một phần"]
+    answer: 1
+    difficulty: 1
+    skill: Reading
+  - kind: mcq
+    prompt_vi: "Muốn hỏi giá này có phải giá thành viên không thì nói gì?"
+    choices: ["This price is member?", "Member have this price?", "Is that the member price?"]
+    answer: 2
+    difficulty: 2
+    skill: Speaking
+  - kind: mcq
+    prompt_vi: "\"The offer expires on Sunday\" nghĩa là gì?"
+    choices: ["Khuyến mãi hết hạn vào Chủ Nhật", "Khuyến mãi bắt đầu vào Chủ Nhật", "Chủ Nhật cửa hàng đóng cửa"]
+    answer: 0
+    difficulty: 2
+    skill: Reading
+
+explanation:
+  why_vi: >
+    Siêu thị thiết kế nhãn để mắt bạn nhìn vào con số to nhất, và con số đó thường
+    không phải con số quyết định rẻ hay đắt. Gói lớn không phải lúc nào cũng rẻ hơn,
+    và nhiều mức giá hấp dẫn chỉ áp dụng cho khách có thẻ.
+  how_vi: >
+    Nhìn dòng nhỏ ghi đơn giá trước, so sánh trên cùng một đơn vị, rồi mới nhìn giá gói.
+    Với khuyến mãi thì hỏi đúng hai câu: giá này có phải giá thành viên không, và
+    khuyến mãi hết hạn khi nào.
+  contrast_vi: >
+    "On sale" là đang giảm giá. "For sale" là đang được bán, không liên quan tới giảm giá.
+    Hỏi nhầm thành Is this for sale trong siêu thị thì câu trả lời luôn là có, và
+    bạn không biết thêm được gì.
+
+common_mistakes:
+  - mistake: "Nói \"How much this?\" khi hỏi giá"
+    why_vi: >
+      Tiếng Việt không cần động từ trong câu cái này bao nhiêu tiền, nên người học bỏ
+      luôn chữ is. Câu vẫn hiểu được nhưng nghe rõ là câu của người mới học.
+    fix_vi: "Luôn giữ đủ ba phần: \"How much is this?\" hoặc \"How much are these?\""
+  - mistake: "Tin rằng gói to luôn rẻ hơn"
+    why_vi: >
+      Thói quen mua sỉ ở Việt Nam khiến người học mặc định mua nhiều thì rẻ. Nhiều siêu
+      thị đặt giá gói lớn cao hơn theo đơn giá, vì biết khách không tính lại.
+    fix_vi: "Đọc dòng đơn giá trong ngoặc trên nhãn kệ, đó là con số duy nhất so sánh được."
+  - mistake: "Đọc \"expire\" với trọng âm ở âm tiết đầu"
+    why_vi: >
+      Người học đọc theo mặt chữ và nhấn vào chữ ex. Trọng âm của từ này rơi vào âm
+      tiết thứ hai, và nhấn sai làm người nghe phải hỏi lại.
+    fix_vi: "Đọc /ɪkˈspaɪər/, âm đầu đọc lướt và nhấn mạnh vào phần pire."
+
+memory_trick_vi: >
+  Trước khi bỏ hàng vào giỏ, hỏi ba câu: ĐƠN GIÁ bao nhiêu, GIÁ NÀY cho thành viên
+  hay cho mọi người, KHUYẾN MÃI hết hạn khi nào. Câu đầu tiên tiết kiệm nhiều tiền nhất.

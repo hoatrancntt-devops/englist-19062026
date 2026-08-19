@@ -110,7 +110,12 @@ jobs:
 
   deploy:
     name: Triển khai lên VPS
-    runs-on: ubuntu-latest
+    # Chạy NGAY TRÊN máy chủ, không SSH vào.
+    #
+    # Máy chủ nằm trong mạng nội bộ: runner của GitHub ở ngoài Internet gọi vào cổng 22 thì
+    # timeout. Runner tự cài trên máy chỉ gọi RA GitHub nên không cần mở cổng nào, và cũng
+    # không cần khoá SSH hay secret nào cho việc triển khai.
+    runs-on: [self-hosted, english-v2]
 
     # Chỉ triển khai khi MỌI cổng đã xanh. Thiếu một `needs` ở đây là mở đường cho bản hỏng
     # đi thẳng ra người dùng trong lúc test vẫn đang chạy.
@@ -129,69 +134,30 @@ jobs:
       url: https://english-v2.hoatranlab.io.vn
 
     steps:
-      - name: Chuẩn bị khoá SSH
-        run: |
-          set -euo pipefail
-          mkdir -p ~/.ssh && chmod 700 ~/.ssh
-          printf '%s\n' "${{ secrets.VPS_SSH_KEY }}" > ~/.ssh/id_ed25519
-          chmod 600 ~/.ssh/id_ed25519
-          # Ghim khoá máy chủ. Thiếu dòng này thì phải dùng StrictHostKeyChecking=no,
-          # tức là chấp nhận bất kỳ máy nào trả lời địa chỉ đó.
-          printf '%s\n' "${{ secrets.VPS_KNOWN_HOSTS }}" > ~/.ssh/known_hosts
-          chmod 600 ~/.ssh/known_hosts
-
-      - name: Triển khai lên từng máy chủ
+      - name: Triển khai
         env:
           TAG: ${{ needs.images.outputs.tag }}
-
-          # Mỗi dòng một máy. Thêm máy thứ ba chỉ là thêm một dòng ở đây cộng hai secret,
-          # không phải chép cả job ra bản thứ hai.
-          HOSTS: |
-            ${{ secrets.VPS_USER }}@${{ secrets.VPS_HOST }}
-            ${{ secrets.VPS2_USER }}@${{ secrets.VPS2_HOST }}
         run: |
-          set -uo pipefail
-          failed=""
+          set -euo pipefail
 
-          while read -r target; do
-            [ -z "$target" ] && continue
-            echo "::group::$target"
+          # Thư mục app nằm ngoài workspace của runner: runner dọn workspace mỗi lượt chạy,
+          # còn .env và volume dữ liệu phải sống qua mọi lần triển khai.
+          cd "$HOME/englist"
 
-            # KHÔNG dừng ở máy đầu tiên hỏng. Một máy chết không phải lý do để máy còn lại
-            # nằm lại bản cũ, và gom hết lỗi rồi báo một lần thì đỡ phải chạy lại để xem
-            # máy thứ hai có sao không.
-            if ssh -o BatchMode=yes "$target" bash -euo pipefail <<REMOTE
-              cd ~/englist
+          # Máy chủ phải chạy đúng compose và đúng script của commit đang triển khai,
+          # không phải bản cũ còn sót lại từ lần trước.
+          git fetch --quiet origin main
+          git reset --quiet --hard "$TAG"
 
-              # Máy chủ phải chạy đúng compose và đúng script của commit đang triển khai,
-              # không phải bản cũ còn sót lại từ lần trước.
-              git fetch --quiet origin main
-              git reset --quiet --hard "$TAG"
+          # Kiểm tra sẵn sàng phải gọi đúng chỗ proxy đang nghe. Địa chỉ và cổng đọc thẳng từ
+          # .env của máy — ghi cứng ở đây thì đổi một chỗ là chỗ kia lệch, và biểu hiện là
+          # bản tốt bị quay lui vì tưởng không sẵn sàng.
+          BIND=$(grep -E '^BIND_ADDRESS=' .env | cut -d= -f2)
+          PORT=$(grep -E '^BIND_PORT=' .env | cut -d= -f2)
 
-              # Kiểm tra sẵn sàng phải gọi đúng chỗ proxy đang nghe. Địa chỉ và cổng khác nhau
-              # theo từng máy nên đọc thẳng từ .env của máy đó — ghi cứng ở đây thì đổi một
-              # chỗ là chỗ kia lệch, và biểu hiện là bản tốt bị quay lui vì tưởng không sẵn sàng.
-              BIND=\$(grep -E '^BIND_ADDRESS=' .env | cut -d= -f2)
-              PORT=\$(grep -E '^BIND_PORT=' .env | cut -d= -f2)
-
-              COMPOSE_OVERLAY=docker-compose.vps.yml \\
-              HEALTH_URL="http://\${BIND:-127.0.0.1}:\${PORT:-8080}/health/ready" \\
-                ./deploy/scripts/deploy-azure-vm.sh "$TAG"
-          REMOTE
-            then
-              echo "$target: xong"
-            else
-              echo "::error::$target trien khai that bai"
-              failed="$failed $target"
-            fi
-
-            echo "::endgroup::"
-          done <<< "$HOSTS"
-
-          if [ -n "$failed" ]; then
-            echo "Cac may that bai:$failed" >&2
-            exit 1
-          fi
+          COMPOSE_OVERLAY=docker-compose.vps.yml \
+          HEALTH_URL="http://${BIND:-127.0.0.1}:${PORT:-8080}/health/ready" \
+            ./deploy/scripts/deploy-azure-vm.sh "$TAG"
 
   web:
     name: Web — lint, typecheck, build

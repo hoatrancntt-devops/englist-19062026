@@ -1,0 +1,290 @@
+schema_version: 1
+code: HD-01
+slug: nhan-ticket-va-phan-loai
+title_vi: "Nhận ticket — và gọi đúng tên thứ vừa xảy ra"
+title_en: "Taking a ticket and classifying it"
+
+layer: Professional
+track: Helpdesk
+level: B1
+unit_code: U-HD1
+order_index: 1
+estimated_minutes: 12
+
+illustration: ticket-queue
+
+objective_vi: >
+  Nhận một ticket và phân loại đúng: incident, service request, hay problem.
+  Gọi sai tên là cả quy trình phía sau chạy sai.
+
+objective_observable: >
+  Phân loại đúng 4 trên 5 tình huống, và viết được câu xác nhận đã nhận ticket.
+
+mastery_weights:
+  Listening: 0.30
+  Speaking: 0.30
+  Reading: 0.20
+  Writing: 0.20
+
+prerequisites:
+  - lesson: OFF-12
+    min_mastery: 70
+    kind: Hard
+
+vocabulary:
+  - term: "incident"
+    ipa: "/ˈɪnsɪdənt/"
+    meaning_vi: "sự cố — dịch vụ bị gián đoạn hoặc giảm chất lượng ngoài kế hoạch"
+    chunk: "This is an incident, the portal is down."
+    tags: [itil, core]
+  - term: "service request"
+    ipa: "/ˈsɜːrvɪs rɪˈkwest/"
+    meaning_vi: "yêu cầu dịch vụ — người dùng xin cấp thứ gì đó, không có gì hỏng"
+    chunk: "That's a service request, not an incident."
+    tags: [itil, core]
+  - term: "problem"
+    ipa: "/ˈprɒbləm/"
+    meaning_vi: "vấn đề gốc — nguyên nhân của một hoặc nhiều sự cố"
+    chunk: "Three incidents, one underlying problem."
+    tags: [itil, core]
+  - term: "I've logged it"
+    ipa: "/aɪv lɒɡd ɪt/"
+    meaning_vi: "tôi đã ghi nhận vào hệ thống"
+    chunk: "I've logged it as INC-2291."
+    tags: [helpdesk, core]
+  - term: "impact"
+    ipa: "/ˈɪmpækt/"
+    meaning_vi: "mức ảnh hưởng — bao nhiêu người, bao nhiêu dịch vụ"
+    chunk: "What's the impact - one user or the whole team?"
+    tags: [itil, core]
+  - term: "get back to you"
+    ipa: "/ɡet bæk tuː juː/"
+    meaning_vi: "báo lại cho bạn"
+    chunk: "I'll get back to you within the hour."
+    tags: [helpdesk]
+
+sentence_patterns:
+  - pattern: "I've logged it as {reference}."
+    meaning_vi: "Tôi đã ghi nhận với mã {reference}."
+    slots:
+      reference: ["INC-2291", "REQ-8842", "ticket 4417"]
+  - pattern: "That sounds like {type}, not {other_type}."
+    meaning_vi: "Cái đó nghe giống {type} chứ không phải {other_type}."
+    slots:
+      type: ["a service request", "an incident"]
+      other_type: ["an incident", "a problem"]
+
+dialogue:
+  context_vi: >
+    Emma bên kế toán gọi tới. Cô ấy nói "hệ thống hỏng rồi" — nhưng thực ra
+    đó là hai việc khác nhau, và bạn phải tách ra trước khi ghi ticket.
+  turns:
+    - speaker: "Emma"
+      en: "Hi, the system is broken. I can't log in, and I also need access to the finance folder."
+      vi: "Chào bạn, hệ thống hỏng rồi. Tôi không đăng nhập được, với lại tôi cần quyền vào thư mục tài chính."
+    - speaker: "You"
+      en: "Let me take those separately. First, the login — is it just you, or others in your team too?"
+      vi: "Để tôi tách hai việc ra. Trước hết là phần đăng nhập — chỉ mình chị hay cả team chị cũng vậy?"
+    - speaker: "Emma"
+      en: "Two others said the same thing this morning."
+      vi: "Sáng nay có hai người nữa cũng nói vậy."
+    - speaker: "You"
+      en: "Then that's an incident — something is down. I've logged it as INC-2291."
+      vi: "Vậy đó là một sự cố — có thứ gì đó đang hỏng. Tôi đã ghi nhận là INC-2291."
+    - speaker: "Emma"
+      en: "And the folder access?"
+      vi: "Còn quyền vào thư mục thì sao?"
+    - speaker: "You"
+      en: "That's a service request, nothing is broken there. Different ticket, REQ-8842. Needs your manager's approval."
+      vi: "Cái đó là yêu cầu dịch vụ, không có gì hỏng cả. Ticket riêng, REQ-8842. Cần quản lý của chị duyệt."
+    - speaker: "Emma"
+      en: "Understood. When will the login be fixed?"
+      vi: "Tôi hiểu rồi. Bao giờ thì đăng nhập được?"
+    - speaker: "You"
+      en: "I'm looking at it now. I'll get back to you within the hour."
+      vi: "Tôi đang xem ngay đây. Trong vòng một tiếng tôi sẽ báo lại chị."
+
+listening:
+  context_vi: >
+    Nghe ba cuộc gọi ngắn. Với mỗi cuộc, tự hỏi: có thứ gì đang hỏng không?
+    Câu trả lời quyết định đó là incident hay service request.
+  speed: 1.0
+  voice: en_US_female
+  transcript_en: "Call one: the printer on floor three has stopped working. Call two: could I get a second monitor for my desk? Call three: the portal has been slow since this morning, three of us have noticed it."
+  transcript_vi: "Cuộc một: máy in tầng ba ngừng hoạt động. Cuộc hai: tôi xin thêm một màn hình cho bàn làm việc được không? Cuộc ba: portal chậm từ sáng nay, ba người bọn tôi đều thấy vậy."
+  questions:
+    - kind: mcq_listen
+      prompt_vi: "Cuộc gọi thứ hai là loại gì?"
+      choices: ["Service request", "Incident", "Problem"]
+      answer: 0
+      difficulty: 2
+      skill: Listening
+    - kind: mcq_listen
+      prompt_vi: "Cuộc gọi thứ ba là loại gì?"
+      choices: ["Không phải cả hai", "Service request", "Incident — dịch vụ giảm chất lượng"]
+      answer: 2
+      difficulty: 3
+      skill: Listening
+
+speaking_drills:
+  - kind: read_aloud
+    expected_text: "I've logged it as INC-2291."
+    prompt_vi: "Đọc mã rời từng phần: I-N-C, two two nine one."
+    ipa: "/aɪv lɒɡd ɪt æz aɪ en siː/"
+    focus_phonemes: ["ɡd", "z"]
+  - kind: read_aloud
+    expected_text: "That's a service request, not an incident."
+    prompt_vi: "Câu phân loại. Chú ý cụm /kw/ trong request."
+    ipa: "/ðæts ə ˈsɜːrvɪs rɪˈkwest nɒt ən ˈɪnsɪdənt/"
+    focus_phonemes: ["kw", "nt"]
+  - kind: shadow
+    expected_text: "What's the impact - one user or the whole team?"
+    prompt_vi: "Câu hỏi quyết định mức ưu tiên. Nghe rồi nhắc lại."
+    ipa: "/wɒts ðə ˈɪmpækt wʌn ˈjuːzər ɔːr ðə hoʊl tiːm/"
+    focus_phonemes: ["kt", "hoʊ"]
+  - kind: shadow
+    expected_text: "I'll get back to you within the hour."
+    prompt_vi: "Cam kết thời gian cụ thể. Chữ h trong hour CÂM."
+    ipa: "/aɪl ɡet bæk tuː juː wɪˈðɪn ði ˈaʊər/"
+    focus_phonemes: ["ð", "aʊ"]
+  - kind: respond
+    prompt_en: "Hi, the system is broken. I can't log in."
+    prompt_vi: "Người dùng báo không đăng nhập được. Hỏi câu quan trọng nhất để phân loại."
+    accept_patterns:
+      - "just you"
+      - "anyone else"
+      - "What's the impact"
+
+reading:
+  kind: ticket
+  context_vi: >
+    Ba ticket trong hàng đợi. Đọc và phân loại từng cái trước khi xem đáp án.
+  text_en: |
+    Ticket 4417 - "Cannot access shared drive"
+    Reported by: Emma Brooks, Finance
+    Detail: Was working yesterday. Error "network path not found".
+    Two colleagues report the same.
+
+    Ticket 4418 - "New starter needs email account"
+    Reported by: HR
+    Detail: New hire starts Monday, needs mailbox and VPN access.
+
+    Ticket 4419 - "Investigate repeated VPN drops"
+    Reported by: Network team
+    Detail: Six separate incidents this month, all sessions dropping
+    at the thirty minute mark. Root cause unknown.
+  text_vi: |
+    Ticket 4417 - "Không vào được ổ đĩa chung"
+    Người báo: Emma Brooks, phòng Tài chính
+    Chi tiết: Hôm qua vẫn dùng được. Lỗi "network path not found".
+    Hai đồng nghiệp cũng báo giống vậy.
+
+    Ticket 4418 - "Nhân sự mới cần tài khoản email"
+    Người báo: phòng Nhân sự
+    Chi tiết: Nhân sự mới vào thứ Hai, cần hộp thư và quyền VPN.
+
+    Ticket 4419 - "Điều tra tình trạng VPN rớt lặp lại"
+    Người báo: team Mạng
+    Chi tiết: Sáu sự cố riêng lẻ trong tháng này, tất cả đều rớt phiên
+    ở mốc ba mươi phút. Chưa rõ nguyên nhân gốc.
+  questions:
+    - kind: mcq_read
+      prompt_en: "How should ticket 4417 be classified?"
+      choices: ["Service request", "Incident", "Problem"]
+      answer: 1
+      difficulty: 2
+      reading_skill: skim
+      skill: Reading
+    - kind: mcq_read
+      prompt_en: "How should ticket 4418 be classified?"
+      choices: ["Incident", "Problem", "Service request"]
+      answer: 2
+      difficulty: 2
+      reading_skill: skim
+      skill: Reading
+    - kind: mcq_read
+      prompt_en: "How should ticket 4419 be classified?"
+      choices: ["Problem", "Service request", "Incident"]
+      answer: 0
+      difficulty: 3
+      reading_skill: skim
+      skill: Reading
+
+writing:
+  kind: GuidedEmail
+  prompt_vi: >
+    Trả lời người dùng vừa báo lỗi. Phải có đủ ba ý: xác nhận đã ghi nhận kèm mã ticket,
+    nêu mức ảnh hưởng bạn đã xác định, và cam kết thời gian báo lại.
+  prompt_en: "Reply to a user who has just reported an issue."
+  required_points:
+    - "logged it as"
+    - "impact"
+    - "get back to you"
+  hint_vi: "Ba ý: mã ticket, mức ảnh hưởng, cam kết thời gian. Thiếu ý ba là người dùng gọi lại sau mười phút."
+  sample_en: "Thanks for reporting this. I've logged it as INC-2291. The impact is three users in Finance, so I've raised the priority. I'll get back to you within the hour."
+
+quiz:
+  - kind: mcq
+    prompt_vi: "\"Incident\" trong ITIL nghĩa là gì?"
+    choices: ["Bất kỳ ticket nào", "Dịch vụ bị gián đoạn hoặc giảm chất lượng ngoài kế hoạch", "Yêu cầu cấp quyền"]
+    answer: 1
+    difficulty: 1
+    skill: Reading
+  - kind: mcq
+    prompt_vi: "Người dùng xin thêm một màn hình. Đó là gì?"
+    choices: ["Incident", "Problem", "Service request"]
+    answer: 2
+    difficulty: 1
+    skill: Reading
+  - kind: mcq
+    prompt_vi: "Sáu sự cố cùng một triệu chứng, chưa rõ nguyên nhân. Đó là gì?"
+    choices: ["Một problem", "Sáu incident riêng", "Một service request"]
+    answer: 0
+    difficulty: 2
+    skill: Reading
+  - kind: mcq
+    prompt_vi: "Câu hỏi nào quan trọng nhất khi mới nhận báo lỗi?"
+    choices: ["Bạn đã thử khởi động lại chưa?", "Chỉ mình bạn hay còn ai khác?", "Bạn dùng máy gì?"]
+    answer: 1
+    difficulty: 2
+    skill: Speaking
+
+explanation:
+  why_vi: >
+    Tiếng Việt gọi chung mọi thứ là "sự cố" hoặc "lỗi". Trong ITIL, ba từ incident,
+    service request và problem là ba quy trình khác nhau, ba mức SLA khác nhau,
+    và ba người chịu trách nhiệm khác nhau. Ghi sai loại là ticket đi sai luồng
+    và người dùng chờ gấp đôi thời gian.
+  how_vi: >
+    Hỏi đúng hai câu để phân loại. Câu một: CÓ THỨ GÌ ĐANG HỎNG KHÔNG?
+    Không hỏng mà chỉ xin cấp thêm thì là service request. Câu hai: ĐÂY LÀ TRIỆU CHỨNG
+    HAY NGUYÊN NHÂN? Nhiều sự cố cùng một triệu chứng chưa rõ gốc thì đó là problem.
+    Hai câu hỏi này phân loại đúng gần như mọi ticket.
+  contrast_vi: >
+    "Tôi không đăng nhập được" là incident — có thứ đang hỏng.
+    "Tôi cần quyền vào thư mục" là service request — không có gì hỏng cả.
+    Cùng một người gọi, cùng một phút, nhưng phải là hai ticket.
+
+common_mistakes:
+  - mistake: "Ghi mọi thứ là incident cho nhanh"
+    why_vi: >
+      Thấy ticket nào cũng là việc cần xử lý nên gộp làm một loại. Nhưng service request
+      cần duyệt còn incident thì không, và gộp lại làm cả hai đi sai luồng.
+    fix_vi: "Hỏi một câu: có thứ gì đang hỏng không? Không thì đó là service request."
+    detect_phoneme_missing: []
+  - mistake: "Gộp hai vấn đề của một người vào một ticket"
+    why_vi: >
+      Người dùng nói liền một mạch nên người nhận ghi liền một mạch. Kết quả là
+      một ticket đóng được nửa, và không ai theo dõi được nửa còn lại.
+    fix_vi: "Tách ngay khi nghe: \"Let me take those separately.\" Mỗi việc một mã."
+    detect_phoneme_missing: []
+  - mistake: "Không hỏi mức ảnh hưởng trước khi ghi ticket"
+    why_vi: >
+      Một người không vào được và cả phòng không vào được là hai mức ưu tiên khác hẳn,
+      nhưng mô tả ban đầu của người dùng thường giống hệt nhau.
+    fix_vi: "Luôn hỏi: chỉ mình bạn hay còn ai khác? Câu này quyết định mức ưu tiên."
+    detect_phoneme_missing: []
+
+memory_trick_vi: >
+  Hai câu hỏi phân loại mọi ticket: CÓ GÌ HỎNG KHÔNG (không thì là service request),
+  và ĐÂY LÀ TRIỆU CHỨNG HAY GỐC (nhiều triệu chứng chung gốc thì là problem).

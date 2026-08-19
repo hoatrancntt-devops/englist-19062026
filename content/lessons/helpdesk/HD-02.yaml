@@ -1,0 +1,282 @@
+schema_version: 1
+code: HD-02
+slug: hoi-thong-tin-de-chan-doan
+title_vi: "Hỏi thông tin để chẩn đoán"
+title_en: "Asking diagnostic questions"
+
+layer: Professional
+track: Helpdesk
+level: B1
+unit_code: U-HD1
+order_index: 2
+estimated_minutes: 12
+
+illustration: confused-listener
+
+objective_vi: >
+  Khai thác đủ thông tin từ người dùng để chẩn đoán, mà không làm họ thấy
+  đang bị tra hỏi hay bị đổ lỗi.
+
+objective_observable: >
+  Hỏi được bốn câu chẩn đoán chuẩn cho một sự cố, và diễn đạt câu hỏi "đã đổi gì" mà không đổ lỗi.
+
+mastery_weights:
+  Listening: 0.35
+  Speaking: 0.35
+  Reading: 0.15
+  Writing: 0.15
+
+prerequisites:
+  - lesson: HD-01
+    min_mastery: 65
+    kind: Hard
+
+vocabulary:
+  - term: "When did it start"
+    ipa: "/wen dɪd ɪt stɑːrt/"
+    meaning_vi: "bắt đầu từ khi nào"
+    chunk: "When did it start happening?"
+    tags: [diagnose, core]
+  - term: "Has anything changed"
+    ipa: "/hæz ˈeniθɪŋ tʃeɪndʒd/"
+    meaning_vi: "có gì thay đổi không (hỏi không đổ lỗi)"
+    chunk: "Has anything changed on your side recently?"
+    tags: [diagnose, core]
+  - term: "the exact error"
+    ipa: "/ði ɪɡˈzækt ˈerər/"
+    meaning_vi: "thông báo lỗi nguyên văn"
+    chunk: "Can you read me the exact error?"
+    tags: [diagnose, core]
+  - term: "Does it happen every time"
+    ipa: "/dʌz ɪt ˈhæpən ˈevri taɪm/"
+    meaning_vi: "có xảy ra mọi lần không"
+    chunk: "Does it happen every time, or now and then?"
+    tags: [diagnose, core]
+  - term: "reproduce"
+    ipa: "/ˌriːprəˈdjuːs/"
+    meaning_vi: "tái hiện lại lỗi"
+    chunk: "Can you reproduce it while I'm on the line?"
+    tags: [diagnose]
+  - term: "screenshot"
+    ipa: "/ˈskriːnʃɒt/"
+    meaning_vi: "ảnh chụp màn hình"
+    chunk: "Could you send me a screenshot?"
+    tags: [diagnose, core]
+
+sentence_patterns:
+  - pattern: "When did it start {detail}?"
+    meaning_vi: "Chuyện đó bắt đầu {detail} từ khi nào?"
+    slots:
+      detail: ["happening", "failing", "showing that error"]
+  - pattern: "Does it happen every time, or {alternative}?"
+    meaning_vi: "Có xảy ra mọi lần không, hay {alternative}?"
+    slots:
+      alternative: ["now and then", "only on the VPN", "only in the morning"]
+
+dialogue:
+  context_vi: >
+    Emma gọi lại. Cô ấy bực vì đã mất nửa buổi sáng. Bốn câu hỏi của bạn
+    phải khai thác được thông tin mà không làm cô ấy thấy bị đổ lỗi.
+  turns:
+    - speaker: "Emma"
+      en: "It's still not working. I've been trying all morning."
+      vi: "Vẫn không được. Tôi thử cả sáng nay rồi."
+    - speaker: "You"
+      en: "Sorry about that, Emma. Let me get a few details so I can narrow it down. When did it start?"
+      vi: "Tôi xin lỗi chị Emma. Cho tôi hỏi vài chi tiết để khoanh vùng. Chuyện này bắt đầu từ khi nào?"
+    - speaker: "Emma"
+      en: "Around eight this morning, right after I got in."
+      vi: "Khoảng tám giờ sáng nay, ngay sau khi tôi vào công ty."
+    - speaker: "You"
+      en: "Got it. Can you read me the exact error on screen?"
+      vi: "Rõ rồi. Chị đọc giúp tôi thông báo lỗi trên màn hình được không?"
+    - speaker: "Emma"
+      en: "It says: network path not found, error 0x80070035."
+      vi: "Nó ghi: network path not found, lỗi 0x80070035."
+    - speaker: "You"
+      en: "That's helpful. Does it happen every time, or only sometimes?"
+      vi: "Thông tin đó hữu ích lắm. Nó xảy ra mọi lần hay chỉ thỉnh thoảng?"
+    - speaker: "Emma"
+      en: "Every time."
+      vi: "Mọi lần."
+    - speaker: "You"
+      en: "And has anything changed on your side recently — new laptop, working from home, anything like that?"
+      vi: "Còn bên chị gần đây có gì thay đổi không — máy mới, làm ở nhà, đại loại vậy?"
+    - speaker: "Emma"
+      en: "Now that you mention it, IT gave me a new laptop on Friday."
+      vi: "Anh nhắc tôi mới nhớ, thứ Sáu bên IT đổi cho tôi máy mới."
+    - speaker: "You"
+      en: "That's very likely it. The new machine probably isn't on the finance security group yet."
+      vi: "Nhiều khả năng là do đó. Máy mới có lẽ chưa được thêm vào nhóm bảo mật của phòng tài chính."
+
+listening:
+  context_vi: >
+    Nghe hai cách hỏi cùng một điều. Chú ý cách nào khiến người dùng hợp tác,
+    cách nào khiến họ phòng thủ.
+  speed: 1.0
+  voice: en_US_male
+  transcript_en: "Version one: what did you do to it? Version two: has anything changed on your side recently — new laptop, new network, anything like that?"
+  transcript_vi: "Cách một: chị làm gì với nó vậy? Cách hai: bên chị gần đây có gì thay đổi không — máy mới, mạng mới, đại loại vậy?"
+  questions:
+    - kind: mcq_listen
+      prompt_vi: "Cách hỏi nào khiến người dùng hợp tác hơn?"
+      choices: ["Cách hai", "Cách một", "Hai cách như nhau"]
+      answer: 0
+      difficulty: 2
+      skill: Listening
+    - kind: mcq_listen
+      prompt_vi: "Vì sao cách một có vấn đề?"
+      choices: ["Quá dài", "Sai ngữ pháp", "Nghe như đang đổ lỗi cho người dùng"]
+      answer: 2
+      difficulty: 2
+      skill: Listening
+
+speaking_drills:
+  - kind: read_aloud
+    expected_text: "When did it start happening?"
+    prompt_vi: "Câu hỏi đầu tiên của mọi cuộc chẩn đoán."
+    ipa: "/wen dɪd ɪt stɑːrt ˈhæpənɪŋ/"
+    focus_phonemes: ["st", "ŋ"]
+  - kind: read_aloud
+    expected_text: "Can you read me the exact error?"
+    prompt_vi: "Chú ý cụm /ɡz/ trong exact — không phải /ks/."
+    ipa: "/kæn juː riːd miː ði ɪɡˈzækt ˈerər/"
+    focus_phonemes: ["ɡz", "kt"]
+  - kind: shadow
+    expected_text: "Does it happen every time, or now and then?"
+    prompt_vi: "Câu phân biệt lỗi cố định với lỗi ngẫu nhiên. Nghe rồi nhắc lại."
+    ipa: "/dʌz ɪt ˈhæpən ˈevri taɪm ɔːr naʊ ænd ðen/"
+    focus_phonemes: ["z", "ð"]
+  - kind: shadow
+    expected_text: "Has anything changed on your side recently?"
+    prompt_vi: "Câu hỏi khó nhất bài này — hỏi mà không đổ lỗi."
+    ipa: "/hæz ˈeniθɪŋ tʃeɪndʒd ɒn jʊr saɪd ˈriːsntli/"
+    focus_phonemes: ["tʃ", "dʒd"]
+  - kind: respond
+    prompt_en: "It's still not working. I've been trying all morning."
+    prompt_vi: "Người dùng đang bực. Xin lỗi ngắn rồi hỏi câu chẩn đoán đầu tiên."
+    accept_patterns:
+      - "Sorry"
+      - "When did it start"
+      - "Let me"
+
+reading:
+  kind: ticket
+  context_vi: >
+    Hai ghi chú ticket cho cùng một sự cố. Một ghi chú giúp người tiếp nhận,
+    một ghi chú bắt họ gọi lại người dùng từ đầu.
+  text_en: |
+    Note A:
+    User cannot access shared drive. Says it is broken. Will investigate.
+
+    Note B:
+    User: Emma Brooks (Finance).
+    Started: 08:00 today, after receiving a new laptop on Friday.
+    Error: "network path not found", 0x80070035. Reproducible every time.
+    Scope: 3 users in Finance, all received new laptops last week.
+    Working: access from her old laptop still works.
+    Next: check whether the new machines are in the finance security group.
+  text_vi: |
+    Ghi chú A:
+    Người dùng không vào được ổ chung. Nói là hỏng. Sẽ điều tra.
+
+    Ghi chú B:
+    Người dùng: Emma Brooks (Tài chính).
+    Bắt đầu: 08:00 hôm nay, sau khi nhận máy mới hôm thứ Sáu.
+    Lỗi: "network path not found", 0x80070035. Tái hiện được mọi lần.
+    Phạm vi: 3 người phòng Tài chính, đều nhận máy mới tuần trước.
+    Vẫn chạy: truy cập từ máy cũ của chị ấy vẫn được.
+    Bước tiếp: kiểm tra máy mới đã nằm trong nhóm bảo mật tài chính chưa.
+  questions:
+    - kind: mcq_read
+      prompt_en: "What detail in Note B points to the likely cause?"
+      choices: ["The error code", "New laptops received last week", "The time it started"]
+      answer: 1
+      difficulty: 3
+      reading_skill: skim
+      skill: Reading
+    - kind: mcq_read
+      prompt_en: "What still works?"
+      choices: ["Nothing", "Access from home", "Access from her old laptop"]
+      answer: 2
+      difficulty: 2
+      reading_skill: scan
+      skill: Reading
+
+writing:
+  kind: GuidedEmail
+  prompt_vi: >
+    Viết ghi chú chẩn đoán cho một ticket. Phải có đủ ba ý: bắt đầu từ khi nào,
+    thông báo lỗi nguyên văn, và có gì thay đổi gần đây.
+  prompt_en: "Write diagnostic notes for a ticket."
+  required_points:
+    - "started"
+    - "exact error"
+    - "changed"
+  hint_vi: "Ba ý: thời điểm, lỗi nguyên văn, thay đổi gần đây. Thêm cả thứ vẫn chạy được nếu biết."
+  sample_en: "Started at 08:00 today. Exact error: network path not found, 0x80070035. Changed recently: user received a new laptop on Friday. Access from her old laptop still works."
+
+quiz:
+  - kind: mcq
+    prompt_vi: "Câu hỏi nào KHÔNG nên dùng với người dùng?"
+    choices: ["What did you do to it?", "Has anything changed on your side?", "When did it start?"]
+    answer: 0
+    difficulty: 2
+    skill: Speaking
+  - kind: mcq
+    prompt_vi: "Vì sao phải xin lỗi nguyên văn thay vì để người dùng mô tả?"
+    choices: ["Cho lịch sự", "Mã lỗi nguyên văn tra được, còn mô tả thì không", "Để ticket dài hơn"]
+    answer: 1
+    difficulty: 2
+    skill: Reading
+  - kind: mcq
+    prompt_vi: "\"Does it happen every time?\" giúp phân biệt điều gì?"
+    choices: ["Mức độ khẩn cấp", "Ai gây ra lỗi", "Lỗi cố định với lỗi ngẫu nhiên"]
+    answer: 2
+    difficulty: 2
+    skill: Listening
+  - kind: mcq
+    prompt_vi: "Thông tin nào thường bị bỏ sót nhưng rất hữu ích?"
+    choices: ["Thứ VẪN chạy được", "Tên người dùng", "Giờ gọi tới"]
+    answer: 0
+    difficulty: 3
+    skill: Reading
+
+explanation:
+  why_vi: >
+    Người dùng gọi tới thường đã bực và mô tả bằng cảm nhận: "hỏng rồi", "không chạy".
+    Người trực helpdesk mới hay nhận nguyên mô tả đó rồi bắt đầu đoán, và mất hàng giờ
+    thử những thứ vô ích. Vấn đề không phải người dùng giấu thông tin — họ không biết
+    thông tin nào quan trọng.
+  how_vi: >
+    Bốn câu hỏi, luôn theo thứ tự này: KHI NÀO bắt đầu, LỖI NGUYÊN VĂN là gì,
+    MỌI LẦN hay thỉnh thoảng, và CÓ GÌ THAY ĐỔI gần đây. Câu thứ tư là câu tìm ra
+    nguyên nhân nhiều nhất, và cũng là câu dễ làm hỏng quan hệ nhất nếu hỏi sai cách.
+  contrast_vi: >
+    "What did you do to it?" đổ lỗi cho người dùng và họ sẽ phòng thủ.
+    "Has anything changed on your side recently?" hỏi đúng thông tin đó,
+    nhưng đặt nguyên nhân vào hoàn cảnh chứ không vào con người.
+
+common_mistakes:
+  - mistake: "Bắt đầu thử cách sửa trước khi hỏi đủ thông tin"
+    why_vi: >
+      Muốn tỏ ra nhanh nhẹn nên nhảy vào sửa ngay. Nhưng sửa mò mất nhiều thời gian hơn hẳn
+      bốn câu hỏi mất một phút.
+    fix_vi: "Hỏi đủ bốn câu trước. Một phút hỏi tiết kiệm một giờ mò mẫm."
+    detect_phoneme_missing: []
+  - mistake: "Hỏi \"anh chị làm gì với nó vậy\""
+    why_vi: >
+      Dịch thẳng từ cách nói tiếng Việt. Trong tiếng Anh câu này nghe như buộc tội,
+      và người dùng sẽ giấu luôn thông tin quan trọng vì sợ bị trách.
+    fix_vi: "Chuyển sang \"Has anything changed on your side?\" — cùng thông tin, khác hẳn thái độ."
+    detect_phoneme_missing: []
+  - mistake: "Không hỏi thứ VẪN chạy được"
+    why_vi: >
+      Chỉ tập trung vào cái hỏng. Nhưng thứ vẫn chạy khoanh vùng nguyên nhân nhanh nhất —
+      máy cũ vào được nghĩa là vấn đề nằm ở máy mới, không phải ở máy chủ.
+    fix_vi: "Luôn hỏi thêm: có cách nào vẫn dùng được không? Câu này loại bỏ một nửa khả năng."
+    detect_phoneme_missing: []
+
+memory_trick_vi: >
+  Bốn câu chẩn đoán: KHI NÀO, LỖI GÌ nguyên văn, MỌI LẦN không, CÓ GÌ ĐỔI.
+  Và luôn hỏi thêm một câu: thứ gì VẪN chạy được?

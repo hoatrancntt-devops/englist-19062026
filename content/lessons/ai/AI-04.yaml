@@ -1,0 +1,388 @@
+schema_version: 1
+code: AI-04
+slug: viet-de-xuat-va-danh-gia-rui-ro-ai
+title_vi: "Viết đề xuất AI kèm đánh giá rủi ro"
+title_en: "Writing an AI proposal and risk assessment"
+
+layer: Professional
+track: Ai
+level: B1
+unit_code: U-AI2
+order_index: 4
+estimated_minutes: 12
+is_checkpoint: true
+
+illustration: risk-matrix
+
+objective_vi: >
+  Viết đề xuất AI có đủ bốn phần theo NIST AI RMF — quản trị, khoanh vùng,
+  đo lường, kiểm soát — để người duyệt biết ai chịu trách nhiệm khi máy sai.
+
+objective_observable: >
+  Đạt từ 80 điểm trên cả bốn trục kỹ năng, không trục nào dưới 65.
+
+mastery_weights:
+  Listening: 0.20
+  Speaking: 0.20
+  Reading: 0.25
+  Writing: 0.35
+
+prerequisites:
+  - lesson: AI-03
+    min_mastery: 70
+    kind: Hard
+  - lesson: AI-01
+    min_mastery: 70
+    kind: Hard
+  - lesson: SEC-04
+    min_mastery: 65
+    kind: Soft
+
+vocabulary:
+  - term: "accountable"
+    ipa: "/əˈkaʊntəbl/"
+    meaning_vi: "người chịu trách nhiệm cuối cùng"
+    chunk: "The service owner is accountable for the output."
+    tags: [ai, core]
+  - term: "in scope"
+    ipa: "/ɪn skoʊp/"
+    meaning_vi: "nằm trong phạm vi"
+    chunk: "Only internal tickets are in scope."
+    tags: [ai, core]
+  - term: "human in the loop"
+    ipa: "/ˈhjuːmən ɪn ðə luːp/"
+    meaning_vi: "có người kiểm trong quy trình"
+    chunk: "There is a human in the loop for every reply."
+    tags: [ai, core]
+  - term: "likelihood and impact"
+    ipa: "/ˈlaɪklihʊd ænd ˈɪmpækt/"
+    meaning_vi: "khả năng xảy ra và mức tác động"
+    chunk: "We rate each risk by likelihood and impact."
+    tags: [risk, core]
+  - term: "mitigation"
+    ipa: "/ˌmɪtɪˈɡeɪʃn/"
+    meaning_vi: "biện pháp giảm thiểu"
+    chunk: "The mitigation is a confidence threshold."
+    tags: [risk, core]
+  - term: "kill switch"
+    ipa: "/kɪl swɪtʃ/"
+    meaning_vi: "công tắc tắt ngay"
+    chunk: "Any team lead can use the kill switch."
+    tags: [risk, core]
+
+sentence_patterns:
+  - pattern: "{Role} is accountable for {thing}."
+    meaning_vi: "{Role} chịu trách nhiệm về {thing}."
+    slots:
+      Role: ["The service owner", "The team lead", "The data owner"]
+      thing: ["the output", "reviewing flagged answers", "what goes into the index"]
+  - pattern: "Risk: {risk}. Mitigation: {mitigation}."
+    meaning_vi: "Rủi ro: {risk}. Giảm thiểu: {mitigation}."
+    slots:
+      risk: ["the model invents a policy that does not exist", "a customer sees an unreviewed reply"]
+      mitigation: ["every answer cites a source or is not shown", "a person approves before sending"]
+
+dialogue:
+  context_vi: >
+    Chị Lan ở bộ phận tuân thủ đọc đề xuất của bạn. Chị không phản đối AI —
+    chị chỉ cần biết ai chịu trách nhiệm khi nó sai.
+  turns:
+    - speaker: "Lan"
+      en: "Your proposal is clear about what it does. Who is accountable when it gives a wrong answer?"
+      vi: "Đề xuất của em rõ về việc nó làm gì. Ai chịu trách nhiệm khi nó trả lời sai?"
+    - speaker: "You"
+      en: "The service owner. The model never sends anything — it drafts, and a person approves before it goes out."
+      vi: "Chủ dịch vụ ạ. Mô hình không gửi gì cả — nó soạn nháp, và người duyệt trước khi gửi đi."
+    - speaker: "Lan"
+      en: "What is in scope and what is not?"
+      vi: "Cái gì nằm trong phạm vi, cái gì không?"
+    - speaker: "You"
+      en: "Internal tickets only. No customer-facing replies, no HR data, no anything that touches payroll."
+      vi: "Chỉ ticket nội bộ. Không trả lời khách hàng, không dữ liệu nhân sự, không đụng gì tới lương."
+    - speaker: "Lan"
+      en: "And the worst thing that can happen?"
+      vi: "Điều tệ nhất có thể xảy ra là gì?"
+    - speaker: "You"
+      en: "The model invents a policy that doesn't exist and an agent repeats it. That's the risk I rate highest."
+      vi: "Mô hình bịa ra một chính sách không có thật và nhân viên nhắc lại. Đó là rủi ro em xếp cao nhất."
+    - speaker: "Lan"
+      en: "How do you reduce that?"
+      vi: "Em giảm nó bằng cách nào?"
+    - speaker: "You"
+      en: "Every answer must cite a document section. If there is no source, the answer is not shown at all."
+      vi: "Mọi câu trả lời phải dẫn được một mục tài liệu. Không có nguồn thì không hiện câu trả lời."
+    - speaker: "Lan"
+      en: "And if something goes wrong on a Saturday?"
+      vi: "Nếu thứ Bảy có chuyện thì sao?"
+    - speaker: "You"
+      en: "Any team lead can turn it off from the admin page. It's one switch, and the system goes back to the manual process."
+      vi: "Trưởng nhóm nào cũng tắt được từ trang quản trị. Một công tắc, và hệ thống quay về quy trình làm tay."
+
+listening:
+  context_vi: >
+    Nghe hai đề xuất AI. Chú ý đề xuất nào trả lời được câu hỏi
+    ai chịu trách nhiệm khi máy sai.
+  speed: 1.2
+  voice: en_US_male
+  transcript_en: "Proposal one: the system will be carefully tested and monitored to ensure high quality and reliability for all users. Proposal two: the service owner is accountable for every answer that reaches a person. Scope is internal tickets only. The highest risk is the model inventing a policy, and the mitigation is that no answer is shown without a cited source. Any team lead can switch it off, which returns the team to the manual process."
+  transcript_vi: "Đề xuất một: hệ thống sẽ được kiểm thử và giám sát kỹ lưỡng để đảm bảo chất lượng cao và độ tin cậy cho mọi người dùng. Đề xuất hai: chủ dịch vụ chịu trách nhiệm về mọi câu trả lời tới tay người dùng. Phạm vi chỉ là ticket nội bộ. Rủi ro cao nhất là mô hình bịa ra chính sách, và biện pháp giảm thiểu là không hiện câu trả lời nào thiếu nguồn dẫn. Trưởng nhóm nào cũng tắt được, việc đó đưa nhóm quay về quy trình làm tay."
+  questions:
+    - kind: mcq_listen
+      prompt_vi: "Đề xuất hai nêu rõ ai chịu trách nhiệm?"
+      choices: ["Chủ dịch vụ", "Nhóm phát triển", "Không nêu"]
+      answer: 0
+      difficulty: 2
+      skill: Listening
+    - kind: mcq_listen
+      prompt_vi: "Biện pháp giảm rủi ro bịa chính sách là gì?"
+      choices: ["Huấn luyện lại mô hình", "Giảm số câu hỏi", "Không hiện câu trả lời nào thiếu nguồn dẫn"]
+      answer: 2
+      difficulty: 2
+      skill: Listening
+    - kind: mcq_listen
+      prompt_vi: "Vì sao đề xuất một khó qua vòng tuân thủ?"
+      choices: ["Quá ngắn", "Không nói ai chịu trách nhiệm và điều tệ nhất có thể xảy ra", "Dùng quá nhiều số"]
+      answer: 1
+      difficulty: 3
+      skill: Listening
+
+speaking_drills:
+  - kind: read_aloud
+    expected_text: "The service owner is accountable for every answer that reaches a person."
+    prompt_vi: "Câu đầu tiên bộ phận tuân thủ tìm trong đề xuất."
+    ipa: "/ðə ˈsɜːrvɪs ˈoʊnər ɪz əˈkaʊntəbl/"
+    focus_phonemes: ["aʊ", "bl"]
+  - kind: read_aloud
+    expected_text: "Internal tickets only. No customer-facing replies."
+    prompt_vi: "Nêu phạm vi bằng cả cái không làm."
+    ipa: "/ɪnˈtɜːrnl ˈtɪkɪts ˈoʊnli/"
+    focus_phonemes: ["ɜːr", "l"]
+  - kind: shadow
+    expected_text: "Risk: the model invents a policy. Mitigation: no source, no answer."
+    prompt_vi: "Rủi ro luôn đi kèm biện pháp giảm thiểu ngay câu sau."
+    ipa: "/rɪsk ðə ˈmɒdl ɪnˈvents ə ˈpɒləsi/"
+    focus_phonemes: ["v", "ts"]
+  - kind: shadow
+    expected_text: "Any team lead can switch it off from the admin page."
+    prompt_vi: "Nói ai tắt được và tắt ở đâu, không nói chung chung."
+    ipa: "/ˈeni tiːm liːd kæn swɪtʃ ɪt ɒf/"
+    focus_phonemes: ["swɪ", "tʃ"]
+  - kind: respond
+    prompt_en: "Who is accountable when it gives a wrong answer?"
+    prompt_vi: "Nêu vai trò chịu trách nhiệm và chỗ có người kiểm."
+    accept_patterns:
+      - "accountable"
+      - "approves"
+      - "owner"
+
+reading:
+  kind: note
+  context_vi: >
+    Đề xuất hoàn chỉnh theo bốn chức năng của NIST AI RMF. Đọc và tìm
+    chỗ tác giả tự đặt điều kiện dừng cho chính mình.
+  text_en: |
+    Proposal: ticket category suggestion
+    Framework: NIST AI RMF - Govern, Map, Measure, Manage
+
+    GOVERN - who decides and who answers for it
+    The service owner is accountable for every suggestion an agent sees.
+    The data owner decides which documents go into the index. Neither role
+    is new; both already exist for the ticket system.
+    The model sends nothing. It drafts, a person approves.
+
+    MAP - what is in scope and what could go wrong
+    In scope: internal tickets from the four support queues.
+    Out of scope: customer-facing replies, HR records, anything touching
+    payroll, and any decision about ticket priority.
+
+    Risks, rated by likelihood and impact:
+    1. The model states a policy that does not exist and an agent repeats
+    it to a colleague. Likelihood medium, impact high. This is the risk
+    that decides whether we ship.
+    2. Suggestions are wrong often enough that agents click through without
+    reading. Likelihood medium, impact medium.
+    3. A document with restricted access is indexed and its content appears
+    to someone who should not see it. Likelihood low, impact high.
+
+    MEASURE - how we know, in numbers
+    Weekly: accuracy overall and broken down by language and ticket type.
+    Weekly: how often agents change the suggestion.
+    Per answer: whether a source was cited.
+    Stop condition: if accuracy for any group stays below 75% for two
+    consecutive weeks, we turn the suggestion off for that group. This is
+    written here so the decision is made now, not in the middle of an
+    argument three months from now.
+
+    MANAGE - what we do about each risk
+    Risk 1: no answer is shown without a cited document section. If
+    retrieval finds nothing, the field stays empty rather than guessing.
+    Risk 2: the confidence threshold hides weak suggestions instead of
+    showing them, and we track agreement between flags and agent decisions.
+    Risk 3: the index is built from one folder with its own permissions,
+    reviewed by the data owner before each re-index. No automatic crawling.
+    All risks: any team lead can switch the feature off from the admin
+    page, which returns the queue to the manual process with no data loss.
+  text_vi: |
+    Đề xuất: gợi ý phân nhóm ticket
+    Khung: NIST AI RMF - Quản trị, Khoanh vùng, Đo lường, Kiểm soát
+
+    QUẢN TRỊ - ai quyết và ai chịu trách nhiệm
+    Chủ dịch vụ chịu trách nhiệm về mọi gợi ý mà nhân viên nhìn thấy.
+    Chủ dữ liệu quyết tài liệu nào được đưa vào chỉ mục. Cả hai vai trò đều không mới;
+    hệ thống ticket đã có sẵn.
+    Mô hình không gửi gì. Nó soạn nháp, người duyệt.
+
+    KHOANH VÙNG - phạm vi và những gì có thể hỏng
+    Trong phạm vi: ticket nội bộ từ bốn hàng đợi hỗ trợ.
+    Ngoài phạm vi: trả lời khách hàng, hồ sơ nhân sự, mọi thứ đụng tới lương,
+    và mọi quyết định về mức ưu tiên ticket.
+
+    Các rủi ro, chấm theo khả năng xảy ra và mức tác động:
+    1. Mô hình nêu một chính sách không tồn tại và nhân viên nhắc lại với đồng nghiệp.
+    Khả năng trung bình, tác động cao. Đây là rủi ro quyết định có triển khai hay không.
+    2. Gợi ý sai đủ nhiều khiến nhân viên bấm qua mà không đọc.
+    Khả năng trung bình, tác động trung bình.
+    3. Một tài liệu có giới hạn truy cập bị đưa vào chỉ mục và nội dung của nó
+    hiện ra với người không được phép xem. Khả năng thấp, tác động cao.
+
+    ĐO LƯỜNG - biết bằng con số nào
+    Hằng tuần: độ chính xác chung và tách theo ngôn ngữ, theo loại ticket.
+    Hằng tuần: nhân viên đổi gợi ý bao nhiêu lần.
+    Mỗi câu trả lời: có dẫn được nguồn hay không.
+    Điều kiện dừng: nếu độ chính xác của nhóm nào giữ dưới 75% trong hai tuần liên tiếp,
+    bọn mình tắt gợi ý cho nhóm đó. Điều này viết ra ở đây để quyết định được đưa ra
+    ngay bây giờ, không phải giữa lúc tranh cãi ba tháng nữa.
+
+    KIỂM SOÁT - làm gì với từng rủi ro
+    Rủi ro 1: không hiện câu trả lời nào thiếu mục tài liệu dẫn nguồn. Nếu tra cứu
+    không tìm thấy gì thì để trống chứ không đoán.
+    Rủi ro 2: ngưỡng tin cậy ẩn các gợi ý yếu thay vì hiện ra, và bọn mình theo dõi
+    mức khớp giữa việc đánh dấu và quyết định của nhân viên.
+    Rủi ro 3: chỉ mục dựng từ một thư mục có phân quyền riêng, chủ dữ liệu duyệt trước
+    mỗi lần lập lại chỉ mục. Không thu thập tự động.
+    Mọi rủi ro: trưởng nhóm nào cũng tắt được tính năng từ trang quản trị, việc đó
+    đưa hàng đợi về quy trình làm tay mà không mất dữ liệu.
+  questions:
+    - kind: mcq_read
+      prompt_en: "Which risk does the author say decides whether they ship?"
+      choices: ["Restricted documents being indexed", "Agents clicking through", "The model stating a policy that does not exist"]
+      answer: 2
+      difficulty: 3
+      reading_skill: scan
+      skill: Reading
+    - kind: mcq_read
+      prompt_en: "What is the written stop condition?"
+      choices: ["Accuracy below 75% for a group for two consecutive weeks", "Any complaint from an agent", "Latency above two seconds"]
+      answer: 0
+      difficulty: 2
+      reading_skill: scan
+      skill: Reading
+    - kind: mcq_read
+      prompt_en: "Why is the stop condition written in advance?"
+      choices: ["To satisfy the framework", "So the decision is made now rather than in the middle of an argument later", "To limit the budget"]
+      answer: 1
+      difficulty: 3
+      reading_skill: skim
+      skill: Reading
+    - kind: mcq_read
+      prompt_en: "How is the restricted-document risk controlled?"
+      choices: ["Automatic crawling with filters", "Encryption at rest", "One folder with its own permissions, reviewed by the data owner before each re-index"]
+      answer: 2
+      difficulty: 3
+      reading_skill: scan
+      skill: Reading
+
+writing:
+  kind: GuidedEmail
+  prompt_vi: >
+    Viết phần rủi ro của một đề xuất AI: nêu rủi ro cao nhất kèm khả năng xảy ra
+    và mức tác động, biện pháp giảm thiểu, và ai chịu trách nhiệm.
+  prompt_en: "Write the risk section of an AI proposal."
+  required_points:
+    - "accountable"
+    - "mitigation"
+    - "in scope"
+  hint_vi: "Mỗi rủi ro phải đi kèm ngay biện pháp giảm thiểu ở câu sau."
+  sample_en: "In scope are internal tickets only, with no customer-facing replies and no HR data. The highest risk is that the model states a policy that does not exist and an agent repeats it: likelihood medium, impact high. The mitigation is that no answer is shown without a cited document section, and the service owner is accountable for every suggestion an agent sees."
+
+quiz:
+  - kind: mcq
+    prompt_vi: "Bốn chức năng của NIST AI RMF là gì?"
+    choices: ["Govern, Map, Measure, Manage", "Plan, Do, Check, Act", "Detect, Analyse, Contain, Recover"]
+    answer: 0
+    difficulty: 2
+    skill: Reading
+  - kind: mcq
+    prompt_vi: "Bộ phận tuân thủ tìm gì đầu tiên trong đề xuất AI?"
+    choices: ["Tên mô hình", "Ai chịu trách nhiệm khi nó sai", "Chi phí"]
+    answer: 1
+    difficulty: 1
+    skill: Writing
+  - kind: mcq
+    prompt_vi: "Phần khoanh vùng nên nêu cả cái gì?"
+    choices: ["Cả những gì nằm ngoài phạm vi", "Chỉ những gì hệ thống làm", "Chỉ danh sách công nghệ"]
+    answer: 0
+    difficulty: 2
+    skill: Writing
+  - kind: mcq
+    prompt_vi: "Vì sao phải viết điều kiện dừng ngay trong đề xuất?"
+    choices: ["Cho đủ mục", "Để dễ xin ngân sách", "Để quyết định được đưa ra lúc bình tĩnh, không phải giữa lúc tranh cãi"]
+    answer: 2
+    difficulty: 3
+    skill: Writing
+  - kind: mcq
+    prompt_vi: "Rủi ro chấm theo hai chiều nào?"
+    choices: ["Chi phí và thời gian", "Khả năng xảy ra và mức tác động", "Kỹ thuật và con người"]
+    answer: 1
+    difficulty: 2
+    skill: Reading
+  - kind: mcq
+    prompt_vi: "Tra cứu không tìm thấy nguồn nào. Hệ thống nên làm gì?"
+    choices: ["Để trống, vì không nguồn thì không hiện câu trả lời", "Vẫn trả lời theo hiểu biết chung", "Báo lỗi hệ thống"]
+    answer: 0
+    difficulty: 2
+    skill: Speaking
+
+explanation:
+  why_vi: >
+    Đề xuất AI bị treo ở vòng tuân thủ hầu như luôn vì cùng một lý do: nó mô tả
+    kỹ hệ thống làm gì nhưng không nói ai chịu trách nhiệm khi nó sai, và không nói
+    điều tệ nhất có thể xảy ra. Người duyệt không phản đối AI — họ chỉ không ký được
+    vào một thứ mà trách nhiệm chưa có tên.
+  how_vi: >
+    Bốn mục theo NIST AI RMF. QUẢN TRỊ: nêu tên vai trò chịu trách nhiệm, và
+    nêu chỗ có người kiểm. KHOANH VÙNG: nêu cả cái trong phạm vi lẫn cái ngoài phạm vi —
+    phần ngoài phạm vi thường thuyết phục hơn. ĐO LƯỜNG: các số theo dõi hằng tuần,
+    kèm một điều kiện dừng viết sẵn. KIỂM SOÁT: mỗi rủi ro một biện pháp,
+    cộng một công tắc tắt mà người không phải kỹ sư cũng bấm được.
+  contrast_vi: >
+    "Hệ thống sẽ được kiểm thử và giám sát kỹ lưỡng" không có vai trò, không có số,
+    không có ngưỡng. "Chủ dịch vụ chịu trách nhiệm; dưới 75% hai tuần liên tiếp thì tắt;
+    trưởng nhóm nào cũng tắt được từ trang quản trị" cho người duyệt đúng ba thứ họ cần
+    để ký: một cái tên, một con số, và một đường lui.
+
+common_mistakes:
+  - mistake: "Không nêu tên vai trò chịu trách nhiệm"
+    why_vi: >
+      Trong đầu người viết thì cả nhóm cùng chịu trách nhiệm, nghe rất hợp tác.
+      Nhưng trách nhiệm chia đều là trách nhiệm không có ai, và người duyệt biết điều đó.
+    fix_vi: "Viết một vai trò cụ thể: \"The service owner is accountable for ...\"."
+    detect_phoneme_missing: []
+  - mistake: "Chỉ nêu rủi ro, không nêu biện pháp giảm thiểu"
+    why_vi: >
+      Liệt kê rủi ro cảm giác như đã làm xong phần đánh giá. Nhưng danh sách rủi ro
+      không có biện pháp chỉ làm người duyệt lo hơn và hoãn lâu hơn.
+    fix_vi: "Mỗi rủi ro viết liền một câu \"Mitigation: ...\" ngay bên dưới."
+    detect_phoneme_missing: []
+  - mistake: "Bỏ qua điều kiện dừng"
+    why_vi: >
+      Viết điều kiện dừng cảm giác như thừa nhận đề xuất có thể thất bại.
+      Nhưng đặt ngưỡng lúc chưa có áp lực dễ hơn nhiều so với lúc hệ thống đã chạy
+      và có người bảo vệ nó.
+    fix_vi: "Một câu: dưới ngưỡng X trong Y tuần thì tắt cho nhóm đó."
+    detect_phoneme_missing: []
+
+memory_trick_vi: >
+  Bốn mục RMF: QUẢN TRỊ (ai chịu trách nhiệm) — KHOANH VÙNG (trong và ngoài phạm vi) —
+  ĐO LƯỜNG (số hằng tuần + điều kiện dừng) — KIỂM SOÁT (mỗi rủi ro một biện pháp + công tắc tắt).
+  Người duyệt cần ba thứ: một cái tên, một con số, một đường lui.

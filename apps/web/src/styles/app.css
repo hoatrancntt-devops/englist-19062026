@@ -1,0 +1,183 @@
+@import "tailwindcss";
+
+/* Dark mode theo class chứ không theo prefers-color-scheme: người dùng phải bật tắt được
+   bằng nút, và lựa chọn đó lưu vào localStorage. */
+@custom-variant dark (&:where(.dark, .dark *));
+
+/* ---------------------------------------------------------------------------
+   Design tokens
+
+   Bảng màu chọn theo tiêu chí "đọc được trên màn hình văn phòng lúc 9 giờ sáng":
+   nền trung tính lạnh, một màu nhấn duy nhất, và ba màu trạng thái.
+   Không dùng gradient rực rỡ — người học mở app này giữa hai cái ticket, không phải để ngắm.
+--------------------------------------------------------------------------- */
+@theme {
+  /* Màu nhấn: xanh dương kỹ thuật, đủ tương phản trên cả nền sáng và tối */
+  --color-brand-50: oklch(0.97 0.02 250);
+  --color-brand-100: oklch(0.93 0.04 250);
+  --color-brand-200: oklch(0.87 0.07 250);
+  --color-brand-300: oklch(0.78 0.11 250);
+  --color-brand-400: oklch(0.68 0.15 250);
+  --color-brand-500: oklch(0.58 0.18 250);
+  --color-brand-600: oklch(0.50 0.19 250);
+  --color-brand-700: oklch(0.42 0.17 250);
+  --color-brand-800: oklch(0.35 0.14 250);
+  --color-brand-900: oklch(0.28 0.10 250);
+
+  /* Màu theo kỹ năng — dùng nhất quán ở mọi biểu đồ, nhãn bước, và huy hiệu.
+     Học viên nhận ra kỹ năng bằng màu trước khi đọc chữ. */
+  --color-skill-listening: oklch(0.65 0.16 220);
+  --color-skill-speaking: oklch(0.68 0.17 30);
+  --color-skill-reading: oklch(0.66 0.15 150);
+  --color-skill-writing: oklch(0.67 0.16 300);
+
+  /* Trạng thái */
+  --color-success: oklch(0.65 0.16 150);
+  --color-warning: oklch(0.75 0.15 75);
+  --color-danger: oklch(0.60 0.20 25);
+
+  /* Bản đậm hơn, DÙNG RIÊNG CHO CHỮ trên nền cùng màu đã pha loãng (huy hiệu).
+     Ba màu trên là màu để tô, không phải màu để đọc. Lấy thẳng chúng làm màu chữ đặt lên
+     chính chúng pha 15-18% thì trên nền sáng chỉ còn 2.6 / 2.0 / 3.5 — dưới mức 4.5 mà chữ
+     12px cần, nên huy hiệu mờ đi đúng lúc nó đang mang thông tin. Hạ độ sáng, giữ nguyên tông
+     màu, đủ để đạt 4.5. Chế độ tối KHÔNG dùng bản này: ở đó nền tối nên bản gốc đã đạt 5.35,
+     hạ thêm sẽ làm hỏng. Xem khối .dark bên dưới. */
+  --color-success-text: oklch(0.50 0.16 150);
+  --color-warning-text: oklch(0.52 0.15 75);
+  --color-danger-text: oklch(0.53 0.20 25);
+
+  /* Bo góc: vừa phải, không bo tròn kiểu ứng dụng giải trí */
+  --radius-card: 0.75rem;
+  --radius-control: 0.5rem;
+
+  /* Chữ: ưu tiên font hệ thống để không phải tải font ngoài (và không lộ IP người dùng
+     cho Google Fonts). Mono dùng cho log, mã lệnh, ticket. */
+  --font-sans: ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto,
+    "Helvetica Neue", Arial, "Noto Sans", sans-serif;
+  --font-mono: ui-monospace, "Cascadia Code", "Source Code Pro", Menlo, Consolas,
+    "DejaVu Sans Mono", monospace;
+}
+
+/* ---------------------------------------------------------------------------
+   Biến ngữ nghĩa theo chế độ sáng/tối.
+   Component chỉ dùng biến ngữ nghĩa (surface, border, text) chứ không gọi thẳng
+   màu xám, để đổi bảng màu sau này không phải sửa từng file.
+--------------------------------------------------------------------------- */
+@layer base {
+  :root {
+    --surface-base: oklch(0.98 0.003 250);
+    --surface-raised: oklch(1 0 0);
+    --surface-sunken: oklch(0.95 0.005 250);
+    --surface-hover: oklch(0.96 0.006 250);
+
+    --border-subtle: oklch(0.90 0.006 250);
+    --border-strong: oklch(0.82 0.010 250);
+
+    --text-primary: oklch(0.25 0.015 250);
+    --text-secondary: oklch(0.48 0.012 250);
+    --text-muted: oklch(0.62 0.010 250);
+
+    color-scheme: light;
+  }
+
+  .dark {
+    --surface-base: oklch(0.19 0.012 250);
+    --surface-raised: oklch(0.23 0.014 250);
+    --surface-sunken: oklch(0.16 0.010 250);
+    --surface-hover: oklch(0.27 0.016 250);
+
+    --border-subtle: oklch(0.31 0.014 250);
+    --border-strong: oklch(0.40 0.018 250);
+
+    --text-primary: oklch(0.95 0.005 250);
+    --text-secondary: oklch(0.75 0.010 250);
+    --text-muted: oklch(0.60 0.012 250);
+
+    /* Trả màu chữ huy hiệu về bản gốc sáng. Nền tối làm chính ba màu này đã đạt 5.35, còn
+       bản đậm dành cho nền sáng sẽ chìm nghỉm ở đây. */
+    --color-success-text: var(--color-success);
+    --color-warning-text: var(--color-warning);
+    --color-danger-text: var(--color-danger);
+
+    color-scheme: dark;
+  }
+
+  * {
+    border-color: var(--border-subtle);
+  }
+
+  /*
+    Đặt nền trên html chứ không chỉ trên body.
+
+    Màu nền của trang được lan truyền lên canvas, và nguồn lan truyền là html nếu html
+    có nền, ngược lại mới lấy từ body. Một số engine không tính lại nền canvas khi biến
+    CSS đổi giá trị lúc chuyển sáng/tối, nên trang kẹt ở màu cũ dù mọi phần tử khác đã đổi.
+    Khai báo trên html làm nguồn lan truyền cố định và bỏ hẳn phụ thuộc đó.
+  */
+  html {
+    background-color: var(--surface-base);
+    color: var(--text-primary);
+  }
+
+  body {
+    background-color: var(--surface-base);
+    color: var(--text-primary);
+    font-family: var(--font-sans);
+    -webkit-font-smoothing: antialiased;
+  }
+
+  /* Focus ring hiện rõ và nhất quán. Đây là yêu cầu tiếp cận, không phải trang trí:
+     người dùng bàn phím phải luôn biết mình đang ở đâu. */
+  :focus-visible {
+    outline: 2px solid var(--color-brand-500);
+    outline-offset: 2px;
+    border-radius: 0.25rem;
+  }
+
+  /* Tôn trọng người bật giảm chuyển động trong hệ điều hành. */
+  @media (prefers-reduced-motion: reduce) {
+    *,
+    *::before,
+    *::after {
+      animation-duration: 0.01ms !important;
+      animation-iteration-count: 1 !important;
+      transition-duration: 0.01ms !important;
+    }
+  }
+}
+
+/* ---------------------------------------------------------------------------
+   Tiện ích ngữ nghĩa dùng lại nhiều nơi.
+   Chỉ đặt ở đây những thứ lặp ở hơn ba chỗ — còn lại viết utility thẳng trong JSX.
+--------------------------------------------------------------------------- */
+@utility surface-card {
+  background-color: var(--surface-raised);
+  border: 1px solid var(--border-subtle);
+  border-radius: var(--radius-card);
+}
+
+@utility text-secondary {
+  color: var(--text-secondary);
+}
+
+@utility text-muted {
+  color: var(--text-muted);
+}
+
+/* Hiệu ứng nhịp nhẹ cho ô "Học tiếp" — thứ duy nhất trên dashboard được phép động,
+   để mắt tìm thấy nó trong một giây. */
+@keyframes pulse-ring {
+  0% {
+    box-shadow: 0 0 0 0 color-mix(in oklch, var(--color-brand-500) 40%, transparent);
+  }
+  70% {
+    box-shadow: 0 0 0 10px transparent;
+  }
+  100% {
+    box-shadow: 0 0 0 0 transparent;
+  }
+}
+
+@utility pulse-ring {
+  animation: pulse-ring 2.5s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+}

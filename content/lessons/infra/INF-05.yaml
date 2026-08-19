@@ -1,0 +1,297 @@
+schema_version: 1
+code: INF-05
+slug: ao-hoa-backup-va-dr
+title_vi: "Nói về ảo hoá, backup và khôi phục thảm hoạ"
+title_en: "Virtualisation, backup and DR"
+
+layer: Professional
+track: Infrastructure
+level: B1
+unit_code: U-INF2
+order_index: 5
+estimated_minutes: 12
+
+illustration: backup-restore
+
+objective_vi: >
+  Trao đổi về backup và khôi phục bằng đúng thuật ngữ, đặc biệt phân biệt
+  RPO với RTO — hai con số mà lãnh đạo luôn hỏi và người mới hay lẫn.
+
+objective_observable: >
+  Giải thích đúng RPO và RTO bằng ví dụ, và báo được kết quả một bài kiểm tra khôi phục.
+
+mastery_weights:
+  Listening: 0.30
+  Speaking: 0.35
+  Reading: 0.20
+  Writing: 0.15
+
+prerequisites:
+  - lesson: INF-04
+    min_mastery: 65
+    kind: Hard
+
+vocabulary:
+  - term: "RPO"
+    ipa: "/ɑːr piː oʊ/"
+    meaning_vi: "mất tối đa bao nhiêu dữ liệu — tính bằng thời gian"
+    chunk: "Our RPO is fifteen minutes."
+    tags: [dr, core]
+  - term: "RTO"
+    ipa: "/ɑːr tiː oʊ/"
+    meaning_vi: "khôi phục xong trong bao lâu"
+    chunk: "The RTO for that system is four hours."
+    tags: [dr, core]
+  - term: "restore test"
+    ipa: "/rɪˈstɔːr test/"
+    meaning_vi: "bài kiểm tra khôi phục thật"
+    chunk: "We ran a restore test last Saturday."
+    tags: [dr, core]
+  - term: "failover"
+    ipa: "/ˈfeɪloʊvər/"
+    meaning_vi: "chuyển sang hệ thống dự phòng"
+    chunk: "Failover to the DR site took twenty minutes."
+    tags: [dr, core]
+  - term: "retention"
+    ipa: "/rɪˈtenʃn/"
+    meaning_vi: "thời gian giữ bản sao lưu"
+    chunk: "Retention is sixty days for file shares."
+    tags: [dr, core]
+  - term: "snapshot"
+    ipa: "/ˈsnæpʃɒt/"
+    meaning_vi: "ảnh chụp trạng thái máy ảo tại một thời điểm"
+    chunk: "We take a snapshot before every patch."
+    tags: [dr]
+
+sentence_patterns:
+  - pattern: "Our RPO is {rpo}, and our RTO is {rto}."
+    meaning_vi: "RPO của bọn tôi là {rpo}, và RTO là {rto}."
+    slots:
+      rpo: ["fifteen minutes", "one hour"]
+      rto: ["four hours", "thirty minutes"]
+  - pattern: "We ran a restore test on {when}. It took {duration}."
+    meaning_vi: "Bọn tôi chạy kiểm tra khôi phục vào {when}. Mất {duration}."
+    slots:
+      when: ["Saturday", "the first of the month"]
+      duration: ["forty minutes", "two hours"]
+
+dialogue:
+  context_vi: >
+    David hỏi về khả năng khôi phục trước khi ký hợp đồng gia hạn.
+    Anh ấy không phải kỹ sư — nhưng hai con số RPO và RTO thì anh ấy hiểu rất rõ.
+  turns:
+    - speaker: "David"
+      en: "If the file server dies tomorrow, what do we actually lose?"
+      vi: "Nếu ngày mai file server chết, bọn tôi thực sự mất gì?"
+    - speaker: "You"
+      en: "Two separate numbers. Our RPO is fifteen minutes — that's the maximum data you could lose, because snapshots run every fifteen minutes."
+      vi: "Có hai con số riêng. RPO của bọn em là mười lăm phút — đó là lượng dữ liệu tối đa anh có thể mất, vì snapshot chạy mỗi mười lăm phút."
+    - speaker: "David"
+      en: "And how long until we're working again?"
+      vi: "Còn bao lâu thì bọn tôi làm việc lại được?"
+    - speaker: "You"
+      en: "That's the RTO — four hours for the file server. That's the target, and we've tested it."
+      vi: "Đó là RTO — bốn tiếng với file server. Đó là mục tiêu, và bọn em đã kiểm tra thật."
+    - speaker: "David"
+      en: "Tested how? A document, or an actual restore?"
+      vi: "Kiểm tra kiểu gì? Trên giấy hay khôi phục thật?"
+    - speaker: "You"
+      en: "An actual restore. We ran a restore test last Saturday into an isolated network. It took two hours and forty minutes, well inside the four-hour target."
+      vi: "Khôi phục thật ạ. Bọn em chạy bài kiểm tra thứ Bảy tuần trước vào một mạng cách ly. Mất hai tiếng bốn mươi phút, nằm gọn trong mục tiêu bốn tiếng."
+    - speaker: "David"
+      en: "Good. That's the answer I needed."
+      vi: "Tốt. Đó chính là câu trả lời tôi cần."
+
+listening:
+  context_vi: >
+    Nghe hai câu trả lời cho cùng một câu hỏi. Chú ý câu nào lãnh đạo dùng được
+    để ra quyết định.
+  speed: 1.0
+  voice: en_US_female
+  transcript_en: "Version one: we have backups, they run every night and we keep them for a while. Version two: RPO is fifteen minutes, RTO is four hours, retention is sixty days. Last restore test took two hours forty, inside target."
+  transcript_vi: "Cách một: bọn tôi có backup, chạy hằng đêm và giữ được một thời gian. Cách hai: RPO mười lăm phút, RTO bốn tiếng, giữ sáu mươi ngày. Bài kiểm tra khôi phục gần nhất mất hai tiếng bốn mươi, nằm trong mục tiêu."
+  questions:
+    - kind: mcq_listen
+      prompt_vi: "RPO trong cách hai là bao nhiêu?"
+      choices: ["Mười lăm phút", "Bốn tiếng", "Sáu mươi ngày"]
+      answer: 0
+      difficulty: 2
+      skill: Listening
+    - kind: mcq_listen
+      prompt_vi: "Vì sao cách một không dùng được để ra quyết định?"
+      choices: ["Quá ngắn", "Sai thuật ngữ", "Không có con số nào cả"]
+      answer: 2
+      difficulty: 2
+      skill: Listening
+
+speaking_drills:
+  - kind: read_aloud
+    expected_text: "Our RPO is fifteen minutes."
+    prompt_vi: "Đọc RPO rời từng chữ cái. Chú ý fifteen nhấn CUỐI."
+    ipa: "/aʊər ɑːr piː oʊ ɪz ˌfɪfˈtiːn ˈmɪnɪts/"
+    focus_phonemes: ["f", "ts"]
+  - kind: read_aloud
+    expected_text: "The RTO for that system is four hours."
+    prompt_vi: "Chữ h trong hours CÂM. Đọc là aʊərz."
+    ipa: "/ðə ɑːr tiː oʊ fɔːr ðæt ˈsɪstəm ɪz fɔːr ˈaʊərz/"
+    focus_phonemes: ["ð", "rz"]
+  - kind: shadow
+    expected_text: "We ran a restore test into an isolated network."
+    prompt_vi: "Kiểm tra thật khác hẳn kiểm tra trên giấy. Nghe rồi nhắc lại."
+    ipa: "/wiː ræn ə rɪˈstɔːr test ˈɪntuː ən ˈaɪsəleɪtɪd ˈnetwɜːrk/"
+    focus_phonemes: ["st", "tɪd"]
+  - kind: shadow
+    expected_text: "Failover to the DR site took twenty minutes."
+    prompt_vi: "Đọc DR rời từng chữ. Chú ý cụm /lv/ trong failover."
+    ipa: "/ˈfeɪloʊvər tuː ðə diː ɑːr saɪt/"
+    focus_phonemes: ["lv", "t"]
+  - kind: respond
+    prompt_en: "If the file server dies tomorrow, what do we actually lose?"
+    prompt_vi: "Trả lời bằng hai con số RPO và RTO, kèm ý nghĩa từng con số."
+    accept_patterns:
+      - "RPO"
+      - "RTO"
+      - "minutes"
+
+reading:
+  kind: note
+  context_vi: >
+    Báo cáo kết quả một bài kiểm tra khôi phục. Để ý phần "phát hiện" —
+    đó là lý do người ta chạy kiểm tra chứ không chỉ tin vào tài liệu.
+  text_en: |
+    DR restore test - 16 August
+
+    Scope: file server FS01, restored into an isolated test network.
+
+    Targets: RPO 15 minutes, RTO 4 hours.
+
+    Result:
+    - Snapshot used: 02:00, 12 minutes before the simulated failure. RPO met.
+    - Restore completed at 04:40. Total 2h40m. RTO met.
+
+    Findings:
+    - The DNS entry had to be changed by hand. This is not in the runbook
+      and cost about 25 minutes. Action: add the step to the runbook.
+    - The restore ran at half the expected speed because the test network
+      is 1 Gb, not 10 Gb. In a real failover this would be faster.
+
+    Next test: 15 November, including a failover of the database tier.
+  text_vi: |
+    Kiểm tra khôi phục DR - 16 tháng 8
+
+    Phạm vi: file server FS01, khôi phục vào mạng thử nghiệm cách ly.
+
+    Mục tiêu: RPO 15 phút, RTO 4 tiếng.
+
+    Kết quả:
+    - Snapshot dùng: 02:00, trước thời điểm giả lập sự cố 12 phút. Đạt RPO.
+    - Khôi phục xong lúc 04:40. Tổng 2 tiếng 40 phút. Đạt RTO.
+
+    Phát hiện:
+    - Bản ghi DNS phải sửa tay. Bước này không có trong runbook
+      và tốn khoảng 25 phút. Việc cần làm: bổ sung bước đó vào runbook.
+    - Quá trình khôi phục chạy chậm bằng nửa dự kiến vì mạng thử nghiệm
+      là 1 Gb chứ không phải 10 Gb. Trong failover thật sẽ nhanh hơn.
+
+    Lần kiểm tra tới: 15 tháng 11, có thêm failover tầng database.
+  questions:
+    - kind: mcq_read
+      prompt_en: "Was the RTO target met?"
+      choices: ["No, it took too long", "Yes, 2h40m against a 4 hour target", "Not measured"]
+      answer: 1
+      difficulty: 1
+      reading_skill: scan
+      skill: Reading
+    - kind: mcq_read
+      prompt_en: "What cost about 25 minutes?"
+      choices: ["The snapshot", "The network speed", "A manual DNS change not in the runbook"]
+      answer: 2
+      difficulty: 2
+      reading_skill: scan
+      skill: Reading
+    - kind: mcq_read
+      prompt_en: "Why does the report mention the 1 Gb test network?"
+      choices: ["To explain why the restore was slower than expected", "To request new hardware", "To report a fault"]
+      answer: 0
+      difficulty: 3
+      reading_skill: skim
+      skill: Reading
+
+writing:
+  kind: GuidedEmail
+  prompt_vi: >
+    Viết báo cáo kết quả một bài kiểm tra khôi phục. Phải có đủ ba ý:
+    mục tiêu RPO và RTO, kết quả thực tế có con số, và một phát hiện cần khắc phục.
+  prompt_en: "Write a DR restore test report."
+  required_points:
+    - "RPO"
+    - "RTO"
+    - "findings"
+  hint_vi: "Ba ý. Phần phát hiện quan trọng nhất — đó là lý do người ta chạy kiểm tra thật."
+  sample_en: "Restore test on 16 August. Targets: RPO 15 minutes, RTO 4 hours. Result: restore completed in 2h40m, both targets met. Findings: the DNS step is missing from the runbook and cost 25 minutes."
+
+quiz:
+  - kind: mcq
+    prompt_vi: "RPO đo cái gì?"
+    choices: ["Khôi phục xong trong bao lâu", "Mất tối đa bao nhiêu dữ liệu", "Giữ backup bao lâu"]
+    answer: 1
+    difficulty: 2
+    skill: Reading
+  - kind: mcq
+    prompt_vi: "RTO đo cái gì?"
+    choices: ["Mất tối đa bao nhiêu dữ liệu", "Số bản sao lưu", "Khôi phục xong trong bao lâu"]
+    answer: 2
+    difficulty: 2
+    skill: Reading
+  - kind: mcq
+    prompt_vi: "\"Retention\" nghĩa là gì?"
+    choices: ["Thời gian giữ bản sao lưu", "Tốc độ khôi phục", "Dung lượng lưu trữ"]
+    answer: 0
+    difficulty: 1
+    skill: Reading
+  - kind: mcq
+    prompt_vi: "Vì sao phải chạy kiểm tra khôi phục thật?"
+    choices: ["Vì quy định", "Vì tài liệu không phát hiện được bước thiếu như bản ghi DNS", "Để luyện tập"]
+    answer: 1
+    difficulty: 3
+    skill: Reading
+
+explanation:
+  why_vi: >
+    Lãnh đạo và khách hàng không hỏi bạn dùng phần mềm backup nào. Họ hỏi đúng hai điều:
+    mất bao nhiêu dữ liệu, và bao lâu thì làm việc lại được. Hai câu đó chính là RPO và RTO.
+    Người mới hay lẫn hai con số, và trả lời chung chung kiểu "bọn em có backup hằng đêm" —
+    câu đó không giúp ai ra quyết định.
+  how_vi: >
+    Nhớ theo hướng thời gian: RPO nhìn về QUÁ KHỨ (từ lúc backup gần nhất tới lúc sự cố,
+    đó là phần dữ liệu mất), RTO nhìn về TƯƠNG LAI (từ lúc sự cố tới lúc chạy lại được).
+    Và luôn kèm bằng chứng: bài kiểm tra khôi phục gần nhất mất bao lâu.
+    Con số trên tài liệu mà chưa test thì chỉ là mong muốn.
+  contrast_vi: >
+    RPO mười lăm phút nghĩa là mất tối đa mười lăm phút dữ liệu.
+    RTO bốn tiếng nghĩa là bốn tiếng sau sự cố thì làm việc lại được.
+    Hai con số hoàn toàn độc lập — có hệ thống RPO rất tốt nhưng RTO rất tệ.
+
+common_mistakes:
+  - mistake: "Lẫn RPO với RTO"
+    why_vi: >
+      Hai chữ viết tắt chỉ khác một chữ cái và đều đo bằng đơn vị thời gian,
+      nên rất dễ nói ngược trong lúc căng thẳng.
+    fix_vi: "RPO nhìn về sau lưng (dữ liệu đã mất), RTO nhìn về phía trước (thời gian phục hồi)."
+    detect_phoneme_missing: []
+  - mistake: "Trả lời bằng \"bọn em có backup\" thay vì con số"
+    why_vi: >
+      Nghĩ rằng người hỏi chỉ muốn biết có hay không. Nhưng có backup mà khôi phục
+      mất ba ngày thì với kinh doanh gần như là không có.
+    fix_vi: "Luôn trả lời bằng hai con số, kèm ngày kiểm tra gần nhất."
+    detect_phoneme_missing: []
+  - mistake: "Nêu RTO trên tài liệu mà chưa từng kiểm tra thật"
+    why_vi: >
+      Con số trong tài liệu là mục tiêu, không phải năng lực. Bài kiểm tra thật
+      luôn lộ ra những bước thiếu như bản ghi DNS phải sửa tay.
+    fix_vi: "Chỉ nêu con số đã có bài kiểm tra hậu thuẫn, và nói rõ kiểm tra ngày nào."
+    detect_phoneme_missing: []
+
+memory_trick_vi: >
+  RPO nhìn VỀ SAU — mất bao nhiêu dữ liệu. RTO nhìn VỀ TRƯỚC — bao lâu thì chạy lại.
+  Và con số chưa test thì chỉ là mong muốn, không phải năng lực.

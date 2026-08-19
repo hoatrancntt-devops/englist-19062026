@@ -1,0 +1,282 @@
+schema_version: 1
+code: OFF-03
+slug: xin-nghi-phep
+title_vi: "Xin nghỉ phép"
+title_en: "Asking for time off"
+
+layer: Office
+track: Foundation
+level: A2
+unit_code: U-O1
+order_index: 3
+estimated_minutes: 11
+
+illustration: clock-calendar
+
+objective_vi: >
+  Xin nghỉ phép đúng cách: nêu ngày, nói ai lo việc thay, và hỏi ý quản lý
+  thay vì thông báo một chiều.
+
+objective_observable: >
+  Viết được một email xin nghỉ đủ ba ý, và nói được lời xin nghỉ trực tiếp.
+
+mastery_weights:
+  Listening: 0.25
+  Speaking: 0.35
+  Reading: 0.15
+  Writing: 0.25
+
+prerequisites:
+  - lesson: OFF-02
+    min_mastery: 60
+    kind: Hard
+
+vocabulary:
+  - term: "take a day off"
+    ipa: "/teɪk ə deɪ ɒf/"
+    meaning_vi: "nghỉ một ngày"
+    chunk: "I'd like to take Friday off."
+    tags: [leave, core]
+  - term: "annual leave"
+    ipa: "/ˈænjuəl liːv/"
+    meaning_vi: "phép năm"
+    chunk: "I still have five days of annual leave."
+    tags: [leave, office]
+  - term: "cover for me"
+    ipa: "/ˈkʌvər fɔːr miː/"
+    meaning_vi: "trực thay tôi"
+    chunk: "Minh can cover for me."
+    tags: [leave, core]
+  - term: "hand over"
+    ipa: "/hænd ˈoʊvər/"
+    meaning_vi: "bàn giao"
+    chunk: "I'll hand over the open tickets."
+    tags: [leave, office]
+  - term: "Would that work"
+    ipa: "/wʊd ðæt wɜːrk/"
+    meaning_vi: "vậy có được không ạ"
+    chunk: "Would that work for you?"
+    tags: [leave, core]
+  - term: "short notice"
+    ipa: "/ʃɔːrt ˈnoʊtɪs/"
+    meaning_vi: "báo gấp"
+    chunk: "Sorry for the short notice."
+    tags: [leave, office]
+
+sentence_patterns:
+  - pattern: "I'd like to take {when} off."
+    meaning_vi: "Em muốn xin nghỉ {when}."
+    slots:
+      when: ["Friday", "next Monday", "the 15th"]
+  - pattern: "{person} can cover for me. Would that work?"
+    meaning_vi: "{person} trực thay em được. Vậy có được không ạ?"
+    slots:
+      person: ["Minh", "Priya", "The on-call team"]
+
+dialogue:
+  context_vi: >
+    Bạn muốn nghỉ thứ Sáu để về quê. Cách xin quyết định việc sếp đồng ý ngay
+    hay phải hỏi đi hỏi lại ba lượt.
+  turns:
+    - speaker: "You"
+      en: "Linh, do you have a minute? I'd like to take Friday off."
+      vi: "Chị Linh, chị có một phút không ạ? Em muốn xin nghỉ thứ Sáu."
+    - speaker: "Linh"
+      en: "Sure. Any handover needed?"
+      vi: "Được chứ. Có gì cần bàn giao không?"
+    - speaker: "You"
+      en: "I'll hand over the open tickets to Minh, and he can cover the on-call. Would that work?"
+      vi: "Em sẽ bàn giao ticket đang mở cho anh Minh, và anh ấy trực thay em. Vậy có được không ạ?"
+    - speaker: "Linh"
+      en: "That works. Have you checked with Minh already?"
+      vi: "Được đấy. Em đã hỏi Minh chưa?"
+    - speaker: "You"
+      en: "Yes, he's fine with it. I'll send the leave request today."
+      vi: "Rồi ạ, anh ấy đồng ý. Hôm nay em gửi đơn xin nghỉ."
+    - speaker: "Linh"
+      en: "Good. Enjoy the trip."
+      vi: "Tốt. Chúc em đi vui vẻ."
+
+listening:
+  context_vi: >
+    Nghe một lời xin nghỉ gấp. Chú ý ba ý người này nêu — thiếu ý nào là sếp phải hỏi thêm.
+  speed: 1.0
+  voice: en_US_female
+  transcript_en: "Hi Linh, sorry for the short notice — I need to take tomorrow off, family matter. Priya has agreed to cover the on-call, and I've handed over the two open tickets. Would that be OK?"
+  transcript_vi: "Chào chị Linh, xin lỗi vì báo gấp — em cần nghỉ ngày mai, có việc gia đình. Priya đã đồng ý trực thay, và em đã bàn giao hai ticket đang mở. Vậy có được không ạ?"
+  questions:
+    - kind: mcq_listen
+      prompt_vi: "Ai sẽ trực thay?"
+      choices: ["Priya", "Minh", "Không ai"]
+      answer: 0
+      difficulty: 1
+      skill: Listening
+    - kind: mcq_listen
+      prompt_vi: "Người này đã làm gì trước khi xin nghỉ?"
+      choices: ["Chỉ báo sếp", "Không làm gì", "Sắp xếp người trực thay và bàn giao ticket"]
+      answer: 2
+      difficulty: 2
+      skill: Listening
+
+speaking_drills:
+  - kind: read_aloud
+    expected_text: "I'd like to take Friday off."
+    prompt_vi: "\"I'd\" đọc gọn thành /aɪd/. Đừng tách thành I would."
+    ipa: "/aɪd laɪk tuː teɪk ˈfraɪdeɪ ɒf/"
+    focus_phonemes: ["d", "f"]
+  - kind: read_aloud
+    expected_text: "Minh can cover for me."
+    prompt_vi: "Câu quan trọng nhất khi xin nghỉ: ai lo việc thay bạn."
+    ipa: "/mɪn kæn ˈkʌvər fɔːr miː/"
+    focus_phonemes: ["k", "v"]
+  - kind: shadow
+    expected_text: "Would that work for you?"
+    prompt_vi: "Câu này biến lời thông báo thành lời xin phép. Nghe rồi nhắc lại."
+    ipa: "/wʊd ðæt wɜːrk fɔːr juː/"
+    focus_phonemes: ["w", "ð"]
+  - kind: shadow
+    expected_text: "Sorry for the short notice."
+    prompt_vi: "Dùng khi xin nghỉ gấp. Chú ý cụm /ʃ/ và /rt/."
+    ipa: "/ˈsɒri fɔːr ðə ʃɔːrt ˈnoʊtɪs/"
+    focus_phonemes: ["ʃ", "rt"]
+  - kind: respond
+    prompt_en: "Sure. Any handover needed?"
+    prompt_vi: "Sếp hỏi có gì cần bàn giao. Nêu người trực thay và việc bạn đã bàn giao."
+    accept_patterns:
+      - "can cover"
+      - "hand over"
+      - "I'll"
+
+reading:
+  kind: email
+  context_vi: >
+    Email xin nghỉ phép chuẩn. Đếm xem có mấy ý, và ý nào là ý người mới hay quên.
+  text_en: |
+    Subject: Leave request - Friday 22 August
+
+    Hi Linh,
+
+    I'd like to take Friday 22 August off as annual leave.
+
+    Handover:
+    - Minh has agreed to cover the on-call rotation.
+    - The two open tickets (4417, 4420) are handed over with notes.
+    - No deployments are scheduled that day.
+
+    Would that work for you? I'll submit it in the HR system once you confirm.
+
+    Thanks,
+    Minh
+  text_vi: |
+    Tiêu đề: Đơn xin nghỉ phép - thứ Sáu 22 tháng 8
+
+    Chào chị Linh,
+
+    Em muốn xin nghỉ phép năm ngày thứ Sáu 22 tháng 8.
+
+    Bàn giao:
+    - Anh Minh đã đồng ý trực ca thay em.
+    - Hai ticket đang mở (4417, 4420) đã bàn giao kèm ghi chú.
+    - Hôm đó không có lịch triển khai nào.
+
+    Vậy có được không ạ? Em sẽ nộp đơn trên hệ thống nhân sự khi chị duyệt.
+
+    Em cảm ơn,
+    Minh
+  questions:
+    - kind: mcq_read
+      prompt_en: "What will the writer do after Linh confirms?"
+      choices: ["Book the trip", "Submit it in the HR system", "Tell the team"]
+      answer: 1
+      difficulty: 2
+      reading_skill: scan
+      skill: Reading
+    - kind: mcq_read
+      prompt_en: "How many open tickets are handed over?"
+      choices: ["One", "Four", "Two"]
+      answer: 2
+      difficulty: 1
+      reading_skill: scan
+      skill: Reading
+    - kind: mcq_read
+      prompt_en: "Why does the email mention deployments?"
+      choices: ["To show nothing critical happens that day", "To ask for more leave", "To report a problem"]
+      answer: 0
+      difficulty: 3
+      reading_skill: skim
+      skill: Reading
+
+writing:
+  kind: GuidedEmail
+  prompt_vi: >
+    Viết email xin nghỉ một ngày. Phải có đủ ba ý: ngày nghỉ,
+    ai trực thay và bàn giao gì, và một câu hỏi ý quản lý.
+  prompt_en: "Write a leave request email covering three points."
+  required_points:
+    - "take Friday off"
+    - "cover for me"
+    - "would that work"
+  hint_vi: "Ba ý: ngày nghỉ, người trực thay, hỏi ý. Thiếu ý hai là sếp phải hỏi lại."
+  sample_en: "I'd like to take Friday off as annual leave. Minh has agreed to cover the on-call and I'll hand over the open tickets. Would that work for you?"
+
+quiz:
+  - kind: mcq
+    prompt_vi: "Ý nào người mới hay quên khi xin nghỉ?"
+    choices: ["Ngày nghỉ", "Ai lo việc thay mình", "Lời cảm ơn"]
+    answer: 1
+    difficulty: 2
+    skill: Writing
+  - kind: mcq
+    prompt_vi: "\"Would that work for you?\" có tác dụng gì?"
+    choices: ["Cho lịch sự", "Hỏi về công việc", "Biến lời thông báo thành lời xin phép"]
+    answer: 2
+    difficulty: 2
+    skill: Reading
+  - kind: mcq
+    prompt_vi: "Nên hỏi người trực thay trước hay sau khi xin sếp?"
+    choices: ["Trước — để trình sếp một phương án đã sẵn sàng", "Sau", "Không cần hỏi"]
+    answer: 0
+    difficulty: 2
+    skill: Reading
+  - kind: mcq
+    prompt_vi: "Xin nghỉ gấp thì thêm câu gì?"
+    choices: ["I must go", "Sorry for the short notice", "No choice"]
+    answer: 1
+    difficulty: 1
+    skill: Speaking
+
+explanation:
+  why_vi: >
+    Người Việt thường xin nghỉ bằng cách nêu lý do thật chi tiết, nghĩ rằng lý do
+    càng chính đáng thì càng dễ được duyệt. Ở môi trường quốc tế, quản lý ít quan tâm lý do —
+    họ quan tâm việc của bạn hôm đó ai lo.
+  how_vi: >
+    Ba ý, không hơn: NGÀY NGHỈ, AI TRỰC THAY, HỎI Ý. Ý thứ hai là ý quyết định:
+    trình được một phương án đã sắp xếp xong thì sếp chỉ cần gật đầu.
+    Lý do cá nhân chỉ cần một cụm ngắn, hoặc bỏ hẳn nếu là phép năm.
+  contrast_vi: >
+    "I will take Friday off" là thông báo. "I'd like to take Friday off... Would that work?"
+    là xin phép. Với quản lý người nước ngoài, khác biệt này rất rõ.
+
+common_mistakes:
+  - mistake: "Kể lý do cá nhân quá chi tiết"
+    why_vi: >
+      Văn hoá Việt coi việc giải thích kỹ là tôn trọng. Nhưng ở đây nó khiến quản lý khó xử,
+      và không giúp gì cho quyết định của họ.
+    fix_vi: "Phép năm thì không cần lý do. Việc gấp thì một cụm ngắn như \"family matter\" là đủ."
+    detect_phoneme_missing: []
+  - mistake: "Xin nghỉ mà chưa sắp xếp người trực thay"
+    why_vi: >
+      Nghĩ rằng đó là việc của quản lý. Thực tế người xin nghỉ mới biết rõ việc mình đang làm
+      và ai có thể tiếp nhận.
+    fix_vi: "Hỏi đồng nghiệp trước, rồi mới trình sếp một phương án đã sẵn sàng."
+    detect_phoneme_missing: []
+  - mistake: "Dùng câu khẳng định thay vì câu hỏi"
+    why_vi: >
+      Tiếng Việt thêm chữ “ạ” là thành xin phép. Tiếng Anh phải đổi hẳn sang dạng câu hỏi.
+    fix_vi: "Kết thúc bằng \"Would that work for you?\" Một câu này đổi hẳn thái độ cả email."
+    detect_phoneme_missing: []
+
+memory_trick_vi: >
+  Ba ý khi xin nghỉ: NGÀY, NGƯỜI THAY, HỎI Ý.
+  Sếp không cần biết bạn đi đâu — sếp cần biết việc của bạn hôm đó ai lo.

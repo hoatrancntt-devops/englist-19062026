@@ -1,0 +1,101 @@
+name: CI
+
+# Chạy trên mọi pull request và mọi lần đẩy lên nhánh chính.
+# Đây là cổng duy nhất trước khi có người thứ hai sửa code: trước đó mọi thứ
+# chỉ được kiểm bằng tay qua Docker, psql và trình duyệt.
+on:
+  push:
+    branches: [main, master]
+  pull_request:
+
+# Đẩy commit mới lên cùng một PR thì huỷ lượt chạy cũ: kết quả của nó không còn ai đọc.
+concurrency:
+  group: ${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  backend:
+    name: .NET — build, test đơn vị, cổng nội dung
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-dotnet@v4
+        with:
+          global-json-file: global.json
+
+      - name: Khôi phục gói
+        run: dotnet restore
+
+      - name: Build
+        run: dotnet build --no-restore --configuration Release
+
+      # Cổng chất lượng nội dung chạy không cần DB nên tách riêng và chạy trước:
+      # nội dung hỏng thì biết ngay, không phải chờ hết bộ test tích hợp.
+      - name: Cổng chất lượng nội dung
+        run: dotnet test tests/ContentValidationTests --no-build --configuration Release --verbosity minimal
+
+      - name: Test đơn vị
+        run: dotnet test tests/UnitTests --no-build --configuration Release --verbosity minimal
+
+  integration:
+    name: Test tích hợp trên Postgres thật
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-dotnet@v4
+        with:
+          global-json-file: global.json
+
+      # Testcontainers tự dựng Postgres qua Docker. Runner của GitHub đã có sẵn Docker
+      # nên không cần khai service container ở đây.
+      - name: Test tích hợp
+        run: dotnet test tests/IntegrationTests --configuration Release --verbosity minimal
+
+  images:
+    name: Dockerfile — build được cả ba ảnh
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v4
+
+      # Chỉ build, không đẩy đi đâu. Mục đích là bắt Dockerfile hỏng ngay trong PR
+      # thay vì lúc triển khai.
+      - name: Build ảnh API
+        run: docker build -f apps/api/Dockerfile -t efit-api:ci .
+
+      - name: Build ảnh worker
+        run: docker build -f src/Worker/Dockerfile -t efit-worker:ci .
+
+      - name: Build ảnh web
+        run: docker build -f apps/web/Dockerfile -t efit-web:ci .
+
+  web:
+    name: Web — lint, typecheck, build
+    runs-on: ubuntu-latest
+
+    defaults:
+      run:
+        working-directory: apps/web
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+          cache: npm
+          cache-dependency-path: apps/web/package-lock.json
+
+      - name: Cài gói
+        run: npm ci
+
+      - name: Lint
+        run: npm run lint
+
+      # `npm run build` đã chạy `tsc -b` nên bao luôn phần kiểm kiểu.
+      - name: Typecheck và build
+        run: npm run build

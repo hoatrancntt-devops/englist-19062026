@@ -1,0 +1,362 @@
+schema_version: 1
+code: CLD-06
+slug: viet-ke-hoach-migration
+title_vi: "Viết kế hoạch migration — và đường lui cho từng đợt"
+title_en: "Writing a migration plan"
+
+layer: Professional
+track: Cloud
+level: B1
+unit_code: U-CLD2
+order_index: 6
+estimated_minutes: 12
+is_checkpoint: true
+
+illustration: cloud-migration
+
+objective_vi: >
+  Viết kế hoạch chuyển hệ thống theo từng đợt, mỗi đợt có tiêu chí thành công
+  và đường lui — thay vì một lần chuyển hết rồi cầu may.
+
+objective_observable: >
+  Đạt từ 80 điểm trên cả bốn trục kỹ năng, không trục nào dưới 65.
+
+mastery_weights:
+  Listening: 0.20
+  Speaking: 0.25
+  Reading: 0.25
+  Writing: 0.30
+
+prerequisites:
+  - lesson: CLD-05
+    min_mastery: 70
+    kind: Hard
+  - lesson: INF-04
+    min_mastery: 65
+    kind: Soft
+  - lesson: CLD-02
+    min_mastery: 65
+    kind: Soft
+
+vocabulary:
+  - term: "cut over"
+    ipa: "/kʌt ˈoʊvər/"
+    meaning_vi: "chuyển hẳn sang hệ mới"
+    chunk: "We cut over on a Saturday morning."
+    tags: [migration, core]
+  - term: "roll back"
+    ipa: "/roʊl bæk/"
+    meaning_vi: "quay lại hệ cũ"
+    chunk: "We can roll back in under ten minutes."
+    tags: [migration, core]
+  - term: "run in parallel"
+    ipa: "/rʌn ɪn ˈpærəlel/"
+    meaning_vi: "chạy song song hai hệ"
+    chunk: "Both systems run in parallel for one week."
+    tags: [migration, core]
+  - term: "wave"
+    ipa: "/weɪv/"
+    meaning_vi: "đợt chuyển"
+    chunk: "Wave one is the read-only services."
+    tags: [migration, core]
+  - term: "success criteria"
+    ipa: "/səkˈses kraɪˈtɪriə/"
+    meaning_vi: "tiêu chí coi là thành công"
+    chunk: "Success criteria: error rate stays under one percent."
+    tags: [migration, core]
+  - term: "point of no return"
+    ipa: "/pɔɪnt ɒv noʊ rɪˈtɜːrn/"
+    meaning_vi: "điểm không quay lại được nữa"
+    chunk: "The point of no return is the DNS change."
+    tags: [migration, core]
+
+sentence_patterns:
+  - pattern: "Wave {n} moves {scope}, and we roll back by {action}."
+    meaning_vi: "Đợt {n} chuyển {scope}, và quay lui bằng cách {action}."
+    slots:
+      n: ["one", "two", "three"]
+      scope: ["the read-only services", "the reporting jobs", "the payment path"]
+      action: ["pointing DNS back", "re-enabling the old queue", "restoring the snapshot"]
+  - pattern: "Success criteria: {metric} stays {threshold} for {duration}."
+    meaning_vi: "Tiêu chí thành công: {metric} giữ {threshold} trong {duration}."
+    slots:
+      metric: ["the error rate", "p95 latency", "the daily reconciliation difference"]
+      threshold: ["under one percent", "under 400 milliseconds", "at zero"]
+      duration: ["48 hours", "one week", "three business days"]
+
+dialogue:
+  context_vi: >
+    Anh Tuấn duyệt kế hoạch chuyển hệ thống lên cloud. Anh không hỏi về công nghệ —
+    anh hỏi về đường lui.
+  turns:
+    - speaker: "Tuấn"
+      en: "You want to move everything on one weekend. What if it goes wrong at 3 a.m.?"
+      vi: "Em muốn chuyển hết trong một cuối tuần. Nếu ba giờ sáng hỏng thì sao?"
+    - speaker: "You"
+      en: "I've split it into three waves. Wave one is the read-only reporting services — nothing writes, so rollback is just pointing DNS back."
+      vi: "Em chia làm ba đợt rồi ạ. Đợt một là các dịch vụ báo cáo chỉ đọc — không ghi gì, nên quay lui chỉ là trỏ DNS về."
+    - speaker: "Tuấn"
+      en: "And the payment path?"
+      vi: "Còn luồng thanh toán?"
+    - speaker: "You"
+      en: "Wave three, four weeks later. Both systems run in parallel for a week first and we compare the daily totals."
+      vi: "Đợt ba, bốn tuần sau. Trước đó hai hệ chạy song song một tuần và bọn em đối chiếu tổng hằng ngày."
+    - speaker: "Tuấn"
+      en: "What's the point of no return?"
+      vi: "Điểm không quay lại được là chỗ nào?"
+    - speaker: "You"
+      en: "When we stop writing to the old database. Before that, everything is reversible in about ten minutes."
+      vi: "Là lúc bọn em ngừng ghi vào cơ sở dữ liệu cũ. Trước đó thì mọi thứ quay lui được trong khoảng mười phút."
+    - speaker: "Tuấn"
+      en: "Who decides to roll back, and when?"
+      vi: "Ai quyết quay lui, và lúc nào?"
+    - speaker: "You"
+      en: "The on-call engineer, alone, if the error rate goes over one percent for fifteen minutes. No meeting needed at 3 a.m."
+      vi: "Kỹ sư trực, tự quyết, nếu tỷ lệ lỗi vượt một phần trăm trong mười lăm phút. Ba giờ sáng không cần họp."
+
+listening:
+  context_vi: >
+    Nghe hai kế hoạch chuyển hệ thống. Chú ý kế hoạch nào nói rõ ai được
+    quyết quay lui và quyết theo ngưỡng nào.
+  speed: 1.2
+  voice: en_US_male
+  transcript_en: "Plan one: we migrate over the weekend, the team will be on standby, and if there are problems we will assess the situation and decide what to do. Plan two: wave one moves the read-only services on Saturday. Success criteria: error rate under one percent for forty-eight hours. If it goes above that for fifteen minutes, the on-call engineer rolls back alone by pointing DNS at the old load balancer. No approval call needed."
+  transcript_vi: "Kế hoạch một: bọn tôi chuyển vào cuối tuần, cả nhóm trực sẵn, và nếu có vấn đề thì bọn tôi đánh giá tình hình rồi quyết. Kế hoạch hai: đợt một chuyển các dịch vụ chỉ đọc vào thứ Bảy. Tiêu chí thành công: tỷ lệ lỗi dưới một phần trăm trong bốn mươi tám tiếng. Nếu vượt ngưỡng đó trong mười lăm phút, kỹ sư trực tự quay lui bằng cách trỏ DNS về bộ cân tải cũ. Không cần gọi ai duyệt."
+  questions:
+    - kind: mcq_listen
+      prompt_vi: "Kế hoạch hai nói rõ điều gì mà kế hoạch một không?"
+      choices: ["Ngưỡng quay lui và ai được quyết", "Tên nhà cung cấp", "Chi phí"]
+      answer: 0
+      difficulty: 2
+      skill: Listening
+    - kind: mcq_listen
+      prompt_vi: "Ai được quyết quay lui trong kế hoạch hai?"
+      choices: ["Cả nhóm sau khi họp", "Giám đốc kỹ thuật", "Kỹ sư trực, tự quyết"]
+      answer: 2
+      difficulty: 2
+      skill: Listening
+    - kind: mcq_listen
+      prompt_vi: "Vì sao \"đánh giá tình hình rồi quyết\" là điểm yếu?"
+      choices: ["Nghe không chuyên nghiệp", "Lúc ba giờ sáng không ai biết ngưỡng nào là đủ xấu để quay lui", "Quá dài dòng"]
+      answer: 1
+      difficulty: 3
+      skill: Listening
+
+speaking_drills:
+  - kind: read_aloud
+    expected_text: "Wave one moves the read-only services, and we roll back by pointing DNS back."
+    prompt_vi: "Mỗi đợt gắn liền với một cách quay lui."
+    ipa: "/weɪv wʌn muːvz ðə riːd ˈoʊnli/"
+    focus_phonemes: ["w", "v"]
+  - kind: read_aloud
+    expected_text: "Success criteria: the error rate stays under one percent for forty-eight hours."
+    prompt_vi: "Tiêu chí phải là số đo được kèm khoảng thời gian."
+    ipa: "/səkˈses kraɪˈtɪriə ðə ˈerər reɪt/"
+    focus_phonemes: ["kr", "s"]
+  - kind: shadow
+    expected_text: "The point of no return is when we stop writing to the old database."
+    prompt_vi: "Nói rõ mốc hết đường lui. Ai duyệt cũng hỏi câu này."
+    ipa: "/ðə pɔɪnt ɒv noʊ rɪˈtɜːrn/"
+    focus_phonemes: ["ɔɪ", "ɜːr"]
+  - kind: shadow
+    expected_text: "The on-call engineer rolls back alone. No meeting needed at 3 a.m."
+    prompt_vi: "Giao quyền trước, không giao lúc đang cháy."
+    ipa: "/ðə ɒn kɔːl ˌendʒɪˈnɪr roʊlz bæk/"
+    focus_phonemes: ["dʒ", "l"]
+  - kind: respond
+    prompt_en: "What if it goes wrong at 3 a.m.?"
+    prompt_vi: "Nêu ngưỡng quay lui, ai quyết, và mất bao lâu."
+    accept_patterns:
+      - "roll back"
+      - "on-call"
+      - "percent"
+
+reading:
+  kind: note
+  context_vi: >
+    Kế hoạch chuyển hệ thống theo ba đợt. Đọc và tìm đợt nào không có
+    đường lui thật sự.
+  text_en: |
+    Migration plan - order platform to cloud
+
+    Wave 1 - reporting services - Saturday 6 June
+    Scope: four read-only services. No writes, no state.
+    Success criteria: error rate under 1% and p95 latency under 400 ms
+    for 48 hours.
+    Rollback: point DNS at the old load balancer. Takes about 4 minutes.
+    Decision: on-call engineer, alone, no approval needed.
+
+    Wave 2 - background jobs - Saturday 4 July
+    Scope: nightly reconciliation and the partner file export.
+    Success criteria: three consecutive nightly runs produce output
+    identical to the old system, compared automatically.
+    Rollback: re-enable the old scheduler. The new job is idempotent, so a
+    double run is safe. Takes about 10 minutes.
+    Decision: on-call engineer, alone.
+
+    Wave 3 - order write path - Saturday 1 August
+    Scope: order creation and payment confirmation.
+    Preparation: both systems run in parallel from 18 July. The old system
+    stays authoritative; the new one shadows every write and we compare
+    daily totals. Wave 3 does not start unless the difference is zero for
+    seven days.
+    Success criteria: error rate under 0.5% for 24 hours and zero
+    reconciliation difference on the first nightly run.
+    Rollback: switch writes back to the old database. This works only
+    until we run the schema change that drops the legacy columns.
+    Point of no return: the schema change, scheduled for 15 August, two
+    weeks after cut-over. Nothing is deleted before that date.
+    Decision: rollback in the first 24 hours is the on-call engineer's
+    call. After that it needs the service owner, because re-syncing two
+    weeks of orders is a bigger operation than the outage it prevents.
+  text_vi: |
+    Kế hoạch chuyển - nền tảng đơn hàng lên cloud
+
+    Đợt 1 - dịch vụ báo cáo - thứ Bảy 6 tháng Sáu
+    Phạm vi: bốn dịch vụ chỉ đọc. Không ghi, không giữ trạng thái.
+    Tiêu chí thành công: tỷ lệ lỗi dưới 1% và p95 độ trễ dưới 400 ms
+    trong 48 tiếng.
+    Quay lui: trỏ DNS về bộ cân tải cũ. Mất khoảng 4 phút.
+    Người quyết: kỹ sư trực, tự quyết, không cần duyệt.
+
+    Đợt 2 - job nền - thứ Bảy 4 tháng Bảy
+    Phạm vi: đối soát hằng đêm và xuất file cho đối tác.
+    Tiêu chí thành công: ba đêm liên tiếp cho kết quả giống hệt hệ cũ,
+    đối chiếu tự động.
+    Quay lui: bật lại bộ lập lịch cũ. Job mới chạy lại nhiều lần vẫn cho cùng kết quả
+    nên chạy trùng không sao. Mất khoảng 10 phút.
+    Người quyết: kỹ sư trực, tự quyết.
+
+    Đợt 3 - luồng ghi đơn hàng - thứ Bảy 1 tháng Tám
+    Phạm vi: tạo đơn và xác nhận thanh toán.
+    Chuẩn bị: hai hệ chạy song song từ 18 tháng Bảy. Hệ cũ vẫn là hệ chính thức;
+    hệ mới ghi bóng theo mọi lệnh ghi và bọn mình đối chiếu tổng hằng ngày.
+    Đợt 3 không bắt đầu nếu chênh lệch chưa về không trong bảy ngày.
+    Tiêu chí thành công: tỷ lệ lỗi dưới 0,5% trong 24 tiếng và chênh lệch đối soát
+    bằng không ở lần chạy đêm đầu tiên.
+    Quay lui: chuyển lệnh ghi về cơ sở dữ liệu cũ. Cách này chỉ còn dùng được
+    cho tới khi chạy lệnh đổi lược đồ xoá các cột cũ.
+    Điểm không quay lại: lệnh đổi lược đồ, xếp lịch 15 tháng Tám, hai tuần sau
+    khi chuyển hẳn. Không xoá gì trước ngày đó.
+    Người quyết: quay lui trong 24 tiếng đầu là quyền kỹ sư trực. Sau đó cần
+    chủ dịch vụ, vì đồng bộ lại hai tuần đơn hàng là việc lớn hơn cả sự cố nó tránh được.
+  questions:
+    - kind: mcq_read
+      prompt_en: "What must be true for seven days before wave 3 starts?"
+      choices: ["The error rate is zero", "All staff are trained", "The daily reconciliation difference is zero"]
+      answer: 2
+      difficulty: 3
+      reading_skill: scan
+      skill: Reading
+    - kind: mcq_read
+      prompt_en: "Why is a double run of the wave 2 job safe?"
+      choices: ["The job is idempotent", "It writes nothing", "It runs on a copy"]
+      answer: 0
+      difficulty: 3
+      reading_skill: scan
+      skill: Reading
+    - kind: mcq_read
+      prompt_en: "Why does rollback need the service owner after 24 hours?"
+      choices: ["The engineer goes off shift", "Re-syncing two weeks of orders is bigger than the outage it prevents", "Company policy"]
+      answer: 1
+      difficulty: 3
+      reading_skill: skim
+      skill: Reading
+    - kind: mcq_read
+      prompt_en: "When does the plan lose its rollback path?"
+      choices: ["At cut-over on 1 August", "After 48 hours", "At the schema change on 15 August"]
+      answer: 2
+      difficulty: 2
+      reading_skill: scan
+      skill: Reading
+
+writing:
+  kind: GuidedEmail
+  prompt_vi: >
+    Viết mô tả một đợt chuyển: phạm vi, tiêu chí thành công đo được,
+    cách quay lui kèm thời gian, và ai được quyết.
+  prompt_en: "Describe one migration wave."
+  required_points:
+    - "success criteria"
+    - "roll back"
+    - "on-call"
+  hint_vi: "Tiêu chí phải là con số. \"Chạy ổn\" không phải tiêu chí."
+  sample_en: "Wave one moves the four read-only reporting services on Saturday 6 June. Success criteria: error rate under one percent and p95 latency under 400 milliseconds for 48 hours. We roll back by pointing DNS at the old load balancer, which takes about four minutes. The on-call engineer makes that call alone, with no approval needed."
+
+quiz:
+  - kind: mcq
+    prompt_vi: "Vì sao chia thành nhiều đợt thay vì chuyển hết một lần?"
+    choices: ["Vì mỗi đợt nhỏ có đường lui riêng và hỏng thì phạm vi hẹp", "Cho đẹp kế hoạch", "Vì nhà cung cấp yêu cầu"]
+    answer: 0
+    difficulty: 1
+    skill: Reading
+  - kind: mcq
+    prompt_vi: "Tiêu chí thành công nào dùng được?"
+    choices: ["Hệ thống chạy ổn định", "Tỷ lệ lỗi dưới 1% trong 48 tiếng", "Không ai phàn nàn"]
+    answer: 1
+    difficulty: 2
+    skill: Writing
+  - kind: mcq
+    prompt_vi: "\"Point of no return\" nên xác định lúc nào?"
+    choices: ["Trong kế hoạch, trước khi bắt đầu", "Khi đã chuyển xong", "Không cần xác định"]
+    answer: 0
+    difficulty: 2
+    skill: Writing
+  - kind: mcq
+    prompt_vi: "Vì sao phải giao quyền quay lui cho kỹ sư trực từ trước?"
+    choices: ["Để đỡ việc cho sếp", "Vì kỹ sư trực giỏi nhất", "Vì ba giờ sáng gọi họp thì sự cố kéo dài thêm hàng giờ"]
+    answer: 2
+    difficulty: 2
+    skill: Speaking
+  - kind: mcq
+    prompt_vi: "Chạy song song hai hệ một tuần để làm gì?"
+    choices: ["Để tốn thêm tiền", "Để đối chiếu kết quả hai hệ trước khi tin hệ mới", "Để hệ mới nóng máy"]
+    answer: 1
+    difficulty: 2
+    skill: Reading
+  - kind: mcq
+    prompt_vi: "Đợt nào nên đi đầu?"
+    choices: ["Dịch vụ chỉ đọc, vì quay lui rẻ nhất", "Luồng thanh toán, vì quan trọng nhất", "Đợt nào cũng như nhau"]
+    answer: 0
+    difficulty: 3
+    skill: Writing
+
+explanation:
+  why_vi: >
+    Kế hoạch migration bị chặn không phải vì thiếu chi tiết kỹ thuật, mà vì
+    người duyệt không thấy đường lui. Câu hỏi họ luôn hỏi là "nếu hỏng lúc ba giờ sáng
+    thì sao" — và câu trả lời "bọn em sẽ đánh giá tình hình" nghĩa là lúc đó
+    không ai biết ngưỡng nào là đủ xấu để dừng lại.
+  how_vi: >
+    Mỗi đợt viết bốn dòng: PHẠM VI, TIÊU CHÍ THÀNH CÔNG là số đo được kèm khoảng
+    thời gian, CÁCH QUAY LUI kèm thời gian thực hiện, và AI ĐƯỢC QUYẾT.
+    Xếp đợt theo chi phí quay lui: dịch vụ chỉ đọc đi trước vì trỏ lại DNS là xong,
+    luồng ghi đi cuối. Và nêu rõ ĐIỂM KHÔNG QUAY LẠI trong kế hoạch, không phải phát hiện ra lúc đang chuyển.
+  contrast_vi: >
+    "Bọn em chuyển cuối tuần, cả nhóm trực sẵn" nghe an tâm nhưng không cho ai
+    cơ sở để dừng. "Tỷ lệ lỗi vượt 1% trong mười lăm phút thì kỹ sư trực tự trỏ DNS về,
+    mất bốn phút" cho người trực quyền quyết ngay lúc cần, không phải đi đánh thức người khác.
+
+common_mistakes:
+  - mistake: "Viết tiêu chí thành công theo cảm nhận — \"chạy ổn định\""
+    why_vi: >
+      Lúc viết thì ai cũng nghĩ mình nhận ra được thế nào là ổn.
+      Lúc ba giờ sáng, mệt và áp lực, không ai phân biệt được ổn với sắp hỏng.
+    fix_vi: "Một con số và một khoảng thời gian: dưới 1% trong 48 tiếng."
+    detect_phoneme_missing: []
+  - mistake: "Không nói ai được quyết quay lui"
+    why_vi: >
+      Mặc định người ta nghĩ sẽ hội ý. Nhưng hội ý lúc nửa đêm mất hàng giờ,
+      và mỗi giờ đó là sự cố kéo dài.
+    fix_vi: "Ghi tên vai trò và ngưỡng: kỹ sư trực tự quyết khi vượt ngưỡng X."
+    detect_phoneme_missing: []
+  - mistake: "Chuyển luồng ghi trước vì đó là phần quan trọng nhất"
+    why_vi: >
+      Phần quan trọng nhất được ưu tiên là phản xạ đúng ở nhiều việc khác,
+      nhưng ở migration thì ngược lại — nó là phần khó quay lui nhất.
+    fix_vi: "Xếp thứ tự theo chi phí quay lui, không theo mức quan trọng."
+    detect_phoneme_missing: []
+
+memory_trick_vi: >
+  Mỗi đợt bốn dòng: PHẠM VI — TIÊU CHÍ CÓ SỐ — CÁCH QUAY LUI CÓ THỜI GIAN — AI QUYẾT.
+  Xếp đợt theo chi phí quay lui: rẻ nhất đi trước. Và ghi rõ điểm không quay lại được.

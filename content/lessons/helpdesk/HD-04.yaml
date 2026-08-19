@@ -1,0 +1,307 @@
+schema_version: 1
+code: HD-04
+slug: giai-thich-cho-nguoi-khong-ranh
+title_vi: "Giải thích cho người không rành kỹ thuật"
+title_en: "Explaining to a non-technical user"
+
+layer: Professional
+track: Helpdesk
+level: B1
+unit_code: U-HD2
+order_index: 4
+estimated_minutes: 12
+
+illustration: coffee-chat
+
+objective_vi: >
+  Giải thích nguyên nhân và cách khắc phục cho người không rành kỹ thuật,
+  bằng ngôn ngữ họ hiểu và không làm họ thấy mình kém.
+
+objective_observable: >
+  Diễn đạt lại một nguyên nhân kỹ thuật bằng ngôn ngữ đời thường, kèm một phép so sánh.
+
+mastery_weights:
+  Listening: 0.25
+  Speaking: 0.45
+  Reading: 0.15
+  Writing: 0.15
+
+prerequisites:
+  - lesson: HD-03
+    min_mastery: 65
+    kind: Hard
+
+vocabulary:
+  - term: "in simple terms"
+    ipa: "/ɪn ˈsɪmpl tɜːrmz/"
+    meaning_vi: "nói đơn giản thì"
+    chunk: "In simple terms, your new laptop wasn't on the list."
+    tags: [explain, core]
+  - term: "think of it like"
+    ipa: "/θɪŋk ɒv ɪt laɪk/"
+    meaning_vi: "cứ hình dung nó giống như"
+    chunk: "Think of it like a guest list at the door."
+    tags: [explain, core]
+  - term: "nothing you did wrong"
+    ipa: "/ˈnʌθɪŋ juː dɪd rɒŋ/"
+    meaning_vi: "không phải lỗi của bạn"
+    chunk: "Nothing you did wrong - it was a setup step we missed."
+    tags: [explain, core]
+  - term: "what this means for you"
+    ipa: "/wɒt ðɪs miːnz fɔːr juː/"
+    meaning_vi: "điều này có nghĩa gì với bạn"
+    chunk: "What this means for you is about ten minutes of waiting."
+    tags: [explain, core]
+  - term: "won't happen again"
+    ipa: "/woʊnt ˈhæpən əˈɡen/"
+    meaning_vi: "sẽ không tái diễn"
+    chunk: "We've fixed the process so it won't happen again."
+    tags: [explain]
+  - term: "does that make sense"
+    ipa: "/dʌz ðæt meɪk sens/"
+    meaning_vi: "vậy có dễ hiểu không ạ"
+    chunk: "Does that make sense so far?"
+    tags: [explain, core]
+
+sentence_patterns:
+  - pattern: "In simple terms, {explanation}."
+    meaning_vi: "Nói đơn giản thì {explanation}."
+    slots:
+      explanation: ["your new laptop wasn't on the approved list", "the server ran out of space"]
+  - pattern: "Think of it like {analogy}."
+    meaning_vi: "Cứ hình dung nó giống như {analogy}."
+    slots:
+      analogy: ["a guest list at the door", "a full filing cabinet"]
+
+dialogue:
+  context_vi: >
+    Bạn đã tìm ra nguyên nhân: máy mới của Emma chưa được thêm vào nhóm bảo mật.
+    Giờ phải giải thích cho một người kế toán, không phải cho đồng nghiệp kỹ thuật.
+  turns:
+    - speaker: "Emma"
+      en: "So what was actually wrong? I thought I'd broken something."
+      vi: "Vậy rốt cuộc là do đâu? Tôi cứ tưởng tôi làm hỏng gì đó."
+    - speaker: "You"
+      en: "Nothing you did wrong at all. In simple terms, your new laptop wasn't on the approved list for the finance folder."
+      vi: "Hoàn toàn không phải lỗi của chị. Nói đơn giản thì máy mới của chị chưa nằm trong danh sách được phép vào thư mục tài chính."
+    - speaker: "Emma"
+      en: "But it's the same me, just a different laptop."
+      vi: "Nhưng vẫn là tôi mà, chỉ khác cái máy thôi."
+    - speaker: "You"
+      en: "Right — and that's the part that surprises people. Think of it like a guest list at the door. Your name is on it, but the system also checks which device you arrived with."
+      vi: "Đúng vậy — và đó là chỗ ai cũng bất ngờ. Chị cứ hình dung như danh sách khách ở cửa. Tên chị có trong danh sách, nhưng hệ thống còn kiểm tra cả chị đến bằng thiết bị nào."
+    - speaker: "Emma"
+      en: "Ah, that makes sense."
+      vi: "À, vậy thì tôi hiểu rồi."
+    - speaker: "You"
+      en: "What this means for you: I've added the new laptop, and it takes about ten minutes to take effect. After that, log out and back in once."
+      vi: "Điều này có nghĩa với chị là: tôi đã thêm máy mới vào rồi, khoảng mười phút nữa sẽ có hiệu lực. Sau đó chị đăng xuất rồi đăng nhập lại một lần."
+    - speaker: "Emma"
+      en: "And will this happen with the others too?"
+      vi: "Vậy mấy người kia có bị nữa không?"
+    - speaker: "You"
+      en: "Good question — yes, two colleagues have the same issue. I'm fixing all three now, and we've updated the laptop handover checklist so it won't happen again."
+      vi: "Câu hỏi hay — có, hai đồng nghiệp của chị cũng bị vậy. Tôi đang sửa cả ba, và bọn tôi đã cập nhật quy trình bàn giao máy để không tái diễn."
+
+listening:
+  context_vi: >
+    Nghe hai lời giải thích cho cùng một nguyên nhân. Một lời khiến người dùng yên tâm,
+    một lời khiến họ thấy mình ngu ngốc.
+  speed: 1.0
+  voice: en_US_male
+  transcript_en: "Version one: your machine isn't in the AD security group so the ACL denies the share mount. Version two: in simple terms, your new laptop wasn't on the approved list yet. Nothing you did wrong. I've added it, and it takes about ten minutes."
+  transcript_vi: "Cách một: máy của chị không nằm trong nhóm bảo mật AD nên ACL từ chối mount ổ chia sẻ. Cách hai: nói đơn giản thì máy mới của chị chưa nằm trong danh sách được phép. Không phải lỗi của chị. Tôi đã thêm rồi, khoảng mười phút nữa là được."
+  questions:
+    - kind: mcq_listen
+      prompt_vi: "Cách hai có thêm phần nào mà cách một không có?"
+      choices: ["Trấn an rằng không phải lỗi người dùng", "Nhiều chi tiết kỹ thuật hơn", "Giọng nhanh hơn"]
+      answer: 0
+      difficulty: 2
+      skill: Listening
+    - kind: mcq_listen
+      prompt_vi: "Người dùng cần biết gì nhất trong hai điều sau?"
+      choices: ["Bao lâu nữa thì dùng được", "Tên chính xác của nhóm bảo mật"]
+      answer: 0
+      difficulty: 2
+      skill: Listening
+
+speaking_drills:
+  - kind: read_aloud
+    expected_text: "Nothing you did wrong at all."
+    prompt_vi: "Câu quan trọng nhất bài này. Người dùng luôn sợ mình làm hỏng."
+    ipa: "/ˈnʌθɪŋ juː dɪd rɒŋ æt ɔːl/"
+    focus_phonemes: ["θ", "ŋ"]
+  - kind: read_aloud
+    expected_text: "In simple terms, your laptop wasn't on the approved list."
+    prompt_vi: "Chú ý cụm /rmz/ cuối chữ terms."
+    ipa: "/ɪn ˈsɪmpl tɜːrmz jʊr ˈlæptɒp/"
+    focus_phonemes: ["rmz", "pl"]
+  - kind: shadow
+    expected_text: "Think of it like a guest list at the door."
+    prompt_vi: "Phép so sánh biến khái niệm kỹ thuật thành thứ ai cũng hình dung được."
+    ipa: "/θɪŋk ɒv ɪt laɪk ə ɡest lɪst æt ðə dɔːr/"
+    focus_phonemes: ["θ", "st"]
+  - kind: shadow
+    expected_text: "What this means for you is about ten minutes of waiting."
+    prompt_vi: "Chuyển từ nguyên nhân sang hệ quả thực tế cho người nghe."
+    ipa: "/wɒt ðɪs miːnz fɔːr juː/"
+    focus_phonemes: ["ð", "nz"]
+  - kind: respond
+    prompt_en: "So what was actually wrong? I thought I'd broken something."
+    prompt_vi: "Trấn an trước, rồi giải thích bằng ngôn ngữ đời thường."
+    accept_patterns:
+      - "Nothing you did wrong"
+      - "In simple terms"
+      - "Not your fault"
+
+reading:
+  kind: email
+  context_vi: >
+    Email tổng kết gửi người dùng sau khi xử lý xong. Bốn phần: chuyện gì đã xảy ra,
+    vì sao, đã sửa thế nào, và ngăn tái diễn ra sao.
+  text_en: |
+    Subject: Resolved - shared drive access (INC-2291)
+
+    Hi Emma,
+
+    Your access is working again. Here is what happened, in plain terms.
+
+    What happened: after you received the new laptop on Friday, it could not
+    reach the finance folder.
+
+    Why: when a laptop is replaced, it has to be added to the approved list
+    for that folder. That step was missed during the handover.
+    Nothing you did wrong.
+
+    Fixed: I added all three new laptops this morning. You may need to log out
+    and back in once.
+
+    Preventing it: we have added this step to the laptop handover checklist,
+    so the next person will not hit the same issue.
+
+    Sorry for the disruption to your morning.
+
+    Minh
+  text_vi: |
+    Tiêu đề: Đã xử lý - truy cập ổ chung (INC-2291)
+
+    Chào chị Emma,
+
+    Quyền truy cập của chị đã hoạt động lại. Em xin tóm tắt bằng ngôn ngữ dễ hiểu.
+
+    Chuyện gì đã xảy ra: sau khi chị nhận máy mới hôm thứ Sáu, máy đó không
+    vào được thư mục tài chính.
+
+    Vì sao: khi đổi máy, máy mới phải được thêm vào danh sách được phép
+    cho thư mục đó. Bước này bị bỏ sót lúc bàn giao.
+    Không phải lỗi của chị.
+
+    Đã sửa: sáng nay em thêm cả ba máy mới. Chị có thể cần đăng xuất
+    rồi đăng nhập lại một lần.
+
+    Ngăn tái diễn: bọn em đã bổ sung bước này vào quy trình bàn giao máy,
+    để người sau không gặp lại vấn đề tương tự.
+
+    Em xin lỗi vì đã làm gián đoạn buổi sáng của chị.
+
+    Minh
+  questions:
+    - kind: mcq_read
+      prompt_en: "How many laptops were fixed?"
+      choices: ["One", "Three", "All in the company"]
+      answer: 1
+      difficulty: 1
+      reading_skill: scan
+      skill: Reading
+    - kind: mcq_read
+      prompt_en: "What was done to prevent this happening again?"
+      choices: ["Nothing", "New laptops were returned", "The step was added to the handover checklist"]
+      answer: 2
+      difficulty: 2
+      reading_skill: scan
+      skill: Reading
+    - kind: mcq_read
+      prompt_en: "Why does the email say 'nothing you did wrong'?"
+      choices: ["Because the user was worried she had broken it", "To fill space", "Because it is required"]
+      answer: 0
+      difficulty: 3
+      reading_skill: skim
+      skill: Reading
+
+writing:
+  kind: GuidedEmail
+  prompt_vi: >
+    Viết email tổng kết cho người dùng sau khi xử lý xong sự cố.
+    Phải có đủ ba ý: nguyên nhân bằng ngôn ngữ đời thường, trấn an không phải lỗi họ,
+    và điều họ cần làm tiếp.
+  prompt_en: "Write a resolution email for a non-technical user."
+  required_points:
+    - "in simple terms"
+    - "nothing you did wrong"
+    - "what this means for you"
+  hint_vi: "Ba ý: nguyên nhân dễ hiểu, trấn an, việc họ cần làm. Tránh mọi từ viết tắt kỹ thuật."
+  sample_en: "In simple terms, your new laptop wasn't on the approved list for that folder. Nothing you did wrong - the step was missed during handover. What this means for you: log out and back in once, and it will work."
+
+quiz:
+  - kind: mcq
+    prompt_vi: "Người dùng cuối cần biết gì nhất?"
+    choices: ["Tên nhóm bảo mật", "Bao giờ dùng được và cần làm gì", "Chi tiết cấu hình"]
+    answer: 1
+    difficulty: 1
+    skill: Reading
+  - kind: mcq
+    prompt_vi: "Vì sao nên nói \"nothing you did wrong\"?"
+    choices: ["Cho lịch sự", "Vì quy định", "Vì người dùng thường lo mình đã làm hỏng và sẽ ngại báo lỗi lần sau"]
+    answer: 2
+    difficulty: 2
+    skill: Reading
+  - kind: mcq
+    prompt_vi: "Phép so sánh trong bài dùng để làm gì?"
+    choices: ["Biến khái niệm kỹ thuật thành thứ ai cũng hình dung được", "Kéo dài câu chuyện", "Thể hiện kiến thức"]
+    answer: 0
+    difficulty: 2
+    skill: Speaking
+  - kind: mcq
+    prompt_vi: "Câu nào nên hỏi giữa chừng khi giải thích?"
+    choices: ["Understand?", "Does that make sense so far?", "Clear?"]
+    answer: 1
+    difficulty: 2
+    skill: Speaking
+
+explanation:
+  why_vi: >
+    Người kỹ thuật giải thích bằng từ vựng của mình vì đó là cách họ nghĩ.
+    Nhưng với người dùng cuối, "AD security group" và "ACL" không mang thông tin nào —
+    tệ hơn, chúng khiến người nghe thấy mình ngu ngốc và lần sau ngại báo lỗi.
+  how_vi: >
+    Bốn phần: NGUYÊN NHÂN bằng ngôn ngữ đời thường, TRẤN AN rằng không phải lỗi họ,
+    HỆ QUẢ THỰC TẾ với họ (bao lâu, cần làm gì), và NGĂN TÁI DIỄN.
+    Dùng một phép so sánh đời thường nếu khái niệm khó — danh sách khách ở cửa,
+    tủ hồ sơ đầy, chìa khoá không mở đúng phòng.
+  contrast_vi: >
+    "ACL denies the share mount" là mô tả kỹ thuật chính xác nhưng vô dụng với Emma.
+    "Máy mới của chị chưa nằm trong danh sách được phép" là cùng một sự thật,
+    diễn đạt bằng thứ chị ấy hình dung được.
+
+common_mistakes:
+  - mistake: "Dùng từ viết tắt kỹ thuật với người dùng cuối"
+    why_vi: >
+      AD, ACL, DNS, GPO là ngôn ngữ hằng ngày của bạn nên không thấy nó lạ.
+      Với người nghe, mỗi từ viết tắt là một chỗ họ ngừng hiểu.
+    fix_vi: "Nếu bắt buộc phải dùng, giải thích ngay bằng một cụm đời thường ngay sau đó."
+    detect_phoneme_missing: []
+  - mistake: "Quên trấn an rằng không phải lỗi người dùng"
+    why_vi: >
+      Với bạn nguyên nhân đã rõ nên không nghĩ tới cảm giác của họ. Nhưng người dùng
+      thường âm thầm lo mình đã làm hỏng, và lần sau sẽ ngại báo lỗi sớm.
+    fix_vi: "Một câu \"Nothing you did wrong\" giữ cho họ tiếp tục báo lỗi sớm ở những lần sau."
+    detect_phoneme_missing: []
+  - mistake: "Giải thích nguyên nhân mà không nói hệ quả với người nghe"
+    why_vi: >
+      Người kỹ thuật quan tâm nguyên nhân, người dùng quan tâm khi nào làm việc lại được.
+    fix_vi: "Luôn có một câu bắt đầu bằng \"What this means for you is...\"."
+    detect_phoneme_missing: []
+
+memory_trick_vi: >
+  Bốn phần khi giải thích: NGUYÊN NHÂN dễ hiểu, TRẤN AN, HỆ QUẢ với họ, NGĂN TÁI DIỄN.
+  Khái niệm khó thì dùng một phép so sánh đời thường.

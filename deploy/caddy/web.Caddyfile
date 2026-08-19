@@ -1,0 +1,24 @@
+# Caddy nội bộ trong container web: chỉ phục vụ tệp tĩnh, không lo TLS.
+# TLS do Caddy ở lớp ngoài đảm nhiệm.
+{
+	admin off
+	auto_https off
+}
+
+:8081 {
+	root * /srv
+
+	encode gzip zstd
+
+	# Tài sản có hash trong tên thì cache vĩnh viễn — đổi nội dung là đổi tên file.
+	@hashed path_regexp \.[a-f0-9]{8,}\.(js|css|woff2|svg|png|jpg)$
+	header @hashed Cache-Control "public, max-age=31536000, immutable"
+
+	# index.html thì không bao giờ cache: nó là thứ trỏ tới bản build mới.
+	@html path /index.html /
+	header @html Cache-Control "no-cache, must-revalidate"
+
+	# SPA: mọi đường dẫn không phải file đều trả về index.html để React Router xử lý.
+	try_files {path} /index.html
+	file_server
+}

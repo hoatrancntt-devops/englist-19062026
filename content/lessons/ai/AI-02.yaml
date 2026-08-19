@@ -1,0 +1,368 @@
+schema_version: 1
+code: AI-02
+slug: noi-ve-chon-mo-hinh-rag-fine-tuning
+title_vi: "Chọn mô hình, RAG hay fine-tuning — nói cho đồng nghiệp hiểu"
+title_en: "Talking about model selection, RAG and fine-tuning"
+
+layer: Professional
+track: Ai
+level: B1
+unit_code: U-AI1
+order_index: 2
+estimated_minutes: 12
+is_checkpoint: false
+
+illustration: data-pipeline
+
+objective_vi: >
+  Giải thích được khi nào cần tra tài liệu (RAG) và khi nào cần huấn luyện thêm
+  (fine-tuning), bằng vấn đề cần giải chứ không bằng công nghệ nghe hay hơn.
+
+objective_observable: >
+  Đạt từ 75 điểm trên cả bốn trục kỹ năng, không trục nào dưới 60.
+
+mastery_weights:
+  Listening: 0.25
+  Speaking: 0.30
+  Reading: 0.25
+  Writing: 0.20
+
+prerequisites:
+  - lesson: AI-01
+    min_mastery: 70
+    kind: Hard
+  - lesson: CLD-01
+    min_mastery: 65
+    kind: Soft
+
+vocabulary:
+  - term: "retrieval"
+    ipa: "/rɪˈtriːvl/"
+    meaning_vi: "tra cứu — tìm tài liệu liên quan rồi đưa cho mô hình"
+    chunk: "Retrieval pulls the three closest documents."
+    tags: [ai, core]
+  - term: "fine-tuning"
+    ipa: "/faɪn ˈtjuːnɪŋ/"
+    meaning_vi: "huấn luyện thêm để đổi cách trả lời"
+    chunk: "Fine-tuning changes the style, not the facts."
+    tags: [ai, core]
+  - term: "grounded in"
+    ipa: "/ˈɡraʊndɪd ɪn/"
+    meaning_vi: "dựa trên nguồn cụ thể"
+    chunk: "The answer is grounded in our own documents."
+    tags: [ai, core]
+  - term: "out of date"
+    ipa: "/aʊt ɒv deɪt/"
+    meaning_vi: "đã lỗi thời"
+    chunk: "The model's knowledge is out of date."
+    tags: [ai, core]
+  - term: "cite the source"
+    ipa: "/saɪt ðə sɔːrs/"
+    meaning_vi: "dẫn nguồn"
+    chunk: "It must cite the source for every answer."
+    tags: [ai, core]
+  - term: "good enough"
+    ipa: "/ɡʊd ɪˈnʌf/"
+    meaning_vi: "đủ dùng"
+    chunk: "The smaller model is good enough for this."
+    tags: [ai, core]
+
+sentence_patterns:
+  - pattern: "{Approach} fixes {problem}, not {other}."
+    meaning_vi: "{Approach} giải quyết {problem}, không giải quyết {other}."
+    slots:
+      Approach: ["Retrieval", "Fine-tuning", "A bigger model"]
+      problem: ["out-of-date facts", "the wrong tone", "missing internal knowledge"]
+      other: ["the answer style", "wrong facts", "slow responses"]
+  - pattern: "The smaller model is good enough because {reason}."
+    meaning_vi: "Mô hình nhỏ là đủ dùng vì {reason}."
+    slots:
+      reason: ["the answers come from our documents", "the task is classification", "we only need three categories"]
+
+dialogue:
+  context_vi: >
+    Bạn và anh Khoa bàn cách làm trợ lý tra cứu quy trình nội bộ.
+    Anh Khoa muốn fine-tuning vì nghe nói nó mạnh hơn.
+  turns:
+    - speaker: "Khoa"
+      en: "Let's fine-tune a model on all our internal documents. Then it knows everything."
+      vi: "Mình fine-tune một mô hình trên toàn bộ tài liệu nội bộ đi. Thế là nó biết hết."
+    - speaker: "You"
+      en: "What problem are we solving? If the issue is that it doesn't know our processes, retrieval fixes that more cheaply."
+      vi: "Mình đang giải vấn đề gì ạ? Nếu vấn đề là nó không biết quy trình của mình thì tra cứu giải quyết được, mà rẻ hơn."
+    - speaker: "Khoa"
+      en: "What's the difference in practice?"
+      vi: "Thực tế khác nhau ở chỗ nào?"
+    - speaker: "You"
+      en: "Retrieval finds the three closest documents and gives them to the model with the question. The answer is grounded in our own files, and it can cite the source."
+      vi: "Tra cứu tìm ba tài liệu gần nhất rồi đưa cho mô hình cùng câu hỏi. Câu trả lời dựa trên chính file của mình, và nó dẫn được nguồn."
+    - speaker: "Khoa"
+      en: "And fine-tuning doesn't do that?"
+      vi: "Fine-tuning không làm được thế à?"
+    - speaker: "You"
+      en: "Fine-tuning changes how it answers, not what it knows. And when a process changes next month, retrieval picks it up the same day. Fine-tuning needs a new training run."
+      vi: "Fine-tuning đổi cách nó trả lời, không đổi cái nó biết. Với lại tháng sau quy trình đổi thì tra cứu cập nhật ngay trong ngày. Fine-tuning phải huấn luyện lại."
+    - speaker: "Khoa"
+      en: "So fine-tuning is never useful?"
+      vi: "Vậy fine-tuning không bao giờ dùng à?"
+    - speaker: "You"
+      en: "It is, when the problem is style. If we want every answer in our support tone with a fixed structure, that's a fine-tuning problem."
+      vi: "Có chứ ạ, khi vấn đề là văn phong. Nếu mình muốn mọi câu trả lời theo đúng giọng hỗ trợ và một cấu trúc cố định thì đó là bài toán fine-tuning."
+    - speaker: "Khoa"
+      en: "Fair. Start with retrieval then."
+      vi: "Hợp lý. Vậy bắt đầu bằng tra cứu."
+
+listening:
+  context_vi: >
+    Nghe hai cách chọn giải pháp. Chú ý ai bắt đầu từ vấn đề
+    và ai bắt đầu từ công nghệ.
+  speed: 1.2
+  voice: en_US_male
+  transcript_en: "Speaker one: we should fine-tune, it is the more advanced approach and it will give better results. Speaker two: the complaint is that the assistant gives answers based on last year's process. That is an out-of-date facts problem, so retrieval fixes it and fine-tuning does not. Fine-tuning changes how it answers, not what it knows. If the complaint were about tone, I would say the opposite."
+  transcript_vi: "Người một: mình nên fine-tune, đó là cách tiên tiến hơn và sẽ cho kết quả tốt hơn. Người hai: phàn nàn là trợ lý trả lời theo quy trình năm ngoái. Đó là vấn đề dữ kiện lỗi thời, nên tra cứu giải quyết được còn fine-tuning thì không. Fine-tuning đổi cách nó trả lời, không đổi cái nó biết. Nếu phàn nàn là về văn phong thì tôi sẽ nói ngược lại."
+  questions:
+    - kind: mcq_listen
+      prompt_vi: "Người hai bắt đầu từ đâu?"
+      choices: ["Từ nội dung phàn nàn của người dùng", "Từ công nghệ tiên tiến nhất", "Từ ngân sách"]
+      answer: 0
+      difficulty: 2
+      skill: Listening
+    - kind: mcq_listen
+      prompt_vi: "Theo người hai, fine-tuning đổi cái gì?"
+      choices: ["Cái mô hình biết", "Tốc độ trả lời", "Cách mô hình trả lời"]
+      answer: 2
+      difficulty: 2
+      skill: Listening
+    - kind: mcq_listen
+      prompt_vi: "Khi nào người hai sẽ chọn fine-tuning?"
+      choices: ["Khi dữ kiện lỗi thời", "Khi vấn đề là văn phong", "Không bao giờ"]
+      answer: 1
+      difficulty: 3
+      skill: Listening
+
+speaking_drills:
+  - kind: read_aloud
+    expected_text: "Retrieval fixes out-of-date facts, not the answer style."
+    prompt_vi: "Một câu phân định ranh giới. Học thuộc."
+    ipa: "/rɪˈtriːvl ˈfɪksɪz aʊt ɒv deɪt fækts/"
+    focus_phonemes: ["tr", "kts"]
+  - kind: read_aloud
+    expected_text: "Fine-tuning changes how it answers, not what it knows."
+    prompt_vi: "Câu còn lại của cặp. Hai câu này giải quyết hầu hết tranh luận."
+    ipa: "/faɪn ˈtjuːnɪŋ ˈtʃeɪndʒɪz haʊ ɪt ˈænsərz/"
+    focus_phonemes: ["tʃ", "n"]
+  - kind: shadow
+    expected_text: "What problem are we solving?"
+    prompt_vi: "Câu hỏi mở đầu mọi cuộc bàn về công nghệ."
+    ipa: "/wɒt ˈprɒbləm ɑːr wiː ˈsɒlvɪŋ/"
+    focus_phonemes: ["pr", "v"]
+  - kind: shadow
+    expected_text: "The answer is grounded in our own documents and it cites the source."
+    prompt_vi: "Dẫn nguồn là thứ người duyệt quan tâm nhất."
+    ipa: "/ðə ˈænsər ɪz ˈɡraʊndɪd ɪn/"
+    focus_phonemes: ["ɡr", "aʊ"]
+  - kind: respond
+    prompt_en: "Let's fine-tune a model on all our internal documents."
+    prompt_vi: "Hỏi lại vấn đề cần giải, rồi phân định RAG với fine-tuning."
+    accept_patterns:
+      - "what problem"
+      - "retrieval"
+      - "not what it knows"
+
+reading:
+  kind: note
+  context_vi: >
+    Ghi chú kỹ thuật gửi cả nhóm. Đọc và tìm lý do thật khiến nhóm
+    chọn mô hình nhỏ hơn.
+  text_en: |
+    Assistant for internal process questions - approach
+
+    The complaint
+    People ask the assistant how to raise a change request and get the
+    2024 process. The process changed in March. This is an out-of-date
+    facts problem, not a style problem.
+
+    Approach: retrieval, not fine-tuning
+    We index the process documents. On each question we pull the three
+    closest sections and pass them to the model with the question. Every
+    answer shows the document name and section it came from, so a reader
+    can check it in one click.
+
+    This also solves the maintenance problem. When a process changes, we
+    re-index that document and the assistant is correct the same day.
+    A fine-tuned model would need a new training run for every change,
+    and we change processes about twice a month.
+
+    Model choice
+    We tested the large and the small model on 60 real questions. The
+    large one was correct on 54, the small one on 52. Both cite sources
+    correctly. The small one answers in 0.9 seconds against 3.1, and costs
+    about a seventh as much. Two extra correct answers out of sixty does
+    not justify a three-times slower assistant that people will stop using.
+    We take the small model.
+
+    What we are not doing
+    No fine-tuning for now. If we later want every answer in a fixed
+    support format, that is the point to revisit it - that is a style
+    problem and retrieval will not fix it.
+
+    Known limit
+    Retrieval only helps if the answer is in a document. Questions about
+    things we have never written down still get a confident wrong answer.
+    The mitigation is the source line: no source shown means no answer to
+    trust, and we say that in the interface rather than hoping people notice.
+  text_vi: |
+    Trợ lý trả lời câu hỏi quy trình nội bộ - hướng làm
+
+    Phàn nàn
+    Mọi người hỏi trợ lý cách mở yêu cầu thay đổi thì nhận được quy trình
+    năm 2024. Quy trình đã đổi hồi tháng Ba. Đây là vấn đề dữ kiện lỗi thời,
+    không phải vấn đề văn phong.
+
+    Hướng làm: tra cứu, không fine-tuning
+    Bọn mình lập chỉ mục các tài liệu quy trình. Mỗi câu hỏi thì lấy ba mục
+    gần nhất rồi đưa cho mô hình cùng câu hỏi. Mọi câu trả lời hiện tên tài liệu
+    và mục lấy ra, nên người đọc kiểm được bằng một cú bấm.
+
+    Cách này còn giải quyết chuyện bảo trì. Quy trình đổi thì lập chỉ mục lại
+    tài liệu đó và trợ lý trả lời đúng ngay trong ngày. Mô hình fine-tune sẽ phải
+    huấn luyện lại mỗi lần đổi, mà bọn mình đổi quy trình khoảng hai lần một tháng.
+
+    Chọn mô hình
+    Bọn mình thử mô hình lớn và mô hình nhỏ trên 60 câu hỏi thật. Mô hình lớn đúng 54,
+    mô hình nhỏ đúng 52. Cả hai dẫn nguồn chính xác. Mô hình nhỏ trả lời trong 0,9 giây
+    so với 3,1 giây, và tốn khoảng một phần bảy. Hơn hai câu đúng trên sáu mươi
+    không đủ để đánh đổi lấy một trợ lý chậm gấp ba mà rồi người ta bỏ không dùng.
+    Bọn mình chọn mô hình nhỏ.
+
+    Cái gì không làm
+    Chưa fine-tuning. Nếu sau này muốn mọi câu trả lời theo một định dạng hỗ trợ
+    cố định thì đó là lúc xem lại - đó là vấn đề văn phong và tra cứu không giải được.
+
+    Giới hạn đã biết
+    Tra cứu chỉ giúp khi câu trả lời có trong tài liệu. Câu hỏi về những thứ chưa từng
+    được viết ra vẫn nhận một câu trả lời sai đầy tự tin. Cách giảm thiểu là dòng dẫn nguồn:
+    không có nguồn nghĩa là không có câu trả lời đáng tin, và bọn mình nói thẳng điều đó
+    trên giao diện chứ không mong người dùng tự để ý.
+  questions:
+    - kind: mcq_read
+      prompt_en: "Why did the team choose the smaller model?"
+      choices: ["It was more accurate", "The large one could not cite sources", "Two extra correct answers out of sixty did not justify being three times slower"]
+      answer: 2
+      difficulty: 3
+      reading_skill: skim
+      skill: Reading
+    - kind: mcq_read
+      prompt_en: "How often do the processes change?"
+      choices: ["About twice a month", "Twice a year", "Once a week"]
+      answer: 0
+      difficulty: 2
+      reading_skill: scan
+      skill: Reading
+    - kind: mcq_read
+      prompt_en: "What is the stated limit of retrieval?"
+      choices: ["It is slow", "It only helps if the answer exists in a document", "It cannot cite sources"]
+      answer: 1
+      difficulty: 3
+      reading_skill: scan
+      skill: Reading
+    - kind: mcq_read
+      prompt_en: "When would the team revisit fine-tuning?"
+      choices: ["When processes change again", "When the model gets cheaper", "When they want every answer in a fixed support format"]
+      answer: 2
+      difficulty: 3
+      reading_skill: scan
+      skill: Reading
+
+writing:
+  kind: GuidedEmail
+  prompt_vi: >
+    Viết ba câu giải thích vì sao chọn tra cứu thay vì fine-tuning:
+    nêu vấn đề, phân định hai cách, và nêu lợi ích bảo trì.
+  prompt_en: "Explain why retrieval fits this problem better than fine-tuning."
+  required_points:
+    - "out of date"
+    - "retrieval"
+    - "not what it knows"
+  hint_vi: "Bắt đầu từ phàn nàn của người dùng, không bắt đầu từ tên công nghệ."
+  sample_en: "The complaint is that the assistant answers with last year's process, so this is an out-of-date facts problem. Retrieval fixes that because every answer is grounded in the current documents and cites the section it came from. Fine-tuning changes how it answers, not what it knows, and it would need a new training run every time we change a process."
+
+quiz:
+  - kind: mcq
+    prompt_vi: "Trợ lý trả lời theo quy trình cũ. Đây là vấn đề gì?"
+    choices: ["Dữ kiện lỗi thời", "Văn phong", "Tốc độ"]
+    answer: 0
+    difficulty: 1
+    skill: Reading
+  - kind: mcq
+    prompt_vi: "Fine-tuning phù hợp nhất khi nào?"
+    choices: ["Khi cần cập nhật dữ kiện mới", "Khi cần đổi văn phong và cấu trúc câu trả lời", "Khi cần trả lời nhanh hơn"]
+    answer: 1
+    difficulty: 2
+    skill: Reading
+  - kind: mcq
+    prompt_vi: "\"Grounded in our own documents\" nghĩa là gì?"
+    choices: ["Câu trả lời dựa trên tài liệu của mình và dẫn được nguồn", "Chạy trên máy chủ của mình", "Đã được kiểm duyệt"]
+    answer: 0
+    difficulty: 2
+    skill: Reading
+  - kind: mcq
+    prompt_vi: "Đồng nghiệp đề xuất fine-tuning. Câu hỏi đầu tiên nên là gì?"
+    choices: ["Tốn bao nhiêu tiền?", "Ai làm?", "Mình đang giải vấn đề gì?"]
+    answer: 2
+    difficulty: 2
+    skill: Speaking
+  - kind: mcq
+    prompt_vi: "Mô hình lớn đúng 54/60, nhỏ đúng 52/60 nhưng nhanh gấp ba. Chọn gì?"
+    choices: ["Luôn chọn mô hình lớn", "Cân nhắc mô hình nhỏ, vì hai câu đúng thêm không bù được việc người dùng bỏ không dùng", "Không đủ dữ liệu để quyết"]
+    answer: 1
+    difficulty: 3
+    skill: Writing
+  - kind: mcq
+    prompt_vi: "Câu hỏi về thứ chưa từng được viết ra. Rủi ro là gì?"
+    choices: ["Vẫn nhận được một câu trả lời sai đầy tự tin", "Không có câu trả lời", "Hệ thống báo lỗi"]
+    answer: 0
+    difficulty: 3
+    skill: Writing
+
+explanation:
+  why_vi: >
+    Trong nhóm kỹ thuật, tranh luận về AI hay bắt đầu từ tên công nghệ:
+    "mình fine-tune đi", "mình dùng mô hình lớn nhất đi". Bắt đầu từ đó thì
+    người thắng là người nói chắc giọng hơn, không phải người có lý. Bắt đầu từ
+    phàn nàn của người dùng thì câu trả lời thường hiện ra ngay và không phải cãi.
+  how_vi: >
+    Hai câu phân định gần như đủ cho mọi cuộc bàn: "Retrieval fixes out-of-date facts,
+    not the answer style" và "Fine-tuning changes how it answers, not what it knows".
+    Trước hai câu đó, luôn hỏi "What problem are we solving?" — câu hỏi này
+    không phải để bắt bẻ, nó đưa cuộc bàn về thứ kiểm chứng được.
+  contrast_vi: >
+    "Fine-tuning tiên tiến hơn nên kết quả tốt hơn" không kiểm chứng được và
+    không nói được nó tốt hơn ở việc gì. "Phàn nàn là trợ lý trả lời theo quy trình
+    năm ngoái — đó là dữ kiện lỗi thời, nên tra cứu giải được còn fine-tuning thì không"
+    gắn giải pháp vào đúng vấn đề, và ai cũng kiểm được lập luận đó.
+
+common_mistakes:
+  - mistake: "Chọn cách làm trước, tìm vấn đề sau"
+    why_vi: >
+      Công nghệ mới hấp dẫn và ai cũng muốn thử. Nhưng khi vấn đề được nêu sau
+      thì nó bị uốn cho vừa giải pháp, và hệ thống ra đời không giải quyết được gì.
+    fix_vi: "Luôn mở bằng \"What problem are we solving?\" rồi mới bàn cách."
+    detect_phoneme_missing: []
+  - mistake: "Tưởng fine-tuning dạy thêm kiến thức mới cho mô hình"
+    why_vi: >
+      Chữ “huấn luyện” gợi ý là nhồi thêm kiến thức. Thực tế nó chủ yếu
+      đổi cách trả lời, và dữ kiện mới thì tra cứu làm rẻ hơn nhiều lần.
+    fix_vi: "Nhớ: fine-tuning đổi CÁCH trả lời, tra cứu đổi CÁI mô hình dựa vào."
+    detect_phoneme_missing: []
+  - mistake: "Mặc định chọn mô hình lớn nhất"
+    why_vi: >
+      Điểm chính xác cao hơn nhìn là thắng. Nhưng chậm gấp ba lần thì người dùng
+      bỏ không dùng, và một trợ lý không ai dùng có độ chính xác thực tế bằng không.
+    fix_vi: "Đo trên câu hỏi thật, so cả độ chính xác lẫn độ trễ và chi phí."
+    detect_phoneme_missing: []
+
+memory_trick_vi: >
+  Hai câu chốt mọi tranh luận: RETRIEVAL sửa DỮ KIỆN LỖI THỜI.
+  FINE-TUNING đổi CÁCH TRẢ LỜI, không đổi CÁI NÓ BIẾT.
+  Và luôn hỏi trước: mình đang giải vấn đề gì?

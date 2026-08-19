@@ -1,0 +1,48 @@
+# Chồng lên bản nền để chạy trên Azure VM.
+#
+#   docker compose -f docker-compose.yml -f docker-compose.azure-vm.yml up -d
+#
+# Khác bản nền:
+#   - Kéo image theo tag từ registry thay vì build tại chỗ (build trên VM 2 vCPU rất chậm
+#     và chiếm RAM đang cần cho Postgres).
+#   - Không mở cổng nào ra ngoài trừ 80/443 của proxy.
+#   - Có giới hạn log, nếu không thì log JSON sẽ ăn hết đĩa sau vài tuần.
+
+services:
+  db:
+    logging: &logging
+      driver: json-file
+      options:
+        max-size: "10m"
+        max-file: "3"
+    deploy:
+      resources:
+        limits:
+          # VM 4 GB: Postgres 1.5 GB, api 1 GB, còn lại cho hệ điều hành và proxy.
+          memory: 1500m
+    shm_size: 256m
+
+  api:
+    # Không có khoá build: chỉ dùng image đã dựng sẵn và gắn tag cụ thể.
+    build: !reset null
+    image: ${IMAGE_REGISTRY}/api:${IMAGE_TAG:?IMAGE_TAG phai la tag cu the, khong dung latest}
+    logging: *logging
+    deploy:
+      resources:
+        limits:
+          memory: 1g
+    environment:
+      # Container chạy sau proxy nên biết mình đang phục vụ HTTPS.
+      ASPNETCORE_FORWARDEDHEADERS_ENABLED: "true"
+
+  web:
+    build: !reset null
+    image: ${IMAGE_REGISTRY}/web:${IMAGE_TAG}
+    logging: *logging
+
+  proxy:
+    logging: *logging
+    deploy:
+      resources:
+        limits:
+          memory: 256m

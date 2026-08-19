@@ -1,0 +1,375 @@
+schema_version: 1
+code: RD-02
+slug: doc-release-notes-va-changelog
+title_vi: "Đọc release notes — tìm thứ sẽ làm hỏng hệ thống của bạn"
+title_en: "Reading release notes and changelogs"
+
+layer: Professional
+track: Reading
+level: B1
+unit_code: U-RD1
+order_index: 2
+estimated_minutes: 12
+is_checkpoint: false
+
+illustration: release-notes
+
+objective_vi: >
+  Đọc ghi chú phát hành và tìm ra đúng phần quan trọng nhất: thay đổi phá vỡ
+  tương thích và tính năng bị bỏ — hai thứ quyết định có nâng cấp được hay không.
+
+objective_observable: >
+  Đạt từ 75 điểm trên cả bốn trục kỹ năng, không trục nào dưới 60.
+
+mastery_weights:
+  Listening: 0.15
+  Speaking: 0.20
+  Reading: 0.45
+  Writing: 0.20
+
+prerequisites:
+  - lesson: RD-01
+    min_mastery: 70
+    kind: Hard
+  - lesson: INF-04
+    min_mastery: 65
+    kind: Soft
+
+vocabulary:
+  - term: "breaking change"
+    ipa: "/ˈbreɪkɪŋ tʃeɪndʒ/"
+    meaning_vi: "thay đổi phá vỡ tương thích"
+    chunk: "There are two breaking changes in this release."
+    tags: [reading, core]
+  - term: "deprecated"
+    ipa: "/ˈdeprəkeɪtɪd/"
+    meaning_vi: "vẫn chạy nhưng sẽ bị bỏ"
+    chunk: "The old endpoint is deprecated, not removed yet."
+    tags: [reading, core]
+  - term: "removed"
+    ipa: "/rɪˈmuːvd/"
+    meaning_vi: "đã bị bỏ hẳn"
+    chunk: "The flag was removed in this version."
+    tags: [reading, core]
+  - term: "no longer"
+    ipa: "/noʊ ˈlɒŋɡər/"
+    meaning_vi: "không còn"
+    chunk: "The API no longer accepts plain text."
+    tags: [reading, core]
+  - term: "upgrade path"
+    ipa: "/ˈʌpɡreɪd pɑːθ/"
+    meaning_vi: "đường nâng cấp — phải qua phiên bản nào"
+    chunk: "The upgrade path goes through version 15 first."
+    tags: [reading, core]
+  - term: "backwards compatible"
+    ipa: "/ˈbækwərdz kəmˈpætəbl/"
+    meaning_vi: "vẫn tương thích với bản cũ"
+    chunk: "This change is backwards compatible."
+    tags: [reading, core]
+
+sentence_patterns:
+  - pattern: "There {are} {n} breaking {changes} in this release."
+    meaning_vi: "Bản này có {n} thay đổi phá vỡ tương thích."
+    slots:
+      are: ["are", "is"]
+      n: ["two", "one", "no"]
+      changes: ["changes", "change"]
+  - pattern: "{Feature} is deprecated but still works until {version}."
+    meaning_vi: "{Feature} bị đánh dấu sẽ bỏ nhưng vẫn chạy tới {version}."
+    slots:
+      Feature: ["The old endpoint", "The text format", "The legacy flag"]
+      version: ["version 18", "the next major release", "March 2027"]
+
+dialogue:
+  context_vi: >
+    Chị Vy hỏi bạn có nên nâng cấp thư viện lên bản mới không.
+    Bạn phải đọc release notes trước khi trả lời.
+  turns:
+    - speaker: "Vy"
+      en: "Version 17 is out. Can we upgrade this sprint?"
+      vi: "Bản 17 ra rồi. Sprint này nâng cấp được không em?"
+    - speaker: "You"
+      en: "Let me read the release notes first. I'm looking for the breaking changes section, not the new features."
+      vi: "Để em đọc ghi chú phát hành đã. Em tìm mục thay đổi phá vỡ tương thích, không phải mục tính năng mới."
+    - speaker: "Vy"
+      en: "What did you find?"
+      vi: "Em thấy gì?"
+    - speaker: "You"
+      en: "Two things. The API no longer accepts plain text bodies, and the retry flag was removed — not deprecated, removed."
+      vi: "Hai thứ ạ. API không còn nhận nội dung dạng văn bản thuần, và cờ retry đã bị bỏ hẳn — không phải đánh dấu sẽ bỏ, mà bỏ luôn."
+    - speaker: "Vy"
+      en: "Do we use either of those?"
+      vi: "Mình có dùng cái nào trong hai cái đó không?"
+    - speaker: "You"
+      en: "We use the retry flag in the export job. That one line stops working the moment we upgrade."
+      vi: "Bọn mình dùng cờ retry trong job xuất dữ liệu. Đúng một dòng đó sẽ ngừng hoạt động ngay khi nâng cấp."
+    - speaker: "Vy"
+      en: "So we can't upgrade?"
+      vi: "Vậy không nâng cấp được à?"
+    - speaker: "You"
+      en: "We can, but the export job needs a change first. And there's an upgrade path note — we have to go through 16 before 17."
+      vi: "Được ạ, nhưng phải sửa job xuất trước. Với lại có ghi chú về đường nâng cấp — phải qua bản 16 rồi mới lên 17."
+    - speaker: "Vy"
+      en: "How long is that?"
+      vi: "Mất bao lâu?"
+    - speaker: "You"
+      en: "Half a day for the code change, and two upgrades instead of one. I'd put it in next sprint, not this one."
+      vi: "Nửa ngày cho phần sửa code, và nâng cấp hai lần thay vì một. Em đề nghị để sprint sau, không phải sprint này."
+
+listening:
+  context_vi: >
+    Nghe hai người tóm tắt cùng một bản phát hành. Chú ý ai đọc phần
+    quan trọng với hệ thống của mình.
+  speed: 1.2
+  voice: en_US_female
+  transcript_en: "Summary one: version 17 adds a new dashboard, better performance and improved logging, so we should upgrade soon. Summary two: version 17 has two breaking changes. The API no longer accepts plain text bodies, which we do not use, and the retry flag was removed, which we do use in the export job. There is also an upgrade path note: you must go through 16 first. Half a day of work, and I would schedule it for next sprint."
+  transcript_vi: "Tóm tắt một: bản 17 thêm bảng điều khiển mới, hiệu năng tốt hơn và ghi log tốt hơn, nên mình nâng cấp sớm đi. Tóm tắt hai: bản 17 có hai thay đổi phá vỡ tương thích. API không còn nhận nội dung văn bản thuần, cái đó bọn mình không dùng, và cờ retry đã bị bỏ, cái đó bọn mình có dùng trong job xuất. Còn có ghi chú về đường nâng cấp: phải qua bản 16 trước. Nửa ngày công, và tôi đề nghị xếp vào sprint sau."
+  questions:
+    - kind: mcq_listen
+      prompt_vi: "Tóm tắt hai đọc mục nào trước?"
+      choices: ["Thay đổi phá vỡ tương thích", "Tính năng mới", "Sửa lỗi"]
+      answer: 0
+      difficulty: 1
+      skill: Listening
+    - kind: mcq_listen
+      prompt_vi: "Thay đổi nào ảnh hưởng tới hệ thống của họ?"
+      choices: ["API không nhận văn bản thuần", "Bảng điều khiển mới", "Cờ retry bị bỏ"]
+      answer: 2
+      difficulty: 2
+      skill: Listening
+    - kind: mcq_listen
+      prompt_vi: "Ghi chú về đường nâng cấp nói gì?"
+      choices: ["Nâng thẳng lên 17 được", "Phải qua bản 16 trước", "Không nâng cấp được"]
+      answer: 1
+      difficulty: 2
+      skill: Listening
+
+speaking_drills:
+  - kind: read_aloud
+    expected_text: "There are two breaking changes in this release."
+    prompt_vi: "Câu mở đầu khi tóm tắt một bản phát hành cho nhóm."
+    ipa: "/ðer ɑːr tuː ˈbreɪkɪŋ ˈtʃeɪndʒɪz/"
+    focus_phonemes: ["br", "dʒ"]
+  - kind: read_aloud
+    expected_text: "The flag was removed, not deprecated."
+    prompt_vi: "Phân biệt hai từ này. Chúng khác nhau hoàn toàn về mức gấp."
+    ipa: "/ðə flæɡ wɒz rɪˈmuːvd nɒt ˈdeprəkeɪtɪd/"
+    focus_phonemes: ["fl", "pr"]
+  - kind: shadow
+    expected_text: "We use that flag in the export job, so it stops working when we upgrade."
+    prompt_vi: "Nối thay đổi của người ta với hệ thống của mình."
+    ipa: "/wiː juːz ðæt flæɡ ɪn ði ˈekspɔːrt dʒɒb/"
+    focus_phonemes: ["ks", "dʒ"]
+  - kind: shadow
+    expected_text: "The upgrade path goes through version 16 first."
+    prompt_vi: "Nhiều bản không nâng thẳng được. Luôn tìm mục này."
+    ipa: "/ði ˈʌpɡreɪd pɑːθ ɡoʊz θruː/"
+    focus_phonemes: ["θ", "ɡr"]
+  - kind: respond
+    prompt_en: "Version 17 is out. Can we upgrade this sprint?"
+    prompt_vi: "Nêu số thay đổi phá vỡ tương thích và cái nào ảnh hưởng tới mình."
+    accept_patterns:
+      - "breaking change"
+      - "we use"
+      - "upgrade path"
+
+reading:
+  kind: release_notes
+  context_vi: >
+    Ghi chú phát hành thật. Đọc và tìm hai thứ: thay đổi phá vỡ tương thích,
+    và tính năng đã bị bỏ hẳn.
+  text_en: |
+    Release 17.0.0
+
+    New features
+    - A new dashboard showing queue depth per consumer group.
+    - Structured logging in JSON, opt-in through the log-format setting.
+    - Connection pooling is now enabled by default.
+
+    Breaking changes
+    - The API no longer accepts plain text request bodies. All requests
+      must send JSON with a content-type header. Requests without the
+      header return 415 instead of being guessed.
+    - The retry-on-timeout flag has been REMOVED. It was deprecated in
+      16.2 with a warning in the logs. Code that passes this flag will
+      fail to start, not fail silently.
+
+    Deprecated (still works, will be removed in 19.0)
+    - The v1 metrics endpoint. Use /v2/metrics, which returns the same
+      fields plus two new ones.
+    - The legacy config file format. The tool will read it and print a
+      warning on every start.
+
+    Upgrade path
+    You cannot upgrade directly from 15.x to 17.0. The schema migration
+    in 16.0 must run first. The supported path is 15.x to 16.x to 17.0.
+    Upgrading from 16.x to 17.0 is a single step.
+
+    Fixed
+    - Connections were not returned to the pool after a cancelled request.
+      This is the cause of the slow leak reported by several users in 16.3.
+
+    Known issues
+    - On Windows, the new dashboard does not render queue names containing
+      non-ASCII characters. A fix is planned for 17.0.1.
+  text_vi: |
+    Bản phát hành 17.0.0
+
+    Tính năng mới
+    - Bảng điều khiển mới hiện độ sâu hàng đợi theo từng nhóm tiêu thụ.
+    - Ghi log có cấu trúc dạng JSON, bật bằng thiết lập log-format.
+    - Gộp kết nối nay được bật mặc định.
+
+    Thay đổi phá vỡ tương thích
+    - API không còn nhận nội dung yêu cầu dạng văn bản thuần. Mọi yêu cầu
+      phải gửi JSON kèm header content-type. Yêu cầu thiếu header sẽ trả về
+      415 thay vì được đoán như trước.
+    - Cờ retry-on-timeout đã BỊ BỎ. Nó được đánh dấu sẽ bỏ từ bản 16.2 kèm
+      cảnh báo trong log. Code truyền cờ này sẽ không khởi động được,
+      chứ không phải hỏng âm thầm.
+
+    Đánh dấu sẽ bỏ (vẫn chạy, sẽ bỏ ở bản 19.0)
+    - Điểm cuối metrics v1. Dùng /v2/metrics, trả về đúng các trường cũ
+      cộng thêm hai trường mới.
+    - Định dạng file cấu hình cũ. Công cụ vẫn đọc được và in cảnh báo
+      mỗi lần khởi động.
+
+    Đường nâng cấp
+    Không nâng thẳng từ 15.x lên 17.0 được. Bản chuyển đổi lược đồ ở 16.0
+    phải chạy trước. Đường được hỗ trợ là 15.x lên 16.x rồi lên 17.0.
+    Nâng từ 16.x lên 17.0 thì đi một bước.
+
+    Đã sửa
+    - Kết nối không được trả về pool sau khi yêu cầu bị huỷ.
+      Đây là nguyên nhân của rò rỉ chậm mà vài người dùng báo ở bản 16.3.
+
+    Vấn đề đã biết
+    - Trên Windows, bảng điều khiển mới không hiện được tên hàng đợi có
+      ký tự ngoài ASCII. Dự kiến sửa ở bản 17.0.1.
+  questions:
+    - kind: mcq_read
+      prompt_en: "What happens to code that passes the retry-on-timeout flag?"
+      choices: ["It is ignored silently", "It prints a warning", "It fails to start"]
+      answer: 2
+      difficulty: 2
+      reading_skill: scan
+      skill: Reading
+    - kind: mcq_read
+      prompt_en: "What is the difference between the retry flag and the v1 metrics endpoint?"
+      choices: ["The flag is removed, the endpoint is only deprecated", "Both are removed", "Both are deprecated"]
+      answer: 0
+      difficulty: 3
+      reading_skill: skim
+      skill: Reading
+    - kind: mcq_read
+      prompt_en: "You are on 15.4. What is the supported upgrade path?"
+      choices: ["Directly to 17.0", "15.x to 16.x to 17.0", "Wait for 17.0.1"]
+      answer: 1
+      difficulty: 2
+      reading_skill: scan
+      skill: Reading
+    - kind: mcq_read
+      prompt_en: "Which fixed item explains a problem users already reported?"
+      choices: ["The dashboard rendering", "Structured logging", "Connections not returned to the pool after a cancelled request"]
+      answer: 2
+      difficulty: 3
+      reading_skill: scan
+      skill: Reading
+    - kind: mcq_read
+      prompt_en: "A request sends plain text with no content-type. What does 17.0 return?"
+      choices: ["415", "200, guessing the format", "500"]
+      answer: 0
+      difficulty: 3
+      reading_skill: scan
+      skill: Reading
+
+writing:
+  kind: GuidedEmail
+  prompt_vi: >
+    Viết ba câu tóm tắt một bản phát hành cho nhóm: số thay đổi phá vỡ tương thích,
+    cái nào ảnh hưởng tới hệ thống của mình, và đề nghị lịch nâng cấp.
+  prompt_en: "Summarise a release for your team."
+  required_points:
+    - "breaking change"
+    - "we use"
+    - "upgrade path"
+  hint_vi: "Bỏ qua mục tính năng mới. Nhóm cần biết cái gì sẽ hỏng."
+  sample_en: "Release 17.0 has two breaking changes: the API no longer accepts plain text bodies, and the retry-on-timeout flag has been removed. We use that flag in the export job, so that job will fail to start the moment we upgrade, and it needs about half a day of work first. The upgrade path also goes through 16.x, so I would schedule this for next sprint rather than this one."
+
+quiz:
+  - kind: mcq
+    prompt_vi: "Đọc release notes nên đọc mục nào trước?"
+    choices: ["Tính năng mới", "Thay đổi phá vỡ tương thích", "Đã sửa lỗi"]
+    answer: 1
+    difficulty: 1
+    skill: Reading
+  - kind: mcq
+    prompt_vi: "\"Deprecated\" khác \"removed\" thế nào?"
+    choices: ["Deprecated vẫn chạy và sẽ bỏ sau, removed là đã bỏ hẳn", "Giống nhau", "Removed vẫn chạy được"]
+    answer: 0
+    difficulty: 2
+    skill: Reading
+  - kind: mcq
+    prompt_vi: "Vì sao phải đọc mục \"Upgrade path\"?"
+    choices: ["Cho đủ", "Vì có ghi giá", "Vì nhiều bản không nâng thẳng được, phải qua bản trung gian"]
+    answer: 2
+    difficulty: 2
+    skill: Reading
+  - kind: mcq
+    prompt_vi: "Sếp hỏi nâng cấp được không. Câu trả lời tốt nhất?"
+    choices: ["Được ạ, nhiều tính năng mới lắm", "Có hai thay đổi phá vỡ tương thích, một cái mình đang dùng, cần nửa ngày sửa trước", "Để em thử xem"]
+    answer: 1
+    difficulty: 2
+    skill: Speaking
+  - kind: mcq
+    prompt_vi: "Mục \"Known issues\" có ích ở chỗ nào?"
+    choices: ["Cho biết lỗi đã biết trước để không mất thời gian tự dò", "Không có ích", "Chỉ để tham khảo"]
+    answer: 0
+    difficulty: 2
+    skill: Writing
+  - kind: mcq
+    prompt_vi: "Thấy \"deprecated in 16.2, removed in 17.0\". Điều đó nói gì về cách làm việc của mình?"
+    choices: ["Không nói gì", "Nhà cung cấp làm sai quy trình", "Mình đã bỏ qua cảnh báo trong log suốt một bản phát hành"]
+    answer: 2
+    difficulty: 3
+    skill: Writing
+
+explanation:
+  why_vi: >
+    Release notes viết theo thứ tự tiếp thị: tính năng mới ở trên cùng vì đó là
+    thứ nhà cung cấp muốn khoe. Nhưng thứ quyết định bạn nâng cấp được hay không
+    nằm ở giữa trang, dưới mục breaking changes. Đọc từ trên xuống thì bạn hào hứng
+    trước và phát hiện vấn đề sau — thường là sau khi đã nâng cấp trên môi trường thật.
+  how_vi: >
+    Đọc ngược thứ tự trang. Một: mục BREAKING CHANGES — có bao nhiêu, và cái nào
+    dính tới code của mình. Hai: mục DEPRECATED — chưa gấp nhưng ghi vào việc tồn đọng.
+    Ba: mục UPGRADE PATH — nhiều bản bắt phải qua bản trung gian. Bốn: KNOWN ISSUES.
+    Mục tính năng mới đọc cuối cùng, nếu còn thời gian.
+  contrast_vi: >
+    "Bản 17 có bảng điều khiển mới, hiệu năng tốt hơn, nên nâng cấp đi" là đọc mục đầu.
+    "Có hai thay đổi phá vỡ tương thích, cờ retry bị bỏ và bọn mình đang dùng nó trong
+    job xuất" là đọc mục thứ hai — và đó là câu duy nhất giúp nhóm quyết định được.
+
+common_mistakes:
+  - mistake: "Đọc mục tính năng mới trước"
+    why_vi: >
+      Mục đó nằm trên cùng và viết hấp dẫn nhất. Nhưng nó không cho biết
+      cái gì sẽ hỏng, mà đó mới là câu hỏi thật.
+    fix_vi: "Cuộn thẳng xuống mục breaking changes. Tính năng mới đọc sau cùng."
+    detect_phoneme_missing: []
+  - mistake: "Coi deprecated và removed là một"
+    why_vi: >
+      Cả hai đều mang nghĩa cũ và sắp bỏ trong đầu người đọc.
+      Nhưng deprecated là còn thời gian, removed là hỏng ngay hôm nâng cấp.
+    fix_vi: "Removed thì phải sửa trước khi nâng. Deprecated thì ghi vào việc tồn đọng."
+    detect_phoneme_missing: []
+  - mistake: "Không đối chiếu thay đổi với code của chính mình"
+    why_vi: >
+      Đọc xong thấy danh sách dài và kết luận chung là rủi ro cao hoặc thấp.
+      Nhưng phần lớn thay đổi không liên quan gì tới mình.
+    fix_vi: "Với mỗi breaking change, tìm trong code xem có dùng không. Chỉ cái có dùng mới là việc."
+    detect_phoneme_missing: []
+
+memory_trick_vi: >
+  Đọc ngược trang: BREAKING CHANGES trước — DEPRECATED — UPGRADE PATH — KNOWN ISSUES.
+  Tính năng mới đọc cuối. Và mỗi breaking change phải tự hỏi: mình có dùng không?

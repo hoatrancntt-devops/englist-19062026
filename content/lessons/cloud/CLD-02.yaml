@@ -1,0 +1,334 @@
+schema_version: 1
+code: CLD-02
+slug: noi-ve-ha-va-dr
+title_vi: "Nói về HA và DR — hai thứ hay bị gọi nhầm là một"
+title_en: "Talking about high availability and disaster recovery"
+
+layer: Professional
+track: Cloud
+level: B1
+unit_code: U-CLD1
+order_index: 2
+estimated_minutes: 12
+is_checkpoint: false
+
+illustration: ha-failover
+
+objective_vi: >
+  Phân biệt được HA với DR khi nói, và trả lời được hai câu hỏi mà sếp
+  luôn hỏi: mất bao lâu mới chạy lại, và mất bao nhiêu dữ liệu.
+
+objective_observable: >
+  Đạt từ 75 điểm trên cả bốn trục kỹ năng, không trục nào dưới 60.
+
+mastery_weights:
+  Listening: 0.25
+  Speaking: 0.30
+  Reading: 0.25
+  Writing: 0.20
+
+prerequisites:
+  - lesson: CLD-01
+    min_mastery: 70
+    kind: Hard
+  - lesson: INF-05
+    min_mastery: 65
+    kind: Soft
+
+vocabulary:
+  - term: "high availability"
+    ipa: "/haɪ əˌveɪləˈbɪləti/"
+    meaning_vi: "sẵn sàng cao — chịu được hỏng lẻ mà không gián đoạn"
+    chunk: "High availability handles a single node failure."
+    tags: [cloud, core]
+  - term: "disaster recovery"
+    ipa: "/dɪˈzɑːstər rɪˈkʌvəri/"
+    meaning_vi: "khôi phục thảm hoạ — khi mất cả một vùng"
+    chunk: "Disaster recovery is for losing the whole region."
+    tags: [cloud, core]
+  - term: "fail over"
+    ipa: "/feɪl ˈoʊvər/"
+    meaning_vi: "chuyển sang hệ dự phòng"
+    chunk: "It fails over to the second node automatically."
+    tags: [cloud, core]
+  - term: "RTO"
+    ipa: "/ɑːr tiː ˈoʊ/"
+    meaning_vi: "thời gian tối đa được phép chết trước khi chạy lại"
+    chunk: "Our RTO is four hours."
+    tags: [cloud, core]
+  - term: "RPO"
+    ipa: "/ɑːr piː ˈoʊ/"
+    meaning_vi: "lượng dữ liệu tối đa được phép mất, tính bằng thời gian"
+    chunk: "Our RPO is fifteen minutes."
+    tags: [cloud, core]
+  - term: "we have never tested it"
+    ipa: "/wiː hæv ˈnevər ˈtestɪd ɪt/"
+    meaning_vi: "bọn tôi chưa bao giờ thử nó"
+    chunk: "We have a DR plan, but we have never tested it."
+    tags: [honesty, core]
+
+sentence_patterns:
+  - pattern: "Our RTO is {time} and our RPO is {time2}."
+    meaning_vi: "RTO của bọn tôi là {time} và RPO là {time2}."
+    slots:
+      time: ["four hours", "one hour", "thirty minutes"]
+      time2: ["fifteen minutes", "five minutes", "one hour"]
+  - pattern: "{Feature} protects us from {failure}, not from {other}."
+    meaning_vi: "{Feature} bảo vệ mình khỏi {failure}, không phải khỏi {other}."
+    slots:
+      Feature: ["High availability", "The standby replica", "The nightly backup"]
+      failure: ["a single node failure", "one disk dying"]
+      other: ["losing the whole region", "someone deleting the data"]
+
+dialogue:
+  context_vi: >
+    Giám đốc hỏi về khả năng chịu lỗi của hệ thống mới. Bạn phải phân biệt
+    rõ HA và DR, và phải trung thực về phần chưa thử.
+  turns:
+    - speaker: "Giám đốc"
+      en: "If a server dies at midnight, does the system keep running?"
+      vi: "Nếu một máy chủ chết lúc nửa đêm, hệ thống vẫn chạy chứ?"
+    - speaker: "You"
+      en: "Yes. We run two nodes behind a load balancer. It fails over in about thirty seconds and nobody has to wake up."
+      vi: "Vâng. Bọn em chạy hai node sau bộ cân tải. Nó tự chuyển trong khoảng ba mươi giây và không ai phải dậy."
+    - speaker: "Giám đốc"
+      en: "And if the whole data centre goes down?"
+      vi: "Còn nếu cả trung tâm dữ liệu sập thì sao?"
+    - speaker: "You"
+      en: "That's a different problem. High availability protects us from one node failing, not from losing the region."
+      vi: "Đó là vấn đề khác. HA bảo vệ mình khỏi một node hỏng, không phải khỏi mất cả vùng."
+    - speaker: "Giám đốc"
+      en: "So what happens then?"
+      vi: "Vậy lúc đó thì sao?"
+    - speaker: "You"
+      en: "We restore in the second region from backups. Our RTO is four hours and our RPO is fifteen minutes."
+      vi: "Bọn em khôi phục ở vùng thứ hai từ bản sao lưu. RTO là bốn tiếng và RPO là mười lăm phút."
+    - speaker: "Giám đốc"
+      en: "Four hours. Have you actually done that?"
+      vi: "Bốn tiếng. Các em đã thực sự làm thử chưa?"
+    - speaker: "You"
+      en: "We have the plan written down, but we have never tested a full region failover. I'd like to schedule one this quarter."
+      vi: "Bọn em có kế hoạch viết sẵn, nhưng chưa bao giờ thử chuyển vùng toàn phần. Em muốn xếp lịch thử trong quý này."
+
+listening:
+  context_vi: >
+    Nghe hai câu trả lời cho cùng một câu hỏi. Chú ý câu nào trả lời đúng
+    câu được hỏi và câu nào trả lời sang chuyện khác.
+  speed: 1.1
+  voice: en_US_female
+  transcript_en: "The question was: what happens if we lose the whole region? Answer one: we have high availability, we run three nodes, so we are fine. Answer two: high availability does not help there, it only covers a single node failing. For a region loss we restore from backups in the second region. That takes about four hours, and we may lose up to fifteen minutes of data."
+  transcript_vi: "Câu hỏi là: chuyện gì xảy ra nếu mất cả vùng? Trả lời một: bọn tôi có HA, chạy ba node, nên không sao. Trả lời hai: HA không giúp được ở đây, nó chỉ lo trường hợp một node hỏng. Mất cả vùng thì bọn tôi khôi phục từ bản sao lưu ở vùng thứ hai. Việc đó mất khoảng bốn tiếng, và có thể mất tới mười lăm phút dữ liệu."
+  questions:
+    - kind: mcq_listen
+      prompt_vi: "Câu trả lời nào trả lời đúng câu được hỏi?"
+      choices: ["Trả lời hai", "Trả lời một", "Cả hai đều đúng"]
+      answer: 0
+      difficulty: 2
+      skill: Listening
+    - kind: mcq_listen
+      prompt_vi: "Hai con số nào được nêu trong câu trả lời thứ hai?"
+      choices: ["Ba node và hai vùng", "Ba mươi giây và một tiếng", "Bốn tiếng và mười lăm phút"]
+      answer: 2
+      difficulty: 2
+      skill: Listening
+    - kind: mcq_listen
+      prompt_vi: "Vì sao câu trả lời một sai?"
+      choices: ["Vì nói quá ngắn", "Vì lấy HA ra trả lời cho câu hỏi về mất cả vùng", "Vì không nêu tên nhà cung cấp"]
+      answer: 1
+      difficulty: 3
+      skill: Listening
+
+speaking_drills:
+  - kind: read_aloud
+    expected_text: "High availability protects us from one node failing, not from losing the region."
+    prompt_vi: "Câu phân biệt HA với DR. Học thuộc câu này."
+    ipa: "/haɪ əˌveɪləˈbɪləti prəˈtekts ʌs frɒm/"
+    focus_phonemes: ["v", "ts"]
+  - kind: read_aloud
+    expected_text: "Our RTO is four hours and our RPO is fifteen minutes."
+    prompt_vi: "Hai con số sếp luôn hỏi. Nói liền một câu."
+    ipa: "/ˈaʊər ɑːr tiː oʊ ɪz fɔːr ˈaʊərz/"
+    focus_phonemes: ["aʊ", "r"]
+  - kind: shadow
+    expected_text: "It fails over in about thirty seconds and nobody has to wake up."
+    prompt_vi: "Nói kết quả người nghe quan tâm, không nói cơ chế kỹ thuật."
+    ipa: "/ɪt feɪlz ˈoʊvər ɪn əˈbaʊt ˈθɜːrti ˈsekəndz/"
+    focus_phonemes: ["θ", "z"]
+  - kind: shadow
+    expected_text: "We have the plan written down, but we have never tested it."
+    prompt_vi: "Câu trung thực. Nói ra trước khi bị phát hiện lúc sự cố thật."
+    ipa: "/wiː hæv ðə plæn ˈrɪtn daʊn/"
+    focus_phonemes: ["ð", "tn"]
+  - kind: respond
+    prompt_en: "If the whole data centre goes down, what happens?"
+    prompt_vi: "Trả lời bằng RTO và RPO, đừng nhắc tới HA."
+    accept_patterns:
+      - "restore"
+      - "rto"
+      - "rpo"
+
+reading:
+  kind: note
+  context_vi: >
+    Bảng tóm tắt khả năng chịu lỗi gửi cho ban lãnh đạo. Đọc và tìm chỗ
+    tác giả thừa nhận điều chưa kiểm chứng.
+  text_en: |
+    Resilience summary - order service
+
+    What we survive without anyone waking up
+    One application node failing. We run three nodes behind a load balancer
+    and the health check pulls a bad node out in about thirty seconds.
+    One database disk failing. The storage layer is mirrored.
+
+    What wakes someone up but keeps the data safe
+    The primary database failing. The standby is promoted manually because
+    an automatic promotion once split the cluster in two. RTO for this is
+    twenty minutes, and it has been tested three times this year.
+
+    What we are not ready for
+    Losing the whole region. We ship backups to a second region every
+    fifteen minutes, so our RPO there is fifteen minutes. The written plan
+    puts RTO at four hours, but that number is an estimate. We have never
+    run a full region failover, so treat four hours as untested.
+
+    What this costs
+    The three nodes and the standby cost about two hundred dollars a month.
+    A warm second region would cut the four hours to under one hour and
+    would cost roughly nine hundred a month. That decision is not ours to
+    make - it depends on how much one hour of downtime costs the business.
+  text_vi: |
+    Tóm tắt khả năng chịu lỗi - dịch vụ đơn hàng
+
+    Những gì mình chịu được mà không ai phải dậy
+    Một node ứng dụng hỏng. Bọn mình chạy ba node sau bộ cân tải và
+    kiểm tra sức khoẻ sẽ loại node hỏng ra trong khoảng ba mươi giây.
+    Một ổ đĩa của cơ sở dữ liệu hỏng. Lớp lưu trữ có gương.
+
+    Những gì làm ai đó phải dậy nhưng dữ liệu vẫn an toàn
+    Cơ sở dữ liệu chính hỏng. Bản dự phòng được nâng lên bằng tay vì
+    một lần nâng tự động đã làm cụm tách làm đôi. RTO cho việc này là
+    hai mươi phút, và đã thử ba lần trong năm nay.
+
+    Những gì mình chưa sẵn sàng
+    Mất cả vùng. Bọn mình đẩy bản sao lưu sang vùng thứ hai mỗi
+    mười lăm phút, nên RPO ở đó là mười lăm phút. Kế hoạch viết sẵn
+    ghi RTO bốn tiếng, nhưng con số đó là ước lượng. Bọn mình chưa bao giờ
+    chạy thử chuyển vùng toàn phần, nên hãy coi bốn tiếng là chưa kiểm chứng.
+
+    Chi phí
+    Ba node và bản dự phòng tốn khoảng hai trăm đô một tháng.
+    Một vùng thứ hai luôn sẵn sàng sẽ rút bốn tiếng xuống dưới một tiếng và
+    tốn khoảng chín trăm một tháng. Quyết định đó không thuộc bọn mình -
+    nó tuỳ vào một tiếng ngừng chạy làm doanh nghiệp mất bao nhiêu.
+  questions:
+    - kind: mcq_read
+      prompt_en: "Why is the database standby promoted manually?"
+      choices: ["To save money", "The team prefers manual work", "An automatic promotion once split the cluster in two"]
+      answer: 2
+      difficulty: 3
+      reading_skill: scan
+      skill: Reading
+    - kind: mcq_read
+      prompt_en: "Which number is explicitly marked as untested?"
+      choices: ["The four-hour RTO for a region loss", "The twenty-minute RTO", "The fifteen-minute RPO"]
+      answer: 0
+      difficulty: 3
+      reading_skill: scan
+      skill: Reading
+    - kind: mcq_read
+      prompt_en: "Why does the author say the warm-region decision is not theirs?"
+      choices: ["They lack permission to spend", "It depends on what an hour of downtime costs the business", "The vendor decides"]
+      answer: 1
+      difficulty: 3
+      reading_skill: skim
+      skill: Reading
+
+writing:
+  kind: GuidedEmail
+  prompt_vi: >
+    Viết ba câu trả lời câu hỏi "nếu mất cả vùng thì sao": nêu cách khôi phục,
+    nêu RTO và RPO, và nói rõ phần nào chưa thử.
+  prompt_en: "Answer what happens if we lose the whole region."
+  required_points:
+    - "restore"
+    - "rto"
+    - "never tested"
+  hint_vi: "Đừng nhắc HA ở đây — câu hỏi này không phải về HA."
+  sample_en: "If we lose the whole region we restore in the second region from backups that ship every fifteen minutes. Our RPO is fifteen minutes and the written RTO is four hours. That RTO is an estimate because we have never tested a full region failover, so I would like to schedule one this quarter."
+
+quiz:
+  - kind: mcq
+    prompt_vi: "HA giải quyết vấn đề gì?"
+    choices: ["Mất cả một vùng", "Người dùng xoá nhầm dữ liệu", "Một node hoặc một thành phần hỏng lẻ"]
+    answer: 2
+    difficulty: 1
+    skill: Reading
+  - kind: mcq
+    prompt_vi: "RPO mười lăm phút nghĩa là gì?"
+    choices: ["Có thể mất tối đa mười lăm phút dữ liệu gần nhất", "Khôi phục xong trong mười lăm phút", "Sao lưu mỗi mười lăm ngày"]
+    answer: 0
+    difficulty: 2
+    skill: Reading
+  - kind: mcq
+    prompt_vi: "Sếp hỏi \"mất cả trung tâm dữ liệu thì sao\". Câu mở đầu tốt nhất?"
+    choices: ["Bọn em có HA nên không sao", "Đó là tình huống DR, bọn em khôi phục ở vùng thứ hai", "Chuyện đó khó xảy ra lắm ạ"]
+    answer: 1
+    difficulty: 2
+    skill: Speaking
+  - kind: mcq
+    prompt_vi: "Có kế hoạch DR nhưng chưa thử bao giờ. Nói thế nào?"
+    choices: ["Bọn em có kế hoạch nhưng chưa thử, em muốn xếp lịch thử", "Bọn em sẵn sàng rồi ạ", "Không nhắc tới"]
+    answer: 0
+    difficulty: 2
+    skill: Speaking
+  - kind: mcq
+    prompt_vi: "Vì sao con số RTO chưa thử lại nguy hiểm hơn không có số?"
+    choices: ["Vì khó nhớ", "Vì nó làm báo cáo dài hơn", "Vì người ta lên kế hoạch dựa trên nó như thể đã kiểm chứng"]
+    answer: 2
+    difficulty: 3
+    skill: Writing
+  - kind: mcq
+    prompt_vi: "Sao lưu hàng đêm bảo vệ khỏi điều gì mà HA không?"
+    choices: ["Một node hỏng", "Dữ liệu bị xoá hoặc hỏng logic, vì HA chép luôn cả cái sai", "Mạng chậm"]
+    answer: 1
+    difficulty: 3
+    skill: Writing
+
+explanation:
+  why_vi: >
+    HA và DR trong tiếng Việt hay được gộp thành "dự phòng", nên khi nói tiếng Anh
+    người ta lấy HA ra trả lời cho câu hỏi về DR. Người nghe hiểu là hệ thống
+    chịu được mất cả vùng, trong khi thực tế không. Hiểu lầm này chỉ lộ ra
+    đúng lúc mất vùng thật, và lúc đó thì đã muộn.
+  how_vi: >
+    Nhớ ranh giới: HA lo hỏng lẻ trong cùng một vùng, DR lo mất cả vùng.
+    Khi được hỏi về DR, trả lời bằng đúng hai con số: RTO là bao lâu mới chạy lại,
+    RPO là mất bao nhiêu dữ liệu. Và nếu chưa thử bao giờ thì nói ra —
+    "we have never tested it" là câu khó nói nhưng cứu bạn về sau.
+  contrast_vi: >
+    "Bọn em có HA nên không sao" trả lời sang chuyện khác. "HA bảo vệ mình khỏi
+    một node hỏng, không phải khỏi mất cả vùng — với mất vùng thì RTO bốn tiếng,
+    RPO mười lăm phút" trả lời đúng câu hỏi và cho người nghe con số để quyết định.
+
+common_mistakes:
+  - mistake: "Lấy HA ra trả lời câu hỏi về DR"
+    why_vi: >
+      Cả hai đều là "dự phòng" trong đầu người nói, và HA là phần mình tự hào hơn
+      nên bật ra trước. Nhưng nó tạo cảm giác an toàn sai.
+    fix_vi: "Nghe kỹ phạm vi hỏng trong câu hỏi: một máy hay cả vùng. Trả lời đúng phạm vi đó."
+    detect_phoneme_missing: []
+  - mistake: "Đọc con số RTO trong tài liệu như thể đã kiểm chứng"
+    why_vi: >
+      Con số nằm sẵn trong kế hoạch nên nghe như sự thật. Nhưng nếu chưa diễn tập
+      thì nó là ước lượng, và ước lượng DR thường lệch nhiều lần.
+    fix_vi: "Thêm \"that number is an estimate, we have never tested a full failover\"."
+    detect_phoneme_missing: []
+  - mistake: "Nhầm RTO với RPO"
+    why_vi: >
+      Hai chữ viết tắt gần giống nhau và đều tính bằng thời gian.
+    fix_vi: "RTO là Time — bao lâu mới chạy lại. RPO là Point — lùi về mốc nào, tức mất bao nhiêu dữ liệu."
+    detect_phoneme_missing: []
+
+memory_trick_vi: >
+  HA = một máy chết. DR = cả vùng chết. Hỏi về vùng thì trả lời bằng hai số:
+  RTO (bao lâu chạy lại) và RPO (mất bao nhiêu dữ liệu). Chưa thử thì phải nói chưa thử.

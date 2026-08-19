@@ -1,0 +1,281 @@
+schema_version: 1
+code: INF-01
+slug: standup-ba-phan
+title_vi: "Standup ba phần — hai phút mỗi sáng"
+title_en: "The three-part standup"
+
+layer: Professional
+track: Infrastructure
+level: B1
+unit_code: U-INF1
+order_index: 1
+estimated_minutes: 12
+
+illustration: team-standup
+
+objective_vi: >
+  Báo cáo standup trong hai phút theo ba phần cố định: hôm qua, hôm nay, vướng mắc —
+  nói xong không ai phải hỏi lại.
+
+objective_observable: >
+  Nói trọn ba phần standup cho công việc thật của mình, phần vướng mắc có kèm điều cần.
+
+mastery_weights:
+  Listening: 0.30
+  Speaking: 0.45
+  Reading: 0.15
+  Writing: 0.10
+
+prerequisites:
+  - lesson: OFF-12
+    min_mastery: 70
+    kind: Hard
+  - lesson: HD-05
+    min_mastery: 65
+    kind: Soft
+  - lesson: OFF-04
+    min_mastery: 65
+    kind: Soft
+
+vocabulary:
+  - term: "wrapped up"
+    ipa: "/ræpt ʌp/"
+    meaning_vi: "làm xong, khép lại"
+    chunk: "I wrapped up the patching yesterday."
+    tags: [standup, core]
+  - term: "picking up"
+    ipa: "/ˈpɪkɪŋ ʌp/"
+    meaning_vi: "bắt tay vào (việc mới)"
+    chunk: "Today I'm picking up the DR test."
+    tags: [standup, core]
+  - term: "no blockers"
+    ipa: "/noʊ ˈblɒkərz/"
+    meaning_vi: "không vướng gì"
+    chunk: "No blockers from my side."
+    tags: [standup, core]
+  - term: "waiting on"
+    ipa: "/ˈweɪtɪŋ ɒn/"
+    meaning_vi: "đang chờ (ai đó, cái gì đó)"
+    chunk: "I'm waiting on the DBA team for access."
+    tags: [standup, core]
+  - term: "carry over"
+    ipa: "/ˈkæri ˈoʊvər/"
+    meaning_vi: "chuyển sang hôm sau"
+    chunk: "That one carries over to today."
+    tags: [standup]
+  - term: "take it offline"
+    ipa: "/teɪk ɪt ˈɒflaɪn/"
+    meaning_vi: "bàn riêng sau buổi họp"
+    chunk: "Let's take it offline after standup."
+    tags: [standup, core]
+
+sentence_patterns:
+  - pattern: "Yesterday I {past_work}. Today I'm {present_work}."
+    meaning_vi: "Hôm qua em {past_work}. Hôm nay em {present_work}."
+    slots:
+      past_work: ["wrapped up the patching", "finished the DR test"]
+      present_work: ["picking up the firewall audit", "on the backup migration"]
+  - pattern: "I'm waiting on {who} for {what}."
+    meaning_vi: "Em đang chờ {who} về {what}."
+    slots:
+      who: ["the DBA team", "the vendor", "Priya"]
+      what: ["console access", "the licence key"]
+
+dialogue:
+  context_vi: >
+    Standup 9 giờ sáng. Tám người, mỗi người hai phút. Nói lan man là cả team
+    mất mười phút; nói đủ ba phần là ai cũng nắm được và đi làm tiếp.
+  turns:
+    - speaker: "Linh"
+      en: "Morning everyone. Minh, want to start?"
+      vi: "Chào cả nhà. Minh, em bắt đầu nhé?"
+    - speaker: "You"
+      en: "Sure. Yesterday I wrapped up patching on the production servers — nine of eleven done."
+      vi: "Vâng. Hôm qua em làm xong phần vá cho máy chủ production — chín trên mười một máy."
+    - speaker: "You"
+      en: "Today I'm picking up the remaining two database servers, plus the DR test if time allows."
+      vi: "Hôm nay em làm nốt hai máy database, cộng thêm bài kiểm tra DR nếu kịp."
+    - speaker: "You"
+      en: "One blocker: I'm still waiting on the DBA team for console access, request 8842."
+      vi: "Một vướng mắc: em vẫn đang chờ team DBA cấp quyền console, yêu cầu 8842."
+    - speaker: "Linh"
+      en: "How long has that been open?"
+      vi: "Yêu cầu đó mở bao lâu rồi?"
+    - speaker: "You"
+      en: "Three days. If it doesn't land today, the patching slips past the change freeze."
+      vi: "Ba ngày ạ. Nếu hôm nay không có thì phần vá sẽ trễ qua mốc đóng băng thay đổi."
+    - speaker: "Linh"
+      en: "I'll chase it right after standup. Anything else?"
+      vi: "Chị sẽ thúc ngay sau standup. Còn gì nữa không?"
+    - speaker: "You"
+      en: "That's it from me."
+      vi: "Em hết ạ."
+
+listening:
+  context_vi: >
+    Nghe hai phần standup. Một phần đủ ba mục, một phần lan man.
+    Chú ý phần nào giúp người quản lý hành động được.
+  speed: 1.0
+  voice: en_US_female
+  transcript_en: "Version one: yeah so I was working on the servers, it was a bit messy, some of them had issues, I'll keep going today I guess. Version two: yesterday I wrapped up nine of eleven servers. Today I'm on the last two. Blocked on console access, request 8842, open three days."
+  transcript_vi: "Cách một: à thì tôi làm mấy cái máy chủ, hơi rối, vài cái có vấn đề, chắc hôm nay tôi làm tiếp. Cách hai: hôm qua tôi làm xong chín trên mười một máy. Hôm nay tôi làm hai máy cuối. Đang kẹt ở quyền console, yêu cầu 8842, mở ba ngày rồi."
+  questions:
+    - kind: mcq_listen
+      prompt_vi: "Phần nào cho phép quản lý hành động ngay?"
+      choices: ["Cách hai", "Cách một", "Cả hai như nhau"]
+      answer: 0
+      difficulty: 1
+      skill: Listening
+    - kind: mcq_listen
+      prompt_vi: "Yêu cầu 8842 đã mở bao lâu?"
+      choices: ["Một ngày", "Một tuần", "Ba ngày"]
+      answer: 2
+      difficulty: 2
+      skill: Listening
+
+speaking_drills:
+  - kind: read_aloud
+    expected_text: "Yesterday I wrapped up the patching."
+    prompt_vi: "Chữ w trong wrapped CÂM. Đọc là rapt."
+    ipa: "/ˈjestərdeɪ aɪ ræpt ʌp ðə ˈpætʃɪŋ/"
+    focus_phonemes: ["pt", "tʃ"]
+  - kind: read_aloud
+    expected_text: "Today I'm picking up the DR test."
+    prompt_vi: "Đọc DR rời từng chữ cái: dee-ar."
+    ipa: "/təˈdeɪ aɪm ˈpɪkɪŋ ʌp ðə diː ɑːr test/"
+    focus_phonemes: ["ŋ", "st"]
+  - kind: shadow
+    expected_text: "I'm waiting on the DBA team for console access."
+    prompt_vi: "Nêu rõ đang chờ AI và chờ CÁI GÌ. Nghe rồi nhắc lại."
+    ipa: "/aɪm ˈweɪtɪŋ ɒn ðə diː biː eɪ tiːm/"
+    focus_phonemes: ["ŋ", "ks"]
+  - kind: shadow
+    expected_text: "No blockers from my side."
+    prompt_vi: "Câu ngắn khi không vướng gì. Đừng im lặng bỏ qua phần ba."
+    ipa: "/noʊ ˈblɒkərz frɒm maɪ saɪd/"
+    focus_phonemes: ["bl", "rz"]
+  - kind: respond
+    prompt_en: "Minh, want to start?"
+    prompt_vi: "Tới lượt bạn. Nói đủ ba phần cho công việc thật của bạn hôm nay."
+    accept_patterns:
+      - "Yesterday I"
+      - "Today I'm"
+      - "blocker"
+
+reading:
+  kind: chat
+  context_vi: >
+    Standup viết trên kênh chat cho người ở múi giờ khác. Cùng ba phần, dạng văn bản.
+  text_en: |
+    Priya (async standup):
+    Yesterday: finished the retention cost model, shared in the doc.
+    Today: deployment to staging at 14:00, then smoke tests.
+    Blockers: none.
+
+    Minh (async standup):
+    Yesterday: 9 of 11 servers patched.
+    Today: last two DB servers, DR test if time allows.
+    Blockers: console access (REQ-8842), open 3 days. Linh is chasing.
+    If it does not land today, patching slips past the change freeze on Friday.
+  text_vi: |
+    Priya (standup bất đồng bộ):
+    Hôm qua: xong mô hình chi phí lưu trữ, đã chia sẻ trong tài liệu.
+    Hôm nay: triển khai lên staging lúc 14:00, rồi chạy smoke test.
+    Vướng mắc: không có.
+
+    Minh (standup bất đồng bộ):
+    Hôm qua: vá xong 9 trên 11 máy chủ.
+    Hôm nay: hai máy DB cuối, kiểm tra DR nếu kịp.
+    Vướng mắc: quyền console (REQ-8842), mở 3 ngày. Linh đang thúc.
+    Nếu hôm nay không có thì phần vá trễ qua mốc đóng băng thứ Sáu.
+  questions:
+    - kind: mcq_read
+      prompt_en: "What is the consequence if REQ-8842 does not land today?"
+      choices: ["Nothing", "Patching slips past Friday's change freeze", "The servers go down"]
+      answer: 1
+      difficulty: 2
+      reading_skill: scan
+      skill: Reading
+    - kind: mcq_read
+      prompt_en: "What is Priya doing at 14:00?"
+      choices: ["A DR test", "Patching servers", "Deploying to staging"]
+      answer: 2
+      difficulty: 1
+      reading_skill: scan
+      skill: Reading
+
+writing:
+  kind: GuidedEmail
+  prompt_vi: >
+    Viết một standup bất đồng bộ cho kênh chat. Phải đủ ba phần:
+    hôm qua đã xong gì (có con số), hôm nay làm gì, và vướng mắc kèm hệ quả nếu không gỡ được.
+  prompt_en: "Write an async standup with three parts."
+  required_points:
+    - "yesterday"
+    - "today"
+    - "blockers"
+  hint_vi: "Ba phần cố định. Phần vướng mắc phải nêu hệ quả, không chỉ nêu tình trạng."
+  sample_en: "Yesterday: 9 of 11 servers patched. Today: last two DB servers. Blockers: console access REQ-8842, open 3 days. If it does not land today, patching slips past the change freeze."
+
+quiz:
+  - kind: mcq
+    prompt_vi: "Standup gồm mấy phần?"
+    choices: ["Ba: hôm qua, hôm nay, vướng mắc", "Hai: hôm qua và hôm nay", "Một: đang làm gì"]
+    answer: 0
+    difficulty: 1
+    skill: Speaking
+  - kind: mcq
+    prompt_vi: "Không có vướng mắc thì nói gì?"
+    choices: ["Bỏ qua phần ba", "No blockers from my side", "Im lặng"]
+    answer: 1
+    difficulty: 1
+    skill: Speaking
+  - kind: mcq
+    prompt_vi: "Một chủ đề cần bàn sâu giữa standup. Nói gì?"
+    choices: ["Bàn luôn tại chỗ", "Bỏ qua", "Let's take it offline after standup"]
+    answer: 2
+    difficulty: 2
+    skill: Speaking
+  - kind: mcq
+    prompt_vi: "Phần vướng mắc nên kèm gì?"
+    choices: ["Hệ quả nếu không gỡ được", "Lời xin lỗi", "Tên người gây ra"]
+    answer: 0
+    difficulty: 2
+    skill: Writing
+
+explanation:
+  why_vi: >
+    Standup là bài kiểm tra tiếng Anh khắc nghiệt nhất trong ngày: bạn nói trước cả team,
+    không chuẩn bị được kịch bản, và ai cũng đang chờ tới lượt mình.
+    Người mới thường kể lan man vì lo nói thiếu, làm cả buổi kéo dài gấp đôi.
+  how_vi: >
+    Ba phần, mỗi phần một câu: HÔM QUA đã xong gì (có con số), HÔM NAY làm gì,
+    VƯỚNG gì. Phần ba là phần duy nhất người quản lý thực sự cần —
+    và nó phải kèm hệ quả: không chỉ "em đang chờ quyền", mà "nếu hôm nay không có
+    thì phần vá trễ qua mốc đóng băng".
+  contrast_vi: >
+    "Tôi làm mấy cái máy chủ, hơi rối" không cho ai hành động được.
+    "Chín trên mười một máy, kẹt ở REQ-8842, mở ba ngày" — Linh đi thúc ngay sau standup.
+
+common_mistakes:
+  - mistake: "Kể lan man vì sợ nói thiếu"
+    why_vi: >
+      Lo bị đánh giá là làm ít nên kể hết chi tiết. Nhưng standup không phải báo cáo thành tích,
+      và kể dài làm cả team mất thời gian.
+    fix_vi: "Ba câu, mỗi phần một câu. Chi tiết để dành cho lúc có người hỏi thêm."
+    detect_phoneme_missing: []
+  - mistake: "Bỏ qua phần vướng mắc khi thấy ngại"
+    why_vi: >
+      Nghĩ rằng nêu vướng là thừa nhận mình chậm. Nhưng đó chính là phần
+      mà standup tồn tại để giải quyết.
+    fix_vi: "Không vướng thì nói \"No blockers\". Có vướng thì nói kèm hệ quả."
+    detect_phoneme_missing: []
+  - mistake: "Sa đà vào bàn kỹ thuật giữa standup"
+    why_vi: >
+      Một câu hỏi kỹ thuật kéo hai người vào tranh luận trong khi sáu người còn lại ngồi chờ.
+    fix_vi: "Dùng \"Let's take it offline\" — câu chuẩn ai cũng hiểu và không ai phật ý."
+    detect_phoneme_missing: []
+
+memory_trick_vi: >
+  Ba câu, đúng ba phần: HÔM QUA có số, HÔM NAY làm gì, VƯỚNG gì kèm HỆ QUẢ.
+  Cần bàn sâu thì "take it offline".

@@ -1,0 +1,252 @@
+schema_version: 1
+code: LIFE-14
+slug: thoi-tiet-va-suc-khoe
+title_vi: "Thời tiết và sức khoẻ — hai chủ đề mở đầu an toàn"
+title_en: "Weather and health"
+
+layer: Life
+track: Foundation
+level: A2
+unit_code: U-L3
+order_index: 14
+estimated_minutes: 10
+
+illustration: coffee-chat
+
+objective_vi: >
+  Mở đầu và duy trì một cuộc trò chuyện ngắn bằng hai chủ đề an toàn nhất,
+  và báo nghỉ ốm cho đúng mực.
+
+objective_observable: >
+  Nói được ba lượt trao đổi liên tiếp về thời tiết, và viết được tin báo nghỉ ốm đủ ý.
+
+mastery_weights:
+  Listening: 0.30
+  Speaking: 0.35
+  Reading: 0.15
+  Writing: 0.20
+
+prerequisites:
+  - lesson: LIFE-13
+    min_mastery: 60
+    kind: Hard
+
+vocabulary:
+  - term: "It's pouring"
+    ipa: "/ɪts ˈpɔːrɪŋ/"
+    meaning_vi: "mưa như trút"
+    chunk: "It's pouring out there."
+    tags: [weather, core]
+  - term: "boiling"
+    ipa: "/ˈbɔɪlɪŋ/"
+    meaning_vi: "nóng kinh khủng"
+    chunk: "It's boiling today."
+    tags: [weather]
+  - term: "under the weather"
+    ipa: "/ˈʌndər ðə ˈweðər/"
+    meaning_vi: "hơi mệt trong người (không phải nói về thời tiết)"
+    chunk: "I'm feeling a bit under the weather."
+    tags: [health, core]
+  - term: "take the day off"
+    ipa: "/teɪk ðə deɪ ɒf/"
+    meaning_vi: "nghỉ một ngày"
+    chunk: "I'll take the day off and rest."
+    tags: [health, office]
+  - term: "get well soon"
+    ipa: "/ɡet wel suːn/"
+    meaning_vi: "chóng khoẻ nhé"
+    chunk: "Get well soon, take care."
+    tags: [health]
+  - term: "I'll work from home"
+    ipa: "/aɪl wɜːrk frɒm hoʊm/"
+    meaning_vi: "tôi sẽ làm ở nhà"
+    chunk: "I'll work from home today."
+    tags: [health, office]
+
+sentence_patterns:
+  - pattern: "It's {weather} today."
+    meaning_vi: "Hôm nay trời {weather}."
+    slots:
+      weather: ["pouring", "boiling", "so humid"]
+  - pattern: "I'm feeling {state}."
+    meaning_vi: "Tôi thấy {state}."
+    slots:
+      state: ["a bit under the weather", "much better", "fine now"]
+
+dialogue:
+  context_vi: >
+    Sáng thứ Ba, mưa lớn. Bạn gặp Priya ở sảnh — sáu mươi giây đi thang máy
+    là cơ hội nói chuyện tự nhiên nhất trong ngày.
+  turns:
+    - speaker: "Priya"
+      en: "Morning! Wow, it's pouring out there."
+      vi: "Chào buổi sáng! Trời ơi, ngoài kia mưa như trút."
+    - speaker: "You"
+      en: "I know. I got soaked walking from the car park."
+      vi: "Đúng vậy. Tôi ướt sũng lúc đi từ bãi xe vào."
+    - speaker: "Priya"
+      en: "Same. Is it like this every October?"
+      vi: "Tôi cũng vậy. Tháng Mười năm nào cũng thế à?"
+    - speaker: "You"
+      en: "Pretty much. It usually clears up by noon though."
+      vi: "Gần như vậy. Nhưng thường trưa là tạnh."
+    - speaker: "Priya"
+      en: "Good to know. By the way, is Minh in today?"
+      vi: "Tốt quá. À mà hôm nay Minh có đi làm không?"
+    - speaker: "You"
+      en: "He's working from home — he's feeling a bit under the weather."
+      vi: "Anh ấy làm ở nhà — anh ấy hơi mệt trong người."
+
+listening:
+  context_vi: >
+    Nghe một lời nhắn báo nghỉ ốm. Bắt ba thứ: bị sao, nghỉ hay làm ở nhà, và ai thay việc.
+  speed: 0.95
+  voice: en_US_male
+  transcript_en: "Hi Linh, I'm feeling a bit under the weather today. I'll work from home and join the standup on video. If anything urgent comes up, Minh can cover for me."
+  transcript_vi: "Chào Linh, hôm nay tôi thấy hơi mệt trong người. Tôi sẽ làm ở nhà và vào standup qua video. Nếu có việc gấp thì Minh trực thay tôi được."
+  questions:
+    - kind: mcq_listen
+      prompt_vi: "Người này nghỉ hẳn hay làm ở nhà?"
+      choices: ["Làm ở nhà", "Nghỉ hẳn", "Đi làm bình thường"]
+      answer: 0
+      difficulty: 2
+      skill: Listening
+    - kind: mcq_listen
+      prompt_vi: "Ai sẽ trực thay khi có việc gấp?"
+      choices: ["Linh", "Không ai", "Minh"]
+      answer: 2
+      difficulty: 2
+      skill: Listening
+
+speaking_drills:
+  - kind: read_aloud
+    expected_text: "It's pouring out there."
+    prompt_vi: "Đọc to. Chú ý âm /ŋ/ cuối chữ pouring."
+    ipa: "/ɪts ˈpɔːrɪŋ aʊt ðer/"
+    focus_phonemes: ["ŋ", "ð"]
+  - kind: read_aloud
+    expected_text: "I'm feeling a bit under the weather."
+    prompt_vi: "Cụm này KHÔNG nói về thời tiết. Nó nghĩa là hơi mệt trong người."
+    ipa: "/aɪm ˈfiːlɪŋ ə bɪt ˈʌndər ðə ˈweðər/"
+    focus_phonemes: ["ð", "ŋ"]
+  - kind: shadow
+    expected_text: "It usually clears up by noon."
+    prompt_vi: "Câu nối chuyện — thêm một thông tin để người kia có cái mà đáp."
+    ipa: "/ɪt ˈjuːʒuəli klɪrz ʌp baɪ nuːn/"
+    focus_phonemes: ["ʒ", "kl"]
+  - kind: shadow
+    expected_text: "I'll work from home today."
+    prompt_vi: "Câu báo làm ở nhà. Chú ý /l/ cuối chữ I'll."
+    ipa: "/aɪl wɜːrk frɒm hoʊm təˈdeɪ/"
+    focus_phonemes: ["l", "fr"]
+  - kind: respond
+    prompt_en: "Wow, it's pouring out there."
+    prompt_vi: "Đồng nghiệp mở chuyện bằng thời tiết. Đáp lại và thêm một chi tiết."
+    accept_patterns:
+      - "I know"
+      - "Yeah"
+      - "It is"
+
+reading:
+  kind: chat
+  context_vi: >
+    Tin nhắn báo nghỉ ốm gửi quản lý. Để ý bốn ý được gói trong ba câu ngắn.
+  text_en: |
+    You: Morning Linh - I'm a bit under the weather today.
+    You: I'll work from home and join standup on video. Nothing urgent on my plate.
+    Linh: No problem. Rest if you need to - the tickets can wait.
+    You: Thanks. I'll let you know if it gets worse.
+  text_vi: |
+    Bạn: Chào chị Linh - hôm nay em hơi mệt trong người.
+    Bạn: Em làm ở nhà và vào standup qua video. Việc của em không có gì gấp.
+    Linh: Không sao đâu. Cần thì cứ nghỉ - ticket chờ được.
+    Bạn: Cảm ơn chị. Nếu nặng hơn em sẽ báo chị.
+  questions:
+    - kind: mcq_read
+      prompt_en: "What did the learner offer to still do?"
+      choices: ["Come to the office", "Join standup on video", "Take all the tickets"]
+      answer: 1
+      difficulty: 1
+      reading_skill: scan
+      skill: Reading
+    - kind: mcq_read
+      prompt_en: "What was Linh's reply?"
+      choices: ["Asked them to come in", "Asked for a doctor's note", "Told them to rest if needed"]
+      answer: 2
+      difficulty: 2
+      reading_skill: skim
+      skill: Reading
+
+writing:
+  kind: GuidedEmail
+  prompt_vi: >
+    Viết tin nhắn báo bạn không khoẻ. Phải có đủ ba ý: bạn thấy không khoẻ,
+    bạn sẽ làm ở nhà hay nghỉ, và tình trạng công việc của bạn.
+  prompt_en: "Write a short message telling your manager you are unwell."
+  required_points:
+    - "under the weather"
+    - "work from home"
+    - "nothing urgent"
+  hint_vi: "Dùng đúng các cụm đã học trong bài."
+  sample_en: "Morning Linh - I'm a bit under the weather today. I'll work from home and join standup on video. Nothing urgent on my plate."
+
+quiz:
+  - kind: mcq
+    prompt_vi: "\"I'm under the weather\" nghĩa là gì?"
+    choices: ["Tôi hơi mệt trong người", "Tôi đang đứng dưới mưa", "Tôi thích thời tiết này"]
+    answer: 0
+    difficulty: 2
+    skill: Reading
+  - kind: mcq
+    prompt_vi: "Vì sao thời tiết là chủ đề mở chuyện an toàn?"
+    choices: ["Vì dễ nói", "Vì ai cũng đang trải qua nó và không đụng chạm ai", "Vì người nước ngoài thích"]
+    answer: 1
+    difficulty: 2
+    skill: Speaking
+  - kind: mcq
+    prompt_vi: "Đáp lại một câu về thời tiết thế nào cho cuộc trò chuyện tiếp tục?"
+    choices: ["Yes", "Weather bad", "I know. I got soaked walking in."]
+    answer: 2
+    difficulty: 2
+    skill: Speaking
+  - kind: mcq
+    prompt_vi: "Đồng nghiệp báo bị ốm. Bạn nói gì?"
+    choices: ["Get well soon, take care.", "OK", "Why you sick?"]
+    answer: 0
+    difficulty: 1
+    skill: Speaking
+
+explanation:
+  why_vi: >
+    Thời tiết bị coi là chủ đề nhạt, nhưng nó là chủ đề mở chuyện an toàn nhất thế giới:
+    ai cũng đang trải qua nó, không đụng tới chính trị, tôn giáo, lương bổng hay đời tư.
+    Sáu mươi giây trong thang máy mà im lặng thì cả hai đều thấy ngượng.
+  how_vi: >
+    Quy tắc để cuộc trò chuyện không chết: mỗi lượt đáp phải THÊM MỘT THÔNG TIN.
+    "Yes" là câu kết thúc; "I know, I got soaked walking in" là câu mở tiếp.
+    Đây là kỹ năng dùng được cho mọi chủ đề, không riêng thời tiết.
+  contrast_vi: >
+    "Under the weather" KHÔNG nói về thời tiết — nó nghĩa là hơi mệt trong người.
+    Đây là thành ngữ, và dịch từng chữ sẽ hiểu sai hoàn toàn.
+
+common_mistakes:
+  - mistake: "Đáp bằng một chữ rồi im"
+    why_vi: >
+      Người học sợ nói sai nên trả lời ngắn nhất có thể. Nhưng câu một chữ khiến
+      người kia không biết nói gì tiếp và cuộc trò chuyện dừng lại.
+    fix_vi: "Mỗi lượt đáp thêm đúng một thông tin nhỏ. Chỉ một câu là đủ giữ mạch."
+    detect_phoneme_missing: []
+  - mistake: "Hiểu \"under the weather\" theo nghĩa đen"
+    why_vi: "Đây là thành ngữ. Dịch từng chữ ra tiếng Việt thì thành vô nghĩa."
+    fix_vi: "Nhớ nguyên cụm như một từ duy nhất, nghĩa là hơi mệt trong người."
+    detect_phoneme_missing: []
+  - mistake: "Báo ốm mà không nói tình trạng công việc"
+    why_vi: >
+      Quản lý cần biết việc của bạn có ai lo không, chứ không chỉ biết bạn ốm.
+      Thiếu ý này thì họ phải hỏi thêm một lượt.
+    fix_vi: "Luôn thêm một câu về công việc: \"Nothing urgent\" hoặc \"Minh can cover for me\"."
+    detect_phoneme_missing: []
+
+memory_trick_vi: >
+  Quy tắc giữ mạch trò chuyện: MỖI LƯỢT THÊM MỘT THÔNG TIN.
+  Trả lời cụt là đóng cửa; thêm một chi tiết là mở cửa cho lượt sau.

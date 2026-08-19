@@ -1,0 +1,242 @@
+schema_version: 1
+code: LIFE-06
+slug: bon-cum-lich-su
+title_vi: "Bốn cụm lịch sự — please, thank you, sorry, excuse me"
+title_en: "Four polite phrases"
+
+layer: Life
+track: Foundation
+level: A1
+unit_code: U-L1
+order_index: 6
+estimated_minutes: 10
+
+illustration: handshake-intro
+
+objective_vi: >
+  Dùng đúng bốn cụm lịch sự, đặc biệt phân biệt được "sorry" với "excuse me" —
+  hai cụm mà người Việt hay dùng ngược nhau.
+
+objective_observable: >
+  Chọn đúng cụm cho 4 trên 5 tình huống, và nói được cả bốn cụm đúng ngữ điệu.
+
+mastery_weights:
+  Listening: 0.25
+  Speaking: 0.45
+  Reading: 0.15
+  Writing: 0.15
+
+prerequisites:
+  - lesson: LIFE-05
+    min_mastery: 60
+    kind: Hard
+
+vocabulary:
+  - term: "Excuse me"
+    ipa: "/ɪkˈskjuːz miː/"
+    meaning_vi: "xin phép (trước khi làm phiền ai đó)"
+    chunk: "Excuse me, could I ask something?"
+    tags: [polite, core]
+  - term: "Sorry"
+    ipa: "/ˈsɒri/"
+    meaning_vi: "xin lỗi (sau khi đã làm phiền hoặc sai)"
+    chunk: "Sorry, my fault."
+    tags: [polite, core]
+  - term: "Thanks a lot"
+    ipa: "/θæŋks ə lɒt/"
+    meaning_vi: "cảm ơn nhiều"
+    chunk: "Thanks a lot for your help."
+    tags: [polite]
+  - term: "No worries"
+    ipa: "/noʊ ˈwʌriz/"
+    meaning_vi: "không sao đâu (đáp lại lời xin lỗi hoặc cảm ơn)"
+    chunk: "No worries, happens to everyone."
+    tags: [polite, core]
+  - term: "my fault"
+    ipa: "/maɪ fɔːlt/"
+    meaning_vi: "lỗi của tôi"
+    chunk: "That was my fault, sorry."
+    tags: [polite, office]
+  - term: "Appreciate it"
+    ipa: "/əˈpriːʃieɪt ɪt/"
+    meaning_vi: "cảm ơn nhé (thân mật, dùng nhiều ở công sở)"
+    chunk: "Appreciate it, Linh."
+    tags: [polite, office]
+
+sentence_patterns:
+  - pattern: "Excuse me, {request}?"
+    meaning_vi: "Xin phép, {request} được không?"
+    slots:
+      request: ["do you have a minute", "could I ask something", "is this seat taken"]
+  - pattern: "Sorry, {reason}."
+    meaning_vi: "Xin lỗi, {reason}."
+    slots:
+      reason: ["my fault", "I missed that", "I'm late"]
+
+dialogue:
+  context_vi: >
+    Bạn cần hỏi Minh một việc, nhưng anh ấy đang cắm tai nghe làm việc.
+    Chọn sai cụm mở đầu là cả câu thành khó chịu dù bạn không hề có ý đó.
+  turns:
+    - speaker: "You"
+      en: "Excuse me, Minh. Do you have a minute?"
+      vi: "Xin phép anh Minh. Anh có một phút không ạ?"
+    - speaker: "Minh"
+      en: "Sure, what's up?"
+      vi: "Có chứ, có việc gì thế?"
+    - speaker: "You"
+      en: "Sorry to bother you — could you show me where the VPN config is?"
+      vi: "Xin lỗi đã làm phiền anh — anh chỉ em chỗ cấu hình VPN được không ạ?"
+    - speaker: "Minh"
+      en: "No worries. It's in the shared drive. I'll send you the link."
+      vi: "Không sao đâu. Nó nằm trong ổ chung. Anh gửi link cho em."
+    - speaker: "You"
+      en: "Thanks a lot. Appreciate it."
+      vi: "Cảm ơn anh nhiều. Em cảm ơn ạ."
+
+listening:
+  context_vi: >
+    Nghe hai tình huống liên tiếp. Cùng một người, nhưng dùng hai cụm khác nhau —
+    và lý do khác nhau.
+  speed: 0.9
+  voice: en_US_male
+  transcript_en: "Excuse me, is this seat taken? Oh, sorry, I didn't see your bag there."
+  transcript_vi: "Xin phép, ghế này có ai ngồi chưa? Ồ, xin lỗi, tôi không thấy cái túi của bạn ở đó."
+  questions:
+    - kind: mcq_listen
+      prompt_vi: "Vì sao câu đầu dùng \"Excuse me\"?"
+      choices: ["Vì sắp làm phiền người khác", "Vì đã làm sai", "Vì muốn cảm ơn"]
+      answer: 0
+      difficulty: 2
+      skill: Listening
+    - kind: mcq_listen
+      prompt_vi: "Vì sao câu sau đổi sang \"sorry\"?"
+      choices: ["Vì người kia lớn tuổi", "Vì lịch sự hơn", "Vì đã trót làm phiền rồi"]
+      answer: 2
+      difficulty: 3
+      skill: Listening
+
+speaking_drills:
+  - kind: read_aloud
+    expected_text: "Excuse me, do you have a minute?"
+    prompt_vi: "Đọc to. Cụm /skj/ trong excuse là chỗ khó nhất câu này."
+    ipa: "/ɪkˈskjuːz miː duː juː hæv ə ˈmɪnɪt/"
+    focus_phonemes: ["sk", "j"]
+  - kind: read_aloud
+    expected_text: "Sorry, my fault."
+    prompt_vi: "Xuống giọng ở cuối. Lên giọng thì thành câu hỏi lại, không phải lời xin lỗi."
+    ipa: "/ˈsɒri maɪ fɔːlt/"
+    focus_phonemes: ["lt"]
+  - kind: shadow
+    expected_text: "No worries, happens to everyone."
+    prompt_vi: "Câu đáp lại khi ai đó xin lỗi bạn. Nghe rồi nhắc lại."
+    ipa: "/noʊ ˈwʌriz ˈhæpənz tuː ˈevriwʌn/"
+    focus_phonemes: ["z", "w"]
+  - kind: shadow
+    expected_text: "Thanks a lot. Appreciate it."
+    prompt_vi: "Hai câu cảm ơn nối nhau, rất hay dùng ở công sở."
+    ipa: "/θæŋks ə lɒt əˈpriːʃieɪt ɪt/"
+    focus_phonemes: ["θ", "ʃ"]
+  - kind: respond
+    prompt_en: "Sorry I'm late, traffic was bad."
+    prompt_vi: "Đồng nghiệp xin lỗi vì đến muộn. Đáp lại cho nhẹ nhàng."
+    accept_patterns:
+      - "No worries"
+      - "That's fine"
+      - "No problem"
+
+reading:
+  kind: chat
+  context_vi: >
+    Tin nhắn xin lỗi vì lỡ một cuộc họp. Để ý người ta xin lỗi rồi làm gì tiếp theo.
+  text_en: |
+    You: Sorry I missed the sync this morning - my fault, I set the alarm wrong.
+    Linh: No worries. I recorded it, sending the link now.
+    You: Thanks a lot. I'll watch it before lunch.
+  text_vi: |
+    Bạn: Xin lỗi em lỡ buổi sync sáng nay - lỗi của em, em đặt báo thức sai.
+    Linh: Không sao đâu. Chị có ghi lại, gửi link ngay đây.
+    Bạn: Cảm ơn chị nhiều. Em sẽ xem trước bữa trưa.
+  questions:
+    - kind: mcq_read
+      prompt_en: "What did the learner do after apologising?"
+      choices: ["Blamed someone else", "Explained the reason", "Asked for a day off"]
+      answer: 1
+      difficulty: 2
+      reading_skill: skim
+      skill: Reading
+    - kind: mcq_read
+      prompt_en: "What did Linh send?"
+      choices: ["A report", "A new meeting invite", "A recording link"]
+      answer: 2
+      difficulty: 1
+      reading_skill: scan
+      skill: Reading
+
+writing:
+  kind: Reorder
+  prompt_vi: "Sắp lại thành một câu xin phép lịch sự."
+  prompt_en: "Sắp xếp: minute / me / a / Excuse / have / you / do"
+  correct_order: ["Excuse", "me", "do", "you", "have", "a", "minute"]
+  hint_vi: "Bắt đầu bằng cụm xin phép, rồi tới câu hỏi."
+  sample_en: "Excuse me, do you have a minute?"
+
+quiz:
+  - kind: mcq
+    prompt_vi: "Bạn muốn chen qua trước mặt ai đó. Nói gì?"
+    choices: ["Excuse me", "Sorry", "Please"]
+    answer: 0
+    difficulty: 2
+    skill: Speaking
+  - kind: mcq
+    prompt_vi: "Bạn vừa giẫm phải chân người khác. Nói gì?"
+    choices: ["Excuse me", "Sorry", "Thank you"]
+    answer: 1
+    difficulty: 1
+    skill: Speaking
+  - kind: mcq
+    prompt_vi: "Đồng nghiệp xin lỗi vì làm phiền bạn. Đáp thế nào cho tự nhiên?"
+    choices: ["It is nothing", "You are welcome sir", "No worries"]
+    answer: 2
+    difficulty: 2
+    skill: Speaking
+  - kind: mcq
+    prompt_vi: "\"Appreciate it\" nghĩa là gì?"
+    choices: ["Cảm ơn nhé", "Đánh giá cao chất lượng", "Xin lỗi"]
+    answer: 0
+    difficulty: 2
+    skill: Reading
+
+explanation:
+  why_vi: >
+    Tiếng Việt dùng chung một chữ "xin lỗi" cho cả hai tình huống: trước khi làm phiền
+    và sau khi đã sai. Tiếng Anh tách hẳn làm hai. Dùng ngược không sai ngữ pháp,
+    nhưng người nghe thấy lạ và đôi khi hiểu là bạn đang khó chịu.
+  how_vi: >
+    Quy tắc thời gian: TRƯỚC khi làm phiền thì "Excuse me", SAU khi đã làm phiền
+    hoặc đã sai thì "Sorry". Cứ hỏi mình một câu: việc đó đã xảy ra chưa?
+  contrast_vi: >
+    "Excuse me, is this seat taken?" là xin phép trước. "Sorry, I didn't see your bag"
+    là xin lỗi sau. Cùng một người, cách nhau ba giây, nhưng hai cụm khác nhau.
+
+common_mistakes:
+  - mistake: "Dùng \"Sorry\" khi muốn chen qua hoặc bắt chuyện"
+    why_vi: >
+      Dịch thẳng từ “xin lỗi cho hỏi”. Người nghe tưởng bạn vừa làm gì sai
+      và sẽ ngơ ngác tìm xem chuyện gì đã xảy ra.
+    fix_vi: "Chưa làm phiền thì dùng \"Excuse me\". Đây là quy tắc thời gian, dễ nhớ."
+    detect_phoneme_missing: []
+  - mistake: "Nói \"Thank you very much\" trong mọi tình huống"
+    why_vi: >
+      Không sai, nhưng ở công sở nghe hơi trang trọng và xa cách khi dùng với đồng nghiệp
+      ngồi cạnh mình mỗi ngày.
+    fix_vi: "Với đồng nghiệp dùng \"Thanks a lot\" hoặc \"Appreciate it\". Giữ câu dài cho khách hàng."
+    detect_phoneme_missing: []
+  - mistake: "Phát âm excuse thành ếch-kiu"
+    why_vi: "Cụm phụ âm /skj/ không có trong tiếng Việt nên miệng tự tách hoặc bỏ bớt âm."
+    fix_vi: "Tập chậm ba phần: ik-SKYOOZ. Nối liền lại khi đã quen."
+    detect_phoneme_missing: ["sk", "j"]
+
+memory_trick_vi: >
+  Hỏi một câu duy nhất: việc làm phiền ĐÃ xảy ra chưa? Chưa thì "Excuse me",
+  rồi thì "Sorry". Một câu hỏi này thay được cả bảng ghi nhớ.

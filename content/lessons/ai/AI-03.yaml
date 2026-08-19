@@ -1,0 +1,366 @@
+schema_version: 1
+code: AI-03
+slug: noi-ve-do-tre-do-chinh-xac-giam-sat
+title_vi: "Độ trễ, độ chính xác và giám sát — nói về chất lượng bằng số"
+title_en: "Talking about latency, accuracy and monitoring"
+
+layer: Professional
+track: Ai
+level: B1
+unit_code: U-AI2
+order_index: 3
+estimated_minutes: 12
+is_checkpoint: false
+
+illustration: metrics-dashboard
+
+objective_vi: >
+  Báo cáo chất lượng một hệ thống AI đang chạy bằng số đo, và nói được
+  vì sao độ chính xác trung bình có thể che mất một nhóm người dùng bị hỏng.
+
+objective_observable: >
+  Đạt từ 75 điểm trên cả bốn trục kỹ năng, không trục nào dưới 60.
+
+mastery_weights:
+  Listening: 0.25
+  Speaking: 0.30
+  Reading: 0.25
+  Writing: 0.20
+
+prerequisites:
+  - lesson: AI-02
+    min_mastery: 70
+    kind: Hard
+  - lesson: INF-03
+    min_mastery: 65
+    kind: Soft
+
+vocabulary:
+  - term: "accuracy"
+    ipa: "/ˈækjərəsi/"
+    meaning_vi: "độ chính xác"
+    chunk: "Accuracy dropped from 88 to 79 percent."
+    tags: [ai, core]
+  - term: "p95 latency"
+    ipa: "/piː ˈnaɪnti faɪv ˈleɪtnsi/"
+    meaning_vi: "độ trễ mà 95% yêu cầu nằm dưới mức đó"
+    chunk: "The p95 latency is 1.4 seconds."
+    tags: [ai, core]
+  - term: "the average hides"
+    ipa: "/ði ˈævərɪdʒ haɪdz/"
+    meaning_vi: "con số trung bình che mất"
+    chunk: "The average hides a group that gets much worse answers."
+    tags: [ai, core]
+  - term: "drift"
+    ipa: "/drɪft/"
+    meaning_vi: "chất lượng trôi dần theo thời gian"
+    chunk: "We watch for drift every week."
+    tags: [ai, core]
+  - term: "break down by"
+    ipa: "/breɪk daʊn baɪ/"
+    meaning_vi: "tách nhỏ theo"
+    chunk: "Break it down by language and by team."
+    tags: [ai, core]
+  - term: "flag for review"
+    ipa: "/flæɡ fɔːr rɪˈvjuː/"
+    meaning_vi: "đánh dấu để người xem lại"
+    chunk: "Low-confidence answers are flagged for review."
+    tags: [ai, core]
+
+sentence_patterns:
+  - pattern: "Accuracy is {number} overall, but only {lower} for {group}."
+    meaning_vi: "Độ chính xác chung là {number}, nhưng chỉ {lower} với {group}."
+    slots:
+      number: ["88 percent", "91 percent"]
+      lower: ["71 percent", "64 percent"]
+      group: ["mixed-language tickets", "the night shift", "the new product line"]
+  - pattern: "We break it down by {dimension} because {reason}."
+    meaning_vi: "Bọn tôi tách theo {dimension} vì {reason}."
+    slots:
+      dimension: ["language", "team", "ticket type"]
+      reason: ["the average hides the group that suffers", "one group drives most of the errors"]
+
+dialogue:
+  context_vi: >
+    Bạn báo cáo kết quả bốn tuần chạy thử với chị Thu. Con số chung nhìn tốt,
+    nhưng bạn tách nhỏ ra và thấy chuyện khác.
+  turns:
+    - speaker: "Thu"
+      en: "You said 88 percent. That sounds good. Are we ready to roll it out?"
+      vi: "Em nói tám mươi tám phần trăm. Nghe tốt đấy. Triển khai rộng được chưa?"
+    - speaker: "You"
+      en: "Not yet. 88 is the overall number, and the average hides something. I broke it down by language."
+      vi: "Chưa ạ. Tám mươi tám là số chung, và con số trung bình che mất một chuyện. Em tách theo ngôn ngữ."
+    - speaker: "Thu"
+      en: "Go on."
+      vi: "Nói tiếp đi."
+    - speaker: "You"
+      en: "English-only tickets are at 91. Mixed Vietnamese and English are at 71. That's about a fifth of our volume."
+      vi: "Ticket thuần tiếng Anh đạt chín mươi mốt. Ticket lẫn Việt và Anh chỉ bảy mươi mốt. Nhóm đó chiếm khoảng một phần năm lượng ticket."
+    - speaker: "Thu"
+      en: "So one team gets a much worse tool than the others."
+      vi: "Vậy là một nhóm nhận công cụ tệ hơn hẳn các nhóm khác."
+    - speaker: "You"
+      en: "Exactly. If we roll out on the average number, that team stops trusting it in the first week."
+      vi: "Đúng ạ. Nếu triển khai dựa trên con số trung bình thì nhóm đó mất niềm tin ngay tuần đầu."
+    - speaker: "Thu"
+      en: "What do you suggest?"
+      vi: "Em đề xuất gì?"
+    - speaker: "You"
+      en: "Roll out to the English-only queues now, and flag low-confidence suggestions for review instead of showing them. Then fix the mixed-language case before the second wave."
+      vi: "Triển khai cho các hàng đợi thuần tiếng Anh trước, và với gợi ý độ tin cậy thấp thì đánh dấu để xem lại thay vì hiện ra. Rồi xử lý ca lẫn ngôn ngữ trước đợt hai."
+    - speaker: "Thu"
+      en: "And how will we know if it gets worse later?"
+      vi: "Rồi làm sao biết sau này nó tệ đi?"
+    - speaker: "You"
+      en: "We measure the same breakdown every week. If any group drops more than five points, it goes on the standup."
+      vi: "Bọn em đo đúng bảng tách đó hằng tuần. Nhóm nào tụt quá năm điểm thì đưa ra standup."
+
+listening:
+  context_vi: >
+    Nghe hai bản báo cáo chất lượng. Chú ý bản nào cho người nghe
+    thấy được nhóm bị ảnh hưởng nặng nhất.
+  speed: 1.2
+  voice: en_US_female
+  transcript_en: "Report one: accuracy is 88 percent, latency is good, and users are happy. Report two: accuracy is 88 percent overall, but that average hides a split. English-only tickets are at 91 and mixed-language tickets are at 71, and mixed-language is a fifth of our volume. The p95 latency is 1.4 seconds, which is fine. We measure the same breakdown weekly and treat a five-point drop in any group as a standup item."
+  transcript_vi: "Báo cáo một: độ chính xác tám mươi tám phần trăm, độ trễ tốt, người dùng hài lòng. Báo cáo hai: độ chính xác chung tám mươi tám phần trăm, nhưng con số trung bình đó che mất một sự chênh lệch. Ticket thuần tiếng Anh đạt chín mươi mốt còn ticket lẫn ngôn ngữ chỉ bảy mươi mốt, mà nhóm lẫn ngôn ngữ chiếm một phần năm lượng ticket. Độ trễ p95 là một phẩy bốn giây, mức đó ổn. Bọn tôi đo đúng bảng tách đó hằng tuần và coi việc tụt năm điểm ở bất kỳ nhóm nào là việc phải nêu ở standup."
+  questions:
+    - kind: mcq_listen
+      prompt_vi: "Báo cáo hai phát hiện điều gì mà báo cáo một không?"
+      choices: ["Một nhóm người dùng nhận kết quả kém hơn hẳn", "Độ trễ quá cao", "Chi phí tăng"]
+      answer: 0
+      difficulty: 2
+      skill: Listening
+    - kind: mcq_listen
+      prompt_vi: "Nhóm lẫn ngôn ngữ chiếm bao nhiêu lượng ticket?"
+      choices: ["Một phần mười", "Một nửa", "Một phần năm"]
+      answer: 2
+      difficulty: 2
+      skill: Listening
+    - kind: mcq_listen
+      prompt_vi: "Ngưỡng nào khiến vấn đề được đưa ra standup?"
+      choices: ["Độ trễ vượt hai giây", "Bất kỳ nhóm nào tụt quá năm điểm", "Có người phàn nàn"]
+      answer: 1
+      difficulty: 3
+      skill: Listening
+
+speaking_drills:
+  - kind: read_aloud
+    expected_text: "Accuracy is 88 percent overall, but the average hides a split."
+    prompt_vi: "Câu mở đầu chuẩn khi báo cáo chất lượng."
+    ipa: "/ˈækjərəsi ɪz ˈeɪti eɪt pərˈsent/"
+    focus_phonemes: ["kj", "s"]
+  - kind: read_aloud
+    expected_text: "Mixed-language tickets are at 71 percent, and that is a fifth of our volume."
+    prompt_vi: "Nêu nhóm bị ảnh hưởng kèm tỷ trọng của nhóm đó."
+    ipa: "/mɪkst ˈlæŋɡwɪdʒ ˈtɪkɪts/"
+    focus_phonemes: ["kst", "dʒ"]
+  - kind: shadow
+    expected_text: "The p95 latency is one point four seconds."
+    prompt_vi: "Đọc số thập phân theo lối tiếng Anh: one point four."
+    ipa: "/ðə piː ˈnaɪnti faɪv ˈleɪtnsi/"
+    focus_phonemes: ["p", "t"]
+  - kind: shadow
+    expected_text: "Low-confidence answers are flagged for review, not shown."
+    prompt_vi: "Nói rõ cách xử lý khi máy không chắc."
+    ipa: "/loʊ ˈkɒnfɪdəns ˈænsərz ɑːr flæɡd/"
+    focus_phonemes: ["fl", "d"]
+  - kind: respond
+    prompt_en: "You said 88 percent. Are we ready to roll it out?"
+    prompt_vi: "Nêu con số chung, rồi tách nhỏ ra để lộ nhóm bị kém."
+    accept_patterns:
+      - "overall"
+      - "hides"
+      - "percent"
+
+reading:
+  kind: note
+  context_vi: >
+    Báo cáo hằng tuần về chất lượng trợ lý. Đọc và tìm dấu hiệu
+    chất lượng đang trôi.
+  text_en: |
+    Assistant quality - week 12
+
+    Overall accuracy: 86% (week 11: 88%, week 10: 88%)
+    p95 latency: 1.4 s (unchanged)
+    Volume: 2,140 suggestions
+
+    Breakdown by language
+    English only: 90% (was 91%)
+    Mixed Vietnamese and English: 68% (was 71%)
+    The gap is widening, not closing. Mixed-language volume also grew from
+    19% to 24% of the total, which is why the overall number fell even
+    though English-only barely moved. The overall number is going down for
+    a reason that has nothing to do with the model getting worse.
+
+    Breakdown by ticket type
+    Access requests: 94%
+    Hardware: 89%
+    Network: 62%
+    Network was 81% in week 9. Three new switch models were added to the
+    estate in week 10 and none of them appear in any document we index.
+    This is not model drift. It is a missing-document problem, and the fix
+    is to write the documents, not to change anything about the model.
+
+    Low-confidence handling
+    118 suggestions fell below the confidence threshold and were flagged
+    for review instead of being shown. Agents agreed with the flag in 104
+    of those cases, which means the threshold is roughly in the right place.
+
+    Action
+    Write the three switch documents this week. Re-measure network on
+    week 13. Do not touch the model. If network does not recover after the
+    documents are indexed, then we look at the model.
+  text_vi: |
+    Chất lượng trợ lý - tuần 12
+
+    Độ chính xác chung: 86% (tuần 11: 88%, tuần 10: 88%)
+    Độ trễ p95: 1,4 giây (không đổi)
+    Lượng: 2.140 gợi ý
+
+    Tách theo ngôn ngữ
+    Thuần tiếng Anh: 90% (trước là 91%)
+    Lẫn Việt và Anh: 68% (trước là 71%)
+    Khoảng cách đang giãn ra chứ không thu hẹp. Lượng ticket lẫn ngôn ngữ cũng tăng
+    từ 19% lên 24% tổng số, đó là lý do con số chung giảm dù nhóm thuần tiếng Anh
+    gần như không đổi. Con số chung giảm vì một lý do không liên quan gì tới việc
+    mô hình kém đi.
+
+    Tách theo loại ticket
+    Yêu cầu cấp quyền: 94%
+    Phần cứng: 89%
+    Mạng: 62%
+    Mạng từng đạt 81% ở tuần 9. Ba dòng switch mới được đưa vào hệ thống ở tuần 10
+    và không dòng nào xuất hiện trong tài liệu nào bọn mình đang lập chỉ mục.
+    Đây không phải mô hình trôi. Đây là vấn đề thiếu tài liệu, và cách sửa là
+    viết tài liệu, không phải đụng vào mô hình.
+
+    Xử lý gợi ý độ tin cậy thấp
+    118 gợi ý rơi dưới ngưỡng tin cậy và được đánh dấu để xem lại thay vì hiện ra.
+    Nhân viên đồng ý với việc đánh dấu ở 104 trường hợp, tức ngưỡng đang đặt
+    tương đối đúng chỗ.
+
+    Việc cần làm
+    Viết ba tài liệu switch trong tuần này. Đo lại nhóm mạng ở tuần 13.
+    Không động vào mô hình. Nếu sau khi lập chỉ mục tài liệu mà nhóm mạng vẫn không
+    hồi phục thì lúc đó mới xem tới mô hình.
+  questions:
+    - kind: mcq_read
+      prompt_en: "Why did the overall number fall?"
+      choices: ["The model got worse", "Latency increased", "Mixed-language volume grew from 19% to 24%"]
+      answer: 2
+      difficulty: 3
+      reading_skill: skim
+      skill: Reading
+    - kind: mcq_read
+      prompt_en: "What caused the network category to drop?"
+      choices: ["Three new switch models with no indexed documents", "Model drift", "A latency spike"]
+      answer: 0
+      difficulty: 2
+      reading_skill: scan
+      skill: Reading
+    - kind: mcq_read
+      prompt_en: "What does the report conclude about the model?"
+      choices: ["Retrain it now", "Do not touch it until the documents are indexed and re-measured", "Replace it with a larger model"]
+      answer: 1
+      difficulty: 3
+      reading_skill: skim
+      skill: Reading
+    - kind: mcq_read
+      prompt_en: "What does the 104-out-of-118 agreement suggest?"
+      choices: ["Agents ignore the flags", "The model is too slow", "The threshold is roughly right"]
+      answer: 2
+      difficulty: 3
+      reading_skill: scan
+      skill: Reading
+
+writing:
+  kind: GuidedEmail
+  prompt_vi: >
+    Viết ba câu báo cáo chất lượng: con số chung, con số tách nhỏ để lộ nhóm bị kém,
+    và việc bạn sẽ làm.
+  prompt_en: "Report AI quality in three sentences."
+  required_points:
+    - "overall"
+    - "hides"
+    - "break"
+  hint_vi: "Đừng dừng ở con số trung bình. Nó là chỗ vấn đề hay lẩn vào."
+  sample_en: "Accuracy is 86 percent overall this week, but that average hides a split. When we break it down by language, English-only tickets are at 90 percent and mixed-language tickets at 68, and mixed-language grew to a quarter of our volume. I am writing the three missing switch documents this week and will re-measure before we change anything about the model."
+
+quiz:
+  - kind: mcq
+    prompt_vi: "Vì sao không nên báo cáo chỉ bằng độ chính xác trung bình?"
+    choices: ["Vì nó che mất nhóm người dùng bị kết quả kém hẳn", "Vì khó tính", "Vì sếp không thích số"]
+    answer: 0
+    difficulty: 1
+    skill: Writing
+  - kind: mcq
+    prompt_vi: "\"p95 latency 1.4s\" nghĩa là gì?"
+    choices: ["Trung bình 1,4 giây", "95% yêu cầu trả lời dưới 1,4 giây", "Chậm nhất là 1,4 giây"]
+    answer: 1
+    difficulty: 2
+    skill: Reading
+  - kind: mcq
+    prompt_vi: "Nhóm mạng tụt từ 81% xuống 62% sau khi thêm ba dòng switch mới chưa có tài liệu. Đây là gì?"
+    choices: ["Thiếu tài liệu để tra cứu", "Mô hình trôi", "Lỗi hạ tầng"]
+    answer: 0
+    difficulty: 3
+    skill: Reading
+  - kind: mcq
+    prompt_vi: "Gợi ý có độ tin cậy thấp nên xử lý thế nào?"
+    choices: ["Vẫn hiện bình thường", "Xoá bỏ hoàn toàn", "Đánh dấu để người xem lại thay vì hiện ra"]
+    answer: 2
+    difficulty: 2
+    skill: Speaking
+  - kind: mcq
+    prompt_vi: "Sếp hỏi 88% đã triển khai rộng được chưa. Trả lời tốt nhất?"
+    choices: ["Rồi ạ, số đẹp rồi", "Chưa ạ, tách theo ngôn ngữ thì có nhóm chỉ đạt 71%", "Cần thêm dữ liệu ạ"]
+    answer: 1
+    difficulty: 2
+    skill: Speaking
+  - kind: mcq
+    prompt_vi: "Vì sao phải đo cùng một bảng tách hằng tuần?"
+    choices: ["Để phát hiện chất lượng trôi trước khi người dùng bỏ dùng", "Cho có báo cáo", "Vì nhà cung cấp yêu cầu"]
+    answer: 0
+    difficulty: 2
+    skill: Writing
+
+explanation:
+  why_vi: >
+    Một con số chung luôn dễ báo cáo và dễ nghe. Nhưng hệ thống AI hầu như không bao giờ
+    kém đều — nó rất tốt với phần lớn người dùng và rất kém với một nhóm nhỏ.
+    Nhóm đó chính là nhóm bỏ dùng đầu tiên, và khi họ bỏ thì con số trung bình
+    còn đẹp lên, vì phần dữ liệu khó đã rời khỏi mẫu đo.
+  how_vi: >
+    Luôn báo cáo hai tầng: con số chung, rồi bảng tách theo một chiều có ý nghĩa —
+    ngôn ngữ, nhóm người dùng, loại yêu cầu. Câu chốt là "the average hides a split".
+    Và khi một nhóm tụt, hỏi nguyên nhân trước khi đụng vào mô hình: thường đó là
+    dữ liệu mới chưa có tài liệu, không phải mô hình kém đi.
+  contrast_vi: >
+    "Độ chính xác 88%, người dùng hài lòng" không cho ai hành động được.
+    "88% chung, nhưng nhóm lẫn ngôn ngữ chỉ 71% và nhóm đó chiếm một phần năm lượng việc"
+    chỉ đúng chỗ cần sửa và chỉ đúng nhóm sắp mất niềm tin.
+
+common_mistakes:
+  - mistake: "Báo cáo bằng một con số trung bình duy nhất"
+    why_vi: >
+      Con số chung gọn và dễ trình bày. Nhưng nó trộn nhóm tốt với nhóm kém,
+      và nhóm kém là nhóm sẽ bỏ dùng trước tiên.
+    fix_vi: "Luôn kèm một bảng tách theo chiều có ý nghĩa với người nghe."
+    detect_phoneme_missing: []
+  - mistake: "Thấy số tụt là nghĩ ngay tới việc huấn luyện lại mô hình"
+    why_vi: >
+      Mô hình là phần mình vừa làm nên là thứ đầu tiên bị nghi.
+      Thực tế phần lớn các đợt tụt là do dữ liệu mới chưa có tài liệu.
+    fix_vi: "Tách theo loại yêu cầu trước. Nếu chỉ một loại tụt thì đó là vấn đề dữ liệu."
+    detect_phoneme_missing: []
+  - mistake: "Không nói tỷ trọng của nhóm bị kém"
+    why_vi: >
+      Nêu 71% mà không nói nhóm đó chiếm bao nhiêu thì người nghe không biết
+      nên lo hay không lo.
+    fix_vi: "Luôn kèm tỷ trọng: 71% và nhóm đó chiếm một phần năm lượng việc."
+    detect_phoneme_missing: []
+
+memory_trick_vi: >
+  Hai tầng: SỐ CHUNG rồi BẢNG TÁCH. Câu chốt là "the average hides a split".
+  Nhóm tụt thì hỏi dữ liệu trước, đừng đụng vào mô hình trước.

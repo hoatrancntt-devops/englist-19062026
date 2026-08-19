@@ -1,0 +1,258 @@
+schema_version: 1
+code: OFF-08
+slug: nhan-tin-teams-slack
+title_vi: "Viết tin nhắn Teams và Slack"
+title_en: "Writing chat messages at work"
+
+layer: Office
+track: Foundation
+level: B1
+unit_code: U-O3
+order_index: 8
+estimated_minutes: 11
+
+illustration: chat-message
+
+objective_vi: >
+  Viết tin nhắn công việc mà người đọc trả lời được ngay, không phải hỏi lại —
+  và biết khi nào nên nhắn, khi nào nên gọi.
+
+objective_observable: >
+  Viết được một tin nhắn đủ ngữ cảnh và yêu cầu rõ ràng, không quá năm dòng.
+
+mastery_weights:
+  Listening: 0.20
+  Speaking: 0.20
+  Reading: 0.25
+  Writing: 0.35
+
+prerequisites:
+  - lesson: OFF-07
+    min_mastery: 60
+    kind: Hard
+
+vocabulary:
+  - term: "quick question"
+    ipa: "/kwɪk ˈkwestʃn/"
+    meaning_vi: "hỏi nhanh một câu"
+    chunk: "Quick question about the backup job."
+    tags: [chat, core]
+  - term: "heads up"
+    ipa: "/hedz ʌp/"
+    meaning_vi: "báo trước cho biết"
+    chunk: "Heads up - the portal will be down at 10."
+    tags: [chat, core]
+  - term: "FYI"
+    ipa: "/ef waɪ aɪ/"
+    meaning_vi: "gửi để biết, không cần làm gì"
+    chunk: "FYI, the vendor replied."
+    tags: [chat, core]
+  - term: "any thoughts"
+    ipa: "/ˈeni θɔːts/"
+    meaning_vi: "anh chị thấy sao"
+    chunk: "Any thoughts on this approach?"
+    tags: [chat]
+  - term: "bumping this"
+    ipa: "/ˈbʌmpɪŋ ðɪs/"
+    meaning_vi: "nhắc lại tin nhắn cũ chưa ai trả lời"
+    chunk: "Bumping this - still blocked."
+    tags: [chat, office]
+  - term: "no action needed"
+    ipa: "/noʊ ˈækʃn ˈniːdɪd/"
+    meaning_vi: "không cần làm gì cả"
+    chunk: "No action needed, just for visibility."
+    tags: [chat, core]
+
+sentence_patterns:
+  - pattern: "Heads up - {event} at {time}."
+    meaning_vi: "Báo trước - {event} lúc {time}."
+    slots:
+      event: ["the portal will be down", "we're deploying"]
+      time: ["10", "2pm today"]
+  - pattern: "Quick question about {topic} — {question}?"
+    meaning_vi: "Hỏi nhanh về {topic} — {question}?"
+    slots:
+      topic: ["the backup job", "the firewall rule"]
+      question: ["is it safe to rerun it", "who owns it"]
+
+dialogue:
+  context_vi: >
+    Bạn cần Priya trả lời một câu, nhưng cô ấy ở múi giờ khác và có hàng trăm tin nhắn.
+    Cách viết quyết định bạn nhận được trả lời trong năm phút hay ngày hôm sau.
+  turns:
+    - speaker: "You"
+      en: "Quick question about the retention policy — is 60 days the final number, or still under review?"
+      vi: "Hỏi nhanh về chính sách lưu trữ — 60 ngày là con số chốt rồi, hay vẫn đang xem xét?"
+    - speaker: "Priya"
+      en: "Still under review. Finance wants 30. Why do you ask?"
+      vi: "Vẫn đang xem xét. Bên tài chính muốn 30. Sao bạn hỏi vậy?"
+    - speaker: "You"
+      en: "I'm sizing the storage this week. If it might be 30, I'll build for both and decide later."
+      vi: "Tuần này tôi tính dung lượng. Nếu có thể là 30 thì tôi dựng cho cả hai rồi quyết sau."
+    - speaker: "Priya"
+      en: "Good call. I'll ping you when it's decided."
+      vi: "Ý hay. Chốt xong tôi báo bạn."
+    - speaker: "You"
+      en: "Thanks. FYI, I'll put the numbers in the shared doc — no action needed from you."
+      vi: "Cảm ơn. Gửi để biết, tôi sẽ đưa số liệu vào tài liệu chung — bạn không cần làm gì."
+
+listening:
+  context_vi: >
+    Nghe hai tin nhắn được đọc lên. Chú ý cái nào trả lời được ngay.
+  speed: 1.0
+  voice: en_US_male
+  transcript_en: "Message one: hey, are you there? Message two: quick question about the backup job — is it safe to rerun job 214 while the nightly is running, or should I wait until after two?"
+  transcript_vi: "Tin một: này, bạn có đó không? Tin hai: hỏi nhanh về job backup — chạy lại job 214 trong lúc job đêm đang chạy có an toàn không, hay tôi nên đợi sau hai giờ?"
+  questions:
+    - kind: mcq_listen
+      prompt_vi: "Tin nào người nhận trả lời được ngay?"
+      choices: ["Tin hai", "Tin một", "Cả hai"]
+      answer: 0
+      difficulty: 1
+      skill: Listening
+    - kind: mcq_listen
+      prompt_vi: "Vì sao tin một kém hiệu quả?"
+      choices: ["Quá dài", "Sai ngữ pháp", "Chưa có câu hỏi nào, phải chờ thêm một lượt"]
+      answer: 2
+      difficulty: 2
+      skill: Listening
+
+speaking_drills:
+  - kind: read_aloud
+    expected_text: "Quick question about the backup job."
+    prompt_vi: "Mở đầu báo trước độ dài. Người nhận biết ngay đây là việc nhỏ."
+    ipa: "/kwɪk ˈkwestʃn əˈbaʊt ðə ˈbækʌp dʒɒb/"
+    focus_phonemes: ["kw", "dʒ"]
+  - kind: read_aloud
+    expected_text: "Heads up - the portal will be down at ten."
+    prompt_vi: "Chú ý âm /z/ cuối chữ heads."
+    ipa: "/hedz ʌp ðə ˈpɔːrtl wɪl biː daʊn æt ten/"
+    focus_phonemes: ["dz", "t"]
+  - kind: shadow
+    expected_text: "No action needed, just for visibility."
+    prompt_vi: "Câu giải phóng người đọc khỏi lo lắng. Nghe rồi nhắc lại."
+    ipa: "/noʊ ˈækʃn ˈniːdɪd dʒʌst fɔːr ˌvɪzəˈbɪləti/"
+    focus_phonemes: ["kʃ", "z"]
+  - kind: shadow
+    expected_text: "Bumping this - still blocked on console access."
+    prompt_vi: "Nhắc lại tin cũ chưa ai trả lời, kèm lý do vì sao vẫn cần."
+    ipa: "/ˈbʌmpɪŋ ðɪs stɪl blɒkt ɒn ˈkɒnsoʊl ˈækses/"
+    focus_phonemes: ["mp", "kt"]
+  - kind: respond
+    prompt_en: "hey, are you there?"
+    prompt_vi: "Đồng nghiệp nhắn kiểu này. Gợi ý họ nêu luôn câu hỏi cho nhanh."
+    accept_patterns:
+      - "Yes"
+      - "I'm here"
+      - "What's up"
+
+reading:
+  kind: chat
+  context_vi: >
+    Bốn tin nhắn trong một kênh. Ba tin viết tốt, một tin bắt người khác chờ.
+  text_en: |
+    Minh: hi
+    Minh: you around?
+    Priya: Heads up - deploying to staging at 14:00. Expect 5 min downtime.
+    Priya: No action needed, just so nobody panics.
+    You: Quick question - after the staging deploy, should I rerun the smoke tests,
+    You: or does the pipeline do it automatically?
+    Priya: Pipeline does it. You'll see the result in the channel.
+  text_vi: |
+    Minh: chào
+    Minh: bạn có đó không?
+    Priya: Báo trước - triển khai lên staging lúc 14:00. Sẽ gián đoạn khoảng 5 phút.
+    Priya: Không cần làm gì, chỉ để không ai hoảng.
+    Bạn: Hỏi nhanh - sau khi triển khai staging, tôi có cần chạy lại smoke test,
+    Bạn: hay pipeline tự chạy?
+    Priya: Pipeline tự chạy. Bạn sẽ thấy kết quả trong kênh.
+  questions:
+    - kind: mcq_read
+      prompt_en: "Which message forced the reader to wait for more?"
+      choices: ["Priya's heads up", "Minh's", "The learner's question"]
+      answer: 1
+      difficulty: 2
+      reading_skill: skim
+      skill: Reading
+    - kind: mcq_read
+      prompt_en: "Who runs the smoke tests?"
+      choices: ["The learner", "Priya", "The pipeline"]
+      answer: 2
+      difficulty: 1
+      reading_skill: scan
+      skill: Reading
+
+writing:
+  kind: GuidedEmail
+  prompt_vi: >
+    Viết một tin nhắn báo trước cho team về việc bảo trì. Phải có đủ ba ý:
+    việc gì sẽ xảy ra, khi nào, và người đọc có cần làm gì không.
+  prompt_en: "Write a heads-up message about planned maintenance."
+  required_points:
+    - "heads up"
+    - "at"
+    - "no action needed"
+  hint_vi: "Ba ý: việc gì, lúc nào, cần làm gì. Ý cuối giải phóng người đọc khỏi lo lắng."
+  sample_en: "Heads up - the portal will be down at 10:00 for about fifteen minutes for patching. No action needed, just so nobody panics."
+
+quiz:
+  - kind: mcq
+    prompt_vi: "Vì sao không nên nhắn \"hi\" rồi chờ?"
+    choices: ["Vì bắt người nhận chờ thêm một lượt mới biết việc gì", "Vì thất lễ", "Vì quá ngắn"]
+    answer: 0
+    difficulty: 1
+    skill: Writing
+  - kind: mcq
+    prompt_vi: "\"FYI\" nghĩa là gì?"
+    choices: ["Cần bạn xử lý", "Gửi để biết, không cần làm gì", "Việc gấp"]
+    answer: 1
+    difficulty: 1
+    skill: Reading
+  - kind: mcq
+    prompt_vi: "Khi nào nên gọi thay vì nhắn?"
+    choices: ["Luôn luôn nên gọi", "Khi chỉ hỏi một câu", "Khi việc cần trao đổi qua lại nhiều lượt hoặc đang có sự cố"]
+    answer: 2
+    difficulty: 2
+    skill: Reading
+  - kind: mcq
+    prompt_vi: "Tin nhắn chưa ai trả lời sau một ngày. Làm gì?"
+    choices: ["Bumping this, kèm lý do vì sao vẫn cần", "Nhắn lại y hệt", "Bỏ qua"]
+    answer: 0
+    difficulty: 2
+    skill: Writing
+
+explanation:
+  why_vi: >
+    Người Việt quen mở đầu bằng lời chào rồi mới vào việc, giống nói chuyện trực tiếp.
+    Trên chat công việc, kiểu đó bắt người nhận phải chờ và trả lời hai lượt cho một câu hỏi.
+    Với đồng nghiệp khác múi giờ, nó có thể thành hai ngày.
+  how_vi: >
+    Một tin nhắn tốt gói đủ ba thứ: NGỮ CẢNH (việc gì), YÊU CẦU (bạn cần gì),
+    và MỨC ĐỘ (gấp hay không, có cần làm gì không). Nêu hết trong một tin,
+    đừng chia thành nhiều tin nhỏ — mỗi tin là một lần chuông reo của người khác.
+  contrast_vi: >
+    "Hi, are you there?" cần hai lượt mới tới được câu hỏi.
+    "Quick question about the backup job — is it safe to rerun 214 now?" trả lời được ngay.
+
+common_mistakes:
+  - mistake: "Nhắn \"hi\" rồi chờ người kia trả lời mới vào việc"
+    why_vi: >
+      Bắt chước cách nói chuyện trực tiếp. Nhưng chat là bất đồng bộ, và người nhận
+      có thể chỉ đọc được sau vài giờ.
+    fix_vi: "Gói câu hỏi vào ngay tin đầu tiên. Chào hỏi và nội dung nằm chung một tin."
+    detect_phoneme_missing: []
+  - mistake: "Chia một ý thành năm tin nhắn liên tiếp"
+    why_vi: >
+      Gõ tới đâu gửi tới đó. Mỗi tin là một thông báo, và năm thông báo cho một ý
+      làm phiền cả kênh.
+    fix_vi: "Viết xong rồi mới gửi. Xuống dòng trong cùng một tin thay vì gửi nhiều tin."
+    detect_phoneme_missing: []
+  - mistake: "Không nói rõ người đọc có cần làm gì không"
+    why_vi: >
+      Người đọc phải tự đoán, và thường đoán theo hướng lo lắng thừa.
+    fix_vi: "Thêm một cụm: \"No action needed\" hoặc \"Need your input by Thursday\"."
+    detect_phoneme_missing: []
+
+memory_trick_vi: >
+  Một tin nhắn, ba thứ: NGỮ CẢNH, YÊU CẦU, MỨC ĐỘ.
+  Và một quy tắc vàng: đừng bao giờ gửi mỗi chữ "hi" rồi chờ.

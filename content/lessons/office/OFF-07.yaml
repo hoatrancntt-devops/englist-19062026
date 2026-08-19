@@ -1,0 +1,260 @@
+schema_version: 1
+code: OFF-07
+slug: tu-choi-lich-su
+title_vi: "Từ chối lịch sự — nói không mà không làm hỏng quan hệ"
+title_en: "Saying no politely"
+
+layer: Office
+track: Foundation
+level: B1
+unit_code: U-O2
+order_index: 7
+estimated_minutes: 11
+
+illustration: chat-message
+
+objective_vi: >
+  Từ chối một yêu cầu hoặc đẩy lùi một hạn chót mà vẫn giữ được thiện chí,
+  bằng cách nêu ràng buộc thay vì nêu cảm xúc.
+
+objective_observable: >
+  Viết được một lời từ chối đủ ba phần, và nói được nó trong 3 trên 4 drill.
+
+mastery_weights:
+  Listening: 0.30
+  Speaking: 0.35
+  Reading: 0.15
+  Writing: 0.20
+
+prerequisites:
+  - lesson: OFF-06
+    min_mastery: 60
+    kind: Hard
+
+vocabulary:
+  - term: "I won't be able to"
+    ipa: "/aɪ woʊnt biː ˈeɪbl tuː/"
+    meaning_vi: "tôi sẽ không thể (từ chối mềm)"
+    chunk: "I won't be able to finish it by Friday."
+    tags: [refuse, core]
+  - term: "on my plate"
+    ipa: "/ɒn maɪ pleɪt/"
+    meaning_vi: "đang có trong tay (khối lượng việc)"
+    chunk: "I have two incidents on my plate."
+    tags: [refuse, office]
+  - term: "what should I drop"
+    ipa: "/wɒt ʃʊd aɪ drɒp/"
+    meaning_vi: "vậy em bỏ việc nào"
+    chunk: "If this is urgent, what should I drop?"
+    tags: [refuse, core]
+  - term: "the earliest I can"
+    ipa: "/ðə ˈɜːrliɪst aɪ kæn/"
+    meaning_vi: "sớm nhất tôi có thể"
+    chunk: "The earliest I can do it is Tuesday."
+    tags: [refuse, core]
+  - term: "I'd rather not"
+    ipa: "/aɪd ˈrɑːðər nɒt/"
+    meaning_vi: "tôi không muốn (từ chối có chính kiến)"
+    chunk: "I'd rather not push it without testing."
+    tags: [refuse]
+  - term: "happy to help with"
+    ipa: "/ˈhæpi tuː help wɪð/"
+    meaning_vi: "sẵn sàng giúp phần"
+    chunk: "Happy to help with the review though."
+    tags: [refuse, core]
+
+sentence_patterns:
+  - pattern: "I won't be able to {task} by {deadline}."
+    meaning_vi: "Em sẽ không kịp {task} trước {deadline}."
+    slots:
+      task: ["finish the migration", "review the design"]
+      deadline: ["Friday", "end of day"]
+  - pattern: "The earliest I can do it is {when}."
+    meaning_vi: "Sớm nhất em làm được là {when}."
+    slots:
+      when: ["Tuesday", "next week", "Thursday afternoon"]
+
+dialogue:
+  context_vi: >
+    Linh giao thêm một việc trong khi bạn đang có hai sự cố mở. Nhận bừa thì
+    cả ba việc đều trễ. Đây là lúc phải nói không cho đúng cách.
+  turns:
+    - speaker: "Linh"
+      en: "Can you also take the firewall audit this week?"
+      vi: "Em nhận thêm phần rà soát tường lửa tuần này được không?"
+    - speaker: "You"
+      en: "I won't be able to do it properly this week — I have two open incidents on my plate."
+      vi: "Tuần này em không làm tử tế được — em đang có hai sự cố mở trong tay."
+    - speaker: "Linh"
+      en: "The audit is due Friday though."
+      vi: "Nhưng phần rà soát hạn thứ Sáu mà."
+    - speaker: "You"
+      en: "Understood. If it has to be Friday, what should I drop — the INC-2291 follow-up?"
+      vi: "Em hiểu ạ. Nếu bắt buộc thứ Sáu thì em bỏ việc nào — phần theo dõi INC-2291 ạ?"
+    - speaker: "Linh"
+      en: "No, that one stays. Let's move the audit to next Wednesday."
+      vi: "Không, cái đó giữ. Mình dời phần rà soát sang thứ Tư tuần sau."
+    - speaker: "You"
+      en: "That works. Happy to help with the scoping today if that's useful."
+      vi: "Vậy được ạ. Hôm nay em sẵn sàng giúp phần khoanh vùng nếu chị thấy cần."
+
+listening:
+  context_vi: >
+    Nghe hai lời từ chối. Một lời để lại thiện chí, một lời để lại khó chịu.
+  speed: 1.0
+  voice: en_US_female
+  transcript_en: "First: sorry, I'm too busy, I can't. Second: I won't be able to finish it by Friday — I have two incidents on my plate. The earliest I can do it is Tuesday. Happy to help with the scoping in the meantime."
+  transcript_vi: "Câu một: xin lỗi, tôi bận quá, tôi không làm được. Câu hai: tôi sẽ không kịp trước thứ Sáu — tôi đang có hai sự cố trong tay. Sớm nhất tôi làm được là thứ Ba. Trong lúc đó tôi sẵn sàng giúp phần khoanh vùng."
+  questions:
+    - kind: mcq_listen
+      prompt_vi: "Lời từ chối thứ hai có thêm gì mà lời thứ nhất không có?"
+      choices: ["Lý do cụ thể và một phương án", "Lời xin lỗi", "Giọng nhẹ nhàng hơn"]
+      answer: 0
+      difficulty: 2
+      skill: Listening
+    - kind: mcq_listen
+      prompt_vi: "Sớm nhất người đó làm được là khi nào?"
+      choices: ["Thứ Sáu", "Tuần sau", "Thứ Ba"]
+      answer: 2
+      difficulty: 2
+      skill: Listening
+
+speaking_drills:
+  - kind: read_aloud
+    expected_text: "I won't be able to finish it by Friday."
+    prompt_vi: "\"Won't\" đọc là /woʊnt/, không phải /wɒnt/ như want."
+    ipa: "/aɪ woʊnt biː ˈeɪbl tuː ˈfɪnɪʃ ɪt baɪ ˈfraɪdeɪ/"
+    focus_phonemes: ["nt", "ʃ"]
+  - kind: read_aloud
+    expected_text: "I have two open incidents on my plate."
+    prompt_vi: "Nêu ràng buộc bằng con số, không bằng cảm giác bận."
+    ipa: "/aɪ hæv tuː ˈoʊpən ˈɪnsɪdənts ɒn maɪ pleɪt/"
+    focus_phonemes: ["ts", "pl"]
+  - kind: shadow
+    expected_text: "If this is urgent, what should I drop?"
+    prompt_vi: "Câu mạnh nhất bài này: đẩy việc chọn ưu tiên về đúng người có quyền chọn."
+    ipa: "/ɪf ðɪs ɪz ˈɜːrdʒənt wɒt ʃʊd aɪ drɒp/"
+    focus_phonemes: ["dʒ", "dr"]
+  - kind: shadow
+    expected_text: "The earliest I can do it is Tuesday."
+    prompt_vi: "Từ chối kèm một mốc cụ thể. Nghe rồi nhắc lại."
+    ipa: "/ðə ˈɜːrliɪst aɪ kæn duː ɪt ɪz ˈtuːzdeɪ/"
+    focus_phonemes: ["ð", "st"]
+  - kind: respond
+    prompt_en: "Can you also take the firewall audit this week?"
+    prompt_vi: "Bạn đang quá tải. Từ chối kèm lý do cụ thể và một mốc thời gian."
+    accept_patterns:
+      - "I won't be able"
+      - "on my plate"
+      - "The earliest"
+
+reading:
+  kind: chat
+  context_vi: >
+    Một lời từ chối tốt trong kênh chat. Đếm xem có mấy phần.
+  text_en: |
+    David: Can you get the cost report done by tomorrow morning?
+    You: I won't be able to get it right by tomorrow - I'm on the INC-2291
+    You: post-incident work until Thursday. The earliest I can do a proper
+    You: version is Friday morning.
+    You: If tomorrow is a hard deadline, I can send the raw numbers instead
+    You: and do the full write-up on Friday. Which would you prefer?
+    David: Raw numbers tomorrow is fine. Full version Friday.
+  text_vi: |
+    David: Bạn làm xong báo cáo chi phí trước sáng mai được không?
+    Bạn: Em không làm tử tế kịp trước sáng mai - em đang lo phần hậu sự cố
+    Bạn: INC-2291 tới thứ Năm. Sớm nhất em làm được bản đàng hoàng
+    Bạn: là sáng thứ Sáu.
+    Bạn: Nếu sáng mai là hạn cứng thì em gửi số liệu thô trước, còn bản
+    Bạn: đầy đủ thì thứ Sáu. Anh thấy phương án nào hơn ạ?
+    David: Số liệu thô sáng mai là được. Bản đầy đủ thứ Sáu.
+  questions:
+    - kind: mcq_read
+      prompt_en: "What two options did the learner offer?"
+      choices: ["Cancel or delay", "Raw numbers now, full version later", "Do it or drop it"]
+      answer: 1
+      difficulty: 2
+      reading_skill: skim
+      skill: Reading
+    - kind: mcq_read
+      prompt_en: "What did David choose?"
+      choices: ["Full version tomorrow", "Neither", "Raw numbers tomorrow, full version Friday"]
+      answer: 2
+      difficulty: 1
+      reading_skill: scan
+      skill: Reading
+
+writing:
+  kind: GuidedEmail
+  prompt_vi: >
+    Từ chối một yêu cầu vì quá tải. Phải có đủ ba phần: nêu ràng buộc cụ thể,
+    đưa mốc sớm nhất bạn làm được, và đề xuất một phần bạn vẫn giúp được.
+  prompt_en: "Decline a request politely with three parts."
+  required_points:
+    - "won't be able"
+    - "the earliest"
+    - "happy to help"
+  hint_vi: "Ba phần: ràng buộc, mốc sớm nhất, phần vẫn giúp được. Đừng nói \"tôi bận\"."
+  sample_en: "I won't be able to finish it by Friday - I have two open incidents on my plate. The earliest I can do it is Tuesday. Happy to help with the scoping in the meantime."
+
+quiz:
+  - kind: mcq
+    prompt_vi: "Từ chối nên nêu gì thay cho \"tôi bận\"?"
+    choices: ["Ràng buộc cụ thể có con số", "Lời xin lỗi dài", "Tên người giao việc trước đó"]
+    answer: 0
+    difficulty: 2
+    skill: Speaking
+  - kind: mcq
+    prompt_vi: "Câu \"What should I drop?\" có tác dụng gì?"
+    choices: ["Từ chối thẳng", "Đẩy việc chọn ưu tiên về người có quyền chọn", "Xin thêm người"]
+    answer: 1
+    difficulty: 3
+    skill: Reading
+  - kind: mcq
+    prompt_vi: "Vì sao nên thêm phần \"happy to help with...\"?"
+    choices: ["Cho lịch sự", "Để được giao thêm việc", "Để cho thấy bạn từ chối việc chứ không từ chối hợp tác"]
+    answer: 2
+    difficulty: 2
+    skill: Writing
+  - kind: mcq
+    prompt_vi: "\"I'd rather not push it without testing\" là kiểu từ chối gì?"
+    choices: ["Từ chối vì rủi ro kỹ thuật", "Từ chối vì bận", "Đồng ý có điều kiện"]
+    answer: 0
+    difficulty: 2
+    skill: Listening
+
+explanation:
+  why_vi: >
+    Người Việt rất khó nói không với cấp trên, nên hay nhận rồi trễ hạn.
+    Trễ hạn im lặng phá niềm tin nhiều hơn hẳn một lời từ chối thẳng thắn từ đầu.
+    Vấn đề không phải nói không — mà là nói không thế nào.
+  how_vi: >
+    Ba phần: NÊU RÀNG BUỘC có con số (không nói "tôi bận"), ĐƯA MỐC sớm nhất làm được,
+    và ĐỀ XUẤT phần bạn vẫn giúp được. Nếu người kia vẫn ép, dùng câu mạnh nhất:
+    "If this is urgent, what should I drop?" — nó chuyển việc chọn ưu tiên
+    về đúng người có quyền và có đủ thông tin để chọn.
+  contrast_vi: >
+    "Tôi bận lắm" là cảm xúc, và ai cũng bận. "Tôi đang có hai sự cố mở, hạn thứ Năm"
+    là dữ kiện, và người quản lý cân đối được ngay.
+
+common_mistakes:
+  - mistake: "Nhận việc rồi trễ hạn trong im lặng"
+    why_vi: >
+      Nghĩ rằng từ chối là không hợp tác. Nhưng trễ hạn mà không báo trước
+      gây thiệt hại lớn hơn nhiều, và không ai kịp xoay xở.
+    fix_vi: "Từ chối sớm, kèm mốc thay thế. Người quản lý cần biết sự thật để sắp xếp."
+    detect_phoneme_missing: []
+  - mistake: "Từ chối bằng \"I'm too busy\""
+    why_vi: >
+      Câu này không cho người nghe thông tin nào để hành động, và nghe như một cái cớ.
+    fix_vi: "Thay bằng ràng buộc có con số: bao nhiêu việc, hạn khi nào."
+    detect_phoneme_missing: []
+  - mistake: "Từ chối trần, không đề xuất gì thêm"
+    why_vi: >
+      Người kia vẫn còn nguyên vấn đề chưa giải quyết, và ấn tượng để lại là bạn né việc.
+    fix_vi: "Luôn kèm một phần bạn giúp được, dù nhỏ. Nó cho thấy bạn từ chối việc, không từ chối hợp tác."
+    detect_phoneme_missing: []
+
+memory_trick_vi: >
+  Ba phần khi nói không: RÀNG BUỘC có số, MỐC sớm nhất, PHẦN vẫn giúp được.
+  Và câu dự phòng khi bị ép: "If this is urgent, what should I drop?"

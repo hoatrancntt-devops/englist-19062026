@@ -1,0 +1,246 @@
+schema_version: 1
+code: LIFE-02
+slug: so-dem-va-nghe-so-khong-nham
+title_vi: "Số đếm — và nghe số mà không nhầm"
+title_en: "Numbers you can actually hear"
+
+layer: Life
+track: Foundation
+level: PreA1
+unit_code: U-L1
+order_index: 2
+estimated_minutes: 11
+
+illustration: clock-calendar
+
+objective_vi: >
+  Nghe và nói được số từ 0 đến 100, phân biệt được cặp dễ nhầm nhất:
+  13 với 30, 14 với 40, 15 với 50.
+
+objective_observable: >
+  Nghe đúng 4 trên 5 câu có chứa cặp số dễ nhầm, và nói đúng trọng âm ở 3 trên 4 drill.
+
+mastery_weights:
+  Listening: 0.45
+  Speaking: 0.35
+  Reading: 0.10
+  Writing: 0.10
+
+prerequisites:
+  - lesson: LIFE-01
+    min_mastery: 60
+    kind: Soft
+
+vocabulary:
+  - term: "thirteen"
+    ipa: "/ˌθɜːrˈtiːn/"
+    meaning_vi: "mười ba (nhấn cuối)"
+    chunk: "Thirteen, one three."
+    tags: [number, core]
+  - term: "thirty"
+    ipa: "/ˈθɜːrti/"
+    meaning_vi: "ba mươi (nhấn đầu)"
+    chunk: "Thirty, three zero."
+    tags: [number, core]
+  - term: "zero"
+    ipa: "/ˈzɪroʊ/"
+    meaning_vi: "số không"
+    chunk: "Zero four seven."
+    tags: [number]
+  - term: "extension"
+    ipa: "/ɪkˈstenʃn/"
+    meaning_vi: "số máy lẻ"
+    chunk: "My extension is 214."
+    tags: [office]
+  - term: "phone number"
+    ipa: "/foʊn ˈnʌmbər/"
+    meaning_vi: "số điện thoại"
+    chunk: "Can I get your phone number?"
+    tags: [core]
+  - term: "one more time"
+    ipa: "/wʌn mɔːr taɪm/"
+    meaning_vi: "một lần nữa"
+    chunk: "One more time, please."
+    tags: [rescue]
+
+sentence_patterns:
+  - pattern: "My extension is {number}."
+    meaning_vi: "Số máy lẻ của tôi là {number}."
+    slots:
+      number: ["214", "307", "1150"]
+  - pattern: "{number}, {digits}?"
+    meaning_vi: "Nói số rồi đọc rời từng chữ số để xác nhận."
+    slots:
+      number: ["Thirty", "Fifteen"]
+      digits: ["three zero", "one five"]
+
+dialogue:
+  context_vi: >
+    Đồng nghiệp gọi hỏi số máy lẻ của bạn để chuyển cuộc gọi từ khách hàng.
+    Nghe nhầm một chữ số là khách gọi vào phòng khác.
+  turns:
+    - speaker: "Linh"
+      en: "What's your extension? I need to transfer a call."
+      vi: "Số máy lẻ của em là gì? Chị cần chuyển một cuộc gọi."
+    - speaker: "You"
+      en: "It's two one four."
+      vi: "Là hai một bốn."
+    - speaker: "Linh"
+      en: "Two one four? Or two four zero?"
+      vi: "Hai một bốn? Hay hai bốn không?"
+    - speaker: "You"
+      en: "Two one four. One, as in the number after zero."
+      vi: "Hai một bốn. Số một, là số sau số không."
+    - speaker: "Linh"
+      en: "Got it. Transferring now."
+      vi: "Rõ rồi. Chuyển máy ngay đây."
+
+listening:
+  context_vi: >
+    Đây là chỗ sai nhiều nhất trong cả giáo trình. Nghe kỹ trọng âm:
+    THIR-ty nhấn đầu, thir-TEEN nhấn cuối.
+  speed: 0.8
+  voice: en_US_male
+  transcript_en: "The meeting is at three thirty, not three thirteen. Room fifteen, not fifty."
+  transcript_vi: "Buổi họp lúc ba giờ ba mươi, không phải ba giờ mười ba. Phòng mười lăm, không phải năm mươi."
+  questions:
+    - kind: mcq_listen
+      prompt_vi: "Buổi họp lúc mấy giờ?"
+      choices: ["3:30", "3:13", "3:00"]
+      answer: 0
+      difficulty: 3
+      skill: Listening
+    - kind: mcq_listen
+      prompt_vi: "Phòng số mấy?"
+      choices: ["55", "50", "15"]
+      answer: 2
+      difficulty: 3
+      skill: Listening
+
+speaking_drills:
+  - kind: read_aloud
+    expected_text: "Thirty, three zero."
+    prompt_vi: "Nhấn mạnh âm ĐẦU: THIR-ty. Rồi đọc rời từng chữ số để xác nhận."
+    ipa: "/ˈθɜːrti θriː ˈzɪroʊ/"
+    focus_phonemes: ["θ"]
+  - kind: read_aloud
+    expected_text: "Thirteen, one three."
+    prompt_vi: "Nhấn mạnh âm CUỐI: thir-TEEN. Khác hẳn câu trên."
+    ipa: "/ˌθɜːrˈtiːn wʌn θriː/"
+    focus_phonemes: ["θ"]
+  - kind: shadow
+    expected_text: "My extension is two one four."
+    prompt_vi: "Đọc từng chữ số rời, đừng đọc là hai trăm mười bốn."
+    ipa: "/maɪ ɪkˈstenʃn ɪz tuː wʌn fɔːr/"
+    focus_phonemes: ["st"]
+  - kind: shadow
+    expected_text: "One more time, please."
+    prompt_vi: "Câu này để xin nhắc lại khi nghe chưa rõ số. Dùng thoải mái."
+    ipa: "/wʌn mɔːr taɪm pliːz/"
+    focus_phonemes: ["m"]
+  - kind: respond
+    prompt_en: "What's your extension?"
+    prompt_vi: "Người ta hỏi số máy lẻ. Trả lời bằng một số bất kỳ, đọc rời từng chữ số."
+    accept_patterns:
+      - "My extension is"
+      - "It's"
+      - "Extension"
+
+reading:
+  kind: chat
+  context_vi: >
+    Tin nhắn đổi giờ họp. Đọc kỹ hai con số — đây đúng là chỗ dễ nhầm nhất.
+  text_en: |
+    Linh: Standup moved to 9:15 tomorrow, not 9:50.
+    Linh: Room 30, third floor. Not room 13.
+    You: Got it - 9:15, room 30.
+  text_vi: |
+    Linh: Standup dời sang 9:15 ngày mai, không phải 9:50.
+    Linh: Phòng 30, tầng ba. Không phải phòng 13.
+    Bạn: Rõ rồi - 9:15, phòng 30.
+  questions:
+    - kind: mcq_read
+      prompt_en: "What time is the standup?"
+      choices: ["9:50", "9:15", "9:30"]
+      answer: 1
+      difficulty: 1
+      reading_skill: scan
+      skill: Reading
+    - kind: mcq_read
+      prompt_en: "Which room?"
+      choices: ["Room 13", "Room 3", "Room 30"]
+      answer: 2
+      difficulty: 2
+      reading_skill: scan
+      skill: Reading
+
+writing:
+  kind: FillBlank
+  prompt_vi: "Điền hai chỗ trống. Cả hai đều là cách xác nhận số cho chắc."
+  prompt_en: "The meeting is at three ___ , three zero. My extension is two one four, ___ more time?"
+  blanks:
+    - ["thirty"]
+    - ["one"]
+  hint_vi: "Chỗ đầu là số 30. Chỗ sau nằm trong cụm xin nhắc lại."
+  sample_en: "The meeting is at three thirty, three zero. My extension is two one four, one more time?"
+
+quiz:
+  - kind: mcq
+    prompt_vi: "Bạn muốn nói số 30 cho thật chắc. Nói thế nào?"
+    choices: ["Thirty, three zero", "Thirty", "Three tens"]
+    answer: 0
+    difficulty: 2
+    skill: Speaking
+  - kind: mcq
+    prompt_vi: "Trọng âm của \"thirteen\" nằm ở đâu?"
+    choices: ["Âm đầu THIR", "Âm cuối TEEN", "Cả hai như nhau"]
+    answer: 1
+    difficulty: 2
+    skill: Listening
+  - kind: mcq
+    prompt_vi: "Đọc số máy lẻ 214 thế nào cho đúng?"
+    choices: ["Two hundred fourteen", "Twenty-one four", "Two one four"]
+    answer: 2
+    difficulty: 1
+    skill: Speaking
+  - kind: mcq
+    prompt_vi: "Nghe chưa rõ số, xin nhắc lại thế nào?"
+    choices: ["One more time, please", "What?", "Repeat"]
+    answer: 0
+    difficulty: 1
+    skill: Speaking
+
+explanation:
+  why_vi: >
+    Tiếng Việt phân biệt số bằng âm tiết khác hẳn nhau: "mười ba" và "ba mươi" không thể lẫn.
+    Tiếng Anh thì thirteen và thirty gần như trùng nhau, chỉ khác trọng âm và âm cuối —
+    hai thứ mà tai người Việt chưa từng phải để ý.
+  how_vi: >
+    Nhớ một quy tắc: đuôi -TEEN thì nhấn CUỐI, đuôi -TY thì nhấn ĐẦU.
+    Khi nói số quan trọng, đọc số rồi đọc rời từng chữ số ngay sau đó.
+    Người bản xứ trong ngành cũng làm vậy khi đọc mã lỗi hay số ticket.
+  contrast_vi: >
+    "Fifteen" nhấn cuối là 15. "Fifty" nhấn đầu là 50. Sai một cái là sai phòng họp,
+    sai giờ, hoặc sai số tiền.
+
+common_mistakes:
+  - mistake: "Nhấn sai trọng âm nên thirteen và thirty nghe giống hệt nhau"
+    why_vi: >
+      Tiếng Việt không dùng trọng âm để phân biệt nghĩa, nên miệng bạn nhấn đều cả hai âm tiết.
+      Người nghe không có manh mối nào để đoán.
+    fix_vi: "Cường điệu lúc tập: THIR-ty và thir-TEEN. Thu về mức tự nhiên khi đã quen."
+    detect_phoneme_missing: []
+  - mistake: "Đọc số điện thoại theo cụm như tiếng Việt"
+    why_vi: >
+      Tiếng Việt đọc 214 là hai trăm mười bốn. Tiếng Anh trong công việc đọc rời từng chữ số
+      để không nhầm.
+    fix_vi: "Đọc rời: two one four. Chỉ đọc theo cụm khi nói về số lượng."
+    detect_phoneme_missing: []
+  - mistake: "Nuốt âm /θ/ đầu trong thirty và thirteen"
+    why_vi: "Tiếng Việt không có âm này nên miệng thay bằng /t/ hoặc /s/, thành \"tơ-ti\"."
+    fix_vi: "Đặt đầu lưỡi chạm mép răng trên rồi thổi hơi ra trước khi phát âm phần còn lại."
+    detect_phoneme_missing: ["θ"]
+
+memory_trick_vi: >
+  TEEN kêu to ở CUỐI (như thiếu niên thích gây chú ý), TY nói nhỏ ở CUỐI (như người lớn tuổi
+  nói gọn). Nghe thấy đuôi kéo dài và nhấn mạnh thì đó là số nhỏ, từ 13 đến 19.

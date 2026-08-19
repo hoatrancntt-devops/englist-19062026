@@ -1,0 +1,287 @@
+schema_version: 1
+code: OFF-09
+slug: viet-email-noi-bo
+title_vi: "Viết email nội bộ"
+title_en: "Writing internal email"
+
+layer: Office
+track: Foundation
+level: B1
+unit_code: U-O3
+order_index: 9
+estimated_minutes: 12
+
+illustration: email-inbox
+
+objective_vi: >
+  Viết email nội bộ mà người nhận đọc tiêu đề là biết phải làm gì,
+  và đọc hết trong ba mươi giây.
+
+objective_observable: >
+  Viết được email đủ bốn phần với tiêu đề nêu rõ hành động cần làm.
+
+mastery_weights:
+  Listening: 0.15
+  Speaking: 0.20
+  Reading: 0.30
+  Writing: 0.35
+
+prerequisites:
+  - lesson: OFF-08
+    min_mastery: 60
+    kind: Hard
+
+vocabulary:
+  - term: "Action needed"
+    ipa: "/ˈækʃn ˈniːdɪd/"
+    meaning_vi: "cần bạn xử lý (đặt ở đầu tiêu đề)"
+    chunk: "Action needed: approve change 8842"
+    tags: [email, core]
+  - term: "by end of day"
+    ipa: "/baɪ end ɒv deɪ/"
+    meaning_vi: "trước cuối ngày"
+    chunk: "Please confirm by end of day."
+    tags: [email, core]
+  - term: "as discussed"
+    ipa: "/æz dɪˈskʌst/"
+    meaning_vi: "như đã trao đổi"
+    chunk: "As discussed, here are the numbers."
+    tags: [email, core]
+  - term: "let me know if"
+    ipa: "/let miː noʊ ɪf/"
+    meaning_vi: "cho tôi biết nếu"
+    chunk: "Let me know if you need anything else."
+    tags: [email, core]
+  - term: "for your review"
+    ipa: "/fɔːr jʊr rɪˈvjuː/"
+    meaning_vi: "gửi anh chị xem"
+    chunk: "Attached for your review."
+    tags: [email]
+  - term: "looping in"
+    ipa: "/ˈluːpɪŋ ɪn/"
+    meaning_vi: "cho thêm người vào email"
+    chunk: "Looping in Priya for the storage part."
+    tags: [email, office]
+
+sentence_patterns:
+  - pattern: "Action needed: {task} by {deadline}"
+    meaning_vi: "Cần xử lý: {task} trước {deadline}"
+    slots:
+      task: ["approve change 8842", "confirm the retention period"]
+      deadline: ["Thursday", "end of day"]
+  - pattern: "As discussed, {content}."
+    meaning_vi: "Như đã trao đổi, {content}."
+    slots:
+      content: ["here are the numbers", "I've raised the request"]
+
+dialogue:
+  context_vi: >
+    Bạn cần David duyệt một change trước thứ Năm. Anh ấy nhận khoảng tám mươi email mỗi ngày —
+    tiêu đề quyết định email của bạn được mở hay bị trôi.
+  turns:
+    - speaker: "You"
+      en: "David, I sent an email about the change approval. Subject starts with Action needed."
+      vi: "Anh David, em có gửi email về việc duyệt change. Tiêu đề bắt đầu bằng Action needed."
+    - speaker: "David"
+      en: "Good, that's how I filter. What's the deadline?"
+      vi: "Tốt, tôi lọc email theo đúng kiểu đó. Hạn khi nào?"
+    - speaker: "You"
+      en: "Thursday before the change freeze. It's one paragraph and a table."
+      vi: "Thứ Năm trước lúc đóng băng thay đổi. Email chỉ một đoạn và một bảng."
+    - speaker: "David"
+      en: "That I can do. Anything I need to check with Priya?"
+      vi: "Vậy tôi làm được. Có gì cần hỏi Priya không?"
+    - speaker: "You"
+      en: "I looped her in already. She confirmed the storage numbers."
+      vi: "Em đã cho chị ấy vào email rồi. Chị ấy xác nhận số liệu lưu trữ."
+
+listening:
+  context_vi: >
+    Nghe hai tiêu đề email. Chú ý cái nào cho biết ngay phải làm gì.
+  speed: 1.0
+  voice: en_US_female
+  transcript_en: "Subject one: update. Subject two: Action needed - approve change 8842 by Thursday 16:00. Which one would you open first?"
+  transcript_vi: "Tiêu đề một: cập nhật. Tiêu đề hai: Cần xử lý - duyệt change 8842 trước thứ Năm 16:00. Bạn sẽ mở cái nào trước?"
+  questions:
+    - kind: mcq_listen
+      prompt_vi: "Tiêu đề nào cho biết ngay việc cần làm?"
+      choices: ["Tiêu đề hai", "Tiêu đề một", "Cả hai như nhau"]
+      answer: 0
+      difficulty: 1
+      skill: Listening
+    - kind: mcq_listen
+      prompt_vi: "Tiêu đề hai gồm mấy thông tin?"
+      choices: ["Một: việc cần làm", "Hai: việc và người", "Ba: loại việc, việc gì, hạn khi nào"]
+      answer: 2
+      difficulty: 2
+      skill: Listening
+
+speaking_drills:
+  - kind: read_aloud
+    expected_text: "Action needed: approve change 8842 by Thursday."
+    prompt_vi: "Đọc số rời từng chữ: eight eight four two."
+    ipa: "/ˈækʃn ˈniːdɪd əˈpruːv tʃeɪndʒ baɪ ˈθɜːrzdeɪ/"
+    focus_phonemes: ["kʃ", "θ"]
+  - kind: read_aloud
+    expected_text: "As discussed, here are the numbers."
+    prompt_vi: "Chú ý cụm /st/ cuối chữ discussed."
+    ipa: "/æz dɪˈskʌst hɪr ɑːr ðə ˈnʌmbərz/"
+    focus_phonemes: ["st", "ð"]
+  - kind: shadow
+    expected_text: "Please confirm by end of day."
+    prompt_vi: "Nêu hạn rõ ràng. Nghe rồi nhắc lại."
+    ipa: "/pliːz kənˈfɜːrm baɪ end ɒv deɪ/"
+    focus_phonemes: ["z", "d"]
+  - kind: shadow
+    expected_text: "Looping in Priya for the storage part."
+    prompt_vi: "Giải thích vì sao thêm người vào email — đừng thêm im lặng."
+    ipa: "/ˈluːpɪŋ ɪn ˈpriːə fɔːr ðə ˈstɔːrɪdʒ pɑːrt/"
+    focus_phonemes: ["ŋ", "dʒ"]
+  - kind: respond
+    prompt_en: "Did you send the approval request?"
+    prompt_vi: "Xác nhận đã gửi, và nói tiêu đề bắt đầu bằng gì để người ta tìm được."
+    accept_patterns:
+      - "I sent"
+      - "Action needed"
+      - "Yes"
+
+reading:
+  kind: email
+  context_vi: >
+    Email nội bộ chuẩn. Bốn phần: tiêu đề nêu hành động, việc cần làm, ngữ cảnh, và hạn.
+  text_en: |
+    Subject: Action needed - approve change 8842 by Thu 16:00
+
+    Hi David,
+
+    Please approve change 8842 in the change system before Thursday 16:00
+    (the change freeze).
+
+    What it is: patching the two database servers. Downtime is 15 minutes,
+    scheduled for Saturday 02:00 when usage is near zero.
+
+    Risk: low. We ran the same patch on staging last week with no issues.
+    Rollback is a snapshot restore, about 10 minutes.
+
+    Looping in Priya - she confirmed the storage snapshots are in place.
+
+    Let me know if you need anything else before approving.
+
+    Minh
+  text_vi: |
+    Tiêu đề: Cần xử lý - duyệt change 8842 trước thứ Năm 16:00
+
+    Chào anh David,
+
+    Anh duyệt giúp em change 8842 trên hệ thống trước thứ Năm 16:00
+    (mốc đóng băng thay đổi).
+
+    Nội dung: vá hai máy chủ database. Gián đoạn 15 phút, đặt lịch
+    thứ Bảy 02:00 lúc gần như không có người dùng.
+
+    Rủi ro: thấp. Bọn em đã chạy đúng bản vá này trên staging tuần trước, không vấn đề gì.
+    Phương án quay lui là khôi phục snapshot, khoảng 10 phút.
+
+    Em cho chị Priya vào cùng - chị ấy xác nhận snapshot lưu trữ đã sẵn sàng.
+
+    Anh cần thêm gì trước khi duyệt thì báo em.
+
+    Minh
+  questions:
+    - kind: mcq_read
+      prompt_en: "What exactly is David asked to do?"
+      choices: ["Review the design", "Approve change 8842 before Thursday 16:00", "Join a call"]
+      answer: 1
+      difficulty: 1
+      reading_skill: scan
+      skill: Reading
+    - kind: mcq_read
+      prompt_en: "How long is the rollback?"
+      choices: ["Not mentioned", "15 minutes", "10 minutes"]
+      answer: 2
+      difficulty: 2
+      reading_skill: scan
+      skill: Reading
+    - kind: mcq_read
+      prompt_en: "Why is the risk described as low?"
+      choices: ["Because the same patch ran on staging with no issues", "Because it is a small change", "Because it is at night"]
+      answer: 0
+      difficulty: 2
+      reading_skill: skim
+      skill: Reading
+
+writing:
+  kind: GuidedEmail
+  prompt_vi: >
+    Viết email nhờ duyệt một việc. Phải có đủ ba ý: tiêu đề nêu rõ hành động cần làm,
+    hạn chót cụ thể, và một câu mở để người nhận hỏi thêm.
+  prompt_en: "Write an internal email requesting approval."
+  required_points:
+    - "action needed"
+    - "by Thursday"
+    - "let me know if"
+  hint_vi: "Tiêu đề là phần quan trọng nhất — nó quyết định email được mở hay bị trôi."
+  sample_en: "Action needed - approve change 8842 by Thursday 16:00. It patches two database servers, 15 minutes downtime on Saturday. Let me know if you need anything else."
+
+quiz:
+  - kind: mcq
+    prompt_vi: "Phần nào của email quan trọng nhất?"
+    choices: ["Lời chào", "Tiêu đề", "Chữ ký"]
+    answer: 1
+    difficulty: 1
+    skill: Writing
+  - kind: mcq
+    prompt_vi: "Tiêu đề tốt cần gì?"
+    choices: ["Ngắn nhất có thể", "Tên dự án", "Nêu loại việc, việc gì, và hạn"]
+    answer: 2
+    difficulty: 2
+    skill: Writing
+  - kind: mcq
+    prompt_vi: "\"As discussed\" dùng khi nào?"
+    choices: ["Khi nối tiếp một cuộc trao đổi đã có", "Khi bắt đầu chủ đề mới", "Khi từ chối"]
+    answer: 0
+    difficulty: 2
+    skill: Reading
+  - kind: mcq
+    prompt_vi: "Thêm người vào email thì nên làm gì?"
+    choices: ["Thêm im lặng", "Nói rõ vì sao thêm họ", "Gửi email riêng"]
+    answer: 1
+    difficulty: 2
+    skill: Writing
+
+explanation:
+  why_vi: >
+    Người nhận email công việc thường lướt tiêu đề trong hai giây rồi quyết định mở hay để sau.
+    Người Việt hay đặt tiêu đề chung chung như "Cập nhật" hoặc "Hỏi chút", nên email
+    quan trọng bị trôi xuống dưới và tới hạn vẫn chưa ai đọc.
+  how_vi: >
+    Tiêu đề gồm ba phần: LOẠI VIỆC (Action needed / FYI / Question),
+    VIỆC GÌ, và HẠN. Thân email bốn phần: việc cần làm ở câu đầu tiên,
+    ngữ cảnh ở giữa, rủi ro nếu có, và một câu mở cuối cùng.
+    Người nhận đọc câu đầu là biết phải làm gì.
+  contrast_vi: >
+    "Update" khiến người nhận phải mở ra mới biết. "Action needed - approve change 8842
+    by Thu 16:00" cho biết đủ ba thứ ngay trên danh sách hộp thư.
+
+common_mistakes:
+  - mistake: "Đặt tiêu đề chung chung như \"Cập nhật\" hoặc \"Hỏi chút\""
+    why_vi: >
+      Người viết biết rõ nội dung nên tưởng tiêu đề chỉ là nhãn. Với người nhận
+      tám mươi email một ngày, tiêu đề là thứ duy nhất họ đọc trước khi quyết định.
+    fix_vi: "Đặt tiêu đề đủ ba phần: loại việc, việc gì, hạn khi nào."
+    detect_phoneme_missing: []
+  - mistake: "Để yêu cầu ở cuối email sau một đoạn dài dẫn dắt"
+    why_vi: >
+      Văn hoá Việt dẫn dắt trước rồi mới vào việc để tránh đường đột.
+      Trong email công việc, người đọc có thể dừng ở giữa và bỏ lỡ yêu cầu.
+    fix_vi: "Đặt việc cần làm ở câu đầu tiên. Ngữ cảnh để phía dưới."
+    detect_phoneme_missing: []
+  - mistake: "Thêm người vào CC mà không nói vì sao"
+    why_vi: >
+      Người được thêm không biết mình cần làm gì, và thường bỏ qua hoặc hỏi lại.
+    fix_vi: "Viết một câu: \"Looping in Priya for the storage part.\""
+    detect_phoneme_missing: []
+
+memory_trick_vi: >
+  Tiêu đề ba phần: LOẠI VIỆC, VIỆC GÌ, HẠN.
+  Thân email đặt yêu cầu ở CÂU ĐẦU TIÊN, ngữ cảnh để sau.

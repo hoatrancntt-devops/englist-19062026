@@ -1,0 +1,356 @@
+schema_version: 1
+code: CLD-05
+slug: viet-architecture-note
+title_vi: "Viết architecture note — bản ghi quyết định một trang"
+title_en: "Writing an architecture decision note"
+
+layer: Professional
+track: Cloud
+level: B1
+unit_code: U-CLD2
+order_index: 5
+estimated_minutes: 12
+is_checkpoint: false
+
+illustration: email-inbox
+
+objective_vi: >
+  Viết một trang ghi lại quyết định kiến trúc sao cho người vào nhóm sau này
+  hiểu được vì sao, mà không phải đi hỏi từng người.
+
+objective_observable: >
+  Đạt từ 75 điểm trên cả bốn trục kỹ năng, không trục nào dưới 60.
+
+mastery_weights:
+  Listening: 0.20
+  Speaking: 0.20
+  Reading: 0.25
+  Writing: 0.35
+
+prerequisites:
+  - lesson: CLD-04
+    min_mastery: 70
+    kind: Hard
+  - lesson: OFF-09
+    min_mastery: 65
+    kind: Hard
+
+vocabulary:
+  - term: "context"
+    ipa: "/ˈkɒntekst/"
+    meaning_vi: "bối cảnh — tình hình lúc ra quyết định"
+    chunk: "Context: we had two weeks and one engineer."
+    tags: [writing, core]
+  - term: "we considered"
+    ipa: "/wiː kənˈsɪdərd/"
+    meaning_vi: "chúng tôi đã cân nhắc"
+    chunk: "We considered three options."
+    tags: [writing, core]
+  - term: "consequences"
+    ipa: "/ˈkɒnsɪkwensɪz/"
+    meaning_vi: "hệ quả kéo theo sau"
+    chunk: "Consequences: we now depend on one vendor's API."
+    tags: [writing, core]
+  - term: "at the time"
+    ipa: "/æt ðə taɪm/"
+    meaning_vi: "vào thời điểm đó"
+    chunk: "At the time, the second region was not available."
+    tags: [writing, core]
+  - term: "revisit"
+    ipa: "/riːˈvɪzɪt/"
+    meaning_vi: "xem lại quyết định"
+    chunk: "Revisit this when traffic doubles."
+    tags: [writing, core]
+  - term: "superseded by"
+    ipa: "/ˈsuːpərsiːdɪd baɪ/"
+    meaning_vi: "bị thay thế bởi"
+    chunk: "Superseded by note 12 in March 2027."
+    tags: [writing, core]
+
+sentence_patterns:
+  - pattern: "At the time, {constraint}."
+    meaning_vi: "Vào thời điểm đó, {constraint}."
+    slots:
+      constraint: ["the second region was not available", "we had one engineer for two weeks", "the budget was already committed"]
+  - pattern: "Revisit this when {trigger}."
+    meaning_vi: "Xem lại quyết định này khi {trigger}."
+    slots:
+      trigger: ["traffic doubles", "the platform team grows", "the vendor raises the rate limit"]
+
+dialogue:
+  context_vi: >
+    Minh mới vào nhóm, đọc một bản ghi quyết định cũ và không hiểu vì sao
+    nhóm lại chọn phương án nhìn có vẻ kém.
+  turns:
+    - speaker: "Minh"
+      en: "Why did we put the queue on a single node? That looks fragile."
+      vi: "Sao mình đặt hàng đợi trên một node duy nhất? Nhìn mong manh quá."
+    - speaker: "You"
+      en: "Read the note from last October. The context section explains it."
+      vi: "Đọc bản ghi hồi tháng Mười năm ngoái đi. Phần bối cảnh có giải thích."
+    - speaker: "Minh"
+      en: "It says at the time there was only one engineer and two weeks before the launch."
+      vi: "Nó ghi là lúc đó chỉ có một kỹ sư và hai tuần trước khi ra mắt."
+    - speaker: "You"
+      en: "Right. It wasn't the best design, it was the best design we could operate that quarter."
+      vi: "Đúng. Đó không phải thiết kế tốt nhất, mà là thiết kế tốt nhất mình vận hành nổi trong quý đó."
+    - speaker: "Minh"
+      en: "Does it say when we should change it?"
+      vi: "Có ghi khi nào nên đổi không?"
+    - speaker: "You"
+      en: "Last line. Revisit when the queue passes a thousand messages a second. We're at six hundred now."
+      vi: "Dòng cuối. Xem lại khi hàng đợi vượt một nghìn tin mỗi giây. Giờ đang sáu trăm."
+    - speaker: "Minh"
+      en: "So it's almost time."
+      vi: "Vậy là sắp tới lúc rồi."
+    - speaker: "You"
+      en: "It is. Write the new note when you change it, and mark the old one superseded. Don't delete it."
+      vi: "Đúng thế. Khi đổi thì viết bản ghi mới, và đánh dấu bản cũ là đã bị thay thế. Đừng xoá đi."
+
+listening:
+  context_vi: >
+    Nghe hai cách ghi lại cùng một quyết định. Chú ý cách nào giúp
+    người đọc sau này hiểu được lý do.
+  speed: 1.1
+  voice: en_US_male
+  transcript_en: "Version one: we decided to use a single-node queue. Version two: we decided to use a single-node queue. At the time we had one engineer and two weeks before launch, and a clustered queue needed operational knowledge nobody on the team had. Consequences: a node failure loses up to thirty seconds of messages. Revisit this when the queue passes one thousand messages per second."
+  transcript_vi: "Bản một: bọn tôi quyết dùng hàng đợi một node. Bản hai: bọn tôi quyết dùng hàng đợi một node. Vào thời điểm đó chỉ có một kỹ sư và hai tuần trước khi ra mắt, còn hàng đợi dạng cụm cần kiến thức vận hành mà không ai trong nhóm có. Hệ quả: một node hỏng thì mất tối đa ba mươi giây tin nhắn. Xem lại quyết định này khi hàng đợi vượt một nghìn tin mỗi giây."
+  questions:
+    - kind: mcq_listen
+      prompt_vi: "Bản hai có gì mà bản một không có?"
+      choices: ["Bối cảnh, hệ quả và mốc xem lại", "Tên người quyết định", "Sơ đồ kiến trúc"]
+      answer: 0
+      difficulty: 2
+      skill: Listening
+    - kind: mcq_listen
+      prompt_vi: "Hệ quả được nêu là gì?"
+      choices: ["Tốn thêm tiền", "Triển khai chậm hơn", "Một node hỏng thì mất tối đa ba mươi giây tin nhắn"]
+      answer: 2
+      difficulty: 2
+      skill: Listening
+    - kind: mcq_listen
+      prompt_vi: "Mốc xem lại được đặt theo cái gì?"
+      choices: ["Một ngày cố định", "Một ngưỡng đo được: một nghìn tin mỗi giây", "Khi có người mới vào nhóm"]
+      answer: 1
+      difficulty: 3
+      skill: Listening
+
+speaking_drills:
+  - kind: read_aloud
+    expected_text: "At the time, we had one engineer and two weeks before launch."
+    prompt_vi: "Nêu ràng buộc lúc đó, không phải ràng buộc bây giờ."
+    ipa: "/æt ðə taɪm wiː hæd wʌn ˌendʒɪˈnɪr/"
+    focus_phonemes: ["dʒ", "t"]
+  - kind: read_aloud
+    expected_text: "Consequences: a node failure loses up to thirty seconds of messages."
+    prompt_vi: "Nêu hệ quả kèm con số, không nêu chung chung."
+    ipa: "/ˈkɒnsɪkwensɪz ə noʊd ˈfeɪljər/"
+    focus_phonemes: ["kw", "z"]
+  - kind: shadow
+    expected_text: "Revisit this when the queue passes one thousand messages per second."
+    prompt_vi: "Mốc xem lại phải là ngưỡng đo được, không phải \"sau này\"."
+    ipa: "/riːˈvɪzɪt ðɪs wen ðə kjuː ˈpæsɪz/"
+    focus_phonemes: ["kj", "z"]
+  - kind: shadow
+    expected_text: "It wasn't the best design, it was the best design we could operate."
+    prompt_vi: "Phân biệt thiết kế tốt nhất với thiết kế vận hành nổi."
+    ipa: "/ɪt ˈwɒznt ðə best dɪˈzaɪn/"
+    focus_phonemes: ["z", "st"]
+  - kind: respond
+    prompt_en: "Why did we put the queue on a single node? That looks fragile."
+    prompt_vi: "Trả lời bằng bối cảnh lúc đó, không bào chữa."
+    accept_patterns:
+      - "at the time"
+      - "operate"
+      - "revisit"
+
+reading:
+  kind: note
+  context_vi: >
+    Một bản ghi quyết định hoàn chỉnh. Đọc và đếm xem nó có mấy mục,
+    và mục nào giúp người đọc sau này nhiều nhất.
+  text_en: |
+    Note 07 - Single-node message queue
+    Date: 12 October 2026
+    Status: accepted
+    Author: platform team
+
+    Context
+    We had one engineer available for two weeks before the launch date,
+    which was fixed by a contract with the partner. The team had never
+    operated a clustered queue. Message volume at launch was expected to
+    be under 200 per second.
+
+    Decision
+    Run a single-node queue with messages persisted to disk and a nightly
+    backup. No clustering.
+
+    Options we considered
+    Clustered queue: rejected. Not the technology, the operations. Nobody
+    on call could have recovered a split cluster at 2 a.m.
+    Managed queue service: rejected. The vendor had no region in country
+    at the time, and the data classification does not allow it to leave.
+    No queue at all, direct calls: rejected. The partner API is offline
+    for maintenance every Sunday and we would lose those messages.
+
+    Consequences
+    A node failure loses up to thirty seconds of messages - the window
+    between disk flushes. Recovery is manual and takes about ten minutes.
+    We accept this because the messages are order confirmations that the
+    partner re-sends on request.
+
+    Revisit when
+    Volume passes 1,000 messages per second, or the platform team reaches
+    three people, or the vendor opens an in-country region. Any one of
+    these, not all three.
+  text_vi: |
+    Bản ghi 07 - Hàng đợi tin nhắn một node
+    Ngày: 12 tháng Mười 2026
+    Trạng thái: đã chấp nhận
+    Tác giả: nhóm nền tảng
+
+    Bối cảnh
+    Bọn mình có một kỹ sư rảnh trong hai tuần trước ngày ra mắt, ngày này
+    cố định theo hợp đồng với đối tác. Nhóm chưa từng vận hành hàng đợi dạng cụm.
+    Lượng tin lúc ra mắt dự kiến dưới 200 mỗi giây.
+
+    Quyết định
+    Chạy hàng đợi một node, tin nhắn ghi xuống đĩa và sao lưu hằng đêm.
+    Không dựng cụm.
+
+    Các phương án đã cân nhắc
+    Hàng đợi dạng cụm: loại. Không phải vì công nghệ mà vì vận hành. Không ai trực
+    có thể khôi phục một cụm bị tách làm đôi lúc hai giờ sáng.
+    Dịch vụ hàng đợi có quản lý: loại. Lúc đó nhà cung cấp chưa có vùng trong nước,
+    mà phân loại dữ liệu không cho phép đưa ra ngoài.
+    Không dùng hàng đợi, gọi thẳng: loại. API đối tác tắt để bảo trì mỗi Chủ nhật
+    và mình sẽ mất số tin nhắn đó.
+
+    Hệ quả
+    Một node hỏng thì mất tối đa ba mươi giây tin nhắn - khoảng giữa hai lần ghi đĩa.
+    Khôi phục làm tay, mất khoảng mười phút. Bọn mình chấp nhận vì các tin nhắn này
+    là xác nhận đơn hàng mà đối tác gửi lại được khi mình yêu cầu.
+
+    Xem lại khi
+    Lượng vượt 1.000 tin mỗi giây, hoặc nhóm nền tảng đủ ba người, hoặc nhà cung cấp
+    mở vùng trong nước. Chỉ cần một trong ba, không phải cả ba.
+  questions:
+    - kind: mcq_read
+      prompt_en: "Why was the clustered queue rejected?"
+      choices: ["The technology was immature", "It cost too much", "Nobody on call could recover a split cluster"]
+      answer: 2
+      difficulty: 2
+      reading_skill: scan
+      skill: Reading
+    - kind: mcq_read
+      prompt_en: "Why is the thirty-second message loss acceptable?"
+      choices: ["The partner re-sends order confirmations on request", "The messages are unimportant", "Losses are rare"]
+      answer: 0
+      difficulty: 3
+      reading_skill: scan
+      skill: Reading
+    - kind: mcq_read
+      prompt_en: "How many revisit triggers must be met?"
+      choices: ["All three", "Any one of the three", "At least two"]
+      answer: 1
+      difficulty: 2
+      reading_skill: scan
+      skill: Reading
+    - kind: mcq_read
+      prompt_en: "Why does the note record the rejected options?"
+      choices: ["To make it longer", "To assign blame", "So a later reader does not re-propose an option already ruled out"]
+      answer: 2
+      difficulty: 3
+      reading_skill: skim
+      skill: Reading
+
+writing:
+  kind: GuidedEmail
+  prompt_vi: >
+    Viết một bản ghi quyết định ngắn. Phải có bối cảnh lúc đó, hệ quả kéo theo,
+    và mốc xem lại là một ngưỡng đo được.
+  prompt_en: "Write a short architecture decision note."
+  required_points:
+    - "at the time"
+    - "consequences"
+    - "revisit"
+  hint_vi: "Bối cảnh là ràng buộc lúc ra quyết định, không phải tình hình hôm nay."
+  sample_en: "Context: at the time we had one engineer for two weeks and a launch date fixed by contract. Decision: run a single-node queue with messages persisted to disk. Consequences: a node failure loses up to thirty seconds of messages and recovery is manual. Revisit this when volume passes one thousand messages per second or the platform team reaches three people."
+
+quiz:
+  - kind: mcq
+    prompt_vi: "Mục \"context\" trong bản ghi quyết định ghi gì?"
+    choices: ["Ràng buộc vào thời điểm ra quyết định", "Tình hình hiện tại", "Danh sách công nghệ đã dùng"]
+    answer: 0
+    difficulty: 2
+    skill: Writing
+  - kind: mcq
+    prompt_vi: "Vì sao phải ghi cả phương án đã loại?"
+    choices: ["Cho bản ghi dài hơn", "Để người sau không đề xuất lại đúng phương án đã loại", "Để khoe đã nghiên cứu nhiều"]
+    answer: 1
+    difficulty: 2
+    skill: Reading
+  - kind: mcq
+    prompt_vi: "Mốc \"revisit\" nào dùng được?"
+    choices: ["Khi lượng vượt 1.000 tin mỗi giây", "Khi nào rảnh thì xem lại", "Trong tương lai gần"]
+    answer: 0
+    difficulty: 2
+    skill: Writing
+  - kind: mcq
+    prompt_vi: "Quyết định cũ đã bị thay thế. Nên làm gì với bản ghi cũ?"
+    choices: ["Xoá đi cho gọn", "Sửa đè lên bản cũ", "Giữ lại và đánh dấu superseded by bản mới"]
+    answer: 2
+    difficulty: 2
+    skill: Writing
+  - kind: mcq
+    prompt_vi: "Người mới hỏi vì sao thiết kế cũ nhìn kém. Trả lời thế nào?"
+    choices: ["Hồi đó bọn anh không biết gì", "At the time bọn mình có một kỹ sư và hai tuần — đó là thiết kế vận hành nổi", "Đừng hỏi nữa"]
+    answer: 1
+    difficulty: 2
+    skill: Speaking
+  - kind: mcq
+    prompt_vi: "Hệ quả nào viết đúng cách?"
+    choices: ["Một node hỏng thì mất tối đa ba mươi giây tin nhắn, khôi phục tay mất mười phút", "Hệ thống kém tin cậy hơn", "Có thể có rủi ro"]
+    answer: 0
+    difficulty: 3
+    skill: Writing
+
+explanation:
+  why_vi: >
+    Sáu tháng sau, không ai nhớ vì sao lại chọn phương án đó. Người mới vào nhìn
+    thiết kế thấy kém, đề xuất làm lại, và đề xuất đó bị chặn bởi cùng những ràng buộc
+    cũ mà không ai còn nhớ để nói ra. Bản ghi quyết định tồn tại để cắt vòng lặp này.
+    Nó không phải tài liệu thiết kế — nó là bản ghi bối cảnh.
+  how_vi: >
+    Bốn mục, một trang: BỐI CẢNH (ràng buộc lúc đó — người, thời gian, tiền, luật),
+    QUYẾT ĐỊNH (một đoạn), PHƯƠNG ÁN ĐÃ LOẠI kèm lý do loại,
+    HỆ QUẢ kèm con số, và MỐC XEM LẠI là một ngưỡng đo được.
+    Quan trọng nhất là mục bối cảnh, vì đó là thứ duy nhất người đọc sau này không tự suy ra được.
+  contrast_vi: >
+    "Bọn tôi quyết dùng hàng đợi một node" ghi lại cái gì, không ghi vì sao —
+    sáu tháng sau nó vô dụng. Thêm "at the time we had one engineer and two weeks"
+    biến nó thành một quyết định có thể hiểu và có thể đánh giá lại đúng lúc.
+
+common_mistakes:
+  - mistake: "Chỉ ghi quyết định, không ghi bối cảnh"
+    why_vi: >
+      Lúc viết thì bối cảnh đang hiển nhiên với mọi người trong phòng,
+      nên nó có vẻ thừa. Sáu tháng sau nó là thứ duy nhất còn giá trị.
+    fix_vi: "Luôn mở bằng \"At the time, ...\" kèm ràng buộc về người, thời gian hoặc luật."
+    detect_phoneme_missing: []
+  - mistake: "Đặt mốc xem lại mơ hồ như \"sau này\" hoặc \"khi có điều kiện\""
+    why_vi: >
+      Viết mốc cụ thể cảm giác như tự đặt hạn cho mình. Nhưng mốc mơ hồ
+      nghĩa là không bao giờ xem lại.
+    fix_vi: "Đặt một ngưỡng đo được: số tin mỗi giây, số người trong nhóm, ngày nhà cung cấp mở vùng."
+    detect_phoneme_missing: []
+  - mistake: "Xoá bản ghi cũ khi có quyết định mới"
+    why_vi: >
+      Bản cũ nhìn như thông tin sai nên bị dọn đi. Nhưng nó giải thích
+      vì sao hệ thống từng như vậy, và dữ liệu cũ trong hệ thống vẫn mang dấu vết đó.
+    fix_vi: "Giữ lại, đổi trạng thái thành \"superseded by note X\"."
+    detect_phoneme_missing: []
+
+memory_trick_vi: >
+  Bốn mục: BỐI CẢNH LÚC ĐÓ — QUYẾT ĐỊNH — ĐÃ LOẠI GÌ VÌ SAO — HỆ QUẢ + MỐC XEM LẠI.
+  Mục quan trọng nhất là bối cảnh, vì nó là thứ duy nhất người sau không tự đoán ra được.

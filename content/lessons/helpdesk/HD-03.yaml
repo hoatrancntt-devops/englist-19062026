@@ -1,0 +1,283 @@
+schema_version: 1
+code: HD-03
+slug: huong-dan-nguoi-dung-tung-buoc
+title_vi: "Hướng dẫn người dùng từng bước"
+title_en: "Walking a user through a fix"
+
+layer: Professional
+track: Helpdesk
+level: B1
+unit_code: U-HD1
+order_index: 3
+estimated_minutes: 12
+
+illustration: phone-call
+
+objective_vi: >
+  Hướng dẫn người dùng thao tác qua điện thoại: một bước một lần, xác nhận sau mỗi bước,
+  và mô tả thứ họ sẽ thấy chứ không chỉ thứ họ phải bấm.
+
+objective_observable: >
+  Hướng dẫn được một quy trình bốn bước, mỗi bước có câu xác nhận.
+
+mastery_weights:
+  Listening: 0.30
+  Speaking: 0.45
+  Reading: 0.15
+  Writing: 0.10
+
+prerequisites:
+  - lesson: HD-02
+    min_mastery: 65
+    kind: Hard
+
+vocabulary:
+  - term: "bottom right corner"
+    ipa: "/ˈbɒtəm raɪt ˈkɔːrnər/"
+    meaning_vi: "góc dưới bên phải"
+    chunk: "Look at the bottom right corner of your screen."
+    tags: [guide, core]
+  - term: "click on"
+    ipa: "/klɪk ɒn/"
+    meaning_vi: "bấm vào"
+    chunk: "Click on the network icon."
+    tags: [guide, core]
+  - term: "you should see"
+    ipa: "/juː ʃʊd siː/"
+    meaning_vi: "bạn sẽ thấy"
+    chunk: "You should see a list of networks."
+    tags: [guide, core]
+  - term: "Let me know when"
+    ipa: "/let miː noʊ wen/"
+    meaning_vi: "xong thì báo tôi"
+    chunk: "Let me know when you see it."
+    tags: [guide, core]
+  - term: "drop-down"
+    ipa: "/drɒp daʊn/"
+    meaning_vi: "menu thả xuống"
+    chunk: "Open the drop-down at the top."
+    tags: [guide]
+  - term: "take your time"
+    ipa: "/teɪk jʊr taɪm/"
+    meaning_vi: "cứ từ từ"
+    chunk: "No rush, take your time."
+    tags: [guide, core]
+
+sentence_patterns:
+  - pattern: "Click on {target}, then let me know when you see {result}."
+    meaning_vi: "Bấm vào {target}, rồi thấy {result} thì báo tôi."
+    slots:
+      target: ["the network icon", "the settings gear"]
+      result: ["a list of networks", "the account page"]
+  - pattern: "You should see {thing} at the {position}."
+    meaning_vi: "Bạn sẽ thấy {thing} ở {position}."
+    slots:
+      thing: ["a small icon", "a blue button"]
+      position: ["bottom right corner", "top of the window"]
+
+dialogue:
+  context_vi: >
+    Emma phải kết nối lại VPN, nhưng cô ấy không rành kỹ thuật và đang ở nhà.
+    Bạn không nhìn thấy màn hình của cô ấy — mọi thứ chỉ qua lời nói.
+  turns:
+    - speaker: "You"
+      en: "We'll do this together, one step at a time. Take your time, there's no rush."
+      vi: "Mình làm cùng nhau nhé, từng bước một. Chị cứ từ từ, không gấp đâu."
+    - speaker: "Emma"
+      en: "OK. I'm not very good with this."
+      vi: "Vâng. Tôi không rành mấy cái này lắm."
+    - speaker: "You"
+      en: "That's fine, I'll guide you. Look at the bottom right corner of your screen. You should see a small icon that looks like a monitor or wifi bars."
+      vi: "Không sao đâu, tôi hướng dẫn chị. Chị nhìn góc dưới bên phải màn hình. Chị sẽ thấy một biểu tượng nhỏ hình cái màn hình hoặc hình sóng wifi."
+    - speaker: "Emma"
+      en: "I see wifi bars, yes."
+      vi: "Tôi thấy hình sóng wifi, có."
+    - speaker: "You"
+      en: "Perfect. Click on it once. Let me know when a panel opens."
+      vi: "Chuẩn rồi. Chị bấm vào đó một lần. Khi nào có bảng hiện ra thì báo tôi."
+    - speaker: "Emma"
+      en: "A panel came up with a list."
+      vi: "Có một bảng hiện ra kèm danh sách."
+    - speaker: "You"
+      en: "Good. Near the top you should see one called Company VPN. Do you see it?"
+      vi: "Tốt. Gần phía trên chị sẽ thấy một mục tên Company VPN. Chị thấy chưa ạ?"
+    - speaker: "Emma"
+      en: "Yes, it says disconnected."
+      vi: "Có, nó ghi là disconnected."
+    - speaker: "You"
+      en: "That's what we expected. Click Connect, and tell me what happens next."
+      vi: "Đúng như dự đoán. Chị bấm Connect, rồi cho tôi biết tiếp theo hiện gì."
+
+listening:
+  context_vi: >
+    Nghe hai cách hướng dẫn cùng một việc. Một cách người dùng làm theo được,
+    một cách khiến họ lạc ngay bước đầu.
+  speed: 1.0
+  voice: en_US_female
+  transcript_en: "Version one: just open network settings, find the VPN profile, check the config and reconnect. Version two: look at the bottom right corner. You should see a small wifi icon. Click on it once and let me know when a panel opens."
+  transcript_vi: "Cách một: chị mở cài đặt mạng, tìm hồ sơ VPN, kiểm tra cấu hình rồi kết nối lại. Cách hai: chị nhìn góc dưới bên phải. Chị sẽ thấy một biểu tượng wifi nhỏ. Bấm vào đó một lần rồi khi nào có bảng hiện ra thì báo tôi."
+  questions:
+    - kind: mcq_listen
+      prompt_vi: "Cách nào người không rành kỹ thuật làm theo được?"
+      choices: ["Cách hai", "Cách một", "Cả hai như nhau"]
+      answer: 0
+      difficulty: 1
+      skill: Listening
+    - kind: mcq_listen
+      prompt_vi: "Cách hai làm gì mà cách một không làm?"
+      choices: ["Dùng từ chuyên môn", "Nói nhanh hơn", "Nói vị trí và mô tả thứ họ sẽ thấy"]
+      answer: 2
+      difficulty: 2
+      skill: Listening
+
+speaking_drills:
+  - kind: read_aloud
+    expected_text: "Look at the bottom right corner of your screen."
+    prompt_vi: "Luôn nói vị trí trước khi nói bấm gì."
+    ipa: "/lʊk æt ðə ˈbɒtəm raɪt ˈkɔːrnər ɒv jʊr skriːn/"
+    focus_phonemes: ["kr", "skr"]
+  - kind: read_aloud
+    expected_text: "You should see a small icon there."
+    prompt_vi: "Mô tả thứ họ sẽ thấy. Không mô tả thì họ bấm nhầm."
+    ipa: "/juː ʃʊd siː ə smɔːl ˈaɪkɒn ðer/"
+    focus_phonemes: ["ʃ", "sm"]
+  - kind: shadow
+    expected_text: "Let me know when you see it."
+    prompt_vi: "Câu chốt sau mỗi bước. Không có nó là cả hai đi lạc nhau."
+    ipa: "/let miː noʊ wen juː siː ɪt/"
+    focus_phonemes: ["l", "w"]
+  - kind: shadow
+    expected_text: "No rush, take your time."
+    prompt_vi: "Câu giảm áp lực cho người dùng đang lo lắng."
+    ipa: "/noʊ rʌʃ teɪk jʊr taɪm/"
+    focus_phonemes: ["ʃ", "k"]
+  - kind: respond
+    prompt_en: "I'm not very good with this."
+    prompt_vi: "Người dùng lo mình không làm được. Trấn an rồi bắt đầu bước một."
+    accept_patterns:
+      - "That's fine"
+      - "No rush"
+      - "I'll guide you"
+
+reading:
+  kind: note
+  context_vi: >
+    Hướng dẫn viết trong bài knowledge base. Để ý cách mỗi bước đều có phần "bạn sẽ thấy".
+  text_en: |
+    Reconnecting to the company VPN (for end users)
+
+    1. Look at the bottom right of your screen, next to the clock.
+       You should see a small icon shaped like a screen or wifi bars.
+
+    2. Click it once. A panel will open listing your connections.
+
+    3. Find "Company VPN" in the list. It will say either Connected
+       or Disconnected.
+
+    4. If it says Disconnected, click Connect and wait about ten seconds.
+
+    If you see "authentication failed", stop here and call the service desk.
+    Do not retry more than twice - three failed attempts lock the account
+    for thirty minutes.
+  text_vi: |
+    Kết nối lại VPN công ty (dành cho người dùng cuối)
+
+    1. Nhìn góc dưới bên phải màn hình, cạnh đồng hồ.
+       Bạn sẽ thấy một biểu tượng nhỏ hình màn hình hoặc hình sóng wifi.
+
+    2. Bấm vào đó một lần. Một bảng sẽ mở ra liệt kê các kết nối.
+
+    3. Tìm mục "Company VPN" trong danh sách. Nó sẽ ghi Connected
+       hoặc Disconnected.
+
+    4. Nếu ghi Disconnected, bấm Connect và chờ khoảng mười giây.
+
+    Nếu thấy "authentication failed", dừng lại và gọi service desk.
+    Không thử lại quá hai lần - ba lần sai sẽ khoá tài khoản
+    trong ba mươi phút.
+  questions:
+    - kind: mcq_read
+      prompt_en: "What happens after three failed attempts?"
+      choices: ["Nothing", "The account locks for thirty minutes", "The VPN resets"]
+      answer: 1
+      difficulty: 2
+      reading_skill: scan
+      skill: Reading
+    - kind: mcq_read
+      prompt_en: "Where is the icon located?"
+      choices: ["Top left", "In the start menu", "Bottom right, next to the clock"]
+      answer: 2
+      difficulty: 1
+      reading_skill: scan
+      skill: Reading
+
+writing:
+  kind: Reorder
+  prompt_vi: "Sắp lại thành một bước hướng dẫn hoàn chỉnh."
+  prompt_en: "Sắp xếp: it / once / know / when / Click / opens / and / me / a / let / panel"
+  correct_order: ["Click", "it", "once", "and", "let", "me", "know", "when", "a", "panel", "opens"]
+  hint_vi: "Hành động trước, rồi tới câu xác nhận."
+  sample_en: "Click it once and let me know when a panel opens."
+
+quiz:
+  - kind: mcq
+    prompt_vi: "Nên đưa mấy bước một lần qua điện thoại?"
+    choices: ["Một bước, rồi chờ xác nhận", "Càng nhiều càng nhanh", "Ba bước một lần"]
+    answer: 0
+    difficulty: 1
+    skill: Speaking
+  - kind: mcq
+    prompt_vi: "Vì sao phải mô tả thứ người dùng sẽ thấy?"
+    choices: ["Cho lịch sự", "Vì bạn không nhìn được màn hình họ, mô tả là cách duy nhất xác nhận đúng chỗ", "Để câu dài hơn"]
+    answer: 1
+    difficulty: 2
+    skill: Reading
+  - kind: mcq
+    prompt_vi: "Người dùng nói \"tôi không rành mấy cái này\". Đáp thế nào?"
+    choices: ["It's easy", "You should learn", "That's fine, I'll guide you. No rush."]
+    answer: 2
+    difficulty: 2
+    skill: Speaking
+  - kind: mcq
+    prompt_vi: "Câu nào nên kết thúc mỗi bước?"
+    choices: ["Let me know when you see it", "Understand?", "Next"]
+    answer: 0
+    difficulty: 2
+    skill: Speaking
+
+explanation:
+  why_vi: >
+    Qua điện thoại bạn không nhìn thấy màn hình người dùng, nên mọi giả định đều nguy hiểm.
+    Người trực mới hay đưa ba bốn bước một lúc bằng thuật ngữ kỹ thuật, và người dùng
+    lạc ngay từ bước đầu nhưng ngại nói ra, cứ "vâng vâng" cho tới khi cả hai bối rối.
+  how_vi: >
+    Mỗi bước gồm ba phần: VỊ TRÍ (góc nào của màn hình), HÀNH ĐỘNG (bấm gì),
+    và THỨ SẼ THẤY (để họ tự xác nhận đúng chỗ). Kết mỗi bước bằng
+    "Let me know when you see it" — câu này giữ hai người đi cùng nhịp.
+    Và đừng bao giờ hỏi "Understand?" — người ta luôn trả lời có.
+  contrast_vi: >
+    "Mở network settings, tìm VPN profile, kiểm tra config" là ba bước bằng thuật ngữ.
+    "Nhìn góc dưới bên phải, chị sẽ thấy biểu tượng wifi nhỏ" là một bước có vị trí và hình ảnh.
+
+common_mistakes:
+  - mistake: "Đưa nhiều bước một lúc"
+    why_vi: >
+      Người hướng dẫn thấy quy trình đơn giản nên gộp lại cho nhanh. Người dùng
+      chỉ nhớ được bước đầu và bước cuối, rồi làm sai ở giữa.
+    fix_vi: "Một bước, chờ xác nhận, rồi mới sang bước sau. Chậm mà chắc thì nhanh hơn."
+    detect_phoneme_missing: []
+  - mistake: "Hỏi \"Understand?\" sau mỗi bước"
+    why_vi: >
+      Người dùng luôn trả lời có, kể cả khi chưa làm được, vì ngại làm mất thời gian bạn.
+    fix_vi: "Hỏi thứ họ nhìn thấy: \"What does it say now?\" — câu này không thể trả lời qua loa."
+    detect_phoneme_missing: []
+  - mistake: "Dùng thuật ngữ kỹ thuật với người dùng cuối"
+    why_vi: >
+      Từ như “profile”, “config”, “authenticate” là ngôn ngữ hằng ngày của bạn
+      nhưng vô nghĩa với người phòng kế toán.
+    fix_vi: "Mô tả thứ họ nhìn thấy trên màn hình: hình cái gì, chữ gì, màu gì."
+    detect_phoneme_missing: []
+
+memory_trick_vi: >
+  Mỗi bước ba phần: VỊ TRÍ, HÀNH ĐỘNG, THỨ SẼ THẤY.
+  Kết bằng "Let me know when you see it" — đừng bao giờ hỏi "Understand?"

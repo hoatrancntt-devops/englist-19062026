@@ -1,0 +1,240 @@
+schema_version: 1
+code: LIFE-05
+slug: chao-hoi-va-tam-biet
+title_vi: "Chào hỏi và tạm biệt — câu đầu và câu cuối mỗi ngày"
+title_en: "Greetings and goodbyes"
+
+layer: Life
+track: Foundation
+level: PreA1
+unit_code: U-L1
+order_index: 5
+estimated_minutes: 10
+
+illustration: handshake-intro
+
+objective_vi: >
+  Chào và tạm biệt đúng ngữ cảnh, và trả lời được câu "How are you?" mà không đứng hình.
+
+objective_observable: >
+  Nói đúng ba cặp chào-đáp trong 3 trên 4 drill, và chọn đúng lời chào theo thời điểm trong ngày.
+
+mastery_weights:
+  Listening: 0.30
+  Speaking: 0.45
+  Reading: 0.15
+  Writing: 0.10
+
+prerequisites:
+  - lesson: LIFE-04
+    min_mastery: 60
+    kind: Hard
+
+vocabulary:
+  - term: "Good morning"
+    ipa: "/ɡʊd ˈmɔːrnɪŋ/"
+    meaning_vi: "chào buổi sáng (trước 12 giờ trưa)"
+    chunk: "Good morning, Linh."
+    tags: [social, core]
+  - term: "How's it going?"
+    ipa: "/haʊz ɪt ˈɡoʊɪŋ/"
+    meaning_vi: "dạo này thế nào (thân mật)"
+    chunk: "Hey, how's it going?"
+    tags: [social]
+  - term: "Not bad"
+    ipa: "/nɒt bæd/"
+    meaning_vi: "cũng ổn (câu đáp an toàn nhất)"
+    chunk: "Not bad, thanks. You?"
+    tags: [social, core]
+  - term: "See you tomorrow"
+    ipa: "/siː juː təˈmɒroʊ/"
+    meaning_vi: "hẹn gặp ngày mai"
+    chunk: "See you tomorrow."
+    tags: [social]
+  - term: "Have a good one"
+    ipa: "/hæv ə ɡʊd wʌn/"
+    meaning_vi: "chúc một ngày tốt lành (câu tạm biệt phổ biến)"
+    chunk: "Have a good one."
+    tags: [social]
+  - term: "Take care"
+    ipa: "/teɪk ker/"
+    meaning_vi: "giữ gìn sức khoẻ nhé"
+    chunk: "Take care, see you Monday."
+    tags: [social]
+
+sentence_patterns:
+  - pattern: "Good {time}, {name}."
+    meaning_vi: "Chào {time}, {name}."
+    slots:
+      time: ["morning", "afternoon", "evening"]
+      name: ["Linh", "David", "everyone"]
+  - pattern: "{answer}, thanks. You?"
+    meaning_vi: "{answer}, cảm ơn. Còn bạn?"
+    slots:
+      answer: ["Not bad", "Pretty good", "All good"]
+
+dialogue:
+  context_vi: >
+    Sáng thứ Hai ở hành lang. Bạn gặp Linh trên đường vào chỗ ngồi.
+    Cả cuộc trao đổi chỉ dài mười giây, nhưng bỏ qua nó thì cả tuần thấy ngại.
+  turns:
+    - speaker: "Linh"
+      en: "Morning! How's it going?"
+      vi: "Chào buổi sáng! Dạo này thế nào?"
+    - speaker: "You"
+      en: "Not bad, thanks. You?"
+      vi: "Cũng ổn, cảm ơn chị. Còn chị?"
+    - speaker: "Linh"
+      en: "Busy week, but fine. See you at standup."
+      vi: "Tuần bận, nhưng ổn. Gặp em ở standup nhé."
+    - speaker: "You"
+      en: "See you there."
+      vi: "Vâng, gặp chị ở đó."
+
+listening:
+  context_vi: >
+    Nghe hai lời chào ở hai thời điểm khác nhau trong ngày. Chú ý người ta dùng từ nào.
+  speed: 0.85
+  voice: en_US_female
+  transcript_en: "Good morning, everyone. Let's start the standup. Alright, that's it for today — have a good one."
+  transcript_vi: "Chào buổi sáng cả nhà. Mình bắt đầu standup nhé. Được rồi, hôm nay đến đây thôi — chúc mọi người một ngày tốt lành."
+  questions:
+    - kind: mcq_listen
+      prompt_vi: "Buổi họp diễn ra vào lúc nào trong ngày?"
+      choices: ["Buổi sáng", "Buổi chiều", "Buổi tối"]
+      answer: 0
+      difficulty: 1
+      skill: Listening
+    - kind: mcq_listen
+      prompt_vi: "Câu cuối cùng có nghĩa là gì?"
+      choices: ["Xin lỗi", "Hẹn gặp lại tuần sau", "Chúc một ngày tốt lành"]
+      answer: 2
+      difficulty: 2
+      skill: Listening
+
+speaking_drills:
+  - kind: read_aloud
+    expected_text: "Good morning, Linh."
+    prompt_vi: "Đọc to. Chú ý âm cuối /ŋ/ của morning, đừng thành mor-nin."
+    ipa: "/ɡʊd ˈmɔːrnɪŋ lɪn/"
+    focus_phonemes: ["ŋ"]
+  - kind: read_aloud
+    expected_text: "Not bad, thanks. You?"
+    prompt_vi: "Đây là câu đáp an toàn nhất. Lên giọng ở chữ You cuối câu."
+    ipa: "/nɒt bæd θæŋks juː/"
+    focus_phonemes: ["θ", "t"]
+  - kind: shadow
+    expected_text: "How's it going?"
+    prompt_vi: "Nghe rồi nhắc lại. Người bản xứ nói dính thành hao-zit-gâu-in."
+    ipa: "/haʊz ɪt ˈɡoʊɪŋ/"
+    focus_phonemes: ["z", "ŋ"]
+  - kind: shadow
+    expected_text: "Have a good one."
+    prompt_vi: "Câu tạm biệt dùng được với gần như mọi người."
+    ipa: "/hæv ə ɡʊd wʌn/"
+    focus_phonemes: ["v"]
+  - kind: respond
+    prompt_en: "Morning! How's it going?"
+    prompt_vi: "Đồng nghiệp chào bạn buổi sáng. Đáp lại và hỏi ngược lại."
+    accept_patterns:
+      - "Not bad"
+      - "Good"
+      - "Pretty good"
+
+reading:
+  kind: chat
+  context_vi: >
+    Tin nhắn nhóm cuối ngày thứ Sáu. Để ý cách người ta tạm biệt khác nhau.
+  text_en: |
+    Linh: That's a wrap for this week. Have a good weekend everyone.
+    David: Thanks Linh. Take care all.
+    You: Have a good one. See you Monday.
+  text_vi: |
+    Linh: Tuần này kết thúc ở đây. Chúc cả nhà cuối tuần vui vẻ.
+    David: Cảm ơn Linh. Mọi người giữ gìn sức khoẻ nhé.
+    Bạn: Chúc mọi người vui vẻ. Gặp lại thứ Hai.
+  questions:
+    - kind: mcq_read
+      prompt_en: "What day is it?"
+      choices: ["Monday", "Friday", "Wednesday"]
+      answer: 1
+      difficulty: 2
+      reading_skill: skim
+      skill: Reading
+    - kind: mcq_read
+      prompt_en: "When will they meet again?"
+      choices: ["Next month", "Tomorrow", "Monday"]
+      answer: 2
+      difficulty: 1
+      reading_skill: scan
+      skill: Reading
+
+writing:
+  kind: FillBlank
+  prompt_vi: "Điền hai chỗ trống để hoàn thành lời chào buổi sáng và câu đáp."
+  prompt_en: "___ morning! How's it going? ___ bad, thanks."
+  blanks:
+    - ["Good", "good"]
+    - ["Not", "not"]
+  hint_vi: "Chỗ đầu là tính từ trong lời chào. Chỗ sau nằm trong câu đáp an toàn nhất."
+  sample_en: "Good morning! How's it going? Not bad, thanks."
+
+quiz:
+  - kind: mcq
+    prompt_vi: "Ba giờ chiều, bạn gặp khách. Chào thế nào?"
+    choices: ["Good afternoon", "Good morning", "Good evening"]
+    answer: 0
+    difficulty: 1
+    skill: Speaking
+  - kind: mcq
+    prompt_vi: "\"How's it going?\" thực chất là câu gì?"
+    choices: ["Hỏi thật về sức khoẻ", "Một lời chào, không cần trả lời dài", "Hỏi về công việc"]
+    answer: 1
+    difficulty: 2
+    skill: Listening
+  - kind: mcq
+    prompt_vi: "Câu đáp nào an toàn nhất khi bạn chưa nghĩ ra gì?"
+    choices: ["Nothing", "I am fine thank you and you", "Not bad, thanks. You?"]
+    answer: 2
+    difficulty: 1
+    skill: Speaking
+  - kind: mcq
+    prompt_vi: "Cuối ngày làm việc, bạn tạm biệt đồng nghiệp thế nào?"
+    choices: ["Have a good one", "Goodbye sir", "Finish"]
+    answer: 0
+    difficulty: 2
+    skill: Speaking
+
+explanation:
+  why_vi: >
+    Người Việt học "How are you? I'm fine, thank you, and you?" từ sách giáo khoa,
+    nhưng gần như không ai nói nguyên câu đó ở nơi làm việc. Nghe câu đáp sách vở,
+    người ta biết ngay bạn học thuộc lòng chứ chưa nói thật.
+  how_vi: >
+    Nhớ một công thức ba nhịp: ĐÁP ngắn, CẢM ƠN, HỎI NGƯỢC. Ví dụ "Not bad, thanks. You?".
+    Ba nhịp này dùng được cho mọi lời chào, và giữ cuộc trò chuyện tiếp tục thay vì kết thúc cụt.
+  contrast_vi: >
+    "Good morning" dùng tới 12 giờ trưa, "Good afternoon" tới khoảng 6 giờ tối,
+    "Good evening" sau đó. Còn "Good night" KHÔNG phải lời chào — nó là lời tạm biệt.
+
+common_mistakes:
+  - mistake: "Đáp nguyên câu \"I am fine, thank you, and you?\""
+    why_vi: >
+      Đây là câu trong sách giáo khoa, không phải câu người ta dùng hằng ngày.
+      Nó không sai ngữ pháp, chỉ là nghe rất máy móc.
+    fix_vi: "Rút xuống ba nhịp: \"Not bad, thanks. You?\" — ngắn hơn và tự nhiên hơn hẳn."
+    detect_phoneme_missing: []
+  - mistake: "Dùng \"Good night\" để chào khi gặp buổi tối"
+    why_vi: >
+      Tiếng Việt nói “chào buổi tối” khi gặp mặt, nên người học dịch thẳng.
+      Trong tiếng Anh, “Good night” chỉ dùng lúc chia tay hoặc đi ngủ.
+    fix_vi: "Gặp buổi tối thì nói \"Good evening\". \"Good night\" để lúc ra về."
+    detect_phoneme_missing: []
+  - mistake: "Nuốt âm cuối /ŋ/ trong morning và evening"
+    why_vi: "Tiếng Việt có âm /ŋ/ nhưng không quen đặt ở cuối từ hai âm tiết, nên miệng bỏ bớt."
+    fix_vi: "Kéo dài nhẹ phần cuối: mor-ninG, eve-ninG. Cường điệu lúc tập."
+    detect_phoneme_missing: ["ŋ"]
+
+memory_trick_vi: >
+  Ba nhịp: ĐÁP ngắn, CẢM ƠN, HỎI NGƯỢC. Nhớ đúng ba nhịp này là xử lý được
+  mọi lời chào ở mọi công ty, mà không cần học thêm câu nào.

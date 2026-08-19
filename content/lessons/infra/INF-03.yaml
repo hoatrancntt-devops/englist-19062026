@@ -1,0 +1,292 @@
+schema_version: 1
+code: INF-03
+slug: cap-nhat-trang-thai-su-co
+title_vi: "Cập nhật trạng thái sự cố"
+title_en: "Incident status updates"
+
+layer: Professional
+track: Infrastructure
+level: B1
+unit_code: U-INF1
+order_index: 3
+estimated_minutes: 12
+
+illustration: chat-message
+
+objective_vi: >
+  Viết cập nhật định kỳ trong lúc sự cố đang chạy: nói rõ đã biết gì, chưa biết gì,
+  và khi nào có tin tiếp — kể cả khi chưa có tiến triển nào.
+
+objective_observable: >
+  Viết được ba bản cập nhật liên tiếp, mỗi bản có mốc cập nhật tiếp theo.
+
+mastery_weights:
+  Listening: 0.25
+  Speaking: 0.30
+  Reading: 0.20
+  Writing: 0.25
+
+prerequisites:
+  - lesson: INF-02
+    min_mastery: 65
+    kind: Hard
+
+vocabulary:
+  - term: "we're investigating"
+    ipa: "/wɪr ɪnˈvestɪɡeɪtɪŋ/"
+    meaning_vi: "chúng tôi đang điều tra"
+    chunk: "We're investigating, next update in thirty minutes."
+    tags: [incident, core]
+  - term: "we've identified"
+    ipa: "/wiːv aɪˈdentɪfaɪd/"
+    meaning_vi: "chúng tôi đã xác định được"
+    chunk: "We've identified the cause."
+    tags: [incident, core]
+  - term: "workaround"
+    ipa: "/ˈwɜːrkəraʊnd/"
+    meaning_vi: "giải pháp tạm — giảm ảnh hưởng khi chưa sửa được gốc"
+    chunk: "A workaround is in place."
+    tags: [itil, core]
+  - term: "next update at"
+    ipa: "/nekst ˈʌpdeɪt æt/"
+    meaning_vi: "cập nhật tiếp theo lúc"
+    chunk: "Next update at 04:00."
+    tags: [incident, core]
+  - term: "no change since"
+    ipa: "/noʊ tʃeɪndʒ sɪns/"
+    meaning_vi: "chưa có gì thay đổi so với"
+    chunk: "No change since the last update."
+    tags: [incident, core]
+  - term: "monitoring"
+    ipa: "/ˈmɒnɪtərɪŋ/"
+    meaning_vi: "đang theo dõi (sau khi đã khắc phục)"
+    chunk: "Service is restored, we're monitoring."
+    tags: [incident, core]
+
+sentence_patterns:
+  - pattern: "{status}. Next update at {time}."
+    meaning_vi: "{status}. Cập nhật tiếp theo lúc {time}."
+    slots:
+      status: ["We're investigating", "We've identified the cause", "A workaround is in place"]
+      time: ["04:00", "in thirty minutes"]
+  - pattern: "What we know: {known}. What we don't know yet: {unknown}."
+    meaning_vi: "Điều đã biết: {known}. Điều chưa biết: {unknown}."
+    slots:
+      known: ["the database is slow", "logins time out"]
+      unknown: ["why it started", "whether it will recur"]
+
+dialogue:
+  context_vi: >
+    Sự cố đã chạy được hai tiếng. Emma bên khách hàng nhắn hỏi lần thứ ba.
+    Im lặng vì chưa có tiến triển là sai lầm phổ biến nhất trong lúc này.
+  turns:
+    - speaker: "Emma"
+      en: "Any news? It's been two hours and my team can't work."
+      vi: "Có tin gì chưa? Hai tiếng rồi mà team tôi không làm việc được."
+    - speaker: "You"
+      en: "Sorry Emma. Quick update: we've identified the cause — the database is running out of connections."
+      vi: "Xin lỗi chị Emma. Cập nhật nhanh: bọn em đã xác định được nguyên nhân — database hết kết nối khả dụng."
+    - speaker: "Emma"
+      en: "So when will it be fixed?"
+      vi: "Vậy bao giờ sửa xong?"
+    - speaker: "You"
+      en: "We don't have a fix time yet. But a workaround is in place — we've restarted the connection pool, and about half your team should be able to log in now."
+      vi: "Bọn em chưa có mốc sửa xong. Nhưng đã có giải pháp tạm — bọn em khởi động lại connection pool, và khoảng một nửa team chị giờ đăng nhập được rồi."
+    - speaker: "Emma"
+      en: "Half? What about the rest?"
+      vi: "Một nửa? Còn lại thì sao?"
+    - speaker: "You"
+      en: "That's what we don't know yet. Next update at 04:00, or sooner if anything changes."
+      vi: "Đó là điều bọn em chưa rõ. Cập nhật tiếp theo lúc 04:00, hoặc sớm hơn nếu có gì thay đổi."
+    - speaker: "Emma"
+      en: "OK. Thanks for being straight with me."
+      vi: "Được. Cảm ơn em đã nói thẳng."
+
+listening:
+  context_vi: >
+    Nghe ba bản cập nhật liên tiếp của một sự cố. Chú ý bản thứ hai —
+    nó không có tiến triển nào nhưng vẫn phải gửi.
+  speed: 1.0
+  voice: en_US_female
+  transcript_en: "Update one, 02:30: we're investigating a login failure on the portal, about twenty users affected. Next update at 03:00. Update two, 03:00: no change since the last update, still investigating. Next update at 03:30. Update three, 03:30: we've identified the cause and a workaround is in place. Next update at 04:00."
+  transcript_vi: "Cập nhật một, 02:30: chúng tôi đang điều tra lỗi đăng nhập trên portal, khoảng hai mươi người bị ảnh hưởng. Cập nhật tiếp lúc 03:00. Cập nhật hai, 03:00: chưa có gì thay đổi so với lần trước, vẫn đang điều tra. Cập nhật tiếp lúc 03:30. Cập nhật ba, 03:30: đã xác định nguyên nhân và có giải pháp tạm. Cập nhật tiếp lúc 04:00."
+  questions:
+    - kind: mcq_listen
+      prompt_vi: "Bản cập nhật thứ hai có tiến triển gì không?"
+      choices: ["Không, nhưng vẫn được gửi đúng hẹn", "Có, đã tìm ra nguyên nhân", "Không có bản thứ hai"]
+      answer: 0
+      difficulty: 2
+      skill: Listening
+    - kind: mcq_listen
+      prompt_vi: "Điểm chung của cả ba bản cập nhật là gì?"
+      choices: ["Đều có tiến triển mới", "Đều dài bằng nhau", "Đều có mốc cập nhật tiếp theo"]
+      answer: 2
+      difficulty: 2
+      skill: Listening
+
+speaking_drills:
+  - kind: read_aloud
+    expected_text: "We're investigating. Next update at four."
+    prompt_vi: "Trọng âm ở âm thứ hai: in-VES-ti-gay-ting."
+    ipa: "/wɪr ɪnˈvestɪɡeɪtɪŋ nekst ˈʌpdeɪt æt fɔːr/"
+    focus_phonemes: ["st", "ŋ"]
+  - kind: read_aloud
+    expected_text: "A workaround is in place."
+    prompt_vi: "Giải pháp tạm không phải bản sửa. Nói rõ để không ai hiểu nhầm là đã xong."
+    ipa: "/ə ˈwɜːrkəraʊnd ɪz ɪn pleɪs/"
+    focus_phonemes: ["rk", "pl"]
+  - kind: shadow
+    expected_text: "No change since the last update, still investigating."
+    prompt_vi: "Bản cập nhật khó gửi nhất — không có gì mới. Nhưng phải gửi."
+    ipa: "/noʊ tʃeɪndʒ sɪns ðə lɑːst ˈʌpdeɪt/"
+    focus_phonemes: ["tʃ", "st"]
+  - kind: shadow
+    expected_text: "That's what we don't know yet."
+    prompt_vi: "Nói thẳng chỗ chưa biết. Đoán bừa để trấn an là cách mất niềm tin nhanh nhất."
+    ipa: "/ðæts wɒt wiː doʊnt noʊ jet/"
+    focus_phonemes: ["ð", "nt"]
+  - kind: respond
+    prompt_en: "Any news? It's been two hours."
+    prompt_vi: "Chưa có tiến triển. Cập nhật cho khách hàng mà không đoán bừa."
+    accept_patterns:
+      - "No change since"
+      - "still investigating"
+      - "Next update"
+
+reading:
+  kind: note
+  context_vi: >
+    Trang trạng thái sự cố gửi khách hàng. Đọc kỹ mốc thời gian và cách diễn đạt.
+  text_en: |
+    INC-2291 - Northwind portal login failures
+
+    03:30 IDENTIFIED
+    We have identified the cause: the database connection pool was exhausted.
+    A workaround is in place - the pool has been restarted and most users
+    can log in again. We are still working on why the pool filled up.
+    Next update at 04:00.
+
+    03:00 INVESTIGATING
+    No change since the last update. We are still investigating.
+    Next update at 03:30.
+
+    02:30 INVESTIGATING
+    We are investigating login failures on the Northwind portal.
+    Approximately 20 users affected. Next update at 03:00.
+  text_vi: |
+    INC-2291 - Lỗi đăng nhập portal Northwind
+
+    03:30 ĐÃ XÁC ĐỊNH
+    Chúng tôi đã xác định nguyên nhân: connection pool của database bị cạn.
+    Đã có giải pháp tạm - pool đã được khởi động lại và hầu hết người dùng
+    đăng nhập được. Chúng tôi vẫn đang tìm hiểu vì sao pool bị đầy.
+    Cập nhật tiếp lúc 04:00.
+
+    03:00 ĐANG ĐIỀU TRA
+    Chưa có gì thay đổi so với lần trước. Chúng tôi vẫn đang điều tra.
+    Cập nhật tiếp lúc 03:30.
+
+    02:30 ĐANG ĐIỀU TRA
+    Chúng tôi đang điều tra lỗi đăng nhập trên portal Northwind.
+    Khoảng 20 người bị ảnh hưởng. Cập nhật tiếp lúc 03:00.
+  questions:
+    - kind: mcq_read
+      prompt_en: "In what order are the updates shown?"
+      choices: ["Oldest first", "Newest first", "Random"]
+      answer: 1
+      difficulty: 2
+      reading_skill: skim
+      skill: Reading
+    - kind: mcq_read
+      prompt_en: "What is still unknown at 03:30?"
+      choices: ["The cause", "How many users are affected", "Why the pool filled up"]
+      answer: 2
+      difficulty: 2
+      reading_skill: scan
+      skill: Reading
+    - kind: mcq_read
+      prompt_en: "Does 'workaround in place' mean the incident is resolved?"
+      choices: ["No, the root cause is still being worked on", "Yes", "It is not stated"]
+      answer: 0
+      difficulty: 3
+      reading_skill: skim
+      skill: Reading
+
+writing:
+  kind: GuidedEmail
+  prompt_vi: >
+    Viết một bản cập nhật sự cố khi CHƯA có tiến triển nào. Phải có đủ ba ý:
+    trạng thái hiện tại, điều đã biết và chưa biết, và mốc cập nhật tiếp theo.
+  prompt_en: "Write an incident update when there is no new progress."
+  required_points:
+    - "no change since"
+    - "still investigating"
+    - "next update at"
+  hint_vi: "Không có tiến triển vẫn phải gửi. Im lặng là thứ khách hàng sợ nhất."
+  sample_en: "No change since the last update. We are still investigating the database timeouts. Next update at 04:00, or sooner if anything changes."
+
+quiz:
+  - kind: mcq
+    prompt_vi: "Chưa có tiến triển thì nên làm gì?"
+    choices: ["Chờ tới khi có tin rồi mới gửi", "Vẫn gửi cập nhật đúng hẹn, nói rõ chưa có gì thay đổi", "Gửi cập nhật ngắn hơn"]
+    answer: 1
+    difficulty: 2
+    skill: Writing
+  - kind: mcq
+    prompt_vi: "\"Workaround is in place\" nghĩa là gì?"
+    choices: ["Đã sửa xong hoàn toàn", "Đang chờ vendor", "Có giải pháp tạm giảm ảnh hưởng, gốc chưa sửa"]
+    answer: 2
+    difficulty: 2
+    skill: Reading
+  - kind: mcq
+    prompt_vi: "Phần nào bắt buộc phải có trong MỌI bản cập nhật?"
+    choices: ["Mốc cập nhật tiếp theo", "Lời xin lỗi", "Tên người xử lý"]
+    answer: 0
+    difficulty: 1
+    skill: Writing
+  - kind: mcq
+    prompt_vi: "Khách hỏi bao giờ sửa xong mà bạn chưa biết. Nói gì?"
+    choices: ["Khoảng một tiếng nữa (đoán cho yên lòng)", "Bọn em chưa có mốc sửa xong, nhưng cập nhật tiếp lúc 4 giờ", "Không trả lời"]
+    answer: 1
+    difficulty: 3
+    skill: Speaking
+
+explanation:
+  why_vi: >
+    Trong lúc sự cố chạy, thứ khách hàng sợ nhất không phải sự cố — mà là im lặng.
+    Người mới thường đợi tới khi có tin tốt mới báo, và khoảng im lặng đó khiến
+    khách nghĩ không ai đang xử lý. Một bản cập nhật "chưa có gì mới" vẫn có giá trị
+    lớn hơn hẳn im lặng.
+  how_vi: >
+    Mỗi bản cập nhật ba phần: TRẠNG THÁI (đang điều tra, đã xác định, đã có giải pháp tạm,
+    đã khắc phục), ĐÃ BIẾT GÌ và CHƯA BIẾT GÌ, và MỐC CẬP NHẬT TIẾP THEO.
+    Phần cuối bắt buộc phải có trong mọi bản — nó là thứ giữ cho khách không phải hỏi.
+    Và tuyệt đối không đoán mốc sửa xong để trấn an.
+  contrast_vi: >
+    "Workaround is in place" nghĩa là đã giảm được ảnh hưởng nhưng gốc chưa sửa.
+    "Resolved" nghĩa là đã sửa gốc. Nói nhầm hai từ này là khách đóng ticket
+    rồi hôm sau sự cố quay lại.
+
+common_mistakes:
+  - mistake: "Im lặng khi chưa có tiến triển"
+    why_vi: >
+      Nghĩ rằng cập nhật mà không có tin mới thì vô nghĩa. Nhưng với người đang chờ,
+      im lặng đồng nghĩa với việc không ai đang làm gì cả.
+    fix_vi: "Gửi đúng hẹn kể cả khi không có gì mới: \"No change since the last update.\""
+    detect_phoneme_missing: []
+  - mistake: "Đoán mốc sửa xong để trấn an khách"
+    why_vi: >
+      Áp lực từ câu hỏi “bao giờ xong” khiến người trực buột miệng đưa một con số.
+      Trễ mốc đó thì mất niềm tin nhiều hơn cả sự cố ban đầu.
+    fix_vi: "Nói thẳng chưa có mốc, nhưng luôn kèm mốc CẬP NHẬT tiếp theo — đó mới là thứ cam kết được."
+    detect_phoneme_missing: []
+  - mistake: "Dùng \"fixed\" khi mới chỉ có giải pháp tạm"
+    why_vi: >
+      Muốn báo tin tốt nên chọn từ mạnh hơn thực tế. Khách đóng ticket,
+      rồi sự cố tái diễn và niềm tin mất hẳn.
+    fix_vi: "Phân biệt rõ: workaround là tạm, resolved là đã sửa gốc."
+    detect_phoneme_missing: []
+
+memory_trick_vi: >
+  Mỗi bản cập nhật ba phần: TRẠNG THÁI, ĐÃ BIẾT và CHƯA BIẾT, MỐC TIẾP THEO.
+  Không có tin mới vẫn phải gửi — im lặng là thứ khách sợ nhất.

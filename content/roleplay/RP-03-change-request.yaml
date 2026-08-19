@@ -1,0 +1,127 @@
+code: RP-03
+title_vi: "Xin duyệt thay đổi trước CAB"
+context_vi: >-
+  Bạn cần nâng cấp bản vá cho cụm database vào tối thứ Sáu. Hội đồng duyệt thay đổi hỏi ba
+  điều: ảnh hưởng tới ai, quay lui thế nào, và kiểm chứng thành công bằng gì. Trả lời thiếu
+  một trong ba là bị hoãn sang tuần sau.
+track: Infrastructure
+level: B1
+partner_name: "Sarah — change manager"
+start_node: n1
+
+nodes:
+  - code: n1
+    partner_line_en: "You're requesting a change window on Friday night. Who is affected and for how long?"
+    partner_line_vi: "Bạn xin cửa sổ thay đổi tối thứ Sáu. Ai bị ảnh hưởng và trong bao lâu?"
+    choices:
+      - en: "The reporting service will be read-only for about twenty minutes. Around forty internal users, no customer impact."
+        vi: "Dịch vụ báo cáo sẽ ở chế độ chỉ đọc khoảng hai mươi phút. Khoảng bốn mươi người dùng nội bộ, không ảnh hưởng khách hàng."
+        next: n2
+        quality: good
+      - en: "It's a small patch, nothing should break."
+        vi: "Bản vá nhỏ thôi, chắc không hỏng gì đâu."
+        next: n1b
+        quality: wrong
+        feedback_vi: >-
+          "Chắc không hỏng gì" không phải là đánh giá ảnh hưởng. CAB cần con số: bao nhiêu
+          người, bao lâu, dịch vụ nào. Không có con số thì họ buộc phải giả định điều tệ nhất.
+      - en: "Reporting service, twenty minutes."
+        vi: "Dịch vụ báo cáo, hai mươi phút."
+        next: n2
+        quality: curt
+        feedback_vi: >-
+          Đúng nhưng thiếu số người và thiếu câu khẳng định không ảnh hưởng khách hàng —
+          đó chính là điều CAB lo nhất.
+
+  - code: n2
+    partner_line_en: "And if it goes wrong? Talk me through the rollback."
+    partner_line_vi: "Nếu hỏng thì sao? Nói tôi nghe cách quay lui."
+    choices:
+      - en: "We take a snapshot before we start. Rolling back means restoring that snapshot, which takes about ten minutes. I can do it alone, no approval call needed."
+        vi: "Chúng tôi chụp snapshot trước khi bắt đầu. Quay lui là khôi phục snapshot đó, mất khoảng mười phút. Tôi tự làm được, không cần gọi ai duyệt."
+        next: n3
+        quality: good
+      - en: "We would restore from the nightly backup."
+        vi: "Chúng tôi sẽ khôi phục từ bản sao lưu hàng đêm."
+        next: n2b
+        quality: wrong
+        feedback_vi: >-
+          Bản sao lưu hàng đêm nghĩa là mất toàn bộ dữ liệu phát sinh trong ngày. Đó là kế hoạch
+          khôi phục thảm hoạ, không phải kế hoạch quay lui. CAB sẽ hoãn ngay khi nghe câu này.
+
+  - code: n3
+    partner_line_en: "Good. How will you know the change actually succeeded?"
+    partner_line_vi: "Tốt. Làm sao bạn biết thay đổi đã thành công thật?"
+    choices:
+      - en: "Error rate stays under one percent for forty-eight hours, and the nightly report job completes on Saturday morning."
+        vi: "Tỷ lệ lỗi dưới một phần trăm trong bốn mươi tám tiếng, và job báo cáo đêm chạy xong sáng thứ Bảy."
+        next: n4
+        quality: good
+      - en: "The service will be up."
+        vi: "Dịch vụ sẽ chạy được."
+        next: n3b
+        quality: curt
+        feedback_vi: >-
+          "Chạy được" không đo được. Tiêu chí thành công phải là thứ nhìn vào dashboard là
+          biết đúng sai, kèm mốc thời gian quan sát.
+
+  - code: n4
+    partner_line_en: "Approved for Friday 10pm. Who is on call during the window?"
+    partner_line_vi: "Duyệt cho tối thứ Sáu 10 giờ. Ai trực trong khoảng đó?"
+    choices:
+      - en: "I am, and Minh is my backup. Both numbers are in the change record."
+        vi: "Tôi trực, Minh dự phòng. Cả hai số đều có trong bản ghi thay đổi."
+        next: nEnd
+        quality: good
+      - en: "Me."
+        vi: "Tôi."
+        next: nEndCurt
+        quality: curt
+        feedback_vi: >-
+          Một người trực một mình lúc 10 giờ tối là điểm hỏng đơn lẻ. Nêu người dự phòng
+          làm CAB yên tâm hơn hẳn, và cứu chính bạn nếu mất điện thoại.
+
+  - code: n1b
+    partner_line_en: "I can't approve without an impact assessment. Please come back next week with numbers."
+    partner_line_vi: "Tôi không duyệt được khi chưa có đánh giá ảnh hưởng. Tuần sau quay lại kèm số liệu nhé."
+    terminal: true
+    success: false
+    summary_vi: >-
+      Bị hoãn một tuần vì thiếu con số. Chuẩn bị sẵn ba con số trước khi vào CAB: bao nhiêu
+      người dùng, bao nhiêu phút, có chạm khách hàng không.
+
+  - code: n2b
+    partner_line_en: "That's a disaster recovery plan, not a rollback. Let's revisit this next week."
+    partner_line_vi: "Đó là kế hoạch khôi phục thảm hoạ chứ không phải quay lui. Tuần sau bàn lại."
+    terminal: true
+    success: false
+    summary_vi: >-
+      Quay lui phải nhanh hơn sự cố. Snapshot trước khi thay đổi là cách rẻ nhất để có
+      đường lui tính bằng phút thay vì bằng giờ.
+
+  - code: n3b
+    partner_line_en: "Define that for me. What number tells you it worked?"
+    partner_line_vi: "Định nghĩa giúp tôi. Con số nào cho biết nó chạy đúng?"
+    terminal: true
+    success: false
+    summary_vi: >-
+      Câu hỏi này luôn xuất hiện. Chuẩn bị sẵn một ngưỡng đo được và một khoảng thời gian
+      quan sát là qua được vòng này.
+
+  - code: nEndCurt
+    partner_line_en: "Noted. Change approved."
+    partner_line_vi: "Ghi nhận. Thay đổi được duyệt."
+    terminal: true
+    success: true
+    summary_vi: >-
+      Được duyệt. Ba câu trả lời chính đều đạt; chỉ thiếu người dự phòng, thứ mà CAB
+      thường hỏi lại ở lần sau.
+
+  - code: nEnd
+    partner_line_en: "Perfect, that's everything I need. Change approved."
+    partner_line_vi: "Chuẩn, đủ thứ tôi cần. Thay đổi được duyệt."
+    terminal: true
+    success: true
+    summary_vi: >-
+      Đúng bộ ba mà mọi CAB đều hỏi: ảnh hưởng có số, quay lui tính bằng phút, tiêu chí
+      thành công đo được — cộng thêm người trực và người dự phòng.

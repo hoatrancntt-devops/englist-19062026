@@ -1,0 +1,271 @@
+schema_version: 1
+code: LIFE-07
+slug: gioi-thieu-ban-than-ba-cau
+title_vi: "Giới thiệu bản thân — ba câu là đủ"
+title_en: "Introducing yourself in three sentences"
+
+layer: Life
+track: Foundation
+level: A1
+unit_code: U-L1
+order_index: 7
+estimated_minutes: 11
+
+illustration: handshake-intro
+
+objective_vi: >
+  Giới thiệu bản thân trong ba câu: tên, làm gì, và một chi tiết để người ta bắt chuyện tiếp.
+
+objective_observable: >
+  Nói trọn ba câu giới thiệu của chính mình, đạt từ 75 điểm truyền đạt trên 3 trên 4 drill.
+
+mastery_weights:
+  Listening: 0.25
+  Speaking: 0.45
+  Reading: 0.15
+  Writing: 0.15
+
+prerequisites:
+  - lesson: LIFE-06
+    min_mastery: 60
+    kind: Hard
+
+vocabulary:
+  - term: "I work on"
+    ipa: "/aɪ wɜːrk ɒn/"
+    meaning_vi: "tôi làm mảng, tôi phụ trách"
+    chunk: "I work on the network side."
+    tags: [work, core]
+  - term: "I've been here"
+    ipa: "/aɪv biːn hɪr/"
+    meaning_vi: "tôi ở đây được (bao lâu)"
+    chunk: "I've been here about a month."
+    tags: [work, core]
+  - term: "I'm based in"
+    ipa: "/aɪm beɪst ɪn/"
+    meaning_vi: "tôi làm việc ở (thành phố nào)"
+    chunk: "I'm based in Da Nang."
+    tags: [work]
+  - term: "Nice to meet you"
+    ipa: "/naɪs tuː miːt juː/"
+    meaning_vi: "rất vui được gặp bạn"
+    chunk: "Nice to meet you, David."
+    tags: [social, core]
+  - term: "I handle"
+    ipa: "/aɪ ˈhændl/"
+    meaning_vi: "tôi lo phần, tôi xử lý"
+    chunk: "I handle the backup jobs."
+    tags: [work]
+  - term: "before that"
+    ipa: "/bɪˈfɔːr ðæt/"
+    meaning_vi: "trước đó"
+    chunk: "Before that, I was at a bank."
+    tags: [work]
+
+sentence_patterns:
+  - pattern: "I'm {name}, I work on {area}."
+    meaning_vi: "Tôi là {name}, tôi làm mảng {area}."
+    slots:
+      name: ["Minh", "Linh"]
+      area: ["the network side", "backup and recovery", "the helpdesk team"]
+  - pattern: "I've been here {duration}."
+    meaning_vi: "Tôi ở đây được {duration}."
+    slots:
+      duration: ["about a month", "two years", "since March"]
+
+dialogue:
+  context_vi: >
+    Cuộc gọi đầu tiên với David, quản lý phía khách hàng. Anh ấy hỏi bạn là ai.
+    Ba câu này quyết định cả ấn tượng đầu tiên.
+  turns:
+    - speaker: "David"
+      en: "Hi, I don't think we've met. Who am I speaking with?"
+      vi: "Chào bạn, hình như chúng ta chưa gặp. Tôi đang nói chuyện với ai vậy?"
+    - speaker: "You"
+      en: "I'm Minh. I work on the infrastructure side, mostly backup and monitoring."
+      vi: "Tôi là Minh. Tôi làm mảng hạ tầng, chủ yếu là backup và giám sát."
+    - speaker: "David"
+      en: "Good to know. How long have you been with the team?"
+      vi: "Tốt quá. Bạn ở team này bao lâu rồi?"
+    - speaker: "You"
+      en: "I've been here about two months. Before that, I was at a bank in Da Nang."
+      vi: "Tôi ở đây khoảng hai tháng. Trước đó tôi làm ở một ngân hàng tại Đà Nẵng."
+    - speaker: "David"
+      en: "Nice to meet you, Minh. You'll be on the incident calls with us then."
+      vi: "Rất vui được gặp Minh. Vậy bạn sẽ tham gia các cuộc gọi sự cố với bọn tôi."
+
+listening:
+  context_vi: >
+    Nghe Priya tự giới thiệu trong buổi họp đầu tiên. Ba câu, đúng cấu trúc bạn sắp học.
+  speed: 0.9
+  voice: en_US_female
+  transcript_en: "Hi everyone, I'm Priya. I work on the deployment side, mostly Kubernetes. I've been with the team about three years, and I'm based in Singapore."
+  transcript_vi: "Chào cả nhà, tôi là Priya. Tôi làm mảng triển khai, chủ yếu là Kubernetes. Tôi ở team này khoảng ba năm rồi, và tôi làm việc ở Singapore."
+  questions:
+    - kind: mcq_listen
+      prompt_vi: "Priya phụ trách mảng gì?"
+      choices: ["Triển khai", "Bảo mật", "Hỗ trợ người dùng"]
+      answer: 0
+      difficulty: 2
+      skill: Listening
+    - kind: mcq_listen
+      prompt_vi: "Priya làm việc ở đâu?"
+      choices: ["Ha Noi", "Da Nang", "Singapore"]
+      answer: 2
+      difficulty: 1
+      skill: Listening
+
+speaking_drills:
+  - kind: read_aloud
+    expected_text: "I work on the infrastructure side."
+    prompt_vi: "Đọc to. Chú ý âm /k/ cuối chữ work, đừng nuốt mất."
+    ipa: "/aɪ wɜːrk ɒn ðə ˈɪnfrəstrʌktʃər saɪd/"
+    focus_phonemes: ["k", "ð"]
+  - kind: read_aloud
+    expected_text: "I've been here about two months."
+    prompt_vi: "Chú ý cụm /nθs/ cuối chữ months — chỗ khó nhất câu này."
+    ipa: "/aɪv biːn hɪr əˈbaʊt tuː mʌnθs/"
+    focus_phonemes: ["θ", "s"]
+  - kind: shadow
+    expected_text: "Nice to meet you."
+    prompt_vi: "Người bản xứ nói dính thành nai-stu-mit-chu. Nghe rồi nhắc lại."
+    ipa: "/naɪs tuː miːt juː/"
+    focus_phonemes: ["s", "t"]
+  - kind: shadow
+    expected_text: "Before that, I was at a bank."
+    prompt_vi: "Câu này kể quá khứ. Chú ý âm cuối /z/ của was."
+    ipa: "/bɪˈfɔːr ðæt aɪ wɒz æt ə bæŋk/"
+    focus_phonemes: ["ð", "z"]
+  - kind: respond
+    prompt_en: "Hi, I don't think we've met. Who am I speaking with?"
+    prompt_vi: "Khách hàng hỏi bạn là ai. Giới thiệu bằng tên thật và công việc thật của bạn."
+    accept_patterns:
+      - "I'm"
+      - "My name is"
+      - "This is"
+
+reading:
+  kind: email
+  context_vi: >
+    Email giới thiệu thành viên mới gửi cả team. Tìm ba thông tin: tên, mảng phụ trách, và nơi làm việc.
+  text_en: |
+    Subject: Welcome Minh to the infra team
+
+    Hi all,
+
+    Minh joined us this week. He works on backup and monitoring,
+    and he is based in Da Nang. Before joining, he spent two years
+    at a bank handling their storage systems.
+
+    Please say hello on the team channel.
+
+    Linh
+  text_vi: |
+    Tiêu đề: Chào mừng Minh vào team hạ tầng
+
+    Chào cả nhà,
+
+    Minh vừa gia nhập tuần này. Bạn ấy làm mảng backup và giám sát,
+    và làm việc tại Đà Nẵng. Trước khi vào đây, bạn ấy có hai năm
+    ở một ngân hàng phụ trách hệ thống lưu trữ.
+
+    Mọi người chào Minh trên kênh team nhé.
+
+    Linh
+  questions:
+    - kind: mcq_read
+      prompt_en: "What does Minh work on?"
+      choices: ["Network routing", "Backup and monitoring", "Customer support"]
+      answer: 1
+      difficulty: 1
+      reading_skill: scan
+      skill: Reading
+    - kind: mcq_read
+      prompt_en: "Where did Minh work before?"
+      choices: ["A hospital", "A university", "A bank"]
+      answer: 2
+      difficulty: 2
+      reading_skill: scan
+      skill: Reading
+    - kind: mcq_read
+      prompt_en: "What does Linh ask the team to do?"
+      choices: ["Say hello on the channel", "Send a report", "Join a meeting"]
+      answer: 0
+      difficulty: 2
+      reading_skill: skim
+      skill: Reading
+
+writing:
+  kind: GuidedEmail
+  prompt_vi: >
+    Viết ba câu giới thiệu bản thân để gửi lên kênh team. Phải nêu đủ ba ý:
+    tên bạn, mảng bạn làm, và bạn đã ở đây bao lâu.
+  prompt_en: "Write a three-sentence introduction for the team channel."
+  required_points:
+    - "name is"
+    - "work on"
+    - "been here"
+  hint_vi: "Dùng đúng ba mẫu câu đã học: I'm... / I work on... / I've been here..."
+  sample_en: "Hi everyone, my name is Minh. I work on backup and monitoring. I've been here about two months."
+
+quiz:
+  - kind: mcq
+    prompt_vi: "Câu nào tự nhiên nhất khi giới thiệu công việc?"
+    choices: ["I am infrastructure", "I work on the infrastructure side", "My job is infrastructure man"]
+    answer: 1
+    difficulty: 2
+    skill: Speaking
+  - kind: mcq
+    prompt_vi: "\"I've been here about a month\" nghĩa là gì?"
+    choices: ["Tôi sẽ ở đây một tháng", "Tôi đã rời đi một tháng trước", "Tôi ở đây được khoảng một tháng"]
+    answer: 2
+    difficulty: 2
+    skill: Reading
+  - kind: mcq
+    prompt_vi: "Ba câu giới thiệu nên gồm những gì?"
+    choices: ["Tên, mảng làm, một chi tiết bắt chuyện", "Tên, tuổi, quê quán", "Tên, lương, chức danh"]
+    answer: 0
+    difficulty: 1
+    skill: Speaking
+  - kind: mcq
+    prompt_vi: "Người ta vừa nói \"Nice to meet you\". Bạn đáp gì?"
+    choices: ["Yes", "Nice to meet you too", "Thank you sir"]
+    answer: 1
+    difficulty: 1
+    skill: Speaking
+
+explanation:
+  why_vi: >
+    Người Việt hay giới thiệu quá dài hoặc quá ngắn. Quá dài thì kể cả quá trình học hành;
+    quá ngắn thì chỉ nói mỗi tên rồi im, để người kia phải hỏi tiếp từng câu.
+    Cả hai đều làm cuộc trò chuyện khó nối tiếp.
+  how_vi: >
+    Dùng đúng ba câu: TÊN, LÀM GÌ, MỘT CHI TIẾT. Chi tiết thứ ba quan trọng nhất —
+    nó là cái móc để người kia bắt chuyện tiếp, ví dụ nơi bạn làm việc hoặc chỗ làm cũ.
+    Không có nó thì cuộc trò chuyện chết ngay sau câu hai.
+  contrast_vi: >
+    "I work on backup" nói bạn làm mảng gì. "I handle the backup jobs" nói bạn chịu trách nhiệm
+    cụ thể việc gì. Câu sau mạnh hơn khi bạn muốn người ta biết tìm ai khi có sự cố.
+
+common_mistakes:
+  - mistake: "Nói \"I am a system engineer\" rồi dừng lại"
+    why_vi: >
+      Chức danh không cho người nghe biết bạn làm gì hằng ngày, và không mở ra câu hỏi tiếp theo.
+      Cuộc trò chuyện dừng ngay tại đó.
+    fix_vi: "Thay bằng việc cụ thể: \"I work on backup and monitoring.\" Người nghe hình dung được ngay."
+    detect_phoneme_missing: []
+  - mistake: "Nuốt cụm /nθs/ cuối chữ months"
+    why_vi: >
+      Ba phụ âm liền nhau không tồn tại trong tiếng Việt, nên miệng bỏ bớt và thành “mon”.
+      Người nghe không biết bạn nói tháng hay tuần.
+    fix_vi: "Tập chậm: mun-THS. Hoặc nói \"about eight weeks\" nếu chưa quen — cũng đúng."
+    detect_phoneme_missing: ["θ", "s"]
+  - mistake: "Dùng thì hiện tại đơn cho khoảng thời gian: \"I am here two months\""
+    why_vi: >
+      Tiếng Việt không đổi động từ theo thì, nên người học giữ nguyên “tôi ở đây hai tháng”.
+    fix_vi: "Việc bắt đầu trong quá khứ và còn tiếp diễn thì dùng \"I've been here...\"."
+    detect_phoneme_missing: []
+
+memory_trick_vi: >
+  Ba câu, ba việc: TÊN, LÀM GÌ, MÓC CÂU. Câu thứ ba là cái móc — không có nó
+  thì đối phương không biết hỏi tiếp gì và cuộc trò chuyện rơi vào im lặng.

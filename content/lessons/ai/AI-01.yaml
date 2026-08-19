@@ -1,0 +1,359 @@
+schema_version: 1
+code: AI-01
+slug: trinh-bay-ai-use-case
+title_vi: "Trình bày AI use case cho người không chuyên"
+title_en: "Presenting an AI use case to a non-technical stakeholder"
+
+layer: Professional
+track: Ai
+level: B1
+unit_code: U-AI1
+order_index: 1
+estimated_minutes: 12
+is_checkpoint: false
+
+illustration: ai-brain
+
+objective_vi: >
+  Trình bày một ứng dụng AI cho người không rành kỹ thuật: nói rõ nó thay thế
+  công việc nào, sai thì chuyện gì xảy ra, và ai kiểm lại.
+
+objective_observable: >
+  Đạt từ 75 điểm trên cả bốn trục kỹ năng, không trục nào dưới 60.
+
+mastery_weights:
+  Listening: 0.25
+  Speaking: 0.35
+  Reading: 0.20
+  Writing: 0.20
+
+prerequisites:
+  - lesson: OFF-12
+    min_mastery: 70
+    kind: Hard
+  - lesson: HD-04
+    min_mastery: 65
+    kind: Soft
+  - lesson: OFF-10
+    min_mastery: 65
+    kind: Soft
+  - lesson: CLD-01
+    min_mastery: 65
+    kind: Soft
+
+vocabulary:
+  - term: "use case"
+    ipa: "/juːs keɪs/"
+    meaning_vi: "trường hợp ứng dụng cụ thể"
+    chunk: "The use case is sorting incoming tickets."
+    tags: [ai, core]
+  - term: "it drafts, a person approves"
+    ipa: "/ɪt drɑːfts ə ˈpɜːrsn əˈpruːvz/"
+    meaning_vi: "máy soạn nháp, người duyệt"
+    chunk: "It drafts the reply, a person approves it."
+    tags: [ai, core]
+  - term: "when it is wrong"
+    ipa: "/wen ɪt ɪz rɒŋ/"
+    meaning_vi: "khi nó sai"
+    chunk: "When it is wrong, the ticket goes to the queue as before."
+    tags: [ai, core]
+  - term: "it makes things up"
+    ipa: "/ɪt meɪks θɪŋz ʌp/"
+    meaning_vi: "nó bịa ra"
+    chunk: "Sometimes it makes things up, so we check the source."
+    tags: [ai, core]
+  - term: "saves about"
+    ipa: "/seɪvz əˈbaʊt/"
+    meaning_vi: "tiết kiệm khoảng"
+    chunk: "It saves about two hours a day for the team."
+    tags: [ai, core]
+  - term: "we start small"
+    ipa: "/wiː stɑːrt smɔːl/"
+    meaning_vi: "chúng tôi làm nhỏ trước"
+    chunk: "We start small: one team, four weeks."
+    tags: [ai, core]
+
+sentence_patterns:
+  - pattern: "It {action}, and a person {check}."
+    meaning_vi: "Nó {action}, và một người {check}."
+    slots:
+      action: ["drafts the reply", "suggests a category", "summarises the log"]
+      check: ["approves it before sending", "can change it in one click", "checks it against the source"]
+  - pattern: "When it is wrong, {fallback}."
+    meaning_vi: "Khi nó sai thì {fallback}."
+    slots:
+      fallback: ["the ticket goes to the queue as before", "the agent edits the draft", "nothing is sent"]
+
+dialogue:
+  context_vi: >
+    Chị Thu, trưởng phòng dịch vụ khách hàng, nghe bạn đề xuất dùng AI phân loại
+    ticket. Chị không rành kỹ thuật và đang lo nhân viên mất việc.
+  turns:
+    - speaker: "Thu"
+      en: "You want to use AI on our tickets. Explain it to me like I know nothing about it."
+      vi: "Em muốn dùng AI cho ticket của bọn chị. Giải thích như thể chị không biết gì về nó đi."
+    - speaker: "You"
+      en: "Right now an agent reads each new ticket and picks a category. That takes about thirty seconds each, and we get four hundred a day."
+      vi: "Hiện tại một nhân viên đọc từng ticket mới rồi chọn nhóm. Mỗi cái mất khoảng ba mươi giây, mà một ngày có bốn trăm cái."
+    - speaker: "Thu"
+      en: "So about three hours a day. And the AI does that instead?"
+      vi: "Vậy khoảng ba tiếng một ngày. Rồi AI làm thay à?"
+    - speaker: "You"
+      en: "It suggests a category. The agent still sees it and can change it in one click. It drafts, a person approves."
+      vi: "Nó gợi ý nhóm. Nhân viên vẫn nhìn thấy và đổi được bằng một cú bấm. Máy soạn nháp, người duyệt."
+    - speaker: "Thu"
+      en: "What if it picks the wrong one?"
+      vi: "Nếu nó chọn sai thì sao?"
+    - speaker: "You"
+      en: "Then the agent changes it, same as today. Nothing gets worse — the worst case is we're back to where we are now."
+      vi: "Thì nhân viên đổi lại, y như hôm nay. Không có gì tệ hơn — xấu nhất là mình quay về đúng hiện trạng."
+    - speaker: "Thu"
+      en: "And nobody loses their job?"
+      vi: "Và không ai mất việc chứ?"
+    - speaker: "You"
+      en: "Not from this. It removes the sorting, not the answering. The answering is the part that needs a person."
+      vi: "Không phải vì cái này ạ. Nó bỏ phần phân loại, không bỏ phần trả lời. Phần trả lời mới là phần cần người."
+    - speaker: "Thu"
+      en: "How do we know it works before we roll it out?"
+      vi: "Làm sao biết nó chạy được trước khi triển khai rộng?"
+    - speaker: "You"
+      en: "We start small. One team, four weeks, and we measure how often the agent has to change the suggestion."
+      vi: "Bọn em làm nhỏ trước. Một nhóm, bốn tuần, và đo xem nhân viên phải sửa gợi ý bao nhiêu lần."
+
+listening:
+  context_vi: >
+    Nghe hai cách trình bày cùng một ý tưởng AI. Chú ý cách nào cho
+    người nghe biết chuyện gì xảy ra khi máy sai.
+  speed: 1.1
+  voice: en_US_female
+  transcript_en: "Pitch one: we will use AI to transform our support process, improve efficiency and deliver a better customer experience with cutting-edge technology. Pitch two: the AI suggests a ticket category, the agent sees the suggestion and can change it in one click. If it is wrong, the agent changes it, exactly like today. We run it with one team for four weeks and measure how often the suggestion is changed."
+  transcript_vi: "Cách một: bọn tôi sẽ dùng AI để chuyển đổi quy trình hỗ trợ, nâng cao hiệu quả và mang lại trải nghiệm khách hàng tốt hơn bằng công nghệ tiên tiến. Cách hai: AI gợi ý nhóm cho ticket, nhân viên nhìn thấy gợi ý và đổi được bằng một cú bấm. Nếu nó sai thì nhân viên đổi lại, y hệt hôm nay. Bọn tôi chạy với một nhóm trong bốn tuần và đo xem gợi ý bị đổi bao nhiêu lần."
+  questions:
+    - kind: mcq_listen
+      prompt_vi: "Cách hai nói rõ điều gì mà cách một không?"
+      choices: ["Chuyện gì xảy ra khi máy sai", "Tên mô hình dùng", "Chi phí bản quyền"]
+      answer: 0
+      difficulty: 2
+      skill: Listening
+    - kind: mcq_listen
+      prompt_vi: "Cách hai đo thành công bằng gì?"
+      choices: ["Mức độ hài lòng", "Số ticket mỗi ngày", "Số lần nhân viên phải đổi gợi ý"]
+      answer: 2
+      difficulty: 2
+      skill: Listening
+    - kind: mcq_listen
+      prompt_vi: "Vì sao cách một khó duyệt?"
+      choices: ["Quá ngắn", "Toàn từ chung chung, người nghe không biết cụ thể máy làm gì", "Dùng quá nhiều số"]
+      answer: 1
+      difficulty: 3
+      skill: Listening
+
+speaking_drills:
+  - kind: read_aloud
+    expected_text: "It drafts the reply, and a person approves it before sending."
+    prompt_vi: "Câu quan trọng nhất khi nói về AI với người không chuyên."
+    ipa: "/ɪt drɑːfts ðə rɪˈplaɪ ænd ə ˈpɜːrsn/"
+    focus_phonemes: ["dr", "pl"]
+  - kind: read_aloud
+    expected_text: "When it is wrong, the agent changes it, exactly like today."
+    prompt_vi: "Nói rõ đường lui. Người nghe sợ nhất là lúc máy sai."
+    ipa: "/wen ɪt ɪz rɒŋ ði ˈeɪdʒənt ˈtʃeɪndʒɪz ɪt/"
+    focus_phonemes: ["dʒ", "tʃ"]
+  - kind: shadow
+    expected_text: "It removes the sorting, not the answering."
+    prompt_vi: "Nói rõ phần nào máy làm, phần nào người vẫn làm."
+    ipa: "/ɪt rɪˈmuːvz ðə ˈsɔːrtɪŋ/"
+    focus_phonemes: ["v", "ŋ"]
+  - kind: shadow
+    expected_text: "We start small: one team, four weeks."
+    prompt_vi: "Phạm vi nhỏ và thời hạn rõ làm đề xuất dễ duyệt hơn nhiều."
+    ipa: "/wiː stɑːrt smɔːl wʌn tiːm/"
+    focus_phonemes: ["st", "sm"]
+  - kind: respond
+    prompt_en: "What if the AI picks the wrong category?"
+    prompt_vi: "Nêu đường lui và nói rõ xấu nhất là quay về hiện trạng."
+    accept_patterns:
+      - "the agent changes it"
+      - "like today"
+      - "wrong"
+
+reading:
+  kind: note
+  context_vi: >
+    Đề xuất một trang gửi trưởng phòng. Đọc và tìm chỗ tác giả nói ra
+    giới hạn của mô hình.
+  text_en: |
+    Proposal: category suggestion for incoming tickets
+
+    The problem
+    Agents sort 400 tickets a day by hand. Each takes about 30 seconds,
+    so roughly 3 hours of agent time a day goes to sorting rather than
+    answering. Sorting is also the part agents rate lowest in the team survey.
+
+    What we would build
+    A model reads the ticket text and suggests one of our 14 categories.
+    The suggestion appears pre-filled in the form. The agent sees it and
+    changes it with one click if it is wrong. Nothing is sent to the
+    customer by the model. It drafts, a person approves.
+
+    What it will get wrong
+    Two things, from the test on last month's tickets. Tickets that mention
+    two systems get sorted by the first one mentioned, which is wrong about
+    a fifth of the time. And tickets written in a mix of Vietnamese and
+    English do noticeably worse - we measured 71% correct against 89% for
+    single-language tickets. Both cases end the same way: the agent changes
+    the category, which is what happens today anyway.
+
+    What it does not do
+    It does not close tickets, it does not reply to customers, and it does
+    not decide priority. Priority stays manual because getting it wrong has
+    a real cost and the model gave us no useful signal in testing.
+
+    How we would know it works
+    One team, four weeks. Success is the agent accepting the suggestion
+    without change at least 80% of the time, measured automatically.
+    Below that we stop - a suggestion that is wrong one time in three is
+    worse than no suggestion, because the agent stops reading it carefully.
+  text_vi: |
+    Đề xuất: gợi ý phân nhóm cho ticket mới
+
+    Vấn đề
+    Nhân viên phân loại 400 ticket mỗi ngày bằng tay. Mỗi cái mất khoảng 30 giây,
+    tức khoảng 3 tiếng thời gian nhân viên mỗi ngày dành cho phân loại thay vì trả lời.
+    Phân loại cũng là phần bị chấm điểm thấp nhất trong khảo sát nội bộ.
+
+    Sẽ làm gì
+    Một mô hình đọc nội dung ticket và gợi ý một trong 14 nhóm của mình.
+    Gợi ý hiện sẵn trong biểu mẫu. Nhân viên nhìn thấy và đổi bằng một cú bấm
+    nếu sai. Mô hình không gửi gì tới khách hàng. Máy soạn nháp, người duyệt.
+
+    Nó sẽ sai ở đâu
+    Hai chỗ, theo kết quả thử trên ticket tháng trước. Ticket nhắc tới hai hệ thống
+    thì bị xếp theo hệ nhắc trước, sai khoảng một phần năm số lần. Và ticket viết
+    lẫn tiếng Việt với tiếng Anh thì kém hơn rõ rệt - bọn mình đo được 71% đúng
+    so với 89% ở ticket một ngôn ngữ. Cả hai trường hợp đều kết thúc giống nhau:
+    nhân viên đổi nhóm, đúng như việc vẫn làm hôm nay.
+
+    Nó không làm gì
+    Nó không đóng ticket, không trả lời khách, và không quyết mức ưu tiên.
+    Mức ưu tiên vẫn làm tay vì sai chỗ đó có giá thật, và khi thử thì mô hình
+    không cho tín hiệu nào dùng được.
+
+    Làm sao biết nó chạy được
+    Một nhóm, bốn tuần. Thành công là nhân viên chấp nhận gợi ý mà không sửa
+    ít nhất 80% số lần, đo tự động. Dưới mức đó thì dừng - một gợi ý sai một phần ba
+    số lần còn tệ hơn không có gợi ý, vì nhân viên sẽ thôi đọc kỹ nó.
+  questions:
+    - kind: mcq_read
+      prompt_en: "What accuracy did mixed-language tickets reach in testing?"
+      choices: ["89%", "80%", "71%"]
+      answer: 2
+      difficulty: 2
+      reading_skill: scan
+      skill: Reading
+    - kind: mcq_read
+      prompt_en: "Why does priority stay manual?"
+      choices: ["Getting it wrong has a real cost and the model gave no useful signal", "It is too slow to automate", "Agents prefer it"]
+      answer: 0
+      difficulty: 3
+      reading_skill: scan
+      skill: Reading
+    - kind: mcq_read
+      prompt_en: "Why is a suggestion wrong one time in three worse than none?"
+      choices: ["It costs more", "The agent stops reading it carefully", "It slows the form down"]
+      answer: 1
+      difficulty: 3
+      reading_skill: skim
+      skill: Reading
+
+writing:
+  kind: GuidedEmail
+  prompt_vi: >
+    Viết ba câu giới thiệu một ứng dụng AI cho người không chuyên: nó làm gì,
+    ai duyệt, và chuyện gì xảy ra khi nó sai.
+  prompt_en: "Introduce an AI use case to a non-technical manager."
+  required_points:
+    - "suggests"
+    - "a person"
+    - "when it is wrong"
+  hint_vi: "Không dùng từ mô hình, tham số, huấn luyện. Nói bằng việc nhân viên đang làm."
+  sample_en: "The model reads each new ticket and suggests one of our fourteen categories, and the suggestion appears pre-filled in the form. A person still sees every ticket and changes the category in one click if it does not fit. When it is wrong, the agent changes it exactly as they do today, so the worst case is where we already are."
+
+quiz:
+  - kind: mcq
+    prompt_vi: "Nói về AI với người không chuyên nên tránh gì nhất?"
+    choices: ["Con số cụ thể", "Ví dụ thực tế", "Từ chung chung như chuyển đổi, tối ưu, tiên tiến"]
+    answer: 2
+    difficulty: 1
+    skill: Speaking
+  - kind: mcq
+    prompt_vi: "\"It drafts, a person approves\" mô tả điều gì?"
+    choices: ["Máy làm nháp, người vẫn là người duyệt cuối", "Máy tự quyết hoàn toàn", "Người làm nháp, máy duyệt"]
+    answer: 0
+    difficulty: 1
+    skill: Reading
+  - kind: mcq
+    prompt_vi: "Người nghe lo nhân viên mất việc. Trả lời thế nào?"
+    choices: ["Không sao đâu chị", "Nó bỏ phần phân loại, không bỏ phần trả lời — phần trả lời mới cần người", "Chuyện đó chưa tính tới ạ"]
+    answer: 1
+    difficulty: 2
+    skill: Speaking
+  - kind: mcq
+    prompt_vi: "Vì sao phải nói ra chỗ mô hình sẽ sai?"
+    choices: ["Vì người nghe cần biết đường lui trước khi đồng ý", "Cho khiêm tốn", "Vì quy định bắt buộc"]
+    answer: 0
+    difficulty: 2
+    skill: Writing
+  - kind: mcq
+    prompt_vi: "Tiêu chí thử nghiệm nào dùng được?"
+    choices: ["Nhân viên thấy hài lòng", "Không có lỗi nào", "Gợi ý được chấp nhận không sửa ít nhất 80% số lần, đo tự động"]
+    answer: 2
+    difficulty: 2
+    skill: Writing
+  - kind: mcq
+    prompt_vi: "Vì sao gợi ý sai một phần ba số lần lại tệ hơn không có gợi ý?"
+    choices: ["Vì tốn tiền", "Vì người dùng thôi đọc kỹ và bắt đầu bấm theo quán tính", "Vì hệ thống chậm hơn"]
+    answer: 1
+    difficulty: 3
+    skill: Reading
+
+explanation:
+  why_vi: >
+    Người quyết ngân sách không hỏi mô hình nào, bao nhiêu tham số. Họ hỏi ba câu:
+    nó thay việc gì, sai thì sao, ai chịu trách nhiệm. Bài trình bày đầy từ
+    "chuyển đổi", "tối ưu", "tiên tiến" không trả lời câu nào trong ba câu đó,
+    nên bị hoãn — không phải vì người nghe phản đối AI mà vì họ không có gì để đánh giá.
+  how_vi: >
+    Ba câu, bằng ngôn ngữ công việc chứ không phải ngôn ngữ kỹ thuật.
+    Câu một: hiện tại ai làm việc gì, mất bao lâu. Câu hai: máy làm phần nào,
+    người duyệt phần nào — "it drafts, a person approves". Câu ba: khi nó sai
+    thì chuyện gì xảy ra. Nếu câu ba là "quay về đúng như hôm nay" thì đề xuất
+    của bạn gần như chắc chắn được duyệt.
+  contrast_vi: >
+    "Dùng AI để chuyển đổi quy trình hỗ trợ" không cho người nghe thứ gì để cân nhắc.
+    "Máy gợi ý nhóm, nhân viên đổi bằng một cú bấm, sai thì đổi lại y như hôm nay"
+    cho họ thấy rủi ro tối đa — và rủi ro tối đa bằng hiện trạng là lý lẽ mạnh nhất.
+
+common_mistakes:
+  - mistake: "Dùng từ ngữ tiếp thị thay vì mô tả công việc"
+    why_vi: >
+      Nghe nhiều bài giới thiệu sản phẩm nên phản xạ là nói theo giọng đó.
+      Nhưng người nghe muốn biết nhân viên của họ sẽ làm gì khác đi.
+    fix_vi: "Mô tả một ngày làm việc trước và sau. Bỏ hết tính từ."
+    detect_phoneme_missing: []
+  - mistake: "Không nói ra trường hợp máy sai"
+    why_vi: >
+      Sợ nói ra thì đề xuất bị từ chối. Thực tế ngược lại: người duyệt
+      luôn giả định máy sẽ sai, và im lặng khiến họ nghĩ bạn chưa xét tới.
+    fix_vi: "Thêm một câu \"When it is wrong, ...\" nêu rõ đường lui."
+    detect_phoneme_missing: []
+  - mistake: "Xin phạm vi lớn ngay từ đầu"
+    why_vi: >
+      Muốn chứng minh giá trị lớn nên đề xuất áp dụng toàn công ty.
+      Nhưng phạm vi lớn kéo theo nhiều người phải duyệt và đề xuất chết vì chờ.
+    fix_vi: "Xin một nhóm, bốn tuần, kèm một tiêu chí đo được để dừng hoặc mở rộng."
+    detect_phoneme_missing: []
+
+memory_trick_vi: >
+  Ba câu cho người không chuyên: HIỆN TẠI AI LÀM GÌ, MẤT BAO LÂU — MÁY SOẠN, NGƯỜI DUYỆT —
+  SAI THÌ QUAY VỀ ĐÚNG NHƯ HÔM NAY. Câu thứ ba là câu bán được đề xuất.

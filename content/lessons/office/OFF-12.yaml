@@ -1,0 +1,320 @@
+schema_version: 1
+code: OFF-12
+slug: checkpoint-tang-van-phong
+title_vi: "Checkpoint: Tầng Văn phòng"
+title_en: "Checkpoint: office English"
+
+layer: Office
+track: Foundation
+level: B1
+unit_code: U-O3
+order_index: 12
+estimated_minutes: 12
+is_checkpoint: true
+
+illustration: desk-laptop
+
+objective_vi: >
+  Chứng minh bạn xử lý được một ngày làm việc bình thường bằng tiếng Anh:
+  nhận việc, báo tiến độ, từ chối khi quá tải, và viết lại cho người khác đọc.
+
+objective_observable: >
+  Đạt từ 80 điểm trên cả bốn trục kỹ năng, không trục nào dưới 65.
+
+mastery_weights:
+  Listening: 0.25
+  Speaking: 0.30
+  Reading: 0.20
+  Writing: 0.25
+
+prerequisites:
+  - lesson: OFF-11
+    min_mastery: 70
+    kind: Hard
+  - lesson: OFF-04
+    min_mastery: 65
+    kind: Hard
+  - lesson: OFF-09
+    min_mastery: 65
+    kind: Soft
+
+vocabulary:
+  - term: "Just to make sure"
+    ipa: "/dʒʌst tuː meɪk ʃʊr/"
+    meaning_vi: "cho chắc thì"
+    chunk: "Just to make sure I got it right..."
+    tags: [review, core]
+  - term: "blocked on"
+    ipa: "/blɒkt ɒn/"
+    meaning_vi: "đang kẹt vì"
+    chunk: "I'm blocked on console access."
+    tags: [review, core]
+  - term: "what should I drop"
+    ipa: "/wɒt ʃʊd aɪ drɒp/"
+    meaning_vi: "vậy em bỏ việc nào"
+    chunk: "If this is urgent, what should I drop?"
+    tags: [review, core]
+  - term: "Action needed"
+    ipa: "/ˈækʃn ˈniːdɪd/"
+    meaning_vi: "cần bạn xử lý"
+    chunk: "Action needed: approve by Thursday"
+    tags: [review]
+  - term: "Can I jump in"
+    ipa: "/kæn aɪ dʒʌmp ɪn/"
+    meaning_vi: "cho tôi nói xen"
+    chunk: "Can I jump in here?"
+    tags: [review]
+  - term: "Who owns"
+    ipa: "/huː oʊnz/"
+    meaning_vi: "ai phụ trách"
+    chunk: "Who owns the backup jobs?"
+    tags: [review]
+
+sentence_patterns:
+  - pattern: "Just to make sure — {restatement}?"
+    meaning_vi: "Cho chắc thì — {restatement}?"
+    slots:
+      restatement: ["production only, by Friday", "you need it Wednesday"]
+  - pattern: "I'm blocked on {thing}. I need {need}."
+    meaning_vi: "Em đang kẹt vì {thing}. Em cần {need}."
+    slots:
+      thing: ["console access", "the vendor reply"]
+      need: ["approval on request 8842", "an answer by tomorrow"]
+
+dialogue:
+  context_vi: >
+    Một buổi sáng gói trọn cả tầng Văn phòng: nhận việc mơ hồ, xác nhận lại,
+    báo tiến độ có vướng, và từ chối việc thứ ba vì quá tải.
+  turns:
+    - speaker: "Linh"
+      en: "Morning. Can you finish the audit and also take the firewall review this week?"
+      vi: "Chào buổi sáng. Em làm xong phần rà soát rồi nhận thêm phần review tường lửa tuần này được không?"
+    - speaker: "You"
+      en: "Just to make sure — the audit is the production one, due Friday?"
+      vi: "Cho chắc thì — phần rà soát là bản production, hạn thứ Sáu ạ?"
+    - speaker: "Linh"
+      en: "That's right."
+      vi: "Đúng rồi."
+    - speaker: "You"
+      en: "The audit is about halfway — six of eleven servers. But I'm blocked on the two database ones, I need console access."
+      vi: "Phần rà soát được khoảng một nửa — sáu trên mười một máy. Nhưng em kẹt ở hai máy database, em cần quyền vào console."
+    - speaker: "Linh"
+      en: "I'll chase that today."
+      vi: "Hôm nay chị thúc giúp."
+    - speaker: "You"
+      en: "Thanks. On the firewall review — I won't be able to do it properly this week. If it's urgent, what should I drop?"
+      vi: "Cảm ơn chị. Còn phần review tường lửa — tuần này em không làm tử tế được. Nếu gấp thì em bỏ việc nào ạ?"
+    - speaker: "Linh"
+      en: "Fair enough. Let's move it to next week. Put it in writing so we both remember."
+      vi: "Hợp lý. Mình dời sang tuần sau. Em ghi lại thành văn bản để cả hai cùng nhớ."
+
+listening:
+  context_vi: >
+    Nghe một phần standup đủ ba phần cộng một lời từ chối. Đây là mức nghe
+    của một buổi sáng bình thường ở công ty.
+  speed: 1.0
+  voice: en_US_male
+  transcript_en: "Yesterday I finished six of eleven servers. Today I'm on the database ones but I'm blocked on console access, request 8842. On the extra audit — I won't be able to take it this week. The earliest I can start is Tuesday."
+  transcript_vi: "Hôm qua tôi làm xong sáu trên mười một máy. Hôm nay tôi làm mấy máy database nhưng đang kẹt ở quyền console, yêu cầu 8842. Về phần rà soát thêm — tuần này tôi không nhận được. Sớm nhất tôi bắt đầu được là thứ Ba."
+  questions:
+    - kind: mcq_listen
+      prompt_vi: "Đã xong bao nhiêu máy chủ?"
+      choices: ["Sáu trên mười một", "Mười một trên sáu", "Tám trên mười một"]
+      answer: 0
+      difficulty: 2
+      skill: Listening
+    - kind: mcq_listen
+      prompt_vi: "Số yêu cầu đang chờ duyệt là bao nhiêu?"
+      choices: ["8824", "2884", "8842"]
+      answer: 2
+      difficulty: 3
+      skill: Listening
+    - kind: mcq_listen
+      prompt_vi: "Sớm nhất họ bắt đầu việc mới được là khi nào?"
+      choices: ["Thứ Hai", "Thứ Ba", "Thứ Sáu"]
+      answer: 1
+      difficulty: 2
+      skill: Listening
+
+speaking_drills:
+  - kind: read_aloud
+    expected_text: "Just to make sure I got it right."
+    prompt_vi: "Câu xác nhận. Dùng sau mỗi lần nhận việc."
+    ipa: "/dʒʌst tuː meɪk ʃʊr aɪ ɡɒt ɪt raɪt/"
+    focus_phonemes: ["dʒ", "ʃ"]
+  - kind: read_aloud
+    expected_text: "I'm blocked on console access. I need approval on request 8842."
+    prompt_vi: "Nêu vướng mắc kèm thứ mình cần. Đọc số rời từng chữ."
+    ipa: "/aɪm blɒkt ɒn ˈkɒnsoʊl ˈækses/"
+    focus_phonemes: ["kt", "ks"]
+  - kind: shadow
+    expected_text: "If this is urgent, what should I drop?"
+    prompt_vi: "Câu mạnh nhất khi bị giao quá tải. Nghe rồi nhắc lại."
+    ipa: "/ɪf ðɪs ɪz ˈɜːrdʒənt wɒt ʃʊd aɪ drɒp/"
+    focus_phonemes: ["dʒ", "dr"]
+  - kind: shadow
+    expected_text: "Can I jump in? Six of eleven servers are done."
+    prompt_vi: "Xin lời rồi báo con số ngay. Hai bài gộp làm một."
+    ipa: "/kæn aɪ dʒʌmp ɪn sɪks ɒv ɪˈlevn ˈsɜːrvərz ɑːr dʌn/"
+    focus_phonemes: ["dʒ", "v"]
+  - kind: respond
+    prompt_en: "Can you finish the audit and also take the firewall review this week?"
+    prompt_vi: "Bạn đang quá tải. Xác nhận việc thứ nhất, rồi từ chối việc thứ hai cho đúng cách."
+    accept_patterns:
+      - "Just to make sure"
+      - "won't be able"
+      - "what should I drop"
+
+reading:
+  kind: email
+  context_vi: >
+    Email ghi lại thoả thuận sau buổi trao đổi. Tìm bốn thông tin trước khi trả lời.
+  text_en: |
+    Subject: Action needed - confirm audit scope and firewall review date
+
+    Hi Linh,
+
+    As discussed this morning, writing it down so we both have it:
+
+    1. Production audit - due Friday. 6 of 11 servers done.
+       Blocked on console access for the two database servers (request 8842).
+       You are chasing the DBA team today.
+
+    2. Firewall review - moved to next week. The earliest I can start is Tuesday.
+
+    Could you confirm point 2 by end of day, so I can tell the security team?
+
+    Looping in Priya - she needs the audit output for the storage sizing.
+
+    Minh
+  text_vi: |
+    Tiêu đề: Cần xác nhận - phạm vi rà soát và ngày review tường lửa
+
+    Chào chị Linh,
+
+    Như đã trao đổi sáng nay, em ghi lại để cả hai cùng nắm:
+
+    1. Rà soát production - hạn thứ Sáu. Đã xong 6 trên 11 máy.
+       Đang kẹt ở quyền console cho hai máy database (yêu cầu 8842).
+       Chị đang thúc team DBA hôm nay.
+
+    2. Review tường lửa - dời sang tuần sau. Sớm nhất em bắt đầu được là thứ Ba.
+
+    Chị xác nhận giúp em mục 2 trước cuối ngày để em báo team bảo mật nhé?
+
+    Em cho chị Priya vào cùng - chị ấy cần kết quả rà soát để tính dung lượng.
+
+    Minh
+  questions:
+    - kind: mcq_read
+      prompt_en: "What exactly does Minh ask Linh to confirm?"
+      choices: ["The audit deadline", "The console access", "Point 2, the firewall review date"]
+      answer: 2
+      difficulty: 2
+      reading_skill: scan
+      skill: Reading
+    - kind: mcq_read
+      prompt_en: "Why is Priya looped in?"
+      choices: ["She needs the audit output for storage sizing", "She approves the change", "She runs the firewall"]
+      answer: 0
+      difficulty: 2
+      reading_skill: scan
+      skill: Reading
+    - kind: mcq_read
+      prompt_en: "Why did Minh write this email at all?"
+      choices: ["To complain", "To put a verbal agreement in writing", "To ask for help"]
+      answer: 1
+      difficulty: 3
+      reading_skill: skim
+      skill: Reading
+
+writing:
+  kind: GuidedEmail
+  prompt_vi: >
+    Viết email ghi lại một thoả thuận vừa trao đổi miệng. Phải có đủ ba ý:
+    tiêu đề nêu hành động cần làm, tiến độ có con số kèm vướng mắc,
+    và một yêu cầu xác nhận có hạn.
+  prompt_en: "Write an email confirming what was agreed verbally."
+  required_points:
+    - "action needed"
+    - "blocked on"
+    - "confirm by end of day"
+  hint_vi: "Gộp ba bài: tiêu đề email, báo tiến độ, và xin xác nhận có hạn."
+  sample_en: "Action needed - confirm the firewall review date. Audit is 6 of 11 servers done, blocked on console access (request 8842). Could you confirm by end of day?"
+
+quiz:
+  - kind: mcq
+    prompt_vi: "Nhận việc mơ hồ thì làm gì trước?"
+    choices: ["Bắt đầu làm ngay", "Chờ người khác hỏi", "Hỏi phạm vi, hạn chót, ưu tiên"]
+    answer: 2
+    difficulty: 1
+    skill: Speaking
+  - kind: mcq
+    prompt_vi: "Báo tiến độ cần mấy phần?"
+    choices: ["Ba: đã xong, đang làm, đang vướng", "Một: đang làm gì", "Hai: xong và chưa xong"]
+    answer: 0
+    difficulty: 1
+    skill: Writing
+  - kind: mcq
+    prompt_vi: "Bị giao quá tải, câu nào mạnh nhất?"
+    choices: ["I'm too busy", "If this is urgent, what should I drop?", "I cannot"]
+    answer: 1
+    difficulty: 2
+    skill: Speaking
+  - kind: mcq
+    prompt_vi: "Tiêu đề email tốt gồm mấy phần?"
+    choices: ["Ba: loại việc, việc gì, hạn", "Một: chủ đề", "Hai: người gửi và chủ đề"]
+    answer: 0
+    difficulty: 2
+    skill: Writing
+  - kind: mcq
+    prompt_vi: "Vì sao nên ghi lại thoả thuận miệng thành email?"
+    choices: ["Cho trang trọng", "Vì công ty yêu cầu", "Để cả hai cùng nhớ đúng một điều"]
+    answer: 2
+    difficulty: 2
+    skill: Reading
+  - kind: mcq
+    prompt_vi: "Xin giúp cần kèm gì?"
+    choices: ["Lời xin lỗi", "Những gì đã thử và thứ mình cần", "Tên người gây lỗi"]
+    answer: 1
+    difficulty: 2
+    skill: Speaking
+
+explanation:
+  why_vi: >
+    Tầng Văn phòng không dạy từ vựng khó. Nó dạy bốn phản xạ mà thiếu chúng thì
+    tiếng Anh giỏi đến mấy cũng làm việc không hiệu quả: xác nhận trước khi làm,
+    báo tiến độ có con số, nói không cho đúng cách, và ghi lại thành văn bản.
+  how_vi: >
+    Bài này không có gì mới. Nó kiểm tra bạn chuyển được giữa bốn phản xạ đó
+    trong một buổi sáng, và quan trọng hơn: bạn có dám dùng chúng với cấp trên hay không.
+    Bí ở đâu thì quay lại đúng bài đó.
+  contrast_vi: >
+    "OK, em làm" rồi trễ hạn là cách nhanh nhất mất niềm tin.
+    "Cho chắc thì...", "Em đang kẹt ở...", "Nếu gấp thì em bỏ việc nào?"
+    là ba câu giữ được cả tiến độ lẫn quan hệ.
+
+common_mistakes:
+  - mistake: "Nhận hết mọi việc rồi trễ hạn trong im lặng"
+    why_vi: >
+      Sợ bị coi là không hợp tác. Nhưng trễ hạn không báo trước gây thiệt hại
+      lớn hơn nhiều so với một lời từ chối sớm và rõ ràng.
+    fix_vi: "Dùng câu \"If this is urgent, what should I drop?\" — đẩy việc chọn ưu tiên về đúng người."
+    detect_phoneme_missing: []
+  - mistake: "Trao đổi miệng xong không ghi lại"
+    why_vi: >
+      Cả hai bên đều nhớ theo cách có lợi cho mình, và một tuần sau thì
+      không ai chắc đã thoả thuận gì.
+    fix_vi: "Sau mỗi cuộc trao đổi quan trọng, gửi một email ngắn ghi lại. Năm phút, tiết kiệm cả tuần tranh cãi."
+    detect_phoneme_missing: []
+  - mistake: "Báo tiến độ không kèm con số"
+    why_vi: >
+      “Sắp xong” không cho người quản lý cơ sở nào để lên kế hoạch,
+      và họ phải hỏi lại thêm ba lượt.
+    fix_vi: "Luôn kèm tỷ lệ: sáu trên mười một, một nửa, còn hai máy."
+    detect_phoneme_missing: []
+
+memory_trick_vi: >
+  Cả tầng Văn phòng gói trong bốn phản xạ: XÁC NHẬN trước khi làm,
+  BÁO SỐ khi được hỏi tiến độ, HỎI BỎ VIỆC NÀO khi quá tải,
+  và GHI LẠI sau mỗi thoả thuận miệng.

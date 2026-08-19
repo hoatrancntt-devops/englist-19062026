@@ -1,0 +1,254 @@
+schema_version: 1
+code: OFF-01
+slug: pantry-sau-muoi-giay
+title_vi: "Pantry sáu mươi giây — nói gì khi chờ máy pha cà phê"
+title_en: "Small talk at the pantry"
+
+layer: Office
+track: Foundation
+level: A2
+unit_code: U-O1
+order_index: 1
+estimated_minutes: 11
+
+illustration: coffee-chat
+
+objective_vi: >
+  Giữ được một cuộc trò chuyện sáu mươi giây với đồng nghiệp mà không rơi vào im lặng,
+  và biết cách kết thúc để quay lại bàn làm việc.
+
+objective_observable: >
+  Nói được ba lượt trao đổi liên tiếp, mỗi lượt thêm ít nhất một thông tin mới.
+
+mastery_weights:
+  Listening: 0.30
+  Speaking: 0.40
+  Reading: 0.15
+  Writing: 0.15
+
+prerequisites:
+  - lesson: LIFE-16
+    min_mastery: 70
+    kind: Hard
+
+vocabulary:
+  - term: "How was your weekend"
+    ipa: "/haʊ wɒz jʊr ˈwiːkend/"
+    meaning_vi: "cuối tuần của bạn thế nào"
+    chunk: "How was your weekend?"
+    tags: [smalltalk, core]
+  - term: "Anything exciting"
+    ipa: "/ˈeniθɪŋ ɪkˈsaɪtɪŋ/"
+    meaning_vi: "có gì hay không"
+    chunk: "Anything exciting planned?"
+    tags: [smalltalk]
+  - term: "Same here"
+    ipa: "/seɪm hɪr/"
+    meaning_vi: "tôi cũng vậy"
+    chunk: "Same here, pretty quiet weekend."
+    tags: [smalltalk, core]
+  - term: "I'd better get back"
+    ipa: "/aɪd ˈbetər ɡet bæk/"
+    meaning_vi: "tôi phải quay lại làm việc đây"
+    chunk: "I'd better get back to it."
+    tags: [smalltalk, core]
+  - term: "How's the project going"
+    ipa: "/haʊz ðə ˈprɒdʒekt ˈɡoʊɪŋ/"
+    meaning_vi: "dự án của bạn thế nào rồi"
+    chunk: "How's the migration going?"
+    tags: [smalltalk, office]
+  - term: "Getting there"
+    ipa: "/ˈɡetɪŋ ðer/"
+    meaning_vi: "cũng đang tiến triển (đáp an toàn khi việc chưa xong)"
+    chunk: "Getting there, slowly."
+    tags: [smalltalk, office]
+
+sentence_patterns:
+  - pattern: "How was your {period}?"
+    meaning_vi: "{period} của bạn thế nào?"
+    slots:
+      period: ["weekend", "holiday", "trip"]
+  - pattern: "{answer}. How about you?"
+    meaning_vi: "{answer}. Còn bạn thì sao?"
+    slots:
+      answer: ["Pretty quiet", "Busy but good", "Same here"]
+
+dialogue:
+  context_vi: >
+    Sáng thứ Hai ở pantry. Máy pha cà phê chạy mất một phút, và bạn đứng cạnh Priya.
+    Một phút im lặng thì cả hai đều thấy ngượng; một phút nói chuyện thì tuần sau dễ nhờ vả hơn.
+  turns:
+    - speaker: "Priya"
+      en: "Morning. How was your weekend?"
+      vi: "Chào buổi sáng. Cuối tuần của bạn thế nào?"
+    - speaker: "You"
+      en: "Pretty quiet, thanks. I finally fixed the wifi at home. How about you?"
+      vi: "Khá yên tĩnh, cảm ơn. Cuối cùng tôi cũng sửa xong wifi ở nhà. Còn bạn?"
+    - speaker: "Priya"
+      en: "I went to Hoi An. First time — the food was amazing."
+      vi: "Tôi đi Hội An. Lần đầu tiên — đồ ăn ngon tuyệt."
+    - speaker: "You"
+      en: "Good choice. Did you try the cao lau?"
+      vi: "Chọn hay đấy. Bạn có thử cao lầu chưa?"
+    - speaker: "Priya"
+      en: "Twice. Anyway, how's the migration going?"
+      vi: "Hai lần luôn. À mà, dự án chuyển đổi của bạn thế nào rồi?"
+    - speaker: "You"
+      en: "Getting there. Two servers left. I'd better get back to it, actually."
+      vi: "Cũng đang tiến triển. Còn hai máy chủ nữa. Mà thôi tôi phải quay lại làm đây."
+
+listening:
+  context_vi: >
+    Nghe một đoạn pantry điển hình. Chú ý cách người ta chuyển chủ đề và cách kết thúc —
+    hai chỗ mà người mới hay lúng túng nhất.
+  speed: 1.0
+  voice: en_US_female
+  transcript_en: "Morning! Anything exciting planned for the weekend? Nice. Hey, how's the migration going? Getting there? Good. Right, I'd better get back to it. Catch you later."
+  transcript_vi: "Chào buổi sáng! Cuối tuần có kế hoạch gì hay không? Hay đấy. À, dự án chuyển đổi thế nào rồi? Cũng đang tiến triển à? Tốt. Thôi tôi phải quay lại làm đây. Gặp lại sau nhé."
+  questions:
+    - kind: mcq_listen
+      prompt_vi: "Người này chuyển từ chủ đề nào sang chủ đề nào?"
+      choices: ["Cuối tuần sang công việc", "Công việc sang cuối tuần", "Chỉ nói một chủ đề"]
+      answer: 0
+      difficulty: 2
+      skill: Listening
+    - kind: mcq_listen
+      prompt_vi: "Câu nào báo hiệu cuộc trò chuyện sắp kết thúc?"
+      choices: ["Anything exciting planned", "Getting there", "I'd better get back to it"]
+      answer: 2
+      difficulty: 2
+      skill: Listening
+
+speaking_drills:
+  - kind: read_aloud
+    expected_text: "How was your weekend?"
+    prompt_vi: "Câu mở chuyện an toàn nhất sáng thứ Hai. Lên giọng ở cuối."
+    ipa: "/haʊ wɒz jʊr ˈwiːkend/"
+    focus_phonemes: ["z", "k"]
+  - kind: read_aloud
+    expected_text: "Pretty quiet, thanks. How about you?"
+    prompt_vi: "Đáp rồi hỏi ngược — giữ mạch trò chuyện."
+    ipa: "/ˈprɪti ˈkwaɪət θæŋks haʊ əˈbaʊt juː/"
+    focus_phonemes: ["kw", "θ"]
+  - kind: shadow
+    expected_text: "How's the migration going?"
+    prompt_vi: "Chuyển sang chủ đề công việc. Nghe rồi nhắc lại."
+    ipa: "/haʊz ðə maɪˈɡreɪʃn ˈɡoʊɪŋ/"
+    focus_phonemes: ["ʃ", "ŋ"]
+  - kind: shadow
+    expected_text: "I'd better get back to it."
+    prompt_vi: "Câu kết thúc lịch sự. Không có nó thì bạn kẹt lại ở pantry mười phút."
+    ipa: "/aɪd ˈbetər ɡet bæk tuː ɪt/"
+    focus_phonemes: ["d", "t"]
+  - kind: respond
+    prompt_en: "Morning! How was your weekend?"
+    prompt_vi: "Đồng nghiệp hỏi cuối tuần của bạn. Đáp và thêm một chi tiết, rồi hỏi ngược."
+    accept_patterns:
+      - "Pretty quiet"
+      - "Good"
+      - "Busy"
+
+reading:
+  kind: chat
+  context_vi: >
+    Kênh chat của team sáng thứ Hai. Để ý ai chỉ chào, ai mở được chuyện.
+  text_en: |
+    Priya: Morning all. Long weekend, anyone go anywhere?
+    Minh: Just stayed home. Watched too much football.
+    You: Same here. Did get the home lab running though - finally.
+    Priya: Nice. What are you running on it?
+    You: Proxmox, three nodes. Happy to show you sometime.
+  text_vi: |
+    Priya: Chào cả nhà. Cuối tuần dài, có ai đi đâu không?
+    Minh: Tôi chỉ ở nhà. Xem bóng đá hơi nhiều.
+    Bạn: Tôi cũng vậy. Nhưng cũng dựng xong cái home lab - cuối cùng cũng được.
+    Priya: Hay đấy. Bạn chạy gì trên đó?
+    Bạn: Proxmox, ba node. Khi nào rảnh tôi cho bạn xem.
+  questions:
+    - kind: mcq_read
+      prompt_en: "Whose reply opened a longer conversation?"
+      choices: ["Minh's", "The learner's", "Neither"]
+      answer: 1
+      difficulty: 3
+      reading_skill: skim
+      skill: Reading
+    - kind: mcq_read
+      prompt_en: "What is running on the home lab?"
+      choices: ["Windows Server", "Kubernetes", "Proxmox"]
+      answer: 2
+      difficulty: 1
+      reading_skill: scan
+      skill: Reading
+
+writing:
+  kind: FillBlank
+  prompt_vi: "Điền hai chỗ trống: một câu mở chuyện và một câu kết thúc."
+  prompt_en: "How ___ your weekend? ... Right, I'd ___ get back to it."
+  blanks:
+    - ["was"]
+    - ["better"]
+  hint_vi: "Chỗ đầu là động từ quá khứ của to be. Chỗ sau nằm trong cụm kết thúc lịch sự."
+  sample_en: "How was your weekend? ... Right, I'd better get back to it."
+
+quiz:
+  - kind: mcq
+    prompt_vi: "Đáp nào giữ được mạch trò chuyện?"
+    choices: ["Pretty quiet. I fixed the wifi at home. How about you?", "Good.", "Nothing."]
+    answer: 0
+    difficulty: 2
+    skill: Speaking
+  - kind: mcq
+    prompt_vi: "Dự án chưa xong nhưng vẫn đang chạy. Đáp thế nào?"
+    choices: ["Not finished", "Getting there", "Still problem"]
+    answer: 1
+    difficulty: 2
+    skill: Speaking
+  - kind: mcq
+    prompt_vi: "Bạn muốn quay lại làm việc mà không mất lịch sự. Nói gì?"
+    choices: ["I go now", "Stop talking", "I'd better get back to it"]
+    answer: 2
+    difficulty: 1
+    skill: Speaking
+  - kind: mcq
+    prompt_vi: "Vì sao nói chuyện pantry lại quan trọng trong công việc?"
+    choices: ["Vì quen nhau trước thì sau này nhờ vả và hỏi việc dễ hơn", "Vì công ty yêu cầu", "Vì để luyện tiếng Anh"]
+    answer: 0
+    difficulty: 2
+    skill: Reading
+
+explanation:
+  why_vi: >
+    Người Việt thường coi nói chuyện phiếm là mất thời gian, nên trả lời cụt rồi quay đi.
+    Nhưng ở môi trường đa quốc gia, sáu mươi giây ở pantry là thứ xây dựng quan hệ —
+    và người bạn từng nói chuyện là người sẽ trả lời tin nhắn của bạn nhanh hơn khi có sự cố.
+  how_vi: >
+    Ba nhịp giữ mạch: ĐÁP kèm một chi tiết, HỎI NGƯỢC, rồi CHUYỂN sang công việc.
+    Và quan trọng không kém: học một câu để thoát ra. Không có câu kết thúc thì
+    bạn hoặc đứng mãi ở đó, hoặc bỏ đi đột ngột và thành thất lễ.
+  contrast_vi: >
+    "Good" là câu đóng cửa. "Pretty quiet, I fixed the wifi at home" là câu mở cửa —
+    người kia có ngay một thứ để hỏi tiếp.
+
+common_mistakes:
+  - mistake: "Trả lời cụt rồi quay đi"
+    why_vi: >
+      Sợ nói sai nên nói ít nhất có thể. Nhưng câu một chữ khiến người kia
+      không biết hỏi gì tiếp, và cả hai đứng im chờ máy pha cà phê.
+    fix_vi: "Luôn thêm một chi tiết nhỏ vào câu đáp. Một chi tiết là đủ mở cả cuộc trò chuyện."
+    detect_phoneme_missing: []
+  - mistake: "Bỏ đi mà không có câu kết thúc"
+    why_vi: >
+      Tiếng Việt kết thúc bằng ngữ cảnh và cử chỉ. Tiếng Anh cần một câu rõ ràng,
+      không thì người kia tưởng bạn khó chịu.
+    fix_vi: "Học thuộc một câu: \"I'd better get back to it.\" Dùng được mọi lúc."
+    detect_phoneme_missing: []
+  - mistake: "Hỏi những câu quá riêng tư như lương hay tình trạng hôn nhân"
+    why_vi: >
+      Ở Việt Nam đây là câu hỏi xã giao bình thường. Trong môi trường quốc tế,
+      chúng bị coi là xâm phạm đời tư.
+    fix_vi: "Giữ trong ba chủ đề an toàn: cuối tuần, thời tiết, và công việc."
+    detect_phoneme_missing: []
+
+memory_trick_vi: >
+  Sáu mươi giây, ba nhịp: ĐÁP thêm chi tiết, HỎI NGƯỢC, CHUYỂN sang việc.
+  Và luôn thủ sẵn một câu thoát: "I'd better get back to it."

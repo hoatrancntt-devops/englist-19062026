@@ -1,0 +1,299 @@
+schema_version: 1
+code: HD-05
+slug: leo-thang-va-ban-giao
+title_vi: "Leo thang và bàn giao ticket"
+title_en: "Escalating and handing over"
+
+layer: Professional
+track: Helpdesk
+level: B1
+unit_code: U-HD2
+order_index: 5
+estimated_minutes: 12
+
+illustration: ticket-queue
+
+objective_vi: >
+  Leo thang một ticket đúng lúc và đúng cách, và bàn giao cho ca sau
+  mà người nhận không phải bắt đầu lại từ đầu.
+
+objective_observable: >
+  Viết được một bản bàn giao đủ năm mục, và nói được lý do leo thang kèm điều cần từ cấp trên.
+
+mastery_weights:
+  Listening: 0.25
+  Speaking: 0.30
+  Reading: 0.20
+  Writing: 0.25
+
+prerequisites:
+  - lesson: HD-04
+    min_mastery: 65
+    kind: Hard
+  - lesson: OFF-04
+    min_mastery: 65
+    kind: Soft
+
+vocabulary:
+  - term: "escalate"
+    ipa: "/ˈeskəleɪt/"
+    meaning_vi: "leo thang — chuyển lên cấp có chuyên môn hoặc quyền cao hơn"
+    chunk: "I'm escalating this to the network team."
+    tags: [itil, core]
+  - term: "out of my scope"
+    ipa: "/aʊt ɒv maɪ skoʊp/"
+    meaning_vi: "ngoài phạm vi của tôi"
+    chunk: "The firewall change is out of my scope."
+    tags: [escalate, core]
+  - term: "breaching SLA"
+    ipa: "/ˈbriːtʃɪŋ es el eɪ/"
+    meaning_vi: "sắp vi phạm cam kết dịch vụ"
+    chunk: "We're two hours from breaching SLA."
+    tags: [itil, core]
+  - term: "handover"
+    ipa: "/ˈhændoʊvər/"
+    meaning_vi: "bàn giao ca"
+    chunk: "Here's the handover for the night shift."
+    tags: [itil, core]
+  - term: "what's been tried"
+    ipa: "/wɒts biːn traɪd/"
+    meaning_vi: "những gì đã thử"
+    chunk: "Here's what's been tried so far."
+    tags: [escalate, core]
+  - term: "next action"
+    ipa: "/nekst ˈækʃn/"
+    meaning_vi: "việc cần làm tiếp"
+    chunk: "Next action: chase the vendor at 09:00."
+    tags: [escalate, core]
+
+sentence_patterns:
+  - pattern: "I'm escalating this to {team} because {reason}."
+    meaning_vi: "Em đang chuyển việc này lên {team} vì {reason}."
+    slots:
+      team: ["the network team", "L3", "the vendor"]
+      reason: ["it's out of my scope", "we're close to breaching SLA"]
+  - pattern: "Next action: {action} at {time}."
+    meaning_vi: "Việc tiếp theo: {action} lúc {time}."
+    slots:
+      action: ["chase the vendor", "recheck the logs"]
+      time: ["09:00", "the start of the next shift"]
+
+dialogue:
+  context_vi: >
+    22 giờ. Ticket vẫn chưa xử lý xong và ca của bạn kết thúc lúc 23 giờ.
+    Bàn giao tệ nghĩa là người ca sau mất một tiếng đọc lại từ đầu.
+  turns:
+    - speaker: "You"
+      en: "Priya, handing over INC-2291 to you. Can I walk you through it?"
+      vi: "Chị Priya, em bàn giao INC-2291 cho chị. Em tóm tắt qua được không ạ?"
+    - speaker: "Priya"
+      en: "Go ahead."
+      vi: "Nói đi."
+    - speaker: "You"
+      en: "Three users in Finance can't reach the shared drive since 08:00. Impact is three people, not customer facing."
+      vi: "Ba người phòng Tài chính không vào được ổ chung từ 8 giờ sáng. Ảnh hưởng ba người, không tác động tới khách."
+    - speaker: "Priya"
+      en: "What's been tried?"
+      vi: "Đã thử gì rồi?"
+    - speaker: "You"
+      en: "I added all three laptops to the security group at 14:00. Two are working now. The third still fails with the same error."
+      vi: "Em thêm cả ba máy vào nhóm bảo mật lúc 14 giờ. Hai máy giờ đã chạy. Máy thứ ba vẫn lỗi y như cũ."
+    - speaker: "Priya"
+      en: "So it's not the group membership."
+      vi: "Vậy không phải do nhóm bảo mật."
+    - speaker: "You"
+      en: "That's what I think too. It's out of my scope now — I've escalated to the network team as they own the file server."
+      vi: "Em cũng nghĩ vậy. Giờ nó ngoài phạm vi của em — em đã chuyển lên team mạng vì họ quản file server."
+    - speaker: "Priya"
+      en: "Any deadline?"
+      vi: "Có hạn nào không?"
+    - speaker: "You"
+      en: "We're four hours from breaching SLA. Next action: chase the network team at 09:00 if there's no reply overnight."
+      vi: "Còn bốn tiếng nữa là vi phạm cam kết dịch vụ. Việc tiếp theo: 9 giờ sáng thúc team mạng nếu đêm nay không ai trả lời."
+
+listening:
+  context_vi: >
+    Nghe một bản bàn giao ca. Đếm xem có mấy mục — thiếu mục nào là người ca sau phải hỏi lại.
+  speed: 1.0
+  voice: en_US_female
+  transcript_en: "Handover: INC-2291, three users in Finance, no shared drive access since 08:00. Impact is internal only. Tried adding the laptops to the security group, two are fixed, one is not. Escalated to the network team at 18:00, no reply yet. Four hours to SLA breach. Next action: chase them at 09:00."
+  transcript_vi: "Bàn giao: INC-2291, ba người phòng Tài chính, không vào được ổ chung từ 8 giờ. Ảnh hưởng chỉ nội bộ. Đã thử thêm máy vào nhóm bảo mật, hai máy đã sửa được, một máy chưa. Đã chuyển lên team mạng lúc 18 giờ, chưa có trả lời. Còn bốn tiếng tới hạn SLA. Việc tiếp theo: 9 giờ sáng thúc họ."
+  questions:
+    - kind: mcq_listen
+      prompt_vi: "Còn bao lâu tới hạn SLA?"
+      choices: ["Bốn tiếng", "Hai tiếng", "Tám tiếng"]
+      answer: 0
+      difficulty: 2
+      skill: Listening
+    - kind: mcq_listen
+      prompt_vi: "Việc tiếp theo là gì?"
+      choices: ["Thêm máy vào nhóm bảo mật", "Đóng ticket", "Thúc team mạng lúc 9 giờ"]
+      answer: 2
+      difficulty: 2
+      skill: Listening
+
+speaking_drills:
+  - kind: read_aloud
+    expected_text: "I'm escalating this to the network team."
+    prompt_vi: "Trọng âm ở âm đầu: ES-ca-late."
+    ipa: "/aɪm ˈeskəleɪtɪŋ ðɪs tuː ðə ˈnetwɜːrk tiːm/"
+    focus_phonemes: ["sk", "ŋ"]
+  - kind: read_aloud
+    expected_text: "It's out of my scope."
+    prompt_vi: "Câu này KHÔNG phải né việc — nó là thông tin định tuyến."
+    ipa: "/ɪts aʊt ɒv maɪ skoʊp/"
+    focus_phonemes: ["sk", "p"]
+  - kind: shadow
+    expected_text: "Here's what's been tried so far."
+    prompt_vi: "Mục quan trọng nhất của bàn giao. Nghe rồi nhắc lại."
+    ipa: "/hɪrz wɒts biːn traɪd soʊ fɑːr/"
+    focus_phonemes: ["ts", "tr"]
+  - kind: shadow
+    expected_text: "Next action: chase the vendor at nine."
+    prompt_vi: "Không có mục này thì ca sau không biết bắt đầu từ đâu."
+    ipa: "/nekst ˈækʃn tʃeɪs ðə ˈvendər æt naɪn/"
+    focus_phonemes: ["kst", "tʃ"]
+  - kind: respond
+    prompt_en: "What's been tried?"
+    prompt_vi: "Người nhận ca hỏi bạn đã thử gì. Kể ít nhất hai việc kèm kết quả."
+    accept_patterns:
+      - "I added"
+      - "I've tried"
+      - "I checked"
+
+reading:
+  kind: note
+  context_vi: >
+    Bản bàn giao ca đêm. Năm mục, mỗi mục trả lời một câu hỏi mà ca sau chắc chắn sẽ hỏi.
+  text_en: |
+    NIGHT SHIFT HANDOVER - 23:00
+
+    OPEN: INC-2291 - Finance shared drive
+    Impact: 1 user remaining (2 of 3 resolved). Internal only, no customer impact.
+    Tried: laptops added to security group 14:00 - fixed 2 of 3.
+           Remaining machine gives same error, so group membership is ruled out.
+    Status: escalated to network team 18:00. No reply yet.
+    SLA: breach at 03:00.
+    Next action: if no reply by 02:00, page the on-call network engineer.
+
+    WATCH: backup job 214 has failed twice this week at 02:00.
+    It succeeded last night, but keep an eye on it.
+
+    QUIET: everything else. No changes scheduled tonight.
+  text_vi: |
+    BÀN GIAO CA ĐÊM - 23:00
+
+    ĐANG MỞ: INC-2291 - ổ chung phòng Tài chính
+    Ảnh hưởng: còn 1 người (2 trên 3 đã xử lý). Chỉ nội bộ, không tác động khách.
+    Đã thử: thêm máy vào nhóm bảo mật lúc 14:00 - sửa được 2 trên 3.
+            Máy còn lại vẫn lỗi y hệt, nên loại trừ nguyên nhân nhóm bảo mật.
+    Trạng thái: đã chuyển lên team mạng lúc 18:00. Chưa có trả lời.
+    SLA: vi phạm lúc 03:00.
+    Việc tiếp theo: nếu tới 02:00 chưa ai trả lời thì gọi kỹ sư mạng trực.
+
+    THEO DÕI: job backup 214 tuần này lỗi hai lần lúc 02:00.
+    Đêm qua chạy được, nhưng vẫn để mắt.
+
+    YÊN: còn lại bình thường. Đêm nay không có lịch thay đổi nào.
+  questions:
+    - kind: mcq_read
+      prompt_en: "What should the night shift do at 02:00?"
+      choices: ["Close the ticket", "Page the on-call network engineer if there is no reply", "Restart the file server"]
+      answer: 1
+      difficulty: 2
+      reading_skill: scan
+      skill: Reading
+    - kind: mcq_read
+      prompt_en: "Why was group membership ruled out?"
+      choices: ["It was not ruled out", "Because the network team said so", "Because two of three machines were fixed by it but one still fails"]
+      answer: 2
+      difficulty: 3
+      reading_skill: skim
+      skill: Reading
+    - kind: mcq_read
+      prompt_en: "What is in the WATCH section?"
+      choices: ["Backup job 214", "The Finance drive", "A scheduled change"]
+      answer: 0
+      difficulty: 1
+      reading_skill: scan
+      skill: Reading
+
+writing:
+  kind: GuidedEmail
+  prompt_vi: >
+    Viết bản bàn giao ca cho một ticket đang mở. Phải có đủ ba mục:
+    những gì đã thử kèm kết quả, trạng thái hiện tại, và việc cần làm tiếp kèm mốc thời gian.
+  prompt_en: "Write a shift handover note for an open ticket."
+  required_points:
+    - "what's been tried"
+    - "escalated to"
+    - "next action"
+  hint_vi: "Ba mục bắt buộc. Mục \"đã thử\" phải kèm kết quả, không chỉ liệt kê việc đã làm."
+  sample_en: "INC-2291 still open. What's been tried: laptops added to the security group at 14:00, fixed 2 of 3. Escalated to the network team at 18:00, no reply yet. Next action: page the on-call engineer if no reply by 02:00."
+
+quiz:
+  - kind: mcq
+    prompt_vi: "\"Escalate\" trong ITIL nghĩa là gì?"
+    choices: ["Làm cho tệ hơn", "Chuyển lên cấp có chuyên môn hoặc quyền cao hơn", "Đóng ticket"]
+    answer: 1
+    difficulty: 1
+    skill: Reading
+  - kind: mcq
+    prompt_vi: "Khi nào nên leo thang?"
+    choices: ["Khi người dùng khó tính", "Khi bận", "Khi ngoài phạm vi của mình, hoặc sắp vi phạm SLA"]
+    answer: 2
+    difficulty: 2
+    skill: Reading
+  - kind: mcq
+    prompt_vi: "Mục nào quan trọng nhất trong bàn giao?"
+    choices: ["Đã thử gì và kết quả ra sao", "Tên người bàn giao", "Giờ bắt đầu ca"]
+    answer: 0
+    difficulty: 2
+    skill: Writing
+  - kind: mcq
+    prompt_vi: "Vì sao mục \"đã thử\" phải kèm kết quả?"
+    choices: ["Cho đầy đủ", "Vì kết quả loại trừ được nguyên nhân, còn danh sách việc thì không", "Vì quy định"]
+    answer: 1
+    difficulty: 3
+    skill: Reading
+
+explanation:
+  why_vi: >
+    Người mới coi leo thang là thừa nhận mình không làm được, nên cố giữ ticket
+    tới khi vi phạm SLA. Thực tế leo thang là một quyết định định tuyến, không phải
+    lời thú nhận. Còn bàn giao tệ thì người ca sau mất một tiếng đọc lại lịch sử ticket,
+    và thường thử lại đúng những gì bạn vừa thử.
+  how_vi: >
+    LEO THANG khi một trong hai điều xảy ra: việc nằm ngoài phạm vi của bạn,
+    hoặc thời gian còn lại tới hạn SLA không đủ để bạn tự xử lý.
+    BÀN GIAO năm mục: ảnh hưởng, đã thử gì và kết quả, trạng thái hiện tại,
+    mốc SLA, và việc cần làm tiếp. Mục "đã thử" phải kèm KẾT QUẢ —
+    vì kết quả mới là thứ loại trừ được nguyên nhân.
+  contrast_vi: >
+    "Đã thêm máy vào nhóm bảo mật" chỉ là một việc đã làm.
+    "Đã thêm, sửa được 2 trên 3, máy còn lại vẫn lỗi" loại trừ luôn một nguyên nhân —
+    và đó là thứ giúp người tiếp theo tiến lên thay vì đi lại đường cũ.
+
+common_mistakes:
+  - mistake: "Giữ ticket quá lâu vì ngại leo thang"
+    why_vi: >
+      Nghĩ rằng leo thang là thừa nhận mình kém. Nhưng vi phạm SLA vì giữ ticket
+      còn tệ hơn nhiều, và cấp trên tồn tại chính là để nhận những việc như vậy.
+    fix_vi: "Đặt cho mình một ngưỡng thời gian. Quá ngưỡng hoặc ngoài phạm vi thì leo thang ngay."
+    detect_phoneme_missing: []
+  - mistake: "Bàn giao chỉ nói mã ticket và triệu chứng"
+    why_vi: >
+      Người bàn giao đã nắm hết bối cảnh nên tưởng vậy là đủ. Người ca sau
+      phải đọc lại toàn bộ lịch sử và thường thử lại đúng những gì đã thử.
+    fix_vi: "Luôn đủ năm mục, đặc biệt là mục đã thử gì và kết quả ra sao."
+    detect_phoneme_missing: []
+  - mistake: "Bàn giao không có việc cần làm tiếp"
+    why_vi: >
+      Nghĩ rằng người ca sau tự biết. Nhưng lúc 2 giờ sáng, một dòng
+      “nếu chưa ai trả lời thì gọi kỹ sư trực” đáng giá hơn cả trang mô tả.
+    fix_vi: "Luôn kết bằng một dòng \"Next action\" kèm mốc thời gian cụ thể."
+    detect_phoneme_missing: []
+
+memory_trick_vi: >
+  Leo thang khi NGOÀI PHẠM VI hoặc SẮP VI PHẠM SLA.
+  Bàn giao năm mục: ẢNH HƯỞNG, ĐÃ THỬ và KẾT QUẢ, TRẠNG THÁI, MỐC SLA, VIỆC TIẾP THEO.

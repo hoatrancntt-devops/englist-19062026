@@ -1,0 +1,390 @@
+schema_version: 1
+code: RD-03
+slug: doc-tai-lieu-api
+title_vi: "Đọc tài liệu API — hiểu đúng trước khi gõ dòng code đầu tiên"
+title_en: "Reading API documentation"
+
+layer: Professional
+track: Reading
+level: B1
+unit_code: U-RD2
+order_index: 3
+estimated_minutes: 12
+is_checkpoint: false
+
+illustration: api-doc
+
+objective_vi: >
+  Đọc trang tài liệu một API và trả lời được bốn câu: cần gì để gọi, trả về gì,
+  lỗi thì trả gì, và bị giới hạn bao nhiêu lần một phút.
+
+objective_observable: >
+  Đạt từ 75 điểm trên cả bốn trục kỹ năng, không trục nào dưới 60.
+
+mastery_weights:
+  Listening: 0.15
+  Speaking: 0.20
+  Reading: 0.45
+  Writing: 0.20
+
+prerequisites:
+  - lesson: RD-02
+    min_mastery: 70
+    kind: Hard
+  - lesson: RD-01
+    min_mastery: 65
+    kind: Soft
+
+vocabulary:
+  - term: "required"
+    ipa: "/rɪˈkwaɪərd/"
+    meaning_vi: "bắt buộc"
+    chunk: "The customer id is required."
+    tags: [reading, core]
+  - term: "optional"
+    ipa: "/ˈɒpʃənl/"
+    meaning_vi: "không bắt buộc"
+    chunk: "The date range is optional and defaults to today."
+    tags: [reading, core]
+  - term: "defaults to"
+    ipa: "/dɪˈfɔːlts tuː/"
+    meaning_vi: "mặc định là"
+    chunk: "The page size defaults to 50."
+    tags: [reading, core]
+  - term: "rate limit"
+    ipa: "/reɪt ˈlɪmɪt/"
+    meaning_vi: "giới hạn số lần gọi"
+    chunk: "The rate limit is 60 requests per minute."
+    tags: [reading, core]
+  - term: "returns"
+    ipa: "/rɪˈtɜːrnz/"
+    meaning_vi: "trả về"
+    chunk: "It returns 404 if the order does not exist."
+    tags: [reading, core]
+  - term: "idempotent"
+    ipa: "/aɪˈdempətənt/"
+    meaning_vi: "gọi lại nhiều lần vẫn cho cùng kết quả"
+    chunk: "The endpoint is idempotent, so a retry is safe."
+    tags: [reading, core]
+  - term: "pagination"
+    ipa: "/ˌpædʒɪˈneɪʃn/"
+    meaning_vi: "chia trang kết quả"
+    chunk: "Use the next_cursor field for pagination."
+    tags: [reading, core]
+
+sentence_patterns:
+  - pattern: "{Field} is {status} and defaults to {value}."
+    meaning_vi: "{Field} là {status} và mặc định là {value}."
+    slots:
+      Field: ["The page size", "The date range", "The currency"]
+      status: ["required", "optional"]
+      value: ["50", "today", "VND"]
+  - pattern: "It returns {code} when {condition}."
+    meaning_vi: "Nó trả về {code} khi {condition}."
+    slots:
+      code: ["404", "429", "409"]
+      condition: ["the order does not exist", "you exceed the rate limit", "the same key was already used"]
+
+dialogue:
+  context_vi: >
+    Anh Hải sắp viết code gọi API của đối tác. Bạn nhắc anh đọc trước
+    bốn chỗ quan trọng nhất.
+  turns:
+    - speaker: "Hải"
+      en: "I've got the endpoint URL. I'll just start coding and see what happens."
+      vi: "Anh có địa chỉ endpoint rồi. Anh cứ viết code rồi xem sao."
+    - speaker: "You"
+      en: "Read four things first. It saves a day. What's required, what it returns, what the errors are, and the rate limit."
+      vi: "Anh đọc bốn chỗ trước đã, tiết kiệm được một ngày. Cái gì bắt buộc, nó trả về gì, lỗi là gì, và giới hạn số lần gọi."
+    - speaker: "Hải"
+      en: "The rate limit matters that much?"
+      vi: "Giới hạn gọi quan trọng thế à?"
+    - speaker: "You"
+      en: "It's the one that bites in production. Sixty per minute is fine in testing with ten records and breaks with four thousand."
+      vi: "Đó là cái cắn mình lúc chạy thật. Sáu mươi lần một phút thì thử với mười bản ghi không sao, chạy bốn nghìn bản ghi là hỏng."
+    - speaker: "Hải"
+      en: "Fair. What about errors?"
+      vi: "Hợp lý. Còn lỗi thì sao?"
+    - speaker: "You"
+      en: "Look for 429 and 409 specifically. 429 means slow down. 409 usually means you sent the same thing twice."
+      vi: "Tìm riêng 429 và 409. 429 nghĩa là chậm lại. 409 thường nghĩa là anh gửi trùng hai lần."
+    - speaker: "Hải"
+      en: "And if I retry after a timeout, do I create two orders?"
+      vi: "Nếu timeout rồi anh gọi lại thì có tạo hai đơn không?"
+    - speaker: "You"
+      en: "That's the idempotency question. Check whether the endpoint takes an idempotency key. If it does, a retry is safe."
+      vi: "Đó chính là câu hỏi về idempotency. Kiểm xem endpoint có nhận khoá idempotency không. Có thì gọi lại an toàn."
+
+listening:
+  context_vi: >
+    Nghe hai người chuẩn bị tích hợp API. Chú ý ai hỏi được câu
+    ngăn được sự cố lúc chạy thật.
+  speed: 1.2
+  voice: en_US_male
+  transcript_en: "Developer one: I have the URL and an example request from the docs, that is enough to start. Developer two: before I write anything I check four things. Which fields are required, what the success response looks like, which error codes exist, and the rate limit. The rate limit is the one that never shows up in testing and always shows up in production."
+  transcript_vi: "Lập trình viên một: tôi có địa chỉ và một yêu cầu mẫu trong tài liệu, thế là đủ để bắt đầu. Lập trình viên hai: trước khi viết gì tôi kiểm bốn thứ. Trường nào bắt buộc, phản hồi thành công trông thế nào, có những mã lỗi nào, và giới hạn số lần gọi. Giới hạn gọi là thứ không bao giờ lộ ra lúc thử và luôn lộ ra lúc chạy thật."
+  questions:
+    - kind: mcq_listen
+      prompt_vi: "Lập trình viên hai kiểm mấy thứ trước khi viết code?"
+      choices: ["Bốn", "Hai", "Sáu"]
+      answer: 0
+      difficulty: 1
+      skill: Listening
+    - kind: mcq_listen
+      prompt_vi: "Thứ nào được nói là không lộ ra lúc thử?"
+      choices: ["Trường bắt buộc", "Mã lỗi", "Giới hạn số lần gọi"]
+      answer: 2
+      difficulty: 2
+      skill: Listening
+    - kind: mcq_listen
+      prompt_vi: "Vì sao yêu cầu mẫu trong tài liệu không đủ?"
+      choices: ["Vì nó sai", "Vì nó không cho biết lỗi, giới hạn và trường bắt buộc", "Vì nó quá dài"]
+      answer: 1
+      difficulty: 3
+      skill: Listening
+
+speaking_drills:
+  - kind: read_aloud
+    expected_text: "Which fields are required, and what does it return?"
+    prompt_vi: "Hai câu hỏi đầu tiên khi đọc tài liệu API."
+    ipa: "/wɪtʃ fiːldz ɑːr rɪˈkwaɪərd/"
+    focus_phonemes: ["tʃ", "kw"]
+  - kind: read_aloud
+    expected_text: "The rate limit is sixty requests per minute."
+    prompt_vi: "Nêu giới hạn gọi. Đây là con số phải biết trước khi viết code."
+    ipa: "/ðə reɪt ˈlɪmɪt ɪz ˈsɪksti rɪˈkwests/"
+    focus_phonemes: ["kw", "sts"]
+  - kind: shadow
+    expected_text: "It returns 429 when you exceed the rate limit."
+    prompt_vi: "Đọc mã lỗi theo lối tiếng Anh: four twenty-nine."
+    ipa: "/ɪt rɪˈtɜːrnz fɔːr ˈtwenti naɪn/"
+    focus_phonemes: ["ɜːr", "nz"]
+  - kind: shadow
+    expected_text: "The endpoint is idempotent, so a retry is safe."
+    prompt_vi: "Câu này quyết định bạn có được phép gọi lại sau timeout hay không."
+    ipa: "/ði ˈendpɔɪnt ɪz aɪˈdempətənt/"
+    focus_phonemes: ["aɪ", "nt"]
+  - kind: respond
+    prompt_en: "I've got the endpoint URL. I'll just start coding."
+    prompt_vi: "Nêu bốn thứ cần đọc trước và nói vì sao giới hạn gọi quan trọng nhất."
+    accept_patterns:
+      - "required"
+      - "rate limit"
+      - "returns"
+
+reading:
+  kind: api_doc
+  context_vi: >
+    Một trang tài liệu API. Đọc và trả lời bốn câu hỏi:
+    cần gì, trả về gì, lỗi gì, giới hạn bao nhiêu.
+  text_en: |
+    POST /v2/orders
+
+    Creates an order.
+
+    Request body
+    customer_id     string   required
+    items           array    required, at least one item
+    currency        string   optional, defaults to VND
+    note            string   optional, max 200 characters
+    delivery_date   string   optional, ISO date. If omitted, the order is
+                             created without a delivery date and can be
+                             updated later. Sending a past date returns 400.
+
+    Headers
+    Idempotency-Key  string  optional but strongly recommended. If you send
+                             the same key twice within 24 hours, the second
+                             call returns the first order instead of creating
+                             a new one. Without it, a retry after a timeout
+                             creates a duplicate order.
+
+    Success response
+    201 Created. Returns the full order object, including the generated
+    order_id and a status field, which is always "pending" on creation.
+
+    Errors
+    400  A field is missing or invalid. The response body names the field.
+    401  The token is missing or expired.
+    409  The Idempotency-Key was reused with a different request body.
+    422  The customer exists but is blocked from ordering.
+    429  Rate limit exceeded. The Retry-After header gives the number of
+         seconds to wait. Retrying before that returns 429 again and the
+         attempt still counts against your limit.
+
+    Rate limit
+    60 requests per minute per token, measured in a rolling window.
+    Bulk imports should use POST /v2/orders/batch, which accepts up to
+    500 orders in one call and counts as a single request.
+
+    Pagination
+    Not applicable to this endpoint. GET /v2/orders returns 50 per page
+    and provides next_cursor. An empty next_cursor means the last page.
+  text_vi: |
+    POST /v2/orders
+
+    Tạo một đơn hàng.
+
+    Nội dung yêu cầu
+    customer_id     chuỗi   bắt buộc
+    items           mảng    bắt buộc, ít nhất một mục
+    currency        chuỗi   không bắt buộc, mặc định VND
+    note            chuỗi   không bắt buộc, tối đa 200 ký tự
+    delivery_date   chuỗi   không bắt buộc, dạng ngày ISO. Nếu bỏ trống thì
+                            đơn được tạo mà không có ngày giao và cập nhật
+                            được sau. Gửi ngày trong quá khứ trả về 400.
+
+    Header
+    Idempotency-Key  chuỗi  không bắt buộc nhưng rất nên dùng. Nếu gửi cùng
+                            một khoá hai lần trong 24 giờ, lần thứ hai trả về
+                            đơn đã tạo lần đầu thay vì tạo đơn mới. Không có
+                            khoá này thì gọi lại sau timeout sẽ tạo đơn trùng.
+
+    Phản hồi thành công
+    201 Created. Trả về toàn bộ đối tượng đơn hàng, gồm order_id được sinh ra
+    và trường status, lúc tạo luôn là "pending".
+
+    Lỗi
+    400  Thiếu hoặc sai một trường. Nội dung phản hồi ghi rõ tên trường.
+    401  Thiếu token hoặc token hết hạn.
+    409  Idempotency-Key bị dùng lại với nội dung yêu cầu khác.
+    422  Khách hàng tồn tại nhưng đang bị chặn đặt hàng.
+    429  Vượt giới hạn gọi. Header Retry-After cho biết số giây phải chờ.
+         Gọi lại trước thời hạn đó vẫn trả về 429 và lần gọi đó vẫn bị tính
+         vào hạn mức.
+
+    Giới hạn gọi
+    60 yêu cầu mỗi phút cho mỗi token, tính theo cửa sổ trượt.
+    Nhập hàng loạt nên dùng POST /v2/orders/batch, nhận tối đa 500 đơn
+    trong một lần gọi và chỉ tính là một yêu cầu.
+
+    Chia trang
+    Không áp dụng cho endpoint này. GET /v2/orders trả 50 đơn mỗi trang
+    và cung cấp next_cursor. next_cursor rỗng nghĩa là đã tới trang cuối.
+  questions:
+    - kind: mcq_read
+      prompt_en: "Which fields are required?"
+      choices: ["All of them", "customer_id, items and currency", "customer_id and items"]
+      answer: 2
+      difficulty: 1
+      reading_skill: scan
+      skill: Reading
+    - kind: mcq_read
+      prompt_en: "You time out and retry without an Idempotency-Key. What happens?"
+      choices: ["A duplicate order is created", "The first order is returned", "You get 409"]
+      answer: 0
+      difficulty: 3
+      reading_skill: scan
+      skill: Reading
+    - kind: mcq_read
+      prompt_en: "You get 429 and retry immediately. What does the doc say?"
+      choices: ["It succeeds", "You get 429 again and the attempt still counts against the limit", "The limit resets"]
+      answer: 1
+      difficulty: 3
+      reading_skill: scan
+      skill: Reading
+    - kind: mcq_read
+      prompt_en: "You need to import 400 orders. What is the right call?"
+      choices: ["400 calls to POST /v2/orders", "Wait 400 minutes", "One call to POST /v2/orders/batch"]
+      answer: 2
+      difficulty: 2
+      reading_skill: skim
+      skill: Reading
+    - kind: mcq_read
+      prompt_en: "What does 422 mean here, as opposed to 400?"
+      choices: ["The customer exists but is blocked from ordering", "A field is malformed", "The token expired"]
+      answer: 0
+      difficulty: 3
+      reading_skill: scan
+      skill: Reading
+
+writing:
+  kind: GuidedEmail
+  prompt_vi: >
+    Viết ba câu tóm tắt một endpoint cho đồng nghiệp sắp tích hợp:
+    trường bắt buộc, giới hạn gọi, và cách xử lý gọi lại an toàn.
+  prompt_en: "Summarise an API endpoint for a colleague."
+  required_points:
+    - "required"
+    - "rate limit"
+    - "returns"
+  hint_vi: "Ba câu này tiết kiệm cho người đọc một ngày dò lỗi."
+  sample_en: "POST /v2/orders requires customer_id and items; currency is optional and defaults to VND. The rate limit is 60 requests per minute per token, so use the batch endpoint for anything over about fifty orders because it counts as a single request. Always send an Idempotency-Key: without it a retry after a timeout creates a duplicate order, and it returns 429 with a Retry-After header when you go over the limit."
+
+quiz:
+  - kind: mcq
+    prompt_vi: "Bốn thứ cần đọc trước khi gọi một API mới?"
+    choices: ["Tên công ty, giá, hợp đồng, hỗ trợ", "Trường bắt buộc, phản hồi thành công, mã lỗi, giới hạn gọi", "Chỉ cần địa chỉ endpoint"]
+    answer: 1
+    difficulty: 1
+    skill: Reading
+  - kind: mcq
+    prompt_vi: "\"Idempotent\" nghĩa là gì?"
+    choices: ["Gọi lại nhiều lần vẫn cho cùng kết quả, nên gọi lại an toàn", "Chạy rất nhanh", "Không bao giờ lỗi"]
+    answer: 0
+    difficulty: 2
+    skill: Reading
+  - kind: mcq
+    prompt_vi: "Mã 429 nghĩa là gì?"
+    choices: ["Không tìm thấy", "Sai mật khẩu", "Vượt giới hạn số lần gọi, phải chờ"]
+    answer: 2
+    difficulty: 2
+    skill: Reading
+  - kind: mcq
+    prompt_vi: "Vì sao giới hạn gọi hay gây sự cố lúc chạy thật?"
+    choices: ["Vì nhà cung cấp đổi giới hạn", "Vì lúc thử chỉ có ít bản ghi nên không chạm ngưỡng", "Vì mạng chậm"]
+    answer: 1
+    difficulty: 2
+    skill: Writing
+  - kind: mcq
+    prompt_vi: "Timeout khi tạo đơn. Có nên gọi lại ngay không?"
+    choices: ["Chỉ khi có gửi Idempotency-Key, không thì tạo đơn trùng", "Có, luôn an toàn", "Không bao giờ"]
+    answer: 0
+    difficulty: 3
+    skill: Speaking
+  - kind: mcq
+    prompt_vi: "Trường \"optional, defaults to VND\" nghĩa là gì?"
+    choices: ["Bắt buộc phải gửi VND", "Không dùng được trường này", "Không gửi thì hệ thống tự dùng VND"]
+    answer: 2
+    difficulty: 2
+    skill: Writing
+
+explanation:
+  why_vi: >
+    Ai cũng đọc phần yêu cầu mẫu rồi bắt đầu viết code, vì phần đó copy dán được ngay.
+    Nhưng yêu cầu mẫu chỉ mô tả trường hợp thuận lợi. Ba thứ làm hỏng việc lúc chạy thật —
+    giới hạn số lần gọi, mã lỗi, và chuyện gọi lại có tạo bản ghi trùng không —
+    đều nằm ở phần không ai đọc.
+  how_vi: >
+    Bốn câu hỏi, theo đúng thứ tự này, trước khi gõ dòng code đầu tiên.
+    Một: trường nào BẮT BUỘC, trường nào có giá trị mặc định. Hai: phản hồi thành công
+    TRẢ VỀ gì. Ba: có những MÃ LỖI nào, đặc biệt là 429 và 409. Bốn: GIỚI HẠN GỌI
+    bao nhiêu một phút, và có endpoint gọi theo lô không.
+    Câu thứ tư là câu tiết kiệm nhiều thời gian nhất, vì lỗi đó chỉ lộ ra ở môi trường thật.
+  contrast_vi: >
+    "Có URL và yêu cầu mẫu là đủ để bắt đầu" dẫn tới một ngày dò lỗi khi dữ liệu thật
+    gấp bốn trăm lần dữ liệu thử. "Sáu mươi lần một phút, nên với bốn trăm đơn thì
+    dùng endpoint gọi theo lô" là thông tin đọc mất ba mươi giây và tránh được cả ngày đó.
+
+common_mistakes:
+  - mistake: "Chỉ đọc yêu cầu mẫu rồi bắt đầu viết code"
+    why_vi: >
+      Yêu cầu mẫu copy dán được ngay nên cảm giác như đã đủ.
+      Nhưng nó chỉ mô tả đường thuận lợi, không mô tả lúc hỏng.
+    fix_vi: "Đọc thêm ba mục: mã lỗi, giới hạn gọi, và phần idempotency."
+    detect_phoneme_missing: []
+  - mistake: "Bỏ qua giới hạn số lần gọi vì lúc thử không chạm ngưỡng"
+    why_vi: >
+      Môi trường thử có mười bản ghi nên không bao giờ vượt sáu mươi lần một phút.
+      Dữ liệu thật có bốn nghìn và vượt ngay trong phút đầu.
+    fix_vi: "Tính trước: số bản ghi thật chia cho giới hạn. Vượt thì tìm endpoint gọi theo lô."
+    detect_phoneme_missing: []
+  - mistake: "Gọi lại sau timeout mà không có khoá idempotency"
+    why_vi: >
+      Timeout nghĩa là không biết máy chủ đã nhận hay chưa, nên phản xạ là gọi lại.
+      Nếu máy chủ đã nhận thì lần gọi lại tạo bản ghi trùng.
+    fix_vi: "Luôn tìm mục Idempotency-Key trong tài liệu trước khi viết logic gọi lại."
+    detect_phoneme_missing: []
+
+memory_trick_vi: >
+  Bốn câu trước khi viết code: BẮT BUỘC GÌ — TRẢ VỀ GÌ — LỖI GÌ — GIỚI HẠN BAO NHIÊU.
+  Câu thứ tư cứu bạn nhiều nhất, vì nó chỉ hỏng ở môi trường thật.

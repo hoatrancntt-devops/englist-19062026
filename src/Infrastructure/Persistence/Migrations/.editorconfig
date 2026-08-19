@@ -1,0 +1,8 @@
+# File trong thư mục này do `dotnet ef migrations add` sinh ra, không viết tay.
+# Áp quy tắc style của dự án lên chúng nghĩa là mỗi lần thêm migration lại phải
+# sửa tay một file máy sinh — nên hạ các rule đó xuống mức gợi ý ở đây.
+
+[*.cs]
+csharp_style_namespace_declarations = block_scoped:silent
+dotnet_diagnostic.IDE0161.severity = none
+dotnet_diagnostic.IDE0055.severity = none

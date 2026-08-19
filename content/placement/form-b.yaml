@@ -1,0 +1,432 @@
+schema_version: 1
+code: B
+title_vi: "Đề xếp lớp B"
+estimated_minutes: 18
+is_active: true
+
+# Đề song song với A: cùng số câu, cùng phân bổ kỹ năng, cùng bậc độ khó ở
+# từng vị trí. Chỉ nội dung khác. Hai đề lệch độ khó thì người thi lại đề B
+# sẽ ra bậc khác không phải vì trình độ đổi mà vì đề dễ hơn.
+
+items:
+  # ---------- Mở đầu: tự đánh giá ----------
+  - code: B-SELF-1
+    kind: Likert
+    difficulty: 1
+    slow_answer_seconds: 30
+    prompt:
+      instruction_vi: "Bạn tự thấy tiếng Anh của mình ở mức nào trong công việc hiện tại?"
+      choices:
+        - "Không dùng được câu nào"
+        - "Đọc hiểu chút ít, không nói được"
+        - "Trao đổi được việc đơn giản"
+        - "Làm việc được nhưng còn chậm"
+        - "Thoải mái trong họp kỹ thuật"
+
+  # ---------- Nghe ----------
+  - code: B-LIS-1
+    kind: Mcq
+    skill: Listening
+    difficulty: 1
+    weight: 1.0
+    slow_answer_seconds: 40
+    prompt:
+      instruction_vi: "Nghe rồi chọn nghĩa đúng. Bấm nghe lại bao nhiêu lần cũng được."
+      audio_text: "Hi, I'm Mai. I look after the network team."
+      speed: 0.8
+      choices:
+        - "Người nói tên Mai, mới vào nhóm mạng"
+        - "Người nói tên Mai, phụ trách nhóm mạng"
+        - "Người nói đang tìm chị Mai"
+        - "Người nói chuyển sang nhóm khác"
+    answer:
+      correct_index: 1
+
+  - code: B-LIS-2
+    kind: Mcq
+    skill: Listening
+    difficulty: 2
+    weight: 1.0
+    slow_answer_seconds: 40
+    prompt:
+      instruction_vi: "Nghe rồi chọn câu đúng."
+      audio_text: "The call is at a quarter to nine, not at nine."
+      speed: 0.9
+      choices:
+        - "Cuộc gọi bị dời"
+        - "Cuộc gọi lúc 9 giờ"
+        - "Cuộc gọi lúc 9 giờ 15"
+        - "Cuộc gọi lúc 8 giờ 45"
+    answer:
+      correct_index: 3
+
+  - code: B-LIS-3
+    kind: Mcq
+    skill: Listening
+    difficulty: 3
+    weight: 1.2
+    slow_answer_seconds: 45
+    prompt:
+      instruction_vi: "Nghe đoạn hội thoại rồi chọn câu đúng."
+      audio_text: "My laptop won't connect to the VPN. Could you check if my account is still active?"
+      speed: 1.0
+      choices:
+        - "Người gọi muốn kiểm tra tài khoản còn hoạt động không"
+        - "Người gọi muốn cài lại máy tính"
+        - "Người gọi quên mật khẩu VPN"
+        - "Người gọi báo mất máy tính"
+    answer:
+      correct_index: 0
+
+  - code: B-LIS-4
+    kind: Mcq
+    skill: Listening
+    difficulty: 3
+    weight: 1.2
+    slow_answer_seconds: 45
+    prompt:
+      instruction_vi: "Nghe rồi chọn câu đúng."
+      audio_text: "The backup ran last night, but it only covered half of the databases."
+      speed: 1.0
+      choices:
+        - "Sao lưu chạy xong toàn bộ"
+        - "Sao lưu không chạy đêm qua"
+        - "Sao lưu có chạy nhưng chỉ được một nửa số cơ sở dữ liệu"
+        - "Sao lưu bị hoãn sang đêm nay"
+    answer:
+      correct_index: 2
+
+  - code: B-LIS-5
+    kind: Mcq
+    skill: Listening
+    difficulty: 4
+    weight: 1.3
+    slow_answer_seconds: 50
+    prompt:
+      instruction_vi: "Nghe rồi chọn câu đúng. Đoạn này đọc ở tốc độ người bản xứ nói trong họp."
+      audio_text: "We restored the service this morning. The trigger was a full disk, but the real problem is that nobody was alerted."
+      speed: 1.2
+      choices:
+        - "Vấn đề thật sự là ổ đĩa đầy"
+        - "Vấn đề thật sự là không ai được cảnh báo"
+        - "Dịch vụ vẫn chưa khôi phục được"
+        - "Cảnh báo đã hoạt động đúng"
+    answer:
+      correct_index: 1
+
+  - code: B-LIS-6
+    kind: Mcq
+    skill: Listening
+    difficulty: 5
+    weight: 1.3
+    slow_answer_seconds: 50
+    prompt:
+      instruction_vi: "Nghe rồi chọn câu đúng."
+      audio_text: "Unless the customer approves the change today, we won't be able to deploy during this weekend's window."
+      speed: 1.2
+      choices:
+        - "Khách hàng muốn dời sang tuần sau"
+        - "Khách hàng đã duyệt và sẽ triển khai cuối tuần này"
+        - "Việc triển khai đã bị huỷ hẳn"
+        - "Nếu khách hàng không duyệt hôm nay thì không triển khai được cuối tuần này"
+    answer:
+      correct_index: 3
+
+  # ---------- Đọc ----------
+  - code: B-REA-1
+    kind: McqRead
+    skill: Reading
+    difficulty: 1
+    weight: 1.0
+    slow_answer_seconds: 45
+    prompt:
+      instruction_vi: "Đọc rồi trả lời."
+      passage_en: "Ticket #5107 — Monitor on desk 12 has no signal."
+      question_en: "What is the problem?"
+      choices:
+        - "The desk is broken"
+        - "The monitor is missing"
+        - "The monitor shows no signal"
+        - "The monitor is too bright"
+    answer:
+      correct_index: 2
+
+  - code: B-REA-2
+    kind: McqRead
+    skill: Reading
+    difficulty: 2
+    weight: 1.0
+    slow_answer_seconds: 50
+    prompt:
+      instruction_vi: "Đọc rồi trả lời."
+      passage_en: "Hi all, the office wifi will be down on Monday morning for maintenance. Please use the cable in meeting rooms."
+      question_en: "What should people use on Monday morning?"
+      choices:
+        - "The cable in meeting rooms"
+        - "The office wifi"
+        - "Their mobile data"
+        - "Nothing, the office is closed"
+    answer:
+      correct_index: 0
+
+  - code: B-REA-3
+    kind: McqRead
+    skill: Reading
+    difficulty: 3
+    weight: 1.2
+    slow_answer_seconds: 55
+    prompt:
+      instruction_vi: "Đọc rồi trả lời."
+      passage_en: "Access request AR-233 is approved for read-only access to the reporting database. Write access requires a separate approval from the data owner."
+      question_en: "What does write access need?"
+      choices:
+        - "Approval from the reporting team"
+        - "Nothing, it is included"
+        - "A new ticket to the service desk"
+        - "A separate approval from the data owner"
+    answer:
+      correct_index: 3
+
+  - code: B-REA-4
+    kind: McqRead
+    skill: Reading
+    difficulty: 4
+    weight: 1.2
+    slow_answer_seconds: 60
+    prompt:
+      instruction_vi: "Đọc rồi trả lời. Chú ý phân biệt nguyên nhân gốc và thứ kích hoạt sự cố."
+      passage_en: "Postmortem summary: The certificate had been set to expire on the 14th. The scheduled restart on the 14th triggered the failure, but the missing renewal was the root cause."
+      question_en: "What was the root cause?"
+      choices:
+        - "The scheduled restart"
+        - "The certificate was never renewed"
+        - "A network outage"
+        - "A bad deployment"
+    answer:
+      correct_index: 1
+
+  - code: B-REA-5
+    kind: McqRead
+    skill: Reading
+    difficulty: 4
+    weight: 1.3
+    slow_answer_seconds: 60
+    prompt:
+      instruction_vi: "Đọc rồi trả lời."
+      passage_en: "Our on-call policy: the primary engineer must acknowledge an alert within 15 minutes. If there is no acknowledgement, the alert escalates to the secondary engineer automatically."
+      question_en: "What happens if nobody acknowledges within 15 minutes?"
+      choices:
+        - "The alert goes to the secondary engineer"
+        - "The alert is closed"
+        - "The alert is sent again to the primary"
+        - "The alert waits until morning"
+    answer:
+      correct_index: 0
+
+  - code: B-REA-6
+    kind: McqRead
+    skill: Reading
+    difficulty: 5
+    weight: 1.3
+    slow_answer_seconds: 60
+    prompt:
+      instruction_vi: "Đọc rồi trả lời."
+      passage_en: "The report suggests the slowdown started before the migration. If that holds, the migration cannot be the cause, although it may have made the symptoms more visible."
+      question_en: "What does the report suggest about the migration?"
+      choices:
+        - "It happened before the slowdown started"
+        - "It is definitely the cause of the slowdown"
+        - "It is not the cause, but it may have made symptoms clearer"
+        - "It had no effect at all"
+    answer:
+      correct_index: 2
+
+  # ---------- Nói ----------
+  # Xem ghi chú ở đề A: bốn câu này chưa được phục vụ cho tới khi có dịch vụ chấm phát âm.
+  - code: B-SPK-1
+    kind: ReadAloud
+    skill: Speaking
+    difficulty: 1
+    weight: 1.0
+    slow_answer_seconds: 60
+    prompt:
+      instruction_vi: "Đọc to câu sau. Đọc chậm và rõ, không cần nhanh."
+      target_en: "Good afternoon, this is Mai from the network team."
+
+  - code: B-SPK-2
+    kind: Repeat
+    skill: Speaking
+    difficulty: 2
+    weight: 1.0
+    slow_answer_seconds: 60
+    prompt:
+      instruction_vi: "Nghe rồi nhắc lại nguyên câu."
+      audio_text: "Could you spell your last name for me, please?"
+      speed: 0.9
+      target_en: "Could you spell your last name for me, please?"
+
+  - code: B-SPK-3
+    kind: ReadAloud
+    skill: Speaking
+    difficulty: 4
+    weight: 1.2
+    slow_answer_seconds: 70
+    prompt:
+      instruction_vi: "Đọc to câu sau."
+      target_en: "We applied the patch on the test server first, and we will move to production tomorrow."
+
+  - code: B-SPK-4
+    kind: Repeat
+    skill: Speaking
+    difficulty: 5
+    weight: 1.2
+    slow_answer_seconds: 70
+    prompt:
+      instruction_vi: "Nghe rồi nhắc lại nguyên câu."
+      audio_text: "Let me summarise the impact first, and then I'll explain what we changed."
+      speed: 1.1
+      target_en: "Let me summarise the impact first, and then I'll explain what we changed."
+
+  # ---------- Viết ----------
+  - code: B-WRI-1
+    kind: FillBlank
+    skill: Writing
+    difficulty: 1
+    weight: 1.0
+    slow_answer_seconds: 50
+    prompt:
+      instruction_vi: "Điền một từ vào chỗ trống."
+      sentence_en: "She ___ checking the logs at the moment."
+    answer:
+      accepted:
+        - "is"
+        - "'s"
+
+  - code: B-WRI-2
+    kind: FillBlank
+    skill: Writing
+    difficulty: 3
+    weight: 1.2
+    slow_answer_seconds: 55
+    prompt:
+      instruction_vi: "Điền một từ vào chỗ trống."
+      sentence_en: "The ticket has ___ open for three days."
+    answer:
+      accepted:
+        - "been"
+
+  - code: B-WRI-3
+    kind: ErrorCorrection
+    skill: Writing
+    difficulty: 3
+    weight: 1.2
+    slow_answer_seconds: 60
+    prompt:
+      instruction_vi: "Câu sau có một lỗi. Viết lại cả câu cho đúng."
+      sentence_en: "They was not able to reach the support team."
+    answer:
+      accepted:
+        - "They were not able to reach the support team."
+        - "They weren't able to reach the support team."
+        - "They werent able to reach the support team."
+
+  - code: B-WRI-4
+    kind: ErrorCorrection
+    skill: Writing
+    difficulty: 4
+    weight: 1.2
+    slow_answer_seconds: 60
+    prompt:
+      instruction_vi: "Câu sau có một lỗi. Viết lại cả câu cho đúng."
+      sentence_en: "The report will be sended to the manager tomorrow."
+    answer:
+      accepted:
+        - "The report will be sent to the manager tomorrow."
+
+  - code: B-WRI-5
+    kind: ShortAnswer
+    skill: Writing
+    difficulty: 2
+    weight: 1.0
+    slow_answer_seconds: 60
+    prompt:
+      instruction_vi: "Bạn không hiểu một từ đồng nghiệp vừa nói. Viết một câu tiếng Anh để hỏi lại nghĩa của từ đó."
+    answer:
+      accepted:
+        - "What does that mean?"
+        - "What does it mean?"
+        - "Could you explain what that means?"
+        - "Can you explain what that means?"
+        - "Sorry, what does that mean?"
+        - "Could you tell me what that means?"
+        - "Can you tell me what that means?"
+
+  - code: B-WRI-6
+    kind: GuidedEmail
+    skill: Writing
+    difficulty: 5
+    weight: 1.5
+    slow_answer_seconds: 180
+    prompt:
+      instruction_vi: "Viết email theo đúng ba ý dưới đây. Viết tối thiểu 25 từ."
+      scenario_vi: >
+        Hệ thống email nội bộ chậm bất thường từ 2 giờ chiều. Bạn phải báo cho
+        cả phòng bằng một email tiếng Anh ngắn.
+      required_points_vi:
+        - "Nói rõ hệ thống email đang chậm"
+        - "Nói từ lúc mấy giờ"
+        - "Nói bạn sẽ báo lại khi xử lý xong"
+    answer:
+      must_contain:
+        - "email"
+        - "2"
+        - "update"
+      min_words: 25
+
+  # ---------- Từ vựng và ngữ pháp ----------
+  - code: B-VG-1
+    kind: Mcq
+    difficulty: 2
+    weight: 1.0
+    slow_answer_seconds: 40
+    prompt:
+      instruction_vi: "Chọn từ đúng."
+      question_en: "Please ___ me know when the backup is finished."
+      choices:
+        - "to let"
+        - "letting"
+        - "lets"
+        - "let"
+    answer:
+      correct_index: 3
+
+  - code: B-VG-2
+    kind: Mcq
+    difficulty: 4
+    weight: 1.0
+    slow_answer_seconds: 45
+    prompt:
+      instruction_vi: "Chọn từ đúng."
+      question_en: "The alert ___ by the monitoring system, not by a user."
+      choices:
+        - "raised"
+        - "was raised"
+        - "is raising"
+        - "has raised"
+    answer:
+      correct_index: 1
+
+  # ---------- Kết: tự đánh giá kỹ năng yếu nhất ----------
+  - code: B-SELF-2
+    kind: Likert
+    difficulty: 1
+    self_rating: false
+    slow_answer_seconds: 30
+    prompt:
+      instruction_vi: "Trong bốn kỹ năng, bạn thấy mình yếu nhất ở đâu? Câu này không tính điểm, chỉ để đối chiếu với kết quả chấm."
+      choices:
+        - "Nghe"
+        - "Nói"
+        - "Đọc"
+        - "Viết"
+        - "Cả bốn đều yếu như nhau"

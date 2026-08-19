@@ -1,0 +1,126 @@
+code: RP-05
+title_vi: "Nhận yêu cầu từ người dùng không rành kỹ thuật"
+context_vi: >-
+  Một nhân viên kế toán gọi xuống: "máy tính hỏng". Mục tiêu: hỏi được triệu chứng cụ thể,
+  thời điểm bắt đầu, và điều gì vừa thay đổi — mà không dùng từ chuyên môn làm họ hoảng.
+track: Helpdesk
+level: A2
+partner_name: "Chị Hạnh — phòng kế toán"
+start_node: n1
+
+nodes:
+  - code: n1
+    partner_line_en: "Hi, my computer is broken. I can't do anything."
+    partner_line_vi: "Chào em, máy tính của chị hỏng rồi. Chị không làm gì được."
+    choices:
+      - en: "I'm sorry to hear that. Can you tell me what you see on the screen right now?"
+        vi: "Em rất tiếc. Chị nói giúp em màn hình bây giờ đang hiện gì được không?"
+        next: n2
+        quality: good
+      - en: "Is it a hardware issue or a software issue?"
+        vi: "Là lỗi phần cứng hay phần mềm ạ?"
+        next: n1b
+        quality: wrong
+        feedback_vi: >-
+          Người dùng không phân biệt được hai thứ đó — nếu họ phân biệt được thì đã không gọi.
+          Hỏi thứ họ nhìn thấy, đừng hỏi thứ họ phải chẩn đoán.
+      - en: "What's the error?"
+        vi: "Lỗi gì ạ?"
+        next: n2
+        quality: curt
+        feedback_vi: >-
+          Cụt và giả định là có thông báo lỗi. Một câu cảm thông cộng câu hỏi mở làm người
+          đang bực chịu hợp tác hơn hẳn.
+
+  - code: n2
+    partner_line_en: "It says something about a network. There's a yellow triangle at the bottom."
+    partner_line_vi: "Nó hiện gì đó về mạng. Có cái tam giác vàng ở dưới góc."
+    choices:
+      - en: "Thank you, that helps. When did you first notice the yellow triangle?"
+        vi: "Cảm ơn chị, thông tin đó hữu ích. Chị thấy cái tam giác vàng đó từ lúc nào ạ?"
+        next: n3
+        quality: good
+      - en: "That's just the network adapter losing DHCP. I'll fix the NIC binding."
+        vi: "Cái đó là card mạng mất DHCP thôi. Để em sửa lại binding của NIC."
+        next: n2b
+        quality: wrong
+        feedback_vi: >-
+          Bạn có thể đúng, nhưng chuỗi từ chuyên môn làm người nghe thấy mình ngu và họ sẽ
+          ngừng kể. Mà phần họ chưa kể mới là phần bạn cần.
+
+  - code: n3
+    partner_line_en: "This morning. Yesterday it was fine."
+    partner_line_vi: "Sáng nay. Hôm qua vẫn bình thường."
+    choices:
+      - en: "Got it. Did anything change since yesterday — did you move the computer, or unplug anything?"
+        vi: "Em hiểu rồi. Từ hôm qua tới nay có gì thay đổi không ạ — chị có di chuyển máy hay rút dây gì không?"
+        next: n4
+        quality: good
+      - en: "OK, I'll come up."
+        vi: "Vâng, để em lên."
+        next: n3b
+        quality: curt
+        feedback_vi: >-
+          Lên tận nơi luôn thì bỏ mất câu hỏi có giá trị nhất: cái gì vừa thay đổi.
+          Nhiều khi hỏi thêm ba mươi giây là khỏi phải đi.
+
+  - code: n4
+    partner_line_en: "Oh — the cleaner moved my desk last night. Maybe a cable came loose?"
+    partner_line_vi: "À — tối qua chị lao công có dịch cái bàn của chị. Chắc dây bị lỏng?"
+    choices:
+      - en: "That's very likely. Could you check the cable at the back of the computer — the one that clicks in?"
+        vi: "Rất có thể ạ. Chị kiểm tra giúp em sợi dây phía sau máy — sợi cắm vào kêu tách một cái ấy ạ?"
+        next: nEnd
+        quality: good
+      - en: "I'll create a ticket and come up this afternoon."
+        vi: "Em tạo ticket rồi chiều em lên ạ."
+        next: nEndCurt
+        quality: curt
+        feedback_vi: >-
+          Chị ấy vừa nói đúng nguyên nhân. Nhờ cắm lại dây mất mười giây, còn chờ tới chiều
+          là chị ấy mất cả buổi làm việc.
+
+  - code: n1b
+    partner_line_en: "I... I don't know. That's your job, isn't it?"
+    partner_line_vi: "Chị... chị không biết. Cái đó là việc của em mà?"
+    terminal: true
+    success: false
+    summary_vi: >-
+      Câu hỏi vượt hiểu biết của người dùng làm họ phòng thủ. Luôn bắt đầu bằng thứ họ
+      quan sát được: màn hình hiện gì, đèn nào sáng, bấm gì thì xảy ra gì.
+
+  - code: n2b
+    partner_line_en: "I'm sorry, I didn't understand any of that."
+    partner_line_vi: "Xin lỗi, chị không hiểu gì hết."
+    terminal: true
+    success: false
+    summary_vi: >-
+      Từ chuyên môn làm người dùng ngừng kể. Diễn đạt lại bằng thứ họ thấy được:
+      "cái tam giác vàng nghĩa là máy chưa nối được mạng".
+
+  - code: n3b
+    partner_line_en: "OK, thank you."
+    partner_line_vi: "Được, cảm ơn em."
+    terminal: true
+    success: false
+    summary_vi: >-
+      Bạn sẽ lên tận nơi để phát hiện một sợi dây lỏng. Câu "từ hôm qua tới nay có gì thay đổi"
+      giải quyết được phần lớn ticket ngay trên điện thoại.
+
+  - code: nEndCurt
+    partner_line_en: "Alright, I'll wait then."
+    partner_line_vi: "Thôi được, chị chờ vậy."
+    terminal: true
+    success: true
+    summary_vi: >-
+      Bạn đã hỏi đúng bộ ba: triệu chứng, thời điểm, thay đổi gần nhất. Chỉ tiếc là có
+      manh mối rồi mà chưa thử ngay tại chỗ.
+
+  - code: nEnd
+    partner_line_en: "Oh! It was loose. It's working now. Thank you so much!"
+    partner_line_vi: "Ồ! Nó lỏng thật. Chạy lại rồi. Cảm ơn em nhiều!"
+    terminal: true
+    success: true
+    summary_vi: >-
+      Xử lý xong trong một cuộc gọi. Công thức: cảm thông, hỏi thứ nhìn thấy được,
+      hỏi thời điểm, hỏi cái gì vừa thay đổi — và hướng dẫn bằng từ ngữ đời thường.

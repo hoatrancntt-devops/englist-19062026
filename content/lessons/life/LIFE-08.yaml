@@ -1,0 +1,245 @@
+schema_version: 1
+code: LIFE-08
+slug: nho-va-xin-phep
+title_vi: "Nhờ và xin phép — Can I, Could you, Is it OK if"
+title_en: "Asking for things politely"
+
+layer: Life
+track: Foundation
+level: A1
+unit_code: U-L1
+order_index: 8
+estimated_minutes: 11
+
+illustration: chat-message
+
+objective_vi: >
+  Nhờ người khác làm gì đó và xin phép làm gì đó, bằng ba mẫu câu phủ gần hết
+  tình huống hằng ngày ở công ty.
+
+objective_observable: >
+  Chọn đúng mẫu câu cho 4 trên 5 tình huống, và nói được cả ba mẫu đúng ngữ điệu câu hỏi.
+
+mastery_weights:
+  Listening: 0.25
+  Speaking: 0.45
+  Reading: 0.15
+  Writing: 0.15
+
+prerequisites:
+  - lesson: LIFE-07
+    min_mastery: 60
+    kind: Hard
+
+vocabulary:
+  - term: "Could you"
+    ipa: "/kʊd juː/"
+    meaning_vi: "bạn có thể... được không (nhờ người khác)"
+    chunk: "Could you send me the file?"
+    tags: [request, core]
+  - term: "Can I"
+    ipa: "/kæn aɪ/"
+    meaning_vi: "tôi có thể... không (xin phép cho mình)"
+    chunk: "Can I use this room?"
+    tags: [request, core]
+  - term: "Is it OK if"
+    ipa: "/ɪz ɪt oʊˈkeɪ ɪf/"
+    meaning_vi: "có được không nếu (xin phép việc ảnh hưởng người khác)"
+    chunk: "Is it OK if I join late?"
+    tags: [request, core]
+  - term: "when you get a chance"
+    ipa: "/wen juː ɡet ə tʃɑːns/"
+    meaning_vi: "khi nào bạn rảnh (làm lời nhờ bớt gấp)"
+    chunk: "Could you check it when you get a chance?"
+    tags: [request, office]
+  - term: "Would you mind"
+    ipa: "/wʊd juː maɪnd/"
+    meaning_vi: "bạn có phiền... không (lịch sự nhất)"
+    chunk: "Would you mind checking this?"
+    tags: [request]
+  - term: "Sure thing"
+    ipa: "/ʃʊr θɪŋ/"
+    meaning_vi: "được chứ (đáp đồng ý, thân mật)"
+    chunk: "Sure thing, give me five minutes."
+    tags: [request, office]
+
+sentence_patterns:
+  - pattern: "Could you {action}?"
+    meaning_vi: "Bạn {action} giúp được không?"
+    slots:
+      action: ["send me the link", "check this log", "join the call"]
+  - pattern: "Is it OK if I {action}?"
+    meaning_vi: "Có được không nếu tôi {action}?"
+    slots:
+      action: ["join late", "take Friday off", "restart the server"]
+
+dialogue:
+  context_vi: >
+    Bạn cần Minh xem hộ một log, và cần xin phép Linh vào họp muộn mười phút.
+    Hai việc khác nhau nên dùng hai mẫu câu khác nhau.
+  turns:
+    - speaker: "You"
+      en: "Minh, could you take a look at this log when you get a chance?"
+      vi: "Anh Minh, khi nào rảnh anh xem hộ em cái log này được không?"
+    - speaker: "Minh"
+      en: "Sure thing. Send it over."
+      vi: "Được chứ. Gửi qua đây đi."
+    - speaker: "You"
+      en: "Thanks. Linh, is it OK if I join the standup ten minutes late tomorrow?"
+      vi: "Cảm ơn anh. Chị Linh, mai em vào standup muộn mười phút có được không ạ?"
+    - speaker: "Linh"
+      en: "That's fine. Just post your update on the channel first."
+      vi: "Không sao. Nhưng em đăng phần cập nhật lên kênh trước nhé."
+
+listening:
+  context_vi: >
+    Nghe hai lời nhờ. Một lời gấp, một lời không gấp — khác nhau ở đúng một cụm cuối câu.
+  speed: 0.9
+  voice: en_US_male
+  transcript_en: "Could you restart the service now? It's blocking the whole team. And could you update the runbook when you get a chance?"
+  transcript_vi: "Bạn khởi động lại dịch vụ ngay được không? Nó đang chặn cả team. Với lại khi nào rảnh bạn cập nhật runbook giúp nhé."
+  questions:
+    - kind: mcq_listen
+      prompt_vi: "Việc nào cần làm ngay?"
+      choices: ["Khởi động lại dịch vụ", "Cập nhật runbook", "Cả hai đều gấp"]
+      answer: 0
+      difficulty: 2
+      skill: Listening
+    - kind: mcq_listen
+      prompt_vi: "Cụm nào cho biết việc thứ hai không gấp?"
+      choices: ["now", "the whole team", "when you get a chance"]
+      answer: 2
+      difficulty: 3
+      skill: Listening
+
+speaking_drills:
+  - kind: read_aloud
+    expected_text: "Could you send me the link?"
+    prompt_vi: "Lên giọng ở cuối câu. Xuống giọng thì nghe như ra lệnh."
+    ipa: "/kʊd juː send miː ðə lɪŋk/"
+    focus_phonemes: ["d", "ð"]
+  - kind: read_aloud
+    expected_text: "Is it OK if I join late?"
+    prompt_vi: "Đọc to. Chú ý âm /dʒ/ đầu chữ join."
+    ipa: "/ɪz ɪt oʊˈkeɪ ɪf aɪ dʒɔɪn leɪt/"
+    focus_phonemes: ["dʒ", "t"]
+  - kind: shadow
+    expected_text: "Could you check it when you get a chance?"
+    prompt_vi: "Cụm cuối làm lời nhờ bớt gấp. Nghe rồi nhắc lại cả câu."
+    ipa: "/kʊd juː tʃek ɪt wen juː ɡet ə tʃɑːns/"
+    focus_phonemes: ["tʃ"]
+  - kind: shadow
+    expected_text: "Would you mind checking this?"
+    prompt_vi: "Mẫu lịch sự nhất. Dùng khi nhờ người bận hoặc người trên."
+    ipa: "/wʊd juː maɪnd ˈtʃekɪŋ ðɪs/"
+    focus_phonemes: ["w", "ð"]
+  - kind: respond
+    prompt_en: "I need the report by six. Anything blocking you?"
+    prompt_vi: "Bạn cần xin thêm thời gian tới ngày mai. Xin phép cho lịch sự."
+    accept_patterns:
+      - "Is it OK if"
+      - "Could I"
+      - "Would it be OK"
+
+reading:
+  kind: chat
+  context_vi: >
+    Ba lời nhờ trong một kênh chat. Để ý cái nào gấp, cái nào không.
+  text_en: |
+    Linh: Could you push the fix to staging now? Customer is waiting.
+    Linh: And when you get a chance, could you update the ticket notes?
+    You: On it. Fix first, notes right after. Is it OK if the notes go in tomorrow morning?
+    Linh: Sure thing.
+  text_vi: |
+    Linh: Em đẩy bản sửa lên staging ngay được không? Khách đang chờ.
+    Linh: Với khi nào rảnh, em cập nhật ghi chú ticket giúp chị nhé.
+    Bạn: Em làm ngay. Sửa trước, ghi chú ngay sau. Ghi chú để sáng mai có được không ạ?
+    Linh: Được chứ.
+  questions:
+    - kind: mcq_read
+      prompt_en: "Which task is urgent?"
+      choices: ["Updating ticket notes", "Pushing the fix to staging", "Neither"]
+      answer: 1
+      difficulty: 1
+      reading_skill: scan
+      skill: Reading
+    - kind: mcq_read
+      prompt_en: "What did the learner ask permission for?"
+      choices: ["To skip the fix", "To take the day off", "To do the notes tomorrow morning"]
+      answer: 2
+      difficulty: 2
+      reading_skill: scan
+      skill: Reading
+
+writing:
+  kind: FillBlank
+  prompt_vi: "Điền hai chỗ trống: một lời nhờ và một lời xin phép."
+  prompt_en: "___ you send me the log? Is it ___ if I reply tomorrow?"
+  blanks:
+    - ["Could", "could", "Can", "can"]
+    - ["OK", "ok", "okay"]
+  hint_vi: "Chỗ đầu mở một lời nhờ. Chỗ sau nằm trong mẫu xin phép."
+  sample_en: "Could you send me the log? Is it OK if I reply tomorrow?"
+
+quiz:
+  - kind: mcq
+    prompt_vi: "Bạn muốn nhờ đồng nghiệp gửi file. Nói gì?"
+    choices: ["Could you send me the file?", "Send me the file", "You must send file"]
+    answer: 0
+    difficulty: 1
+    skill: Speaking
+  - kind: mcq
+    prompt_vi: "Bạn muốn xin phép nghỉ chiều thứ Sáu. Mẫu nào đúng nhất?"
+    choices: ["Could you take Friday off?", "Is it OK if I take Friday afternoon off?", "Can you Friday?"]
+    answer: 1
+    difficulty: 2
+    skill: Speaking
+  - kind: mcq
+    prompt_vi: "Thêm cụm nào để lời nhờ bớt gấp?"
+    choices: ["right now", "immediately", "when you get a chance"]
+    answer: 2
+    difficulty: 2
+    skill: Reading
+  - kind: mcq
+    prompt_vi: "\"Could you\" khác \"Can I\" ở chỗ nào?"
+    choices: ["Could you nhờ NGƯỜI KHÁC làm, Can I xin phép cho MÌNH", "Không khác gì", "Could you lịch sự hơn nên luôn dùng"]
+    answer: 0
+    difficulty: 2
+    skill: Reading
+
+explanation:
+  why_vi: >
+    Tiếng Việt thêm chữ "giúp", "hộ", "ạ" là câu thành lịch sự, còn cấu trúc câu không đổi.
+    Tiếng Anh đổi hẳn mẫu câu. Nói "Send me the file" không có gì sai ngữ pháp,
+    nhưng nghe như ra lệnh — và đó là hiểu lầm phổ biến nhất khiến người mới bị đánh giá là cộc lốc.
+  how_vi: >
+    Nhớ ba mẫu theo ba mục đích: NHỜ người khác thì "Could you...", XIN PHÉP cho mình
+    thì "Can I...", còn việc ảnh hưởng tới người khác thì "Is it OK if I...".
+    Thêm "when you get a chance" khi việc không gấp — cụm này tiết kiệm rất nhiều áp lực cho người nhận.
+  contrast_vi: >
+    "Could you restart the server?" là nhờ người ta làm. "Can I restart the server?"
+    là xin phép để mình làm. Nhầm hai câu này thì việc không ai làm, hoặc hai người cùng làm.
+
+common_mistakes:
+  - mistake: "Dùng câu mệnh lệnh trần: \"Send me the file\""
+    why_vi: >
+      Dịch thẳng từ “gửi file cho mình nhé”. Chữ “nhé” trong tiếng Việt làm câu mềm đi,
+      nhưng tiếng Anh không có từ tương đương ở cuối câu.
+    fix_vi: "Đổi mở đầu thành \"Could you...\". Chỉ thêm hai từ mà đổi hẳn thái độ câu nói."
+    detect_phoneme_missing: []
+  - mistake: "Xuống giọng ở cuối câu hỏi nhờ vả"
+    why_vi: >
+      Tiếng Việt dùng từ để hỏi, không dùng ngữ điệu. Xuống giọng làm câu hỏi thành câu ra lệnh
+      dù chữ nghĩa vẫn lịch sự.
+    fix_vi: "Kéo cao giọng ở từ cuối: \"...the LINK?\" Tập cường điệu rồi thu về mức tự nhiên."
+    detect_phoneme_missing: []
+  - mistake: "Nhầm \"Could you\" với \"Can I\""
+    why_vi: >
+      Tiếng Việt dùng chung một chữ “được không” cho cả nhờ vả lẫn xin phép,
+      nên người học không có thói quen phân biệt chủ ngữ.
+    fix_vi: "Hỏi: ai là người sẽ làm việc đó? Người khác thì \"Could you\", mình thì \"Can I\"."
+    detect_phoneme_missing: []
+
+memory_trick_vi: >
+  Nhìn vào chủ ngữ là ra mẫu câu. NGƯỜI KHÁC làm thì "Could YOU", MÌNH làm thì "Can I",
+  và việc đụng tới người khác thì "Is it OK if I".

@@ -1,0 +1,101 @@
+code: RP-02
+title_vi: "Standup — báo cáo ba phần mà không lan man"
+context_vi: >-
+  Standup buổi sáng, cả nhóm có 15 phút cho 6 người. Đến lượt bạn. Mục tiêu: nói đủ ba phần
+  hôm qua, hôm nay, vướng gì — trong khoảng 40 giây, và nêu được chỗ đang kẹt để có người gỡ.
+track: Infrastructure
+level: A2
+partner_name: "Tom — scrum master"
+start_node: n1
+
+nodes:
+  - code: n1
+    partner_line_en: "Alright, over to you. What's your update?"
+    partner_line_vi: "Rồi, tới lượt bạn. Cập nhật thế nào?"
+    choices:
+      - en: "Yesterday I finished the backup job for the file server. Today I'm moving on to the monitoring alerts. No blockers so far."
+        vi: "Hôm qua tôi làm xong job sao lưu cho file server. Hôm nay tôi chuyển sang phần cảnh báo giám sát. Chưa vướng gì."
+        next: n2
+        quality: good
+      - en: "Backup done. Monitoring today."
+        vi: "Sao lưu xong. Hôm nay giám sát."
+        next: n2
+        quality: curt
+        feedback_vi: >-
+          Đủ ý nhưng thiếu phần "vướng gì" — phần duy nhất mà cả nhóm thật sự cần nghe.
+          Standup không phải để báo cáo thành tích mà để lộ ra chỗ đang kẹt.
+      - en: "So yesterday I started looking at the backup job, and I found that the disk was almost full, so I checked the retention policy, and then I realised the old policy was from 2019, and..."
+        vi: "Hôm qua tôi bắt đầu xem job sao lưu, thấy đĩa gần đầy, nên tôi kiểm tra chính sách lưu giữ, rồi phát hiện chính sách cũ từ năm 2019, và..."
+        next: n1b
+        quality: wrong
+        feedback_vi: >-
+          Kể theo dòng thời gian sẽ nuốt hết phần của người khác. Nói kết quả trước,
+          chi tiết chỉ khi có người hỏi.
+
+  - code: n2
+    partner_line_en: "Good. Anything you need from the team?"
+    partner_line_vi: "Tốt. Bạn cần gì từ nhóm không?"
+    choices:
+      - en: "Yes — I need someone with firewall access to open port 9100 for the monitoring agent. It takes five minutes."
+        vi: "Có — tôi cần ai đó có quyền firewall mở cổng 9100 cho agent giám sát. Việc đó mất năm phút."
+        next: n3
+        quality: good
+      - en: "No, I'm fine."
+        vi: "Không, tôi ổn."
+        next: n3b
+        quality: curt
+        feedback_vi: >-
+          Nếu thật sự ổn thì không sao. Nhưng đây là lúc duy nhất trong ngày cả nhóm cùng
+          có mặt — xin việc nhỏ ở đây rẻ hơn nhắn riêng từng người sau đó.
+
+  - code: n3
+    partner_line_en: "Minh has firewall access. Minh, can you take that today?"
+    partner_line_vi: "Minh có quyền firewall. Minh, hôm nay bạn làm giúp được không?"
+    choices:
+      - en: "Thanks Minh. I'll send you the exact rule in chat right after this."
+        vi: "Cảm ơn Minh. Tôi gửi luật cụ thể vào chat ngay sau đây."
+        next: nEnd
+        quality: good
+      - en: "Great."
+        vi: "Tuyệt."
+        next: nEndCurt
+        quality: curt
+        feedback_vi: >-
+          Nhận lời giúp mà không nói bước tiếp theo thì việc dễ rơi. Chốt luôn ai gửi gì,
+          khi nào — một câu là đủ.
+
+  - code: n1b
+    partner_line_en: "Let's park the details — can you summarise in one sentence?"
+    partner_line_vi: "Chi tiết để sau nhé — tóm lại một câu được không?"
+    terminal: true
+    success: false
+    summary_vi: >-
+      Bị cắt giữa chừng là dấu hiệu bạn kể quá dài. Công thức ba phần: hôm qua xong gì,
+      hôm nay làm gì, đang vướng gì. Mỗi phần một câu.
+
+  - code: n3b
+    partner_line_en: "Alright, moving on to Mai."
+    partner_line_vi: "Được, chuyển sang Mai."
+    terminal: true
+    success: false
+    summary_vi: >-
+      Bạn qua lượt gọn gàng nhưng vẫn đang chờ cổng 9100 mà không ai biết. Chiều nay bạn sẽ
+      phải đi tìm từng người — việc lẽ ra giải quyết xong trong 10 giây ở standup.
+
+  - code: nEndCurt
+    partner_line_en: "Great, thanks. Next up, Mai."
+    partner_line_vi: "Tốt, cảm ơn. Tiếp theo, Mai."
+    terminal: true
+    success: true
+    summary_vi: >-
+      Bạn nêu được chỗ kẹt và có người nhận — phần khó nhất đã xong. Lần sau chốt thêm
+      bước tiếp theo để việc không rơi giữa hai người.
+
+  - code: nEnd
+    partner_line_en: "Perfect. Next up, Mai."
+    partner_line_vi: "Chuẩn. Tiếp theo, Mai."
+    terminal: true
+    success: true
+    summary_vi: >-
+      Đúng nhịp standup: ba phần gọn, nêu rõ chỗ kẹt kèm việc cụ thể cần ai làm,
+      và chốt bước tiếp theo trước khi qua lượt.

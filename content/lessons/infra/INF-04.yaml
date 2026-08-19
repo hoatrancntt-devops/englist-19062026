@@ -1,0 +1,303 @@
+schema_version: 1
+code: INF-04
+slug: change-review-va-cab
+title_vi: "Change review và CAB — xin duyệt thay đổi"
+title_en: "Change review and the CAB"
+
+layer: Professional
+track: Infrastructure
+level: B1
+unit_code: U-INF2
+order_index: 4
+estimated_minutes: 12
+
+illustration: clock-calendar
+
+objective_vi: >
+  Trình bày một yêu cầu thay đổi trước hội đồng duyệt: làm gì, rủi ro ra sao,
+  và quay lui thế nào nếu hỏng.
+
+objective_observable: >
+  Trình bày được một change đủ bốn phần, và phân biệt được standard, normal và emergency change.
+
+mastery_weights:
+  Listening: 0.30
+  Speaking: 0.35
+  Reading: 0.20
+  Writing: 0.15
+
+prerequisites:
+  - lesson: INF-03
+    min_mastery: 65
+    kind: Hard
+
+vocabulary:
+  - term: "change request"
+    ipa: "/tʃeɪndʒ rɪˈkwest/"
+    meaning_vi: "yêu cầu thay đổi"
+    chunk: "I'm raising a change request for Saturday."
+    tags: [itil, core]
+  - term: "standard change"
+    ipa: "/ˈstændərd tʃeɪndʒ/"
+    meaning_vi: "thay đổi chuẩn — rủi ro thấp, đã được duyệt trước"
+    chunk: "That's a standard change, no CAB needed."
+    tags: [itil, core]
+  - term: "emergency change"
+    ipa: "/ɪˈmɜːrdʒənsi tʃeɪndʒ/"
+    meaning_vi: "thay đổi khẩn — làm ngay, duyệt rút gọn, rủi ro cao hơn"
+    chunk: "We raised it as an emergency change."
+    tags: [itil, core]
+  - term: "rollback plan"
+    ipa: "/ˈroʊlbæk plæn/"
+    meaning_vi: "phương án quay lui"
+    chunk: "The rollback plan is a snapshot restore."
+    tags: [itil, core]
+  - term: "change freeze"
+    ipa: "/tʃeɪndʒ friːz/"
+    meaning_vi: "giai đoạn đóng băng, không cho thay đổi"
+    chunk: "We're in a change freeze until Monday."
+    tags: [itil, core]
+  - term: "blast radius"
+    ipa: "/blɑːst ˈreɪdiəs/"
+    meaning_vi: "phạm vi ảnh hưởng nếu hỏng"
+    chunk: "The blast radius is two servers."
+    tags: [change]
+
+sentence_patterns:
+  - pattern: "This is a {change_type} because {reason}."
+    meaning_vi: "Đây là {change_type} vì {reason}."
+    slots:
+      change_type: ["standard change", "normal change", "emergency change"]
+      reason: ["it's pre-approved and low risk", "the fix cannot wait for the next CAB"]
+  - pattern: "The rollback plan is {plan}, about {duration}."
+    meaning_vi: "Phương án quay lui là {plan}, khoảng {duration}."
+    slots:
+      plan: ["a snapshot restore", "reverting the config"]
+      duration: ["ten minutes", "half an hour"]
+
+dialogue:
+  context_vi: >
+    Buổi CAB thứ Năm. Bạn có ba phút để trình bày một change và trả lời câu hỏi.
+    Người duyệt không quan tâm bạn làm thế nào — họ quan tâm nếu hỏng thì sao.
+  turns:
+    - speaker: "David"
+      en: "Next item — Minh, change 8842."
+      vi: "Mục tiếp theo — Minh, change 8842."
+    - speaker: "You"
+      en: "This is a normal change: patching the two database servers to close a known vulnerability."
+      vi: "Đây là một normal change: vá hai máy chủ database để bịt một lỗ hổng đã biết."
+    - speaker: "David"
+      en: "When, and what's the impact?"
+      vi: "Khi nào, và ảnh hưởng thế nào?"
+    - speaker: "You"
+      en: "Saturday at 02:00. Fifteen minutes of downtime. Blast radius is two servers — the portal is read-only during that window."
+      vi: "Thứ Bảy lúc 02:00. Gián đoạn mười lăm phút. Phạm vi ảnh hưởng là hai máy chủ — portal chỉ đọc trong khoảng thời gian đó."
+    - speaker: "David"
+      en: "Risk level?"
+      vi: "Mức rủi ro?"
+    - speaker: "You"
+      en: "Low. We ran the same patch on staging last week with no issues."
+      vi: "Thấp. Bọn em chạy đúng bản vá này trên staging tuần trước, không vấn đề gì."
+    - speaker: "David"
+      en: "And if it goes wrong at two in the morning?"
+      vi: "Còn nếu hai giờ sáng nó hỏng thì sao?"
+    - speaker: "You"
+      en: "Rollback is a snapshot restore, about ten minutes. Snapshots are taken right before the patch, and Priya is on call."
+      vi: "Quay lui bằng khôi phục snapshot, khoảng mười phút. Snapshot được chụp ngay trước khi vá, và chị Priya trực."
+    - speaker: "David"
+      en: "Approved. Post the result in the channel on Saturday."
+      vi: "Duyệt. Thứ Bảy đăng kết quả lên kênh nhé."
+
+listening:
+  context_vi: >
+    Nghe ba tình huống. Với mỗi tình huống, xác định đó là loại change nào.
+  speed: 1.0
+  voice: en_US_male
+  transcript_en: "One: adding a user to a security group, we do it ten times a week and it is pre-approved. Two: patching two database servers next Saturday with fifteen minutes downtime. Three: a critical vulnerability is being exploited right now and we need to patch within the hour."
+  transcript_vi: "Một: thêm một người dùng vào nhóm bảo mật, bọn tôi làm mười lần một tuần và đã được duyệt trước. Hai: vá hai máy chủ database thứ Bảy tuần tới, gián đoạn mười lăm phút. Ba: một lỗ hổng nghiêm trọng đang bị khai thác ngay lúc này và cần vá trong vòng một tiếng."
+  questions:
+    - kind: mcq_listen
+      prompt_vi: "Tình huống một là loại change nào?"
+      choices: ["Standard change", "Normal change", "Emergency change"]
+      answer: 0
+      difficulty: 2
+      skill: Listening
+    - kind: mcq_listen
+      prompt_vi: "Tình huống ba là loại change nào?"
+      choices: ["Standard change", "Normal change", "Emergency change"]
+      answer: 2
+      difficulty: 2
+      skill: Listening
+
+speaking_drills:
+  - kind: read_aloud
+    expected_text: "This is a normal change, low risk."
+    prompt_vi: "Nêu loại change ngay câu đầu. Nó quyết định cả quy trình phía sau."
+    ipa: "/ðɪs ɪz ə ˈnɔːrml tʃeɪndʒ loʊ rɪsk/"
+    focus_phonemes: ["tʃ", "sk"]
+  - kind: read_aloud
+    expected_text: "The rollback plan is a snapshot restore, about ten minutes."
+    prompt_vi: "Câu người duyệt chờ nghe nhất. Chú ý cụm /pʃ/ trong snapshot."
+    ipa: "/ðə ˈroʊlbæk plæn ɪz ə ˈsnæpʃɒt rɪˈstɔːr/"
+    focus_phonemes: ["pʃ", "st"]
+  - kind: shadow
+    expected_text: "We ran the same patch on staging last week with no issues."
+    prompt_vi: "Dẫn bằng chứng để hạ mức rủi ro. Nghe rồi nhắc lại."
+    ipa: "/wiː ræn ðə seɪm pætʃ ɒn ˈsteɪdʒɪŋ/"
+    focus_phonemes: ["tʃ", "dʒ"]
+  - kind: shadow
+    expected_text: "The blast radius is two servers."
+    prompt_vi: "Phạm vi ảnh hưởng nếu hỏng — khác với ảnh hưởng khi chạy đúng."
+    ipa: "/ðə blɑːst ˈreɪdiəs ɪz tuː ˈsɜːrvərz/"
+    focus_phonemes: ["bl", "st"]
+  - kind: respond
+    prompt_en: "And if it goes wrong at two in the morning?"
+    prompt_vi: "Người duyệt hỏi phương án quay lui. Trả lời kèm thời gian và ai trực."
+    accept_patterns:
+      - "Rollback"
+      - "snapshot"
+      - "restore"
+
+reading:
+  kind: ticket
+  context_vi: >
+    Một change request đầy đủ. Bốn phần mà hội đồng duyệt luôn đọc trước tiên.
+  text_en: |
+    CHG-8842 - Patch database servers DB01, DB02
+
+    Type: Normal change
+    Window: Saturday 02:00-02:30 (15 min expected downtime)
+
+    What: apply security patch 2026-08 to close CVE-2026-1147.
+
+    Impact: portal is read-only during the window. Blast radius: 2 servers.
+    No customer-facing writes are expected at that hour (last 4 weeks
+    show under 5 write requests between 02:00 and 03:00).
+
+    Risk: Low. Same patch applied to staging on 11 Aug, no issues.
+    Pre-checks: snapshot taken immediately before, verified restorable.
+
+    Rollback: restore from snapshot, ~10 minutes. Decision point at 02:20 -
+    if the servers are not healthy by then, we roll back rather than debug.
+
+    On call: Priya Nair.
+  text_vi: |
+    CHG-8842 - Vá máy chủ database DB01, DB02
+
+    Loại: Normal change
+    Khung giờ: thứ Bảy 02:00-02:30 (dự kiến gián đoạn 15 phút)
+
+    Nội dung: áp bản vá bảo mật 2026-08 để bịt CVE-2026-1147.
+
+    Ảnh hưởng: portal chỉ đọc trong khung giờ đó. Phạm vi: 2 máy chủ.
+    Không dự kiến có ghi dữ liệu từ phía khách vào giờ đó (4 tuần gần nhất
+    cho thấy dưới 5 lượt ghi trong khoảng 02:00 tới 03:00).
+
+    Rủi ro: Thấp. Đã áp cùng bản vá lên staging ngày 11/8, không vấn đề.
+    Kiểm tra trước: đã chụp snapshot ngay trước đó, đã xác minh khôi phục được.
+
+    Quay lui: khôi phục từ snapshot, khoảng 10 phút. Mốc quyết định lúc 02:20 -
+    nếu máy chủ chưa khoẻ thì quay lui chứ không gỡ lỗi tiếp.
+
+    Trực: Priya Nair.
+  questions:
+    - kind: mcq_read
+      prompt_en: "What happens at 02:20?"
+      choices: ["The patch starts", "Decision point - roll back if servers are not healthy", "The window closes"]
+      answer: 1
+      difficulty: 2
+      reading_skill: scan
+      skill: Reading
+    - kind: mcq_read
+      prompt_en: "Why is the risk rated low?"
+      choices: ["It is a small change", "It is at night", "The same patch ran on staging with no issues"]
+      answer: 2
+      difficulty: 2
+      reading_skill: scan
+      skill: Reading
+    - kind: mcq_read
+      prompt_en: "What evidence supports the impact claim?"
+      choices: ["Four weeks of write request data", "The vendor said so", "No evidence given"]
+      answer: 0
+      difficulty: 3
+      reading_skill: skim
+      skill: Reading
+
+writing:
+  kind: GuidedEmail
+  prompt_vi: >
+    Viết một change request ngắn. Phải có đủ ba ý: làm gì và khi nào,
+    mức rủi ro kèm bằng chứng, và phương án quay lui kèm thời gian.
+  prompt_en: "Write a short change request."
+  required_points:
+    - "normal change"
+    - "risk"
+    - "rollback"
+  hint_vi: "Ba ý. Người duyệt quan tâm nhất phần quay lui, không phải phần bạn sẽ làm gì."
+  sample_en: "This is a normal change: patching two database servers on Saturday at 02:00, fifteen minutes downtime. Risk is low, the same patch ran on staging last week. Rollback is a snapshot restore, about ten minutes."
+
+quiz:
+  - kind: mcq
+    prompt_vi: "Việc lặp lại thường xuyên, rủi ro thấp, đã duyệt trước. Loại gì?"
+    choices: ["Normal change", "Standard change", "Emergency change"]
+    answer: 1
+    difficulty: 1
+    skill: Reading
+  - kind: mcq
+    prompt_vi: "Người duyệt quan tâm nhất điều gì?"
+    choices: ["Bạn làm thế nào", "Bạn mất bao lâu", "Nếu hỏng thì quay lui ra sao"]
+    answer: 2
+    difficulty: 2
+    skill: Speaking
+  - kind: mcq
+    prompt_vi: "\"Blast radius\" nghĩa là gì?"
+    choices: ["Phạm vi ảnh hưởng nếu thay đổi hỏng", "Thời gian gián đoạn", "Số người tham gia"]
+    answer: 0
+    difficulty: 2
+    skill: Reading
+  - kind: mcq
+    prompt_vi: "Vì sao change request nên có mốc quyết định quay lui?"
+    choices: ["Cho đầy đủ", "Để lúc 2 giờ sáng không phải tranh luận nên gỡ tiếp hay quay lui", "Vì quy định"]
+    answer: 1
+    difficulty: 3
+    skill: Writing
+
+explanation:
+  why_vi: >
+    Người mới trình bày change thường tập trung vào phần kỹ thuật họ sẽ làm,
+    vì đó là phần họ chuẩn bị kỹ nhất. Nhưng hội đồng duyệt không cần biết cách bạn vá máy —
+    họ cần biết nếu hỏng thì mất gì và quay lui thế nào.
+  how_vi: >
+    Bốn phần, theo đúng thứ tự người duyệt quan tâm: LOẠI CHANGE, LÀM GÌ và KHI NÀO,
+    RỦI RO kèm bằng chứng, và QUAY LUI kèm thời gian. Phần quay lui nên có
+    một MỐC QUYẾT ĐỊNH — lúc 2 giờ sáng, một dòng "nếu tới 02:20 chưa khoẻ thì quay lui"
+    đáng giá hơn cả trang phân tích.
+  contrast_vi: >
+    Standard change là việc lặp lại, đã duyệt trước, không cần CAB.
+    Normal change cần duyệt qua CAB. Emergency change làm ngay và duyệt rút gọn.
+    Gọi sai loại là hoặc bạn chờ CAB một tuần cho việc năm phút,
+    hoặc bạn bỏ qua duyệt cho một việc lẽ ra phải duyệt.
+
+common_mistakes:
+  - mistake: "Trình bày kỹ phần mình sẽ làm, sơ sài phần quay lui"
+    why_vi: >
+      Phần kỹ thuật là phần người trình bày tự tin nhất nên nói nhiều.
+      Nhưng đó không phải thứ hội đồng cần để ra quyết định.
+    fix_vi: "Dành nửa thời gian cho rủi ro và quay lui. Đó là phần quyết định duyệt hay không."
+    detect_phoneme_missing: []
+  - mistake: "Nói rủi ro thấp mà không có bằng chứng"
+    why_vi: >
+      Ai cũng nói rủi ro thấp cho change của mình. Không có bằng chứng thì
+      câu đó không mang thông tin nào.
+    fix_vi: "Dẫn chứng cụ thể: đã chạy trên staging, đã có snapshot xác minh khôi phục được."
+    detect_phoneme_missing: []
+  - mistake: "Không có mốc quyết định quay lui"
+    why_vi: >
+      Lúc 2 giờ sáng, người trực sẽ cố gỡ lỗi thêm mười phút, rồi thêm mười phút nữa,
+      và cửa sổ bảo trì trôi qua lúc nào không hay.
+    fix_vi: "Đặt sẵn một mốc giờ và một tiêu chí. Tới mốc mà chưa đạt thì quay lui, không bàn thêm."
+    detect_phoneme_missing: []
+
+memory_trick_vi: >
+  Bốn phần khi trình change: LOẠI, LÀM GÌ và KHI NÀO, RỦI RO có bằng chứng, QUAY LUI có mốc.
+  Hội đồng duyệt không quan tâm bạn làm thế nào — họ quan tâm nếu hỏng thì sao.

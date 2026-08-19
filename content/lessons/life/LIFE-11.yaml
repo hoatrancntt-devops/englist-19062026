@@ -1,0 +1,272 @@
+schema_version: 1
+code: LIFE-11
+slug: hoi-duong-va-chi-duong
+title_vi: "Hỏi đường và chỉ đường"
+title_en: "Asking for and giving directions"
+
+layer: Life
+track: Foundation
+level: A2
+unit_code: U-L2
+order_index: 11
+estimated_minutes: 11
+
+illustration: map-directions
+
+objective_vi: >
+  Hỏi đường tới một địa điểm và hiểu được câu chỉ đường — kể cả khi người ta nói nhanh
+  và dùng những cụm bạn chưa từng nghe.
+
+objective_observable: >
+  Nghe đúng hướng đi trong 4 trên 5 câu, và chỉ được đường tới một chỗ trong toà nhà.
+
+mastery_weights:
+  Listening: 0.40
+  Speaking: 0.30
+  Reading: 0.15
+  Writing: 0.15
+
+prerequisites:
+  - lesson: LIFE-10
+    min_mastery: 60
+    kind: Hard
+
+vocabulary:
+  - term: "go straight"
+    ipa: "/ɡoʊ streɪt/"
+    meaning_vi: "đi thẳng"
+    chunk: "Go straight for two blocks."
+    tags: [directions, core]
+  - term: "turn left"
+    ipa: "/tɜːrn left/"
+    meaning_vi: "rẽ trái"
+    chunk: "Turn left at the lights."
+    tags: [directions, core]
+  - term: "on your right"
+    ipa: "/ɒn jʊr raɪt/"
+    meaning_vi: "bên tay phải của bạn"
+    chunk: "It's on your right."
+    tags: [directions, core]
+  - term: "How do I get to"
+    ipa: "/haʊ duː aɪ ɡet tuː/"
+    meaning_vi: "làm sao để tới"
+    chunk: "How do I get to the third floor?"
+    tags: [directions, core]
+  - term: "You can't miss it"
+    ipa: "/juː kɑːnt mɪs ɪt/"
+    meaning_vi: "không thể đi nhầm được đâu"
+    chunk: "Big blue sign, you can't miss it."
+    tags: [directions]
+  - term: "across from"
+    ipa: "/əˈkrɒs frɒm/"
+    meaning_vi: "đối diện với"
+    chunk: "It's across from the lift."
+    tags: [directions]
+
+sentence_patterns:
+  - pattern: "How do I get to {place}?"
+    meaning_vi: "Làm sao để tới {place}?"
+    slots:
+      place: ["the server room", "the third floor", "the main entrance"]
+  - pattern: "It's {position} the {landmark}."
+    meaning_vi: "Nó {position} {landmark}."
+    slots:
+      position: ["across from", "next to", "right after"]
+      landmark: ["lift", "reception desk", "coffee machine"]
+
+dialogue:
+  context_vi: >
+    Priya từ Singapore sang, cần tìm phòng máy chủ ở tầng ba. Bạn là người chỉ đường.
+    Chỉ sai một hướng là cô ấy đi lạc cả toà nhà.
+  turns:
+    - speaker: "Priya"
+      en: "Excuse me, how do I get to the server room?"
+      vi: "Xin phép, cho hỏi phòng máy chủ đi đường nào ạ?"
+    - speaker: "You"
+      en: "Take the lift to the third floor. When you come out, turn left."
+      vi: "Chị đi thang máy lên tầng ba. Ra khỏi thang máy thì rẽ trái."
+    - speaker: "Priya"
+      en: "Left out of the lift. Then?"
+      vi: "Ra thang máy rẽ trái. Rồi sao nữa?"
+    - speaker: "You"
+      en: "Go straight to the end of the corridor. It's the last door on your right, across from the printer."
+      vi: "Đi thẳng tới cuối hành lang. Là cửa cuối cùng bên tay phải, đối diện máy in."
+    - speaker: "Priya"
+      en: "Got it. Do I need a badge?"
+      vi: "Rõ rồi. Tôi có cần thẻ không?"
+    - speaker: "You"
+      en: "Yes, tap your badge at the door. If it doesn't work, call me."
+      vi: "Có, chị quẹt thẻ ở cửa. Nếu không được thì gọi em."
+
+listening:
+  context_vi: >
+    Nghe một đoạn chỉ đường có ba bước liên tiếp. Đây là chỗ dễ rối nhất:
+    nghe kịp bước một thì lỡ mất bước hai.
+  speed: 0.95
+  voice: en_US_female
+  transcript_en: "Go out the main door, turn right, and go straight for about two minutes. The cafe is on your left, across from the bank. You can't miss it."
+  transcript_vi: "Ra cửa chính, rẽ phải, đi thẳng khoảng hai phút. Quán cà phê ở bên tay trái, đối diện ngân hàng. Không thể đi nhầm được."
+  questions:
+    - kind: mcq_listen
+      prompt_vi: "Ra cửa chính rồi rẽ hướng nào?"
+      choices: ["Rẽ phải", "Rẽ trái", "Đi thẳng luôn"]
+      answer: 0
+      difficulty: 2
+      skill: Listening
+    - kind: mcq_listen
+      prompt_vi: "Quán cà phê nằm ở đâu?"
+      choices: ["Trong ngân hàng", "Bên phải, cạnh ngân hàng", "Bên trái, đối diện ngân hàng"]
+      answer: 2
+      difficulty: 3
+      skill: Listening
+
+speaking_drills:
+  - kind: read_aloud
+    expected_text: "Go straight to the end of the corridor."
+    prompt_vi: "Đọc to. Cụm /str/ đầu chữ straight là chỗ khó nhất."
+    ipa: "/ɡoʊ streɪt tuː ðə end ɒv ðə ˈkɒrɪdɔːr/"
+    focus_phonemes: ["str", "ð"]
+  - kind: read_aloud
+    expected_text: "Turn left at the lights."
+    prompt_vi: "Chú ý cụm /ft/ cuối chữ left, đừng nuốt thành lef."
+    ipa: "/tɜːrn left æt ðə laɪts/"
+    focus_phonemes: ["ft", "ts"]
+  - kind: shadow
+    expected_text: "It's on your right, across from the printer."
+    prompt_vi: "Câu chỉ vị trí hai lớp: bên nào, và đối diện cái gì."
+    ipa: "/ɪts ɒn jʊr raɪt əˈkrɒs frɒm ðə ˈprɪntər/"
+    focus_phonemes: ["kr", "pr"]
+  - kind: shadow
+    expected_text: "How do I get to the third floor?"
+    prompt_vi: "Chú ý âm /θ/ đầu chữ third — âm tiếng Việt không có."
+    ipa: "/haʊ duː aɪ ɡet tuː ðə θɜːrd flɔːr/"
+    focus_phonemes: ["θ", "fl"]
+  - kind: respond
+    prompt_en: "Excuse me, how do I get to the server room?"
+    prompt_vi: "Ai đó hỏi đường tới phòng máy chủ. Chỉ đường bằng ít nhất hai bước."
+    accept_patterns:
+      - "Take the lift"
+      - "Go straight"
+      - "Turn"
+
+reading:
+  kind: email
+  context_vi: >
+    Email hướng dẫn đường tới văn phòng gửi cho khách. Tìm ba thứ: tầng, hướng rẽ, và cần gì để vào.
+  text_en: |
+    Subject: Directions to our office
+
+    Hi David,
+
+    We're at 25 Le Loi, floor 8. Take the lift on the right side
+    of the lobby - the left one only goes to the parking levels.
+
+    Turn left out of the lift. Reception is straight ahead,
+    across from the meeting rooms.
+
+    Bring your ID for the visitor badge.
+
+    Linh
+  text_vi: |
+    Tiêu đề: Đường tới văn phòng
+
+    Chào David,
+
+    Bọn tôi ở 25 Lê Lợi, tầng 8. Anh đi thang máy bên phải sảnh
+    - thang bên trái chỉ xuống tầng hầm để xe.
+
+    Ra thang máy rẽ trái. Quầy lễ tân ở ngay phía trước,
+    đối diện các phòng họp.
+
+    Anh mang theo giấy tờ để làm thẻ khách nhé.
+
+    Linh
+  questions:
+    - kind: mcq_read
+      prompt_en: "Which lift should David take?"
+      choices: ["The left one", "The right one", "Either one"]
+      answer: 1
+      difficulty: 2
+      reading_skill: scan
+      skill: Reading
+    - kind: mcq_read
+      prompt_en: "What should David bring?"
+      choices: ["His laptop", "A parking ticket", "His ID"]
+      answer: 2
+      difficulty: 1
+      reading_skill: scan
+      skill: Reading
+    - kind: mcq_read
+      prompt_en: "Where is reception?"
+      choices: ["Across from the meeting rooms", "Next to the lift", "On floor 2"]
+      answer: 0
+      difficulty: 2
+      reading_skill: scan
+      skill: Reading
+
+writing:
+  kind: Reorder
+  prompt_vi: "Sắp lại thành một câu chỉ đường hoàn chỉnh."
+  prompt_en: "Sắp xếp: right / your / on / It's / the / across / printer / from"
+  correct_order: ["It's", "on", "your", "right", "across", "from", "the", "printer"]
+  hint_vi: "Nói bên nào trước, rồi mới nói đối diện cái gì."
+  sample_en: "It's on your right, across from the printer."
+
+quiz:
+  - kind: mcq
+    prompt_vi: "\"Across from the lift\" nghĩa là gì?"
+    choices: ["Cạnh thang máy", "Đối diện thang máy", "Trong thang máy"]
+    answer: 1
+    difficulty: 1
+    skill: Reading
+  - kind: mcq
+    prompt_vi: "Bạn cần hỏi đường tới tầng ba. Nói gì?"
+    choices: ["Where third floor?", "Third floor please", "How do I get to the third floor?"]
+    answer: 2
+    difficulty: 1
+    skill: Speaking
+  - kind: mcq
+    prompt_vi: "\"You can't miss it\" nghĩa là gì?"
+    choices: ["Không thể đi nhầm được đâu", "Bạn không được bỏ lỡ", "Bạn đã đi nhầm rồi"]
+    answer: 0
+    difficulty: 2
+    skill: Listening
+  - kind: mcq
+    prompt_vi: "Chỉ đường tốt nên có gì?"
+    choices: ["Càng nhiều bước càng tốt", "Từng bước một, kèm điểm mốc", "Chỉ cần nói tên đường"]
+    answer: 1
+    difficulty: 2
+    skill: Speaking
+
+explanation:
+  why_vi: >
+    Nghe chỉ đường khó hơn nói chỉ đường, vì người ta nói liền ba bốn bước một hơi
+    mà không dừng. Người học kịp bước một thì đã lỡ bước hai, và tới cuối thì không dám hỏi lại.
+  how_vi: >
+    Khi nghe, bắt đúng ba thứ: HƯỚNG (trái/phải/thẳng), MỐC (đèn giao thông, thang máy),
+    và BÊN (on your left/right). Nghe được ba thứ đó là đủ đi. Không kịp thì dùng lại
+    câu cứu hộ đã học: "Sorry, could you say that again?"
+  contrast_vi: >
+    "Next to" là cạnh bên, "across from" là đối diện, "right after" là ngay sau khi đi qua.
+    Ba cụm này quyết định bạn dừng đúng cửa hay đi quá một đoạn.
+
+common_mistakes:
+  - mistake: "Gật đầu cho qua khi không nghe kịp cả đoạn chỉ đường"
+    why_vi: >
+      Ngại hỏi lại lần hai nên nhận đại. Kết quả là đi lạc và mất nhiều thời gian hơn
+      hẳn so với việc hỏi thêm một câu.
+    fix_vi: "Nhắc lại từng bước để xác nhận: \"Left out of the lift, then straight. Right?\""
+    detect_phoneme_missing: []
+  - mistake: "Nuốt cụm /str/ trong straight"
+    why_vi: "Ba phụ âm liền đầu từ không có trong tiếng Việt nên miệng rút gọn thành \"trết\"."
+    fix_vi: "Tập tách ba phần rồi nối lại: s-t-reit. Cường điệu lúc luyện."
+    detect_phoneme_missing: ["str"]
+  - mistake: "Chỉ đường chỉ bằng tên đường mà không có điểm mốc"
+    why_vi: >
+      Người mới tới không biết tên đường, và biển tên đường thì thường nhỏ hoặc bị che.
+    fix_vi: "Luôn kèm một mốc nhìn thấy được: quán cà phê, ngân hàng, biển hiệu lớn."
+    detect_phoneme_missing: []
+
+memory_trick_vi: >
+  Nghe chỉ đường thì bắt đúng ba thứ: HƯỚNG, MỐC, BÊN. Bỏ qua phần còn lại cũng không sao —
+  ba thứ đó đủ đưa bạn tới nơi.

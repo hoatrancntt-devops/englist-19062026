@@ -1,0 +1,435 @@
+schema_version: 1
+code: A
+title_vi: "Đề xếp lớp A"
+estimated_minutes: 18
+is_active: true
+
+# Thứ tự câu cố ý xen kẽ kỹ năng và độ khó tăng dần trong từng nhóm.
+# Xếp cả sáu câu nghe liền nhau sẽ khiến người yếu nghe bỏ cuộc ở câu thứ ba
+# rồi đoán bừa phần còn lại, và điểm ba trục kia mất luôn giá trị.
+
+items:
+  # ---------- Mở đầu: tự đánh giá ----------
+  - code: A-SELF-1
+    kind: Likert
+    difficulty: 1
+    slow_answer_seconds: 30
+    prompt:
+      instruction_vi: "Bạn tự thấy tiếng Anh của mình ở mức nào trong công việc hiện tại?"
+      choices:
+        - "Không dùng được câu nào"
+        - "Đọc hiểu chút ít, không nói được"
+        - "Trao đổi được việc đơn giản"
+        - "Làm việc được nhưng còn chậm"
+        - "Thoải mái trong họp kỹ thuật"
+
+  # ---------- Nghe ----------
+  - code: A-LIS-1
+    kind: Mcq
+    skill: Listening
+    difficulty: 1
+    weight: 1.0
+    slow_answer_seconds: 40
+    prompt:
+      instruction_vi: "Nghe rồi chọn nghĩa đúng. Bấm nghe lại bao nhiêu lần cũng được."
+      audio_text: "Good morning. My name is Long. I work on the service desk."
+      speed: 0.8
+      choices:
+        - "Người nói đang tìm anh Long"
+        - "Người nói tên Long, làm ở bộ phận kế toán"
+        - "Người nói tên Long, làm ở bộ phận hỗ trợ"
+        - "Người nói vừa nghỉ việc ở service desk"
+    answer:
+      correct_index: 2
+
+  - code: A-LIS-2
+    kind: Mcq
+    skill: Listening
+    difficulty: 2
+    weight: 1.0
+    slow_answer_seconds: 40
+    prompt:
+      instruction_vi: "Nghe rồi chọn câu đúng."
+      audio_text: "The meeting is at half past two, not at two."
+      speed: 0.9
+      choices:
+        - "Cuộc họp lúc 2 giờ 30"
+        - "Cuộc họp lúc 2 giờ"
+        - "Cuộc họp lúc 1 giờ 30"
+        - "Cuộc họp bị huỷ"
+    answer:
+      correct_index: 0
+
+  - code: A-LIS-3
+    kind: Mcq
+    skill: Listening
+    difficulty: 3
+    weight: 1.2
+    slow_answer_seconds: 45
+    prompt:
+      instruction_vi: "Nghe đoạn hội thoại rồi chọn câu đúng."
+      audio_text: "I can't log in. It says my password expired. Could you reset it for me?"
+      speed: 1.0
+      choices:
+        - "Người gọi báo máy in hỏng"
+        - "Người gọi quên tên đăng nhập"
+        - "Người gọi muốn đổi địa chỉ email"
+        - "Người gọi cần đặt lại mật khẩu"
+    answer:
+      correct_index: 3
+
+  - code: A-LIS-4
+    kind: Mcq
+    skill: Listening
+    difficulty: 3
+    weight: 1.2
+    slow_answer_seconds: 45
+    prompt:
+      instruction_vi: "Nghe rồi chọn câu đúng."
+      audio_text: "The deployment finished, but two of the health checks are still failing."
+      speed: 1.0
+      choices:
+        - "Triển khai thất bại hoàn toàn"
+        - "Triển khai xong nhưng còn hai kiểm tra sức khoẻ chưa đạt"
+        - "Triển khai xong và mọi thứ đều ổn"
+        - "Triển khai bị hoãn tới ngày mai"
+    answer:
+      correct_index: 1
+
+  - code: A-LIS-5
+    kind: Mcq
+    skill: Listening
+    difficulty: 4
+    weight: 1.3
+    slow_answer_seconds: 50
+    prompt:
+      instruction_vi: "Nghe rồi chọn câu đúng. Đoạn này đọc ở tốc độ người bản xứ nói trong họp."
+      audio_text: "We rolled back the release last night. The root cause was a config change, not the new code."
+      speed: 1.2
+      choices:
+        - "Chưa tìm ra nguyên nhân gốc"
+        - "Nguyên nhân gốc là mã mới vừa phát hành"
+        - "Bản phát hành đêm qua vẫn đang chạy"
+        - "Nguyên nhân gốc là một thay đổi cấu hình, không phải mã mới"
+    answer:
+      correct_index: 3
+
+  - code: A-LIS-6
+    kind: Mcq
+    skill: Listening
+    difficulty: 5
+    weight: 1.3
+    slow_answer_seconds: 50
+    prompt:
+      instruction_vi: "Nghe rồi chọn câu đúng."
+      audio_text: "If the vendor can't reproduce it on their side, we'll need to send them the trace file before Friday."
+      speed: 1.2
+      choices:
+        - "Nếu nhà cung cấp không tái hiện được lỗi thì phải gửi file trace trước thứ Sáu"
+        - "Nhà cung cấp đã tái hiện được lỗi và sẽ sửa trước thứ Sáu"
+        - "Phải gửi file trace cho nhà cung cấp ngay hôm nay"
+        - "Nhà cung cấp yêu cầu họp lại vào thứ Sáu"
+    answer:
+      correct_index: 0
+
+  # ---------- Đọc ----------
+  - code: A-REA-1
+    kind: McqRead
+    skill: Reading
+    difficulty: 1
+    weight: 1.0
+    slow_answer_seconds: 45
+    prompt:
+      instruction_vi: "Đọc rồi trả lời."
+      passage_en: "Ticket #4821 — Printer on the 3rd floor is out of paper."
+      question_en: "What is the problem?"
+      choices:
+        - "The printer is broken"
+        - "The printer has no paper"
+        - "The printer is offline"
+        - "There is no printer on the 3rd floor"
+    answer:
+      correct_index: 1
+
+  - code: A-REA-2
+    kind: McqRead
+    skill: Reading
+    difficulty: 2
+    weight: 1.0
+    slow_answer_seconds: 50
+    prompt:
+      instruction_vi: "Đọc rồi trả lời."
+      passage_en: "Hi team, I'll be out of office on Thursday and Friday. Please send urgent requests to Mai."
+      question_en: "Who should receive urgent requests?"
+      choices:
+        - "Nobody until Monday"
+        - "The writer"
+        - "The whole team"
+        - "Mai"
+    answer:
+      correct_index: 3
+
+  - code: A-REA-3
+    kind: McqRead
+    skill: Reading
+    difficulty: 3
+    weight: 1.2
+    slow_answer_seconds: 55
+    prompt:
+      instruction_vi: "Đọc rồi trả lời."
+      passage_en: "Change request CR-119 is approved for the maintenance window on Saturday 22:00-02:00. Rollback must be possible within 15 minutes."
+      question_en: "What must be possible within 15 minutes?"
+      choices:
+        - "Finishing the whole maintenance window"
+        - "Approving the change"
+        - "Rolling back the change"
+        - "Notifying the customer"
+    answer:
+      correct_index: 2
+
+  - code: A-REA-4
+    kind: McqRead
+    skill: Reading
+    difficulty: 4
+    weight: 1.2
+    slow_answer_seconds: 60
+    prompt:
+      instruction_vi: "Đọc rồi trả lời. Chú ý phân biệt nguyên nhân gốc và thứ kích hoạt sự cố."
+      passage_en: "Postmortem summary: A memory leak had been present for three weeks. The traffic spike on Tuesday triggered the outage, but the leak was the root cause."
+      question_en: "What was the root cause?"
+      choices:
+        - "The memory leak"
+        - "The traffic spike"
+        - "Tuesday's deployment"
+        - "An expired certificate"
+    answer:
+      correct_index: 0
+
+  - code: A-REA-5
+    kind: McqRead
+    skill: Reading
+    difficulty: 4
+    weight: 1.3
+    slow_answer_seconds: 60
+    prompt:
+      instruction_vi: "Đọc rồi trả lời."
+      passage_en: "Per our SLA, P1 incidents require a response within 30 minutes and an update every hour until resolved. P2 incidents require a response within 4 hours."
+      question_en: "How often must P1 incidents be updated?"
+      choices:
+        - "Only when resolved"
+        - "Every 30 minutes"
+        - "Every 4 hours"
+        - "Every hour until resolved"
+    answer:
+      correct_index: 3
+
+  - code: A-REA-6
+    kind: McqRead
+    skill: Reading
+    difficulty: 5
+    weight: 1.3
+    slow_answer_seconds: 60
+    prompt:
+      instruction_vi: "Đọc rồi trả lời."
+      passage_en: "The vendor claims the issue is on our network. However, our traces show the request never reaches their gateway, which suggests the problem occurs before that hop."
+      question_en: "What do the traces suggest?"
+      choices:
+        - "The problem happens inside the vendor's system"
+        - "The problem happens before the vendor's gateway"
+        - "The vendor's claim is confirmed"
+        - "The traces are unreliable"
+    answer:
+      correct_index: 1
+
+  # ---------- Nói ----------
+  # Bốn câu này hiện KHÔNG được phục vụ: chưa có dịch vụ chấm phát âm, và một điểm
+  # nói tự khai thì tệ hơn không có điểm nào. Soạn sẵn ở đây để lúc dịch vụ giọng nói
+  # xong thì chỉ bật cờ LearningPolicy:PlacementSpeakingEnabled, không phải soạn lại đề.
+  - code: A-SPK-1
+    kind: ReadAloud
+    skill: Speaking
+    difficulty: 1
+    weight: 1.0
+    slow_answer_seconds: 60
+    prompt:
+      instruction_vi: "Đọc to câu sau. Đọc chậm và rõ, không cần nhanh."
+      target_en: "Hello, this is Long from the service desk."
+
+  - code: A-SPK-2
+    kind: Repeat
+    skill: Speaking
+    difficulty: 2
+    weight: 1.0
+    slow_answer_seconds: 60
+    prompt:
+      instruction_vi: "Nghe rồi nhắc lại nguyên câu."
+      audio_text: "Could you tell me your ticket number, please?"
+      speed: 0.9
+      target_en: "Could you tell me your ticket number, please?"
+
+  - code: A-SPK-3
+    kind: ReadAloud
+    skill: Speaking
+    difficulty: 4
+    weight: 1.2
+    slow_answer_seconds: 70
+    prompt:
+      instruction_vi: "Đọc to câu sau."
+      target_en: "We restarted the service and the errors stopped, but we are still investigating the cause."
+
+  - code: A-SPK-4
+    kind: Repeat
+    skill: Speaking
+    difficulty: 5
+    weight: 1.2
+    slow_answer_seconds: 70
+    prompt:
+      instruction_vi: "Nghe rồi nhắc lại nguyên câu."
+      audio_text: "I'd like to walk you through what happened before we agree on the next step."
+      speed: 1.1
+      target_en: "I'd like to walk you through what happened before we agree on the next step."
+
+  # ---------- Viết ----------
+  - code: A-WRI-1
+    kind: FillBlank
+    skill: Writing
+    difficulty: 1
+    weight: 1.0
+    slow_answer_seconds: 50
+    prompt:
+      instruction_vi: "Điền một từ vào chỗ trống."
+      sentence_en: "I ___ working on ticket 4821 right now."
+    answer:
+      accepted:
+        - "am"
+        - "'m"
+
+  - code: A-WRI-2
+    kind: FillBlank
+    skill: Writing
+    difficulty: 3
+    weight: 1.2
+    slow_answer_seconds: 55
+    prompt:
+      instruction_vi: "Điền một từ vào chỗ trống."
+      sentence_en: "The server has ___ down since this morning."
+    answer:
+      accepted:
+        - "been"
+
+  - code: A-WRI-3
+    kind: ErrorCorrection
+    skill: Writing
+    difficulty: 3
+    weight: 1.2
+    slow_answer_seconds: 60
+    prompt:
+      instruction_vi: "Câu sau có một lỗi. Viết lại cả câu cho đúng."
+      sentence_en: "He don't have access to the shared folder."
+    answer:
+      accepted:
+        - "He doesn't have access to the shared folder."
+        - "He doesnt have access to the shared folder."
+        - "He does not have access to the shared folder."
+
+  - code: A-WRI-4
+    kind: ErrorCorrection
+    skill: Writing
+    difficulty: 4
+    weight: 1.2
+    slow_answer_seconds: 60
+    prompt:
+      instruction_vi: "Câu sau có một lỗi. Viết lại cả câu cho đúng."
+      sentence_en: "We will informed you when the issue is fixed."
+    answer:
+      accepted:
+        - "We will inform you when the issue is fixed."
+
+  - code: A-WRI-5
+    kind: ShortAnswer
+    skill: Writing
+    difficulty: 2
+    weight: 1.0
+    slow_answer_seconds: 60
+    prompt:
+      instruction_vi: "Đồng nghiệp nói quá nhanh và bạn không nghe kịp. Viết một câu tiếng Anh để đề nghị họ nói chậm lại."
+    answer:
+      accepted:
+        - "Could you speak more slowly, please?"
+        - "Could you speak slowly, please?"
+        - "Can you speak more slowly, please?"
+        - "Can you speak slowly, please?"
+        - "Could you slow down, please?"
+        - "Can you slow down, please?"
+        - "Please speak more slowly."
+        - "Please speak slowly."
+
+  - code: A-WRI-6
+    kind: GuidedEmail
+    skill: Writing
+    difficulty: 5
+    weight: 1.5
+    slow_answer_seconds: 180
+    prompt:
+      instruction_vi: "Viết email theo đúng ba ý dưới đây. Viết tối thiểu 25 từ."
+      scenario_vi: >
+        Máy chủ in của công ty hỏng từ 9 giờ sáng. Bạn phải báo cho cả phòng
+        bằng một email tiếng Anh ngắn.
+      required_points_vi:
+        - "Nói rõ máy chủ in đang hỏng"
+        - "Nói từ lúc mấy giờ"
+        - "Nói bạn sẽ báo lại khi sửa xong"
+    answer:
+      must_contain:
+        - "print"
+        - "9"
+        - "update"
+      min_words: 25
+
+  # ---------- Từ vựng và ngữ pháp ----------
+  - code: A-VG-1
+    kind: Mcq
+    difficulty: 2
+    weight: 1.0
+    slow_answer_seconds: 40
+    prompt:
+      instruction_vi: "Chọn từ đúng."
+      question_en: "Please ___ the ticket after you fix the problem."
+      choices:
+        - "closing"
+        - "closed"
+        - "close"
+        - "closes"
+    answer:
+      correct_index: 2
+
+  - code: A-VG-2
+    kind: Mcq
+    difficulty: 4
+    weight: 1.0
+    slow_answer_seconds: 45
+    prompt:
+      instruction_vi: "Chọn từ đúng."
+      question_en: "The outage ___ by a failed disk, not by the new release."
+      choices:
+        - "has caused"
+        - "caused"
+        - "is causing"
+        - "was caused"
+    answer:
+      correct_index: 3
+
+  # ---------- Kết: tự đánh giá kỹ năng yếu nhất ----------
+  - code: A-SELF-2
+    kind: Likert
+    difficulty: 1
+    self_rating: false
+    slow_answer_seconds: 30
+    prompt:
+      instruction_vi: "Trong bốn kỹ năng, bạn thấy mình yếu nhất ở đâu? Câu này không tính điểm, chỉ để đối chiếu với kết quả chấm."
+      choices:
+        - "Nghe"
+        - "Nói"
+        - "Đọc"
+        - "Viết"
+        - "Cả bốn đều yếu như nhau"

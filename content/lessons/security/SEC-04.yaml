@@ -1,0 +1,338 @@
+schema_version: 1
+code: SEC-04
+slug: viet-canh-bao-bao-mat-noi-bo
+title_vi: "Viết cảnh báo bảo mật nội bộ"
+title_en: "Writing an internal security advisory"
+
+layer: Professional
+track: Security
+level: B1
+unit_code: U-SEC2
+order_index: 4
+estimated_minutes: 12
+is_checkpoint: true
+
+illustration: email-inbox
+
+objective_vi: >
+  Viết một bản cảnh báo cho toàn công ty: nói rõ chuyện gì, ai bị ảnh hưởng,
+  cần làm gì — mà không gây hoảng loạn và không ai bỏ qua vì quá dài.
+
+objective_observable: >
+  Đạt từ 80 điểm trên cả bốn trục kỹ năng, không trục nào dưới 65.
+
+mastery_weights:
+  Listening: 0.20
+  Speaking: 0.25
+  Reading: 0.25
+  Writing: 0.30
+
+prerequisites:
+  - lesson: SEC-03
+    min_mastery: 70
+    kind: Hard
+  - lesson: SEC-01
+    min_mastery: 65
+    kind: Hard
+  - lesson: OFF-09
+    min_mastery: 65
+    kind: Soft
+
+vocabulary:
+  - term: "what you need to do"
+    ipa: "/wɒt juː niːd tuː duː/"
+    meaning_vi: "việc bạn cần làm"
+    chunk: "What you need to do: change your password today."
+    tags: [advisory, core]
+  - term: "no action required"
+    ipa: "/noʊ ˈækʃn rɪˈkwaɪərd/"
+    meaning_vi: "không cần làm gì"
+    chunk: "For everyone else: no action required."
+    tags: [advisory, core]
+  - term: "we are not aware of"
+    ipa: "/wiː ɑːr nɒt əˈwer ɒv/"
+    meaning_vi: "chúng tôi chưa ghi nhận"
+    chunk: "We are not aware of any data being accessed."
+    tags: [advisory, core]
+  - term: "if you notice"
+    ipa: "/ɪf juː ˈnoʊtɪs/"
+    meaning_vi: "nếu bạn thấy"
+    chunk: "If you notice anything unusual, call the service desk."
+    tags: [advisory, core]
+  - term: "phishing"
+    ipa: "/ˈfɪʃɪŋ/"
+    meaning_vi: "lừa đảo qua email giả mạo"
+    chunk: "A phishing email is circulating."
+    tags: [security, core]
+  - term: "do not click"
+    ipa: "/duː nɒt klɪk/"
+    meaning_vi: "đừng bấm vào"
+    chunk: "Do not click the link, forward it to us."
+    tags: [advisory, core]
+
+sentence_patterns:
+  - pattern: "What you need to do: {action} by {deadline}."
+    meaning_vi: "Việc bạn cần làm: {action} trước {deadline}."
+    slots:
+      action: ["change your password", "restart your laptop", "forward the email to us"]
+      deadline: ["end of day", "tomorrow morning"]
+  - pattern: "We are not aware of {thing}."
+    meaning_vi: "Chúng tôi chưa ghi nhận {thing}."
+    slots:
+      thing: ["any data being accessed", "any accounts being used"]
+
+dialogue:
+  context_vi: >
+    Có một chiến dịch phishing nhắm vào công ty. Linh muốn gửi cảnh báo toàn công ty,
+    nhưng bản nháp đầu quá dài và quá kỹ thuật.
+  turns:
+    - speaker: "Linh"
+      en: "I've read your draft. It's accurate, but it's two pages. Nobody will read past the first line."
+      vi: "Chị đọc bản nháp rồi. Chính xác đấy, nhưng dài hai trang. Không ai đọc quá dòng đầu đâu."
+    - speaker: "You"
+      en: "Fair. What should I cut?"
+      vi: "Đúng ạ. Em nên cắt gì?"
+    - speaker: "Linh"
+      en: "Everything about the attack technique. People don't need to know how it works — they need to know what to do."
+      vi: "Tất cả phần kỹ thuật tấn công. Mọi người không cần biết nó hoạt động thế nào — họ cần biết phải làm gì."
+    - speaker: "You"
+      en: "So: what happened, who is affected, what you need to do."
+      vi: "Vậy là: chuyện gì đã xảy ra, ai bị ảnh hưởng, cần làm gì."
+    - speaker: "Linh"
+      en: "Exactly. And be clear about what we don't know. Don't say 'no data was taken' if we haven't finished checking."
+      vi: "Chính xác. Và nói rõ điều mình chưa biết. Đừng nói \"không có dữ liệu nào bị lấy\" nếu bọn mình chưa kiểm xong."
+    - speaker: "You"
+      en: "I'll say we're not aware of any data being accessed, and that the investigation is ongoing."
+      vi: "Em sẽ viết là bọn em chưa ghi nhận dữ liệu nào bị truy cập, và cuộc điều tra vẫn đang tiếp tục."
+    - speaker: "Linh"
+      en: "Good. And put the action in the subject line, not at the bottom."
+      vi: "Tốt. Với đưa việc cần làm lên tiêu đề, đừng để cuối email."
+
+listening:
+  context_vi: >
+    Nghe hai cách mở đầu một bản cảnh báo. Chú ý cách nào khiến người đọc
+    biết ngay mình có liên quan hay không.
+  speed: 1.0
+  voice: en_US_male
+  transcript_en: "Version one: we have detected a sophisticated credential harvesting campaign leveraging a lookalike domain. Version two: a fake email pretending to be from IT is going around. If you entered your password, change it now. If you did not, no action required."
+  transcript_vi: "Cách một: chúng tôi đã phát hiện một chiến dịch thu thập thông tin đăng nhập tinh vi sử dụng tên miền giả mạo. Cách hai: có một email giả mạo bộ phận IT đang lan truyền. Nếu bạn đã nhập mật khẩu thì đổi ngay. Nếu chưa thì không cần làm gì."
+  questions:
+    - kind: mcq_listen
+      prompt_vi: "Cách nào giúp người đọc biết ngay mình có liên quan?"
+      choices: ["Cách hai", "Cách một", "Cả hai như nhau"]
+      answer: 0
+      difficulty: 1
+      skill: Listening
+    - kind: mcq_listen
+      prompt_vi: "Cách hai chia người đọc thành mấy nhóm?"
+      choices: ["Một", "Ba", "Hai: người đã nhập mật khẩu và người chưa"]
+      answer: 2
+      difficulty: 2
+      skill: Listening
+
+speaking_drills:
+  - kind: read_aloud
+    expected_text: "What you need to do: change your password today."
+    prompt_vi: "Đặt việc cần làm lên đầu, không để cuối email."
+    ipa: "/wɒt juː niːd tuː duː tʃeɪndʒ jʊr ˈpæswɜːrd/"
+    focus_phonemes: ["tʃ", "d"]
+  - kind: read_aloud
+    expected_text: "For everyone else, no action required."
+    prompt_vi: "Giải phóng phần lớn người đọc khỏi lo lắng."
+    ipa: "/fɔːr ˈevriwʌn els noʊ ˈækʃn rɪˈkwaɪərd/"
+    focus_phonemes: ["ls", "kʃ"]
+  - kind: shadow
+    expected_text: "We are not aware of any data being accessed."
+    prompt_vi: "Nói chính xác điều mình biết, không hứa điều chưa kiểm xong."
+    ipa: "/wiː ɑːr nɒt əˈwer ɒv ˈeni ˈdeɪtə/"
+    focus_phonemes: ["w", "ð"]
+  - kind: shadow
+    expected_text: "Do not click the link. Forward the email to us."
+    prompt_vi: "Hai câu mệnh lệnh ngắn. Trong cảnh báo thì mệnh lệnh là đúng."
+    ipa: "/duː nɒt klɪk ðə lɪŋk ˈfɔːrwərd ðə ˈiːmeɪl/"
+    focus_phonemes: ["kl", "ŋk"]
+  - kind: respond
+    prompt_en: "It's accurate, but it's two pages. What should you cut?"
+    prompt_vi: "Nêu ba phần cần giữ lại trong một bản cảnh báo."
+    accept_patterns:
+      - "what happened"
+      - "who is affected"
+      - "what you need to do"
+
+reading:
+  kind: email
+  context_vi: >
+    Bản cảnh báo hoàn chỉnh gửi toàn công ty. Đọc và đếm xem có mấy phần.
+  text_en: |
+    Subject: Action needed if you clicked - fake IT email going around
+
+    Hi all,
+
+    WHAT HAPPENED
+    Since this morning, a fake email pretending to be from the IT service desk
+    is circulating. It asks you to "verify your account" through a link.
+    The link goes to a page that looks like our login page but is not ours.
+
+    WHO IS AFFECTED
+    Anyone who received the email. About 40 people so far. Three people
+    entered their password before we blocked the site at 10:20.
+
+    WHAT YOU NEED TO DO
+    - If you entered your password on that page: change it now and call
+      the service desk on extension 214. We will check your account with you.
+    - If you clicked the link but did not type anything: no action required.
+    - If you only received the email: forward it to security@ and delete it.
+      Do not click the link.
+
+    WHAT WE KNOW AND DON'T KNOW
+    The three affected accounts have been reset. We are not aware of any
+    company data being accessed, but the investigation is ongoing.
+    We will send an update by Friday.
+
+    If you notice anything unusual on your account, call us. It is never
+    a problem to report something that turns out to be nothing.
+
+    Minh, IT Security
+  text_vi: |
+    Tiêu đề: Cần xử lý nếu bạn đã bấm - email giả mạo IT đang lan truyền
+
+    Chào cả nhà,
+
+    CHUYỆN GÌ ĐÃ XẢY RA
+    Từ sáng nay, một email giả mạo bộ phận IT đang lan truyền.
+    Nó yêu cầu bạn "xác minh tài khoản" qua một đường link.
+    Link đó dẫn tới trang trông giống trang đăng nhập của mình nhưng không phải.
+
+    AI BỊ ẢNH HƯỞNG
+    Bất kỳ ai nhận được email đó. Tới giờ khoảng 40 người. Ba người
+    đã nhập mật khẩu trước khi bọn mình chặn trang đó lúc 10:20.
+
+    VIỆC BẠN CẦN LÀM
+    - Nếu bạn đã nhập mật khẩu trên trang đó: đổi ngay và gọi
+      service desk số máy lẻ 214. Bọn mình sẽ kiểm tra tài khoản cùng bạn.
+    - Nếu bạn bấm link nhưng không gõ gì: không cần làm gì.
+    - Nếu bạn chỉ nhận được email: chuyển tiếp tới security@ rồi xoá đi.
+      Đừng bấm vào link.
+
+    ĐIỀU ĐÃ BIẾT VÀ CHƯA BIẾT
+    Ba tài khoản bị ảnh hưởng đã được đặt lại mật khẩu. Bọn mình chưa ghi nhận
+    dữ liệu công ty nào bị truy cập, nhưng cuộc điều tra vẫn đang tiếp tục.
+    Bọn mình sẽ gửi cập nhật trước thứ Sáu.
+
+    Nếu bạn thấy gì bất thường trên tài khoản, hãy gọi bọn mình. Báo một việc
+    hoá ra không có gì thì không bao giờ là phiền cả.
+
+    Minh, An ninh CNTT
+  questions:
+    - kind: mcq_read
+      prompt_en: "You clicked the link but typed nothing. What should you do?"
+      choices: ["Change your password", "No action required", "Call extension 214"]
+      answer: 1
+      difficulty: 2
+      reading_skill: scan
+      skill: Reading
+    - kind: mcq_read
+      prompt_en: "How does the advisory describe the data situation?"
+      choices: ["No data was taken", "All data was stolen", "Not aware of any data accessed, investigation ongoing"]
+      answer: 2
+      difficulty: 3
+      reading_skill: skim
+      skill: Reading
+    - kind: mcq_read
+      prompt_en: "Why does the last paragraph exist?"
+      choices: ["To encourage people to report without fear of wasting time", "To fill space", "To assign blame"]
+      answer: 0
+      difficulty: 3
+      reading_skill: skim
+      skill: Reading
+
+writing:
+  kind: GuidedEmail
+  prompt_vi: >
+    Viết một bản cảnh báo bảo mật nội bộ. Phải có đủ ba phần: chuyện gì đã xảy ra,
+    việc người đọc cần làm chia theo nhóm, và điều bạn chưa biết chắc.
+  prompt_en: "Write an internal security advisory."
+  required_points:
+    - "what happened"
+    - "what you need to do"
+    - "not aware of"
+  hint_vi: "Ba phần. Đưa việc cần làm lên tiêu đề, và không hứa điều chưa kiểm xong."
+  sample_en: "What happened: a fake IT email is circulating asking you to verify your account. What you need to do: if you entered your password, change it now and call extension 214. Otherwise no action required. We are not aware of any data being accessed, but the investigation is ongoing."
+
+quiz:
+  - kind: mcq
+    prompt_vi: "Phần nào nên đưa lên tiêu đề email cảnh báo?"
+    choices: ["Kỹ thuật tấn công", "Việc người đọc cần làm", "Tên người viết"]
+    answer: 1
+    difficulty: 1
+    skill: Writing
+  - kind: mcq
+    prompt_vi: "Chưa kiểm xong dữ liệu có bị lấy không. Viết thế nào?"
+    choices: ["Không có dữ liệu nào bị lấy", "Không nhắc tới", "Chúng tôi chưa ghi nhận dữ liệu nào bị truy cập, điều tra vẫn tiếp tục"]
+    answer: 2
+    difficulty: 3
+    skill: Writing
+  - kind: mcq
+    prompt_vi: "Vì sao nên chia người đọc thành nhóm?"
+    choices: ["Để mỗi người biết ngay mình thuộc nhóm nào và cần làm gì", "Cho email dài hơn", "Vì quy định"]
+    answer: 0
+    difficulty: 2
+    skill: Reading
+  - kind: mcq
+    prompt_vi: "Khoanh vùng đứng trước hay sau loại bỏ?"
+    choices: ["Sau", "Trước", "Không quan trọng"]
+    answer: 1
+    difficulty: 2
+    skill: Reading
+  - kind: mcq
+    prompt_vi: "Người dùng nghi máy bị xâm nhập. Câu đầu tiên bạn nói?"
+    choices: ["Đừng khởi động lại, rút mạng nhưng giữ nguồn", "Khởi động lại đi", "Cài lại máy"]
+    answer: 0
+    difficulty: 2
+    skill: Speaking
+  - kind: mcq
+    prompt_vi: "Điểm CVSS 9.8 nội bộ so với 7.5 công khai đang bị khai thác. Vá cái nào trước?"
+    choices: ["Cái 9.8", "Cùng lúc", "Cái 7.5"]
+    answer: 2
+    difficulty: 3
+    skill: Reading
+
+explanation:
+  why_vi: >
+    Người kỹ thuật viết cảnh báo thường mô tả kỹ cách tấn công hoạt động,
+    vì đó là phần họ vừa tìm hiểu và thấy thú vị. Nhưng người đọc là kế toán,
+    nhân sự, kinh doanh — họ chỉ cần biết một điều: tôi có phải làm gì không.
+    Cảnh báo dài hai trang thì không ai đọc, và người cần hành động nhất lại bỏ qua.
+  how_vi: >
+    Ba phần, và chỉ ba phần: CHUYỆN GÌ ĐÃ XẢY RA (hai câu, không kỹ thuật),
+    VIỆC CẦN LÀM chia theo nhóm người đọc, và ĐIỀU CHƯA BIẾT CHẮC.
+    Đưa việc cần làm lên tiêu đề. Và tuyệt đối không hứa điều chưa kiểm xong —
+    "chúng tôi chưa ghi nhận" khác hẳn "không có gì xảy ra".
+  contrast_vi: >
+    "Không có dữ liệu nào bị lấy" là một cam kết. Nếu tuần sau phát hiện có,
+    bạn mất toàn bộ niềm tin. "Chúng tôi chưa ghi nhận dữ liệu nào bị truy cập,
+    điều tra vẫn tiếp tục" là sự thật, và vẫn trấn an được người đọc.
+
+common_mistakes:
+  - mistake: "Mô tả kỹ thuật tấn công trong cảnh báo gửi toàn công ty"
+    why_vi: >
+      Đó là phần người viết vừa tìm hiểu nên muốn chia sẻ. Nhưng nó đẩy
+      phần quan trọng nhất xuống dưới và làm email dài gấp ba.
+    fix_vi: "Cắt hết phần kỹ thuật. Người đọc cần biết phải làm gì, không cần biết nó hoạt động thế nào."
+    detect_phoneme_missing: []
+  - mistake: "Khẳng định \"không có dữ liệu nào bị lấy\" khi chưa kiểm xong"
+    why_vi: >
+      Muốn trấn an nên chọn từ mạnh. Nhưng nếu tuần sau phát hiện ngược lại
+      thì mất niềm tin nhiều hơn cả sự cố ban đầu.
+    fix_vi: "Dùng \"we are not aware of\" và nói rõ điều tra vẫn đang tiếp tục."
+    detect_phoneme_missing: []
+  - mistake: "Không chia người đọc thành nhóm"
+    why_vi: >
+      Một hướng dẫn chung khiến người không liên quan cũng lo lắng và gọi tới service desk,
+      còn người thực sự cần hành động thì không nhận ra mình thuộc diện đó.
+    fix_vi: "Chia rõ: người đã nhập mật khẩu, người chỉ bấm link, người chỉ nhận email."
+    detect_phoneme_missing: []
+
+memory_trick_vi: >
+  Ba phần, chỉ ba phần: CHUYỆN GÌ, VIỆC CẦN LÀM chia theo nhóm, ĐIỀU CHƯA BIẾT.
+  Việc cần làm đưa lên TIÊU ĐỀ, và không bao giờ hứa điều chưa kiểm xong.

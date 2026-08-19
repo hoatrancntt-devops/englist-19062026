@@ -1,0 +1,366 @@
+schema_version: 1
+code: CLD-04
+slug: du-buoi-review-kien-truc
+title_vi: "Dự buổi review kiến trúc — trả lời câu hỏi khó mà không chống chế"
+title_en: "Taking part in an architecture review"
+
+layer: Professional
+track: Cloud
+level: B1
+unit_code: U-CLD2
+order_index: 4
+estimated_minutes: 12
+is_checkpoint: true
+
+illustration: architecture-review
+
+objective_vi: >
+  Trình bày thiết kế của mình trong buổi review, nêu đánh đổi theo ít nhất
+  hai trụ cột, và trả lời câu hỏi phản biện mà không chuyển sang chống chế.
+
+objective_observable: >
+  Đạt từ 80 điểm trên cả bốn trục kỹ năng, không trục nào dưới 65.
+
+mastery_weights:
+  Listening: 0.25
+  Speaking: 0.35
+  Reading: 0.20
+  Writing: 0.20
+
+prerequisites:
+  - lesson: CLD-03
+    min_mastery: 70
+    kind: Hard
+  - lesson: CLD-02
+    min_mastery: 70
+    kind: Hard
+  - lesson: OFF-10
+    min_mastery: 65
+    kind: Soft
+
+vocabulary:
+  - term: "that's a fair point"
+    ipa: "/ðæts ə fer pɔɪnt/"
+    meaning_vi: "ý đó xác đáng"
+    chunk: "That's a fair point, I hadn't measured that."
+    tags: [review, core]
+  - term: "I hadn't considered"
+    ipa: "/aɪ ˈhædnt kənˈsɪdərd/"
+    meaning_vi: "tôi chưa tính tới"
+    chunk: "I hadn't considered the backup window."
+    tags: [review, core]
+  - term: "let me check and come back"
+    ipa: "/let miː tʃek ænd kʌm bæk/"
+    meaning_vi: "để tôi kiểm rồi trả lời lại"
+    chunk: "I don't know. Let me check and come back to you."
+    tags: [review, core]
+  - term: "the constraint is"
+    ipa: "/ðə kənˈstreɪnt ɪz/"
+    meaning_vi: "ràng buộc ở đây là"
+    chunk: "The constraint is the vendor's API rate limit."
+    tags: [review, core]
+  - term: "we ruled out"
+    ipa: "/wiː ruːld aʊt/"
+    meaning_vi: "chúng tôi đã loại phương án"
+    chunk: "We ruled out Kubernetes because nobody can run it on call."
+    tags: [review, core]
+  - term: "reversible"
+    ipa: "/rɪˈvɜːrsəbl/"
+    meaning_vi: "quay lại được nếu sai"
+    chunk: "This decision is reversible in one sprint."
+    tags: [review, core]
+
+sentence_patterns:
+  - pattern: "We ruled out {option} because {reason}."
+    meaning_vi: "Bọn tôi loại {option} vì {reason}."
+    slots:
+      option: ["Kubernetes", "a managed database", "a second region"]
+      reason: ["nobody can run it on call", "the budget was fixed", "the data must stay in country"]
+  - pattern: "That's a fair point. {Response}"
+    meaning_vi: "Ý đó xác đáng. {Response}"
+    slots:
+      Response: ["I hadn't measured that.", "Let me check and come back to you.", "That changes the second option."]
+
+dialogue:
+  context_vi: >
+    Bạn trình bày thiết kế trong buổi review. Chị Nga hỏi một câu bạn chưa
+    nghĩ tới. Đây là lúc quyết định người ta có tin bạn hay không.
+  turns:
+    - speaker: "You"
+      en: "We chose a managed database over running our own. The trade-off is higher monthly cost against no patching work for the team."
+      vi: "Bọn em chọn cơ sở dữ liệu có quản lý thay vì tự chạy. Đánh đổi là chi phí hằng tháng cao hơn, đổi lấy việc nhóm không phải vá."
+    - speaker: "Nga"
+      en: "What happens to your backup window when the table grows past a terabyte?"
+      vi: "Khi bảng vượt một terabyte thì cửa sổ sao lưu của em thế nào?"
+    - speaker: "You"
+      en: "That's a fair point. I hadn't measured that — I sized it against today's two hundred gigabytes."
+      vi: "Ý đó xác đáng ạ. Em chưa đo cái đó — em tính theo hai trăm gigabyte hiện tại."
+    - speaker: "Nga"
+      en: "So the design might not hold in a year."
+      vi: "Vậy thiết kế này có thể không trụ được sau một năm."
+    - speaker: "You"
+      en: "It might not. Let me check the growth rate and come back tomorrow with the number."
+      vi: "Có thể không ạ. Để em kiểm tốc độ tăng rồi mai quay lại với con số."
+    - speaker: "Nga"
+      en: "Good. And why not Kubernetes for the application side?"
+      vi: "Tốt. Còn phía ứng dụng sao không dùng Kubernetes?"
+    - speaker: "You"
+      en: "We ruled it out because nobody on the team can run it on call. That's a people constraint, not a technical one."
+      vi: "Bọn em loại vì không ai trong nhóm trực được Kubernetes. Đó là ràng buộc con người, không phải kỹ thuật."
+    - speaker: "Nga"
+      en: "I can accept that. Is the choice reversible?"
+      vi: "Chị chấp nhận được. Lựa chọn này quay lại được không?"
+    - speaker: "You"
+      en: "Yes. The application is packaged as a container either way, so moving it later is a deployment change, not a rewrite."
+      vi: "Được ạ. Ứng dụng đóng gói dạng container ở cả hai đường, nên sau này chuyển là đổi cách triển khai chứ không phải viết lại."
+
+listening:
+  context_vi: >
+    Nghe hai cách phản ứng khi bị hỏi một câu chưa nghĩ tới.
+    Chú ý cách nào giữ được uy tín.
+  speed: 1.2
+  voice: en_US_female
+  transcript_en: "The question was about the backup window at one terabyte. Reaction one: well, that is an edge case, and we can always add more storage, and honestly most systems never reach that size. Reaction two: that is a fair point, I had not measured that. I sized it against today's two hundred gigabytes. Let me check the growth rate and come back tomorrow with the number."
+  transcript_vi: "Câu hỏi là về cửa sổ sao lưu ở mức một terabyte. Phản ứng một: à, đó là trường hợp hiếm, với lại lúc nào cũng thêm được dung lượng, mà thật ra phần lớn hệ thống chẳng bao giờ đạt tới cỡ đó. Phản ứng hai: ý đó xác đáng, tôi chưa đo cái đó. Tôi tính theo hai trăm gigabyte hiện tại. Để tôi kiểm tốc độ tăng rồi mai quay lại với con số."
+  questions:
+    - kind: mcq_listen
+      prompt_vi: "Phản ứng một làm gì với câu hỏi?"
+      choices: ["Hạ thấp câu hỏi thành trường hợp hiếm", "Trả lời trực tiếp", "Xin thêm thời gian"]
+      answer: 0
+      difficulty: 2
+      skill: Listening
+    - kind: mcq_listen
+      prompt_vi: "Phản ứng hai kết thúc bằng gì?"
+      choices: ["Một lời xin lỗi", "Một câu hỏi ngược", "Một cam kết cụ thể kèm thời hạn"]
+      answer: 2
+      difficulty: 2
+      skill: Listening
+    - kind: mcq_listen
+      prompt_vi: "Vì sao phản ứng hai giữ được uy tín hơn?"
+      choices: ["Vì dùng từ khó hơn", "Vì thừa nhận đúng phần chưa biết rồi cam kết kiểm lại", "Vì ngắn hơn"]
+      answer: 1
+      difficulty: 3
+      skill: Listening
+
+speaking_drills:
+  - kind: read_aloud
+    expected_text: "That's a fair point. I hadn't measured that."
+    prompt_vi: "Hai câu ngắn cứu bạn khi bị hỏi trúng chỗ chưa nghĩ tới."
+    ipa: "/ðæts ə fer pɔɪnt aɪ ˈhædnt ˈmeʒərd/"
+    focus_phonemes: ["ð", "ʒ"]
+  - kind: read_aloud
+    expected_text: "Let me check the growth rate and come back tomorrow with the number."
+    prompt_vi: "Không biết thì hẹn lại kèm mốc thời gian, đừng đoán."
+    ipa: "/let miː tʃek ðə ɡroʊθ reɪt/"
+    focus_phonemes: ["tʃ", "θ"]
+  - kind: shadow
+    expected_text: "We ruled it out because nobody on the team can run it on call."
+    prompt_vi: "Nêu ràng buộc con người. Đó là lý do hợp lệ trong review."
+    ipa: "/wiː ruːld ɪt aʊt bɪˈkɒz ˈnoʊbədi/"
+    focus_phonemes: ["r", "l"]
+  - kind: shadow
+    expected_text: "The decision is reversible in one sprint."
+    prompt_vi: "Nói mức độ quay lại được. Người duyệt quan tâm điều này nhất."
+    ipa: "/ðə dɪˈsɪʒn ɪz rɪˈvɜːrsəbl/"
+    focus_phonemes: ["ʒ", "ɜːr"]
+  - kind: respond
+    prompt_en: "What happens to your backup window when the table grows past a terabyte?"
+    prompt_vi: "Thừa nhận phần chưa đo, rồi hẹn lại kèm thời hạn."
+    accept_patterns:
+      - "fair point"
+      - "hadn't"
+      - "come back"
+
+reading:
+  kind: note
+  context_vi: >
+    Biên bản buổi review. Đọc và phân biệt câu hỏi nào đã được trả lời
+    và câu nào còn treo.
+  text_en: |
+    Architecture review - order service - 14 May
+
+    Present: Nga (chair), Dung, Minh, and the service owner.
+
+    Decision presented
+    Managed database instead of self-hosted. Containers on the shared
+    cluster instead of Kubernetes. Single region with backups to a second.
+
+    Questions raised
+
+    1. Backup window past one terabyte.
+    Not answered. The design was sized against today's 200 GB. Owner will
+    measure the growth rate and return by 15 May. This blocks approval of
+    the database choice only, not the rest.
+
+    2. Why not Kubernetes.
+    Answered and accepted. No one on the team can run it on call. The chair
+    noted this is a people constraint that may change when the platform
+    team grows, and asked that the decision record say so explicitly.
+
+    3. Is the choice reversible.
+    Answered. The application ships as a container either way, so a later
+    move is a deployment change. The chair rated this low-risk.
+
+    4. Cost at peak.
+    Partially answered. The owner gave the steady-state figure but not the
+    peak-hour figure. Nga accepted the steady-state number for now because
+    the service has no seasonal peak.
+
+    Outcome
+    Approved with one condition: the growth-rate number by 15 May. If the
+    backup window exceeds two hours at projected size, the database choice
+    comes back to this group.
+  text_vi: |
+    Buổi review kiến trúc - dịch vụ đơn hàng - 14 tháng Năm
+
+    Có mặt: Nga (chủ trì), Dũng, Minh và chủ dịch vụ.
+
+    Quyết định trình bày
+    Cơ sở dữ liệu có quản lý thay vì tự dựng. Container trên cụm dùng chung
+    thay vì Kubernetes. Một vùng, sao lưu sang vùng thứ hai.
+
+    Câu hỏi nêu ra
+
+    1. Cửa sổ sao lưu khi vượt một terabyte.
+    Chưa trả lời. Thiết kế tính theo 200 GB hiện tại. Chủ dịch vụ sẽ đo
+    tốc độ tăng và trả lời trước 15 tháng Năm. Việc này chỉ chặn phê duyệt
+    phần cơ sở dữ liệu, không chặn phần còn lại.
+
+    2. Vì sao không dùng Kubernetes.
+    Đã trả lời và được chấp nhận. Không ai trong nhóm trực được. Chủ trì lưu ý
+    đây là ràng buộc con người, có thể thay đổi khi nhóm nền tảng lớn lên,
+    và đề nghị ghi rõ điều đó vào bản ghi quyết định.
+
+    3. Lựa chọn có quay lại được không.
+    Đã trả lời. Ứng dụng đóng gói dạng container ở cả hai đường, nên chuyển sau
+    là đổi cách triển khai. Chủ trì đánh giá rủi ro thấp.
+
+    4. Chi phí lúc cao điểm.
+    Trả lời một phần. Chủ dịch vụ đưa con số ở trạng thái ổn định nhưng chưa có
+    con số giờ cao điểm. Chị Nga tạm chấp nhận con số ổn định vì dịch vụ này
+    không có cao điểm theo mùa.
+
+    Kết quả
+    Duyệt kèm một điều kiện: con số tốc độ tăng trước 15 tháng Năm. Nếu cửa sổ
+    sao lưu vượt hai tiếng ở kích thước dự kiến, lựa chọn cơ sở dữ liệu quay lại nhóm này.
+  questions:
+    - kind: mcq_read
+      prompt_en: "Which question is still open?"
+      choices: ["Why not Kubernetes", "Whether the choice is reversible", "The backup window at one terabyte"]
+      answer: 2
+      difficulty: 2
+      reading_skill: scan
+      skill: Reading
+    - kind: mcq_read
+      prompt_en: "What did the chair ask to be written into the decision record?"
+      choices: ["That the Kubernetes rejection is a people constraint", "The peak cost figure", "The vendor name"]
+      answer: 0
+      difficulty: 3
+      reading_skill: scan
+      skill: Reading
+    - kind: mcq_read
+      prompt_en: "Why was the missing peak-cost figure accepted?"
+      choices: ["It was too hard to calculate", "The service has no seasonal peak", "The chair forgot about it"]
+      answer: 1
+      difficulty: 3
+      reading_skill: skim
+      skill: Reading
+    - kind: mcq_read
+      prompt_en: "What would send the database choice back to the group?"
+      choices: ["A cost increase", "A new team member", "A backup window over two hours at projected size"]
+      answer: 2
+      difficulty: 3
+      reading_skill: scan
+      skill: Reading
+
+writing:
+  kind: GuidedEmail
+  prompt_vi: >
+    Viết email trả lời sau buổi review: nhắc lại câu hỏi còn treo, đưa con số
+    bạn đã đo, và nói rõ điều đó ảnh hưởng thế nào tới quyết định.
+  prompt_en: "Follow up on an open architecture review question."
+  required_points:
+    - "fair point"
+    - "measured"
+    - "reversible"
+  hint_vi: "Mở bằng câu hỏi họ nêu, không mở bằng lời xin lỗi dài."
+  sample_en: "You raised a fair point about the backup window past one terabyte. I have now measured the growth rate: the table adds about 18 GB a month, so we reach one terabyte in roughly three and a half years, and the backup window at that size is 70 minutes. That stays inside our two-hour limit, and the choice is reversible in one sprint if the growth rate changes."
+
+quiz:
+  - kind: mcq
+    prompt_vi: "Bị hỏi một câu chưa nghĩ tới. Phản ứng nào giữ được uy tín?"
+    choices: ["Thừa nhận chưa đo rồi hẹn lại kèm thời hạn", "Nói đó là trường hợp hiếm", "Đổi sang chủ đề khác"]
+    answer: 0
+    difficulty: 1
+    skill: Speaking
+  - kind: mcq
+    prompt_vi: "\"We ruled out X because nobody can run it on call\" là loại lý do gì?"
+    choices: ["Lý do kỹ thuật", "Ràng buộc con người — vẫn là lý do hợp lệ", "Lý do không hợp lệ trong review"]
+    answer: 1
+    difficulty: 2
+    skill: Reading
+  - kind: mcq
+    prompt_vi: "Vì sao người duyệt hay hỏi \"is it reversible\"?"
+    choices: ["Vì quyết định quay lại được thì rủi ro thấp và duyệt được nhanh hơn", "Để bắt lỗi", "Vì quy định"]
+    answer: 0
+    difficulty: 2
+    skill: Reading
+  - kind: mcq
+    prompt_vi: "Không biết câu trả lời. Nên nói gì?"
+    choices: ["Đoán một con số nghe hợp lý", "Nói là không quan trọng", "Let me check and come back to you tomorrow"]
+    answer: 2
+    difficulty: 1
+    skill: Speaking
+  - kind: mcq
+    prompt_vi: "Trong biên bản, vì sao phải ghi rõ câu nào chưa trả lời?"
+    choices: ["Cho dài", "Để câu hỏi treo không biến mất khi mọi người rời phòng họp", "Để trách người trình bày"]
+    answer: 1
+    difficulty: 3
+    skill: Writing
+  - kind: mcq
+    prompt_vi: "Email theo sau buổi review nên mở đầu bằng gì?"
+    choices: ["Nhắc lại đúng câu hỏi họ nêu rồi đưa con số", "Lời xin lỗi dài vì chưa chuẩn bị kỹ", "Tóm tắt lại toàn bộ thiết kế"]
+    answer: 0
+    difficulty: 2
+    skill: Writing
+
+explanation:
+  why_vi: >
+    Buổi review không phải kỳ thi thiết kế. Người chủ trì đã biết thiết kế nào cũng
+    có lỗ hổng — thứ họ đo là bạn phản ứng thế nào khi lỗ hổng bị chỉ ra.
+    Người chống chế làm cả nhóm mất niềm tin vào mọi con số khác trong bài trình bày,
+    kể cả những con số đúng.
+  how_vi: >
+    Ba câu, dùng được cho mọi câu hỏi khó: "That's a fair point" — công nhận.
+    "I hadn't measured that" hoặc "I hadn't considered that" — nói đúng phần mình thiếu.
+    "Let me check and come back to you by ..." — hẹn kèm thời hạn cụ thể.
+    Ba câu này mất mười giây và giữ nguyên uy tín cho phần còn lại của bài trình bày.
+  contrast_vi: >
+    "Đó là trường hợp hiếm, với lại lúc nào cũng thêm dung lượng được" là chống chế:
+    nó phủ nhận câu hỏi thay vì trả lời. "Ý đó xác đáng, em chưa đo, mai em quay lại
+    với con số" là thừa nhận có giới hạn rõ ràng — và nó biến câu hỏi thành một việc
+    có người chịu trách nhiệm.
+
+common_mistakes:
+  - mistake: "Hạ thấp câu hỏi thành trường hợp hiếm"
+    why_vi: >
+      Bị hỏi trúng chỗ chưa nghĩ tới thì phản xạ tự vệ bật lên trước lý trí.
+      Nhưng người hỏi thường hỏi vì đã thấy tình huống đó xảy ra thật.
+    fix_vi: "Dừng lại, nói \"That's a fair point\", rồi mới nghĩ tiếp."
+    detect_phoneme_missing: []
+  - mistake: "Đoán một con số cho có"
+    why_vi: >
+      Im lặng trong phòng họp rất khó chịu nên người ta lấp bằng con số ước chừng.
+      Nhưng con số sai đi vào biên bản và thành cơ sở cho quyết định sau đó.
+    fix_vi: "Nói thẳng \"I don't know\" rồi hẹn thời hạn. Không ai trừ điểm vì câu đó."
+    detect_phoneme_missing: []
+  - mistake: "Xin lỗi dài dòng thay vì trả lời"
+    why_vi: >
+      Văn hoá xin lỗi trước khi trình bày làm người nói mở đầu bằng hai ba câu tự trách.
+      Trong buổi review, việc đó tiêu tốn thời gian và làm người nghe mất kiên nhẫn.
+    fix_vi: "Bỏ phần xin lỗi. Vào thẳng: câu hỏi của anh chị là gì, con số của em là gì."
+    detect_phoneme_missing: []
+
+memory_trick_vi: >
+  Ba câu cứu mạng trong review: THAT'S A FAIR POINT — I HADN'T MEASURED THAT —
+  LET ME CHECK AND COME BACK BY [ngày]. Chống chế một câu là mất niềm tin cả bài.

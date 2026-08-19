@@ -1,0 +1,278 @@
+schema_version: 1
+code: OFF-11
+slug: gioi-thieu-va-hoi-vai-tro
+title_vi: "Giới thiệu người mới và hỏi vai trò"
+title_en: "Introducing people and asking roles"
+
+layer: Office
+track: Foundation
+level: B1
+unit_code: U-O3
+order_index: 11
+estimated_minutes: 11
+
+illustration: handshake-intro
+
+objective_vi: >
+  Giới thiệu hai người với nhau, và hỏi được ai phụ trách việc gì —
+  kỹ năng quyết định bạn tìm đúng người khi có sự cố.
+
+objective_observable: >
+  Giới thiệu được hai người kèm lý do họ nên biết nhau, và hỏi đúng người phụ trách một hệ thống.
+
+mastery_weights:
+  Listening: 0.30
+  Speaking: 0.40
+  Reading: 0.15
+  Writing: 0.15
+
+prerequisites:
+  - lesson: OFF-10
+    min_mastery: 60
+    kind: Hard
+
+vocabulary:
+  - term: "Have you two met"
+    ipa: "/hæv juː tuː met/"
+    meaning_vi: "hai người gặp nhau chưa"
+    chunk: "Have you two met?"
+    tags: [intro, core]
+  - term: "This is X, she looks after"
+    ipa: "/ðɪs ɪz ʃiː lʊks ˈæftər/"
+    meaning_vi: "đây là X, chị ấy phụ trách"
+    chunk: "This is Priya, she looks after storage."
+    tags: [intro, core]
+  - term: "Who owns"
+    ipa: "/huː oʊnz/"
+    meaning_vi: "ai phụ trách (hệ thống nào đó)"
+    chunk: "Who owns the VPN gateway?"
+    tags: [intro, core]
+  - term: "the right person to ask"
+    ipa: "/ðə raɪt ˈpɜːrsn tuː ɑːsk/"
+    meaning_vi: "người đúng để hỏi"
+    chunk: "She's the right person to ask about backups."
+    tags: [intro]
+  - term: "I'll put you in touch"
+    ipa: "/aɪl pʊt juː ɪn tʌtʃ/"
+    meaning_vi: "tôi sẽ kết nối hai người"
+    chunk: "I'll put you in touch with Minh."
+    tags: [intro, office]
+  - term: "reports to"
+    ipa: "/rɪˈpɔːrts tuː/"
+    meaning_vi: "báo cáo cho, thuộc quyền"
+    chunk: "The helpdesk team reports to Linh."
+    tags: [intro, office]
+
+sentence_patterns:
+  - pattern: "This is {person}, {role_description}."
+    meaning_vi: "Đây là {person}, {role_description}."
+    slots:
+      person: ["Priya", "Minh"]
+      role_description: ["she looks after storage", "he runs the helpdesk"]
+  - pattern: "Who owns {system}?"
+    meaning_vi: "Ai phụ trách {system}?"
+    slots:
+      system: ["the VPN gateway", "the backup jobs", "the monitoring stack"]
+
+dialogue:
+  context_vi: >
+    David sang văn phòng lần đầu. Bạn giới thiệu anh ấy với Priya —
+    và giới thiệu tốt nghĩa là nói rõ vì sao hai người nên biết nhau.
+  turns:
+    - speaker: "You"
+      en: "David, have you two met? This is Priya — she looks after storage and retention."
+      vi: "Anh David, hai người gặp nhau chưa? Đây là chị Priya — chị phụ trách lưu trữ và chính sách giữ dữ liệu."
+    - speaker: "David"
+      en: "We've emailed, never met in person. Good to finally meet you."
+      vi: "Bọn tôi trao đổi email rồi, chưa gặp trực tiếp. Rất vui cuối cùng cũng được gặp bạn."
+    - speaker: "Priya"
+      en: "Likewise. You're the one asking about the sixty-day policy."
+      vi: "Tôi cũng vậy. Anh là người hỏi về chính sách sáu mươi ngày đúng không."
+    - speaker: "You"
+      en: "That's the one. David, if you need anything on storage sizing, Priya is the right person to ask."
+      vi: "Đúng rồi ạ. Anh David, nếu cần gì về tính dung lượng lưu trữ thì chị Priya là người đúng để hỏi."
+    - speaker: "David"
+      en: "Noted. And who owns the VPN gateway? I had a question about the timeout."
+      vi: "Ghi nhận. Còn ai phụ trách VPN gateway? Tôi có câu hỏi về cái timeout."
+    - speaker: "You"
+      en: "That's the network team — Minh is the contact. I'll put you in touch."
+      vi: "Đó là team mạng — anh Minh là đầu mối. Để em kết nối hai người."
+
+listening:
+  context_vi: >
+    Nghe một lời giới thiệu tốt. Chú ý phần khiến nó hữu ích: lý do hai người nên biết nhau.
+  speed: 1.0
+  voice: en_US_female
+  transcript_en: "David, this is Minh — he runs the network side, including the VPN gateway you asked about. Minh, David is the engineering manager on the customer side, he raised the timeout question last week."
+  transcript_vi: "David, đây là Minh — bạn ấy phụ trách mảng mạng, bao gồm cả VPN gateway mà anh hỏi. Minh, David là quản lý kỹ thuật phía khách hàng, anh ấy nêu câu hỏi về timeout tuần trước."
+  questions:
+    - kind: mcq_listen
+      prompt_vi: "Minh phụ trách gì?"
+      choices: ["Mảng mạng và VPN gateway", "Lưu trữ", "Helpdesk"]
+      answer: 0
+      difficulty: 1
+      skill: Listening
+    - kind: mcq_listen
+      prompt_vi: "Điều gì làm lời giới thiệu này hữu ích?"
+      choices: ["Nói chức danh", "Nói tên đầy đủ", "Nêu rõ vì sao hai người nên nói chuyện với nhau"]
+      answer: 2
+      difficulty: 2
+      skill: Listening
+
+speaking_drills:
+  - kind: read_aloud
+    expected_text: "This is Priya, she looks after storage."
+    prompt_vi: "Nêu việc người ta phụ trách, không chỉ nêu chức danh."
+    ipa: "/ðɪs ɪz ˈpriːə ʃiː lʊks ˈæftər ˈstɔːrɪdʒ/"
+    focus_phonemes: ["ð", "ks"]
+  - kind: read_aloud
+    expected_text: "Who owns the VPN gateway?"
+    prompt_vi: "Câu hỏi tìm đúng người. Đọc VPN rời từng chữ cái."
+    ipa: "/huː oʊnz ðə viː piː en ˈɡeɪtweɪ/"
+    focus_phonemes: ["nz", "ɡ"]
+  - kind: shadow
+    expected_text: "She's the right person to ask about backups."
+    prompt_vi: "Câu chỉ đường cho người khác. Nghe rồi nhắc lại."
+    ipa: "/ʃiːz ðə raɪt ˈpɜːrsn tuː ɑːsk əˈbaʊt ˈbækʌps/"
+    focus_phonemes: ["ʃ", "ps"]
+  - kind: shadow
+    expected_text: "I'll put you in touch with Minh."
+    prompt_vi: "Chú ý âm /tʃ/ cuối chữ touch."
+    ipa: "/aɪl pʊt juː ɪn tʌtʃ wɪð mɪn/"
+    focus_phonemes: ["tʃ", "ð"]
+  - kind: respond
+    prompt_en: "Who owns the backup jobs?"
+    prompt_vi: "Ai đó hỏi ai phụ trách backup. Trả lời và đề nghị kết nối."
+    accept_patterns:
+      - "That's"
+      - "I'll put you in touch"
+      - "looks after"
+
+reading:
+  kind: email
+  context_vi: >
+    Email kết nối hai người. Để ý phần giải thích vì sao — thiếu nó thì cả hai đều bối rối.
+  text_en: |
+    Subject: Intro - David (customer side) and Minh (network)
+
+    Hi both,
+
+    David, meet Minh. He looks after the network side including the VPN
+    gateway and firewall rules.
+
+    Minh, David is the engineering manager on the Northwind side. He raised
+    the VPN timeout question in last week's review - the one about sessions
+    dropping after thirty minutes.
+
+    I'll leave you two to it. Minh, David is in the Singapore timezone,
+    so mornings work best for him.
+
+    Linh
+  text_vi: |
+    Tiêu đề: Kết nối - David (phía khách hàng) và Minh (mảng mạng)
+
+    Chào hai bạn,
+
+    David, đây là Minh. Bạn ấy phụ trách mảng mạng bao gồm VPN gateway
+    và các quy tắc tường lửa.
+
+    Minh, David là quản lý kỹ thuật phía Northwind. Anh ấy nêu câu hỏi
+    về VPN timeout trong buổi review tuần trước - vụ phiên bị ngắt
+    sau ba mươi phút.
+
+    Tôi để hai bạn trao đổi tiếp nhé. Minh, David ở múi giờ Singapore,
+    nên buổi sáng là tiện nhất với anh ấy.
+
+    Linh
+  questions:
+    - kind: mcq_read
+      prompt_en: "What is the VPN issue about?"
+      choices: ["Slow speed", "Sessions dropping after thirty minutes", "Wrong password"]
+      answer: 1
+      difficulty: 2
+      reading_skill: scan
+      skill: Reading
+    - kind: mcq_read
+      prompt_en: "What practical detail did Linh add at the end?"
+      choices: ["The deadline", "The ticket number", "David's timezone"]
+      answer: 2
+      difficulty: 2
+      reading_skill: scan
+      skill: Reading
+
+writing:
+  kind: GuidedEmail
+  prompt_vi: >
+    Viết email kết nối hai đồng nghiệp. Phải có đủ ba ý: mỗi người phụ trách gì,
+    vì sao họ nên nói chuyện, và một chi tiết thực tế giúp họ liên lạc dễ hơn.
+  prompt_en: "Write an email introducing two colleagues."
+  required_points:
+    - "looks after"
+    - "raised the question"
+    - "timezone"
+  hint_vi: "Ba ý: vai trò, lý do kết nối, chi tiết thực tế. Thiếu ý hai thì cả hai đều bối rối."
+  sample_en: "David, meet Minh - he looks after the network side. Minh, David raised the VPN timeout question last week. David is in the Singapore timezone, so mornings work best."
+
+quiz:
+  - kind: mcq
+    prompt_vi: "Giới thiệu nên nói gì về người kia?"
+    choices: ["Việc họ thực sự phụ trách", "Chức danh chính thức", "Số năm kinh nghiệm"]
+    answer: 0
+    difficulty: 2
+    skill: Speaking
+  - kind: mcq
+    prompt_vi: "\"Who owns the VPN gateway?\" hỏi điều gì?"
+    choices: ["Ai sở hữu thiết bị", "Ai chịu trách nhiệm vận hành nó", "Ai mua nó"]
+    answer: 1
+    difficulty: 2
+    skill: Reading
+  - kind: mcq
+    prompt_vi: "Phần nào quan trọng nhất khi kết nối hai người?"
+    choices: ["Tên đầy đủ", "Chức danh", "Lý do vì sao họ nên nói chuyện"]
+    answer: 2
+    difficulty: 2
+    skill: Writing
+  - kind: mcq
+    prompt_vi: "\"I'll put you in touch\" nghĩa là gì?"
+    choices: ["Tôi sẽ kết nối hai người", "Tôi sẽ chạm vào bạn", "Tôi sẽ liên lạc sau"]
+    answer: 0
+    difficulty: 1
+    skill: Listening
+
+explanation:
+  why_vi: >
+    Trong công ty lớn, biết ai phụ trách gì quan trọng ngang biết kỹ thuật.
+    Người mới thường mất hàng giờ hỏi sai người, chỉ vì không dám hỏi
+    một câu bốn chữ: "Who owns this?"
+  how_vi: >
+    Khi GIỚI THIỆU, nói việc người ta phụ trách chứ không nói chức danh —
+    "she looks after storage" hữu ích hơn hẳn "she is a senior engineer".
+    Và luôn thêm LÝ DO hai người nên biết nhau. Khi TÌM NGƯỜI,
+    hỏi thẳng "Who owns...?" — đây là câu chuẩn trong ngành, không hề thất lễ.
+  contrast_vi: >
+    "This is Priya, she's a senior engineer" cho biết cấp bậc.
+    "This is Priya, she looks after storage" cho biết khi nào nên tìm chị ấy.
+
+common_mistakes:
+  - mistake: "Giới thiệu bằng chức danh thay vì việc phụ trách"
+    why_vi: >
+      Văn hoá Việt coi trọng chức danh. Nhưng chức danh không cho người nghe biết
+      khi nào thì nên tìm người đó.
+    fix_vi: "Dùng \"looks after\" hoặc \"runs\" kèm hệ thống cụ thể."
+    detect_phoneme_missing: []
+  - mistake: "Kết nối hai người mà không nói vì sao"
+    why_vi: >
+      Người viết biết bối cảnh nên tưởng nó hiển nhiên. Hai người nhận được email
+      thì phải tự hỏi nhau vì sao được giới thiệu.
+    fix_vi: "Luôn có một câu: người này hỏi về X, người kia phụ trách X."
+    detect_phoneme_missing: []
+  - mistake: "Ngại hỏi \"Who owns this?\" vì sợ lộ mình không biết"
+    why_vi: >
+      Nghĩ rằng người trong công ty phải biết hết. Thực tế ngay cả người làm lâu năm
+      cũng hỏi câu này mỗi tuần.
+    fix_vi: "Hỏi sớm. Bốn chữ này tiết kiệm hàng giờ đi hỏi nhầm người."
+    detect_phoneme_missing: []
+
+memory_trick_vi: >
+  Giới thiệu thì nói VIỆC PHỤ TRÁCH cộng LÝ DO, không nói chức danh.
+  Tìm người thì hỏi bốn chữ: "Who owns this?"

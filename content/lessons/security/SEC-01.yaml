@@ -1,0 +1,309 @@
+schema_version: 1
+code: SEC-01
+slug: bao-su-co-bao-mat
+title_vi: "Báo sự cố bảo mật — và vì sao không được sửa ngay"
+title_en: "Reporting a security incident"
+
+layer: Professional
+track: Security
+level: B1
+unit_code: U-SEC1
+order_index: 1
+estimated_minutes: 12
+
+illustration: shield-lock
+
+objective_vi: >
+  Báo một sự cố bảo mật theo đúng sáu giai đoạn xử lý, và hiểu vì sao
+  phải khoanh vùng trước khi xoá sạch — thứ tự ngược lại là mất bằng chứng.
+
+objective_observable: >
+  Gọi đúng tên sáu giai đoạn, và báo được một sự cố nghi ngờ mà không phá bằng chứng.
+
+mastery_weights:
+  Listening: 0.30
+  Speaking: 0.30
+  Reading: 0.20
+  Writing: 0.20
+
+prerequisites:
+  - lesson: OFF-12
+    min_mastery: 70
+    kind: Hard
+  - lesson: INF-07
+    min_mastery: 65
+    kind: Soft
+
+vocabulary:
+  - term: "containment"
+    ipa: "/kənˈteɪnmənt/"
+    meaning_vi: "khoanh vùng — chặn lan rộng, chưa xoá gì"
+    chunk: "Containment first, then eradication."
+    tags: [nist, core]
+  - term: "eradication"
+    ipa: "/ɪˌrædɪˈkeɪʃn/"
+    meaning_vi: "loại bỏ — xoá sạch dấu vết kẻ tấn công"
+    chunk: "Eradication starts after we have the evidence."
+    tags: [nist, core]
+  - term: "preserve the evidence"
+    ipa: "/prɪˈzɜːrv ði ˈevɪdəns/"
+    meaning_vi: "giữ nguyên bằng chứng"
+    chunk: "Do not reboot - we need to preserve the evidence."
+    tags: [security, core]
+  - term: "isolate"
+    ipa: "/ˈaɪsəleɪt/"
+    meaning_vi: "cách ly (khỏi mạng)"
+    chunk: "We isolated the machine from the network."
+    tags: [security, core]
+  - term: "suspected"
+    ipa: "/səˈspektɪd/"
+    meaning_vi: "nghi ngờ (chưa xác nhận)"
+    chunk: "This is a suspected compromise, not confirmed."
+    tags: [security, core]
+  - term: "indicator of compromise"
+    ipa: "/ˈɪndɪkeɪtər ɒv ˈkɒmprəmaɪz/"
+    meaning_vi: "dấu hiệu bị xâm nhập"
+    chunk: "We found three indicators of compromise."
+    tags: [security]
+
+sentence_patterns:
+  - pattern: "This is a suspected {type}. We have {status}."
+    meaning_vi: "Đây là nghi ngờ {type}. Bọn tôi đã {status}."
+    slots:
+      type: ["compromise", "phishing case", "data exposure"]
+      status: ["isolated the machine", "preserved the logs"]
+  - pattern: "Do not {action} - we need to preserve the evidence."
+    meaning_vi: "Đừng {action} — bọn tôi cần giữ nguyên bằng chứng."
+    slots:
+      action: ["reboot", "delete the files", "reimage the laptop"]
+
+dialogue:
+  context_vi: >
+    Emma báo máy của cô ấy có cửa sổ lạ và file bị đổi tên. Phản xạ tự nhiên
+    của người mới là bảo cô ấy khởi động lại — và đó chính là hành động
+    xoá mất bằng chứng quan trọng nhất.
+  turns:
+    - speaker: "Emma"
+      en: "Something is wrong with my laptop. Files have odd names and a black window keeps popping up. Should I restart it?"
+      vi: "Máy tôi có gì đó không ổn. File bị tên lạ và cứ có cửa sổ đen hiện lên. Tôi khởi động lại nhé?"
+    - speaker: "You"
+      en: "Please don't restart it. Leave it exactly as it is — we need to preserve the evidence."
+      vi: "Chị đừng khởi động lại. Chị để nguyên như vậy — bọn em cần giữ nguyên bằng chứng."
+    - speaker: "Emma"
+      en: "But it's still running. Isn't that dangerous?"
+      vi: "Nhưng nó vẫn đang chạy mà. Vậy có nguy hiểm không?"
+    - speaker: "You"
+      en: "Good question. Unplug the network cable and turn off the wifi — that isolates it. But keep the power on."
+      vi: "Câu hỏi hay. Chị rút dây mạng và tắt wifi — như vậy là cách ly nó rồi. Nhưng vẫn giữ nguồn điện."
+    - speaker: "Emma"
+      en: "Done. Both off."
+      vi: "Xong rồi. Tắt cả hai."
+    - speaker: "You"
+      en: "Thank you. That's containment. I'm raising this as a suspected compromise now — not confirmed yet."
+      vi: "Cảm ơn chị. Đó là bước khoanh vùng. Em đang mở hồ sơ dạng nghi ngờ bị xâm nhập — chưa xác nhận."
+    - speaker: "Emma"
+      en: "How long until I get my laptop back?"
+      vi: "Bao giờ tôi lấy lại được máy?"
+    - speaker: "You"
+      en: "I can't say yet. The security team will image the disk first. I'll get you a loaner within the hour."
+      vi: "Em chưa nói được. Team bảo mật sẽ sao lưu ổ đĩa trước. Trong một tiếng em sẽ có máy mượn cho chị."
+
+listening:
+  context_vi: >
+    Nghe sáu giai đoạn xử lý sự cố bảo mật, đọc theo đúng thứ tự chuẩn.
+    Chú ý giai đoạn nào đứng trước giai đoạn nào.
+  speed: 1.0
+  voice: en_US_female
+  transcript_en: "The six phases are: detection, analysis, containment, eradication, recovery, and lessons learned. Containment comes before eradication. If you eradicate first, you destroy the evidence you need for analysis."
+  transcript_vi: "Sáu giai đoạn là: phát hiện, phân tích, khoanh vùng, loại bỏ, phục hồi, và rút kinh nghiệm. Khoanh vùng đi trước loại bỏ. Nếu loại bỏ trước thì bạn phá mất bằng chứng cần cho phân tích."
+  questions:
+    - kind: mcq_listen
+      prompt_vi: "Giai đoạn nào đứng ngay trước loại bỏ?"
+      choices: ["Khoanh vùng", "Phát hiện", "Phục hồi"]
+      answer: 0
+      difficulty: 2
+      skill: Listening
+    - kind: mcq_listen
+      prompt_vi: "Vì sao không được loại bỏ trước?"
+      choices: ["Vì mất thời gian", "Vì cần duyệt", "Vì phá mất bằng chứng cần cho phân tích"]
+      answer: 2
+      difficulty: 2
+      skill: Listening
+
+speaking_drills:
+  - kind: read_aloud
+    expected_text: "Please don't restart it. We need to preserve the evidence."
+    prompt_vi: "Câu quan trọng nhất bài này. Nói dứt khoát nhưng không doạ người dùng."
+    ipa: "/pliːz doʊnt riːˈstɑːrt ɪt/"
+    focus_phonemes: ["st", "z"]
+  - kind: read_aloud
+    expected_text: "Unplug the network cable, but keep the power on."
+    prompt_vi: "Cách ly mà không tắt máy. Chú ý cụm /npl/ trong unplug."
+    ipa: "/ʌnˈplʌɡ ðə ˈnetwɜːrk ˈkeɪbl/"
+    focus_phonemes: ["pl", "bl"]
+  - kind: shadow
+    expected_text: "This is a suspected compromise, not confirmed."
+    prompt_vi: "Phân biệt nghi ngờ với xác nhận. Nghe rồi nhắc lại."
+    ipa: "/ðɪs ɪz ə səˈspektɪd ˈkɒmprəmaɪz/"
+    focus_phonemes: ["sp", "kt"]
+  - kind: shadow
+    expected_text: "Containment first, then eradication."
+    prompt_vi: "Thứ tự hai giai đoạn. Trọng âm: con-TAIN-ment, e-ra-di-CA-tion."
+    ipa: "/kənˈteɪnmənt fɜːrst ðen ɪˌrædɪˈkeɪʃn/"
+    focus_phonemes: ["nm", "ʃn"]
+  - kind: respond
+    prompt_en: "Something is wrong with my laptop. Should I restart it?"
+    prompt_vi: "Người dùng định khởi động lại máy nghi bị xâm nhập. Ngăn lại và hướng dẫn cách ly."
+    accept_patterns:
+      - "don't restart"
+      - "preserve"
+      - "Unplug"
+
+reading:
+  kind: ticket
+  context_vi: >
+    Bản ghi sự cố bảo mật theo sáu giai đoạn. Để ý mốc thời gian giữa các giai đoạn.
+  text_en: |
+    SEC-1104 - Suspected compromise, laptop LT-0412 (E. Brooks)
+
+    DETECTION 09:14
+    User reported unusual file names and a recurring console window.
+
+    ANALYSIS 09:20
+    Three indicators of compromise found in the EDR alerts from 06:02 today:
+    a scheduled task created by a non-admin account, outbound traffic to an
+    unknown IP, and a renamed system binary.
+
+    CONTAINMENT 09:31
+    Network isolated (cable unplugged, wifi disabled). Power left on
+    to preserve volatile memory. User moved to a loaner laptop.
+
+    ERADICATION - not started
+    Waiting for the disk image to complete. Do not reimage before then.
+
+    RECOVERY - not started
+
+    LESSONS LEARNED - to be scheduled after closure.
+  text_vi: |
+    SEC-1104 - Nghi ngờ bị xâm nhập, laptop LT-0412 (E. Brooks)
+
+    PHÁT HIỆN 09:14
+    Người dùng báo tên file bất thường và một cửa sổ dòng lệnh hiện lặp lại.
+
+    PHÂN TÍCH 09:20
+    Tìm thấy ba dấu hiệu xâm nhập trong cảnh báo EDR từ 06:02 hôm nay:
+    một tác vụ theo lịch do tài khoản không phải admin tạo, lưu lượng đi ra
+    tới một IP lạ, và một tệp hệ thống bị đổi tên.
+
+    KHOANH VÙNG 09:31
+    Đã cách ly mạng (rút cáp, tắt wifi). Giữ nguyên nguồn điện
+    để bảo toàn bộ nhớ tạm. Người dùng đã chuyển sang máy mượn.
+
+    LOẠI BỎ - chưa bắt đầu
+    Đang chờ sao lưu ổ đĩa xong. Không cài lại máy trước khi xong.
+
+    PHỤC HỒI - chưa bắt đầu
+
+    RÚT KINH NGHIỆM - sẽ xếp lịch sau khi đóng hồ sơ.
+  questions:
+    - kind: mcq_read
+      prompt_en: "Why was the power left on?"
+      choices: ["To keep the user working", "To preserve volatile memory", "It was an oversight"]
+      answer: 1
+      difficulty: 3
+      reading_skill: scan
+      skill: Reading
+    - kind: mcq_read
+      prompt_en: "How long between detection and containment?"
+      choices: ["3 hours", "6 minutes", "17 minutes"]
+      answer: 2
+      difficulty: 2
+      reading_skill: scan
+      skill: Reading
+    - kind: mcq_read
+      prompt_en: "What must happen before eradication?"
+      choices: ["The disk image must complete", "The user must approve", "Recovery must start"]
+      answer: 0
+      difficulty: 2
+      reading_skill: scan
+      skill: Reading
+
+writing:
+  kind: GuidedEmail
+  prompt_vi: >
+    Viết báo cáo ban đầu cho một sự cố bảo mật nghi ngờ. Phải có đủ ba ý:
+    dấu hiệu phát hiện được, hành động khoanh vùng đã làm, và lời nhắc giữ nguyên bằng chứng.
+  prompt_en: "Write an initial security incident report."
+  required_points:
+    - "suspected"
+    - "isolated"
+    - "preserve the evidence"
+  hint_vi: "Ba ý. Dùng đúng từ: suspected là nghi ngờ, confirmed là đã xác nhận."
+  sample_en: "This is a suspected compromise on laptop LT-0412, not confirmed. We have isolated the machine from the network but left the power on. Please do not reimage it - we need to preserve the evidence."
+
+quiz:
+  - kind: mcq
+    prompt_vi: "Người dùng nghi máy bị xâm nhập. Việc đầu tiên bạn bảo họ làm là gì?"
+    choices: ["Khởi động lại", "Rút mạng nhưng giữ nguồn điện", "Xoá file lạ"]
+    answer: 1
+    difficulty: 2
+    skill: Speaking
+  - kind: mcq
+    prompt_vi: "\"Containment\" nghĩa là gì?"
+    choices: ["Xoá sạch dấu vết", "Khôi phục dịch vụ", "Chặn lan rộng, chưa xoá gì"]
+    answer: 2
+    difficulty: 1
+    skill: Reading
+  - kind: mcq
+    prompt_vi: "Vì sao giữ nguyên nguồn điện khi cách ly?"
+    choices: ["Để bảo toàn bộ nhớ tạm — tắt máy là mất", "Để người dùng làm tiếp", "Không có lý do"]
+    answer: 0
+    difficulty: 3
+    skill: Reading
+  - kind: mcq
+    prompt_vi: "Khác biệt giữa suspected và confirmed?"
+    choices: ["Không khác", "Suspected là chưa xác nhận, không được kết luận sớm", "Confirmed nghiêm trọng hơn"]
+    answer: 1
+    difficulty: 2
+    skill: Speaking
+
+explanation:
+  why_vi: >
+    Với sự cố vận hành, phản xạ đúng là khôi phục dịch vụ càng nhanh càng tốt.
+    Với sự cố bảo mật, phản xạ đó phá hỏng cuộc điều tra: khởi động lại là mất bộ nhớ tạm,
+    cài lại máy là mất toàn bộ dấu vết, xoá file lạ là mất bằng chứng.
+    Người mới mang thói quen từ vận hành sang và làm hỏng việc trong ba mươi giây đầu.
+  how_vi: >
+    Sáu giai đoạn theo đúng thứ tự: PHÁT HIỆN, PHÂN TÍCH, KHOANH VÙNG, LOẠI BỎ,
+    PHỤC HỒI, RÚT KINH NGHIỆM. Khoanh vùng luôn đứng trước loại bỏ.
+    Khoanh vùng nghĩa là chặn lan rộng — rút mạng, tắt wifi — nhưng KHÔNG tắt nguồn
+    và KHÔNG xoá gì. Và luôn dùng từ "suspected" cho tới khi có kết luận chính thức.
+  contrast_vi: >
+    "Isolate" là cách ly khỏi mạng, máy vẫn chạy và bằng chứng còn nguyên.
+    "Reimage" là cài lại, mọi thứ mất sạch. Bảo người dùng nhầm hai việc này
+    là mất luôn cuộc điều tra.
+
+common_mistakes:
+  - mistake: "Bảo người dùng khởi động lại máy nghi bị xâm nhập"
+    why_vi: >
+      Đây là phản xạ đầu tiên của mọi người trực helpdesk, và với lỗi thường thì nó đúng.
+      Nhưng với sự cố bảo mật, khởi động lại xoá sạch bộ nhớ tạm — nơi chứa
+      nhiều dấu vết nhất.
+    fix_vi: "Câu đầu tiên luôn là: \"Please don't restart it.\" Rồi mới hướng dẫn cách ly."
+    detect_phoneme_missing: []
+  - mistake: "Kết luận \"bị hack\" khi mới có dấu hiệu"
+    why_vi: >
+      Từ mạnh gây hoảng loạn trong công ty và có thể kích hoạt quy trình báo cáo
+      ra bên ngoài trước khi có bằng chứng.
+    fix_vi: "Dùng \"suspected\" cho tới khi phân tích xong. Đây là chuẩn ngành, không phải né tránh."
+    detect_phoneme_missing: []
+  - mistake: "Loại bỏ trước khi phân tích xong"
+    why_vi: >
+      Muốn xử lý dứt điểm cho nhanh. Nhưng xoá xong rồi thì không ai biết
+      kẻ tấn công vào bằng đường nào, và tuần sau họ vào lại y hệt.
+    fix_vi: "Chờ sao lưu ổ đĩa xong mới loại bỏ. Ghi rõ trong ticket: không cài lại trước khi xong."
+    detect_phoneme_missing: []
+
+memory_trick_vi: >
+  Sáu giai đoạn, nhớ thứ tự: PHÁT HIỆN, PHÂN TÍCH, KHOANH VÙNG, LOẠI BỎ, PHỤC HỒI, RÚT KINH NGHIỆM.
+  Và một câu duy nhất phải bật ra ngay: "Please don't restart it."

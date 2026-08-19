@@ -1,0 +1,138 @@
+# Bản nền dùng chung. Chạy một mình là môi trường prod-like trên máy dev;
+# ghép với docker-compose.azure-vm.yml để chạy thật trên VM.
+#
+#   docker compose up -d --build
+#
+name: englishforit
+
+services:
+  db:
+    image: postgres:16-alpine
+    restart: unless-stopped
+    environment:
+      POSTGRES_USER: ${POSTGRES_USER:-efit}
+      POSTGRES_PASSWORD: ${POSTGRES_PASSWORD:?POSTGRES_PASSWORD chua duoc dat trong .env}
+      POSTGRES_DB: ${POSTGRES_DB:-englishforit}
+      # Bật checksum để phát hiện hỏng dữ liệu sớm thay vì lúc restore mới biết.
+      POSTGRES_INITDB_ARGS: "--data-checksums"
+    volumes:
+      - pgdata:/var/lib/postgresql/data
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U ${POSTGRES_USER:-efit} -d ${POSTGRES_DB:-englishforit}"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+      start_period: 20s
+    deploy:
+      resources:
+        limits:
+          memory: 1g
+    # Không publish port ra ngoài: chỉ container trong mạng nội bộ được nối tới.
+    networks:
+      - backend
+
+  api:
+    build:
+      context: .
+      dockerfile: apps/api/Dockerfile
+    image: ${IMAGE_REGISTRY:-englishforit}/api:${IMAGE_TAG:-local}
+    restart: unless-stopped
+    depends_on:
+      db:
+        condition: service_healthy
+    environment:
+      ASPNETCORE_ENVIRONMENT: Production
+      ConnectionStrings__Postgres: >-
+        Host=db;Port=5432;Database=${POSTGRES_DB:-englishforit};Username=${POSTGRES_USER:-efit};Password=${POSTGRES_PASSWORD};Maximum Pool Size=20
+      SecretProtection__MasterKey: ${APP_MASTER_KEY:?APP_MASTER_KEY chua duoc dat trong .env}
+      Cookies__Secure: ${COOKIES_SECURE:-true}
+      Database__MigrateOnStartup: "true"
+    volumes:
+      # Audio sinh sẵn và file ghi âm. Bind mount để backup bằng tar đơn giản.
+      - ./media:/app/media
+    healthcheck:
+      test: ["CMD", "curl", "-fsS", "http://localhost:8080/health/ready"]
+      interval: 15s
+      timeout: 5s
+      start_period: 90s
+      retries: 5
+    deploy:
+      resources:
+        limits:
+          memory: 768m
+    networks:
+      - backend
+
+  # Job định kỳ: hộp thư đi, nhắc học, chuỗi ngày, dọn file ghi âm quá hạn.
+  #
+  # CHỈ chạy một bản sao. Các job không khoá hàng khi đọc nên hai bản sao sẽ cùng xử lý
+  # một mẻ thư; khoá chống gửi trùng cứu phần lớn trường hợp nhưng không phải tất cả.
+  worker:
+    build:
+      context: .
+      dockerfile: src/Worker/Dockerfile
+    image: ${IMAGE_REGISTRY:-englishforit}/worker:${IMAGE_TAG:-local}
+    restart: unless-stopped
+    depends_on:
+      db:
+        condition: service_healthy
+      # Chờ API vì API chạy migration. Worker khởi động trước sẽ đọc bảng chưa tồn tại.
+      api:
+        condition: service_healthy
+    environment:
+      DOTNET_ENVIRONMENT: Production
+      ConnectionStrings__Postgres: >-
+        Host=db;Port=5432;Database=${POSTGRES_DB:-englishforit};Username=${POSTGRES_USER:-efit};Password=${POSTGRES_PASSWORD};Maximum Pool Size=5
+      SecretProtection__MasterKey: ${APP_MASTER_KEY:?APP_MASTER_KEY chua duoc dat trong .env}
+      Storage__AudioRoot: /app/media
+    volumes:
+      # Cùng thư mục với API: worker xoá file ghi âm quá hạn nên phải thấy đúng chỗ API ghi.
+      - ./media:/app/media
+    deploy:
+      resources:
+        limits:
+          memory: 256m
+    networks:
+      - backend
+
+  web:
+    build:
+      context: .
+      dockerfile: apps/web/Dockerfile
+    image: ${IMAGE_REGISTRY:-englishforit}/web:${IMAGE_TAG:-local}
+    restart: unless-stopped
+    deploy:
+      resources:
+        limits:
+          memory: 128m
+    networks:
+      - backend
+
+  proxy:
+    image: caddy:2-alpine
+    restart: unless-stopped
+    depends_on:
+      - api
+      - web
+    environment:
+      SITE_ADDRESS: ${SITE_ADDRESS:-:80}
+      ACME_EMAIL: ${ACME_EMAIL:-}
+    ports:
+      - "80:80"
+      - "443:443"
+      - "443:443/udp"
+    volumes:
+      - ./deploy/caddy/Caddyfile:/etc/caddy/Caddyfile:ro
+      - caddy_data:/data
+      - caddy_config:/config
+    networks:
+      - backend
+
+volumes:
+  pgdata:
+  caddy_data:
+  caddy_config:
+
+networks:
+  backend:
+    driver: bridge

@@ -1,0 +1,270 @@
+schema_version: 1
+code: LIFE-15
+slug: ke-mot-ngay-cua-minh
+title_vi: "Kể một ngày của mình"
+title_en: "Talking about your day"
+
+layer: Life
+track: Foundation
+level: A2
+unit_code: U-L3
+order_index: 15
+estimated_minutes: 12
+
+illustration: desk-laptop
+
+objective_vi: >
+  Kể lại một ngày đã qua bằng thì quá khứ — kỹ năng nền cho mọi báo cáo công việc
+  sau này, vì standup thực chất là kể lại hôm qua bạn đã làm gì.
+
+objective_observable: >
+  Dùng đúng thì quá khứ trong 4 trên 5 câu, và kể được ba việc theo trình tự thời gian.
+
+mastery_weights:
+  Listening: 0.30
+  Speaking: 0.35
+  Reading: 0.15
+  Writing: 0.20
+
+prerequisites:
+  - lesson: LIFE-14
+    min_mastery: 60
+    kind: Hard
+
+vocabulary:
+  - term: "I spent the morning"
+    ipa: "/aɪ spent ðə ˈmɔːrnɪŋ/"
+    meaning_vi: "tôi dành cả buổi sáng để"
+    chunk: "I spent the morning fixing the backup job."
+    tags: [past, work]
+  - term: "ended up"
+    ipa: "/ˈendɪd ʌp/"
+    meaning_vi: "cuối cùng thì (kết quả ngoài dự tính)"
+    chunk: "I ended up restarting the whole service."
+    tags: [past, work]
+  - term: "took longer than"
+    ipa: "/tʊk ˈlɒŋɡər ðæn/"
+    meaning_vi: "mất nhiều thời gian hơn"
+    chunk: "It took longer than I expected."
+    tags: [past, work]
+  - term: "first thing"
+    ipa: "/fɜːrst θɪŋ/"
+    meaning_vi: "việc đầu tiên trong ngày"
+    chunk: "First thing, I checked the alerts."
+    tags: [past, work]
+  - term: "after that"
+    ipa: "/ˈæftər ðæt/"
+    meaning_vi: "sau đó"
+    chunk: "After that, I joined the review."
+    tags: [past, core]
+  - term: "wrapped up"
+    ipa: "/ræpt ʌp/"
+    meaning_vi: "kết thúc, làm xong"
+    chunk: "I wrapped up around six."
+    tags: [past, work]
+
+sentence_patterns:
+  - pattern: "First thing, I {action}."
+    meaning_vi: "Việc đầu tiên là tôi {action}."
+    slots:
+      action: ["checked the alerts", "read the tickets", "joined the standup"]
+  - pattern: "It took longer than {expectation}."
+    meaning_vi: "Việc đó mất nhiều thời gian hơn {expectation}."
+    slots:
+      expectation: ["I expected", "planned", "usual"]
+
+dialogue:
+  context_vi: >
+    Cuối ngày, Linh hỏi bạn hôm nay làm được gì. Đây chính là bản nháp
+    của phần standup sáng mai — kể được ở đây thì báo cáo được ở đó.
+  turns:
+    - speaker: "Linh"
+      en: "How did today go?"
+      vi: "Hôm nay em làm sao rồi?"
+    - speaker: "You"
+      en: "Busy. First thing, I checked the overnight alerts — three of them were noise."
+      vi: "Bận ạ. Việc đầu tiên em kiểm tra cảnh báo đêm — ba cái là nhiễu."
+    - speaker: "Linh"
+      en: "And the backup job?"
+      vi: "Còn job backup thì sao?"
+    - speaker: "You"
+      en: "I spent the morning on it. It took longer than I expected, but it's running now."
+      vi: "Em dành cả buổi sáng cho nó. Mất nhiều thời gian hơn em nghĩ, nhưng giờ chạy được rồi."
+    - speaker: "Linh"
+      en: "Good. Anything blocking you for tomorrow?"
+      vi: "Tốt. Có gì vướng cho ngày mai không?"
+    - speaker: "You"
+      en: "Not really. I wrapped up the ticket queue, so tomorrow I'll start on the runbook."
+      vi: "Không hẳn ạ. Em xử lý xong hàng đợi ticket, nên mai em bắt đầu viết runbook."
+
+listening:
+  context_vi: >
+    Nghe Priya kể lại ngày của cô ấy. Chú ý các cụm chỉ trình tự:
+    chúng là cái khung giữ cho câu chuyện không rối.
+  speed: 1.0
+  voice: en_US_female
+  transcript_en: "First thing this morning I looked at the failed deployment. It took longer than expected because the config was wrong. After that I joined the review, and I wrapped up around five."
+  transcript_vi: "Sáng nay việc đầu tiên tôi xem cái deployment bị lỗi. Nó mất nhiều thời gian hơn dự tính vì cấu hình sai. Sau đó tôi vào buổi review, và tôi xong việc khoảng năm giờ."
+  questions:
+    - kind: mcq_listen
+      prompt_vi: "Việc đầu tiên Priya làm là gì?"
+      choices: ["Xem deployment bị lỗi", "Vào buổi review", "Viết tài liệu"]
+      answer: 0
+      difficulty: 2
+      skill: Listening
+    - kind: mcq_listen
+      prompt_vi: "Vì sao việc đó lâu hơn dự tính?"
+      choices: ["Vì đông người dùng", "Vì mất điện", "Vì cấu hình sai"]
+      answer: 2
+      difficulty: 2
+      skill: Listening
+
+speaking_drills:
+  - kind: read_aloud
+    expected_text: "First thing, I checked the alerts."
+    prompt_vi: "Đuôi -ed ở đây đọc là /t/, không phải /ed/. Nghe như chếct."
+    ipa: "/fɜːrst θɪŋ aɪ tʃekt ðə əˈlɜːrts/"
+    focus_phonemes: ["t", "θ"]
+  - kind: read_aloud
+    expected_text: "It took longer than I expected."
+    prompt_vi: "Chú ý đuôi -ed của expected đọc là /ɪd/ vì gốc từ kết thúc bằng /t/."
+    ipa: "/ɪt tʊk ˈlɒŋɡər ðæn aɪ ɪkˈspektɪd/"
+    focus_phonemes: ["ŋ", "kt"]
+  - kind: shadow
+    expected_text: "I spent the morning fixing the backup job."
+    prompt_vi: "Câu kể việc chiếm phần lớn thời gian trong ngày."
+    ipa: "/aɪ spent ðə ˈmɔːrnɪŋ ˈfɪksɪŋ ðə ˈbækʌp dʒɒb/"
+    focus_phonemes: ["sp", "ks"]
+  - kind: shadow
+    expected_text: "After that, I wrapped up around six."
+    prompt_vi: "Chữ w trong wrapped CÂM. Đọc là rapt."
+    ipa: "/ˈæftər ðæt aɪ ræpt ʌp əˈraʊnd sɪks/"
+    focus_phonemes: ["pt", "ð"]
+  - kind: respond
+    prompt_en: "How did today go?"
+    prompt_vi: "Sếp hỏi hôm nay bạn làm gì. Kể ba việc theo trình tự, dùng thì quá khứ."
+    accept_patterns:
+      - "First thing"
+      - "I spent"
+      - "I checked"
+
+reading:
+  kind: note
+  context_vi: >
+    Ghi chú cuối ngày của một kỹ sư. Đây gần như đúng nội dung phần standup sáng hôm sau.
+  text_en: |
+    End of day notes - Tuesday
+
+    - Checked overnight alerts. 3 false positives, closed them.
+    - Backup job on the file server: fixed the path, reran it. Took most of the morning.
+    - Joined the change review at 2. Change approved for Thursday.
+    - Cleared the ticket queue. Nothing left open.
+
+    Tomorrow: start the runbook for the backup process.
+  text_vi: |
+    Ghi chú cuối ngày - thứ Ba
+
+    - Kiểm tra cảnh báo đêm. 3 cái báo nhầm, đã đóng.
+    - Job backup trên file server: sửa đường dẫn, chạy lại. Mất gần hết buổi sáng.
+    - Vào buổi change review lúc 2 giờ. Change được duyệt cho thứ Năm.
+    - Xử lý xong hàng đợi ticket. Không còn cái nào mở.
+
+    Ngày mai: bắt đầu viết runbook cho quy trình backup.
+  questions:
+    - kind: mcq_read
+      prompt_en: "How many alerts were false positives?"
+      choices: ["1", "3", "None"]
+      answer: 1
+      difficulty: 1
+      reading_skill: scan
+      skill: Reading
+    - kind: mcq_read
+      prompt_en: "When was the change approved for?"
+      choices: ["Tuesday", "Next week", "Thursday"]
+      answer: 2
+      difficulty: 2
+      reading_skill: scan
+      skill: Reading
+    - kind: mcq_read
+      prompt_en: "What is planned for tomorrow?"
+      choices: ["Starting the runbook", "Another review", "Fixing the file server"]
+      answer: 0
+      difficulty: 2
+      reading_skill: skim
+      skill: Reading
+
+writing:
+  kind: GuidedEmail
+  prompt_vi: >
+    Viết ghi chú cuối ngày kể ba việc bạn đã làm. Phải dùng cụm chỉ trình tự
+    và nêu được một việc mất nhiều thời gian hơn dự tính.
+  prompt_en: "Write end-of-day notes describing three things you did."
+  required_points:
+    - "first thing"
+    - "after that"
+    - "took longer"
+  hint_vi: "Dùng thì quá khứ và ba cụm chỉ trình tự: first thing, after that, wrapped up."
+  sample_en: "First thing, I checked the alerts. After that, I fixed the backup job - it took longer than expected. I wrapped up the ticket queue around five."
+
+quiz:
+  - kind: mcq
+    prompt_vi: "Đuôi -ed trong \"checked\" đọc thế nào?"
+    choices: ["/ed/", "/t/", "/ɪd/"]
+    answer: 1
+    difficulty: 3
+    skill: Speaking
+  - kind: mcq
+    prompt_vi: "Đuôi -ed trong \"expected\" đọc thế nào?"
+    choices: ["/t/", "/d/", "/ɪd/"]
+    answer: 2
+    difficulty: 3
+    skill: Speaking
+  - kind: mcq
+    prompt_vi: "\"I ended up restarting the service\" nghĩa là gì?"
+    choices: ["Cuối cùng tôi phải khởi động lại", "Tôi đã lên kế hoạch khởi động lại", "Tôi từ chối khởi động lại"]
+    answer: 0
+    difficulty: 2
+    skill: Reading
+  - kind: mcq
+    prompt_vi: "Vì sao bài này quan trọng cho công việc?"
+    choices: ["Vì cần nói chuyện phiếm", "Vì standup chính là kể lại hôm qua đã làm gì", "Vì phải viết nhật ký"]
+    answer: 1
+    difficulty: 1
+    skill: Reading
+
+explanation:
+  why_vi: >
+    Tiếng Việt không đổi động từ theo thì — "hôm qua tôi làm" và "hôm nay tôi làm"
+    dùng chung một chữ "làm". Nên khi kể chuyện đã qua bằng tiếng Anh, miệng người học
+    tự động dùng hiện tại, và người nghe không biết việc đó đã xong hay đang làm.
+  how_vi: >
+    Bám ba cụm khung: FIRST THING, AFTER THAT, WRAPPED UP. Ba cụm này giữ câu chuyện
+    theo đúng trình tự và tự nhắc bạn đang kể chuyện đã qua. Về phát âm, đuôi -ed có ba cách đọc:
+    /t/ sau âm điếc, /d/ sau âm vang, và /ɪd/ sau /t/ hoặc /d/.
+  contrast_vi: >
+    "I fix the backup" nghĩa là việc bạn thường làm. "I fixed the backup" nghĩa là
+    hôm nay bạn đã sửa xong. Trong một buổi standup, hai câu này khác nhau hoàn toàn.
+
+common_mistakes:
+  - mistake: "Dùng thì hiện tại khi kể việc đã làm hôm qua"
+    why_vi: >
+      Tiếng Việt dùng trạng từ thời gian chứ không đổi động từ, nên người học giữ nguyên
+      động từ và chỉ thêm chữ “yesterday”.
+    fix_vi: "Tập kể lại ngày hôm qua mỗi tối bằng ba câu quá khứ. Ba câu một ngày là đủ."
+    detect_phoneme_missing: []
+  - mistake: "Đọc đuôi -ed thành một âm tiết riêng ở mọi từ"
+    why_vi: >
+      Người học đọc theo mặt chữ nên “checked” thành “chếc-kịt”.
+      Thực tế phần lớn đuôi -ed không tạo thêm âm tiết nào.
+    fix_vi: "Chỉ thêm âm tiết khi gốc từ kết thúc bằng /t/ hoặc /d/, ví dụ expected, needed."
+    detect_phoneme_missing: ["t", "d"]
+  - mistake: "Kể lộn xộn không theo trình tự thời gian"
+    why_vi: >
+      Không có khung nên vừa kể vừa nhớ ra thêm, và người nghe không dựng lại được
+      diễn biến trong đầu.
+    fix_vi: "Luôn dùng ba cụm khung: first thing, after that, wrapped up."
+    detect_phoneme_missing: []
+
+memory_trick_vi: >
+  Ba cụm khung giữ cả câu chuyện: FIRST THING, AFTER THAT, WRAPPED UP.
+  Đây chính là bộ khung của một phần standup — học ở đây, dùng ở tầng chuyên môn.

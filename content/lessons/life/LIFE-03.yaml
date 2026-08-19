@@ -1,0 +1,263 @@
+schema_version: 1
+code: LIFE-03
+slug: gio-va-thu-hen-ma-khong-lo
+title_vi: "Giờ và thứ — hẹn mà không lỡ"
+title_en: "Time and days"
+
+layer: Life
+track: Foundation
+level: PreA1
+unit_code: U-L1
+order_index: 3
+estimated_minutes: 11
+
+illustration: clock-calendar
+
+objective_vi: >
+  Nghe và nói được giờ, thứ trong tuần, và xác nhận lại một cuộc hẹn
+  mà không phải hỏi lại lần thứ ba.
+
+objective_observable: >
+  Nghe đúng 4 trên 5 câu có giờ và thứ, và nói lại đúng một cuộc hẹn được giao.
+
+mastery_weights:
+  Listening: 0.40
+  Speaking: 0.35
+  Reading: 0.15
+  Writing: 0.10
+
+prerequisites:
+  - lesson: LIFE-02
+    min_mastery: 60
+    kind: Hard
+
+vocabulary:
+  - term: "half past"
+    ipa: "/hɑːf pɑːst/"
+    meaning_vi: "rưỡi (30 phút)"
+    chunk: "Half past nine."
+    tags: [time, core]
+  - term: "a quarter to"
+    ipa: "/ə ˈkwɔːrtər tuː/"
+    meaning_vi: "kém mười lăm"
+    chunk: "A quarter to five."
+    tags: [time]
+  - term: "in the morning"
+    ipa: "/ɪn ðə ˈmɔːrnɪŋ/"
+    meaning_vi: "vào buổi sáng"
+    chunk: "Nine in the morning."
+    tags: [time, core]
+  - term: "does that work"
+    ipa: "/dʌz ðæt wɜːrk/"
+    meaning_vi: "vậy có được không"
+    chunk: "Tuesday at ten. Does that work?"
+    tags: [core, meeting]
+  - term: "the day after tomorrow"
+    ipa: "/ðə deɪ ˈæftər təˈmɒroʊ/"
+    meaning_vi: "ngày kia"
+    chunk: "The day after tomorrow."
+    tags: [time]
+  - term: "let me confirm"
+    ipa: "/let miː kənˈfɜːrm/"
+    meaning_vi: "để tôi xác nhận lại"
+    chunk: "Let me confirm: Tuesday, ten."
+    tags: [rescue, meeting]
+
+sentence_patterns:
+  - pattern: "{day} at {time}. Does that work?"
+    meaning_vi: "{day} lúc {time}. Vậy có được không?"
+    slots:
+      day: ["Monday", "Tuesday", "Friday"]
+      time: ["ten", "half past two", "a quarter to five"]
+  - pattern: "Let me confirm: {day}, {time}."
+    meaning_vi: "Để tôi xác nhận lại: {day}, {time}."
+    slots:
+      day: ["Tuesday", "Thursday"]
+      time: ["ten", "three thirty"]
+
+dialogue:
+  context_vi: >
+    Linh hẹn bạn một buổi hướng dẫn công việc. Nghe đúng thứ và giờ ngay lần đầu,
+    vì lỡ buổi này là chậm cả tuần.
+  turns:
+    - speaker: "Linh"
+      en: "Can we do the handover on Thursday at half past two?"
+      vi: "Mình bàn giao vào thứ Năm lúc hai giờ rưỡi được không?"
+    - speaker: "You"
+      en: "Let me confirm: Thursday, two thirty in the afternoon?"
+      vi: "Để em xác nhận lại: thứ Năm, hai giờ ba mươi chiều?"
+    - speaker: "Linh"
+      en: "That's right. Actually, can we make it a quarter to three?"
+      vi: "Đúng rồi. À mà, đổi sang ba giờ kém mười lăm được không?"
+    - speaker: "You"
+      en: "Two forty-five. Sure, that works."
+      vi: "Hai giờ bốn lăm. Vâng, được ạ."
+
+listening:
+  context_vi: >
+    Nghe một lời nhắn thoại đổi lịch. Có hai mốc thời gian và một thứ trong tuần.
+  speed: 0.85
+  voice: en_US_female
+  transcript_en: "Hi, quick change. The handover moves from Thursday to Friday, same time, half past two. See you then."
+  transcript_vi: "Chào bạn, đổi chút. Buổi bàn giao dời từ thứ Năm sang thứ Sáu, vẫn giờ cũ, hai giờ rưỡi. Hẹn gặp."
+  questions:
+    - kind: mcq_listen
+      prompt_vi: "Buổi bàn giao dời sang thứ mấy?"
+      choices: ["Thứ Sáu", "Thứ Năm", "Thứ Bảy"]
+      answer: 0
+      difficulty: 2
+      skill: Listening
+    - kind: mcq_listen
+      prompt_vi: "Giờ có thay đổi không?"
+      choices: ["Có, sớm hơn", "Có, muộn hơn", "Không, vẫn 2:30"]
+      answer: 2
+      difficulty: 2
+      skill: Listening
+
+speaking_drills:
+  - kind: read_aloud
+    expected_text: "Half past two."
+    prompt_vi: "Đọc to. Chú ý âm cuối /f/ của half — đừng nuốt."
+    ipa: "/hɑːf pɑːst tuː/"
+    focus_phonemes: ["f", "st"]
+  - kind: read_aloud
+    expected_text: "A quarter to five."
+    prompt_vi: "Câu này nghĩa là 4:45, không phải 5:15. Đọc rõ chữ to."
+    ipa: "/ə ˈkwɔːrtər tuː faɪv/"
+    focus_phonemes: ["kw"]
+  - kind: shadow
+    expected_text: "Let me confirm: Thursday, two thirty."
+    prompt_vi: "Câu vàng của mọi cuộc hẹn. Nghe rồi nhắc lại."
+    ipa: "/let miː kənˈfɜːrm ˈθɜːrzdeɪ tuː ˈθɜːrti/"
+    focus_phonemes: ["θ"]
+  - kind: shadow
+    expected_text: "Tuesday at ten. Does that work?"
+    prompt_vi: "Đề nghị một lịch hẹn rồi hỏi lại ý người kia."
+    ipa: "/ˈtuːzdeɪ æt ten dʌz ðæt wɜːrk/"
+    focus_phonemes: ["ð"]
+  - kind: respond
+    prompt_en: "Can we meet on Monday at nine?"
+    prompt_vi: "Người ta đề nghị họp thứ Hai lúc chín giờ. Xác nhận lại cho chắc."
+    accept_patterns:
+      - "Let me confirm"
+      - "Monday at nine"
+      - "That works"
+
+reading:
+  kind: email
+  context_vi: >
+    Email mời họp. Tìm đúng ba thứ: thứ mấy, mấy giờ, và bạn cần chuẩn bị gì.
+  text_en: |
+    Subject: Handover session
+
+    Hi Minh,
+
+    Let's do the handover on Friday at 2:30 PM, room 30.
+    Please bring your notes from this week.
+
+    If Friday doesn't work, Monday morning is also fine.
+
+    Linh
+  text_vi: |
+    Tiêu đề: Buổi bàn giao
+
+    Chào Minh,
+
+    Mình bàn giao vào thứ Sáu lúc 2 giờ 30 chiều, phòng 30 nhé.
+    Em mang theo ghi chú của tuần này.
+
+    Nếu thứ Sáu không tiện thì sáng thứ Hai cũng được.
+
+    Linh
+  questions:
+    - kind: mcq_read
+      prompt_en: "When is the handover?"
+      choices: ["Monday morning", "Friday 2:30 PM", "Thursday 2:30 PM"]
+      answer: 1
+      difficulty: 1
+      reading_skill: scan
+      skill: Reading
+    - kind: mcq_read
+      prompt_en: "What should you bring?"
+      choices: ["Your laptop", "Nothing", "Your notes from this week"]
+      answer: 2
+      difficulty: 2
+      reading_skill: scan
+      skill: Reading
+    - kind: mcq_read
+      prompt_en: "What is the backup option?"
+      choices: ["Monday morning", "Friday morning", "There is none"]
+      answer: 0
+      difficulty: 2
+      reading_skill: skim
+      skill: Reading
+
+writing:
+  kind: FillBlank
+  prompt_vi: "Điền hai chỗ trống để xác nhận một cuộc hẹn."
+  prompt_en: "Let me ___ : Friday at ___ past two."
+  blanks:
+    - ["confirm"]
+    - ["half"]
+  hint_vi: "Chỗ đầu là động từ xác nhận. Chỗ sau là từ chỉ 30 phút."
+  sample_en: "Let me confirm: Friday at half past two."
+
+quiz:
+  - kind: mcq
+    prompt_vi: "\"A quarter to five\" là mấy giờ?"
+    choices: ["5:15", "4:45", "5:45"]
+    answer: 1
+    difficulty: 2
+    skill: Listening
+  - kind: mcq
+    prompt_vi: "\"Half past nine\" là mấy giờ?"
+    choices: ["8:30", "9:15", "9:30"]
+    answer: 2
+    difficulty: 1
+    skill: Listening
+  - kind: mcq
+    prompt_vi: "Cách chắc chắn nhất để không lỡ hẹn là gì?"
+    choices: ["Nhắc lại thứ và giờ cho người kia nghe", "Ghi vào lịch ngay", "Hỏi lại vào hôm sau"]
+    answer: 0
+    difficulty: 1
+    skill: Speaking
+  - kind: mcq
+    prompt_vi: "\"The day after tomorrow\" là ngày nào?"
+    choices: ["Hôm qua", "Ngày kia", "Ngày mai"]
+    answer: 1
+    difficulty: 1
+    skill: Reading
+
+explanation:
+  why_vi: >
+    Tiếng Việt nói giờ theo một kiểu duy nhất: hai giờ ba mươi. Tiếng Anh có ba kiểu cho cùng một mốc —
+    two thirty, half past two, và trong lịch làm việc là 14:30. Nghe kiểu này mà quen kiểu kia
+    thì não phải dịch hai lần, và trong lúc dịch thì người ta đã nói sang câu khác.
+  how_vi: >
+    Học đúng hai cụm trước: "half past" cho 30 phút và "a quarter to" cho kém 15.
+    Hai cụm này phủ phần lớn cuộc hẹn công việc. Rồi luôn xác nhận lại bằng
+    "Let me confirm" cộng thứ cộng giờ — một câu này tiết kiệm cả buổi họp bị lỡ.
+  contrast_vi: >
+    "A quarter TO five" là 4:45, còn "a quarter PAST five" là 5:15. Một chữ khác nhau,
+    lệch nửa tiếng.
+
+common_mistakes:
+  - mistake: "Nhầm \"a quarter to\" thành sau giờ đó"
+    why_vi: >
+      Tiếng Việt nói "năm giờ kém mười lăm" đặt giờ trước, tiếng Anh đặt sau.
+      Não đọc theo thứ tự quen và hiểu ngược.
+    fix_vi: "TO nghĩa là hướng tới, tức chưa tới giờ đó. PAST là đã qua. Nhớ hai giới từ này là đủ."
+    detect_phoneme_missing: []
+  - mistake: "Không xác nhận lại, gật đầu rồi ghi sai"
+    why_vi: >
+      Hỏi lại có cảm giác làm phiền hoặc để lộ mình chưa nghe kịp. Nhưng lỡ họp thì phiền hơn nhiều.
+    fix_vi: "Dùng \"Let me confirm\" — câu này nghe chuyên nghiệp, không phải dấu hiệu kém tiếng Anh."
+    detect_phoneme_missing: []
+  - mistake: "Nuốt âm cuối trong half và past"
+    why_vi: "Cụm phụ âm cuối /f/ và /st/ không tồn tại trong tiếng Việt nên miệng tự bỏ."
+    fix_vi: "Tập chậm: hal-F pas-T. Cường điệu lúc luyện, tự nhiên lại khi đã quen."
+    detect_phoneme_missing: ["f", "st"]
+
+memory_trick_vi: >
+  TO là đang đi tới, chưa đến nơi — nên còn thiếu. PAST là đã đi qua — nên đã dư.
+  Hình dung kim đồng hồ đang bò về phía con số: chưa tới thì TO, qua rồi thì PAST.

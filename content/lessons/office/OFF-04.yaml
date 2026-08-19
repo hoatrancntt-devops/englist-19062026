@@ -1,0 +1,261 @@
+schema_version: 1
+code: OFF-04
+slug: bao-tien-do-cong-viec
+title_vi: "Báo tiến độ công việc"
+title_en: "Reporting progress"
+
+layer: Office
+track: Foundation
+level: A2
+unit_code: U-O1
+order_index: 4
+estimated_minutes: 11
+
+illustration: team-standup
+
+objective_vi: >
+  Báo tiến độ một việc đang làm bằng ba phần: đã xong gì, đang làm gì, và vướng gì —
+  đúng cấu trúc mà standup đòi hỏi.
+
+objective_observable: >
+  Nói được ba phần báo cáo cho một việc bất kỳ, và nêu vướng mắc kèm điều bạn cần.
+
+mastery_weights:
+  Listening: 0.30
+  Speaking: 0.40
+  Reading: 0.15
+  Writing: 0.15
+
+prerequisites:
+  - lesson: OFF-03
+    min_mastery: 60
+    kind: Hard
+  - lesson: LIFE-15
+    min_mastery: 65
+    kind: Soft
+
+vocabulary:
+  - term: "on track"
+    ipa: "/ɒn træk/"
+    meaning_vi: "đúng tiến độ"
+    chunk: "We're on track for Friday."
+    tags: [progress, core]
+  - term: "behind schedule"
+    ipa: "/bɪˈhaɪnd ˈskedʒuːl/"
+    meaning_vi: "chậm tiến độ"
+    chunk: "We're a day behind schedule."
+    tags: [progress, core]
+  - term: "blocked on"
+    ipa: "/blɒkt ɒn/"
+    meaning_vi: "đang bị kẹt vì"
+    chunk: "I'm blocked on the firewall rule."
+    tags: [progress, core]
+  - term: "about halfway"
+    ipa: "/əˈbaʊt ˈhɑːfweɪ/"
+    meaning_vi: "được khoảng một nửa"
+    chunk: "I'm about halfway through."
+    tags: [progress]
+  - term: "should be done by"
+    ipa: "/ʃʊd biː dʌn baɪ/"
+    meaning_vi: "chắc xong trước"
+    chunk: "It should be done by Thursday."
+    tags: [progress, core]
+  - term: "I need"
+    ipa: "/aɪ niːd/"
+    meaning_vi: "tôi cần (nêu rõ điều cần để gỡ vướng)"
+    chunk: "I need access to the console."
+    tags: [progress, core]
+
+sentence_patterns:
+  - pattern: "I'm {status} — {detail}."
+    meaning_vi: "Em {status} — {detail}."
+    slots:
+      status: ["on track", "about halfway", "a day behind"]
+      detail: ["two servers left", "the config is done"]
+  - pattern: "I'm blocked on {thing}. I need {need}."
+    meaning_vi: "Em đang kẹt vì {thing}. Em cần {need}."
+    slots:
+      thing: ["the firewall rule", "the vendor reply"]
+      need: ["access to the console", "an answer by tomorrow"]
+
+dialogue:
+  context_vi: >
+    Linh hỏi tiến độ việc vá máy chủ. Bạn đang chậm một chút và có một chỗ bị kẹt —
+    đây là lúc dễ nói vòng vo nhất, mà nói vòng vo thì không ai giúp được.
+  turns:
+    - speaker: "Linh"
+      en: "How's the patching going?"
+      vi: "Việc vá bản vá thế nào rồi em?"
+    - speaker: "You"
+      en: "About halfway. Six of eleven servers are done."
+      vi: "Được khoảng một nửa. Sáu trên mười một máy đã xong."
+    - speaker: "Linh"
+      en: "Still on track for Friday?"
+      vi: "Vẫn kịp thứ Sáu chứ?"
+    - speaker: "You"
+      en: "Mostly. But I'm blocked on the two database servers — I don't have console access."
+      vi: "Gần như là kịp. Nhưng em đang kẹt ở hai máy database — em không có quyền vào console."
+    - speaker: "Linh"
+      en: "Who owns that access?"
+      vi: "Ai quản quyền đó?"
+    - speaker: "You"
+      en: "The DBA team. I raised a request yesterday. If it comes through today, I'm still on track."
+      vi: "Team DBA ạ. Em gửi yêu cầu hôm qua rồi. Nếu hôm nay được duyệt thì em vẫn kịp."
+    - speaker: "Linh"
+      en: "I'll push it for you. Send me the request number."
+      vi: "Để chị thúc giúp. Em gửi chị số yêu cầu."
+
+listening:
+  context_vi: >
+    Nghe một phần báo cáo standup đủ ba phần. Đây chính là mẫu bạn sẽ dùng mỗi sáng.
+  speed: 1.0
+  voice: en_US_male
+  transcript_en: "Yesterday I finished the backup migration for the file servers. Today I'm working on the database ones. I'm blocked on console access — I need someone from the DBA team to approve my request."
+  transcript_vi: "Hôm qua tôi làm xong phần chuyển backup cho các file server. Hôm nay tôi làm mấy máy database. Tôi đang kẹt ở quyền vào console — tôi cần ai đó bên team DBA duyệt yêu cầu."
+  questions:
+    - kind: mcq_listen
+      prompt_vi: "Người này bị kẹt ở đâu?"
+      choices: ["Quyền vào console", "Thiếu thời gian", "Máy chủ hỏng"]
+      answer: 0
+      difficulty: 2
+      skill: Listening
+    - kind: mcq_listen
+      prompt_vi: "Họ cần gì để gỡ vướng?"
+      choices: ["Thêm người", "Thêm một ngày", "Team DBA duyệt yêu cầu"]
+      answer: 2
+      difficulty: 2
+      skill: Listening
+
+speaking_drills:
+  - kind: read_aloud
+    expected_text: "I'm about halfway through."
+    prompt_vi: "Chữ l trong half CÂM. Đọc là háp-uây."
+    ipa: "/aɪm əˈbaʊt ˈhɑːfweɪ θruː/"
+    focus_phonemes: ["f", "θ"]
+  - kind: read_aloud
+    expected_text: "I'm blocked on the firewall rule."
+    prompt_vi: "Chú ý cụm /kt/ cuối chữ blocked."
+    ipa: "/aɪm blɒkt ɒn ðə ˈfaɪərwɔːl ruːl/"
+    focus_phonemes: ["kt", "bl"]
+  - kind: shadow
+    expected_text: "It should be done by Thursday."
+    prompt_vi: "Đưa một mốc thời gian cụ thể. Nghe rồi nhắc lại."
+    ipa: "/ɪt ʃʊd biː dʌn baɪ ˈθɜːrzdeɪ/"
+    focus_phonemes: ["ʃ", "θ"]
+  - kind: shadow
+    expected_text: "I need access to the console."
+    prompt_vi: "Nêu rõ thứ mình cần. Không nêu thì không ai đoán được."
+    ipa: "/aɪ niːd ˈækses tuː ðə ˈkɒnsoʊl/"
+    focus_phonemes: ["ks", "ð"]
+  - kind: respond
+    prompt_en: "How's the patching going?"
+    prompt_vi: "Báo tiến độ đủ ba phần: đã xong gì, đang làm gì, vướng gì."
+    accept_patterns:
+      - "about halfway"
+      - "on track"
+      - "blocked on"
+
+reading:
+  kind: chat
+  context_vi: >
+    Hai kiểu báo tiến độ trong cùng một kênh. Một kiểu giúp được người đọc, một kiểu không.
+  text_en: |
+    Minh: Still working on the migration. Almost there.
+    You: Migration update - 6 of 11 servers done. The two DB servers are blocked
+    You: on console access (request #8842, raised yesterday). Rest should be done by Thursday.
+    Linh: Thanks - that's clear. I'll chase 8842 now.
+  text_vi: |
+    Minh: Vẫn đang làm phần chuyển đổi. Gần xong rồi.
+    Bạn: Cập nhật chuyển đổi - 6 trên 11 máy đã xong. Hai máy DB đang kẹt
+    Bạn: ở quyền console (yêu cầu #8842, gửi hôm qua). Số còn lại chắc xong trước thứ Năm.
+    Linh: Cảm ơn em - rõ ràng lắm. Chị đi thúc cái 8842 ngay đây.
+  questions:
+    - kind: mcq_read
+      prompt_en: "Why could Linh act on the second update but not the first?"
+      choices: ["It was longer", "It had numbers and a specific blocker", "It was posted later"]
+      answer: 1
+      difficulty: 3
+      reading_skill: skim
+      skill: Reading
+    - kind: mcq_read
+      prompt_en: "What is the request number?"
+      choices: ["4417", "6811", "8842"]
+      answer: 2
+      difficulty: 1
+      reading_skill: scan
+      skill: Reading
+
+writing:
+  kind: GuidedEmail
+  prompt_vi: >
+    Viết một bản cập nhật tiến độ. Phải đủ ba phần: đã xong gì (có con số),
+    đang làm gì, và đang vướng gì kèm thứ bạn cần.
+  prompt_en: "Write a short progress update with three parts."
+  required_points:
+    - "servers done"
+    - "blocked on"
+    - "should be done by"
+  hint_vi: "Ba phần: đã xong, đang làm, vướng. Luôn kèm con số và mốc thời gian."
+  sample_en: "Migration update - 6 of 11 servers done. Today I'm on the database ones. I'm blocked on console access, request 8842. The rest should be done by Thursday."
+
+quiz:
+  - kind: mcq
+    prompt_vi: "Báo tiến độ tốt cần mấy phần?"
+    choices: ["Ba: đã xong, đang làm, đang vướng", "Một: đang làm gì", "Hai: xong và chưa xong"]
+    answer: 0
+    difficulty: 1
+    skill: Writing
+  - kind: mcq
+    prompt_vi: "\"Almost there\" có vấn đề gì?"
+    choices: ["Sai ngữ pháp", "Không có con số nên người nghe không đánh giá được", "Quá dài"]
+    answer: 1
+    difficulty: 2
+    skill: Reading
+  - kind: mcq
+    prompt_vi: "Nêu vướng mắc thì cần thêm gì?"
+    choices: ["Lời xin lỗi", "Tên người gây ra", "Thứ bạn cần để gỡ vướng"]
+    answer: 2
+    difficulty: 2
+    skill: Speaking
+  - kind: mcq
+    prompt_vi: "\"I'm blocked on the firewall rule\" nghĩa là gì?"
+    choices: ["Tôi đang kẹt vì quy tắc tường lửa", "Tôi đã chặn quy tắc tường lửa", "Tôi bỏ qua tường lửa"]
+    answer: 0
+    difficulty: 2
+    skill: Listening
+
+explanation:
+  why_vi: >
+    Người Việt hay báo tiến độ bằng cảm nhận: "sắp xong rồi", "cũng ổn". Người nghe
+    không đánh giá được gì từ những câu đó và phải hỏi thêm ba lượt.
+    Tệ hơn, nêu vướng mắc mà không nói mình cần gì thì người muốn giúp cũng không biết giúp thế nào.
+  how_vi: >
+    Ba phần, luôn có con số: ĐÃ XONG bao nhiêu trên bao nhiêu, ĐANG LÀM gì,
+    ĐANG VƯỚNG gì và CẦN gì. Phần vướng mắc phải kèm thứ bạn cần —
+    đó là điểm khác nhau giữa một lời than và một lời đề nghị giúp đỡ.
+  contrast_vi: >
+    "Almost there" không cho ai biết gì. "6 of 11 done, blocked on console access, request 8842"
+    cho phép người nghe hành động ngay — và Linh đã đi thúc yêu cầu đó.
+
+common_mistakes:
+  - mistake: "Báo tiến độ bằng cảm nhận thay vì con số"
+    why_vi: >
+      Tiếng Việt chấp nhận “sắp xong” như một câu trả lời đầy đủ. Trong công việc quốc tế,
+      nó bị coi là chưa trả lời.
+    fix_vi: "Luôn kèm tỷ lệ hoặc con số: 6 trên 11, một nửa, còn hai máy."
+    detect_phoneme_missing: []
+  - mistake: "Giấu vướng mắc vì sợ bị đánh giá"
+    why_vi: >
+      Nghĩ rằng báo vướng là thừa nhận mình yếu. Thực tế giấu tới lúc trễ hạn
+      mới là thứ làm mất niềm tin.
+    fix_vi: "Báo vướng sớm và kèm thứ mình cần. Người quản lý tồn tại để gỡ đúng những chỗ đó."
+    detect_phoneme_missing: []
+  - mistake: "Nêu vướng mắc mà không nói cần gì"
+    why_vi: >
+      Người nghe muốn giúp nhưng không biết bắt đầu từ đâu, nên câu chuyện dừng ở mức chia sẻ.
+    fix_vi: "Luôn kết bằng \"I need...\". Một câu này biến lời than thành lời đề nghị."
+    detect_phoneme_missing: []
+
+memory_trick_vi: >
+  Ba phần, mỗi phần một câu: XONG bao nhiêu, ĐANG làm gì, VƯỚNG gì và CẦN gì.
+  Đây đúng là ba phần của standup — học ở đây, dùng ở tầng chuyên môn.

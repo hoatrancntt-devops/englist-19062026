@@ -1,0 +1,158 @@
+code: RP-01
+title_vi: "Gọi vendor support — báo sự cố và đòi mốc thời gian"
+context_vi: >-
+  Firewall của bạn rơi mất cấu hình sau khi nâng cấp firmware đêm qua. Bạn gọi cho hãng.
+  Mục tiêu: mô tả đúng sự cố, cung cấp số hợp đồng, và lấy được một mốc thời gian cụ thể —
+  không phải câu "chúng tôi sẽ liên hệ lại".
+track: Infrastructure
+level: A2
+partner_name: "Priya — vendor support engineer"
+start_node: n1
+
+nodes:
+  - code: n1
+    partner_line_en: "Thanks for calling global support, this is Priya. Can I get your support contract number?"
+    partner_line_vi: "Cảm ơn đã gọi bộ phận hỗ trợ, tôi là Priya. Cho tôi xin số hợp đồng hỗ trợ được không?"
+    choices:
+      - en: "Yes, it's SC-4471-VN. My name is Long, from HT Group."
+        vi: "Vâng, số SC-4471-VN. Tôi là Long, công ty HT Group."
+        next: n2
+        quality: good
+      - en: "SC-4471-VN."
+        vi: "SC-4471-VN."
+        next: n2
+        quality: curt
+        feedback_vi: >-
+          Đúng thông tin nhưng cụt. Người trực tổng đài mỗi ngày nhận hàng chục cuộc;
+          nói kèm tên và công ty giúp họ mở đúng hồ sơ ngay và nhớ bạn ở lần gọi sau.
+      - en: "I don't know. Just fix the firewall please."
+        vi: "Tôi không biết. Anh cứ sửa firewall giúp tôi."
+        next: n2b
+        quality: wrong
+        feedback_vi: >-
+          Không có số hợp đồng thì họ không mở được ticket, và cuộc gọi dừng ngay ở đây.
+          Chuẩn bị sẵn số hợp đồng trước khi bấm máy.
+
+  - code: n2
+    partner_line_en: "Got it, Long. I see your contract is active. What seems to be the problem?"
+    partner_line_vi: "Rồi anh Long. Tôi thấy hợp đồng còn hiệu lực. Vấn đề là gì ạ?"
+    choices:
+      - en: "After the firmware upgrade last night, the firewall lost its configuration. It is running the factory default now."
+        vi: "Sau khi nâng firmware đêm qua, firewall mất sạch cấu hình. Giờ nó đang chạy cấu hình gốc."
+        next: n3
+        quality: good
+      - en: "Firewall broken after upgrade."
+        vi: "Firewall hỏng sau khi nâng cấp."
+        next: n3
+        quality: curt
+        feedback_vi: >-
+          Thiếu chủ ngữ và động từ nên nghe như điện tín. Câu đầy đủ không dài hơn bao nhiêu
+          mà giúp kỹ sư bên kia hình dung đúng sự cố ngay từ lần nghe đầu.
+      - en: "Your upgrade destroyed our network. This is unacceptable."
+        vi: "Bản nâng cấp của các anh phá nát mạng của chúng tôi. Không thể chấp nhận được."
+        next: n3b
+        quality: wrong
+        feedback_vi: >-
+          Đổ lỗi ngay câu đầu làm người bên kia chuyển sang thế phòng thủ, và họ sẽ mất thời gian
+          bảo vệ sản phẩm thay vì sửa cho bạn. Nói sự việc trước, cảm xúc để sau.
+
+  - code: n3
+    partner_line_en: "I understand. Do you have a configuration backup from before the upgrade?"
+    partner_line_vi: "Tôi hiểu rồi. Anh có bản sao lưu cấu hình trước lúc nâng cấp không?"
+    choices:
+      - en: "Yes, we have a backup from two days ago. Can you walk me through restoring it?"
+        vi: "Có, bản sao lưu từ hai hôm trước. Anh hướng dẫn tôi khôi phục được không?"
+        next: n4
+        quality: good
+      - en: "No, we don't have one. What are our options?"
+        vi: "Không, chúng tôi không có. Vậy có cách nào khác không?"
+        next: n4
+        quality: good
+      - en: "Backup? You should have that."
+        vi: "Sao lưu à? Cái đó các anh phải có chứ."
+        next: n3b
+        quality: wrong
+        feedback_vi: >-
+          Sao lưu cấu hình là việc của bên vận hành, không phải của hãng. Đẩy trách nhiệm sang
+          họ vừa sai vừa làm cuộc gọi đi vào ngõ cụt.
+
+  - code: n4
+    partner_line_en: "Alright. I'll open a priority two ticket and a senior engineer will call you back."
+    partner_line_vi: "Được. Tôi mở ticket mức ưu tiên hai và một kỹ sư cấp cao sẽ gọi lại cho anh."
+    choices:
+      - en: "Thank you. What time can I expect that call, and what is the ticket number?"
+        vi: "Cảm ơn anh. Khoảng mấy giờ thì có cuộc gọi đó, và số ticket là bao nhiêu?"
+        next: n5
+        quality: good
+      - en: "OK."
+        vi: "Được."
+        next: n5b
+        quality: curt
+        feedback_vi: >-
+          Đây là chỗ quan trọng nhất của cả cuộc gọi. Không hỏi mốc thời gian và số ticket
+          thì bạn không có gì để bám vào khi chiều nay chưa ai gọi lại.
+      - en: "Priority two? This should be priority one. Our whole office is down."
+        vi: "Ưu tiên hai à? Cái này phải là ưu tiên một chứ. Cả văn phòng đang chết."
+        next: n5
+        quality: good
+
+  - code: n5
+    partner_line_en: "Ticket is INC-88214. Given the office impact I'm raising it to priority one — a senior engineer will call within one hour."
+    partner_line_vi: "Ticket là INC-88214. Vì cả văn phòng bị ảnh hưởng nên tôi nâng lên ưu tiên một — kỹ sư cấp cao sẽ gọi trong vòng một tiếng."
+    choices:
+      - en: "Perfect. I'll be at this number. If I miss the call, please email long@htgroup.vn."
+        vi: "Tốt quá. Tôi luôn ở số máy này. Nếu tôi lỡ cuộc gọi thì anh gửi mail vào long@htgroup.vn nhé."
+        next: nEnd
+        quality: good
+      - en: "One hour. OK, bye."
+        vi: "Một tiếng. Được, chào anh."
+        next: nEndCurt
+        quality: curt
+        feedback_vi: >-
+          Kết thúc mà không để lại đường liên lạc dự phòng. Nếu bạn đang họp lúc họ gọi thì
+          ticket lại chờ thêm một vòng nữa.
+
+  - code: n2b
+    partner_line_en: "I'm sorry, without a contract number I can't open a ticket. You can find it on your invoice."
+    partner_line_vi: "Xin lỗi anh, không có số hợp đồng thì tôi không mở được ticket. Số đó nằm trên hoá đơn."
+    terminal: true
+    success: false
+    summary_vi: >-
+      Cuộc gọi dừng ở đây vì thiếu số hợp đồng. Lần sau, mở sẵn hoá đơn hoặc lưu số hợp đồng
+      vào điện thoại trước khi gọi — đây là câu hỏi đầu tiên của mọi hãng.
+
+  - code: n3b
+    partner_line_en: "I understand you're frustrated. Let me get a senior engineer, but I'll need a few minutes."
+    partner_line_vi: "Tôi hiểu anh đang bực. Để tôi tìm kỹ sư cấp cao, nhưng cần vài phút."
+    terminal: true
+    success: false
+    summary_vi: >-
+      Bạn vẫn được hỗ trợ, nhưng cuộc gọi dài hơn và không có mốc thời gian nào. Mô tả sự việc
+      bằng dữ kiện thay vì bằng cảm xúc thường rút ngắn được một nửa thời gian xử lý.
+
+  - code: n5b
+    partner_line_en: "Alright. Have a good day."
+    partner_line_vi: "Vâng. Chúc anh một ngày tốt lành."
+    terminal: true
+    success: false
+    summary_vi: >-
+      Bạn kết thúc mà không có số ticket lẫn mốc thời gian. Chiều nay nếu chưa ai gọi lại,
+      bạn sẽ phải kể lại toàn bộ câu chuyện từ đầu với một người khác.
+
+  - code: nEndCurt
+    partner_line_en: "Thank you for calling. Goodbye."
+    partner_line_vi: "Cảm ơn anh đã gọi. Chào anh."
+    terminal: true
+    success: true
+    summary_vi: >-
+      Bạn lấy được số ticket và mốc một tiếng — phần quan trọng nhất đã xong. Chỉ thiếu đường
+      liên lạc dự phòng, thứ giúp bạn không lỡ cuộc gọi lại.
+
+  - code: nEnd
+    partner_line_en: "Noted, I've added your email to the ticket. You'll hear from us within the hour."
+    partner_line_vi: "Tôi đã ghi email của anh vào ticket. Trong vòng một tiếng sẽ có người liên hệ."
+    terminal: true
+    success: true
+    summary_vi: >-
+      Đúng cách gọi vendor: nêu danh tính và số hợp đồng ngay, mô tả sự cố bằng dữ kiện,
+      và không cúp máy trước khi có số ticket cùng mốc thời gian cụ thể.

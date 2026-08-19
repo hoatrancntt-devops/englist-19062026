@@ -1,0 +1,127 @@
+code: RP-07
+title_vi: "Hỏi nhà cung cấp cloud về giá và cam kết dịch vụ"
+context_vi: >-
+  Công ty đang cân nhắc chuyển hệ thống báo cáo lên cloud. Bạn gặp đại diện bán hàng.
+  Mục tiêu: hỏi được chi phí thật (kể cả phần ẩn), mức cam kết dịch vụ, và điều gì xảy ra
+  khi họ không đạt cam kết — trước khi ký.
+track: Cloud
+level: B1
+partner_name: "James — account executive"
+start_node: n1
+
+nodes:
+  - code: n1
+    partner_line_en: "So, our standard tier starts at four hundred dollars a month. Shall I send over a contract?"
+    partner_line_vi: "Gói tiêu chuẩn của bên tôi bắt đầu từ bốn trăm đô một tháng. Tôi gửi hợp đồng nhé?"
+    choices:
+      - en: "Before that — does four hundred include data transfer out, or is egress billed separately?"
+        vi: "Trước đó đã — bốn trăm đó đã gồm phí truyền dữ liệu ra chưa, hay egress tính riêng?"
+        next: n2
+        quality: good
+      - en: "Yes, please send it."
+        vi: "Vâng, anh gửi đi."
+        next: n1b
+        quality: wrong
+        feedback_vi: >-
+          Ký trước khi hỏi phí truyền dữ liệu ra là cách hoá đơn tháng sau gấp đôi báo giá.
+          Egress gần như luôn tính riêng và gần như không bao giờ được nhắc trong buổi bán hàng.
+      - en: "What about egress?"
+        vi: "Thế còn egress?"
+        next: n2
+        quality: curt
+        feedback_vi: >-
+          Đúng câu hỏi nhưng thiếu ngữ cảnh. Hỏi trọn câu buộc họ trả lời trọn vẹn, khó
+          lách sang chuyện khác hơn.
+
+  - code: n2
+    partner_line_en: "Good question. Egress is billed at nine cents per gigabyte after the first hundred."
+    partner_line_vi: "Câu hỏi hay. Egress tính chín xu mỗi gigabyte sau một trăm gigabyte đầu."
+    choices:
+      - en: "We move about two terabytes a month, so that's roughly one hundred seventy dollars on top. Is that right?"
+        vi: "Bên tôi chuyển khoảng hai terabyte mỗi tháng, vậy là thêm chừng một trăm bảy mươi đô nữa. Đúng không anh?"
+        next: n3
+        quality: good
+      - en: "OK, that sounds reasonable."
+        vi: "Được, nghe cũng hợp lý."
+        next: n2b
+        quality: wrong
+        feedback_vi: >-
+          Chín xu nghe nhỏ cho tới khi nhân với lượng dữ liệu thật của bạn. Quy ra con số
+          hàng tháng ngay tại bàn, trước mặt họ.
+
+  - code: n3
+    partner_line_en: "That's correct. And we guarantee ninety-nine point nine percent uptime."
+    partner_line_vi: "Đúng vậy. Và bên tôi cam kết thời gian hoạt động 99,9 phần trăm."
+    choices:
+      - en: "What happens if you miss it? Is there a service credit, and do we have to claim it ourselves?"
+        vi: "Nếu không đạt thì sao ạ? Có khoản bù dịch vụ không, và bên tôi có phải tự yêu cầu không?"
+        next: n4
+        quality: good
+      - en: "Ninety-nine point nine is fine for us."
+        vi: "99,9 là ổn với bên tôi."
+        next: n3b
+        quality: curt
+        feedback_vi: >-
+          Con số cam kết chỉ có nghĩa khi biết hậu quả của việc không đạt. Phần lớn hợp đồng
+          bắt khách hàng tự yêu cầu bù trong vòng ba mươi ngày, nếu không thì mất quyền.
+
+  - code: n4
+    partner_line_en: "There's a ten percent service credit, and yes, you need to submit a claim within thirty days."
+    partner_line_vi: "Có khoản bù mười phần trăm, và đúng, bên anh phải gửi yêu cầu trong vòng ba mươi ngày."
+    choices:
+      - en: "Understood. Can you put the egress estimate and the credit terms in writing before we go to procurement?"
+        vi: "Em hiểu rồi. Anh gửi giúp ước tính egress và điều khoản bù bằng văn bản trước khi bên tôi trình mua sắm được không?"
+        next: nEnd
+        quality: good
+      - en: "OK, send the contract."
+        vi: "Được, anh gửi hợp đồng đi."
+        next: nEndCurt
+        quality: curt
+        feedback_vi: >-
+          Mọi con số vừa nói đều là lời nói miệng. Xin bằng văn bản trước khi trình lên
+          bộ phận mua sắm — đây là chỗ duy nhất bạn còn lợi thế thương lượng.
+
+  - code: n1b
+    partner_line_en: "Great, I'll send it right away."
+    partner_line_vi: "Tuyệt, tôi gửi ngay."
+    terminal: true
+    success: false
+    summary_vi: >-
+      Bạn vừa đồng ý với một con số chưa đầy đủ. Ba câu hỏi bắt buộc trước khi ký:
+      phí truyền dữ liệu ra, mức cam kết dịch vụ, và cơ chế bù khi không đạt.
+
+  - code: n2b
+    partner_line_en: "Great. So, about that contract..."
+    partner_line_vi: "Tuyệt. Vậy về hợp đồng..."
+    terminal: true
+    success: false
+    summary_vi: >-
+      Chín xu mỗi gigabyte nhân hai terabyte là một trăm bảy mươi đô mỗi tháng — hơn bốn mươi
+      phần trăm giá gói. Luôn quy đơn giá về con số hàng tháng của chính bạn.
+
+  - code: n3b
+    partner_line_en: "Perfect. I'll get the paperwork started."
+    partner_line_vi: "Chuẩn. Tôi cho chuẩn bị giấy tờ."
+    terminal: true
+    success: false
+    summary_vi: >-
+      Cam kết mà không có chế tài thì chỉ là lời hứa. Hỏi rõ mức bù, cách yêu cầu và
+      thời hạn yêu cầu trước khi coi con số đó là thật.
+
+  - code: nEndCurt
+    partner_line_en: "Will do. Talk soon."
+    partner_line_vi: "Tôi sẽ gửi. Hẹn gặp lại."
+    terminal: true
+    success: true
+    summary_vi: >-
+      Bạn đã hỏi đủ ba câu quan trọng. Chỉ thiếu bước xin xác nhận bằng văn bản —
+      thứ duy nhất còn giá trị khi có tranh chấp.
+
+  - code: nEnd
+    partner_line_en: "Absolutely, I'll email both today."
+    partner_line_vi: "Chắc chắn rồi, hôm nay tôi gửi mail cả hai."
+    terminal: true
+    success: true
+    summary_vi: >-
+      Đúng cách làm việc với nhà cung cấp: hỏi phí ẩn, quy đơn giá về con số của mình,
+      hỏi chế tài khi không đạt cam kết, và xin mọi thứ bằng văn bản trước khi trình mua sắm.

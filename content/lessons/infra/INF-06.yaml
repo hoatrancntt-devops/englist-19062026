@@ -1,0 +1,293 @@
+schema_version: 1
+code: INF-06
+slug: noi-ve-mang-vlan-routing-firewall
+title_vi: "Nói về mạng — VLAN, định tuyến và tường lửa"
+title_en: "Talking about networks"
+
+layer: Professional
+track: Infrastructure
+level: B1
+unit_code: U-INF3
+order_index: 6
+estimated_minutes: 12
+
+illustration: network-diagram
+
+objective_vi: >
+  Mô tả một vấn đề mạng theo tầng, và diễn đạt được đường đi của gói tin
+  để người nghe biết cần kiểm ở đâu.
+
+objective_observable: >
+  Mô tả được đường đi của một kết nối lỗi qua ít nhất ba chặng, dùng đúng thuật ngữ.
+
+mastery_weights:
+  Listening: 0.30
+  Speaking: 0.35
+  Reading: 0.20
+  Writing: 0.15
+
+prerequisites:
+  - lesson: INF-05
+    min_mastery: 65
+    kind: Hard
+
+vocabulary:
+  - term: "reachable"
+    ipa: "/ˈriːtʃəbl/"
+    meaning_vi: "tới được (bằng mạng)"
+    chunk: "The server is reachable from the office but not from the VPN."
+    tags: [network, core]
+  - term: "hop"
+    ipa: "/hɒp/"
+    meaning_vi: "chặng — một thiết bị trên đường đi của gói tin"
+    chunk: "It fails at the third hop."
+    tags: [network, core]
+  - term: "blocked at the firewall"
+    ipa: "/blɒkt æt ðə ˈfaɪərwɔːl/"
+    meaning_vi: "bị tường lửa chặn"
+    chunk: "Port 443 is blocked at the firewall."
+    tags: [network, core]
+  - term: "on a different VLAN"
+    ipa: "/ɒn ə ˈdɪfrənt viː læn/"
+    meaning_vi: "nằm ở VLAN khác"
+    chunk: "The printers are on a different VLAN."
+    tags: [network, core]
+  - term: "route"
+    ipa: "/ruːt/"
+    meaning_vi: "tuyến đường (của gói tin)"
+    chunk: "There's no route back to that subnet."
+    tags: [network, core]
+  - term: "resolves to"
+    ipa: "/rɪˈzɒlvz tuː/"
+    meaning_vi: "phân giải ra thành (DNS)"
+    chunk: "The name resolves to the old IP."
+    tags: [network, core]
+
+sentence_patterns:
+  - pattern: "It's reachable from {source} but not from {other}."
+    meaning_vi: "Từ {source} thì tới được nhưng từ {other} thì không."
+    slots:
+      source: ["the office", "the same VLAN"]
+      other: ["the VPN", "the branch site"]
+  - pattern: "It fails at {point} — {reason}."
+    meaning_vi: "Nó hỏng ở {point} — {reason}."
+    slots:
+      point: ["the third hop", "the firewall"]
+      reason: ["no route back", "port 443 is blocked"]
+
+dialogue:
+  context_vi: >
+    Người dùng ở chi nhánh không vào được portal, nhưng ở trụ sở thì vào được.
+    Mô tả đúng đường đi là cách duy nhất để team mạng biết kiểm ở đâu.
+  turns:
+    - speaker: "Minh"
+      en: "What exactly is failing?"
+      vi: "Cụ thể là chỗ nào hỏng?"
+    - speaker: "You"
+      en: "The portal is reachable from the office but not from the branch site."
+      vi: "Portal từ trụ sở thì tới được nhưng từ chi nhánh thì không."
+    - speaker: "Minh"
+      en: "Is it DNS or routing?"
+      vi: "Do DNS hay do định tuyến?"
+    - speaker: "You"
+      en: "Not DNS — the name resolves to the correct IP from both sites. A traceroute from the branch fails at the third hop."
+      vi: "Không phải DNS — tên phân giải ra đúng IP ở cả hai nơi. Traceroute từ chi nhánh hỏng ở chặng thứ ba."
+    - speaker: "Minh"
+      en: "Third hop is the core switch. What does the firewall log say?"
+      vi: "Chặng thứ ba là switch lõi. Log tường lửa nói gì?"
+    - speaker: "You"
+      en: "Port 443 is blocked from the branch subnet. Looks like the rule was never added when that subnet was created."
+      vi: "Cổng 443 bị chặn từ dải mạng chi nhánh. Có vẻ quy tắc chưa từng được thêm khi tạo dải mạng đó."
+    - speaker: "Minh"
+      en: "That would do it. Raise a change and I'll approve it today."
+      vi: "Đúng là do đó rồi. Em mở một change đi, hôm nay anh duyệt."
+
+listening:
+  context_vi: >
+    Nghe hai cách mô tả cùng một vấn đề mạng. Chú ý cách nào khoanh vùng được chỗ hỏng.
+  speed: 1.0
+  voice: en_US_male
+  transcript_en: "Version one: the network is broken at the branch, nothing works there. Version two: the portal is reachable from the office but not from the branch. DNS resolves correctly from both. Traceroute from the branch fails at the third hop, and the firewall log shows port 443 blocked from that subnet."
+  transcript_vi: "Cách một: mạng ở chi nhánh hỏng rồi, ở đó chẳng chạy được gì. Cách hai: portal từ trụ sở tới được nhưng từ chi nhánh thì không. DNS phân giải đúng ở cả hai nơi. Traceroute từ chi nhánh hỏng ở chặng ba, và log tường lửa cho thấy cổng 443 bị chặn từ dải mạng đó."
+  questions:
+    - kind: mcq_listen
+      prompt_vi: "Cách hai đã loại trừ được nguyên nhân nào?"
+      choices: ["DNS", "Tường lửa", "Switch lõi"]
+      answer: 0
+      difficulty: 3
+      skill: Listening
+    - kind: mcq_listen
+      prompt_vi: "Chỗ hỏng nằm ở đâu?"
+      choices: ["Chặng thứ nhất", "Không xác định được", "Chặng thứ ba"]
+      answer: 2
+      difficulty: 2
+      skill: Listening
+
+speaking_drills:
+  - kind: read_aloud
+    expected_text: "It's reachable from the office but not from the VPN."
+    prompt_vi: "Đối chiếu hai điểm xuất phát — cách khoanh vùng nhanh nhất."
+    ipa: "/ɪts ˈriːtʃəbl frɒm ði ˈɒfɪs/"
+    focus_phonemes: ["tʃ", "fr"]
+  - kind: read_aloud
+    expected_text: "It fails at the third hop."
+    prompt_vi: "Chú ý âm /θ/ trong third và /p/ cuối chữ hop."
+    ipa: "/ɪt feɪlz æt ðə θɜːrd hɒp/"
+    focus_phonemes: ["θ", "p"]
+  - kind: shadow
+    expected_text: "Port four four three is blocked at the firewall."
+    prompt_vi: "Đọc số cổng rời từng chữ số. Nghe rồi nhắc lại."
+    ipa: "/pɔːrt fɔːr fɔːr θriː ɪz blɒkt/"
+    focus_phonemes: ["rt", "kt"]
+  - kind: shadow
+    expected_text: "The name resolves to the correct IP from both sites."
+    prompt_vi: "Câu loại trừ DNS. Chú ý cụm /lvz/ trong resolves."
+    ipa: "/ðə neɪm rɪˈzɒlvz tuː ðə kəˈrekt aɪ piː/"
+    focus_phonemes: ["lvz", "kt"]
+  - kind: respond
+    prompt_en: "Is it DNS or routing?"
+    prompt_vi: "Trả lời và nêu bằng chứng đã loại trừ được nguyên nhân nào."
+    accept_patterns:
+      - "Not DNS"
+      - "resolves"
+      - "fails at"
+
+reading:
+  kind: ticket
+  context_vi: >
+    Ghi chú chẩn đoán mạng. Để ý cách người viết loại trừ từng tầng một.
+  text_en: |
+    INC-2310 - Branch site cannot reach the portal
+
+    Symptom: users at the Da Nang branch get a timeout on portal.internal.
+    Office users are fine.
+
+    What has been ruled out:
+    - DNS: portal.internal resolves to 10.20.4.15 from both sites. Same answer.
+    - Client: same laptop works when plugged into the office network.
+    - Server: the portal is up, office traffic is being served normally.
+
+    What we found:
+    - Traceroute from 10.30.7.0/24 fails after the third hop (core switch).
+    - Firewall log: DENY tcp 10.30.7.0/24 -> 10.20.4.15:443, rule "default deny".
+    - The branch subnet was created on 2 August. No allow rule was added for it.
+
+    Proposed fix: add an allow rule for 10.30.7.0/24 to 10.20.4.15 on 443.
+    Raised as CHG-8851.
+  text_vi: |
+    INC-2310 - Chi nhánh không vào được portal
+
+    Triệu chứng: người dùng ở chi nhánh Đà Nẵng bị timeout khi vào portal.internal.
+    Người dùng ở trụ sở bình thường.
+
+    Đã loại trừ:
+    - DNS: portal.internal phân giải ra 10.20.4.15 ở cả hai nơi. Cùng một kết quả.
+    - Máy trạm: cùng cái laptop đó cắm vào mạng trụ sở thì chạy được.
+    - Máy chủ: portal đang chạy, lưu lượng từ trụ sở vẫn được phục vụ bình thường.
+
+    Đã phát hiện:
+    - Traceroute từ 10.30.7.0/24 hỏng sau chặng thứ ba (switch lõi).
+    - Log tường lửa: DENY tcp 10.30.7.0/24 -> 10.20.4.15:443, quy tắc "default deny".
+    - Dải mạng chi nhánh được tạo ngày 2 tháng 8. Chưa có quy tắc cho phép nào được thêm.
+
+    Đề xuất sửa: thêm quy tắc cho phép 10.30.7.0/24 tới 10.20.4.15 cổng 443.
+    Đã mở CHG-8851.
+  questions:
+    - kind: mcq_read
+      prompt_en: "How was the client ruled out?"
+      choices: ["A new laptop was tested", "The same laptop works on the office network", "It was not ruled out"]
+      answer: 1
+      difficulty: 2
+      reading_skill: scan
+      skill: Reading
+    - kind: mcq_read
+      prompt_en: "When was the branch subnet created?"
+      choices: ["Not stated", "15 August", "2 August"]
+      answer: 2
+      difficulty: 1
+      reading_skill: scan
+      skill: Reading
+    - kind: mcq_read
+      prompt_en: "Why is the 'ruled out' section useful to the network team?"
+      choices: ["It tells them which layers not to re-check", "It shows effort", "It is required"]
+      answer: 0
+      difficulty: 3
+      reading_skill: skim
+      skill: Reading
+
+writing:
+  kind: GuidedEmail
+  prompt_vi: >
+    Viết ghi chú chẩn đoán một vấn đề mạng. Phải có đủ ba ý: triệu chứng kèm
+    nơi chạy được và nơi không, những gì đã loại trừ, và chỗ hỏng cụ thể.
+  prompt_en: "Write network diagnostic notes."
+  required_points:
+    - "reachable from"
+    - "ruled out"
+    - "fails at"
+  hint_vi: "Ba ý. Phần loại trừ quan trọng nhất — nó nói team mạng khỏi kiểm lại tầng nào."
+  sample_en: "The portal is reachable from the office but not from the branch. DNS is ruled out - the name resolves to the same IP from both sites. Traceroute fails at the third hop, and the firewall shows port 443 blocked from that subnet."
+
+quiz:
+  - kind: mcq
+    prompt_vi: "Cách nhanh nhất để khoanh vùng một vấn đề mạng?"
+    choices: ["Khởi động lại thiết bị", "Đối chiếu nơi chạy được với nơi không chạy được", "Đọc toàn bộ log"]
+    answer: 1
+    difficulty: 2
+    skill: Speaking
+  - kind: mcq
+    prompt_vi: "\"It fails at the third hop\" nghĩa là gì?"
+    choices: ["Thử lần thứ ba thì hỏng", "Có ba lỗi", "Gói tin đi tới thiết bị thứ ba thì không đi tiếp được"]
+    answer: 2
+    difficulty: 2
+    skill: Reading
+  - kind: mcq
+    prompt_vi: "Tên miền phân giải đúng IP ở cả hai nơi. Điều đó loại trừ gì?"
+    choices: ["DNS", "Tường lửa", "Định tuyến"]
+    answer: 0
+    difficulty: 2
+    skill: Listening
+  - kind: mcq
+    prompt_vi: "\"On a different VLAN\" nghĩa là gì?"
+    choices: ["Dùng cáp khác", "Nằm ở phân đoạn mạng khác nên cần định tuyến", "Ở toà nhà khác"]
+    answer: 1
+    difficulty: 2
+    skill: Reading
+
+explanation:
+  why_vi: >
+    Vấn đề mạng khó mô tả vì nó vô hình. Người mới hay nói "mạng hỏng rồi",
+    và câu đó buộc team mạng kiểm lại từ đầu mọi tầng — DNS, định tuyến, tường lửa, máy chủ.
+    Mỗi tầng kiểm mất mười lăm phút, và bốn tầng là một tiếng lãng phí.
+  how_vi: >
+    Mô tả theo hai trục. Trục thứ nhất là ĐỐI CHIẾU: nơi nào chạy được, nơi nào không —
+    khác biệt giữa hai nơi chính là chỗ chứa nguyên nhân. Trục thứ hai là ĐƯỜNG ĐI:
+    gói tin đi tới đâu thì dừng. Rồi ghi rõ ĐÃ LOẠI TRỪ tầng nào và bằng bằng chứng gì.
+  contrast_vi: >
+    "Mạng ở chi nhánh hỏng" bắt người khác kiểm bốn tầng.
+    "Từ trụ sở thì được, từ chi nhánh thì không, DNS ra cùng IP, traceroute chết ở chặng ba"
+    chỉ thẳng vào một thiết bị.
+
+common_mistakes:
+  - mistake: "Nói \"mạng hỏng\" mà không đối chiếu nơi chạy được"
+    why_vi: >
+      Người báo chỉ thấy phía mình không chạy nên kết luận cả mạng hỏng.
+      Nhưng thứ chạy được ở nơi khác mới là manh mối quan trọng nhất.
+    fix_vi: "Luôn thử ít nhất hai điểm xuất phát. Khác biệt giữa chúng là chỗ chứa nguyên nhân."
+    detect_phoneme_missing: []
+  - mistake: "Không phân biệt DNS với định tuyến"
+    why_vi: >
+      Cả hai đều biểu hiện thành “không vào được”. Nhưng một cái là sai địa chỉ,
+      một cái là không có đường đi — hai đội khác nhau xử lý.
+    fix_vi: "Kiểm phân giải tên trước. Ra đúng IP thì loại DNS, chuyển sang kiểm đường đi."
+    detect_phoneme_missing: []
+  - mistake: "Đọc số cổng và địa chỉ IP theo cụm"
+    why_vi: >
+      Đọc “bốn trăm bốn mươi ba” thay vì “four four three” khiến người nghe
+      phải hỏi lại, nhất là qua điện thoại lúc đang có sự cố.
+    fix_vi: "Đọc rời từng chữ số. Đây là chuẩn trong ngành, không phải cách nói của người kém."
+    detect_phoneme_missing: []
+
+memory_trick_vi: >
+  Hai trục mô tả mạng: ĐỐI CHIẾU nơi được với nơi không, và ĐƯỜNG ĐI dừng ở đâu.
+  Rồi ghi rõ ĐÃ LOẠI TRỪ tầng nào — đó là thứ tiết kiệm một tiếng của team mạng.

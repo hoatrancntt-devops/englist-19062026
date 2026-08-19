@@ -1,0 +1,255 @@
+schema_version: 1
+code: LIFE-09
+slug: goi-mon-va-ru-di-an-trua
+title_vi: "Gọi món và rủ đi ăn trưa"
+title_en: "Ordering food and lunch invitations"
+
+layer: Life
+track: Foundation
+level: A1
+unit_code: U-L2
+order_index: 9
+estimated_minutes: 11
+
+illustration: food-order
+
+objective_vi: >
+  Gọi món, hỏi giá, và rủ đồng nghiệp đi ăn trưa — ba việc xảy ra mỗi ngày
+  và là cơ hội nói chuyện tự nhiên nhất trong tuần.
+
+objective_observable: >
+  Gọi được một suất ăn hoàn chỉnh trong 3 trên 4 drill, và trả lời đúng lời rủ đi ăn.
+
+mastery_weights:
+  Listening: 0.30
+  Speaking: 0.40
+  Reading: 0.15
+  Writing: 0.15
+
+prerequisites:
+  - lesson: LIFE-08
+    min_mastery: 60
+    kind: Hard
+
+vocabulary:
+  - term: "I'll have"
+    ipa: "/aɪl hæv/"
+    meaning_vi: "cho tôi (cách gọi món tự nhiên nhất)"
+    chunk: "I'll have the chicken rice."
+    tags: [food, core]
+  - term: "to go"
+    ipa: "/tuː ɡoʊ/"
+    meaning_vi: "mang đi (không ăn tại chỗ)"
+    chunk: "One coffee to go, please."
+    tags: [food, core]
+  - term: "for here"
+    ipa: "/fɔːr hɪr/"
+    meaning_vi: "ăn tại chỗ"
+    chunk: "For here, please."
+    tags: [food]
+  - term: "How much is"
+    ipa: "/haʊ mʌtʃ ɪz/"
+    meaning_vi: "bao nhiêu tiền"
+    chunk: "How much is the set lunch?"
+    tags: [food, money]
+  - term: "Want to grab lunch"
+    ipa: "/wɒnt tuː ɡræb lʌntʃ/"
+    meaning_vi: "đi ăn trưa không (cách rủ tự nhiên nhất)"
+    chunk: "Want to grab lunch?"
+    tags: [food, social]
+  - term: "I'm good"
+    ipa: "/aɪm ɡʊd/"
+    meaning_vi: "thôi tôi ổn rồi (từ chối nhẹ nhàng)"
+    chunk: "I'm good, thanks. Already ate."
+    tags: [food, social]
+
+sentence_patterns:
+  - pattern: "I'll have {dish}, please."
+    meaning_vi: "Cho tôi {dish} nhé."
+    slots:
+      dish: ["the chicken rice", "a coffee", "the set lunch"]
+  - pattern: "Want to grab {meal}?"
+    meaning_vi: "Đi {meal} không?"
+    slots:
+      meal: ["lunch", "coffee", "something to eat"]
+
+dialogue:
+  context_vi: >
+    Mười một giờ rưỡi. Minh rủ bạn đi ăn trưa với Priya, đồng nghiệp từ Singapore
+    sang công tác. Đây là bữa đầu tiên bạn ăn cùng người nước ngoài.
+  turns:
+    - speaker: "Minh"
+      en: "Hey, want to grab lunch? Priya is coming too."
+      vi: "Này, đi ăn trưa không? Priya cũng đi."
+    - speaker: "You"
+      en: "Sure. Where are we going?"
+      vi: "Đi chứ. Mình ăn ở đâu?"
+    - speaker: "Minh"
+      en: "The rice place downstairs. It's quick."
+      vi: "Quán cơm dưới nhà. Nhanh lắm."
+    - speaker: "Server"
+      en: "What can I get you?"
+      vi: "Anh chị dùng gì ạ?"
+    - speaker: "You"
+      en: "I'll have the chicken rice, please. For here."
+      vi: "Cho tôi cơm gà. Ăn tại chỗ."
+    - speaker: "Server"
+      en: "Anything to drink?"
+      vi: "Anh chị uống gì không ạ?"
+    - speaker: "You"
+      en: "Just water, thanks. How much is that?"
+      vi: "Nước lọc thôi, cảm ơn. Hết bao nhiêu ạ?"
+
+listening:
+  context_vi: >
+    Nghe một lượt gọi món trọn vẹn. Chú ý câu hỏi của nhân viên — hai câu này
+    lặp lại ở mọi quán, mọi nước.
+  speed: 0.9
+  voice: en_US_female
+  transcript_en: "What can I get you? Sure, one chicken rice. Is that for here or to go? For here. Anything to drink with that?"
+  transcript_vi: "Anh chị dùng gì ạ? Vâng, một cơm gà. Ăn tại chỗ hay mang đi ạ? Ăn tại chỗ. Anh chị uống gì kèm không?"
+  questions:
+    - kind: mcq_listen
+      prompt_vi: "Nhân viên hỏi gì sau khi nhận món?"
+      choices: ["Ăn tại chỗ hay mang đi", "Trả tiền mặt hay thẻ", "Có cần hoá đơn không"]
+      answer: 0
+      difficulty: 2
+      skill: Listening
+    - kind: mcq_listen
+      prompt_vi: "Khách chọn hình thức nào?"
+      choices: ["Mang đi", "Giao tận nơi", "Ăn tại chỗ"]
+      answer: 2
+      difficulty: 1
+      skill: Listening
+
+speaking_drills:
+  - kind: read_aloud
+    expected_text: "I'll have the chicken rice, please."
+    prompt_vi: "Đọc to. \"I'll\" đọc gọn thành /aɪl/, đừng tách thành hai từ."
+    ipa: "/aɪl hæv ðə ˈtʃɪkɪn raɪs pliːz/"
+    focus_phonemes: ["l", "tʃ"]
+  - kind: read_aloud
+    expected_text: "One coffee to go, please."
+    prompt_vi: "Câu này dùng mỗi sáng ở quán cà phê."
+    ipa: "/wʌn ˈkɒfi tuː ɡoʊ pliːz/"
+    focus_phonemes: ["f", "z"]
+  - kind: shadow
+    expected_text: "Want to grab lunch?"
+    prompt_vi: "Người bản xứ nói dính thành wanna-grab-lunch. Nghe rồi nhắc lại."
+    ipa: "/wɒnt tuː ɡræb lʌntʃ/"
+    focus_phonemes: ["ɡr", "tʃ"]
+  - kind: shadow
+    expected_text: "How much is the set lunch?"
+    prompt_vi: "Hỏi giá. Chú ý âm /tʃ/ cuối chữ much."
+    ipa: "/haʊ mʌtʃ ɪz ðə set lʌntʃ/"
+    focus_phonemes: ["tʃ", "ð"]
+  - kind: respond
+    prompt_en: "What can I get you?"
+    prompt_vi: "Nhân viên hỏi bạn gọi gì. Gọi một món bất kỳ."
+    accept_patterns:
+      - "I'll have"
+      - "Can I get"
+      - "I'd like"
+
+reading:
+  kind: chat
+  context_vi: >
+    Tin nhắn rủ ăn trưa trong nhóm. Để ý ba kiểu trả lời khác nhau.
+  text_en: |
+    Minh: Lunch at 12? Rice place downstairs.
+    Priya: Count me in.
+    David: I'm good, thanks - already ate at the hotel.
+    You: I'm in. Can we make it 12:15? I have a call until 12.
+  text_vi: |
+    Minh: Ăn trưa lúc 12 nhé? Quán cơm dưới nhà.
+    Priya: Cho tôi một suất.
+    David: Thôi tôi ổn rồi, cảm ơn - tôi ăn ở khách sạn rồi.
+    Bạn: Tôi đi. Dời sang 12:15 được không? Tôi có cuộc gọi tới 12 giờ.
+  questions:
+    - kind: mcq_read
+      prompt_en: "Who is not joining lunch?"
+      choices: ["Priya", "David", "Minh"]
+      answer: 1
+      difficulty: 1
+      reading_skill: scan
+      skill: Reading
+    - kind: mcq_read
+      prompt_en: "Why does the learner ask to move the time?"
+      choices: ["Traffic", "The place is closed", "A call until 12"]
+      answer: 2
+      difficulty: 2
+      reading_skill: scan
+      skill: Reading
+
+writing:
+  kind: FillBlank
+  prompt_vi: "Điền hai chỗ trống: một câu gọi món và một câu hỏi giá."
+  prompt_en: "I'll ___ the chicken rice, please. How ___ is that?"
+  blanks:
+    - ["have"]
+    - ["much"]
+  hint_vi: "Chỗ đầu là động từ trong mẫu gọi món. Chỗ sau nằm trong câu hỏi giá tiền."
+  sample_en: "I'll have the chicken rice, please. How much is that?"
+
+quiz:
+  - kind: mcq
+    prompt_vi: "Cách gọi món tự nhiên nhất là gì?"
+    choices: ["I'll have the chicken rice, please", "I want chicken rice", "Give me chicken rice"]
+    answer: 0
+    difficulty: 2
+    skill: Speaking
+  - kind: mcq
+    prompt_vi: "\"To go\" nghĩa là gì?"
+    choices: ["Ăn tại chỗ", "Mang đi", "Đặt trước"]
+    answer: 1
+    difficulty: 1
+    skill: Reading
+  - kind: mcq
+    prompt_vi: "Bạn đã ăn rồi và muốn từ chối nhẹ nhàng. Nói gì?"
+    choices: ["No", "I don't want", "I'm good, thanks. Already ate."]
+    answer: 2
+    difficulty: 2
+    skill: Speaking
+  - kind: mcq
+    prompt_vi: "Cách rủ đi ăn trưa tự nhiên nhất với đồng nghiệp?"
+    choices: ["Want to grab lunch?", "Do you want to eat lunch with me?", "Lunch?"]
+    answer: 0
+    difficulty: 2
+    skill: Speaking
+
+explanation:
+  why_vi: >
+    Người Việt học "I want" từ sách và dùng nó cho mọi thứ. Ở quán ăn, "I want"
+    nghe hơi thẳng và thiếu lịch sự — không phải sai, chỉ là không ai nói vậy.
+    Bữa trưa lại đúng là lúc dễ nói chuyện nhất trong ngày, nên đáng học cho đúng.
+  how_vi: >
+    Gọi món dùng "I'll have..." — đây là mẫu chuẩn ở mọi quán nói tiếng Anh.
+    Rủ đi ăn dùng "Want to grab...", ngắn và tự nhiên. Từ chối thì "I'm good, thanks"
+    kèm một lý do ngắn, để người rủ không thấy bị từ chối thẳng.
+  contrast_vi: >
+    "For here" là ăn tại chỗ, "to go" là mang đi. Nhân viên sẽ hỏi câu này mỗi lần,
+    nên nghe quen hai cụm là xong nửa cuộc hội thoại.
+
+common_mistakes:
+  - mistake: "Nói \"I want chicken rice\" khi gọi món"
+    why_vi: >
+      Dịch thẳng từ “tôi muốn cơm gà”. Ngữ pháp đúng nhưng nghe cộc,
+      giống trẻ con đòi hơn là khách gọi món.
+    fix_vi: "Đổi thành \"I'll have the chicken rice, please.\" Cùng ý, khác hẳn cảm giác."
+    detect_phoneme_missing: []
+  - mistake: "Từ chối lời rủ bằng một chữ \"No\""
+    why_vi: >
+      Tiếng Việt từ chối kèm sẵn lý do và từ đệm nên không cộc. Tiếng Anh chỉ có mỗi “No”
+      thì nghe như đang khó chịu với người rủ.
+    fix_vi: "Dùng \"I'm good, thanks\" cộng một lý do ngắn. Người rủ sẽ rủ tiếp lần sau."
+    detect_phoneme_missing: []
+  - mistake: "Tách \"I'll\" thành \"I will\" khi gọi món"
+    why_vi: >
+      Người học sợ nói tắt là sai. Thực tế “I will have” nghe trang trọng lạ thường
+      trong một quán cơm bình dân.
+    fix_vi: "Đọc gọn /aɪl/ trong một nhịp. Nói tắt ở đây mới là chuẩn."
+    detect_phoneme_missing: ["l"]
+
+memory_trick_vi: >
+  Ba câu là xong một bữa: GỌI bằng "I'll have", CHỌN bằng "for here / to go",
+  HỎI GIÁ bằng "How much is that?". Ba câu này dùng được ở mọi quán trên thế giới.

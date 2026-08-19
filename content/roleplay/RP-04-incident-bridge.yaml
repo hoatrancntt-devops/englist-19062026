@@ -1,0 +1,127 @@
+code: RP-04
+title_vi: "Cầu sự cố — bàn giao ca lúc 2 giờ sáng"
+context_vi: >-
+  Sự cố đã kéo dài ba tiếng. Bạn hết ca và phải bàn giao cho đồng nghiệp ở múi giờ khác.
+  Mục tiêu: nói rõ đang biết gì, đã thử gì, và bước tiếp theo là gì — để người nhận
+  không phải dò lại từ đầu.
+track: Infrastructure
+level: B1
+partner_name: "Dave — kỹ sư trực ca sau"
+start_node: n1
+
+nodes:
+  - code: n1
+    partner_line_en: "I've just joined the bridge. What's the current status?"
+    partner_line_vi: "Tôi vừa vào cầu sự cố. Tình hình hiện tại thế nào?"
+    choices:
+      - en: "Checkout is failing for about thirty percent of users since 23:10. It's degraded, not down. Root cause is still unknown."
+        vi: "Thanh toán lỗi với khoảng ba mươi phần trăm người dùng từ 23:10. Suy giảm chứ chưa chết hẳn. Nguyên nhân gốc vẫn chưa rõ."
+        next: n2
+        quality: good
+      - en: "It's still broken."
+        vi: "Vẫn đang hỏng."
+        next: n1b
+        quality: wrong
+        feedback_vi: >-
+          Người vừa vào không biết gì cả. Ba thứ họ cần ngay: cái gì hỏng, từ lúc nào,
+          mức độ ra sao. Thiếu chúng thì họ mất mười lăm phút chỉ để bắt kịp.
+      - en: "Checkout failing since 23:10, thirty percent."
+        vi: "Thanh toán lỗi từ 23:10, ba mươi phần trăm."
+        next: n2
+        quality: curt
+        feedback_vi: >-
+          Đủ dữ kiện nhưng thiếu một câu về mức độ. "Suy giảm chứ chưa chết hẳn" quyết định
+          người nhận ca có gọi thêm người lúc 2 giờ sáng hay không.
+
+  - code: n2
+    partner_line_en: "What have you already ruled out?"
+    partner_line_vi: "Bạn đã loại trừ được những gì rồi?"
+    choices:
+      - en: "We ruled out the payment gateway — their status page is green and our test transactions pass. We also ruled out the last deploy, it was six hours before the incident."
+        vi: "Bọn tôi đã loại trừ cổng thanh toán — trang trạng thái của họ xanh và giao dịch thử vẫn qua. Cũng loại trừ bản triển khai gần nhất, nó chạy trước sự cố sáu tiếng."
+        next: n3
+        quality: good
+      - en: "We tried a few things but nothing worked."
+        vi: "Bọn tôi thử vài thứ nhưng không được."
+        next: n2b
+        quality: wrong
+        feedback_vi: >-
+          "Vài thứ" khiến người nhận ca thử lại đúng những gì bạn vừa thử. Danh sách đã loại trừ
+          là phần giá trị nhất của một lần bàn giao.
+
+  - code: n3
+    partner_line_en: "Okay. What's the next thing you'd check?"
+    partner_line_vi: "Được. Việc tiếp theo bạn định kiểm tra là gì?"
+    choices:
+      - en: "The connection pool on database node two. Its wait time started climbing at 23:05, five minutes before the errors."
+        vi: "Connection pool trên node database số hai. Thời gian chờ của nó bắt đầu tăng lúc 23:05, năm phút trước khi có lỗi."
+        next: n4
+        quality: good
+      - en: "I'd restart the service and see what happens."
+        vi: "Tôi sẽ khởi động lại dịch vụ rồi xem sao."
+        next: n3b
+        quality: wrong
+        feedback_vi: >-
+          Khởi động lại có thể làm sự cố tạm biến mất và xoá luôn bằng chứng. Ở giờ thứ ba,
+          giữ được dấu vết quan trọng hơn là hết lỗi trong mười phút.
+
+  - code: n4
+    partner_line_en: "Got it. Anything I should not do?"
+    partner_line_vi: "Rõ. Có gì tôi không nên làm không?"
+    choices:
+      - en: "Don't fail over to node three. We tried that at 00:40 and it made the error rate worse."
+        vi: "Đừng chuyển sang node ba. Bọn tôi thử lúc 00:40 và tỷ lệ lỗi còn tệ hơn."
+        next: nEnd
+        quality: good
+      - en: "No, you're good."
+        vi: "Không, bạn cứ làm."
+        next: nEndCurt
+        quality: curt
+        feedback_vi: >-
+          Có một việc đã thử và làm mọi thứ tệ hơn. Không nói ra thì người nhận ca rất dễ
+          lặp lại nó — đây là câu hỏi quan trọng nhất họ vừa hỏi bạn.
+
+  - code: n1b
+    partner_line_en: "Broken how? I need something to work with here."
+    partner_line_vi: "Hỏng kiểu gì? Tôi cần cái gì đó để bắt đầu chứ."
+    terminal: true
+    success: false
+    summary_vi: >-
+      Bàn giao thất bại vì thiếu dữ kiện. Ba câu bắt buộc: cái gì hỏng, từ mấy giờ,
+      bao nhiêu phần trăm người dùng bị ảnh hưởng.
+
+  - code: n2b
+    partner_line_en: "That's not much to go on. I'll start from scratch then."
+    partner_line_vi: "Vậy thì chẳng có gì để bám. Thôi tôi làm lại từ đầu."
+    terminal: true
+    success: false
+    summary_vi: >-
+      Ba tiếng điều tra của bạn vừa bị vứt đi. Ghi lại danh sách đã loại trừ ngay trong lúc
+      xử lý, không phải lúc bàn giao mới nhớ lại.
+
+  - code: n3b
+    partner_line_en: "Let's hold off on that until we have more data."
+    partner_line_vi: "Khoan đã, chờ có thêm dữ liệu rồi tính."
+    terminal: true
+    success: false
+    summary_vi: >-
+      Khởi động lại là phản xạ dễ hiểu lúc 2 giờ sáng, nhưng nó xoá bằng chứng. Ưu tiên
+      thu thập dữ liệu trước khi làm bất cứ điều gì reset trạng thái.
+
+  - code: nEndCurt
+    partner_line_en: "Alright, I've got it from here. Go get some sleep."
+    partner_line_vi: "Được rồi, để tôi lo tiếp. Bạn đi ngủ đi."
+    terminal: true
+    success: true
+    summary_vi: >-
+      Bàn giao đủ dùng: trạng thái, đã loại trừ, bước kế tiếp. Còn thiếu phần cảnh báo
+      việc đã thử và làm mọi thứ tệ hơn.
+
+  - code: nEnd
+    partner_line_en: "Perfect, that saves me an hour. Get some rest."
+    partner_line_vi: "Chuẩn, tiết kiệm cho tôi cả tiếng. Bạn nghỉ đi."
+    terminal: true
+    success: true
+    summary_vi: >-
+      Bàn giao đúng chuẩn bốn phần: trạng thái có số, danh sách đã loại trừ, giả thuyết
+      tiếp theo kèm bằng chứng, và cảnh báo việc không nên lặp lại.

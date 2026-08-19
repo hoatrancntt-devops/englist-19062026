@@ -1,0 +1,263 @@
+schema_version: 1
+code: OFF-02
+slug: hoi-lam-ro-yeu-cau
+title_vi: "Hỏi làm rõ yêu cầu — trước khi làm sai cả ngày"
+title_en: "Clarifying what was asked"
+
+layer: Office
+track: Foundation
+level: A2
+unit_code: U-O1
+order_index: 2
+estimated_minutes: 11
+
+illustration: desk-laptop
+
+objective_vi: >
+  Hỏi lại cho rõ một yêu cầu công việc mà không để người giao việc thấy bạn kém,
+  và xác nhận lại bằng lời của chính mình.
+
+objective_observable: >
+  Nói lại đúng một yêu cầu bằng lời của mình trong 3 trên 4 drill, và nêu được câu hỏi làm rõ.
+
+mastery_weights:
+  Listening: 0.35
+  Speaking: 0.35
+  Reading: 0.15
+  Writing: 0.15
+
+prerequisites:
+  - lesson: OFF-01
+    min_mastery: 60
+    kind: Hard
+
+vocabulary:
+  - term: "Just to make sure"
+    ipa: "/dʒʌst tuː meɪk ʃʊr/"
+    meaning_vi: "cho chắc thì (mở đầu câu xác nhận)"
+    chunk: "Just to make sure I got it right..."
+    tags: [clarify, core]
+  - term: "Do you mean"
+    ipa: "/duː juː miːn/"
+    meaning_vi: "ý anh chị là"
+    chunk: "Do you mean all servers, or just production?"
+    tags: [clarify, core]
+  - term: "by when"
+    ipa: "/baɪ wen/"
+    meaning_vi: "hạn tới khi nào"
+    chunk: "By when do you need it?"
+    tags: [clarify, core]
+  - term: "which one"
+    ipa: "/wɪtʃ wʌn/"
+    meaning_vi: "cái nào (khi có nhiều lựa chọn)"
+    chunk: "Which one should I start with?"
+    tags: [clarify]
+  - term: "So the priority is"
+    ipa: "/soʊ ðə praɪˈɒrəti ɪz/"
+    meaning_vi: "vậy ưu tiên là"
+    chunk: "So the priority is the database first?"
+    tags: [clarify, office]
+  - term: "That's right"
+    ipa: "/ðæts raɪt/"
+    meaning_vi: "đúng vậy"
+    chunk: "That's right, database first."
+    tags: [clarify, core]
+
+sentence_patterns:
+  - pattern: "Just to make sure I got it right — {restatement}?"
+    meaning_vi: "Cho chắc thì em hiểu đúng chưa — {restatement}?"
+    slots:
+      restatement: ["you want the database first", "this is due Friday"]
+  - pattern: "Do you mean {option_a}, or {option_b}?"
+    meaning_vi: "Ý anh chị là {option_a}, hay {option_b}?"
+    slots:
+      option_a: ["all servers", "this week"]
+      option_b: ["just production", "next week"]
+
+dialogue:
+  context_vi: >
+    Linh giao việc nhanh giữa hành lang. Câu giao việc có hai chỗ mơ hồ,
+    và làm sai một trong hai là mất trọn một ngày.
+  turns:
+    - speaker: "Linh"
+      en: "Can you patch the servers before the weekend?"
+      vi: "Em vá bản vá cho mấy máy chủ trước cuối tuần được không?"
+    - speaker: "You"
+      en: "Sure. Do you mean all servers, or just the production ones?"
+      vi: "Vâng ạ. Ý chị là tất cả máy chủ, hay chỉ mấy máy production?"
+    - speaker: "Linh"
+      en: "Production only. Staging can wait."
+      vi: "Chỉ production thôi. Staging để sau cũng được."
+    - speaker: "You"
+      en: "Got it. And by when exactly — Friday end of day?"
+      vi: "Rõ rồi ạ. Còn hạn chính xác là khi nào — cuối ngày thứ Sáu ạ?"
+    - speaker: "Linh"
+      en: "Friday afternoon, before the change freeze at four."
+      vi: "Chiều thứ Sáu, trước lúc đóng băng thay đổi lúc bốn giờ."
+    - speaker: "You"
+      en: "Just to make sure I got it right — production servers only, patched before four on Friday."
+      vi: "Cho chắc thì em hiểu đúng chưa — chỉ máy production, vá xong trước bốn giờ chiều thứ Sáu."
+    - speaker: "Linh"
+      en: "That's right."
+      vi: "Đúng vậy."
+
+listening:
+  context_vi: >
+    Nghe một câu giao việc có ba chỗ mơ hồ. Thử tìm cả ba trước khi xem đáp án.
+  speed: 1.0
+  voice: en_US_male
+  transcript_en: "Hey, can you look at the backup issue and get back to me soon? Also, update the doc if you have time."
+  transcript_vi: "Này, bạn xem hộ vấn đề backup rồi báo lại tôi sớm nhé? À, cập nhật tài liệu nữa nếu có thời gian."
+  questions:
+    - kind: mcq_listen
+      prompt_vi: "Cụm nào mơ hồ nhất về thời gian?"
+      choices: ["soon", "also", "if you have time"]
+      answer: 0
+      difficulty: 2
+      skill: Listening
+    - kind: mcq_listen
+      prompt_vi: "Việc cập nhật tài liệu có bắt buộc không?"
+      choices: ["Bắt buộc", "Không cần làm", "Không rõ, cần hỏi lại"]
+      answer: 2
+      difficulty: 3
+      skill: Listening
+
+speaking_drills:
+  - kind: read_aloud
+    expected_text: "Do you mean all servers, or just production?"
+    prompt_vi: "Câu hỏi hai lựa chọn. Lên giọng ở vế đầu, xuống ở vế sau."
+    ipa: "/duː juː miːn ɔːl ˈsɜːrvərz ɔːr dʒʌst prəˈdʌkʃn/"
+    focus_phonemes: ["z", "ʃ"]
+  - kind: read_aloud
+    expected_text: "By when do you need it?"
+    prompt_vi: "Câu hỏi hạn chót. Ngắn nhưng cứu bạn khỏi rất nhiều rắc rối."
+    ipa: "/baɪ wen duː juː niːd ɪt/"
+    focus_phonemes: ["w", "d"]
+  - kind: shadow
+    expected_text: "Just to make sure I got it right."
+    prompt_vi: "Cụm mở đầu câu xác nhận. Nghe rồi nhắc lại."
+    ipa: "/dʒʌst tuː meɪk ʃʊr aɪ ɡɒt ɪt raɪt/"
+    focus_phonemes: ["dʒ", "ʃ"]
+  - kind: shadow
+    expected_text: "So the priority is the database first?"
+    prompt_vi: "Xác nhận thứ tự ưu tiên khi có nhiều việc."
+    ipa: "/soʊ ðə praɪˈɒrəti ɪz ðə ˈdeɪtəbeɪs fɜːrst/"
+    focus_phonemes: ["pr", "ð"]
+  - kind: respond
+    prompt_en: "Can you look at the backup issue and get back to me soon?"
+    prompt_vi: "Yêu cầu này mơ hồ về thời gian. Hỏi lại cho rõ."
+    accept_patterns:
+      - "By when"
+      - "Do you mean"
+      - "How soon"
+
+reading:
+  kind: chat
+  context_vi: >
+    Một yêu cầu mơ hồ và cách xử lý đúng. Đếm xem có mấy câu hỏi làm rõ.
+  text_en: |
+    David: Can you send over the report when it's ready?
+    You: Sure. Do you mean the monthly uptime report, or the incident summary?
+    David: Uptime report.
+    You: Got it. By when do you need it - end of week?
+    David: Wednesday would be better, I present on Thursday.
+    You: Just to make sure - uptime report, by Wednesday. I'll send it Tuesday evening.
+    David: Perfect.
+  text_vi: |
+    David: Bạn gửi tôi bản báo cáo khi nào xong nhé?
+    Bạn: Vâng. Ý anh là báo cáo uptime hằng tháng, hay bản tóm tắt sự cố ạ?
+    David: Báo cáo uptime.
+    Bạn: Rõ rồi. Anh cần trước khi nào - cuối tuần ạ?
+    David: Thứ Tư thì tốt hơn, thứ Năm tôi trình bày.
+    Bạn: Cho chắc - báo cáo uptime, trước thứ Tư. Em gửi tối thứ Ba.
+    David: Tuyệt.
+  questions:
+    - kind: mcq_read
+      prompt_en: "How many clarifying questions did the learner ask?"
+      choices: ["One", "Two", "Three"]
+      answer: 1
+      difficulty: 2
+      reading_skill: skim
+      skill: Reading
+    - kind: mcq_read
+      prompt_en: "When will the report actually be sent?"
+      choices: ["Thursday", "Wednesday", "Tuesday evening"]
+      answer: 2
+      difficulty: 2
+      reading_skill: scan
+      skill: Reading
+
+writing:
+  kind: GuidedEmail
+  prompt_vi: >
+    Sếp nhắn "fix the login issue soon". Viết tin nhắn hỏi lại cho rõ.
+    Phải có đủ ba ý: xác nhận đã nhận việc, hỏi phạm vi, và hỏi hạn chót.
+  prompt_en: "Reply asking to clarify a vague request."
+  required_points:
+    - "do you mean"
+    - "by when"
+    - "just to make sure"
+  hint_vi: "Ba ý: nhận việc, hỏi phạm vi, hỏi hạn. Rồi nhắc lại bằng lời của mình."
+  sample_en: "On it. Do you mean the login issue on the portal, or the VPN one? And by when do you need it? Just to make sure I plan the day right."
+
+quiz:
+  - kind: mcq
+    prompt_vi: "\"Get back to me soon\" mơ hồ ở chỗ nào?"
+    choices: ["Không rõ soon là bao lâu", "Không rõ ai làm", "Không rõ làm gì"]
+    answer: 0
+    difficulty: 1
+    skill: Listening
+  - kind: mcq
+    prompt_vi: "Cách xác nhận tốt nhất sau khi nhận việc?"
+    choices: ["OK", "Nhắc lại yêu cầu bằng lời của mình", "Gật đầu"]
+    answer: 1
+    difficulty: 2
+    skill: Speaking
+  - kind: mcq
+    prompt_vi: "Hỏi lại yêu cầu có làm bạn trông kém không?"
+    choices: ["Có, nên tránh", "Chỉ nên hỏi qua tin nhắn", "Không — làm sai cả ngày mới là kém"]
+    answer: 2
+    difficulty: 1
+    skill: Reading
+  - kind: mcq
+    prompt_vi: "Câu nào hỏi hạn chót rõ nhất?"
+    choices: ["By when do you need it?", "When?", "Is it urgent?"]
+    answer: 0
+    difficulty: 2
+    skill: Speaking
+
+explanation:
+  why_vi: >
+    Người mới sợ hỏi lại vì nghĩ sẽ bị đánh giá là chưa hiểu việc. Thực tế ngược lại:
+    người giao việc thấy bạn hỏi đúng chỗ mơ hồ thì biết bạn đang nghĩ về công việc.
+    Còn làm sai cả ngày rồi mới báo mới là thứ khiến người ta mất niềm tin.
+  how_vi: >
+    Mọi yêu cầu công việc đều nên soi ba chỗ: PHẠM VI (cái gì, tới đâu), HẠN CHÓT (khi nào),
+    và ƯU TIÊN (làm trước cái nào). Thiếu chỗ nào thì hỏi chỗ đó. Cuối cùng luôn
+    nhắc lại bằng lời của chính mình — đây là bước bắt lỗi hiểu nhầm hiệu quả nhất.
+  contrast_vi: >
+    "OK" nghĩa là bạn nghe thấy. "Production servers only, before four on Friday"
+    nghĩa là bạn đã hiểu. Chỉ câu thứ hai mới ngăn được việc làm sai.
+
+common_mistakes:
+  - mistake: "Nhận việc bằng một chữ OK rồi tự đoán phần còn lại"
+    why_vi: >
+      Ngại hỏi và tin rằng mình đoán đúng. Nhưng chỗ mơ hồ thường không phải chỗ bạn nghĩ,
+      và đoán sai thì mất cả ngày làm lại.
+    fix_vi: "Trước khi rời chỗ, hỏi đủ ba thứ: phạm vi, hạn chót, ưu tiên."
+    detect_phoneme_missing: []
+  - mistake: "Hỏi \"What do you mean?\" cụt lủn"
+    why_vi: >
+      Câu này nghe như bạn không hiểu gì cả, hoặc tệ hơn là đang chất vấn người giao việc.
+    fix_vi: "Hỏi hai lựa chọn cụ thể: \"Do you mean A, or B?\" Người kia chỉ cần chọn một."
+    detect_phoneme_missing: []
+  - mistake: "Bỏ qua bước nhắc lại bằng lời của mình"
+    why_vi: >
+      Cảm giác thừa vì vừa nghe xong. Nhưng đây đúng là chỗ hiểu nhầm lộ ra,
+      và lộ ra lúc đó thì sửa mất năm giây.
+    fix_vi: "Luôn đóng lại bằng \"Just to make sure I got it right — ...\"."
+    detect_phoneme_missing: []
+
+memory_trick_vi: >
+  Mọi yêu cầu soi ba chỗ: PHẠM VI, HẠN CHÓT, ƯU TIÊN.
+  Rồi đóng lại bằng một câu nhắc lại. Năm giây ở đây tiết kiệm cả ngày làm lại.

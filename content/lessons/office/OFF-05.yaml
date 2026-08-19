@@ -1,0 +1,261 @@
+schema_version: 1
+code: OFF-05
+slug: xin-giup-khi-bi-ket
+title_vi: "Xin giúp khi bị kẹt — trước khi mất cả ngày"
+title_en: "Asking for help before you lose a day"
+
+layer: Office
+track: Foundation
+level: B1
+unit_code: U-O2
+order_index: 5
+estimated_minutes: 11
+
+illustration: desk-laptop
+
+objective_vi: >
+  Xin giúp đúng cách: nêu điều đã thử, chỗ đang kẹt, và điều cần —
+  để người giúp không phải hỏi lại ba lượt.
+
+objective_observable: >
+  Viết được một lời xin giúp đủ ba phần, và nói được nó trong 3 trên 4 drill.
+
+mastery_weights:
+  Listening: 0.30
+  Speaking: 0.35
+  Reading: 0.15
+  Writing: 0.20
+
+prerequisites:
+  - lesson: OFF-04
+    min_mastery: 60
+    kind: Hard
+
+vocabulary:
+  - term: "I've tried"
+    ipa: "/aɪv traɪd/"
+    meaning_vi: "tôi đã thử"
+    chunk: "I've tried restarting the service."
+    tags: [help, core]
+  - term: "I'm stuck on"
+    ipa: "/aɪm stʌk ɒn/"
+    meaning_vi: "tôi đang kẹt ở"
+    chunk: "I'm stuck on the certificate error."
+    tags: [help, core]
+  - term: "Have you seen this before"
+    ipa: "/hæv juː siːn ðɪs bɪˈfɔːr/"
+    meaning_vi: "anh chị gặp cái này bao giờ chưa"
+    chunk: "Have you seen this error before?"
+    tags: [help, core]
+  - term: "point me in the right direction"
+    ipa: "/pɔɪnt miː ɪn ðə raɪt dəˈrekʃn/"
+    meaning_vi: "chỉ giúp tôi hướng đi"
+    chunk: "Could you point me in the right direction?"
+    tags: [help]
+  - term: "no rush"
+    ipa: "/noʊ rʌʃ/"
+    meaning_vi: "không gấp đâu"
+    chunk: "No rush, whenever you have a minute."
+    tags: [help, core]
+  - term: "That did it"
+    ipa: "/ðæt dɪd ɪt/"
+    meaning_vi: "cách đó được rồi (báo đã giải quyết xong)"
+    chunk: "That did it, thanks a lot."
+    tags: [help]
+
+sentence_patterns:
+  - pattern: "I'm stuck on {problem}. I've tried {attempts}."
+    meaning_vi: "Em đang kẹt ở {problem}. Em đã thử {attempts}."
+    slots:
+      problem: ["the certificate error", "the VPN timeout"]
+      attempts: ["restarting the service", "checking the logs"]
+  - pattern: "Have you seen {thing} before?"
+    meaning_vi: "Anh chị gặp {thing} bao giờ chưa?"
+    slots:
+      thing: ["this error", "this behaviour"]
+
+dialogue:
+  context_vi: >
+    Bạn đã mất hai tiếng cho một lỗi chứng chỉ. Cách bạn hỏi quyết định
+    Minh mất ba mươi giây hay ba mươi phút để giúp.
+  turns:
+    - speaker: "You"
+      en: "Minh, do you have a minute? I'm stuck on a certificate error on the portal."
+      vi: "Anh Minh, anh có một phút không? Em đang kẹt ở lỗi chứng chỉ trên portal."
+    - speaker: "Minh"
+      en: "What have you tried?"
+      vi: "Em thử gì rồi?"
+    - speaker: "You"
+      en: "I've checked the expiry date — it's valid until next year. I've also restarted nginx and cleared the cache."
+      vi: "Em kiểm tra hạn rồi — còn hạn tới sang năm. Em cũng khởi động lại nginx và xoá cache."
+    - speaker: "Minh"
+      en: "And the error is exactly what?"
+      vi: "Còn lỗi cụ thể là gì?"
+    - speaker: "You"
+      en: "Unknown certificate authority. Only from outside the office network."
+      vi: "Không nhận diện được nhà phát hành chứng chỉ. Chỉ xảy ra khi vào từ ngoài mạng công ty."
+    - speaker: "Minh"
+      en: "Ah — you're missing the intermediate certificate. Common one. I'll show you where it goes."
+      vi: "À — em thiếu chứng chỉ trung gian. Lỗi hay gặp lắm. Anh chỉ chỗ đặt nó cho."
+    - speaker: "You"
+      en: "That did it. Thanks a lot."
+      vi: "Được rồi ạ. Cảm ơn anh nhiều."
+
+listening:
+  context_vi: >
+    Nghe hai lời xin giúp. Một lời khiến người ta giúp được ngay, một lời không.
+  speed: 1.0
+  voice: en_US_female
+  transcript_en: "First one: the VPN is not working, can you help? Second one: I'm stuck on a VPN timeout from outside the office. I've tried a different client and checked the firewall rule. Have you seen this before?"
+  transcript_vi: "Câu thứ nhất: VPN không chạy được, giúp tôi với? Câu thứ hai: tôi đang kẹt ở lỗi VPN timeout khi vào từ ngoài văn phòng. Tôi đã thử client khác và kiểm tra quy tắc tường lửa. Bạn gặp cái này bao giờ chưa?"
+  questions:
+    - kind: mcq_listen
+      prompt_vi: "Lời nào giúp người nghe hành động được ngay?"
+      choices: ["Câu thứ hai", "Câu thứ nhất", "Cả hai như nhau"]
+      answer: 0
+      difficulty: 2
+      skill: Listening
+    - kind: mcq_listen
+      prompt_vi: "Câu thứ hai nêu mấy điều đã thử?"
+      choices: ["Một", "Ba", "Hai"]
+      answer: 2
+      difficulty: 2
+      skill: Listening
+
+speaking_drills:
+  - kind: read_aloud
+    expected_text: "I'm stuck on a certificate error."
+    prompt_vi: "Chú ý cụm /st/ và /k/ trong stuck."
+    ipa: "/aɪm stʌk ɒn ə sərˈtɪfɪkət ˈerər/"
+    focus_phonemes: ["st", "k"]
+  - kind: read_aloud
+    expected_text: "I've tried restarting the service."
+    prompt_vi: "Nêu điều đã thử — phần mà người mới hay bỏ qua nhất."
+    ipa: "/aɪv traɪd riːˈstɑːrtɪŋ ðə ˈsɜːrvɪs/"
+    focus_phonemes: ["tr", "ŋ"]
+  - kind: shadow
+    expected_text: "Have you seen this error before?"
+    prompt_vi: "Câu hỏi mở, để người kia kể kinh nghiệm. Nghe rồi nhắc lại."
+    ipa: "/hæv juː siːn ðɪs ˈerər bɪˈfɔːr/"
+    focus_phonemes: ["ð", "s"]
+  - kind: shadow
+    expected_text: "No rush, whenever you have a minute."
+    prompt_vi: "Cụm này làm lời nhờ bớt áp lực cho người nhận."
+    ipa: "/noʊ rʌʃ wenˈevər juː hæv ə ˈmɪnɪt/"
+    focus_phonemes: ["ʃ", "v"]
+  - kind: respond
+    prompt_en: "What have you tried?"
+    prompt_vi: "Người giúp hỏi bạn đã thử gì. Kể ít nhất hai việc bạn đã làm."
+    accept_patterns:
+      - "I've tried"
+      - "I checked"
+      - "I restarted"
+
+reading:
+  kind: chat
+  context_vi: >
+    Hai tin nhắn xin giúp trong cùng một kênh. Để ý tin nào nhận được câu trả lời hữu ích.
+  text_en: |
+    Minh: backup failing again, anyone know why?
+    You: Backup job 214 failing since 2am. Error is "insufficient space on target".
+    You: I've checked the target volume - 40% free. Also reran manually, same error.
+    You: Have you seen this before? No rush, it's not customer facing.
+    Priya: Yes - check the snapshot reserve, not the volume. Bites everyone once.
+  text_vi: |
+    Minh: backup lại lỗi, ai biết vì sao không?
+    Bạn: Job backup 214 lỗi từ 2 giờ sáng. Lỗi là "insufficient space on target".
+    Bạn: Em kiểm tra volume đích rồi - còn trống 40%. Cũng chạy tay lại, vẫn lỗi đó.
+    Bạn: Anh chị gặp cái này bao giờ chưa? Không gấp đâu, không ảnh hưởng khách.
+    Priya: Có - kiểm tra phần snapshot reserve, không phải volume. Ai cũng dính một lần.
+  questions:
+    - kind: mcq_read
+      prompt_en: "What was the real cause?"
+      choices: ["The volume was full", "The snapshot reserve", "The job was misconfigured"]
+      answer: 1
+      difficulty: 2
+      reading_skill: scan
+      skill: Reading
+    - kind: mcq_read
+      prompt_en: "Why did the second message get a useful answer?"
+      choices: ["It was longer", "It was posted later", "It gave the exact error and what was already tried"]
+      answer: 2
+      difficulty: 3
+      reading_skill: skim
+      skill: Reading
+
+writing:
+  kind: GuidedEmail
+  prompt_vi: >
+    Viết tin nhắn xin giúp về một lỗi. Phải đủ ba phần: lỗi cụ thể,
+    những gì bạn đã thử, và câu hỏi mở cho người giúp.
+  prompt_en: "Write a help request with three parts."
+  required_points:
+    - "stuck on"
+    - "I've tried"
+    - "have you seen"
+  hint_vi: "Ba phần: kẹt ở đâu, đã thử gì, hỏi mở. Thêm \"no rush\" nếu không gấp."
+  sample_en: "I'm stuck on a VPN timeout from outside the office. I've tried a different client and checked the firewall rule. Have you seen this before? No rush."
+
+quiz:
+  - kind: mcq
+    prompt_vi: "Xin giúp nên có mấy phần?"
+    choices: ["Ba: lỗi cụ thể, đã thử gì, hỏi mở", "Một: mô tả lỗi", "Hai: lỗi và lời cảm ơn"]
+    answer: 0
+    difficulty: 1
+    skill: Writing
+  - kind: mcq
+    prompt_vi: "Vì sao phải kể những gì đã thử?"
+    choices: ["Để chứng minh mình chăm chỉ", "Để người giúp không lặp lại việc bạn đã làm", "Để câu dài hơn"]
+    answer: 1
+    difficulty: 2
+    skill: Reading
+  - kind: mcq
+    prompt_vi: "Nên đợi bao lâu trước khi xin giúp?"
+    choices: ["Càng lâu càng tốt", "Hỏi ngay lập tức", "Đủ để thử vài cách, nhưng đừng để mất cả ngày"]
+    answer: 2
+    difficulty: 2
+    skill: Reading
+  - kind: mcq
+    prompt_vi: "\"No rush\" có tác dụng gì?"
+    choices: ["Làm lời nhờ bớt áp lực cho người nhận", "Cho biết việc không quan trọng", "Xin lỗi trước"]
+    answer: 0
+    difficulty: 2
+    skill: Speaking
+
+explanation:
+  why_vi: >
+    Người Việt ngại hỏi vì sợ bị coi là kém, nên cố tự xoay cho tới khi mất cả ngày.
+    Nhưng ở môi trường kỹ thuật, thứ bị đánh giá thấp không phải việc hỏi —
+    mà là hỏi mà không kèm thông tin, khiến người giúp phải khai thác từng câu.
+  how_vi: >
+    Ba phần, luôn theo thứ tự này: LỖI CỤ THỂ (nguyên văn thông báo lỗi),
+    ĐÃ THỬ GÌ (ít nhất hai việc), và CÂU HỎI MỞ. Phần thứ hai quan trọng nhất:
+    nó ngăn người giúp lặp lại đúng những gì bạn vừa làm.
+  contrast_vi: >
+    "Backup failing, anyone know why?" khiến người đọc phải hỏi năm câu.
+    "Job 214, insufficient space on target, checked the volume, reran manually" —
+    Priya trả lời đúng nguyên nhân trong một câu.
+
+common_mistakes:
+  - mistake: "Hỏi chung chung: \"Cái này không chạy, giúp mình với\""
+    why_vi: >
+      Người hỏi đang ở trong đầu vấn đề nên tưởng người khác cũng hiểu bối cảnh.
+      Thực tế người đọc không biết gì và phải khai thác từng chút.
+    fix_vi: "Dán nguyên văn thông báo lỗi. Một dòng lỗi đáng giá hơn ba đoạn mô tả."
+    detect_phoneme_missing: []
+  - mistake: "Không kể những gì đã thử"
+    why_vi: >
+      Nghĩ rằng nói ra thì lộ mình đã loay hoay lâu. Kết quả là người giúp
+      bảo bạn làm đúng những việc bạn vừa làm xong.
+    fix_vi: "Liệt kê ít nhất hai việc đã thử. Nó rút ngắn hẳn thời gian của cả hai bên."
+    detect_phoneme_missing: []
+  - mistake: "Cố tự xoay tới khi trễ hạn mới báo"
+    why_vi: >
+      Sợ làm phiền. Nhưng một câu hỏi ba mươi giây so với một ngày mất trắng
+      thì lựa chọn nào phiền hơn đã rõ.
+    fix_vi: "Đặt cho mình một ngưỡng thời gian. Quá ngưỡng đó thì hỏi, kèm đủ ba phần."
+    detect_phoneme_missing: []
+
+memory_trick_vi: >
+  Ba phần khi xin giúp: LỖI nguyên văn, ĐÃ THỬ hai việc, HỎI MỞ.
+  Phần giữa là phần cứu thời gian của cả hai người.

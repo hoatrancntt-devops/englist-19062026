@@ -1,0 +1,245 @@
+schema_version: 1
+code: LIFE-01
+slug: danh-van-ten-cua-ban
+title_vi: "Đánh vần tên của bạn qua điện thoại"
+title_en: "Spelling your name"
+
+layer: Life
+track: Foundation
+level: PreA1
+unit_code: U-L1
+order_index: 1
+estimated_minutes: 11
+
+illustration: phone-call
+
+objective_vi: >
+  Đọc được 26 chữ cái và đánh vần được tên mình cho người nước ngoài nghe,
+  kể cả qua điện thoại khi đường truyền không rõ.
+
+objective_observable: >
+  Đánh vần đúng họ tên đầy đủ của mình, đạt từ 75 điểm phát âm trên 3 trên 4 drill.
+
+mastery_weights:
+  Listening: 0.35
+  Speaking: 0.45
+  Reading: 0.10
+  Writing: 0.10
+
+prerequisites: []
+
+vocabulary:
+  - term: "spell"
+    ipa: "/spel/"
+    meaning_vi: "đánh vần"
+    chunk: "How do you spell that?"
+    tags: [core, verb]
+  - term: "as in"
+    ipa: "/æz ɪn/"
+    meaning_vi: "như trong (dùng để làm rõ chữ cái)"
+    chunk: "M as in Mike."
+    tags: [core, phone]
+  - term: "double"
+    ipa: "/ˈdʌbl/"
+    meaning_vi: "hai chữ giống nhau liền nhau"
+    chunk: "Double N."
+    tags: [core]
+  - term: "capital"
+    ipa: "/ˈkæpɪtl/"
+    meaning_vi: "chữ in hoa"
+    chunk: "Capital T."
+    tags: [core]
+  - term: "last name"
+    ipa: "/lɑːst neɪm/"
+    meaning_vi: "họ"
+    chunk: "My last name is Tran."
+    tags: [core, personal]
+  - term: "first name"
+    ipa: "/fɜːrst neɪm/"
+    meaning_vi: "tên"
+    chunk: "My first name is Minh."
+    tags: [core, personal]
+
+sentence_patterns:
+  - pattern: "My name is {name}."
+    meaning_vi: "Tên tôi là {name}."
+    slots:
+      name: ["Minh", "Linh", "Tran Van Minh"]
+  - pattern: "{letter} as in {word}."
+    meaning_vi: "Chữ {letter}, như trong từ {word}."
+    slots:
+      letter: ["M", "B", "T"]
+      word: ["Mike", "Bravo", "Tango"]
+
+dialogue:
+  context_vi: >
+    Ngày đầu ở công ty. Bộ phận IT gọi để cấp tài khoản cho bạn, nhưng đường truyền hơi rè
+    và họ không nghe rõ tên bạn. Đây là cuộc gọi tiếng Anh đầu tiên của bạn.
+  turns:
+    - speaker: "IT Support"
+      en: "Hi, I'm setting up your account. Can I get your full name?"
+      vi: "Chào bạn, tôi đang tạo tài khoản cho bạn. Cho tôi xin họ tên đầy đủ được không?"
+    - speaker: "You"
+      en: "Sure. My first name is Minh, M-I-N-H."
+      vi: "Vâng. Tên tôi là Minh, M-I-N-H."
+    - speaker: "IT Support"
+      en: "Sorry, was that M or N at the start?"
+      vi: "Xin lỗi, chữ đầu là M hay N vậy?"
+    - speaker: "You"
+      en: "M as in Mike. And my last name is Tran, T-R-A-N."
+      vi: "Chữ M, như trong Mike. Còn họ tôi là Tran, T-R-A-N."
+    - speaker: "IT Support"
+      en: "Got it. Minh Tran. Your account will be ready in ten minutes."
+      vi: "Rõ rồi. Minh Tran. Tài khoản của bạn sẽ xong trong mười phút."
+
+listening:
+  context_vi: >
+    Nghe lại đúng đoạn hay bị nhầm nhất: khi người ta hỏi lại một chữ cái.
+    Tai chưa quen sẽ nghe M và N gần như giống nhau.
+  speed: 0.8
+  voice: en_US_female
+  transcript_en: "Sorry, was that M or N at the start? M as in Mike. Got it, Minh Tran."
+  transcript_vi: "Xin lỗi, chữ đầu là M hay N? Chữ M, như trong Mike. Rõ rồi, Minh Tran."
+  questions:
+    - kind: mcq_listen
+      prompt_vi: "Người kia hỏi lại chữ nào?"
+      choices: ["M hay N", "B hay P", "S hay F"]
+      answer: 0
+      difficulty: 2
+      skill: Listening
+    - kind: mcq_listen
+      prompt_vi: "Bạn làm rõ chữ M bằng cách nào?"
+      choices: ["Nói to hơn", "Đánh vần lại từ đầu", "Nói M as in Mike"]
+      answer: 2
+      difficulty: 1
+      skill: Listening
+
+speaking_drills:
+  - kind: read_aloud
+    expected_text: "My first name is Minh."
+    prompt_vi: "Đọc to. Chú ý âm cuối /st/ của first — người Việt hay nuốt mất."
+    ipa: "/maɪ fɜːrst neɪm ɪz mɪn/"
+    focus_phonemes: ["st"]
+  - kind: read_aloud
+    expected_text: "M as in Mike."
+    prompt_vi: "Đây là câu cứu bạn khi người ta nghe nhầm chữ cái. Đọc rõ từng tiếng."
+    ipa: "/em æz ɪn maɪk/"
+    focus_phonemes: ["m"]
+  - kind: shadow
+    expected_text: "How do you spell that?"
+    prompt_vi: "Nghe rồi nhắc lại. Câu này bạn sẽ dùng nhiều hơn bạn tưởng."
+    ipa: "/haʊ duː juː spel ðæt/"
+    focus_phonemes: ["sp", "ð"]
+  - kind: shadow
+    expected_text: "My last name is Tran, T-R-A-N."
+    prompt_vi: "Đánh vần từng chữ, ngắt nhẹ giữa các chữ cái."
+    ipa: "/maɪ lɑːst neɪm ɪz trɑːn/"
+    focus_phonemes: ["st", "tr"]
+  - kind: respond
+    prompt_en: "Can I get your full name?"
+    prompt_vi: "Người ta hỏi họ tên đầy đủ của bạn. Trả lời và đánh vần tên thật của bạn."
+    accept_patterns:
+      - "My name is"
+      - "My first name is"
+      - "It's"
+
+reading:
+  kind: chat
+  context_vi: >
+    Sau cuộc gọi, bộ phận IT nhắn lại để xác nhận. Đọc kỹ — có một chỗ họ ghi sai.
+  text_en: |
+    IT Support: Account created for Minh Tram. Username: mtram
+    You: Small correction - my last name is Tran, not Tram. T-R-A-N.
+    IT Support: Sorry about that. Fixed. Username is now mtran.
+  text_vi: |
+    IT Support: Đã tạo tài khoản cho Minh Tram. Tên đăng nhập: mtram
+    Bạn: Sửa giúp mình chút - họ mình là Tran, không phải Tram. T-R-A-N.
+    IT Support: Xin lỗi bạn. Đã sửa. Tên đăng nhập giờ là mtran.
+  questions:
+    - kind: mcq_read
+      prompt_en: "What was wrong in the first message?"
+      choices: ["The first name", "The last name", "The username was missing"]
+      answer: 1
+      difficulty: 1
+      reading_skill: scan
+      skill: Reading
+    - kind: mcq_read
+      prompt_en: "What is the correct username?"
+      choices: ["mtram", "minhtran", "mtran"]
+      answer: 2
+      difficulty: 2
+      reading_skill: scan
+      skill: Reading
+
+writing:
+  kind: FillBlank
+  prompt_vi: "Điền hai chỗ trống để làm rõ chữ cái đang bị nghe nhầm."
+  prompt_en: "B ___ in Bravo. My ___ name is Tran."
+  blanks:
+    - ["as"]
+    - ["last"]
+  hint_vi: "Chỗ đầu là cụm để làm rõ chữ cái. Chỗ sau là từ chỉ họ."
+  sample_en: "B as in Bravo. My last name is Tran."
+
+quiz:
+  - kind: mcq
+    prompt_vi: "Người ta nghe nhầm chữ B thành P. Bạn nói gì?"
+    choices: ["B as in Bravo", "Big B", "The letter B"]
+    answer: 0
+    difficulty: 2
+    skill: Speaking
+  - kind: mcq
+    prompt_vi: "\"Last name\" nghĩa là gì?"
+    choices: ["Tên", "Họ", "Tên đệm"]
+    answer: 1
+    difficulty: 1
+    skill: Reading
+  - kind: mcq
+    prompt_vi: "Tên bạn có hai chữ N liền nhau. Nói thế nào cho nhanh?"
+    choices: ["Two N", "N and N", "Double N"]
+    answer: 2
+    difficulty: 2
+    skill: Speaking
+  - kind: mcq
+    prompt_vi: "Bạn không nghe rõ tên người ta. Hỏi lại thế nào?"
+    choices: ["How do you spell that?", "What?", "Say again name"]
+    answer: 0
+    difficulty: 1
+    skill: Speaking
+
+explanation:
+  why_vi: >
+    Tên tiếng Việt hầu như luôn bị người nước ngoài nghe sai ở lần đầu, vì họ không có
+    khung âm để đoán. Bạn không sai gì cả — chỉ là họ chưa từng nghe tên này bao giờ.
+    Đánh vần là cách duy nhất để chắc chắn, và nó cần đúng một kỹ năng: đọc rõ 26 chữ cái.
+  how_vi: >
+    Đọc chậm từng chữ, ngắt nhẹ giữa các chữ. Chữ nào dễ nhầm thì thêm ngay
+    "as in" cộng một từ quen thuộc. Người bản xứ làm chính xác như vậy trên điện thoại,
+    đây không phải cách nói của người kém tiếng Anh.
+  contrast_vi: >
+    M và N nghe gần giống nhau qua điện thoại. "M as in Mike" giải quyết dứt điểm
+    trong một giây, còn lặp lại "M! M!" to hơn thì không.
+
+common_mistakes:
+  - mistake: "Đọc liền tên như tiếng Việt thay vì đánh vần từng chữ"
+    why_vi: >
+      Tiếng Việt đọc theo âm tiết nên bạn quen đọc trọn tên. Người nghe không tách được
+      thành chữ cái và sẽ ghi sai.
+    fix_vi: "Nói tên trước, rồi đánh vần ngay sau đó, ngắt nhẹ giữa mỗi chữ cái."
+    detect_phoneme_missing: []
+  - mistake: "Nuốt âm cuối trong first và last"
+    why_vi: >
+      Tiếng Việt không có cụm phụ âm cuối như /st/, nên miệng tự bỏ bớt.
+      “First” thành “fơ”, “last” thành “lát”.
+    fix_vi: "Kéo dài nhẹ phần cuối: firsT, lasT. Cường điệu lúc tập, thu về mức tự nhiên sau."
+    detect_phoneme_missing: ["st", "t"]
+  - mistake: "Im lặng khi bị nghe nhầm, để người ta ghi sai rồi sửa sau"
+    why_vi: >
+      Ngại làm phiền là phản xạ tự nhiên, nhưng sai tên trong hệ thống thì phải mở ticket để sửa,
+      phiền hơn nhiều.
+    fix_vi: "Sửa ngay và nhẹ nhàng: \"Small correction — it's Tran, T-R-A-N.\""
+    detect_phoneme_missing: []
+
+memory_trick_vi: >
+  Nhớ đúng một công thức: TÊN, rồi ĐÁNH VẦN, rồi AS IN nếu bị hỏi lại.
+  Ba bước này xử lý được mọi cuộc gọi giới thiệu tên, ở bất kỳ nước nào.

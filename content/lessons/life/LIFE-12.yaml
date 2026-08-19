@@ -1,0 +1,250 @@
+schema_version: 1
+code: LIFE-12
+slug: mua-ban-va-tien
+title_vi: "Mua bán và tiền"
+title_en: "Shopping and money"
+
+layer: Life
+track: Foundation
+level: A2
+unit_code: U-L2
+order_index: 12
+estimated_minutes: 11
+
+illustration: money-receipt
+
+objective_vi: >
+  Hỏi giá, trả tiền, và xử lý được khi tính sai tiền hoặc thẻ không quẹt được.
+
+objective_observable: >
+  Nghe đúng số tiền trong 4 trên 5 câu, và nói được câu hỏi lại khi hoá đơn có vấn đề.
+
+mastery_weights:
+  Listening: 0.40
+  Speaking: 0.30
+  Reading: 0.15
+  Writing: 0.15
+
+prerequisites:
+  - lesson: LIFE-11
+    min_mastery: 60
+    kind: Hard
+
+vocabulary:
+  - term: "How much does it cost"
+    ipa: "/haʊ mʌtʃ dʌz ɪt kɒst/"
+    meaning_vi: "cái này giá bao nhiêu"
+    chunk: "How much does it cost?"
+    tags: [money, core]
+  - term: "Do you take card"
+    ipa: "/duː juː teɪk kɑːrd/"
+    meaning_vi: "ở đây có nhận thẻ không"
+    chunk: "Do you take card?"
+    tags: [money, core]
+  - term: "Keep the change"
+    ipa: "/kiːp ðə tʃeɪndʒ/"
+    meaning_vi: "khỏi thối lại"
+    chunk: "Keep the change, thanks."
+    tags: [money]
+  - term: "receipt"
+    ipa: "/rɪˈsiːt/"
+    meaning_vi: "hoá đơn (chữ p câm)"
+    chunk: "Could I get a receipt?"
+    tags: [money, core]
+  - term: "I think there's a mistake"
+    ipa: "/aɪ θɪŋk ðerz ə mɪˈsteɪk/"
+    meaning_vi: "tôi nghĩ có nhầm lẫn"
+    chunk: "Sorry, I think there's a mistake on the bill."
+    tags: [money, core]
+  - term: "It's declined"
+    ipa: "/ɪts dɪˈklaɪnd/"
+    meaning_vi: "thẻ bị từ chối"
+    chunk: "Sorry, it's declined. Try another card?"
+    tags: [money]
+
+sentence_patterns:
+  - pattern: "How much {question}?"
+    meaning_vi: "Bao nhiêu {question}?"
+    slots:
+      question: ["does it cost", "is the total", "for two"]
+  - pattern: "Sorry, I think there's a mistake {where}."
+    meaning_vi: "Xin lỗi, tôi nghĩ có nhầm lẫn {where}."
+    slots:
+      where: ["on the bill", "with the total", "here"]
+
+dialogue:
+  context_vi: >
+    Bạn trả tiền bữa trưa cho cả nhóm rồi thu lại sau. Hoá đơn có một món bạn không gọi —
+    đây là lúc cần nói, chứ không phải trả cho xong.
+  turns:
+    - speaker: "Cashier"
+      en: "That'll be four hundred and fifty thousand."
+      vi: "Của anh hết bốn trăm năm mươi nghìn ạ."
+    - speaker: "You"
+      en: "Sorry, I think there's a mistake. We had three sets, not four."
+      vi: "Xin lỗi, tôi nghĩ có nhầm lẫn. Bọn tôi gọi ba suất, không phải bốn."
+    - speaker: "Cashier"
+      en: "Let me check. You're right, sorry about that. Three fifty then."
+      vi: "Để tôi kiểm tra. Anh nói đúng, tôi xin lỗi. Vậy là ba trăm năm mươi."
+    - speaker: "You"
+      en: "No worries. Do you take card?"
+      vi: "Không sao. Ở đây nhận thẻ không ạ?"
+    - speaker: "Cashier"
+      en: "We do. Hmm, sorry — it's declined. Do you have another one?"
+      vi: "Có ạ. Ơ, xin lỗi anh — thẻ bị từ chối. Anh có thẻ khác không?"
+    - speaker: "You"
+      en: "I'll pay cash then. Could I get a receipt?"
+      vi: "Vậy tôi trả tiền mặt. Cho tôi xin hoá đơn nhé?"
+
+listening:
+  context_vi: >
+    Nghe hai con số tiền liền nhau. Đây là chỗ dễ nghe nhầm nhất — nhất là
+    khi hàng chục và hàng trăm đọc gần giống nhau.
+  speed: 0.95
+  voice: en_US_male
+  transcript_en: "The set lunch is fifty thousand, and the coffee is fifteen thousand. Total is sixty-five thousand."
+  transcript_vi: "Suất cơm trưa năm mươi nghìn, cà phê mười lăm nghìn. Tổng là sáu mươi lăm nghìn."
+  questions:
+    - kind: mcq_listen
+      prompt_vi: "Cà phê giá bao nhiêu?"
+      choices: ["15.000", "50.000", "5.000"]
+      answer: 0
+      difficulty: 3
+      skill: Listening
+    - kind: mcq_listen
+      prompt_vi: "Tổng cộng hết bao nhiêu?"
+      choices: ["60.000", "56.000", "65.000"]
+      answer: 2
+      difficulty: 2
+      skill: Listening
+
+speaking_drills:
+  - kind: read_aloud
+    expected_text: "How much does it cost?"
+    prompt_vi: "Đọc to. Chú ý cụm /st/ cuối chữ cost."
+    ipa: "/haʊ mʌtʃ dʌz ɪt kɒst/"
+    focus_phonemes: ["tʃ", "st"]
+  - kind: read_aloud
+    expected_text: "Could I get a receipt?"
+    prompt_vi: "Chữ p trong receipt CÂM. Đọc là ri-SEET."
+    ipa: "/kʊd aɪ ɡet ə rɪˈsiːt/"
+    focus_phonemes: ["s", "t"]
+  - kind: shadow
+    expected_text: "Sorry, I think there's a mistake on the bill."
+    prompt_vi: "Câu khó nói nhất bài này, không phải vì phát âm mà vì phải dám nói."
+    ipa: "/ˈsɒri aɪ θɪŋk ðerz ə mɪˈsteɪk ɒn ðə bɪl/"
+    focus_phonemes: ["θ", "ð"]
+  - kind: shadow
+    expected_text: "Do you take card?"
+    prompt_vi: "Câu hỏi ngắn, dùng ở mọi quán. Chú ý âm cuối /d/ của card."
+    ipa: "/duː juː teɪk kɑːrd/"
+    focus_phonemes: ["k", "d"]
+  - kind: respond
+    prompt_en: "That'll be four hundred and fifty thousand."
+    prompt_vi: "Bạn nghĩ số tiền bị tính nhầm. Nói lại cho lịch sự."
+    accept_patterns:
+      - "I think there's a mistake"
+      - "Could you check"
+      - "Sorry"
+
+reading:
+  kind: chat
+  context_vi: >
+    Bạn nhắn nhóm để thu lại tiền ăn trưa. Để ý cách chia tiền cho rõ ràng.
+  text_en: |
+    You: I paid for lunch - 350k total for three sets.
+    You: That's about 117k each. No rush, transfer whenever.
+    Priya: Sent. Thanks for covering.
+    Minh: Sending now. Did you get a receipt? I need it for the claim.
+    You: Yes, taking a photo now.
+  text_vi: |
+    Bạn: Mình trả tiền trưa rồi - tổng 350k cho ba suất.
+    Bạn: Khoảng 117k mỗi người. Không gấp đâu, khi nào tiện chuyển cũng được.
+    Priya: Chuyển rồi nhé. Cảm ơn bạn đã trả giúp.
+    Minh: Đang chuyển đây. Bạn có lấy hoá đơn không? Mình cần để làm thanh toán.
+    Bạn: Có, mình chụp ảnh ngay đây.
+  questions:
+    - kind: mcq_read
+      prompt_en: "How much does each person owe?"
+      choices: ["350k", "117k", "50k"]
+      answer: 1
+      difficulty: 2
+      reading_skill: scan
+      skill: Reading
+    - kind: mcq_read
+      prompt_en: "Why does Minh need the receipt?"
+      choices: ["For his records only", "To check the price", "For the expense claim"]
+      answer: 2
+      difficulty: 2
+      reading_skill: scan
+      skill: Reading
+
+writing:
+  kind: FillBlank
+  prompt_vi: "Điền hai chỗ trống: một câu hỏi giá và một câu báo hoá đơn sai."
+  prompt_en: "How ___ does it cost? Sorry, I think there's a ___ on the bill."
+  blanks:
+    - ["much"]
+    - ["mistake", "error"]
+  hint_vi: "Chỗ đầu nằm trong câu hỏi giá. Chỗ sau là từ chỉ sự nhầm lẫn."
+  sample_en: "How much does it cost? Sorry, I think there's a mistake on the bill."
+
+quiz:
+  - kind: mcq
+    prompt_vi: "Chữ nào trong \"receipt\" là câm?"
+    choices: ["p", "c", "t"]
+    answer: 0
+    difficulty: 2
+    skill: Speaking
+  - kind: mcq
+    prompt_vi: "Hoá đơn tính thừa một món. Bạn nói gì?"
+    choices: ["You are wrong", "Sorry, I think there's a mistake on the bill", "No pay"]
+    answer: 1
+    difficulty: 2
+    skill: Speaking
+  - kind: mcq
+    prompt_vi: "\"It's declined\" nghĩa là gì?"
+    choices: ["Đã thanh toán xong", "Được giảm giá", "Thẻ bị từ chối"]
+    answer: 2
+    difficulty: 2
+    skill: Listening
+  - kind: mcq
+    prompt_vi: "Bạn muốn hỏi quán có nhận thẻ không?"
+    choices: ["Do you take card?", "Card OK?", "I have card"]
+    answer: 0
+    difficulty: 1
+    skill: Speaking
+
+explanation:
+  why_vi: >
+    Hai chỗ khó ở đây không phải từ vựng. Thứ nhất là nghe số tiền — cặp fifty với fifteen
+    lại quay về đúng bài số đếm bạn đã học. Thứ hai là dám nói khi bị tính sai:
+    người Việt thường trả cho xong vì ngại làm to chuyện.
+  how_vi: >
+    Với số tiền, luôn nhắc lại con số để xác nhận trước khi trả. Với hoá đơn sai,
+    dùng mẫu mềm "Sorry, I think there's a mistake" — câu này không đổ lỗi cho ai,
+    chỉ nêu vấn đề, nên người bán dễ kiểm tra lại mà không thấy bị công kích.
+  contrast_vi: >
+    "How much is it?" hỏi giá một món. "How much is the total?" hỏi tổng cả hoá đơn.
+    Nhầm hai câu này thì bạn trả tiền một món mà tưởng đã trả hết.
+
+common_mistakes:
+  - mistake: "Trả tiền cho xong khi biết hoá đơn sai"
+    why_vi: >
+      Ngại làm to chuyện và sợ tiếng Anh không đủ để giải thích. Nhưng câu cần dùng
+      chỉ có bảy chữ, và người bán gặp tình huống này mỗi ngày.
+    fix_vi: "Học thuộc đúng một câu: \"Sorry, I think there's a mistake.\" Chỉ cần vậy là đủ."
+    detect_phoneme_missing: []
+  - mistake: "Phát âm chữ p trong receipt"
+    why_vi: "Người học đọc theo mặt chữ. Đây là một trong số ít từ tiếng Anh có phụ âm câm giữa từ."
+    fix_vi: "Nhớ nó đọc là ri-SEET. Nghe như không có chữ p nào cả."
+    detect_phoneme_missing: []
+  - mistake: "Nghe nhầm fifty thành fifteen khi nói về tiền"
+    why_vi: >
+      Vẫn là cặp trọng âm của bài số đếm, nhưng lần này sai thì mất tiền thật.
+    fix_vi: "Nhắc lại con số trước khi trả: \"Fifty, five zero?\" Người bán luôn xác nhận lại."
+    detect_phoneme_missing: ["f"]
+
+memory_trick_vi: >
+  Trước khi trả tiền, luôn làm hai việc: NHẮC LẠI con số, và XIN hoá đơn.
+  Hai việc này ngăn gần hết rắc rối về tiền bạc.

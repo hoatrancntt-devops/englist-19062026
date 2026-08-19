@@ -1,0 +1,348 @@
+schema_version: 1
+code: RD-01
+slug: doc-log-tim-loi
+title_vi: "Đọc log tìm lỗi — dòng nào là nguyên nhân, dòng nào chỉ là hậu quả"
+title_en: "Reading logs to find the cause"
+
+layer: Professional
+track: Reading
+level: B1
+unit_code: U-RD1
+order_index: 1
+estimated_minutes: 12
+is_checkpoint: false
+
+illustration: log-lines
+
+objective_vi: >
+  Đọc một đoạn log tiếng Anh và chỉ ra được dòng nào là nguyên nhân đầu tiên,
+  dòng nào chỉ là hậu quả dây chuyền của nó.
+
+objective_observable: >
+  Đạt từ 75 điểm trên cả bốn trục kỹ năng, không trục nào dưới 60.
+
+mastery_weights:
+  Listening: 0.15
+  Speaking: 0.20
+  Reading: 0.45
+  Writing: 0.20
+
+prerequisites:
+  - lesson: OFF-12
+    min_mastery: 70
+    kind: Hard
+  - lesson: INF-02
+    min_mastery: 65
+    kind: Soft
+  - lesson: HD-02
+    min_mastery: 65
+    kind: Soft
+
+vocabulary:
+  - term: "stack trace"
+    ipa: "/stæk treɪs/"
+    meaning_vi: "chuỗi hàm dẫn tới lỗi"
+    chunk: "The stack trace points to the config loader."
+    tags: [reading, core]
+  - term: "caused by"
+    ipa: "/kɔːzd baɪ/"
+    meaning_vi: "gây ra bởi — dẫn tới lỗi gốc bên dưới"
+    chunk: "Caused by: connection refused."
+    tags: [reading, core]
+  - term: "the first error"
+    ipa: "/ðə fɜːrst ˈerər/"
+    meaning_vi: "lỗi đầu tiên theo thời gian"
+    chunk: "Scroll up to the first error, not the last one."
+    tags: [reading, core]
+  - term: "timed out"
+    ipa: "/taɪmd aʊt/"
+    meaning_vi: "hết thời gian chờ"
+    chunk: "The request timed out after 30 seconds."
+    tags: [reading, core]
+  - term: "retry"
+    ipa: "/ˈriːtraɪ/"
+    meaning_vi: "thử lại"
+    chunk: "It retried three times before giving up."
+    tags: [reading, core]
+  - term: "knock-on effect"
+    ipa: "/nɒk ɒn ɪˈfekt/"
+    meaning_vi: "hậu quả dây chuyền"
+    chunk: "The other errors are a knock-on effect."
+    tags: [reading, core]
+
+sentence_patterns:
+  - pattern: "The first error is {error} at {time}."
+    meaning_vi: "Lỗi đầu tiên là {error} lúc {time}."
+    slots:
+      error: ["connection refused", "disk full", "certificate expired"]
+      time: ["02:14", "09:31", "23:07"]
+  - pattern: "Everything after that is a knock-on effect of {cause}."
+    meaning_vi: "Mọi thứ sau đó là hậu quả dây chuyền của {cause}."
+    slots:
+      cause: ["the database being unreachable", "the disk filling up", "the expired certificate"]
+
+dialogue:
+  context_vi: >
+    Anh Sơn gửi bạn một đoạn log dài và nói "đầy lỗi". Bạn phải tìm ra
+    dòng nào mới thật sự quan trọng.
+  turns:
+    - speaker: "Sơn"
+      en: "The log is full of errors. There are hundreds of them."
+      vi: "Log đầy lỗi. Hàng trăm dòng luôn."
+    - speaker: "You"
+      en: "Hundreds usually means one. What's the first error by time, not the last one you scrolled to?"
+      vi: "Hàng trăm thường là một thôi anh. Lỗi đầu tiên theo thời gian là gì, không phải cái cuối anh vừa cuộn tới?"
+    - speaker: "Sơn"
+      en: "Let me look. 02:14, connection refused to the database."
+      vi: "Để anh xem. Lúc 02:14, connection refused tới cơ sở dữ liệu."
+    - speaker: "You"
+      en: "That's the one. What are the errors after it?"
+      vi: "Đúng cái đó rồi. Các lỗi sau nó là gì ạ?"
+    - speaker: "Sơn"
+      en: "Timeouts, mostly. And then a lot of retry failed."
+      vi: "Chủ yếu là timeout. Rồi một loạt retry failed."
+    - speaker: "You"
+      en: "Those are a knock-on effect. If the database is unreachable, everything downstream times out. Fixing them one by one won't help."
+      vi: "Đó là hậu quả dây chuyền. Cơ sở dữ liệu không tới được thì mọi thứ phía sau đều timeout. Sửa từng cái không giải quyết được gì."
+    - speaker: "Sơn"
+      en: "So why was the connection refused?"
+      vi: "Vậy sao connection bị từ chối?"
+    - speaker: "You"
+      en: "That's the right question. Look for a caused by line under it, or check whether the database restarted at 02:14."
+      vi: "Đó mới là câu hỏi đúng. Tìm dòng caused by bên dưới, hoặc kiểm xem cơ sở dữ liệu có khởi động lại lúc 02:14 không."
+
+listening:
+  context_vi: >
+    Nghe hai người mô tả cùng một đoạn log. Chú ý ai đọc theo thứ tự
+    thời gian và ai đọc từ dưới lên.
+  speed: 1.2
+  voice: en_US_male
+  transcript_en: "Person one: the log shows retry failed, retry failed, retry failed, so the retry logic is broken and we should fix that. Person two: the last lines say retry failed, but the first error by time is connection refused at 02:14. Everything after it is a knock-on effect. The retry logic is doing exactly what it should - it is retrying something that is not there."
+  transcript_vi: "Người một: log hiện retry failed, retry failed, retry failed, vậy logic thử lại bị hỏng và mình nên sửa cái đó. Người hai: mấy dòng cuối ghi retry failed, nhưng lỗi đầu tiên theo thời gian là connection refused lúc 02:14. Mọi thứ sau đó là hậu quả dây chuyền. Logic thử lại đang làm đúng việc của nó - nó đang thử lại một thứ không tồn tại."
+  questions:
+    - kind: mcq_listen
+      prompt_vi: "Người một mắc lỗi đọc log nào?"
+      choices: ["Đọc từ dòng cuối thay vì tìm lỗi đầu tiên theo thời gian", "Đọc quá nhanh", "Không đọc dấu thời gian"]
+      answer: 0
+      difficulty: 2
+      skill: Listening
+    - kind: mcq_listen
+      prompt_vi: "Lỗi đầu tiên theo thời gian là gì?"
+      choices: ["Retry failed", "Timeout", "Connection refused lúc 02:14"]
+      answer: 2
+      difficulty: 2
+      skill: Listening
+    - kind: mcq_listen
+      prompt_vi: "Vì sao logic thử lại không phải chỗ cần sửa?"
+      choices: ["Vì nó mới viết", "Vì nó đang làm đúng việc — thử lại một thứ không tồn tại", "Vì nó chạy nhanh"]
+      answer: 1
+      difficulty: 3
+      skill: Listening
+
+speaking_drills:
+  - kind: read_aloud
+    expected_text: "What is the first error by time, not the last one?"
+    prompt_vi: "Câu hỏi đầu tiên khi ai đó đưa bạn một đoạn log."
+    ipa: "/wɒt ɪz ðə fɜːrst ˈerər baɪ taɪm/"
+    focus_phonemes: ["fɜːr", "st"]
+  - kind: read_aloud
+    expected_text: "Everything after that is a knock-on effect."
+    prompt_vi: "Câu này ngăn cả nhóm đi sửa hàng chục lỗi giả."
+    ipa: "/ˈevriθɪŋ ˈɑːftər ðæt ɪz ə nɒk ɒn ɪˈfekt/"
+    focus_phonemes: ["θ", "kt"]
+  - kind: shadow
+    expected_text: "The first error is connection refused at 02:14."
+    prompt_vi: "Đọc giờ theo lối tiếng Anh: oh two fourteen."
+    ipa: "/ðə fɜːrst ˈerər ɪz kəˈnekʃn rɪˈfjuːzd/"
+    focus_phonemes: ["kʃ", "z"]
+  - kind: shadow
+    expected_text: "Scroll up to the caused by line at the bottom of the trace."
+    prompt_vi: "Dòng caused by là dòng chứa nguyên nhân thật."
+    ipa: "/skroʊl ʌp tuː ðə kɔːzd baɪ laɪn/"
+    focus_phonemes: ["skr", "z"]
+  - kind: respond
+    prompt_en: "The log is full of errors. There are hundreds of them."
+    prompt_vi: "Hỏi lỗi đầu tiên theo thời gian, rồi giải thích hậu quả dây chuyền."
+    accept_patterns:
+      - "first error"
+      - "knock-on"
+      - "by time"
+
+reading:
+  kind: log
+  context_vi: >
+    Một đoạn log thật. Đọc theo thứ tự thời gian và tìm dòng nào
+    là nguyên nhân đầu tiên.
+  text_en: |
+    02:13:58 INFO  scheduler   Starting nightly reconciliation run
+    02:13:59 INFO  db-pool     Opening 8 connections to orders-db
+    02:14:02 ERROR db-pool     Connection refused: orders-db:5432
+    02:14:02 WARN  db-pool     Retry 1 of 3 in 2s
+    02:14:04 WARN  db-pool     Retry 2 of 3 in 4s
+    02:14:08 WARN  db-pool     Retry 3 of 3 in 8s
+    02:14:16 ERROR db-pool     Giving up after 3 retries
+    02:14:16 ERROR recon-job   Failed to start: no database connection
+    02:14:16 ERROR api         Request timed out after 30000ms
+    02:14:17 ERROR api         Request timed out after 30000ms
+    02:14:19 ERROR api         Request timed out after 30000ms
+    02:14:22 ERROR export      Cannot write report: recon-job did not run
+    02:14:30 ERROR alerting    Sent 4 alerts to on-call
+    02:31:11 INFO  db-pool     Connection established to orders-db:5432
+    02:31:11 INFO  recon-job   Starting delayed run
+
+    From the database host, same window:
+
+    02:12:40 NOTICE postgres   received fast shutdown request
+    02:12:41 NOTICE postgres   database system is shut down
+    02:12:41 INFO  patching    Applying security update postgres-16.4
+    02:31:08 NOTICE postgres   database system is ready to accept connections
+  text_vi: |
+    02:13:58 INFO  scheduler   Bắt đầu chạy đối soát hằng đêm
+    02:13:59 INFO  db-pool     Mở 8 kết nối tới orders-db
+    02:14:02 ERROR db-pool     Kết nối bị từ chối: orders-db:5432
+    02:14:02 WARN  db-pool     Thử lại lần 1 trên 3 sau 2 giây
+    02:14:04 WARN  db-pool     Thử lại lần 2 trên 3 sau 4 giây
+    02:14:08 WARN  db-pool     Thử lại lần 3 trên 3 sau 8 giây
+    02:14:16 ERROR db-pool     Bỏ cuộc sau 3 lần thử lại
+    02:14:16 ERROR recon-job   Không khởi động được: không có kết nối cơ sở dữ liệu
+    02:14:16 ERROR api         Yêu cầu hết thời gian chờ sau 30000ms
+    02:14:17 ERROR api         Yêu cầu hết thời gian chờ sau 30000ms
+    02:14:19 ERROR api         Yêu cầu hết thời gian chờ sau 30000ms
+    02:14:22 ERROR export      Không ghi được báo cáo: recon-job chưa chạy
+    02:14:30 ERROR alerting    Đã gửi 4 cảnh báo tới người trực
+    02:31:11 INFO  db-pool     Đã kết nối tới orders-db:5432
+    02:31:11 INFO  recon-job   Bắt đầu chạy trễ
+
+    Trên máy chủ cơ sở dữ liệu, cùng khoảng thời gian:
+
+    02:12:40 NOTICE postgres   nhận yêu cầu tắt nhanh
+    02:12:41 NOTICE postgres   hệ cơ sở dữ liệu đã tắt
+    02:12:41 INFO  patching    Đang áp bản vá bảo mật postgres-16.4
+    02:31:08 NOTICE postgres   hệ cơ sở dữ liệu sẵn sàng nhận kết nối
+  questions:
+    - kind: mcq_read
+      prompt_en: "What is the first error in the application log?"
+      choices: ["Request timed out", "Giving up after 3 retries", "Connection refused at 02:14:02"]
+      answer: 2
+      difficulty: 1
+      reading_skill: scan
+      skill: Reading
+    - kind: mcq_read
+      prompt_en: "What is the actual root cause across both logs?"
+      choices: ["The database was shut down at 02:12:41 for a security patch", "The retry logic gave up too early", "The API timeout was too short"]
+      answer: 0
+      difficulty: 3
+      reading_skill: skim
+      skill: Reading
+    - kind: mcq_read
+      prompt_en: "Which lines are knock-on effects?"
+      choices: ["The connection refused", "The timeouts and the export failure", "The postgres shutdown"]
+      answer: 1
+      difficulty: 2
+      reading_skill: skim
+      skill: Reading
+    - kind: mcq_read
+      prompt_en: "How long was the database unavailable?"
+      choices: ["About 30 seconds", "About 3 minutes", "About 18 minutes"]
+      answer: 2
+      difficulty: 3
+      reading_skill: scan
+      skill: Reading
+    - kind: mcq_read
+      prompt_en: "What should the fix address?"
+      choices: ["Patching running without pausing the nightly job", "The retry count", "The alerting volume"]
+      answer: 0
+      difficulty: 3
+      reading_skill: skim
+      skill: Reading
+
+writing:
+  kind: GuidedEmail
+  prompt_vi: >
+    Viết ba câu tóm tắt đoạn log: lỗi đầu tiên theo thời gian, nguyên nhân thật,
+    và những dòng nào chỉ là hậu quả.
+  prompt_en: "Summarise what the log shows in three sentences."
+  required_points:
+    - "first error"
+    - "caused"
+    - "knock-on"
+  hint_vi: "Đừng liệt kê tất cả lỗi. Chỉ ra một nguyên nhân và nói phần còn lại là dây chuyền."
+  sample_en: "The first error is connection refused to orders-db at 02:14:02. It was caused by the database being shut down at 02:12:41 for a security patch, and it did not come back until 02:31. The timeouts, the failed reconciliation and the export error are all a knock-on effect of those eighteen minutes, so the fix is to pause the nightly job during patching, not to change the retry logic."
+
+quiz:
+  - kind: mcq
+    prompt_vi: "Nhận một đoạn log dài đầy lỗi. Việc đầu tiên nên làm?"
+    choices: ["Đọc từ dòng cuối lên", "Tìm lỗi đầu tiên theo dấu thời gian", "Đếm số lỗi"]
+    answer: 1
+    difficulty: 1
+    skill: Reading
+  - kind: mcq
+    prompt_vi: "Dòng \"Caused by:\" trong stack trace chứa gì?"
+    choices: ["Nguyên nhân bên dưới của lỗi phía trên", "Lỗi cuối cùng", "Tên người viết code"]
+    answer: 0
+    difficulty: 2
+    skill: Reading
+  - kind: mcq
+    prompt_vi: "Hàng chục dòng timeout sau một lỗi kết nối. Đó là gì?"
+    choices: ["Nhiều lỗi độc lập", "Lỗi mạng riêng biệt", "Hậu quả dây chuyền của một nguyên nhân"]
+    answer: 2
+    difficulty: 2
+    skill: Reading
+  - kind: mcq
+    prompt_vi: "Vì sao phải đối chiếu log của hai hệ thống?"
+    choices: ["Cho chắc", "Vì nguyên nhân thật thường nằm ở hệ thống khác, không ở hệ báo lỗi", "Vì quy định"]
+    answer: 1
+    difficulty: 3
+    skill: Reading
+  - kind: mcq
+    prompt_vi: "Đồng nghiệp nói \"log đầy lỗi\". Câu hỏi tốt nhất?"
+    choices: ["Lỗi đầu tiên theo thời gian là gì?", "Bao nhiêu lỗi?", "Log ở đâu?"]
+    answer: 0
+    difficulty: 2
+    skill: Speaking
+  - kind: mcq
+    prompt_vi: "Log app báo connection refused, log db báo shutdown trước đó hai phút. Sửa gì?"
+    choices: ["Tăng số lần thử lại", "Tăng thời gian chờ", "Không để bản vá chạy trùng giờ job đêm"]
+    answer: 2
+    difficulty: 3
+    skill: Writing
+
+explanation:
+  why_vi: >
+    Log hiển thị theo kiểu mới nhất ở dưới cùng, nên mắt người đọc rơi vào dòng cuối
+    trước tiên. Dòng cuối gần như luôn là hậu quả xa nhất của nguyên nhân đầu tiên.
+    Cả nhóm đi sửa dòng cuối thì sửa nhầm chỗ, và sự cố lặp lại đúng như cũ đêm hôm sau.
+  how_vi: >
+    Ba bước, luôn theo thứ tự này. Một: tìm lỗi ĐẦU TIÊN theo dấu thời gian, không phải
+    lỗi cuối. Hai: tìm dòng "Caused by" bên dưới nó — đó là nguyên nhân thật.
+    Ba: đối chiếu với log của hệ thống bị lỗi, không chỉ log của hệ báo lỗi.
+    Nguyên nhân hầu như luôn nằm ở hệ thống khác, ở thời điểm sớm hơn.
+  contrast_vi: >
+    "Log toàn retry failed nên logic thử lại hỏng" nhìn dòng cuối. "Lỗi đầu tiên là
+    connection refused lúc 02:14, còn log cơ sở dữ liệu cho thấy nó tắt lúc 02:12 để vá"
+    đưa ra một nguyên nhân duy nhất giải thích toàn bộ phần còn lại — và một cách sửa
+    thật sự ngăn được lần sau.
+
+common_mistakes:
+  - mistake: "Đọc log từ dòng cuối lên"
+    why_vi: >
+      Dòng cuối là dòng hiện ra trước mắt và trông cấp bách nhất.
+      Nhưng nó là hậu quả xa nhất, không phải nguyên nhân.
+    fix_vi: "Luôn hỏi: lỗi đầu tiên theo dấu thời gian là gì?"
+    detect_phoneme_missing: []
+  - mistake: "Chỉ đọc log của hệ thống báo lỗi"
+    why_vi: >
+      Đó là hệ đang kêu nên có vẻ là hệ có vấn đề. Thực tế nó thường chỉ là
+      nạn nhân của một hệ khác im lặng.
+    fix_vi: "Mở log của hệ bị gọi tới, cùng khoảng thời gian, lùi thêm vài phút."
+    detect_phoneme_missing: []
+  - mistake: "Đếm số lỗi và coi đó là mức nghiêm trọng"
+    why_vi: >
+      Một trăm dòng lỗi trông tệ gấp trăm lần một dòng. Nhưng một nguyên nhân
+      sinh ra một trăm dòng vẫn chỉ là một vấn đề.
+    fix_vi: "Nhóm các dòng theo nguyên nhân. Số nguyên nhân mới là con số có nghĩa."
+    detect_phoneme_missing: []
+
+memory_trick_vi: >
+  Ba bước: LỖI ĐẦU TIÊN THEO THỜI GIAN — DÒNG CAUSED BY — LOG CỦA HỆ KIA.
+  Dòng cuối cùng gần như không bao giờ là nguyên nhân.

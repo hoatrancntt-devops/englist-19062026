@@ -1,0 +1,288 @@
+schema_version: 1
+code: OFF-06
+slug: dat-va-doi-lich-hop
+title_vi: "Đặt và dời lịch họp"
+title_en: "Booking and moving meetings"
+
+layer: Office
+track: Foundation
+level: B1
+unit_code: U-O2
+order_index: 6
+estimated_minutes: 11
+
+illustration: clock-calendar
+
+objective_vi: >
+  Đặt một cuộc họp có mục đích rõ ràng, và dời hoặc huỷ nó mà không làm hỏng lịch người khác.
+
+objective_observable: >
+  Viết được lời mời họp đủ ba ý, và nêu được lý do khi từ chối một cuộc họp.
+
+mastery_weights:
+  Listening: 0.30
+  Speaking: 0.30
+  Reading: 0.15
+  Writing: 0.25
+
+prerequisites:
+  - lesson: OFF-05
+    min_mastery: 60
+    kind: Hard
+  - lesson: LIFE-13
+    min_mastery: 65
+    kind: Soft
+
+vocabulary:
+  - term: "set up a call"
+    ipa: "/set ʌp ə kɔːl/"
+    meaning_vi: "đặt một cuộc gọi"
+    chunk: "Can we set up a call this week?"
+    tags: [meeting, core]
+  - term: "agenda"
+    ipa: "/əˈdʒendə/"
+    meaning_vi: "nội dung họp"
+    chunk: "I'll send the agenda beforehand."
+    tags: [meeting, core]
+  - term: "do we need"
+    ipa: "/duː wiː niːd/"
+    meaning_vi: "mình có cần (dùng để đặt câu hỏi về sự cần thiết)"
+    chunk: "Do we need a call, or can we sort it on chat?"
+    tags: [meeting, core]
+  - term: "double-booked"
+    ipa: "/ˈdʌbl bʊkt/"
+    meaning_vi: "trùng lịch"
+    chunk: "Sorry, I'm double-booked at two."
+    tags: [meeting]
+  - term: "keep it to"
+    ipa: "/kiːp ɪt tuː/"
+    meaning_vi: "giới hạn trong"
+    chunk: "Let's keep it to thirty minutes."
+    tags: [meeting]
+  - term: "loop in"
+    ipa: "/luːp ɪn/"
+    meaning_vi: "mời thêm vào, cho biết cùng"
+    chunk: "Should we loop in the DBA team?"
+    tags: [meeting, office]
+
+sentence_patterns:
+  - pattern: "Can we set up a call to {purpose}?"
+    meaning_vi: "Mình đặt một cuộc gọi để {purpose} được không?"
+    slots:
+      purpose: ["go over the design", "close out the incident"]
+  - pattern: "Sorry, I'm double-booked at {time}. Would {alternative} work?"
+    meaning_vi: "Xin lỗi, em trùng lịch lúc {time}. {alternative} được không ạ?"
+    slots:
+      time: ["two", "ten"]
+      alternative: ["three", "tomorrow morning"]
+
+dialogue:
+  context_vi: >
+    David muốn họp về kiến trúc. Bạn vừa nhận lời, vừa giúp cuộc họp có ích hơn
+    bằng cách hỏi đúng hai câu.
+  turns:
+    - speaker: "David"
+      en: "Can we set up a call to go over the storage design?"
+      vi: "Mình đặt một cuộc gọi để rà lại thiết kế lưu trữ được không?"
+    - speaker: "You"
+      en: "Sure. What's the agenda — the whole design, or just the backup part?"
+      vi: "Được ạ. Nội dung là gì — cả thiết kế, hay chỉ phần backup?"
+    - speaker: "David"
+      en: "Mostly backup and retention."
+      vi: "Chủ yếu là backup và chính sách lưu trữ."
+    - speaker: "You"
+      en: "Then should we loop in Priya? She owns the retention policy."
+      vi: "Vậy mình mời cả Priya nhé? Chị ấy phụ trách chính sách lưu trữ."
+    - speaker: "David"
+      en: "Good call. Thursday at two?"
+      vi: "Ý hay. Thứ Năm lúc hai giờ nhé?"
+    - speaker: "You"
+      en: "Sorry, I'm double-booked at two. Would three work? And let's keep it to thirty minutes."
+      vi: "Xin lỗi anh, hai giờ em trùng lịch. Ba giờ được không ạ? Với mình giới hạn trong ba mươi phút nhé."
+    - speaker: "David"
+      en: "Three works. I'll send the invite with the agenda."
+      vi: "Ba giờ được. Tôi gửi lời mời kèm nội dung."
+
+listening:
+  context_vi: >
+    Nghe một lời từ chối họp. Chú ý: người này không chỉ từ chối mà còn đề xuất cách khác.
+  speed: 1.0
+  voice: en_US_male
+  transcript_en: "I saw the invite for Thursday. Do we actually need a call for this, or can we sort it on the ticket? If it's just the retention numbers, I can post them in the thread this afternoon."
+  transcript_vi: "Tôi thấy lời mời họp thứ Năm. Việc này có thực sự cần họp không, hay mình xử lý trên ticket được? Nếu chỉ là mấy con số lưu trữ thì chiều nay tôi đăng lên luồng đó."
+  questions:
+    - kind: mcq_listen
+      prompt_vi: "Người này đề xuất gì thay cho cuộc họp?"
+      choices: ["Xử lý trên ticket", "Dời sang tuần sau", "Mời thêm người"]
+      answer: 0
+      difficulty: 2
+      skill: Listening
+    - kind: mcq_listen
+      prompt_vi: "Họ có từ chối thẳng không?"
+      choices: ["Có, từ chối thẳng", "Họ đồng ý họp", "Không, họ đề xuất cách khác"]
+      answer: 2
+      difficulty: 2
+      skill: Listening
+
+speaking_drills:
+  - kind: read_aloud
+    expected_text: "Can we set up a call to go over the design?"
+    prompt_vi: "Đặt họp phải nêu mục đích. Không nêu thì không ai biết chuẩn bị gì."
+    ipa: "/kæn wiː set ʌp ə kɔːl tuː ɡoʊ ˈoʊvər ðə dɪˈzaɪn/"
+    focus_phonemes: ["k", "v"]
+  - kind: read_aloud
+    expected_text: "Sorry, I'm double-booked at two."
+    prompt_vi: "Chú ý cụm /kt/ cuối chữ booked."
+    ipa: "/ˈsɒri aɪm ˈdʌbl bʊkt æt tuː/"
+    focus_phonemes: ["kt", "bl"]
+  - kind: shadow
+    expected_text: "Do we need a call, or can we sort it on chat?"
+    prompt_vi: "Câu tiết kiệm nhiều giờ họp nhất cho cả team. Nghe rồi nhắc lại."
+    ipa: "/duː wiː niːd ə kɔːl ɔːr kæn wiː sɔːrt ɪt ɒn tʃæt/"
+    focus_phonemes: ["tʃ", "rt"]
+  - kind: shadow
+    expected_text: "Let's keep it to thirty minutes."
+    prompt_vi: "Giới hạn thời gian ngay từ đầu. Chú ý âm /θ/ trong thirty."
+    ipa: "/lets kiːp ɪt tuː ˈθɜːrti ˈmɪnɪts/"
+    focus_phonemes: ["θ", "ts"]
+  - kind: respond
+    prompt_en: "Thursday at two for the design review?"
+    prompt_vi: "Bạn trùng lịch lúc hai giờ. Từ chối và đề xuất giờ khác."
+    accept_patterns:
+      - "double-booked"
+      - "Would three work"
+      - "Sorry"
+
+reading:
+  kind: email
+  context_vi: >
+    Lời mời họp tốt. Ba thứ khiến nó tốt: mục đích, thời lượng, và việc cần chuẩn bị.
+  text_en: |
+    Subject: 30 min - backup retention decision
+
+    Hi all,
+
+    Purpose: decide the retention period for the customer file shares.
+    We are choosing between 30, 60 and 90 days.
+
+    Time: Thursday 15:00-15:30. Keeping it to thirty minutes.
+
+    Before the call, please look at the cost table in the shared doc
+    (link below). We only need a decision, not a full review.
+
+    Priya is joining as she owns the policy.
+
+    David
+  text_vi: |
+    Tiêu đề: 30 phút - quyết định chính sách lưu trữ backup
+
+    Chào cả nhà,
+
+    Mục đích: chốt thời gian lưu trữ cho các file share của khách.
+    Mình đang chọn giữa 30, 60 và 90 ngày.
+
+    Thời gian: thứ Năm 15:00-15:30. Giới hạn trong ba mươi phút.
+
+    Trước cuộc gọi, mọi người xem bảng chi phí trong tài liệu chung
+    (link bên dưới). Mình chỉ cần một quyết định, không cần rà soát toàn bộ.
+
+    Priya tham gia vì chị ấy phụ trách chính sách này.
+
+    David
+  questions:
+    - kind: mcq_read
+      prompt_en: "What is the purpose of the meeting?"
+      choices: ["Review the whole design", "Decide the retention period", "Report an incident"]
+      answer: 1
+      difficulty: 1
+      reading_skill: scan
+      skill: Reading
+    - kind: mcq_read
+      prompt_en: "What should attendees do beforehand?"
+      choices: ["Nothing", "Write a report", "Look at the cost table"]
+      answer: 2
+      difficulty: 2
+      reading_skill: scan
+      skill: Reading
+    - kind: mcq_read
+      prompt_en: "Why is Priya invited?"
+      choices: ["She owns the policy", "She is the manager", "She asked to join"]
+      answer: 0
+      difficulty: 2
+      reading_skill: scan
+      skill: Reading
+
+writing:
+  kind: GuidedEmail
+  prompt_vi: >
+    Viết lời mời họp. Phải có đủ ba ý: mục đích cụ thể,
+    thời lượng giới hạn, và việc người dự cần chuẩn bị.
+  prompt_en: "Write a meeting invite with purpose, duration and preparation."
+  required_points:
+    - "purpose"
+    - "keep it to"
+    - "before the call"
+  hint_vi: "Ba ý: để làm gì, bao lâu, cần chuẩn bị gì. Thiếu ý đầu là cuộc họp lan man."
+  sample_en: "Purpose: decide the backup retention period. Time: Thursday 15:00, let's keep it to thirty minutes. Before the call, please look at the cost table."
+
+quiz:
+  - kind: mcq
+    prompt_vi: "Lời mời họp tốt cần có gì đầu tiên?"
+    choices: ["Danh sách người dự", "Mục đích cụ thể", "Link phòng họp"]
+    answer: 1
+    difficulty: 1
+    skill: Writing
+  - kind: mcq
+    prompt_vi: "\"Double-booked\" nghĩa là gì?"
+    choices: ["Đặt hai phòng họp", "Họp hai lần", "Trùng lịch với việc khác"]
+    answer: 2
+    difficulty: 1
+    skill: Reading
+  - kind: mcq
+    prompt_vi: "Câu nào giúp team tiết kiệm nhiều giờ họp nhất?"
+    choices: ["Do we need a call, or can we sort it on chat?", "Can we move it?", "Who is joining?"]
+    answer: 0
+    difficulty: 3
+    skill: Speaking
+  - kind: mcq
+    prompt_vi: "\"Loop in Priya\" nghĩa là gì?"
+    choices: ["Bỏ Priya ra", "Mời Priya tham gia", "Hỏi ý Priya sau"]
+    answer: 1
+    difficulty: 2
+    skill: Listening
+
+explanation:
+  why_vi: >
+    Cuộc họp không có mục đích là thứ tốn kém nhất trong một công ty:
+    sáu người nhân ba mươi phút là ba giờ công. Người mới thường nhận mọi lời mời
+    vì ngại từ chối, và cũng đặt họp cho những việc lẽ ra một tin nhắn là xong.
+  how_vi: >
+    Khi ĐẶT họp, ba ý: MỤC ĐÍCH cụ thể, THỜI LƯỢNG giới hạn, VIỆC CẦN CHUẨN BỊ.
+    Khi ĐƯỢC MỜI, hỏi một câu trước khi nhận: việc này có cần họp không.
+    Câu hỏi đó không phải né tránh — nó là cách tôn trọng thời gian của tất cả mọi người.
+  contrast_vi: >
+    "Sync về storage" là một cuộc họp lan man. "Quyết định lưu trữ 30, 60 hay 90 ngày"
+    là một cuộc họp ba mươi phút có kết quả.
+
+common_mistakes:
+  - mistake: "Đặt họp mà không nêu mục đích"
+    why_vi: >
+      Người đặt biết rõ mình muốn gì nên quên rằng người khác không biết.
+      Kết quả là không ai chuẩn bị, và nửa cuộc họp dùng để giải thích bối cảnh.
+    fix_vi: "Viết mục đích thành một câu bắt đầu bằng động từ: quyết định, rà soát, chốt."
+    detect_phoneme_missing: []
+  - mistake: "Nhận mọi lời mời họp vì ngại từ chối"
+    why_vi: >
+      Sợ bị coi là không hợp tác. Nhưng ngồi trong một cuộc họp không liên quan
+      còn tệ hơn cho cả bạn lẫn người mời.
+    fix_vi: "Hỏi \"Do we need a call, or can we sort it on chat?\" — lịch sự và rất được hoan nghênh."
+    detect_phoneme_missing: []
+  - mistake: "Từ chối mà không đề xuất phương án khác"
+    why_vi: >
+      Từ chối trần khiến người mời phải bắt đầu lại từ đầu, và dễ bị hiểu là bạn né việc.
+    fix_vi: "Luôn kèm một đề xuất: giờ khác, hoặc cách xử lý khác không cần họp."
+    detect_phoneme_missing: []
+
+memory_trick_vi: >
+  Đặt họp ba ý: MỤC ĐÍCH, THỜI LƯỢNG, CHUẨN BỊ.
+  Được mời thì hỏi một câu: việc này có cần họp không? Câu đó tiết kiệm hàng giờ mỗi tuần.

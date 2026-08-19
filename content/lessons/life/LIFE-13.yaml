@@ -1,0 +1,277 @@
+schema_version: 1
+code: LIFE-13
+slug: hen-gap-va-doi-hen
+title_vi: "Hẹn gặp và đổi hẹn"
+title_en: "Making and changing plans"
+
+layer: Life
+track: Foundation
+level: A2
+unit_code: U-L3
+order_index: 13
+estimated_minutes: 11
+
+illustration: clock-calendar
+
+objective_vi: >
+  Đề nghị một cuộc hẹn, đổi hẹn, và huỷ hẹn mà không làm người kia khó chịu —
+  ba việc xảy ra liên tục trong công việc.
+
+objective_observable: >
+  Viết được một tin nhắn đổi hẹn đủ ba ý, và nói được lời đề nghị kèm phương án hai.
+
+mastery_weights:
+  Listening: 0.30
+  Speaking: 0.35
+  Reading: 0.15
+  Writing: 0.20
+
+prerequisites:
+  - lesson: LIFE-12
+    min_mastery: 60
+    kind: Hard
+
+vocabulary:
+  - term: "Does that work for you"
+    ipa: "/dʌz ðæt wɜːrk fɔːr juː/"
+    meaning_vi: "vậy có tiện cho bạn không"
+    chunk: "Tuesday at ten. Does that work for you?"
+    tags: [meeting, core]
+  - term: "Something came up"
+    ipa: "/ˈsʌmθɪŋ keɪm ʌp/"
+    meaning_vi: "có việc đột xuất"
+    chunk: "Sorry, something came up."
+    tags: [meeting, core]
+  - term: "push it to"
+    ipa: "/pʊʃ ɪt tuː/"
+    meaning_vi: "dời sang"
+    chunk: "Can we push it to Thursday?"
+    tags: [meeting, core]
+  - term: "Let's lock it in"
+    ipa: "/lets lɒk ɪt ɪn/"
+    meaning_vi: "chốt lịch nhé"
+    chunk: "Thursday at two. Let's lock it in."
+    tags: [meeting]
+  - term: "reschedule"
+    ipa: "/ˌriːˈskedʒuːl/"
+    meaning_vi: "dời lịch"
+    chunk: "I need to reschedule our call."
+    tags: [meeting, office]
+  - term: "whenever suits you"
+    ipa: "/wenˈevər suːts juː/"
+    meaning_vi: "lúc nào tiện cho bạn cũng được"
+    chunk: "Friday or Monday, whenever suits you."
+    tags: [meeting]
+
+sentence_patterns:
+  - pattern: "{day} at {time}. Does that work for you?"
+    meaning_vi: "{day} lúc {time}. Vậy có tiện cho bạn không?"
+    slots:
+      day: ["Tuesday", "Thursday", "Monday"]
+      time: ["ten", "two", "half past three"]
+  - pattern: "Can we push it to {when}?"
+    meaning_vi: "Mình dời sang {when} được không?"
+    slots:
+      when: ["Thursday", "next week", "the afternoon"]
+
+dialogue:
+  context_vi: >
+    Bạn đã hẹn David lúc hai giờ, nhưng có sự cố phải xử lý gấp.
+    Cách bạn báo đổi hẹn quyết định anh ấy có tin bạn ở những lần sau hay không.
+  turns:
+    - speaker: "You"
+      en: "David, sorry — something came up. We have an incident on the portal."
+      vi: "Anh David, xin lỗi — em có việc đột xuất. Bên em đang có sự cố ở portal."
+    - speaker: "David"
+      en: "No problem. Do you want to reschedule?"
+      vi: "Không sao. Bạn muốn dời lịch à?"
+    - speaker: "You"
+      en: "Yes please. Can we push it to four, or tomorrow morning if that's easier?"
+      vi: "Vâng ạ. Mình dời sang bốn giờ được không, hoặc sáng mai nếu tiện hơn cho anh?"
+    - speaker: "David"
+      en: "Tomorrow morning is better for me. Nine thirty?"
+      vi: "Sáng mai tiện hơn với tôi. Chín rưỡi nhé?"
+    - speaker: "You"
+      en: "Nine thirty works. Let's lock it in. Sorry again for the change."
+      vi: "Chín rưỡi được ạ. Mình chốt vậy nhé. Em xin lỗi lần nữa vì phải đổi."
+
+listening:
+  context_vi: >
+    Nghe một lời nhắn đổi hẹn. Bắt đúng ba thứ: lý do, giờ mới đề nghị, và phương án hai.
+  speed: 0.95
+  voice: en_US_female
+  transcript_en: "Hi, something came up on my side. Can we push our call to Thursday at two? If that doesn't work, Friday morning is also fine — whenever suits you."
+  transcript_vi: "Chào bạn, bên tôi có việc đột xuất. Mình dời cuộc gọi sang thứ Năm lúc hai giờ được không? Nếu không tiện thì sáng thứ Sáu cũng được — lúc nào tiện cho bạn cũng được."
+  questions:
+    - kind: mcq_listen
+      prompt_vi: "Giờ được đề nghị đầu tiên là khi nào?"
+      choices: ["Thứ Năm lúc 2 giờ", "Thứ Sáu sáng", "Thứ Ba lúc 2 giờ"]
+      answer: 0
+      difficulty: 2
+      skill: Listening
+    - kind: mcq_listen
+      prompt_vi: "Người nhắn có đưa phương án hai không?"
+      choices: ["Không", "Có, chiều thứ Năm", "Có, sáng thứ Sáu"]
+      answer: 2
+      difficulty: 2
+      skill: Listening
+
+speaking_drills:
+  - kind: read_aloud
+    expected_text: "Does that work for you?"
+    prompt_vi: "Lên giọng cuối câu. Đây là câu hỏi, không phải câu khẳng định."
+    ipa: "/dʌz ðæt wɜːrk fɔːr juː/"
+    focus_phonemes: ["ð", "k"]
+  - kind: read_aloud
+    expected_text: "Can we push it to Thursday?"
+    prompt_vi: "Chú ý âm /θ/ đầu chữ Thursday và cụm /ʃ/ trong push."
+    ipa: "/kæn wiː pʊʃ ɪt tuː ˈθɜːrzdeɪ/"
+    focus_phonemes: ["ʃ", "θ"]
+  - kind: shadow
+    expected_text: "Sorry, something came up."
+    prompt_vi: "Cụm lý do lịch sự nhất, không cần kể chi tiết. Nghe rồi nhắc lại."
+    ipa: "/ˈsɒri ˈsʌmθɪŋ keɪm ʌp/"
+    focus_phonemes: ["θ", "ŋ"]
+  - kind: shadow
+    expected_text: "Nine thirty works. Let's lock it in."
+    prompt_vi: "Câu chốt lịch. Nói dứt khoát để không phải trao đổi thêm lần nữa."
+    ipa: "/naɪn ˈθɜːrti wɜːrks lets lɒk ɪt ɪn/"
+    focus_phonemes: ["θ", "ks"]
+  - kind: respond
+    prompt_en: "Can we meet Tuesday at ten?"
+    prompt_vi: "Bạn bận thứ Ba. Đề nghị dời và đưa ra phương án khác."
+    accept_patterns:
+      - "Can we push it"
+      - "Would"
+      - "How about"
+
+reading:
+  kind: email
+  context_vi: >
+    Email dời lịch gửi cho khách hàng. Để ý cấu trúc ba phần: xin lỗi, đề nghị, phương án hai.
+  text_en: |
+    Subject: Moving our Thursday review
+
+    Hi David,
+
+    Apologies for the short notice - something came up on our side
+    and I need to reschedule Thursday's architecture review.
+
+    Could we push it to Friday at two? If Friday doesn't work,
+    Monday morning is open on our end - whenever suits you.
+
+    The agenda stays the same. I'll resend the invite once you confirm.
+
+    Linh
+  text_vi: |
+    Tiêu đề: Dời buổi review thứ Năm
+
+    Chào David,
+
+    Xin lỗi vì báo gấp - bên tôi có việc đột xuất và tôi cần dời
+    buổi review kiến trúc hôm thứ Năm.
+
+    Mình dời sang thứ Sáu lúc hai giờ được không? Nếu thứ Sáu không tiện
+    thì sáng thứ Hai bên tôi trống - lúc nào tiện cho anh cũng được.
+
+    Nội dung họp giữ nguyên. Tôi sẽ gửi lại lời mời khi anh xác nhận.
+
+    Linh
+  questions:
+    - kind: mcq_read
+      prompt_en: "What is the first option offered?"
+      choices: ["Monday morning", "Friday at two", "Thursday at two"]
+      answer: 1
+      difficulty: 1
+      reading_skill: scan
+      skill: Reading
+    - kind: mcq_read
+      prompt_en: "What will Linh do after David confirms?"
+      choices: ["Send a new agenda", "Cancel the review", "Resend the invite"]
+      answer: 2
+      difficulty: 2
+      reading_skill: scan
+      skill: Reading
+    - kind: mcq_read
+      prompt_en: "Did the agenda change?"
+      choices: ["No, it stays the same", "Yes, it is shorter", "It was not mentioned"]
+      answer: 0
+      difficulty: 2
+      reading_skill: skim
+      skill: Reading
+
+writing:
+  kind: GuidedEmail
+  prompt_vi: >
+    Viết tin nhắn dời một cuộc họp. Phải có đủ ba ý: xin lỗi vì đổi,
+    đề nghị giờ mới, và một phương án thứ hai.
+  prompt_en: "Write a short message to reschedule a meeting."
+  required_points:
+    - "something came up"
+    - "push it to"
+    - "if that doesn't work"
+  hint_vi: "Ba ý theo đúng thứ tự: xin lỗi, giờ mới, phương án hai."
+  sample_en: "Sorry, something came up. Can we push it to Thursday at two? If that doesn't work, Friday morning is also fine."
+
+quiz:
+  - kind: mcq
+    prompt_vi: "Đổi hẹn thì nên có mấy ý?"
+    choices: ["Chỉ cần xin lỗi", "Xin lỗi, giờ mới, phương án hai", "Chỉ cần nêu giờ mới"]
+    answer: 1
+    difficulty: 2
+    skill: Writing
+  - kind: mcq
+    prompt_vi: "\"Something came up\" dùng khi nào?"
+    choices: ["Khi đồng ý lịch", "Khi muốn huỷ hẳn", "Khi cần nêu lý do mà không muốn kể chi tiết"]
+    answer: 2
+    difficulty: 2
+    skill: Reading
+  - kind: mcq
+    prompt_vi: "Câu nào chốt lịch dứt khoát nhất?"
+    choices: ["Thursday at two. Let's lock it in.", "Maybe Thursday", "Thursday OK?"]
+    answer: 0
+    difficulty: 2
+    skill: Speaking
+  - kind: mcq
+    prompt_vi: "Vì sao nên đưa phương án hai khi đổi hẹn?"
+    choices: ["Cho lịch sự", "Để không phải trao đổi qua lại nhiều lần", "Để người kia tự chọn giờ khó"]
+    answer: 1
+    difficulty: 3
+    skill: Writing
+
+explanation:
+  why_vi: >
+    Đổi hẹn là việc bình thường ở mọi công ty, nhưng đổi sai cách thì người ta nhớ rất lâu.
+    Người Việt thường xin lỗi rất nhiều mà quên đưa giờ mới, khiến người kia phải hỏi lại
+    và cuộc trao đổi kéo dài thêm ba bốn lượt.
+  how_vi: >
+    Ba ý, đúng thứ tự: XIN LỖI ngắn, GIỜ MỚI cụ thể, PHƯƠNG ÁN HAI.
+    Phương án hai là phần nhiều người bỏ qua, nhưng nó tiết kiệm hẳn một vòng trao đổi
+    và cho thấy bạn tôn trọng lịch của người kia.
+  contrast_vi: >
+    "Can we push it to Thursday?" là dời sang ngày khác. "Can we cancel?" là huỷ hẳn.
+    Nói nhầm thì người ta xoá luôn cuộc họp khỏi lịch.
+
+common_mistakes:
+  - mistake: "Xin lỗi dài dòng nhưng không đưa giờ mới"
+    why_vi: >
+      Văn hoá Việt coi trọng phần xin lỗi, nên người học dồn hết vào đó.
+      Nhưng thứ người nhận cần nhất là một mốc thời gian cụ thể.
+    fix_vi: "Xin lỗi đúng một câu, rồi sang ngay giờ mới. Ngắn mà đủ thì mới là tôn trọng."
+    detect_phoneme_missing: []
+  - mistake: "Hỏi \"When are you free?\" thay vì đề nghị một giờ cụ thể"
+    why_vi: >
+      Nghe có vẻ nhường nhịn, nhưng thực ra đẩy việc tìm lịch sang người kia,
+      và thường dẫn tới ba bốn tin nhắn qua lại.
+    fix_vi: "Đề nghị một giờ cụ thể kèm một phương án hai. Người kia chỉ cần trả lời có hoặc không."
+    detect_phoneme_missing: []
+  - mistake: "Kể chi tiết lý do cá nhân khi đổi hẹn"
+    why_vi: >
+      Tiếng Việt hay kể rõ để người ta thông cảm. Trong môi trường công việc,
+      chi tiết đó không cần thiết và đôi khi làm người nghe khó xử.
+    fix_vi: "Dùng \"Something came up\" là đủ. Cụ thể hơn chỉ khi người ta hỏi thêm."
+    detect_phoneme_missing: []
+
+memory_trick_vi: >
+  Đổi hẹn luôn ba ý: XIN LỖI một câu, GIỜ MỚI cụ thể, PHƯƠNG ÁN HAI.
+  Thiếu ý thứ ba là mất thêm một vòng nhắn tin.

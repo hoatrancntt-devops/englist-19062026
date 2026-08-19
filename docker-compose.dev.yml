@@ -1,0 +1,94 @@
+# Chồng lên bản nền cho máy dev.
+#
+#   docker compose -f docker-compose.yml -f docker-compose.dev.yml up -d
+#
+# Khác bản nền ba điểm: mở cổng ra host để gắn công cụ, bật log chi tiết,
+# và tắt HTTPS vì localhost không cần chứng chỉ.
+
+services:
+  db:
+    ports:
+      # Mở ra host để chạy psql hoặc gắn DBeaver. Dùng 55432 để không đụng
+      # Postgres cài sẵn trên máy.
+      - "55432:5432"
+
+  api:
+    environment:
+      ASPNETCORE_ENVIRONMENT: Development
+      # Cookie không Secure vì dev chạy trên http://localhost.
+      Cookies__Secure: "false"
+      Serilog__MinimumLevel__Default: Debug
+      Serilog__MinimumLevel__Override__Microsoft.EntityFrameworkCore.Database.Command: Information
+      Speech__Enabled: "true"
+      Speech__BaseUrl: http://speech:9000/
+      Storage__AudioRoot: /app/media
+    ports:
+      # Gọi thẳng API để thử bằng curl hoặc mở /openapi/v1.json.
+      - "8080:8080"
+    volumes:
+      # Gắn thư mục nội dung từ host: sửa YAML rồi khởi động lại container là thấy ngay,
+      # không phải build lại image. Chỉ đọc để container không ghi ngược vào repo.
+      - ./content:/app/content:ro
+
+  worker:
+    environment:
+      DOTNET_ENVIRONMENT: Development
+
+  # Hộp thư giả cho máy dev: bắt mọi thư worker gửi ra, không thư nào rời khỏi máy.
+  # Mở http://localhost:8025 để đọc.
+  mailpit:
+    image: axllent/mailpit:latest
+    restart: unless-stopped
+    ports:
+      - "8025:8025"
+    networks:
+      - backend
+
+  # Nhà cung cấp AI chạy tại chỗ, dùng cho máy dev.
+  #
+  # Là nhà cung cấp DUY NHẤT kiểm chứng được toàn bộ đường đi AI mà không cần đăng ký
+  # tài khoản hay khoá API ở đâu. Model qwen2.5:0.5b chỉ ~400MB, đủ để chứng minh
+  # gateway gọi thật và cache hoạt động — không đủ để đánh giá chất lượng câu chữ.
+  ollama:
+    image: ollama/ollama:latest
+    restart: unless-stopped
+    volumes:
+      - ollama-models:/root/.ollama
+    ports:
+      - "11434:11434"
+    networks:
+      - backend
+
+  # Nhận dạng giọng nói chạy tại chỗ. Giọng của học viên KHÔNG rời máy chủ —
+  # đây là ràng buộc riêng tư, không phải lựa chọn kỹ thuật.
+  #
+  # Model tiny.en đủ cho việc so khớp câu đọc theo mẫu và nhẹ hơn base nhiều lần.
+  speech:
+    image: onerahmet/openai-whisper-asr-webservice:latest
+    restart: unless-stopped
+    environment:
+      ASR_MODEL: tiny.en
+      ASR_ENGINE: faster_whisper
+    volumes:
+      - whisper-models:/root/.cache
+    ports:
+      - "9000:9000"
+    networks:
+      - backend
+
+  web:
+    ports:
+      - "8081:8081"
+
+  proxy:
+    environment:
+      # Dấu hai chấm đầu nghĩa là nghe HTTP thuần, không xin chứng chỉ.
+      SITE_ADDRESS: ":80"
+    # !override thay vì để Compose cộng dồn: bản nền publish 80 và 443, mà trên máy dev
+    # hai cổng đó thường đã có thứ khác chiếm. Cộng dồn sẽ làm proxy không khởi động được.
+    ports: !override
+      - "9090:80"
+
+volumes:
+  ollama-models:
+  whisper-models:

@@ -1,0 +1,349 @@
+schema_version: 1
+code: CLD-03
+slug: noi-ve-scaling-va-chi-phi
+title_vi: "Nói về scaling và chi phí — khi kế toán hỏi hoá đơn tăng"
+title_en: "Talking about scaling and cost"
+
+layer: Professional
+track: Cloud
+level: B1
+unit_code: U-CLD1
+order_index: 3
+estimated_minutes: 12
+is_checkpoint: false
+
+illustration: scale-graph
+
+objective_vi: >
+  Giải thích được vì sao hoá đơn cloud tăng, bằng cách chỉ ra thứ gây tốn
+  chứ không bằng cách hứa sẽ tiết kiệm.
+
+objective_observable: >
+  Đạt từ 75 điểm trên cả bốn trục kỹ năng, không trục nào dưới 60.
+
+mastery_weights:
+  Listening: 0.25
+  Speaking: 0.30
+  Reading: 0.25
+  Writing: 0.20
+
+prerequisites:
+  - lesson: CLD-01
+    min_mastery: 70
+    kind: Hard
+  - lesson: OFF-04
+    min_mastery: 65
+    kind: Soft
+
+vocabulary:
+  - term: "scale out"
+    ipa: "/skeɪl aʊt/"
+    meaning_vi: "thêm máy chạy song song"
+    chunk: "We scale out to six instances at peak."
+    tags: [cloud, core]
+  - term: "scale up"
+    ipa: "/skeɪl ʌp/"
+    meaning_vi: "làm máy hiện tại to hơn"
+    chunk: "Scaling up is simpler but hits a ceiling."
+    tags: [cloud, core]
+  - term: "peak"
+    ipa: "/piːk/"
+    meaning_vi: "giờ cao điểm"
+    chunk: "Traffic peaks between nine and eleven."
+    tags: [cloud, core]
+  - term: "the biggest line item"
+    ipa: "/ðə ˈbɪɡɪst laɪn ˈaɪtəm/"
+    meaning_vi: "khoản lớn nhất trong hoá đơn"
+    chunk: "The biggest line item is egress traffic."
+    tags: [cost, core]
+  - term: "egress"
+    ipa: "/ˈiːɡres/"
+    meaning_vi: "dữ liệu đi ra khỏi nhà cung cấp, thường bị tính tiền"
+    chunk: "Egress costs more than storage here."
+    tags: [cost, core]
+  - term: "idle"
+    ipa: "/ˈaɪdl/"
+    meaning_vi: "chạy không, không làm gì mà vẫn tính tiền"
+    chunk: "Four machines sit idle overnight."
+    tags: [cost, core]
+  - term: "we can cut X by Y"
+    ipa: "/wiː kæn kʌt/"
+    meaning_vi: "chúng tôi có thể giảm X đi Y"
+    chunk: "We can cut the bill by about thirty percent."
+    tags: [cost, core]
+
+sentence_patterns:
+  - pattern: "The biggest line item is {item}, about {percent} of the bill."
+    meaning_vi: "Khoản lớn nhất là {item}, khoảng {percent} hoá đơn."
+    slots:
+      item: ["egress traffic", "idle compute", "storage snapshots"]
+      percent: ["forty percent", "half", "a third"]
+  - pattern: "We can cut {thing} by {amount} if we {action}."
+    meaning_vi: "Bọn tôi giảm được {thing} đi {amount} nếu {action}."
+    slots:
+      thing: ["the bill", "idle time", "egress"]
+      amount: ["thirty percent", "half", "two hundred dollars a month"]
+      action: ["shut down test machines at night", "cache responses at the edge"]
+
+dialogue:
+  context_vi: >
+    Chị Hằng ở phòng kế toán thấy hoá đơn cloud tháng này tăng bốn mươi phần trăm
+    và muốn hiểu vì sao. Chị không rành kỹ thuật.
+  turns:
+    - speaker: "Hằng"
+      en: "The cloud bill went up forty percent last month. What happened?"
+      vi: "Hoá đơn cloud tháng trước tăng bốn mươi phần trăm. Có chuyện gì vậy em?"
+    - speaker: "You"
+      en: "Two things. I looked at the breakdown this morning. The biggest line item is egress traffic."
+      vi: "Có hai chuyện ạ. Sáng nay em xem bảng chi tiết rồi. Khoản lớn nhất là lưu lượng đi ra."
+    - speaker: "Hằng"
+      en: "Egress? What is that in plain words?"
+      vi: "Egress là gì, nói dễ hiểu giúp chị."
+    - speaker: "You"
+      en: "Data leaving the provider. We started sending the daily report file to a partner, and each file is four gigabytes."
+      vi: "Là dữ liệu đi ra khỏi nhà cung cấp. Bọn em bắt đầu gửi file báo cáo hằng ngày cho đối tác, mỗi file bốn gigabyte."
+    - speaker: "Hằng"
+      en: "And the second thing?"
+      vi: "Còn chuyện thứ hai?"
+    - speaker: "You"
+      en: "Test machines. We scaled out for the load test in March and four machines stayed running. They sit idle every night."
+      vi: "Máy thử nghiệm. Bọn em thêm máy để chạy kiểm thử tải hồi tháng Ba, và bốn máy cứ chạy tiếp. Đêm nào chúng cũng chạy không."
+    - speaker: "Hằng"
+      en: "Can you fix both?"
+      vi: "Em xử lý được cả hai không?"
+    - speaker: "You"
+      en: "The idle machines yes, this week. We can cut the bill by about a quarter. The egress needs a decision — we can compress the file, but the partner has to accept the new format."
+      vi: "Máy chạy không thì được ạ, tuần này. Giảm được khoảng một phần tư hoá đơn. Còn egress thì cần quyết định — nén file được, nhưng đối tác phải chấp nhận định dạng mới."
+
+listening:
+  context_vi: >
+    Nghe hai cách trả lời câu hỏi vì sao hoá đơn tăng. Chú ý cách nào
+    cho người nghe cơ sở để quyết định.
+  speed: 1.1
+  voice: en_US_female
+  transcript_en: "Answer one: the cloud is expensive and prices went up, but we will try to optimize and reduce it next month. Answer two: forty percent of the increase is egress traffic from a new daily file we send to a partner, and a quarter is four test machines left running since March. I can shut the test machines down this week. The file needs the partner to accept a compressed format."
+  transcript_vi: "Trả lời một: cloud đắt và giá tăng, nhưng bọn tôi sẽ cố tối ưu và giảm xuống tháng sau. Trả lời hai: bốn mươi phần trăm phần tăng là lưu lượng đi ra từ một file hằng ngày mới gửi cho đối tác, và một phần tư là bốn máy thử nghiệm để chạy từ tháng Ba. Tôi có thể tắt máy thử nghiệm trong tuần này. Còn cái file thì cần đối tác chấp nhận định dạng nén."
+  questions:
+    - kind: mcq_listen
+      prompt_vi: "Câu trả lời nào cho người nghe cơ sở để quyết định?"
+      choices: ["Trả lời hai", "Trả lời một", "Cả hai như nhau"]
+      answer: 0
+      difficulty: 1
+      skill: Listening
+    - kind: mcq_listen
+      prompt_vi: "Phần nào người nói tự xử lý được ngay?"
+      choices: ["File gửi đối tác", "Cả hai", "Bốn máy thử nghiệm chạy không"]
+      answer: 2
+      difficulty: 2
+      skill: Listening
+    - kind: mcq_listen
+      prompt_vi: "Vì sao phần egress cần người khác quyết?"
+      choices: ["Vì tốn nhiều tiền hơn", "Vì đối tác phải chấp nhận định dạng nén", "Vì cần mua thêm băng thông"]
+      answer: 1
+      difficulty: 3
+      skill: Listening
+
+speaking_drills:
+  - kind: read_aloud
+    expected_text: "The biggest line item is egress traffic, about forty percent of the bill."
+    prompt_vi: "Mở đầu bằng khoản lớn nhất, không kể lể toàn bộ."
+    ipa: "/ðə ˈbɪɡɪst laɪn ˈaɪtəm ɪz ˈiːɡres/"
+    focus_phonemes: ["dʒ", "st"]
+  - kind: read_aloud
+    expected_text: "Four machines have been sitting idle since March."
+    prompt_vi: "Nêu lãng phí cụ thể kèm mốc thời gian."
+    ipa: "/fɔːr məˈʃiːnz hæv biːn ˈsɪtɪŋ ˈaɪdl/"
+    focus_phonemes: ["ʃ", "aɪ"]
+  - kind: shadow
+    expected_text: "We can cut the bill by about a quarter this week."
+    prompt_vi: "Nêu mức giảm có con số và có mốc thời gian."
+    ipa: "/wiː kæn kʌt ðə bɪl baɪ əˈbaʊt ə ˈkwɔːrtər/"
+    focus_phonemes: ["kw", "t"]
+  - kind: shadow
+    expected_text: "That one needs a decision, not just a fix."
+    prompt_vi: "Tách việc mình làm được khỏi việc cần người khác quyết."
+    ipa: "/ðæt wʌn niːdz ə dɪˈsɪʒn/"
+    focus_phonemes: ["ʒ", "ð"]
+  - kind: respond
+    prompt_en: "The cloud bill went up forty percent. What happened?"
+    prompt_vi: "Nêu khoản lớn nhất trước, rồi việc bạn làm được tuần này."
+    accept_patterns:
+      - "biggest line item"
+      - "idle"
+      - "we can cut"
+
+reading:
+  kind: note
+  context_vi: >
+    Bản phân tích hoá đơn gửi kèm email cho quản lý. Đọc và tìm khoản nào
+    tốn nhất mà lại dễ cắt nhất.
+  text_en: |
+    Cloud bill review - March to April
+
+    Total went from 3,100 to 4,350 dollars. Three things moved.
+
+    Egress traffic: 180 to 720 dollars
+    We began sending the daily settlement file to the partner on 4 April.
+    Each file is 4 GB and goes out once a day, so 120 GB a month leaves
+    the provider. Compressing the file would bring it to roughly 900 MB,
+    which would cut this line to about 160 dollars. The partner's system
+    must accept gzip first, so this needs their sign-off, not just our change.
+
+    Idle compute: 240 to 560 dollars
+    Four machines were added for the March load test and never removed.
+    They run twenty-four hours a day and do nothing. Removing them is a
+    one-line change and saves 320 dollars a month with no discussion needed.
+
+    Snapshots: 90 to 310 dollars
+    The nightly snapshot retention was changed from 7 days to 90 days in
+    February to satisfy an audit question. Nobody has restored from a
+    snapshot older than 4 days in two years. Before cutting this, we should
+    ask whether the audit answer actually required 90 days or whether
+    someone picked a safe-looking number.
+
+    Recommendation
+    Remove the idle machines this week. Raise the gzip question with the
+    partner. Do not touch snapshot retention until we have the audit
+    requirement in writing - saving 200 dollars is not worth guessing
+    about a compliance answer.
+  text_vi: |
+    Rà soát hoá đơn cloud - tháng Ba sang tháng Tư
+
+    Tổng tăng từ 3.100 lên 4.350 đô. Có ba khoản thay đổi.
+
+    Lưu lượng đi ra: 180 lên 720 đô
+    Bọn mình bắt đầu gửi file đối soát hằng ngày cho đối tác từ 4 tháng Tư.
+    Mỗi file 4 GB, ngày một lần, nên 120 GB mỗi tháng rời khỏi nhà cung cấp.
+    Nén file lại còn khoảng 900 MB, đưa khoản này xuống chừng 160 đô.
+    Hệ thống đối tác phải chấp nhận gzip trước, nên việc này cần họ đồng ý,
+    không chỉ là bọn mình đổi.
+
+    Máy chạy không: 240 lên 560 đô
+    Bốn máy được thêm cho đợt kiểm thử tải tháng Ba và không bị gỡ.
+    Chúng chạy hai tư tiếng mỗi ngày mà không làm gì. Gỡ đi là sửa một dòng
+    và tiết kiệm 320 đô một tháng, không cần bàn bạc gì.
+
+    Ảnh chụp: 90 lên 310 đô
+    Thời gian giữ ảnh chụp hằng đêm được đổi từ 7 ngày lên 90 ngày hồi
+    tháng Hai để trả lời một câu hỏi kiểm toán. Hai năm nay chưa ai khôi phục
+    từ ảnh chụp cũ hơn 4 ngày. Trước khi cắt, nên hỏi xem câu trả lời kiểm toán
+    có thực sự yêu cầu 90 ngày không, hay ai đó chọn một con số nhìn cho an toàn.
+
+    Đề xuất
+    Gỡ máy chạy không trong tuần này. Nêu chuyện gzip với đối tác.
+    Đừng động vào thời gian giữ ảnh chụp cho tới khi có yêu cầu kiểm toán
+    bằng văn bản - tiết kiệm 200 đô không đáng để đoán mò về một câu trả lời tuân thủ.
+  questions:
+    - kind: mcq_read
+      prompt_en: "Which change saves money with no discussion needed?"
+      choices: ["Compressing the partner file", "Cutting snapshot retention", "Removing the four idle machines"]
+      answer: 2
+      difficulty: 2
+      reading_skill: scan
+      skill: Reading
+    - kind: mcq_read
+      prompt_en: "Why does the author refuse to cut snapshot retention now?"
+      choices: ["The audit requirement is not in writing yet", "It saves too little", "Snapshots cannot be changed"]
+      answer: 0
+      difficulty: 3
+      reading_skill: skim
+      skill: Reading
+    - kind: mcq_read
+      prompt_en: "What must happen before the file can be compressed?"
+      choices: ["The provider must lower prices", "The partner's system must accept gzip", "The file must be split"]
+      answer: 1
+      difficulty: 2
+      reading_skill: scan
+      skill: Reading
+
+writing:
+  kind: GuidedEmail
+  prompt_vi: >
+    Viết ba câu trả lời câu hỏi vì sao hoá đơn tăng: nêu khoản lớn nhất,
+    nêu việc bạn cắt được ngay kèm số tiền, và nêu việc cần người khác quyết.
+  prompt_en: "Explain a cloud bill increase in three sentences."
+  required_points:
+    - "biggest line item"
+    - "we can cut"
+    - "needs"
+  hint_vi: "Đừng hứa \"sẽ tối ưu\". Nêu đúng thứ gây tốn và số tiền cắt được."
+  sample_en: "The biggest line item is egress traffic, which went from 180 to 720 dollars after we started sending a 4 GB file to the partner every day. We can cut 320 dollars a month this week by removing four test machines that have been idle since March. Compressing the partner file would save another 560, but it needs the partner to accept gzip, so I have asked them."
+
+quiz:
+  - kind: mcq
+    prompt_vi: "Kế toán hỏi vì sao hoá đơn tăng. Câu mở đầu tốt nhất?"
+    choices: ["Cloud đắt lắm chị ạ", "Để em tối ưu lại", "Khoản lớn nhất là lưu lượng đi ra, khoảng bốn mươi phần trăm phần tăng"]
+    answer: 2
+    difficulty: 1
+    skill: Speaking
+  - kind: mcq
+    prompt_vi: "\"Egress\" nghĩa là gì trong hoá đơn cloud?"
+    choices: ["Dữ liệu đi ra khỏi nhà cung cấp", "Dung lượng lưu trữ", "Số lượng máy ảo"]
+    answer: 0
+    difficulty: 2
+    skill: Reading
+  - kind: mcq
+    prompt_vi: "Scale out khác scale up ở chỗ nào?"
+    choices: ["Hai cái như nhau", "Scale out thêm máy chạy song song, scale up làm máy to hơn", "Scale out chỉ dùng cho cơ sở dữ liệu"]
+    answer: 1
+    difficulty: 2
+    skill: Reading
+  - kind: mcq
+    prompt_vi: "Vì sao nên tách việc mình cắt được khỏi việc cần người khác quyết?"
+    choices: ["Để người nghe biết cái nào chờ được và cái nào cần họ hành động", "Cho báo cáo dài", "Vì quy định"]
+    answer: 0
+    difficulty: 2
+    skill: Speaking
+  - kind: mcq
+    prompt_vi: "\"Sẽ tối ưu và giảm xuống\" yếu ở điểm nào?"
+    choices: ["Quá dài", "Dùng từ khó", "Không nêu thứ gì gây tốn nên người nghe không kiểm chứng và không quyết được"]
+    answer: 2
+    difficulty: 3
+    skill: Writing
+  - kind: mcq
+    prompt_vi: "Bốn máy chạy không suốt đêm. Đây là loại lãng phí nào?"
+    choices: ["Egress", "Idle compute — trả tiền cho máy không làm gì", "Snapshot"]
+    answer: 1
+    difficulty: 2
+    skill: Writing
+
+explanation:
+  why_vi: >
+    Khi bị hỏi về hoá đơn, phản xạ thường là hứa: "để em tối ưu lại". Câu đó
+    nghe có trách nhiệm nhưng không cho người nghe thứ gì. Kế toán và quản lý
+    không cần lời hứa — họ cần biết tiền đi đâu, ai cắt được, và cắt được bao nhiêu.
+    Hứa mà không có con số thì tháng sau bị hỏi lại đúng câu cũ.
+  how_vi: >
+    Ba câu. Câu một: khoản lớn nhất là gì, kèm số tiền hoặc phần trăm.
+    Câu hai: việc bạn tự làm được, kèm số tiền tiết kiệm và mốc thời gian.
+    Câu ba: việc cần người khác quyết, và nói rõ ai quyết. Tách hai loại việc này
+    là phần quan trọng nhất — nó cho người nghe biết chỗ nào cần họ.
+  contrast_vi: >
+    "Cloud đắt, để em tối ưu" đẩy vấn đề sang tháng sau. "Bốn mươi phần trăm
+    phần tăng là egress từ file gửi đối tác; em cắt được 320 đô tuần này bằng cách
+    gỡ bốn máy chạy không; nén file tiết kiệm thêm 560 nhưng cần đối tác đồng ý"
+    cho người nghe ba quyết định rõ ràng ngay trong cuộc nói chuyện.
+
+common_mistakes:
+  - mistake: "Trả lời bằng lời hứa tối ưu thay vì bằng khoản chi cụ thể"
+    why_vi: >
+      Nói ra con số cảm giác như nhận lỗi, nên người ta né sang lời hứa.
+      Nhưng lời hứa không kiểm chứng được và tháng sau vẫn bị hỏi lại.
+    fix_vi: "Mở bằng \"The biggest line item is ...\" kèm số tiền."
+    detect_phoneme_missing: []
+  - mistake: "Gộp việc mình làm được với việc cần người khác quyết"
+    why_vi: >
+      Trong đầu người nói cả hai đều là "việc phải làm". Nhưng người nghe
+      chỉ hành động khi biết rõ chỗ nào cần đến họ.
+    fix_vi: "Nói rõ: cái này em làm tuần này, cái kia cần đối tác hoặc sếp đồng ý."
+    detect_phoneme_missing: []
+  - mistake: "Cắt khoản chi liên quan tới tuân thủ mà chưa hỏi lại yêu cầu"
+    why_vi: >
+      Khoản đó thường dễ cắt về mặt kỹ thuật nên nhìn như quả ngọt.
+      Nhưng tiết kiệm vài trăm đô không bù được một phát hiện kiểm toán.
+    fix_vi: "Xin yêu cầu bằng văn bản trước, rồi mới cắt."
+    detect_phoneme_missing: []
+
+memory_trick_vi: >
+  Ba câu: KHOẢN LỚN NHẤT LÀ GÌ — EM CẮT ĐƯỢC BAO NHIÊU, KHI NÀO — CÁI GÌ CẦN NGƯỜI KHÁC QUYẾT.
+  "Để em tối ưu lại" không phải câu trả lời, đó là lời hoãn.

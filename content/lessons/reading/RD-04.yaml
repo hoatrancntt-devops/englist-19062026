@@ -1,0 +1,437 @@
+schema_version: 1
+code: RD-04
+slug: doc-postmortem
+title_vi: "Đọc postmortem — phân biệt nguyên nhân gốc với thứ châm ngòi"
+title_en: "Reading a postmortem"
+
+layer: Professional
+track: Reading
+level: B1
+unit_code: U-RD2
+order_index: 4
+estimated_minutes: 12
+is_checkpoint: true
+
+illustration: postmortem-timeline
+
+objective_vi: >
+  Đọc một bản postmortem và chỉ đúng đâu là nguyên nhân gốc, đâu chỉ là
+  thứ châm ngòi — hai thứ hay bị lẫn và dẫn tới sửa nhầm chỗ.
+
+objective_observable: >
+  Đạt từ 80 điểm trên cả bốn trục kỹ năng, không trục nào dưới 65.
+
+mastery_weights:
+  Listening: 0.15
+  Speaking: 0.20
+  Reading: 0.45
+  Writing: 0.20
+
+prerequisites:
+  - lesson: RD-03
+    min_mastery: 70
+    kind: Hard
+  - lesson: RD-01
+    min_mastery: 70
+    kind: Hard
+  - lesson: INF-07
+    min_mastery: 65
+    kind: Soft
+
+vocabulary:
+  - term: "root cause"
+    ipa: "/ruːt kɔːz/"
+    meaning_vi: "nguyên nhân gốc — điều kiện khiến sự cố có thể xảy ra"
+    chunk: "The root cause was a missing disk alert."
+    tags: [reading, core]
+  - term: "trigger"
+    ipa: "/ˈtrɪɡər/"
+    meaning_vi: "thứ châm ngòi — sự kiện làm nó bùng ra hôm đó"
+    chunk: "The trigger was a large export at 02:00."
+    tags: [reading, core]
+  - term: "detection"
+    ipa: "/dɪˈtekʃn/"
+    meaning_vi: "cách phát hiện ra sự cố"
+    chunk: "Detection: a customer called, not an alert."
+    tags: [reading, core]
+  - term: "blameless"
+    ipa: "/ˈbleɪmləs/"
+    meaning_vi: "không quy trách nhiệm cá nhân"
+    chunk: "This is a blameless postmortem."
+    tags: [reading, core]
+  - term: "action item"
+    ipa: "/ˈækʃn ˈaɪtəm/"
+    meaning_vi: "việc phải làm, có người và có hạn"
+    chunk: "Each action item has an owner and a date."
+    tags: [reading, core]
+  - term: "contributing factor"
+    ipa: "/kənˈtrɪbjuːtɪŋ ˈfæktər/"
+    meaning_vi: "yếu tố góp phần"
+    chunk: "A contributing factor was the stale runbook."
+    tags: [reading, core]
+
+sentence_patterns:
+  - pattern: "The root cause was {cause}, and the trigger was {trigger}."
+    meaning_vi: "Nguyên nhân gốc là {cause}, còn thứ châm ngòi là {trigger}."
+    slots:
+      cause: ["a missing disk-space alert", "an unbounded retry loop", "no limit on the export size"]
+      trigger: ["a large export at 02:00", "a routine deploy", "one slow partner API"]
+  - pattern: "Detection took {time} because {reason}."
+    meaning_vi: "Mất {time} mới phát hiện vì {reason}."
+    slots:
+      time: ["47 minutes", "two hours", "eleven minutes"]
+      reason: ["no alert existed for that condition", "the alert went to an unused mailbox"]
+
+dialogue:
+  context_vi: >
+    Anh Nam đọc xong bản postmortem và rút ra một kết luận. Bạn chỉ ra
+    anh đang lẫn nguyên nhân gốc với thứ châm ngòi.
+  turns:
+    - speaker: "Nam"
+      en: "So the cause was the big export job. We should stop running it at night."
+      vi: "Vậy nguyên nhân là cái job xuất dữ liệu lớn. Mình nên thôi chạy nó ban đêm."
+    - speaker: "You"
+      en: "That was the trigger, not the root cause. The export ran every night for a year without a problem."
+      vi: "Đó là thứ châm ngòi, không phải nguyên nhân gốc. Job đó chạy mỗi đêm suốt một năm mà không sao."
+    - speaker: "Nam"
+      en: "Then what's the root cause?"
+      vi: "Thế nguyên nhân gốc là gì?"
+    - speaker: "You"
+      en: "There was no alert for disk space on that volume. The disk had been filling for weeks and nobody could see it."
+      vi: "Không có cảnh báo dung lượng đĩa trên phân vùng đó. Đĩa đầy dần suốt mấy tuần mà không ai nhìn thấy."
+    - speaker: "Nam"
+      en: "But it only broke on the night of the export."
+      vi: "Nhưng nó chỉ hỏng đúng đêm chạy job xuất."
+    - speaker: "You"
+      en: "Right. If we only move the export, the disk still fills. Something else triggers it next month and we're back here."
+      vi: "Đúng ạ. Nếu chỉ dời job xuất thì đĩa vẫn đầy. Tháng sau một thứ khác châm ngòi và mình lại ngồi đây."
+    - speaker: "Nam"
+      en: "So the action item is the alert."
+      vi: "Vậy việc cần làm là cái cảnh báo."
+    - speaker: "You"
+      en: "The alert first. Moving the export is fine too, but that one only buys time."
+      vi: "Cảnh báo trước ạ. Dời job xuất cũng được, nhưng cái đó chỉ mua thêm thời gian."
+
+listening:
+  context_vi: >
+    Nghe hai người tóm tắt cùng một bản postmortem. Chú ý ai tách được
+    nguyên nhân gốc khỏi thứ châm ngòi.
+  speed: 1.2
+  voice: en_US_female
+  transcript_en: "Summary one: the export job filled the disk and took the service down, so we move the export to the weekend. Summary two: the trigger was the export job on the night of the twelfth. The root cause was that no alert existed for disk space on that volume, so it had been filling for six weeks unseen. A contributing factor was that detection took forty-seven minutes because a customer called before any monitor noticed. Moving the export buys time. The alert is the fix."
+  transcript_vi: "Tóm tắt một: job xuất dữ liệu làm đầy đĩa và làm sập dịch vụ, nên bọn tôi dời job xuất sang cuối tuần. Tóm tắt hai: thứ châm ngòi là job xuất đêm mười hai. Nguyên nhân gốc là không có cảnh báo dung lượng đĩa trên phân vùng đó, nên nó đầy dần suốt sáu tuần mà không ai thấy. Một yếu tố góp phần là mất bốn mươi bảy phút mới phát hiện, vì khách hàng gọi trước khi có bộ giám sát nào nhận ra. Dời job xuất chỉ mua thêm thời gian. Cảnh báo mới là cách sửa."
+  questions:
+    - kind: mcq_listen
+      prompt_vi: "Theo tóm tắt hai, nguyên nhân gốc là gì?"
+      choices: ["Không có cảnh báo dung lượng đĩa", "Job xuất dữ liệu", "Khách hàng gọi muộn"]
+      answer: 0
+      difficulty: 2
+      skill: Listening
+    - kind: mcq_listen
+      prompt_vi: "Mất bao lâu mới phát hiện sự cố?"
+      choices: ["Sáu tuần", "Mười hai phút", "Bốn mươi bảy phút"]
+      answer: 2
+      difficulty: 2
+      skill: Listening
+    - kind: mcq_listen
+      prompt_vi: "Vì sao dời job xuất chưa đủ?"
+      choices: ["Vì cuối tuần cũng bận", "Vì đĩa vẫn đầy, chỉ là thứ khác sẽ châm ngòi", "Vì job đó quan trọng"]
+      answer: 1
+      difficulty: 3
+      skill: Listening
+
+speaking_drills:
+  - kind: read_aloud
+    expected_text: "That was the trigger, not the root cause."
+    prompt_vi: "Câu này ngăn cả nhóm đi sửa nhầm chỗ."
+    ipa: "/ðæt wɒz ðə ˈtrɪɡər nɒt ðə ruːt kɔːz/"
+    focus_phonemes: ["tr", "z"]
+  - kind: read_aloud
+    expected_text: "The root cause was that no alert existed for disk space."
+    prompt_vi: "Nguyên nhân gốc thường là một thứ VẮNG MẶT, không phải một sự kiện."
+    ipa: "/ðə ruːt kɔːz wɒz ðæt noʊ əˈlɜːrt/"
+    focus_phonemes: ["ɜːr", "st"]
+  - kind: shadow
+    expected_text: "Detection took forty-seven minutes because a customer called first."
+    prompt_vi: "Thời gian phát hiện là con số quan trọng thứ hai trong postmortem."
+    ipa: "/dɪˈtekʃn tʊk ˈfɔːrti ˈsevn ˈmɪnɪts/"
+    focus_phonemes: ["kʃ", "v"]
+  - kind: shadow
+    expected_text: "Moving the export buys time. The alert is the fix."
+    prompt_vi: "Phân biệt việc mua thời gian với việc sửa thật."
+    ipa: "/ˈmuːvɪŋ ði ˈekspɔːrt baɪz taɪm/"
+    focus_phonemes: ["ks", "z"]
+  - kind: respond
+    prompt_en: "So the cause was the big export job. We should stop running it at night."
+    prompt_vi: "Chỉ ra đó là thứ châm ngòi, rồi nêu nguyên nhân gốc."
+    accept_patterns:
+      - "trigger"
+      - "root cause"
+      - "alert"
+
+reading:
+  kind: postmortem
+  context_vi: >
+    Bản postmortem viết theo mẫu của Google SRE. Đọc và tách cho được
+    nguyên nhân gốc, thứ châm ngòi, và cách phát hiện.
+  text_en: |
+    Postmortem: order service unavailable, 12 June
+
+    Date: 12 June 2026
+    Authors: platform team
+    Status: final, action items tracked
+
+    Summary
+    The order service was unavailable for 1 hour 12 minutes after the
+    database volume filled to 100%.
+
+    Impact
+    About 2,400 orders could not be created between 02:41 and 03:53.
+    Roughly 900 were retried successfully by partners afterwards; the
+    remaining 1,500 were lost and had to be re-entered by hand over the
+    following two days.
+
+    Root cause
+    No alert existed for disk space on the database data volume. The
+    volume had been filling since the retention change on 28 April, at
+    roughly 1.4 GB a day, and reached capacity on 12 June. No dashboard
+    displayed this volume either, so the growth was invisible for six weeks.
+
+    Trigger
+    The nightly export job at 02:00 wrote a 6 GB temporary file to the
+    same volume. This was normal behaviour and had run every night since
+    March without incident. It consumed the last free space.
+
+    Contributing factors
+    The runbook for "database out of disk" pointed to a directory that was
+    moved in a 2025 refactor, so the on-call engineer spent 20 minutes
+    looking in the wrong place.
+    The retention change in April was reviewed and approved, but the review
+    did not ask what it would do to disk growth.
+
+    Detection
+    A partner called the service desk at 02:41. No monitor fired. Detection
+    took 47 minutes from the first failed write.
+
+    Resolution
+    The on-call engineer deleted the temporary export file at 03:49, which
+    freed 6 GB and brought the service back at 03:53. Retention was reduced
+    to 30 days the same morning, freeing 340 GB.
+
+    Lessons learned
+    What went well: once the cause was found, recovery took four minutes.
+    What went badly: a six-week-long condition was invisible, and the
+    runbook was wrong.
+    Where we got lucky: the export file was still on disk. Had it been
+    cleaned up automatically, we would have had no quick space to free.
+
+    Action items
+    1. Alert on disk usage above 80% for all database volumes. Owner:
+       platform team. Due 19 June. This is the item that prevents recurrence.
+    2. Add every mounted volume to the capacity dashboard. Owner: platform
+       team. Due 26 June.
+    3. Add a disk-growth question to the change review checklist. Owner:
+       change manager. Due 30 June.
+    4. Fix the runbook path and add a quarterly runbook test. Owner:
+       on-call rota. Due 15 July.
+    Moving the export job was considered and rejected: it would hide the
+    condition rather than fix it.
+  text_vi: |
+    Postmortem: dịch vụ đơn hàng ngừng chạy, 12 tháng Sáu
+
+    Ngày: 12 tháng Sáu 2026
+    Người viết: nhóm nền tảng
+    Trạng thái: bản cuối, việc cần làm đang được theo dõi
+
+    Tóm tắt
+    Dịch vụ đơn hàng ngừng chạy 1 giờ 12 phút sau khi phân vùng của
+    cơ sở dữ liệu đầy 100%.
+
+    Tác động
+    Khoảng 2.400 đơn không tạo được trong khoảng 02:41 tới 03:53.
+    Chừng 900 đơn được đối tác gửi lại thành công sau đó; 1.500 đơn còn lại
+    bị mất và phải nhập tay trong hai ngày kế tiếp.
+
+    Nguyên nhân gốc
+    Không có cảnh báo dung lượng đĩa cho phân vùng dữ liệu của cơ sở dữ liệu.
+    Phân vùng này đầy dần từ lần đổi thời gian lưu ngày 28 tháng Tư, khoảng
+    1,4 GB mỗi ngày, và chạm trần ngày 12 tháng Sáu. Cũng không bảng điều khiển
+    nào hiển thị phân vùng này, nên mức tăng vô hình suốt sáu tuần.
+
+    Thứ châm ngòi
+    Job xuất dữ liệu hằng đêm lúc 02:00 ghi một file tạm 6 GB vào cùng phân vùng.
+    Đây là hành vi bình thường và đã chạy mỗi đêm từ tháng Ba mà không có sự cố.
+    Nó dùng nốt phần trống cuối cùng.
+
+    Yếu tố góp phần
+    Sổ tay xử lý "cơ sở dữ liệu hết đĩa" trỏ tới một thư mục đã bị dời trong đợt
+    tái cấu trúc năm 2025, nên kỹ sư trực mất 20 phút tìm nhầm chỗ.
+    Lần đổi thời gian lưu hồi tháng Tư có được duyệt, nhưng buổi duyệt không hỏi
+    việc đó ảnh hưởng thế nào tới mức tăng dung lượng đĩa.
+
+    Phát hiện
+    Một đối tác gọi tới service desk lúc 02:41. Không bộ giám sát nào kêu.
+    Mất 47 phút từ lần ghi hỏng đầu tiên mới phát hiện ra.
+
+    Khắc phục
+    Kỹ sư trực xoá file tạm của job xuất lúc 03:49, giải phóng 6 GB và đưa dịch vụ
+    trở lại lúc 03:53. Thời gian lưu được giảm về 30 ngày ngay sáng hôm đó,
+    giải phóng 340 GB.
+
+    Bài học rút ra
+    Điều làm tốt: khi đã tìm ra nguyên nhân thì khôi phục chỉ mất bốn phút.
+    Điều làm chưa tốt: một tình trạng kéo dài sáu tuần mà vô hình, và sổ tay xử lý sai.
+    Chỗ mình gặp may: file xuất vẫn còn trên đĩa. Nếu nó đã bị dọn tự động thì
+    sẽ không có chỗ trống nào để giải phóng nhanh.
+
+    Việc cần làm
+    1. Cảnh báo khi dung lượng đĩa vượt 80% trên mọi phân vùng cơ sở dữ liệu.
+       Người chịu trách nhiệm: nhóm nền tảng. Hạn 19 tháng Sáu.
+       Đây là việc ngăn sự cố lặp lại.
+    2. Đưa mọi phân vùng đang gắn vào bảng theo dõi dung lượng.
+       Người chịu trách nhiệm: nhóm nền tảng. Hạn 26 tháng Sáu.
+    3. Thêm câu hỏi về mức tăng dung lượng đĩa vào danh mục duyệt thay đổi.
+       Người chịu trách nhiệm: quản lý thay đổi. Hạn 30 tháng Sáu.
+    4. Sửa đường dẫn trong sổ tay và thêm bài kiểm tra sổ tay hằng quý.
+       Người chịu trách nhiệm: nhóm trực. Hạn 15 tháng Bảy.
+    Phương án dời job xuất đã được cân nhắc và bị loại: nó che tình trạng đi
+    chứ không sửa được.
+  questions:
+    - kind: mcq_read
+      prompt_en: "What is the root cause?"
+      choices: ["The nightly export job", "The partner calling late", "No alert existed for disk space on that volume"]
+      answer: 2
+      difficulty: 2
+      reading_skill: scan
+      skill: Reading
+    - kind: mcq_read
+      prompt_en: "What is the trigger?"
+      choices: ["The 6 GB export file on the night of 12 June", "The retention change in April", "The wrong runbook path"]
+      answer: 0
+      difficulty: 2
+      reading_skill: scan
+      skill: Reading
+    - kind: mcq_read
+      prompt_en: "Why was moving the export job rejected?"
+      choices: ["It runs at a fixed time", "It would hide the condition rather than fix it", "It costs too much"]
+      answer: 1
+      difficulty: 3
+      reading_skill: skim
+      skill: Reading
+    - kind: mcq_read
+      prompt_en: "How was the outage detected?"
+      choices: ["A disk alert fired", "The on-call engineer noticed a dashboard", "A partner called the service desk"]
+      answer: 2
+      difficulty: 1
+      reading_skill: scan
+      skill: Reading
+    - kind: mcq_read
+      prompt_en: "What does the report list under \"where we got lucky\"?"
+      choices: ["The export file was still on disk and could be deleted", "The engineer was awake", "The partner retried"]
+      answer: 0
+      difficulty: 3
+      reading_skill: scan
+      skill: Reading
+    - kind: mcq_read
+      prompt_en: "Which action item prevents recurrence?"
+      choices: ["The capacity dashboard", "The disk usage alert above 80%", "The runbook fix"]
+      answer: 1
+      difficulty: 3
+      reading_skill: skim
+      skill: Reading
+
+writing:
+  kind: GuidedEmail
+  prompt_vi: >
+    Viết ba câu tóm tắt một postmortem: nguyên nhân gốc, thứ châm ngòi,
+    và việc cần làm ngăn được lần sau.
+  prompt_en: "Summarise a postmortem in three sentences."
+  required_points:
+    - "root cause"
+    - "trigger"
+    - "action item"
+  hint_vi: "Nguyên nhân gốc thường là một thứ vắng mặt, không phải một sự kiện."
+  sample_en: "The root cause was that no alert existed for disk space on the database volume, which had been filling at 1.4 GB a day since the April retention change and was invisible for six weeks. The trigger was the nightly export writing a 6 GB temporary file on 12 June, which had run without incident since March. The action item that prevents recurrence is an alert at 80% disk usage on every database volume, due 19 June; moving the export was rejected because it would hide the condition rather than fix it."
+
+quiz:
+  - kind: mcq
+    prompt_vi: "Nguyên nhân gốc khác thứ châm ngòi thế nào?"
+    choices: ["Nguyên nhân gốc là điều kiện khiến sự cố có thể xảy ra, châm ngòi là sự kiện làm nó bùng ra hôm đó", "Giống nhau", "Châm ngòi luôn nghiêm trọng hơn"]
+    answer: 0
+    difficulty: 2
+    skill: Reading
+  - kind: mcq
+    prompt_vi: "Nguyên nhân gốc thường có dạng gì?"
+    choices: ["Một sự kiện xảy ra hôm đó", "Một người làm sai", "Một thứ vắng mặt: thiếu cảnh báo, thiếu giới hạn, thiếu kiểm tra"]
+    answer: 2
+    difficulty: 3
+    skill: Reading
+  - kind: mcq
+    prompt_vi: "Mục \"Detection\" trong postmortem cho biết gì?"
+    choices: ["Ai gây ra sự cố", "Mất bao lâu và bằng cách nào mới biết có sự cố", "Chi phí sự cố"]
+    answer: 1
+    difficulty: 2
+    skill: Reading
+  - kind: mcq
+    prompt_vi: "\"Blameless\" nghĩa là gì và vì sao cần?"
+    choices: ["Không quy trách nhiệm cá nhân, để người ta dám kể đúng chuyện đã xảy ra", "Không ai bị phạt, nên không cần cẩn thận", "Không cần viết tên ai"]
+    answer: 0
+    difficulty: 3
+    skill: Writing
+  - kind: mcq
+    prompt_vi: "Việc cần làm viết thế nào mới dùng được?"
+    choices: ["Cải thiện giám sát", "Rút kinh nghiệm", "Cảnh báo khi đĩa vượt 80%, nhóm nền tảng, hạn 19 tháng Sáu"]
+    answer: 2
+    difficulty: 2
+    skill: Writing
+  - kind: mcq
+    prompt_vi: "Đồng nghiệp kết luận \"do job xuất dữ liệu\". Bạn nói gì?"
+    choices: ["Đúng rồi, dời job đi", "Đó là thứ châm ngòi — job chạy cả năm không sao, gốc là thiếu cảnh báo đĩa", "Cần điều tra thêm"]
+    answer: 1
+    difficulty: 3
+    skill: Speaking
+
+explanation:
+  why_vi: >
+    Thứ châm ngòi luôn dễ thấy: nó xảy ra đúng hôm đó, có dấu thời gian, có tên.
+    Nguyên nhân gốc thì vô hình, vì nó là một thứ VẮNG MẶT — thiếu cảnh báo,
+    thiếu giới hạn, thiếu một câu hỏi trong buổi duyệt. Nhóm nào sửa thứ châm ngòi
+    thì sự cố quay lại sau vài tháng dưới một hình dạng khác, và lần đó không ai
+    nhận ra là cùng một vấn đề.
+  how_vi: >
+    Phép thử một câu: "nếu bỏ thứ này đi, sự cố có xảy ra được nữa không?"
+    Bỏ job xuất — đĩa vẫn đầy, chỉ là chậm hơn vài ngày, nên job xuất là châm ngòi.
+    Bỏ việc thiếu cảnh báo — nghĩa là có cảnh báo — thì đĩa đầy được phát hiện từ
+    sáu tuần trước, nên đó là nguyên nhân gốc.
+    Đọc postmortem thì luôn đọc ba mục theo thứ tự: Root cause, Trigger, Detection.
+    Mục Detection cho biết bạn có phát hiện được lần sau hay không.
+  contrast_vi: >
+    "Job xuất làm đầy đĩa nên dời nó sang cuối tuần" sửa được đúng đêm mười hai.
+    "Không có cảnh báo dung lượng nên đĩa đầy dần sáu tuần mà vô hình" sửa được
+    mọi lần đĩa đầy trong tương lai — và bản postmortem này còn ghi rõ phương án dời job
+    đã bị loại vì nó che tình trạng đi chứ không sửa.
+
+common_mistakes:
+  - mistake: "Lấy sự kiện gần nhất làm nguyên nhân gốc"
+    why_vi: >
+      Sự kiện đó có dấu thời gian trùng với lúc hỏng nên nhìn như thủ phạm.
+      Nhưng nó thường đã lặp lại vô hại hàng trăm lần trước đó.
+    fix_vi: "Hỏi: thứ này chạy bao lâu rồi mà không sao? Lâu thì nó là châm ngòi."
+    detect_phoneme_missing: []
+  - mistake: "Bỏ qua mục Detection"
+    why_vi: >
+      Mọi người tập trung vào nguyên nhân và cách sửa. Nhưng nếu lần sau vẫn
+      phải chờ khách hàng gọi thì thời gian ngừng chạy vẫn dài như cũ.
+    fix_vi: "Luôn hỏi: lần sau mình biết trước hay lại chờ khách hàng gọi?"
+    detect_phoneme_missing: []
+  - mistake: "Viết việc cần làm không có người và không có hạn"
+    why_vi: >
+      Trong buổi họp thì cả nhóm đều gật, nên viết chung chung thấy đủ.
+      Ba tháng sau không ai nhớ mình nhận việc gì.
+    fix_vi: "Mỗi việc một tên người và một ngày. Không có hai thứ đó thì đó là mong muốn, không phải việc."
+    detect_phoneme_missing: []
+
+memory_trick_vi: >
+  Phép thử: BỎ THỨ NÀY ĐI THÌ SỰ CỐ CÒN XẢY RA ĐƯỢC KHÔNG?
+  Còn — đó là châm ngòi. Không còn — đó là nguyên nhân gốc.
+  Và nguyên nhân gốc gần như luôn là một thứ VẮNG MẶT, không phải một sự kiện.

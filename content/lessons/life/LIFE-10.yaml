@@ -1,0 +1,248 @@
+schema_version: 1
+code: LIFE-10
+slug: dat-xe-va-di-lai
+title_vi: "Đặt xe và đi lại"
+title_en: "Getting around"
+
+layer: Life
+track: Foundation
+level: A1
+unit_code: U-L2
+order_index: 10
+estimated_minutes: 11
+
+illustration: city-transport
+
+objective_vi: >
+  Đặt xe, nói địa chỉ, và xử lý được tình huống tài xế gọi tới mà bạn không biết mình đang đứng đâu.
+
+objective_observable: >
+  Nói được địa chỉ và điểm mốc trong 3 trên 4 drill, và hiểu đúng câu hỏi của tài xế.
+
+mastery_weights:
+  Listening: 0.35
+  Speaking: 0.35
+  Reading: 0.15
+  Writing: 0.15
+
+prerequisites:
+  - lesson: LIFE-09
+    min_mastery: 60
+    kind: Hard
+
+vocabulary:
+  - term: "pick me up"
+    ipa: "/pɪk miː ʌp/"
+    meaning_vi: "đón tôi"
+    chunk: "Can you pick me up at the main gate?"
+    tags: [transport, core]
+  - term: "drop me off"
+    ipa: "/drɒp miː ɒf/"
+    meaning_vi: "cho tôi xuống"
+    chunk: "Drop me off at the corner, please."
+    tags: [transport, core]
+  - term: "I'm waiting at"
+    ipa: "/aɪm ˈweɪtɪŋ æt/"
+    meaning_vi: "tôi đang đứng ở"
+    chunk: "I'm waiting at the lobby."
+    tags: [transport, core]
+  - term: "How long will it take"
+    ipa: "/haʊ lɒŋ wɪl ɪt teɪk/"
+    meaning_vi: "mất bao lâu"
+    chunk: "How long will it take to the airport?"
+    tags: [transport]
+  - term: "stuck in traffic"
+    ipa: "/stʌk ɪn ˈtræfɪk/"
+    meaning_vi: "kẹt xe"
+    chunk: "Sorry, I'm stuck in traffic."
+    tags: [transport, office]
+  - term: "on my way"
+    ipa: "/ɒn maɪ weɪ/"
+    meaning_vi: "tôi đang trên đường"
+    chunk: "On my way, five minutes out."
+    tags: [transport, office]
+
+sentence_patterns:
+  - pattern: "I'm waiting at {place}."
+    meaning_vi: "Tôi đang đứng ở {place}."
+    slots:
+      place: ["the main gate", "the lobby", "the coffee shop on the corner"]
+  - pattern: "How long will it take to {destination}?"
+    meaning_vi: "Đi tới {destination} mất bao lâu?"
+    slots:
+      destination: ["the airport", "the office", "District 1"]
+
+dialogue:
+  context_vi: >
+    Tài xế gọi tới nhưng không tìm được bạn. Đây là cuộc gọi tiếng Anh căng thẳng nhất
+    của người mới, vì cả hai bên đều vội và đường thì ồn.
+  turns:
+    - speaker: "Driver"
+      en: "Hello, I'm outside but I don't see you. Where are you exactly?"
+      vi: "Alo, tôi ở ngoài rồi mà không thấy anh. Anh đang đứng chính xác ở đâu?"
+    - speaker: "You"
+      en: "I'm waiting at the main gate, next to the coffee shop."
+      vi: "Tôi đang đứng ở cổng chính, cạnh quán cà phê."
+    - speaker: "Driver"
+      en: "OK, I see it. Two minutes."
+      vi: "Được rồi, tôi thấy rồi. Hai phút nữa."
+    - speaker: "You"
+      en: "Thanks. How long will it take to the airport?"
+      vi: "Cảm ơn. Đi ra sân bay mất bao lâu ạ?"
+    - speaker: "Driver"
+      en: "About forty minutes, maybe more. We might get stuck in traffic."
+      vi: "Khoảng bốn mươi phút, có thể hơn. Có khi kẹt xe."
+
+listening:
+  context_vi: >
+    Nghe tài xế báo trễ. Chú ý con số và lý do — hai thứ bạn cần để nhắn lại cho đồng nghiệp.
+  speed: 0.95
+  voice: en_US_male
+  transcript_en: "Hi, sorry — I'm stuck in traffic near the bridge. I'll be there in about fifteen minutes. Can you wait at the lobby instead?"
+  transcript_vi: "Chào anh, xin lỗi — tôi đang kẹt xe gần cầu. Khoảng mười lăm phút nữa tôi tới. Anh đứng ở sảnh chờ giúp tôi được không?"
+  questions:
+    - kind: mcq_listen
+      prompt_vi: "Tài xế tới sau bao lâu?"
+      choices: ["15 phút", "5 phút", "50 phút"]
+      answer: 0
+      difficulty: 3
+      skill: Listening
+    - kind: mcq_listen
+      prompt_vi: "Tài xế đề nghị bạn làm gì?"
+      choices: ["Huỷ chuyến", "Đi bộ ra cầu", "Đứng ở sảnh"]
+      answer: 2
+      difficulty: 2
+      skill: Listening
+
+speaking_drills:
+  - kind: read_aloud
+    expected_text: "I'm waiting at the main gate."
+    prompt_vi: "Đọc to. Chú ý âm cuối /t/ của gate — nuốt mất thì thành gay."
+    ipa: "/aɪm ˈweɪtɪŋ æt ðə meɪn ɡeɪt/"
+    focus_phonemes: ["t", "ŋ"]
+  - kind: read_aloud
+    expected_text: "Can you pick me up at the lobby?"
+    prompt_vi: "Cụm động từ pick up tách đôi, me nằm ở giữa. Đọc liền một nhịp."
+    ipa: "/kæn juː pɪk miː ʌp æt ðə ˈlɒbi/"
+    focus_phonemes: ["k", "p"]
+  - kind: shadow
+    expected_text: "How long will it take to the airport?"
+    prompt_vi: "Câu hỏi thời gian. Nghe rồi nhắc lại cả câu một hơi."
+    ipa: "/haʊ lɒŋ wɪl ɪt teɪk tuː ðə ˈerpɔːrt/"
+    focus_phonemes: ["ŋ", "ð"]
+  - kind: shadow
+    expected_text: "Sorry, I'm stuck in traffic."
+    prompt_vi: "Câu bạn sẽ dùng nhiều nhất khi đi làm ở thành phố lớn."
+    ipa: "/ˈsɒri aɪm stʌk ɪn ˈtræfɪk/"
+    focus_phonemes: ["st", "tr"]
+  - kind: respond
+    prompt_en: "I'm outside but I don't see you. Where are you exactly?"
+    prompt_vi: "Tài xế không tìm thấy bạn. Nói vị trí kèm một điểm mốc dễ thấy."
+    accept_patterns:
+      - "I'm waiting at"
+      - "I'm at"
+      - "next to"
+
+reading:
+  kind: chat
+  context_vi: >
+    Bạn nhắn cho Linh khi biết mình sẽ tới muộn. Để ý cấu trúc: báo trễ, nêu lý do, đưa giờ mới.
+  text_en: |
+    You: Running late - stuck in traffic near the bridge.
+    You: On my way, about fifteen minutes out.
+    Linh: No worries. We'll start without you and I'll fill you in.
+    You: Thanks. I'll join as soon as I'm in.
+  text_vi: |
+    Bạn: Em bị trễ - đang kẹt xe gần cầu.
+    Bạn: Em đang trên đường, khoảng mười lăm phút nữa tới.
+    Linh: Không sao. Bọn chị bắt đầu trước, chị tóm tắt lại cho em sau.
+    Bạn: Cảm ơn chị. Em vào ngay khi tới nơi.
+  questions:
+    - kind: mcq_read
+      prompt_en: "What three things did the learner tell Linh?"
+      choices: ["Late, sorry, goodbye", "Late, reason, new time", "Traffic, weather, plan"]
+      answer: 1
+      difficulty: 3
+      reading_skill: skim
+      skill: Reading
+    - kind: mcq_read
+      prompt_en: "What will Linh do?"
+      choices: ["Wait for the learner", "Cancel the meeting", "Start without them"]
+      answer: 2
+      difficulty: 1
+      reading_skill: scan
+      skill: Reading
+
+writing:
+  kind: GuidedEmail
+  prompt_vi: >
+    Nhắn cho quản lý báo bạn sẽ tới muộn. Phải có đủ ba ý: bạn bị trễ,
+    lý do, và khoảng bao lâu nữa tới.
+  prompt_en: "Send a short message telling your manager you will be late."
+  required_points:
+    - "running late"
+    - "traffic"
+    - "minutes"
+  hint_vi: "Dùng các cụm đã học: running late, stuck in traffic, on my way."
+  sample_en: "Running late - stuck in traffic near the bridge. On my way, about fifteen minutes out."
+
+quiz:
+  - kind: mcq
+    prompt_vi: "Tài xế hỏi bạn đang ở đâu. Câu nào hữu ích nhất?"
+    choices: ["I'm waiting at the main gate, next to the coffee shop", "I am here", "Outside"]
+    answer: 0
+    difficulty: 2
+    skill: Speaking
+  - kind: mcq
+    prompt_vi: "\"Drop me off\" nghĩa là gì?"
+    choices: ["Đón tôi", "Cho tôi xuống", "Chờ tôi"]
+    answer: 1
+    difficulty: 1
+    skill: Reading
+  - kind: mcq
+    prompt_vi: "Báo trễ cho sếp thì cần nói mấy ý?"
+    choices: ["Chỉ cần xin lỗi", "Chỉ cần nêu lý do", "Trễ, lý do, giờ tới dự kiến"]
+    answer: 2
+    difficulty: 2
+    skill: Writing
+  - kind: mcq
+    prompt_vi: "\"On my way\" nghĩa là gì?"
+    choices: ["Tôi đang trên đường", "Tôi đã tới nơi", "Tôi đang chờ"]
+    answer: 0
+    difficulty: 1
+    skill: Listening
+
+explanation:
+  why_vi: >
+    Nói vị trí là chỗ người Việt hay bí nhất, vì tiếng Việt chỉ đường bằng mốc quen thuộc
+    ("chỗ cây xăng", "gần chợ") mà người nước ngoài không biết. Thêm nữa, cuộc gọi với tài xế
+    thường ồn và gấp, nên không có thời gian nghĩ câu.
+  how_vi: >
+    Luôn nói vị trí theo hai lớp: MỐC LỚN cộng CHI TIẾT NHẬN DẠNG.
+    Ví dụ "at the main gate, next to the coffee shop". Mốc lớn để tìm khu vực,
+    chi tiết để nhận ra chính xác bạn.
+  contrast_vi: >
+    "Pick me up" là đón, "drop me off" là cho xuống. Hai cụm ngược nhau,
+    và nói nhầm thì tài xế đưa bạn đi sai hướng.
+
+common_mistakes:
+  - mistake: "Trả lời \"I am here\" khi được hỏi đang ở đâu"
+    why_vi: >
+      Dịch thẳng từ “em ở đây rồi”. Câu này không mang thông tin nào cho người
+      đang tìm bạn giữa một khu phố.
+    fix_vi: "Luôn kèm mốc lớn và chi tiết nhận dạng: \"at the main gate, next to the coffee shop\"."
+    detect_phoneme_missing: []
+  - mistake: "Báo trễ mà không nói giờ tới dự kiến"
+    why_vi: >
+      Tiếng Việt hay nói “em tới ngay” và coi đó là đủ. Người quản lý cần một con số
+      để quyết định có chờ hay bắt đầu trước.
+    fix_vi: "Luôn có ba ý: trễ, lý do, số phút nữa tới. Ba ý này là một tin nhắn hoàn chỉnh."
+    detect_phoneme_missing: []
+  - mistake: "Nuốt âm cuối /t/ và /k/ trong gate, stuck, traffic"
+    why_vi: "Âm tắc cuối từ không tồn tại rõ trong tiếng Việt nên miệng tự bỏ."
+    fix_vi: "Bật nhẹ hơi ở cuối: gaTe, stucK. Nghe hơi cường điệu lúc tập là đúng."
+    detect_phoneme_missing: ["t", "k"]
+
+memory_trick_vi: >
+  Vị trí luôn hai lớp: MỐC LỚN cộng CHI TIẾT. Báo trễ luôn ba ý:
+  TRỄ, LÝ DO, MẤY PHÚT. Hai công thức này xử lý gần hết chuyện đi lại.

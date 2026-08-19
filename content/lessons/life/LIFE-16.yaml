@@ -1,0 +1,304 @@
+schema_version: 1
+code: LIFE-16
+slug: checkpoint-tang-doi-song
+title_vi: "Checkpoint: Tầng Đời sống"
+title_en: "Checkpoint: everyday English"
+
+layer: Life
+track: Foundation
+level: A2
+unit_code: U-L3
+order_index: 16
+estimated_minutes: 12
+is_checkpoint: true
+
+illustration: coffee-chat
+
+objective_vi: >
+  Chứng minh bạn dùng được cả tầng Đời sống trong một tình huống liền mạch,
+  chứ không phải nhớ từng bài rời rạc.
+
+objective_observable: >
+  Đạt từ 80 điểm trên cả bốn trục kỹ năng, không trục nào dưới 65.
+
+mastery_weights:
+  Listening: 0.30
+  Speaking: 0.30
+  Reading: 0.20
+  Writing: 0.20
+
+prerequisites:
+  - lesson: LIFE-15
+    min_mastery: 70
+    kind: Hard
+  - lesson: LIFE-12
+    min_mastery: 65
+    kind: Hard
+  - lesson: LIFE-09
+    min_mastery: 65
+    kind: Soft
+
+vocabulary:
+  - term: "Let me confirm"
+    ipa: "/let miː kənˈfɜːrm/"
+    meaning_vi: "để tôi xác nhận lại"
+    chunk: "Let me confirm: Thursday, two thirty."
+    tags: [review, core]
+  - term: "Something came up"
+    ipa: "/ˈsʌmθɪŋ keɪm ʌp/"
+    meaning_vi: "có việc đột xuất"
+    chunk: "Sorry, something came up."
+    tags: [review, core]
+  - term: "on my way"
+    ipa: "/ɒn maɪ weɪ/"
+    meaning_vi: "tôi đang trên đường"
+    chunk: "On my way, ten minutes out."
+    tags: [review]
+  - term: "I'll have"
+    ipa: "/aɪl hæv/"
+    meaning_vi: "cho tôi (gọi món)"
+    chunk: "I'll have the set lunch."
+    tags: [review]
+  - term: "under the weather"
+    ipa: "/ˈʌndər ðə ˈweðər/"
+    meaning_vi: "hơi mệt trong người"
+    chunk: "She's a bit under the weather."
+    tags: [review]
+  - term: "wrapped up"
+    ipa: "/ræpt ʌp/"
+    meaning_vi: "kết thúc, làm xong"
+    chunk: "I wrapped up around six."
+    tags: [review]
+
+sentence_patterns:
+  - pattern: "Let me confirm: {detail}."
+    meaning_vi: "Để tôi xác nhận lại: {detail}."
+    slots:
+      detail: ["Thursday at two", "three sets, not four", "the main gate"]
+  - pattern: "Sorry, {reason}. Can we {alternative}?"
+    meaning_vi: "Xin lỗi, {reason}. Mình {alternative} được không?"
+    slots:
+      reason: ["something came up", "I'm stuck in traffic"]
+      alternative: ["push it to four", "make it tomorrow"]
+
+dialogue:
+  context_vi: >
+    Một ngày gói trọn cả tầng Đời sống: chào hỏi, đổi hẹn, báo kẹt xe,
+    ăn trưa, và kể lại cuối ngày. Không có tình huống nào mới — tất cả bạn đã học.
+  turns:
+    - speaker: "Priya"
+      en: "Morning! How's it going?"
+      vi: "Chào buổi sáng! Dạo này thế nào?"
+    - speaker: "You"
+      en: "Not bad, thanks. You? By the way, sorry — something came up. Can we push our two o'clock to four?"
+      vi: "Cũng ổn, cảm ơn. Còn chị? À mà xin lỗi — em có việc đột xuất. Mình dời buổi hai giờ sang bốn giờ được không?"
+    - speaker: "Priya"
+      en: "Four works. Let me confirm: today at four, same room?"
+      vi: "Bốn giờ được. Để tôi xác nhận lại: hôm nay bốn giờ, vẫn phòng cũ nhé?"
+    - speaker: "You"
+      en: "Same room. Want to grab lunch before that?"
+      vi: "Vẫn phòng đó. Trước đó đi ăn trưa không chị?"
+    - speaker: "Priya"
+      en: "Sure. Minh won't join — he's a bit under the weather."
+      vi: "Được chứ. Minh không đi được — anh ấy hơi mệt trong người."
+
+listening:
+  context_vi: >
+    Nghe một lời nhắn gói ba việc: báo trễ, đổi giờ, và một câu về đồng nghiệp.
+    Đây là mức nghe thật của một ngày làm việc bình thường.
+  speed: 1.0
+  voice: en_US_male
+  transcript_en: "Hi, I'm stuck in traffic near the bridge, on my way — about fifteen minutes out. Can we push the review to half past four? Also, Minh is working from home today, he's under the weather."
+  transcript_vi: "Chào bạn, tôi đang kẹt xe gần cầu, đang trên đường — khoảng mười lăm phút nữa tới. Mình dời buổi review sang bốn rưỡi được không? À, hôm nay Minh làm ở nhà, anh ấy hơi mệt."
+  questions:
+    - kind: mcq_listen
+      prompt_vi: "Người này tới sau bao lâu?"
+      choices: ["15 phút", "5 phút", "50 phút"]
+      answer: 0
+      difficulty: 3
+      skill: Listening
+    - kind: mcq_listen
+      prompt_vi: "Buổi review được đề nghị dời sang mấy giờ?"
+      choices: ["4:00", "4:15", "4:30"]
+      answer: 2
+      difficulty: 3
+      skill: Listening
+    - kind: mcq_listen
+      prompt_vi: "Vì sao Minh làm ở nhà?"
+      choices: ["Kẹt xe", "Hơi mệt trong người", "Đi công tác"]
+      answer: 1
+      difficulty: 2
+      skill: Listening
+
+speaking_drills:
+  - kind: read_aloud
+    expected_text: "Let me confirm: Thursday at half past two."
+    prompt_vi: "Câu xác nhận lịch. Gộp cả bài giờ giấc và bài hẹn gặp."
+    ipa: "/let miː kənˈfɜːrm ˈθɜːrzdeɪ æt hɑːf pɑːst tuː/"
+    focus_phonemes: ["θ", "f"]
+  - kind: read_aloud
+    expected_text: "Sorry, something came up. Can we push it to four?"
+    prompt_vi: "Hai câu liền: lý do và đề nghị. Đọc liền mạch, đừng ngắt quá lâu."
+    ipa: "/ˈsɒri ˈsʌmθɪŋ keɪm ʌp kæn wiː pʊʃ ɪt tuː fɔːr/"
+    focus_phonemes: ["θ", "ʃ"]
+  - kind: shadow
+    expected_text: "I'm waiting at the main gate, next to the coffee shop."
+    prompt_vi: "Vị trí hai lớp: mốc lớn và chi tiết nhận dạng."
+    ipa: "/aɪm ˈweɪtɪŋ æt ðə meɪn ɡeɪt nekst tuː ðə ˈkɒfi ʃɒp/"
+    focus_phonemes: ["t", "ks"]
+  - kind: shadow
+    expected_text: "First thing, I checked the alerts. After that, I wrapped up the tickets."
+    prompt_vi: "Kể lại bằng thì quá khứ, dùng hai cụm khung."
+    ipa: "/fɜːrst θɪŋ aɪ tʃekt ðə əˈlɜːrts ˈæftər ðæt aɪ ræpt ʌp ðə ˈtɪkɪts/"
+    focus_phonemes: ["t", "θ"]
+  - kind: respond
+    prompt_en: "Morning! How's it going? Are we still on for two?"
+    prompt_vi: "Chào lại, rồi báo bạn cần dời sang bốn giờ và đưa lý do."
+    accept_patterns:
+      - "Not bad"
+      - "something came up"
+      - "push it"
+
+reading:
+  kind: email
+  context_vi: >
+    Email gói nhiều việc trong một. Tìm đủ bốn thông tin trước khi trả lời.
+  text_en: |
+    Subject: Today - a few changes
+
+    Hi Minh,
+
+    Three things:
+
+    1. The review moves from two to half past four, same room.
+    2. Priya is joining, so we need one more seat.
+    3. Lunch is at twelve at the rice place - Linh is out today,
+       she's under the weather.
+
+    Let me know if half past four does not work for you.
+
+    David
+  text_vi: |
+    Tiêu đề: Hôm nay - vài thay đổi
+
+    Chào Minh,
+
+    Ba việc:
+
+    1. Buổi review dời từ hai giờ sang bốn rưỡi, vẫn phòng cũ.
+    2. Priya tham gia nên cần thêm một chỗ ngồi.
+    3. Ăn trưa lúc mười hai giờ ở quán cơm - Linh hôm nay nghỉ,
+       chị ấy hơi mệt trong người.
+
+    Báo tôi biết nếu bốn rưỡi không tiện cho bạn nhé.
+
+    David
+  questions:
+    - kind: mcq_read
+      prompt_en: "What time is the review now?"
+      choices: ["Two", "Twelve", "Half past four"]
+      answer: 2
+      difficulty: 1
+      reading_skill: scan
+      skill: Reading
+    - kind: mcq_read
+      prompt_en: "Why is Linh not coming?"
+      choices: ["She is unwell", "She is travelling", "She has another meeting"]
+      answer: 0
+      difficulty: 2
+      reading_skill: scan
+      skill: Reading
+    - kind: mcq_read
+      prompt_en: "What does David ask Minh to do?"
+      choices: ["Book a bigger room", "Reply if the new time does not work", "Order lunch"]
+      answer: 1
+      difficulty: 2
+      reading_skill: skim
+      skill: Reading
+
+writing:
+  kind: GuidedEmail
+  prompt_vi: >
+    Trả lời email trên. Phải có đủ ba ý: xác nhận giờ mới, báo bạn sẽ tới muộn
+    mười phút vì kẹt xe, và chúc Linh chóng khoẻ.
+  prompt_en: "Reply to David's email covering three points."
+  required_points:
+    - "half past four works"
+    - "stuck in traffic"
+    - "get well soon"
+  hint_vi: "Gộp ba bài đã học: xác nhận lịch, báo trễ, và lời chúc sức khoẻ."
+  sample_en: "Half past four works for me. I might be ten minutes late - stuck in traffic on that route. Tell Linh get well soon."
+
+quiz:
+  - kind: mcq
+    prompt_vi: "Bạn muốn xác nhận lại một cuộc hẹn. Nói gì?"
+    choices: ["OK", "Yes I know", "Let me confirm: Thursday at two thirty."]
+    answer: 2
+    difficulty: 1
+    skill: Speaking
+  - kind: mcq
+    prompt_vi: "Báo trễ cần đủ mấy ý?"
+    choices: ["Trễ, lý do, mấy phút nữa tới", "Chỉ cần xin lỗi", "Chỉ cần lý do"]
+    answer: 0
+    difficulty: 2
+    skill: Writing
+  - kind: mcq
+    prompt_vi: "Bạn chưa làm phiền ai, muốn bắt chuyện. Dùng cụm nào?"
+    choices: ["Sorry", "Excuse me", "My fault"]
+    answer: 1
+    difficulty: 2
+    skill: Speaking
+  - kind: mcq
+    prompt_vi: "\"A quarter to five\" là mấy giờ?"
+    choices: ["4:45", "5:15", "5:45"]
+    answer: 0
+    difficulty: 2
+    skill: Listening
+  - kind: mcq
+    prompt_vi: "Kể lại việc đã làm hôm qua thì dùng thì nào?"
+    choices: ["Hiện tại đơn", "Tương lai", "Quá khứ đơn"]
+    answer: 2
+    difficulty: 1
+    skill: Writing
+  - kind: mcq
+    prompt_vi: "Hoá đơn tính thừa. Bạn nói gì?"
+    choices: ["You are wrong", "Sorry, I think there's a mistake on the bill", "No pay"]
+    answer: 1
+    difficulty: 2
+    skill: Speaking
+
+explanation:
+  why_vi: >
+    Học từng bài rời rạc thì nhớ được từng câu, nhưng đời thật không đến từng bài một.
+    Một buổi sáng bình thường đã gộp chào hỏi, đổi hẹn, báo kẹt xe và rủ ăn trưa —
+    bốn bài khác nhau trong sáu mươi giây.
+  how_vi: >
+    Bài này không dạy gì mới. Nó kiểm tra bạn chuyển được giữa các tình huống mà không
+    phải dừng lại nghĩ xem "câu này thuộc bài nào". Nếu có chỗ bí, quay lại đúng bài đó
+    thay vì học lại cả tầng.
+  contrast_vi: >
+    Nhớ một câu khác với dùng được một câu. Nhớ là khi có người nhắc; dùng được là khi
+    câu đó tự bật ra giữa lúc bạn đang lo việc khác.
+
+common_mistakes:
+  - mistake: "Dừng lại giữa chừng để nhớ xem câu này học ở bài nào"
+    why_vi: >
+      Học theo bài nên trí nhớ được tổ chức theo bài, còn đời thật không có nhãn bài nào cả.
+      Khoảng dừng đó chính là lúc cuộc trò chuyện chết.
+    fix_vi: "Luyện chuyển tình huống liên tục, như đúng bài checkpoint này, chứ không luyện từng bài riêng."
+    detect_phoneme_missing: []
+  - mistake: "Bỏ qua bước xác nhận lại khi nghe không chắc"
+    why_vi: >
+      Càng học nhiều càng ngại dùng câu cứu hộ, vì cảm giác như thừa nhận mình chưa giỏi.
+      Nhưng người bản xứ xác nhận lại suốt ngày.
+    fix_vi: "\"Let me confirm\" là câu của người chuyên nghiệp, không phải của người kém tiếng Anh."
+    detect_phoneme_missing: []
+  - mistake: "Trả lời cụt khi đã hết ý"
+    why_vi: >
+      Vốn từ có hạn nên khi cạn ý thì trả lời một chữ, và cuộc trò chuyện đóng lại.
+    fix_vi: "Quay về quy tắc của bài thời tiết: mỗi lượt đáp thêm đúng một thông tin."
+    detect_phoneme_missing: []
+
+memory_trick_vi: >
+  Cả tầng Đời sống gói trong bốn công thức: BA NHỊP khi chào, BA Ý khi báo trễ,
+  BA Ý khi đổi hẹn, và BA CỤM KHUNG khi kể lại. Nhớ bốn con số ba này là đủ đi làm.

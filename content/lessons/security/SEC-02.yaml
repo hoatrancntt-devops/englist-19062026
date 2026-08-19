@@ -1,0 +1,302 @@
+schema_version: 1
+code: SEC-02
+slug: quyen-truy-cap-va-phan-quyen
+title_vi: "Quyền truy cập và phân quyền"
+title_en: "Access and permissions"
+
+layer: Professional
+track: Security
+level: B1
+unit_code: U-SEC1
+order_index: 2
+estimated_minutes: 12
+
+illustration: shield-lock
+
+objective_vi: >
+  Trao đổi về cấp quyền, thu hồi quyền và rà soát quyền — và biết cách từ chối
+  một yêu cầu cấp quyền quá rộng mà không làm người xin khó chịu.
+
+objective_observable: >
+  Từ chối được một yêu cầu quyền quá rộng kèm phương án hẹp hơn, và mô tả một đợt rà soát quyền.
+
+mastery_weights:
+  Listening: 0.25
+  Speaking: 0.35
+  Reading: 0.20
+  Writing: 0.20
+
+prerequisites:
+  - lesson: SEC-01
+    min_mastery: 65
+    kind: Hard
+
+vocabulary:
+  - term: "least privilege"
+    ipa: "/liːst ˈprɪvəlɪdʒ/"
+    meaning_vi: "quyền tối thiểu — chỉ cấp đúng thứ cần để làm việc"
+    chunk: "We work on least privilege here."
+    tags: [security, core]
+  - term: "read-only"
+    ipa: "/riːd ˈoʊnli/"
+    meaning_vi: "chỉ đọc, không sửa được"
+    chunk: "Read-only would cover what you need."
+    tags: [security, core]
+  - term: "revoke"
+    ipa: "/rɪˈvoʊk/"
+    meaning_vi: "thu hồi quyền"
+    chunk: "We revoke access on the last working day."
+    tags: [security, core]
+  - term: "access review"
+    ipa: "/ˈækses rɪˈvjuː/"
+    meaning_vi: "đợt rà soát quyền định kỳ"
+    chunk: "The quarterly access review starts Monday."
+    tags: [security, core]
+  - term: "approver"
+    ipa: "/əˈpruːvər/"
+    meaning_vi: "người duyệt"
+    chunk: "Your line manager is the approver."
+    tags: [security]
+  - term: "orphaned account"
+    ipa: "/ˈɔːrfənd əˈkaʊnt/"
+    meaning_vi: "tài khoản mồ côi — chủ đã nghỉ nhưng chưa bị khoá"
+    chunk: "We found four orphaned accounts."
+    tags: [security]
+
+sentence_patterns:
+  - pattern: "{level} would cover what you need."
+    meaning_vi: "{level} là đủ cho việc anh chị cần."
+    slots:
+      level: ["Read-only", "Access to that one folder", "The reporting role"]
+  - pattern: "We work on least privilege, so {consequence}."
+    meaning_vi: "Bọn tôi làm theo nguyên tắc quyền tối thiểu, nên {consequence}."
+    slots:
+      consequence: ["I can only grant what the task needs", "full admin needs a separate approval"]
+
+dialogue:
+  context_vi: >
+    Emma xin quyền admin cho cả ổ tài chính, vì "cho tiện". Từ chối thẳng thì
+    cô ấy khó chịu; đồng ý thì bạn vi phạm nguyên tắc. Có một đường thứ ba.
+  turns:
+    - speaker: "Emma"
+      en: "Could you give me full admin on the finance drive? It would save a lot of back and forth."
+      vi: "Em cấp cho chị quyền admin đầy đủ trên ổ tài chính được không? Đỡ phải hỏi tới hỏi lui."
+    - speaker: "You"
+      en: "I understand. Can I ask what you actually need to do with it?"
+      vi: "Em hiểu ạ. Cho em hỏi chị cần làm gì cụ thể trên đó?"
+    - speaker: "Emma"
+      en: "Mostly opening the monthly reports, and sometimes putting a new file in the reports folder."
+      vi: "Chủ yếu là mở báo cáo hằng tháng, và thỉnh thoảng bỏ file mới vào thư mục báo cáo."
+    - speaker: "You"
+      en: "Then read-only on the drive plus write access to the reports folder would cover that. Admin would also let you delete other teams' files, which I'd rather avoid for you."
+      vi: "Vậy quyền chỉ đọc trên cả ổ cộng quyền ghi vào thư mục báo cáo là đủ. Quyền admin còn cho phép xoá file của phòng khác, và em muốn tránh cái đó cho chị."
+    - speaker: "Emma"
+      en: "Fair enough. I don't want that responsibility anyway."
+      vi: "Cũng đúng. Tôi cũng không muốn gánh trách nhiệm đó."
+    - speaker: "You"
+      en: "We work on least privilege here — it protects you as much as the data. I'll raise it as a service request; your line manager is the approver."
+      vi: "Bên em làm theo nguyên tắc quyền tối thiểu — nó bảo vệ chị chứ không chỉ bảo vệ dữ liệu. Em sẽ mở một service request; quản lý trực tiếp của chị là người duyệt."
+
+listening:
+  context_vi: >
+    Nghe hai cách từ chối cùng một yêu cầu. Chú ý cách nào giữ được thiện chí.
+  speed: 1.0
+  voice: en_US_male
+  transcript_en: "Version one: no, we don't give admin to end users, it's policy. Version two: can I ask what you need to do with it? Read-only plus write to that one folder would cover it. Admin would also let you delete other teams' files, which I'd rather avoid for you."
+  transcript_vi: "Cách một: không, bọn tôi không cấp quyền admin cho người dùng cuối, đó là quy định. Cách hai: cho tôi hỏi chị cần làm gì trên đó? Quyền chỉ đọc cộng quyền ghi vào đúng thư mục đó là đủ. Quyền admin còn cho phép xoá file của phòng khác, và tôi muốn tránh cái đó cho chị."
+  questions:
+    - kind: mcq_listen
+      prompt_vi: "Cách hai làm gì trước khi từ chối?"
+      choices: ["Hỏi họ thực sự cần làm gì", "Trích dẫn quy định", "Chuyển lên cấp trên"]
+      answer: 0
+      difficulty: 2
+      skill: Listening
+    - kind: mcq_listen
+      prompt_vi: "Cách hai đóng khung việc từ chối theo hướng nào?"
+      choices: ["Bảo vệ dữ liệu công ty", "Tiết kiệm chi phí", "Bảo vệ chính người xin quyền"]
+      answer: 2
+      difficulty: 3
+      skill: Listening
+
+speaking_drills:
+  - kind: read_aloud
+    expected_text: "Can I ask what you actually need to do with it?"
+    prompt_vi: "Câu mở đường. Hỏi nhu cầu thật trước khi bàn tới mức quyền."
+    ipa: "/kæn aɪ ɑːsk wɒt juː ˈæktʃuəli niːd/"
+    focus_phonemes: ["tʃ", "d"]
+  - kind: read_aloud
+    expected_text: "Read-only would cover what you need."
+    prompt_vi: "Đề xuất mức hẹp hơn thay vì từ chối trần."
+    ipa: "/riːd ˈoʊnli wʊd ˈkʌvər wɒt juː niːd/"
+    focus_phonemes: ["d", "v"]
+  - kind: shadow
+    expected_text: "We work on least privilege here."
+    prompt_vi: "Chú ý cụm /st/ trong least và /dʒ/ cuối privilege."
+    ipa: "/wiː wɜːrk ɒn liːst ˈprɪvəlɪdʒ hɪr/"
+    focus_phonemes: ["st", "dʒ"]
+  - kind: shadow
+    expected_text: "We revoke access on the last working day."
+    prompt_vi: "Quy tắc thu hồi quyền khi nhân sự nghỉ. Nghe rồi nhắc lại."
+    ipa: "/wiː rɪˈvoʊk ˈækses ɒn ðə lɑːst ˈwɜːrkɪŋ deɪ/"
+    focus_phonemes: ["v", "ks"]
+  - kind: respond
+    prompt_en: "Could you give me full admin on the finance drive?"
+    prompt_vi: "Hỏi nhu cầu thật trước, rồi đề xuất mức quyền hẹp hơn."
+    accept_patterns:
+      - "what you"
+      - "Read-only"
+      - "Can I ask"
+
+reading:
+  kind: email
+  context_vi: >
+    Báo cáo một đợt rà soát quyền quý. Để ý loại phát hiện nào nghiêm trọng nhất.
+  text_en: |
+    Subject: Q3 access review - finance systems
+
+    Hi Linh,
+
+    The quarterly access review is complete. Summary:
+
+    Accounts reviewed: 214.
+    Confirmed still needed: 197.
+
+    Findings:
+    - 4 orphaned accounts. All four left the company between May and July.
+      Access was never revoked. Two still had write access to the payroll folder.
+    - 9 users have admin rights they no longer need after a role change.
+    - 4 shared accounts with no named owner. These cannot be traced to a person
+      if something goes wrong.
+
+    Actions taken: the 4 orphaned accounts are disabled as of today.
+    The 9 admin rights are scheduled for removal on Friday after their managers
+    confirm.
+
+    Recommendation: tie account revocation to the HR leaver process rather than
+    a manual ticket. All four orphans came from the same gap.
+
+    Minh
+  text_vi: |
+    Tiêu đề: Rà soát quyền quý 3 - hệ thống tài chính
+
+    Chào chị Linh,
+
+    Đợt rà soát quyền quý đã xong. Tóm tắt:
+
+    Số tài khoản rà soát: 214.
+    Xác nhận vẫn cần: 197.
+
+    Phát hiện:
+    - 4 tài khoản mồ côi. Cả bốn người đã nghỉ trong khoảng tháng 5 tới tháng 7.
+      Quyền chưa từng bị thu hồi. Hai tài khoản vẫn còn quyền ghi vào thư mục lương.
+    - 9 người còn quyền admin không còn cần sau khi đổi vị trí.
+    - 4 tài khoản dùng chung không có chủ đích danh. Nếu có chuyện thì không truy được ai.
+
+    Đã xử lý: 4 tài khoản mồ côi đã bị vô hiệu hoá từ hôm nay.
+    9 quyền admin sẽ gỡ vào thứ Sáu sau khi quản lý của họ xác nhận.
+
+    Đề xuất: gắn việc thu hồi quyền vào quy trình nghỉ việc của Nhân sự
+    thay vì mở ticket thủ công. Cả bốn tài khoản mồ côi đều đến từ cùng lỗ hổng đó.
+
+    Minh
+  questions:
+    - kind: mcq_read
+      prompt_en: "Which finding is the most serious?"
+      choices: ["9 users with unneeded admin rights", "Orphaned accounts with write access to payroll", "4 shared accounts"]
+      answer: 1
+      difficulty: 3
+      reading_skill: skim
+      skill: Reading
+    - kind: mcq_read
+      prompt_en: "What is the recommendation?"
+      choices: ["Run reviews monthly", "Remove all admin rights", "Tie revocation to the HR leaver process"]
+      answer: 2
+      difficulty: 2
+      reading_skill: scan
+      skill: Reading
+    - kind: mcq_read
+      prompt_en: "Why are shared accounts a problem?"
+      choices: ["They cannot be traced to a person", "They cost more", "They expire"]
+      answer: 0
+      difficulty: 2
+      reading_skill: scan
+      skill: Reading
+
+writing:
+  kind: GuidedEmail
+  prompt_vi: >
+    Trả lời một yêu cầu xin quyền quá rộng. Phải có đủ ba ý: hỏi nhu cầu thật,
+    đề xuất mức quyền hẹp hơn đủ dùng, và giải thích nguyên tắc theo hướng bảo vệ người xin.
+  prompt_en: "Reply to an over-broad access request."
+  required_points:
+    - "what you need to do"
+    - "read-only"
+    - "least privilege"
+  hint_vi: "Ba ý. Đóng khung nguyên tắc theo hướng bảo vệ người xin, không phải theo hướng quy định."
+  sample_en: "Can I ask what you need to do with it? Read-only plus write access to the reports folder would cover that. We work on least privilege here - admin would also let you delete other teams' files, which I would rather avoid for you."
+
+quiz:
+  - kind: mcq
+    prompt_vi: "\"Least privilege\" nghĩa là gì?"
+    choices: ["Cấp quyền thấp nhất có thể cho mọi người", "Chỉ cấp đúng thứ cần để làm việc", "Không cấp quyền cho ai"]
+    answer: 1
+    difficulty: 1
+    skill: Reading
+  - kind: mcq
+    prompt_vi: "Việc đầu tiên khi nhận yêu cầu xin quyền rộng?"
+    choices: ["Từ chối theo quy định", "Chuyển lên cấp trên", "Hỏi họ thực sự cần làm gì"]
+    answer: 2
+    difficulty: 2
+    skill: Speaking
+  - kind: mcq
+    prompt_vi: "\"Orphaned account\" là gì?"
+    choices: ["Tài khoản của người đã nghỉ nhưng chưa bị khoá", "Tài khoản mới tạo", "Tài khoản dùng chung"]
+    answer: 0
+    difficulty: 2
+    skill: Reading
+  - kind: mcq
+    prompt_vi: "Vì sao nói quyền tối thiểu bảo vệ chính người dùng?"
+    choices: ["Vì họ đỡ phải nhớ mật khẩu", "Vì họ không thể vô tình xoá thứ không thuộc phần việc mình", "Vì họ được trả lương cao hơn"]
+    answer: 1
+    difficulty: 3
+    skill: Speaking
+
+explanation:
+  why_vi: >
+    Từ chối cấp quyền là tình huống dễ làm hỏng quan hệ nhất trong nghề bảo mật.
+    Trích dẫn quy định thì đúng nhưng người xin thấy mình bị coi là mối đe doạ.
+    Còn cấp bừa cho tiện thì vài tháng sau bạn có một đợt rà soát đầy tài khoản
+    quyền rộng mà không ai nhớ vì sao được cấp.
+  how_vi: >
+    Ba bước: HỎI NHU CẦU THẬT trước (người xin thường mô tả bằng mức quyền
+    thay vì bằng công việc), ĐỀ XUẤT MỨC HẸP HƠN đủ dùng, và GIẢI THÍCH nguyên tắc
+    theo hướng bảo vệ chính họ — quyền rộng nghĩa là trách nhiệm rộng,
+    và một cú xoá nhầm cũng thành lỗi của họ.
+  contrast_vi: >
+    "Không, đó là quy định" đóng cửa cuộc trò chuyện.
+    "Chị cần làm gì trên đó? Chỉ đọc là đủ rồi" mở ra một phương án
+    mà cả hai bên đều chấp nhận được.
+
+common_mistakes:
+  - mistake: "Từ chối bằng cách trích dẫn quy định"
+    why_vi: >
+      Đúng về nội dung nhưng người xin nghe như bị nghi ngờ, và lần sau họ
+      sẽ tìm đường vòng thay vì hỏi bạn.
+    fix_vi: "Hỏi nhu cầu thật trước. Gần như luôn có một mức quyền hẹp hơn vừa đủ dùng."
+    detect_phoneme_missing: []
+  - mistake: "Cấp quyền rộng cho tiện, định thu hồi sau"
+    why_vi: >
+      Không ai nhớ thu hồi. Ba tháng sau đợt rà soát phát hiện hàng chục quyền thừa,
+      và không ai nhớ vì sao chúng được cấp.
+    fix_vi: "Cấp đúng mức ngay từ đầu. Nới thêm sau này dễ hơn nhiều so với thu hồi."
+    detect_phoneme_missing: []
+  - mistake: "Quên thu hồi quyền khi nhân sự nghỉ"
+    why_vi: >
+      Việc thu hồi thường phụ thuộc một ticket thủ công, mà ticket đó dễ bị bỏ sót
+      giữa lúc bàn giao.
+    fix_vi: "Gắn việc thu hồi vào quy trình nghỉ việc của Nhân sự, đừng dựa vào trí nhớ."
+    detect_phoneme_missing: []
+
+memory_trick_vi: >
+  Ba bước khi ai đó xin quyền rộng: HỎI NHU CẦU THẬT, ĐỀ XUẤT MỨC HẸP HƠN,
+  GIẢI THÍCH rằng quyền tối thiểu bảo vệ chính họ.

@@ -1,0 +1,287 @@
+schema_version: 1
+code: INF-02
+slug: bao-su-co-va-suy-giam
+title_vi: "Báo sự cố — nói sao để người ta hành động được"
+title_en: "Reporting an outage"
+
+layer: Professional
+track: Infrastructure
+level: B1
+unit_code: U-INF1
+order_index: 2
+estimated_minutes: 12
+
+illustration: outage-alert
+
+objective_vi: >
+  Báo một sự cố theo bốn phần: cái gì hỏng, từ khi nào, ảnh hưởng ai, đã thử gì —
+  và phân biệt được mất hẳn dịch vụ với suy giảm chất lượng.
+
+objective_observable: >
+  Báo được một sự cố đủ bốn phần trong dưới ba mươi giây, có con số ở phần ảnh hưởng.
+
+mastery_weights:
+  Listening: 0.30
+  Speaking: 0.40
+  Reading: 0.15
+  Writing: 0.15
+
+prerequisites:
+  - lesson: INF-01
+    min_mastery: 65
+    kind: Hard
+
+vocabulary:
+  - term: "is down"
+    ipa: "/ɪz daʊn/"
+    meaning_vi: "mất hẳn, không truy cập được"
+    chunk: "The portal is down."
+    tags: [incident, core]
+  - term: "degraded"
+    ipa: "/dɪˈɡreɪdɪd/"
+    meaning_vi: "suy giảm — vẫn chạy nhưng chậm hoặc lỗi từng phần"
+    chunk: "It's not down, it's degraded."
+    tags: [incident, core]
+  - term: "since"
+    ipa: "/sɪns/"
+    meaning_vi: "từ lúc (mốc thời gian bắt đầu)"
+    chunk: "Down since 02:00."
+    tags: [incident, core]
+  - term: "affected"
+    ipa: "/əˈfektɪd/"
+    meaning_vi: "bị ảnh hưởng"
+    chunk: "About twenty users are affected."
+    tags: [incident, core]
+  - term: "customer facing"
+    ipa: "/ˈkʌstəmər ˈfeɪsɪŋ/"
+    meaning_vi: "có ảnh hưởng tới khách hàng"
+    chunk: "This one is customer facing."
+    tags: [incident, core]
+  - term: "the logs show"
+    ipa: "/ðə lɒɡz ʃoʊ/"
+    meaning_vi: "log cho thấy"
+    chunk: "The logs show a timeout error."
+    tags: [incident, core]
+
+sentence_patterns:
+  - pattern: "{service} has been {state} since {time}."
+    meaning_vi: "{service} đã {state} từ {time}."
+    slots:
+      service: ["The portal", "The file server"]
+      state: ["down", "degraded"]
+      time: ["02:00", "this morning"]
+  - pattern: "About {number} users are affected. {scope}."
+    meaning_vi: "Khoảng {number} người bị ảnh hưởng. {scope}."
+    slots:
+      number: ["twenty", "three", "two hundred"]
+      scope: ["Customer facing", "Internal only"]
+
+dialogue:
+  context_vi: >
+    3 giờ sáng thứ Sáu. Portal của khách hàng Northwind sập từ 2 giờ.
+    Bạn gọi Linh dậy. Câu đầu tiên quyết định chị ấy tỉnh táo và hành động
+    hay phải hỏi bạn năm câu.
+  turns:
+    - speaker: "You"
+      en: "Linh, sorry to wake you. The Northwind portal is down."
+      vi: "Chị Linh, xin lỗi đã gọi giữa đêm. Portal Northwind đang sập."
+    - speaker: "Linh"
+      en: "Down since when?"
+      vi: "Sập từ lúc nào?"
+    - speaker: "You"
+      en: "Since two this morning. Emma Brooks raised ticket 4417 at 02:10."
+      vi: "Từ hai giờ sáng. Emma Brooks mở ticket 4417 lúc 02:10."
+    - speaker: "Linh"
+      en: "How many people are affected?"
+      vi: "Bao nhiêu người bị ảnh hưởng?"
+    - speaker: "You"
+      en: "About twenty — the whole accounting team. It's customer facing."
+      vi: "Khoảng hai mươi — cả phòng kế toán. Có ảnh hưởng tới khách hàng."
+    - speaker: "Linh"
+      en: "What have you tried?"
+      vi: "Em đã thử gì rồi?"
+    - speaker: "You"
+      en: "I logged in myself and it fails too, so it's not just her account. The logs show a database timeout, and the DB server is responding to ping but slowly."
+      vi: "Em tự đăng nhập thử cũng lỗi, nên không phải riêng tài khoản chị ấy. Log cho thấy lỗi timeout database, và máy chủ DB vẫn phản hồi ping nhưng chậm."
+    - speaker: "Linh"
+      en: "So the database is degraded, not down. I'll escalate. We're calling this INC-2291."
+      vi: "Vậy database đang suy giảm chứ không phải sập hẳn. Chị sẽ leo thang. Mình đặt mã sự cố là INC-2291."
+
+listening:
+  context_vi: >
+    Nghe hai lời báo sự cố. Một lời khiến người nghe hành động được ngay,
+    một lời buộc họ phải hỏi lại bốn câu.
+  speed: 1.0
+  voice: en_US_male
+  transcript_en: "Version one: something is wrong with the portal, users are complaining. Version two: the Northwind portal has been down since 02:00. About twenty users affected, customer facing. I have logged in myself and it fails too. The logs show a database timeout."
+  transcript_vi: "Cách một: portal có vấn đề gì đó, người dùng đang phàn nàn. Cách hai: portal Northwind sập từ 02:00. Khoảng hai mươi người bị ảnh hưởng, có tác động tới khách hàng. Tôi tự đăng nhập thử cũng lỗi. Log cho thấy lỗi timeout database."
+  questions:
+    - kind: mcq_listen
+      prompt_vi: "Cách hai nêu mấy phần thông tin?"
+      choices: ["Bốn", "Hai", "Một"]
+      answer: 0
+      difficulty: 2
+      skill: Listening
+    - kind: mcq_listen
+      prompt_vi: "Chi tiết nào cho biết không phải lỗi của riêng một tài khoản?"
+      choices: ["Có hai mươi người bị ảnh hưởng", "Log cho thấy timeout", "Người báo tự đăng nhập thử cũng lỗi"]
+      answer: 2
+      difficulty: 3
+      skill: Listening
+
+speaking_drills:
+  - kind: read_aloud
+    expected_text: "The portal has been down since two this morning."
+    prompt_vi: "Đọc to. Chú ý cụm /ns/ cuối chữ since."
+    ipa: "/ðə ˈpɔːrtl hæz biːn daʊn sɪns tuː/"
+    focus_phonemes: ["ns", "n"]
+  - kind: read_aloud
+    expected_text: "It's not down, it's degraded."
+    prompt_vi: "Phân biệt hai trạng thái. Trọng âm ở âm giữa: de-GRAY-ded."
+    ipa: "/ɪts nɒt daʊn ɪts dɪˈɡreɪdɪd/"
+    focus_phonemes: ["ɡr", "dɪd"]
+  - kind: shadow
+    expected_text: "About twenty users are affected. It's customer facing."
+    prompt_vi: "Con số cộng phạm vi. Hai thứ quyết định mức ưu tiên."
+    ipa: "/əˈbaʊt ˈtwenti ˈjuːzərz ɑːr əˈfektɪd/"
+    focus_phonemes: ["kt", "z"]
+  - kind: shadow
+    expected_text: "The logs show a database timeout."
+    prompt_vi: "Dẫn bằng chứng thay vì phỏng đoán. Nghe rồi nhắc lại."
+    ipa: "/ðə lɒɡz ʃoʊ ə ˈdeɪtəbeɪs ˈtaɪmaʊt/"
+    focus_phonemes: ["ɡz", "ʃ"]
+  - kind: respond
+    prompt_en: "What have you tried?"
+    prompt_vi: "Sếp hỏi bạn đã thử gì. Kể ít nhất hai việc kèm kết quả."
+    accept_patterns:
+      - "I logged in"
+      - "I've tried"
+      - "The logs show"
+
+reading:
+  kind: ticket
+  context_vi: >
+    Hai bản ghi sự cố cho cùng một việc. Để ý cái nào nói rõ mất hẳn hay suy giảm.
+  text_en: |
+    Report A:
+    Portal not working. Users cannot use it. Investigating.
+
+    Report B:
+    Service: Northwind customer portal
+    State: degraded (loads, but times out on login for most users)
+    Since: 02:00, first reported 02:10 (ticket 4417)
+    Impact: ~20 users, whole accounting team. Customer facing.
+    Evidence: my own login also fails. Logs show database timeout after 30s.
+              DB server responds to ping, average 800ms (normal is 2ms).
+    Ruled out: single account issue, network path to the web tier.
+  text_vi: |
+    Báo cáo A:
+    Portal không dùng được. Người dùng không vào được. Đang điều tra.
+
+    Báo cáo B:
+    Dịch vụ: portal khách hàng Northwind
+    Trạng thái: suy giảm (vẫn tải được, nhưng timeout khi đăng nhập với hầu hết người dùng)
+    Từ: 02:00, báo lần đầu 02:10 (ticket 4417)
+    Ảnh hưởng: khoảng 20 người, cả phòng kế toán. Có tác động khách hàng.
+    Bằng chứng: tôi tự đăng nhập cũng lỗi. Log cho thấy timeout database sau 30 giây.
+                Máy chủ DB phản hồi ping, trung bình 800ms (bình thường là 2ms).
+    Đã loại trừ: lỗi riêng một tài khoản, đường mạng tới tầng web.
+  questions:
+    - kind: mcq_read
+      prompt_en: "Is the service down or degraded?"
+      choices: ["Down", "Degraded", "Not stated"]
+      answer: 1
+      difficulty: 2
+      reading_skill: scan
+      skill: Reading
+    - kind: mcq_read
+      prompt_en: "What is the normal ping response time?"
+      choices: ["30s", "800ms", "2ms"]
+      answer: 2
+      difficulty: 2
+      reading_skill: scan
+      skill: Reading
+    - kind: mcq_read
+      prompt_en: "Why is the 'Ruled out' line useful?"
+      choices: ["It stops the next person repeating the same checks", "It shows effort", "It is required by policy"]
+      answer: 0
+      difficulty: 3
+      reading_skill: skim
+      skill: Reading
+
+writing:
+  kind: GuidedEmail
+  prompt_vi: >
+    Viết báo cáo sự cố ban đầu. Phải đủ bốn phần: dịch vụ nào và trạng thái gì,
+    từ khi nào, ảnh hưởng bao nhiêu người, và đã thử gì kèm kết quả.
+  prompt_en: "Write an initial outage report with four parts."
+  required_points:
+    - "since"
+    - "users are affected"
+    - "logs show"
+  hint_vi: "Bốn phần. Dùng đúng từ: down là mất hẳn, degraded là vẫn chạy nhưng kém."
+  sample_en: "The Northwind portal has been degraded since 02:00. About twenty users are affected, customer facing. I logged in myself and it fails too. The logs show a database timeout."
+
+quiz:
+  - kind: mcq
+    prompt_vi: "Dịch vụ vẫn tải được nhưng rất chậm. Gọi là gì?"
+    choices: ["Down", "Degraded", "Offline"]
+    answer: 1
+    difficulty: 1
+    skill: Speaking
+  - kind: mcq
+    prompt_vi: "Báo sự cố cần mấy phần?"
+    choices: ["Một: mô tả lỗi", "Hai: cái gì và ai báo", "Bốn: cái gì, từ khi nào, ảnh hưởng ai, đã thử gì"]
+    answer: 2
+    difficulty: 1
+    skill: Writing
+  - kind: mcq
+    prompt_vi: "\"Customer facing\" nghĩa là gì?"
+    choices: ["Có ảnh hưởng tới khách hàng", "Chỉ nội bộ", "Đối diện quầy lễ tân"]
+    answer: 0
+    difficulty: 1
+    skill: Reading
+  - kind: mcq
+    prompt_vi: "Vì sao nên ghi phần \"đã loại trừ\"?"
+    choices: ["Để báo cáo dài hơn", "Để người tiếp theo không kiểm lại đúng những thứ đã kiểm", "Vì quy định"]
+    answer: 1
+    difficulty: 2
+    skill: Reading
+
+explanation:
+  why_vi: >
+    Lúc 3 giờ sáng, người nghe vừa tỉnh dậy và chỉ tiếp nhận được thông tin có cấu trúc.
+    Người mới thường mở đầu bằng cảm nhận — "có vấn đề gì đó" — rồi người nghe phải
+    hỏi ngược bốn câu, mỗi câu mất một phút trong lúc sự cố vẫn đang chạy.
+  how_vi: >
+    Bốn phần, luôn theo thứ tự: CÁI GÌ và TRẠNG THÁI GÌ, TỪ KHI NÀO, ẢNH HƯỞNG BAO NHIÊU,
+    ĐÃ THỬ GÌ kèm kết quả. Dùng đúng từ trạng thái: down là mất hẳn, degraded là
+    vẫn chạy nhưng kém. Hai từ này quyết định mức ưu tiên và ai bị gọi dậy.
+  contrast_vi: >
+    "Portal is down" kéo cả đội trực dậy. "Portal is degraded, login times out for most users"
+    cũng nghiêm trọng nhưng cho phép người nhận chọn cách xử lý khác.
+    Nói sai từ là điều động sai nguồn lực.
+
+common_mistakes:
+  - mistake: "Mở đầu bằng cảm nhận thay vì trạng thái dịch vụ"
+    why_vi: >
+      Người báo đang căng thẳng nên nói ra điều mình cảm thấy trước. Nhưng người nghe
+      cần biết dịch vụ nào và trạng thái gì trước tiên.
+    fix_vi: "Câu đầu tiên luôn là: tên dịch vụ cộng trạng thái. Mọi thứ khác để sau."
+    detect_phoneme_missing: []
+  - mistake: "Dùng \"down\" cho mọi sự cố"
+    why_vi: >
+      Tiếng Việt gọi chung là “sập” hoặc “lỗi”. Nhưng down và degraded
+      điều động hai mức nguồn lực khác nhau.
+    fix_vi: "Hỏi mình một câu: có truy cập được không? Được mà chậm thì là degraded."
+    detect_phoneme_missing: []
+  - mistake: "Bỏ qua phần đã thử gì"
+    why_vi: >
+      Nghĩ rằng người nhận chỉ cần biết có sự cố. Nhưng thiếu phần này thì họ
+      bắt đầu lại từ những bước bạn vừa làm.
+    fix_vi: "Luôn kèm ít nhất hai việc đã thử và KẾT QUẢ của chúng."
+    detect_phoneme_missing: []
+
+memory_trick_vi: >
+  Bốn phần khi báo sự cố: CÁI GÌ và TRẠNG THÁI, TỪ KHI NÀO, BAO NHIÊU NGƯỜI, ĐÃ THỬ GÌ.
+  Và nhớ hai từ khác nhau: DOWN là mất hẳn, DEGRADED là chạy mà kém.

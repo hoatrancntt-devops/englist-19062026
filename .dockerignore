@@ -1,0 +1,26 @@
+# Build output
+**/bin/
+**/obj/
+**/dist/
+**/node_modules/
+**/.vite/
+
+# Bí mật và dữ liệu — tuyệt đối không đưa vào image
+.env
+.env.*
+!.env.example
+media/
+backups/
+models/
+
+# VCS và IDE
+.git/
+.github/
+.vs/
+.idea/
+.vscode/
+
+# Tài liệu không ảnh hưởng build
+docs/
+*.md
+!apps/web/README.md

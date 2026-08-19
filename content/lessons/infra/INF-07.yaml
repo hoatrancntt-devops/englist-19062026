@@ -1,0 +1,336 @@
+schema_version: 1
+code: INF-07
+slug: checkpoint-nhanh-ha-tang
+title_vi: "Checkpoint: Nhánh Hạ tầng"
+title_en: "Checkpoint: infrastructure English"
+
+layer: Professional
+track: Infrastructure
+level: B1
+unit_code: U-INF3
+order_index: 7
+estimated_minutes: 12
+is_checkpoint: true
+
+illustration: server-rack
+
+objective_vi: >
+  Chứng minh bạn xử lý được một ca trực thật: standup, báo sự cố, cập nhật trạng thái,
+  và xin duyệt thay đổi — bằng tiếng Anh, không cần ai nhắc.
+
+objective_observable: >
+  Đạt từ 80 điểm trên cả bốn trục kỹ năng, không trục nào dưới 65.
+
+mastery_weights:
+  Listening: 0.30
+  Speaking: 0.30
+  Reading: 0.20
+  Writing: 0.20
+
+prerequisites:
+  - lesson: INF-06
+    min_mastery: 70
+    kind: Hard
+  - lesson: INF-02
+    min_mastery: 65
+    kind: Hard
+  - lesson: INF-04
+    min_mastery: 65
+    kind: Soft
+
+vocabulary:
+  - term: "degraded"
+    ipa: "/dɪˈɡreɪdɪd/"
+    meaning_vi: "suy giảm — vẫn chạy nhưng kém"
+    chunk: "It's degraded, not down."
+    tags: [review, core]
+  - term: "next update at"
+    ipa: "/nekst ˈʌpdeɪt æt/"
+    meaning_vi: "cập nhật tiếp theo lúc"
+    chunk: "Next update at 04:00."
+    tags: [review, core]
+  - term: "rollback plan"
+    ipa: "/ˈroʊlbæk plæn/"
+    meaning_vi: "phương án quay lui"
+    chunk: "The rollback plan is a snapshot restore."
+    tags: [review, core]
+  - term: "blocked on"
+    ipa: "/blɒkt ɒn/"
+    meaning_vi: "đang kẹt vì"
+    chunk: "I'm blocked on console access."
+    tags: [review]
+  - term: "ruled out"
+    ipa: "/ruːld aʊt/"
+    meaning_vi: "đã loại trừ"
+    chunk: "DNS is ruled out."
+    tags: [review, core]
+  - term: "RTO"
+    ipa: "/ɑːr tiː oʊ/"
+    meaning_vi: "khôi phục xong trong bao lâu"
+    chunk: "The RTO is four hours."
+    tags: [review]
+
+sentence_patterns:
+  - pattern: "{service} has been {state} since {time}. About {number} users affected."
+    meaning_vi: "{service} đã {state} từ {time}. Khoảng {number} người bị ảnh hưởng."
+    slots:
+      service: ["The portal", "The file server"]
+      state: ["down", "degraded"]
+      time: ["02:00", "this morning"]
+      number: ["twenty", "three"]
+  - pattern: "{cause} is ruled out — {evidence}."
+    meaning_vi: "{cause} đã được loại trừ — {evidence}."
+    slots:
+      cause: ["DNS", "The client machine"]
+      evidence: ["the name resolves to the same IP from both sites", "the same laptop works in the office"]
+
+dialogue:
+  context_vi: >
+    Một ca trực gói trọn cả nhánh: standup sáng, sự cố lúc trưa, cập nhật cho khách,
+    và xin duyệt change để sửa gốc. Không có gì mới — tất cả đã học.
+  turns:
+    - speaker: "Linh"
+      en: "Minh, standup — go ahead."
+      vi: "Minh, standup — em nói đi."
+    - speaker: "You"
+      en: "Yesterday I wrapped up the DR restore test — RTO met, two hours forty. Today I'm writing it up. No blockers."
+      vi: "Hôm qua em làm xong bài kiểm tra khôi phục DR — đạt RTO, hai tiếng bốn mươi. Hôm nay em viết báo cáo. Không vướng gì."
+    - speaker: "Linh"
+      en: "Good. Anything from the branch site?"
+      vi: "Tốt. Có gì từ chi nhánh không?"
+    - speaker: "You"
+      en: "Yes — the portal is degraded from the branch since 11:00. About eight users. DNS is ruled out, the name resolves to the same IP from both sites."
+      vi: "Có ạ — portal bị suy giảm từ phía chi nhánh từ 11 giờ. Khoảng tám người. DNS đã loại trừ, tên phân giải ra cùng IP ở cả hai nơi."
+    - speaker: "Linh"
+      en: "So where does it fail?"
+      vi: "Vậy nó hỏng ở đâu?"
+    - speaker: "You"
+      en: "Third hop. The firewall is dropping port 443 from the branch subnet. I've posted an update to the customer, next update at 14:00."
+      vi: "Chặng thứ ba. Tường lửa đang chặn cổng 443 từ dải mạng chi nhánh. Em đã gửi cập nhật cho khách, cập nhật tiếp lúc 14:00."
+    - speaker: "Linh"
+      en: "And the fix?"
+      vi: "Còn cách sửa?"
+    - speaker: "You"
+      en: "A firewall rule. I've raised it as a normal change for this afternoon. Rollback is removing the rule, about two minutes."
+      vi: "Một quy tắc tường lửa. Em đã mở normal change cho chiều nay. Quay lui là gỡ quy tắc đó, khoảng hai phút."
+
+listening:
+  context_vi: >
+    Nghe một ca trực rút gọn: standup, sự cố, cập nhật, change.
+    Bắt được cả bốn phần là bạn nghe được một ngày làm việc thật.
+  speed: 1.0
+  voice: en_US_male
+  transcript_en: "Standup: yesterday the restore test passed, RTO met at two hours forty. Incident: portal degraded from the branch since eleven, eight users, DNS ruled out, fails at the third hop. Update posted, next update at fourteen hundred. Change: firewall rule raised as a normal change, rollback is removing the rule, two minutes."
+  transcript_vi: "Standup: hôm qua bài kiểm tra khôi phục đạt, RTO hai tiếng bốn mươi. Sự cố: portal suy giảm từ chi nhánh từ mười một giờ, tám người, đã loại trừ DNS, hỏng ở chặng ba. Đã gửi cập nhật, cập nhật tiếp lúc mười bốn giờ. Change: quy tắc tường lửa mở dạng normal change, quay lui là gỡ quy tắc, hai phút."
+  questions:
+    - kind: mcq_listen
+      prompt_vi: "Sự cố là loại gì?"
+      choices: ["Degraded", "Down hoàn toàn", "Chưa xác định"]
+      answer: 0
+      difficulty: 2
+      skill: Listening
+    - kind: mcq_listen
+      prompt_vi: "Cập nhật tiếp theo lúc mấy giờ?"
+      choices: ["11:00", "02:40", "14:00"]
+      answer: 2
+      difficulty: 2
+      skill: Listening
+    - kind: mcq_listen
+      prompt_vi: "Phương án quay lui mất bao lâu?"
+      choices: ["Hai tiếng", "Hai phút", "Bốn mươi phút"]
+      answer: 1
+      difficulty: 3
+      skill: Listening
+
+speaking_drills:
+  - kind: read_aloud
+    expected_text: "The portal has been degraded since eleven. About eight users affected."
+    prompt_vi: "Trạng thái, mốc thời gian, con số ảnh hưởng — ba thứ trong một câu."
+    ipa: "/ðə ˈpɔːrtl hæz biːn dɪˈɡreɪdɪd sɪns ɪˈlevn/"
+    focus_phonemes: ["ɡr", "ns"]
+  - kind: read_aloud
+    expected_text: "DNS is ruled out. It fails at the third hop."
+    prompt_vi: "Loại trừ rồi chỉ chỗ hỏng. Chú ý âm /θ/ trong third."
+    ipa: "/diː en es ɪz ruːld aʊt ɪt feɪlz æt ðə θɜːrd hɒp/"
+    focus_phonemes: ["ld", "θ"]
+  - kind: shadow
+    expected_text: "Next update at fourteen hundred, or sooner if anything changes."
+    prompt_vi: "Cam kết mốc cập nhật. Nghe rồi nhắc lại."
+    ipa: "/nekst ˈʌpdeɪt æt ˌfɔːrˈtiːn ˈhʌndrəd/"
+    focus_phonemes: ["ndr", "tʃ"]
+  - kind: shadow
+    expected_text: "Rollback is removing the rule, about two minutes."
+    prompt_vi: "Phương án quay lui kèm thời gian — phần hội đồng duyệt chờ nghe."
+    ipa: "/ˈroʊlbæk ɪz rɪˈmuːvɪŋ ðə ruːl/"
+    focus_phonemes: ["lb", "v"]
+  - kind: respond
+    prompt_en: "Minh, standup — go ahead."
+    prompt_vi: "Nói standup ba phần, rồi báo một sự cố đủ bốn phần."
+    accept_patterns:
+      - "Yesterday I"
+      - "Today I'm"
+      - "since"
+
+reading:
+  kind: email
+  context_vi: >
+    Email tổng kết ca trực gửi quản lý. Gói bốn phần của cả nhánh trong một trang.
+  text_en: |
+    Subject: Shift summary - Tuesday, INC-2310 open
+
+    Hi Linh,
+
+    Completed today:
+    - DR restore test written up. RTO met (2h40 against a 4h target).
+      One finding: the DNS step is missing from the runbook, added.
+
+    Open: INC-2310 - portal degraded from the Da Nang branch since 11:00.
+    Impact: 8 users, internal only, not customer facing.
+    Ruled out: DNS (same IP resolved from both sites), client machine
+    (same laptop works in the office), server (office traffic served normally).
+    Found: firewall drops tcp/443 from 10.30.7.0/24. The allow rule was never
+    added when the subnet was created on 2 August.
+
+    Fix: CHG-8851 raised as a normal change for 16:00 today.
+    Rollback: remove the rule, about two minutes. Low risk.
+
+    Customer update posted at 13:00. Next update at 14:00.
+
+    Minh
+  text_vi: |
+    Tiêu đề: Tổng kết ca - thứ Ba, INC-2310 còn mở
+
+    Chào chị Linh,
+
+    Hoàn thành hôm nay:
+    - Đã viết xong báo cáo kiểm tra khôi phục DR. Đạt RTO (2 tiếng 40 so với mục tiêu 4 tiếng).
+      Một phát hiện: bước DNS thiếu trong runbook, đã bổ sung.
+
+    Còn mở: INC-2310 - portal suy giảm từ chi nhánh Đà Nẵng từ 11:00.
+    Ảnh hưởng: 8 người, chỉ nội bộ, không tác động khách hàng.
+    Đã loại trừ: DNS (phân giải cùng IP ở cả hai nơi), máy trạm
+    (cùng laptop chạy được ở trụ sở), máy chủ (lưu lượng trụ sở vẫn bình thường).
+    Đã tìm ra: tường lửa chặn tcp/443 từ 10.30.7.0/24. Quy tắc cho phép chưa từng
+    được thêm khi tạo dải mạng ngày 2 tháng 8.
+
+    Cách sửa: CHG-8851 mở dạng normal change lúc 16:00 hôm nay.
+    Quay lui: gỡ quy tắc, khoảng hai phút. Rủi ro thấp.
+
+    Đã gửi cập nhật cho khách lúc 13:00. Cập nhật tiếp lúc 14:00.
+
+    Minh
+  questions:
+    - kind: mcq_read
+      prompt_en: "Is INC-2310 customer facing?"
+      choices: ["Yes", "Not stated", "No, internal only"]
+      answer: 2
+      difficulty: 1
+      reading_skill: scan
+      skill: Reading
+    - kind: mcq_read
+      prompt_en: "Why was the firewall rule missing?"
+      choices: ["It was never added when the subnet was created", "It was deleted", "The firewall failed"]
+      answer: 0
+      difficulty: 2
+      reading_skill: scan
+      skill: Reading
+    - kind: mcq_read
+      prompt_en: "What finding came out of the DR test?"
+      choices: ["The RTO was missed", "The DNS step was missing from the runbook", "The backup was corrupt"]
+      answer: 1
+      difficulty: 2
+      reading_skill: scan
+      skill: Reading
+
+writing:
+  kind: GuidedEmail
+  prompt_vi: >
+    Viết email tổng kết ca trực. Phải gói đủ ba phần của nhánh này:
+    một sự cố đang mở có trạng thái và con số ảnh hưởng, những gì đã loại trừ,
+    và change để sửa kèm phương án quay lui.
+  prompt_en: "Write a shift summary email covering an open incident and a change."
+  required_points:
+    - "degraded since"
+    - "ruled out"
+    - "rollback"
+  hint_vi: "Gộp INF-02, INF-03, INF-04 và INF-06 vào một email."
+  sample_en: "INC-2310: the portal has been degraded from the branch since 11:00, eight users, internal only. DNS and the client machine are ruled out. Found the firewall dropping port 443. CHG-8851 raised for 16:00, rollback is removing the rule, about two minutes."
+
+quiz:
+  - kind: mcq
+    prompt_vi: "Dịch vụ vẫn chạy nhưng chậm và lỗi từng phần. Gọi là gì?"
+    choices: ["Down", "Offline", "Degraded"]
+    answer: 2
+    difficulty: 1
+    skill: Speaking
+  - kind: mcq
+    prompt_vi: "Phần nào bắt buộc có trong mọi bản cập nhật sự cố?"
+    choices: ["Mốc cập nhật tiếp theo", "Lời xin lỗi", "Tên người xử lý"]
+    answer: 0
+    difficulty: 1
+    skill: Writing
+  - kind: mcq
+    prompt_vi: "Hội đồng duyệt change quan tâm nhất điều gì?"
+    choices: ["Bạn làm thế nào", "Nếu hỏng thì quay lui ra sao", "Mất bao lâu"]
+    answer: 1
+    difficulty: 2
+    skill: Speaking
+  - kind: mcq
+    prompt_vi: "RPO đo cái gì?"
+    choices: ["Mất tối đa bao nhiêu dữ liệu", "Khôi phục xong trong bao lâu", "Giữ backup bao lâu"]
+    answer: 0
+    difficulty: 2
+    skill: Reading
+  - kind: mcq
+    prompt_vi: "Vì sao ghi phần \"đã loại trừ\" trong ghi chú sự cố?"
+    choices: ["Cho đầy đủ", "Vì quy định", "Để người tiếp theo không kiểm lại đúng những tầng đã kiểm"]
+    answer: 2
+    difficulty: 2
+    skill: Reading
+  - kind: mcq
+    prompt_vi: "Standup gồm mấy phần?"
+    choices: ["Hai: xong và chưa xong", "Ba: hôm qua, hôm nay, vướng mắc", "Một: đang làm gì"]
+    answer: 1
+    difficulty: 1
+    skill: Speaking
+
+explanation:
+  why_vi: >
+    Nhánh Hạ tầng xoay quanh một thói quen duy nhất: nói bằng dữ kiện chứ không bằng cảm nhận.
+    Mỗi bài đều là một dạng của cùng thói quen đó — con số trong standup,
+    trạng thái và mốc thời gian khi báo sự cố, bằng chứng khi loại trừ nguyên nhân,
+    và phương án quay lui khi xin duyệt.
+  how_vi: >
+    Bài này không dạy gì mới. Nó kiểm tra bạn chuyển được giữa bốn tình huống
+    trong một ca trực, và dùng đúng từ ở mỗi tình huống. Bí ở đâu thì quay lại đúng bài đó:
+    trạng thái dịch vụ ở INF-02, nhịp cập nhật ở INF-03, quay lui ở INF-04,
+    khoanh vùng mạng ở INF-06.
+  contrast_vi: >
+    "Mạng hỏng, đang xem" là một câu. "Degraded từ 11 giờ, tám người, DNS đã loại trừ,
+    hỏng ở chặng ba" là bốn dữ kiện — và bốn dữ kiện đó cho phép người khác hành động
+    mà không cần hỏi thêm câu nào.
+
+common_mistakes:
+  - mistake: "Dùng từ trạng thái sai vì đang căng thẳng"
+    why_vi: >
+      Lúc sự cố, phản xạ là nói cho nhanh. Nhưng down và degraded điều động
+      hai mức nguồn lực khác nhau, và nói sai là gọi nhầm người dậy lúc 3 giờ sáng.
+    fix_vi: "Trước khi mở miệng, hỏi mình: có truy cập được không? Được mà kém thì là degraded."
+    detect_phoneme_missing: []
+  - mistake: "Báo cáo bằng cảm nhận thay vì dữ kiện"
+    why_vi: >
+      “Có vẻ ổn hơn rồi” là cảm nhận của người đang xử lý, không phải trạng thái đo được.
+      Người nghe không biết nên hành động hay chờ.
+    fix_vi: "Mỗi câu báo cáo phải có ít nhất một con số hoặc một mốc thời gian."
+    detect_phoneme_missing: []
+  - mistake: "Quên mốc cập nhật tiếp theo"
+    why_vi: >
+      Nghĩ rằng sẽ báo khi có tin mới. Nhưng khách hàng không biết “khi nào” là bao giờ,
+      nên họ hỏi lại mỗi mười lăm phút.
+    fix_vi: "Mọi cập nhật đều kết bằng một mốc giờ cụ thể. Đó là cam kết duy nhất bạn luôn giữ được."
+    detect_phoneme_missing: []
+
+memory_trick_vi: >
+  Cả nhánh Hạ tầng gói trong một thói quen: NÓI BẰNG DỮ KIỆN.
+  Con số trong standup, trạng thái và giờ khi báo sự cố, bằng chứng khi loại trừ,
+  và phương án quay lui khi xin duyệt.

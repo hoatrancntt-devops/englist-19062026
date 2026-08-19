@@ -1,0 +1,257 @@
+schema_version: 1
+code: OFF-10
+slug: noi-trong-hop-online
+title_vi: "Nói trong họp online"
+title_en: "Speaking in online meetings"
+
+layer: Office
+track: Foundation
+level: B1
+unit_code: U-O3
+order_index: 10
+estimated_minutes: 11
+
+illustration: video-call
+
+objective_vi: >
+  Xin lời trong cuộc họp online, xử lý sự cố âm thanh, và nói xen vào
+  mà không cắt lời người khác.
+
+objective_observable: >
+  Nói được câu xin lời và câu xử lý sự cố kỹ thuật trong 3 trên 4 drill.
+
+mastery_weights:
+  Listening: 0.35
+  Speaking: 0.35
+  Reading: 0.15
+  Writing: 0.15
+
+prerequisites:
+  - lesson: OFF-09
+    min_mastery: 60
+    kind: Hard
+
+vocabulary:
+  - term: "Can everyone hear me"
+    ipa: "/kæn ˈevriwʌn hɪr miː/"
+    meaning_vi: "mọi người nghe rõ tôi không"
+    chunk: "Can everyone hear me OK?"
+    tags: [meeting, core]
+  - term: "You're on mute"
+    ipa: "/jʊr ɒn mjuːt/"
+    meaning_vi: "bạn đang tắt tiếng"
+    chunk: "Sorry, you're on mute."
+    tags: [meeting, core]
+  - term: "Can I jump in"
+    ipa: "/kæn aɪ dʒʌmp ɪn/"
+    meaning_vi: "cho tôi nói xen một chút"
+    chunk: "Can I jump in here?"
+    tags: [meeting, core]
+  - term: "You cut out"
+    ipa: "/juː kʌt aʊt/"
+    meaning_vi: "tiếng bạn bị ngắt quãng"
+    chunk: "Sorry, you cut out for a second."
+    tags: [meeting, core]
+  - term: "Go ahead"
+    ipa: "/ɡoʊ əˈhed/"
+    meaning_vi: "mời bạn nói"
+    chunk: "Sorry, go ahead."
+    tags: [meeting, core]
+  - term: "share my screen"
+    ipa: "/ʃer maɪ skriːn/"
+    meaning_vi: "chia sẻ màn hình"
+    chunk: "Let me share my screen."
+    tags: [meeting]
+
+sentence_patterns:
+  - pattern: "Can I jump in on {topic}?"
+    meaning_vi: "Cho em nói xen về {topic} được không?"
+    slots:
+      topic: ["that point", "the storage part", "the timeline"]
+  - pattern: "Sorry, you {problem}. Could you {request}?"
+    meaning_vi: "Xin lỗi, anh chị {problem}. {request} được không ạ?"
+    slots:
+      problem: ["cut out", "are on mute"]
+      request: ["say that again", "repeat the last part"]
+
+dialogue:
+  context_vi: >
+    Cuộc gọi review với David và Priya. Đường truyền chập chờn, và bạn có một điểm
+    cần nói nhưng chưa tới lượt. Đây là hai tình huống khó nhất của họp online.
+  turns:
+    - speaker: "David"
+      en: "So for the retention we're looking at sixty days, which means we need..."
+      vi: "Vậy về lưu trữ chúng ta đang tính sáu mươi ngày, nghĩa là ta cần..."
+    - speaker: "You"
+      en: "Sorry David, you cut out for a second. Could you repeat the last part?"
+      vi: "Xin lỗi anh David, tiếng anh bị ngắt một chút. Anh nhắc lại phần cuối được không ạ?"
+    - speaker: "David"
+      en: "Sure — sixty days means about four terabytes more storage."
+      vi: "Được — sáu mươi ngày nghĩa là cần thêm khoảng bốn terabyte."
+    - speaker: "You"
+      en: "Can I jump in on that? The current array only has three terabytes free."
+      vi: "Cho em nói xen chỗ đó được không ạ? Mảng lưu trữ hiện tại chỉ còn ba terabyte trống."
+    - speaker: "David"
+      en: "Good catch. Priya, thoughts?"
+      vi: "Phát hiện hay đấy. Priya, ý bạn thế nào?"
+    - speaker: "Priya"
+      en: "..."
+      vi: "..."
+    - speaker: "You"
+      en: "Priya, you're on mute."
+      vi: "Chị Priya ơi, chị đang tắt tiếng."
+
+listening:
+  context_vi: >
+    Nghe ba câu xử lý sự cố họp online. Đây là ba câu bạn sẽ dùng nhiều nhất.
+  speed: 1.0
+  voice: en_US_male
+  transcript_en: "Can everyone hear me OK? Right. Sorry, you cut out for a second — could you say that again? And Priya, I think you're on mute."
+  transcript_vi: "Mọi người nghe rõ tôi không? Được rồi. Xin lỗi, tiếng bạn bị ngắt một chút — bạn nhắc lại được không? À Priya, hình như bạn đang tắt tiếng."
+  questions:
+    - kind: mcq_listen
+      prompt_vi: "\"You cut out\" nghĩa là gì?"
+      choices: ["Tiếng bạn bị ngắt quãng", "Bạn đã rời cuộc họp", "Bạn nói quá nhanh"]
+      answer: 0
+      difficulty: 2
+      skill: Listening
+    - kind: mcq_listen
+      prompt_vi: "Vấn đề của Priya là gì?"
+      choices: ["Mất mạng", "Chưa vào họp", "Đang tắt tiếng"]
+      answer: 2
+      difficulty: 1
+      skill: Listening
+
+speaking_drills:
+  - kind: read_aloud
+    expected_text: "Can everyone hear me OK?"
+    prompt_vi: "Câu đầu tiên của mọi cuộc họp online. Lên giọng ở cuối."
+    ipa: "/kæn ˈevriwʌn hɪr miː oʊˈkeɪ/"
+    focus_phonemes: ["h", "k"]
+  - kind: read_aloud
+    expected_text: "Sorry, you cut out for a second."
+    prompt_vi: "Chú ý âm /t/ cuối chữ cut, đừng nuốt mất."
+    ipa: "/ˈsɒri juː kʌt aʊt fɔːr ə ˈsekənd/"
+    focus_phonemes: ["t", "nd"]
+  - kind: shadow
+    expected_text: "Can I jump in here?"
+    prompt_vi: "Câu xin lời. Nói trước khi vào ý, không cắt ngang giữa câu người khác."
+    ipa: "/kæn aɪ dʒʌmp ɪn hɪr/"
+    focus_phonemes: ["dʒ", "mp"]
+  - kind: shadow
+    expected_text: "Sorry, go ahead."
+    prompt_vi: "Khi hai người cùng nói. Câu này gỡ tình huống trong một giây."
+    ipa: "/ˈsɒri ɡoʊ əˈhed/"
+    focus_phonemes: ["ɡ", "hd"]
+  - kind: respond
+    prompt_en: "So the retention will be sixty days, which means we need..."
+    prompt_vi: "Bạn không nghe rõ phần cuối. Xin người ta nhắc lại."
+    accept_patterns:
+      - "you cut out"
+      - "could you repeat"
+      - "Sorry"
+
+reading:
+  kind: chat
+  context_vi: >
+    Kênh chat song song trong lúc họp. Đây là cách người ta xử lý sự cố mà không cắt ngang.
+  text_en: |
+    Priya: can't get audio working, joining by phone in 2 min
+    You: No problem - David is on the retention numbers now.
+    You: Summary so far: 60 days agreed, storage gap is 1 TB.
+    Priya: got it, thanks. dialing in now
+    David: Priya, we'll come back to the policy point when you're on.
+  text_vi: |
+    Priya: âm thanh không chạy được, 2 phút nữa tôi gọi bằng điện thoại
+    Bạn: Không sao - David đang nói phần số liệu lưu trữ.
+    Bạn: Tóm tắt tới giờ: chốt 60 ngày, thiếu 1 TB dung lượng.
+    Priya: rõ rồi, cảm ơn. đang quay số đây
+    David: Priya, khi nào bạn vào được thì mình quay lại phần chính sách.
+  questions:
+    - kind: mcq_read
+      prompt_en: "What was agreed so far?"
+      choices: ["30 days", "60 days", "90 days"]
+      answer: 1
+      difficulty: 1
+      reading_skill: scan
+      skill: Reading
+    - kind: mcq_read
+      prompt_en: "Why was the chat useful here?"
+      choices: ["It recorded the meeting", "It replaced the meeting", "It let Priya catch up without interrupting the call"]
+      answer: 2
+      difficulty: 2
+      reading_skill: skim
+      skill: Reading
+
+writing:
+  kind: FillBlank
+  prompt_vi: "Điền hai chỗ trống: một câu xin lời và một câu báo sự cố âm thanh."
+  prompt_en: "Can I ___ in here? ... Sorry, you're on ___."
+  blanks:
+    - ["jump"]
+    - ["mute"]
+  hint_vi: "Chỗ đầu là động từ trong cụm xin nói xen. Chỗ sau là trạng thái tắt tiếng."
+  sample_en: "Can I jump in here? ... Sorry, you're on mute."
+
+quiz:
+  - kind: mcq
+    prompt_vi: "Bạn muốn nói xen vào. Nói gì trước?"
+    choices: ["Can I jump in here?", "Nói thẳng ý của mình", "Chờ hết cuộc họp"]
+    answer: 0
+    difficulty: 1
+    skill: Speaking
+  - kind: mcq
+    prompt_vi: "Hai người cùng nói một lúc. Xử lý thế nào?"
+    choices: ["Nói to hơn", "Sorry, go ahead", "Tắt tiếng"]
+    answer: 1
+    difficulty: 1
+    skill: Speaking
+  - kind: mcq
+    prompt_vi: "Không nghe rõ vì mạng chập chờn. Nói gì?"
+    choices: ["I don't understand", "Speak louder", "Sorry, you cut out — could you repeat the last part?"]
+    answer: 2
+    difficulty: 2
+    skill: Speaking
+  - kind: mcq
+    prompt_vi: "Vì sao nên dùng chat song song trong họp online?"
+    choices: ["Để xử lý việc phụ mà không cắt ngang người đang nói", "Để không phải nói", "Vì bắt buộc"]
+    answer: 0
+    difficulty: 2
+    skill: Reading
+
+explanation:
+  why_vi: >
+    Họp online khó hơn họp trực tiếp vì thiếu tín hiệu cơ thể: bạn không biết khi nào
+    tới lượt mình, và không biết người ta im lặng vì đang nghĩ hay vì mất tiếng.
+    Người mới thường ngồi im cả cuộc họp vì không tìm được khe để nói.
+  how_vi: >
+    Học thuộc ba câu và dùng chúng không do dự: XIN LỜI trước khi vào ý,
+    BÁO SỰ CỐ khi không nghe rõ, NHƯỜNG LỜI khi hai người cùng nói.
+    Ba câu này ngắn, ai cũng dùng, và không ai đánh giá bạn vì dùng chúng.
+  contrast_vi: >
+    Cắt ngang giữa câu người khác gây khó chịu. "Can I jump in here?" chờ nửa giây
+    rồi mới nói — cùng một mục đích, khác hẳn cảm nhận.
+
+common_mistakes:
+  - mistake: "Ngồi im cả cuộc họp vì không tìm được lúc nói"
+    why_vi: >
+      Không có tín hiệu cơ thể nên không đoán được khi nào tới lượt.
+      Kết quả là ý kiến hay không bao giờ được nói ra.
+    fix_vi: "Dùng \"Can I jump in here?\" ngay khi người ta ngắt hơi. Không cần đợi được mời."
+    detect_phoneme_missing: []
+  - mistake: "Im lặng khi không nghe rõ, đoán phần còn lại"
+    why_vi: >
+      Ngại làm gián đoạn. Nhưng đoán sai một con số trong họp kỹ thuật
+      dẫn tới quyết định sai.
+    fix_vi: "\"Sorry, you cut out\" là câu ai cũng nói trong họp online. Không ai thấy phiền."
+    detect_phoneme_missing: []
+  - mistake: "Nói to hơn khi hai người cùng nói"
+    why_vi: >
+      Phản xạ tự nhiên, nhưng trên đường truyền số thì cả hai đều bị méo tiếng
+      và không ai nghe được ai.
+    fix_vi: "Dừng lại và nói \"Sorry, go ahead.\" Người kia nói xong thì tới lượt bạn."
+    detect_phoneme_missing: []
+
+memory_trick_vi: >
+  Ba câu cứu hộ của họp online: XIN LỜI "Can I jump in?",
+  BÁO SỰ CỐ "You cut out", NHƯỜNG LỜI "Sorry, go ahead".

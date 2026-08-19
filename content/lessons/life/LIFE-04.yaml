@@ -1,0 +1,252 @@
+schema_version: 1
+code: LIFE-04
+slug: ba-cau-cuu-ho
+title_vi: "Ba câu cứu hộ — để không bao giờ phải đứng im"
+title_en: "Three rescue phrases"
+
+layer: Life
+track: Foundation
+level: PreA1
+unit_code: U-L1
+order_index: 4
+estimated_minutes: 10
+
+illustration: confused-listener
+
+objective_vi: >
+  Dùng được ba câu cứu hộ khi không nghe kịp, không hiểu, hoặc chưa nghĩ ra từ —
+  thay vì im lặng rồi gật đại.
+
+objective_observable: >
+  Nói được cả ba câu cứu hộ đúng ngữ điệu, đạt từ 75 điểm phát âm trên 3 trên 4 drill.
+
+mastery_weights:
+  Listening: 0.30
+  Speaking: 0.50
+  Reading: 0.10
+  Writing: 0.10
+
+prerequisites:
+  - lesson: LIFE-03
+    min_mastery: 60
+    kind: Hard
+
+vocabulary:
+  - term: "Sorry?"
+    ipa: "/ˈsɒri/"
+    meaning_vi: "Xin lỗi, nói lại được không? (lên giọng cuối)"
+    chunk: "Sorry? I didn't catch that."
+    tags: [rescue, core]
+  - term: "say that again"
+    ipa: "/seɪ ðæt əˈɡen/"
+    meaning_vi: "nói lại điều đó"
+    chunk: "Could you say that again?"
+    tags: [rescue, core]
+  - term: "more slowly"
+    ipa: "/mɔːr ˈsloʊli/"
+    meaning_vi: "chậm hơn"
+    chunk: "Could you speak more slowly?"
+    tags: [rescue, core]
+  - term: "I didn't catch that"
+    ipa: "/aɪ ˈdɪdnt kætʃ ðæt/"
+    meaning_vi: "tôi nghe không kịp"
+    chunk: "Sorry, I didn't catch that."
+    tags: [rescue]
+  - term: "How do you say"
+    ipa: "/haʊ duː juː seɪ/"
+    meaning_vi: "nói thế nào là"
+    chunk: "How do you say this in English?"
+    tags: [rescue]
+  - term: "bear with me"
+    ipa: "/ber wɪð miː/"
+    meaning_vi: "chờ tôi một chút"
+    chunk: "Bear with me, I'm checking."
+    tags: [rescue, office]
+
+sentence_patterns:
+  - pattern: "Could you {request}?"
+    meaning_vi: "Bạn có thể {request} được không?"
+    slots:
+      request: ["say that again", "speak more slowly", "spell that"]
+  - pattern: "Sorry, I didn't catch {what}."
+    meaning_vi: "Xin lỗi, tôi nghe không kịp {what}."
+    slots:
+      what: ["that", "the last part", "the number"]
+
+dialogue:
+  context_vi: >
+    David, quản lý phía khách hàng người Mỹ, nói rất nhanh và nuốt âm.
+    Đây là lần đầu bạn nghe giọng đó. Ba câu cứu hộ là tất cả những gì bạn cần.
+  turns:
+    - speaker: "David"
+      en: "So we're gonna need that report by EOD, alright?"
+      vi: "Vậy bọn tôi cần bản báo cáo đó trước cuối ngày, được chứ?"
+    - speaker: "You"
+      en: "Sorry? I didn't catch that."
+      vi: "Xin lỗi? Em nghe không kịp."
+    - speaker: "David"
+      en: "The report. We need it by end of day."
+      vi: "Bản báo cáo. Bọn tôi cần trước cuối ngày."
+    - speaker: "You"
+      en: "Could you speak a little more slowly? I want to get this right."
+      vi: "Anh nói chậm hơn chút được không? Em muốn nắm cho đúng."
+    - speaker: "David"
+      en: "Of course. The report. By six PM today. Okay?"
+      vi: "Được chứ. Bản báo cáo. Trước sáu giờ chiều hôm nay. Được không?"
+    - speaker: "You"
+      en: "Got it. Six PM today. Thank you."
+      vi: "Rõ rồi. Sáu giờ chiều hôm nay. Cảm ơn anh."
+
+listening:
+  context_vi: >
+    Nghe lại chính đoạn David nói nhanh. Bạn không cần hiểu hết —
+    chỉ cần nhận ra lúc nào mình nên dùng câu cứu hộ.
+  speed: 1.0
+  voice: en_US_male
+  transcript_en: "So we're gonna need that report by EOD, alright? Let me know if there's any blocker."
+  transcript_vi: "Vậy bọn tôi cần bản báo cáo đó trước cuối ngày, được chứ? Có gì vướng thì báo tôi."
+  questions:
+    - kind: mcq_listen
+      prompt_vi: "Khi không nghe kịp, việc NÊN làm là gì?"
+      choices: ["Nói Sorry? I didn't catch that", "Gật đầu rồi hỏi người khác sau", "Im lặng chờ họ nói tiếp"]
+      answer: 0
+      difficulty: 1
+      skill: Listening
+    - kind: mcq_listen
+      prompt_vi: "\"EOD\" trong câu trên nghĩa là gì?"
+      choices: ["Estimated date", "Every other day", "End of day - cuối ngày"]
+      answer: 2
+      difficulty: 3
+      skill: Listening
+
+speaking_drills:
+  - kind: read_aloud
+    expected_text: "Sorry? I didn't catch that."
+    prompt_vi: "Lên giọng ở cuối chữ Sorry. Xuống giọng thì thành lời xin lỗi, không phải câu hỏi."
+    ipa: "/ˈsɒri aɪ ˈdɪdnt kætʃ ðæt/"
+    focus_phonemes: ["ð", "tʃ"]
+  - kind: read_aloud
+    expected_text: "Could you say that again?"
+    prompt_vi: "Câu lịch sự nhất trong ba câu. Dùng được với cả sếp lẫn khách hàng."
+    ipa: "/kʊd juː seɪ ðæt əˈɡen/"
+    focus_phonemes: ["ð"]
+  - kind: read_aloud
+    expected_text: "Could you speak more slowly?"
+    prompt_vi: "Đọc to. Chú ý cụm /sp/ đầu chữ speak."
+    ipa: "/kʊd juː spiːk mɔːr ˈsloʊli/"
+    focus_phonemes: ["sp", "sl"]
+  - kind: shadow
+    expected_text: "Bear with me, I'm checking."
+    prompt_vi: "Câu mua thời gian khi bạn cần vài giây để nghĩ hoặc tra cứu."
+    ipa: "/ber wɪð miː aɪm ˈtʃekɪŋ/"
+    focus_phonemes: ["ð", "tʃ"]
+  - kind: respond
+    prompt_en: "We need the report by EOD, alright?"
+    prompt_vi: "Bạn không nghe kịp câu này. Dùng một câu cứu hộ."
+    accept_patterns:
+      - "Sorry"
+      - "Could you"
+      - "I didn't catch"
+
+reading:
+  kind: chat
+  context_vi: >
+    Sau cuộc gọi, bạn nhắn lại để chắc chắn mình hiểu đúng. Đây là thói quen tốt nhất
+    mà một người mới nên có.
+  text_en: |
+    You: Hi David, just to confirm what we discussed: report by 6 PM today. Correct?
+    David: Correct. Thanks for double-checking.
+    You: One more thing - could you send me the template? I want to get the format right.
+    David: Sent.
+  text_vi: |
+    Bạn: Chào David, em xác nhận lại điều mình vừa trao đổi: báo cáo trước 6 giờ chiều nay. Đúng không ạ?
+    David: Đúng rồi. Cảm ơn em đã kiểm lại.
+    Bạn: Một điều nữa - anh gửi em cái mẫu được không? Em muốn làm đúng định dạng.
+    David: Gửi rồi nhé.
+  questions:
+    - kind: mcq_read
+      prompt_en: "Why did the learner send this message?"
+      choices: ["To ask for more time", "To confirm what was agreed", "To report a problem"]
+      answer: 1
+      difficulty: 2
+      reading_skill: skim
+      skill: Reading
+    - kind: mcq_read
+      prompt_en: "What else did the learner ask for?"
+      choices: ["A meeting", "A deadline extension", "The template"]
+      answer: 2
+      difficulty: 1
+      reading_skill: scan
+      skill: Reading
+
+writing:
+  kind: Reorder
+  prompt_vi: "Sắp lại thành một câu cứu hộ hoàn chỉnh."
+  prompt_en: "Sắp xếp: slowly / you / more / Could / speak"
+  correct_order: ["Could", "you", "speak", "more", "slowly"]
+  hint_vi: "Câu hỏi lịch sự trong tiếng Anh bắt đầu bằng Could."
+  sample_en: "Could you speak more slowly?"
+
+quiz:
+  - kind: mcq
+    prompt_vi: "Bạn nghe được nhưng không hiểu nghĩa. Nói gì?"
+    choices: ["Sorry, what does that mean?", "Could you speak more slowly?", "I don't know"]
+    answer: 0
+    difficulty: 2
+    skill: Speaking
+  - kind: mcq
+    prompt_vi: "Người ta nói quá nhanh. Nói gì?"
+    choices: ["You speak fast", "Could you speak more slowly?", "Slow"]
+    answer: 1
+    difficulty: 1
+    skill: Speaking
+  - kind: mcq
+    prompt_vi: "Bạn cần vài giây để tra cứu. Nói gì?"
+    choices: ["Wait", "One minute silence", "Bear with me, I'm checking"]
+    answer: 2
+    difficulty: 2
+    skill: Speaking
+  - kind: mcq
+    prompt_vi: "Vì sao \"Sorry?\" phải lên giọng ở cuối?"
+    choices: ["Xuống giọng thì thành lời xin lỗi chứ không phải câu hỏi", "Cho lịch sự hơn", "Không quan trọng"]
+    answer: 0
+    difficulty: 2
+    skill: Speaking
+
+explanation:
+  why_vi: >
+    Người mất gốc thường im lặng khi không nghe kịp, vì sợ bị đánh giá là kém.
+    Nhưng im lặng rồi gật đại mới là thứ gây hậu quả: làm sai việc, lỡ hạn, hoặc phải hỏi lại
+    người thứ ba. Người bản xứ hỏi lại nhau suốt ngày — đó là hành vi bình thường của
+    một cuộc trao đổi, không phải dấu hiệu yếu kém.
+  how_vi: >
+    Học thuộc ba câu tới mức bật ra không cần nghĩ: một câu cho nghe không kịp,
+    một câu cho nói quá nhanh, một câu cho cần thêm thời gian. Ba câu này phủ gần hết
+    tình huống bí trong sáu tháng đầu.
+  contrast_vi: >
+    "Sorry?" lên giọng là hỏi lại. "Sorry." xuống giọng là xin lỗi.
+    Cùng một chữ, hai việc hoàn toàn khác nhau.
+
+common_mistakes:
+  - mistake: "Nói What? thay vì Sorry?"
+    why_vi: >
+      “What?” trong tiếng Anh nghe cộc lốc, gần như khó chịu — dù bạn hoàn toàn không có ý đó.
+      Người Việt dịch thẳng từ “Gì cơ?” nên hay mắc.
+    fix_vi: "Dùng \"Sorry?\" hoặc \"Sorry, could you say that again?\". Cùng ý, khác hẳn thái độ."
+    detect_phoneme_missing: []
+  - mistake: "Xuống giọng ở cuối \"Sorry?\" nên thành lời xin lỗi"
+    why_vi: >
+      Tiếng Việt không dùng ngữ điệu để biến câu kể thành câu hỏi, nên miệng không tự lên giọng.
+      Người nghe tưởng bạn đang xin lỗi và nói tiếp.
+    fix_vi: "Tập kéo cao cuối chữ: Sor-RY? Nghe như đang thắc mắc thật sự."
+    detect_phoneme_missing: []
+  - mistake: "Gật đầu rồi hỏi lại người khác sau"
+    why_vi: >
+      Cảm giác an toàn tức thời, nhưng lại tạo ra hai vấn đề: bạn làm sai việc,
+      và người nói tưởng bạn đã hiểu nên lần sau vẫn nói nhanh như vậy.
+    fix_vi: "Hỏi ngay tại chỗ. Người ta sẽ tự động nói chậm hơn ở những lần sau."
+    detect_phoneme_missing: []
+
+memory_trick_vi: >
+  Ba câu cho ba tình huống: không NGHE kịp thì "Sorry?", nghe rồi mà nhanh quá thì
+  "more slowly", cần THỜI GIAN thì "bear with me". Nhớ ba chữ: NGHE, NHANH, THỜI GIAN.

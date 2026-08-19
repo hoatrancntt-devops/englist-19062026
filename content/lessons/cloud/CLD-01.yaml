@@ -1,0 +1,362 @@
+schema_version: 1
+code: CLD-01
+slug: trinh-bay-lua-chon-kien-truc
+title_vi: "Trình bày lựa chọn kiến trúc — VM, container hay serverless"
+title_en: "Presenting an architecture choice"
+
+layer: Professional
+track: Cloud
+level: B1
+unit_code: U-CLD1
+order_index: 1
+estimated_minutes: 12
+is_checkpoint: false
+
+illustration: cloud-stack
+
+objective_vi: >
+  Nói được vì sao bạn chọn một cách triển khai thay vì cách khác, bằng cách nêu
+  đánh đổi chứ không phải bằng cách khen cái mình chọn.
+
+objective_observable: >
+  Đạt từ 75 điểm trên cả bốn trục kỹ năng, không trục nào dưới 60.
+
+mastery_weights:
+  Listening: 0.25
+  Speaking: 0.35
+  Reading: 0.20
+  Writing: 0.20
+
+prerequisites:
+  - lesson: OFF-12
+    min_mastery: 70
+    kind: Hard
+  - lesson: INF-05
+    min_mastery: 65
+    kind: Soft
+  - lesson: INF-07
+    min_mastery: 65
+    kind: Soft
+  - lesson: OFF-10
+    min_mastery: 65
+    kind: Soft
+
+vocabulary:
+  - term: "trade-off"
+    ipa: "/ˈtreɪd ɔːf/"
+    meaning_vi: "sự đánh đổi — được cái này thì mất cái kia"
+    chunk: "The trade-off is cost against control."
+    tags: [cloud, core]
+  - term: "we chose X over Y"
+    ipa: "/wiː tʃoʊz ˈoʊvər/"
+    meaning_vi: "chúng tôi chọn X thay vì Y"
+    chunk: "We chose containers over plain VMs."
+    tags: [cloud, core]
+  - term: "operational overhead"
+    ipa: "/ˌɒpəˈreɪʃənl ˈoʊvərhed/"
+    meaning_vi: "công sức vận hành phải bỏ ra"
+    chunk: "Serverless has the lowest operational overhead."
+    tags: [cloud, core]
+  - term: "lock-in"
+    ipa: "/ˈlɒk ɪn/"
+    meaning_vi: "bị buộc chặt vào một nhà cung cấp"
+    chunk: "The downside is vendor lock-in."
+    tags: [cloud, core]
+  - term: "cold start"
+    ipa: "/koʊld stɑːrt/"
+    meaning_vi: "độ trễ lần gọi đầu khi hàm chưa sẵn sàng"
+    chunk: "Cold start adds about two seconds."
+    tags: [cloud, core]
+  - term: "it depends on"
+    ipa: "/ɪt dɪˈpendz ɒn/"
+    meaning_vi: "còn tuỳ vào"
+    chunk: "It depends on how often the job runs."
+    tags: [discussion, core]
+
+sentence_patterns:
+  - pattern: "We chose {option} over {alternative} because {reason}."
+    meaning_vi: "Chúng tôi chọn {option} thay vì {alternative} vì {reason}."
+    slots:
+      option: ["containers", "serverless functions", "plain VMs"]
+      alternative: ["plain VMs", "Kubernetes", "containers"]
+      reason: ["the team already knows it", "the traffic is very uneven", "we need full control of the OS"]
+  - pattern: "The trade-off is {gain} against {loss}."
+    meaning_vi: "Đánh đổi ở đây là {gain} đổi lấy {loss}."
+    slots:
+      gain: ["lower cost", "less operational overhead", "faster delivery"]
+      loss: ["more vendor lock-in", "less control", "a harder debugging story"]
+
+dialogue:
+  context_vi: >
+    Bạn đề xuất chạy một dịch vụ nội bộ trên serverless. Anh Dũng, kiến trúc sư,
+    không phản đối — anh chỉ muốn nghe bạn nói ra phần bất lợi.
+  turns:
+    - speaker: "Dũng"
+      en: "You want serverless for this. Tell me what we lose."
+      vi: "Em muốn dùng serverless cho cái này. Nói anh nghe mình mất gì."
+    - speaker: "You"
+      en: "We lose some control. We can't tune the runtime, and cold start adds about two seconds on the first call."
+      vi: "Mình mất một phần quyền kiểm soát. Không chỉnh được môi trường chạy, và cold start thêm khoảng hai giây ở lần gọi đầu."
+    - speaker: "Dũng"
+      en: "Two seconds. Is that acceptable for this service?"
+      vi: "Hai giây. Với dịch vụ này thì chấp nhận được không?"
+    - speaker: "You"
+      en: "It is. It's an internal report job, nobody is waiting on the screen."
+      vi: "Được ạ. Đây là job báo cáo nội bộ, không ai ngồi chờ trên màn hình."
+    - speaker: "Dũng"
+      en: "And what do we gain?"
+      vi: "Còn được gì?"
+    - speaker: "You"
+      en: "Cost and operational overhead. It runs twice a day. On a VM we pay for twenty-four hours to use twenty minutes."
+      vi: "Chi phí và công vận hành. Nó chạy hai lần một ngày. Trên VM thì mình trả tiền hai tư tiếng để dùng hai mươi phút."
+    - speaker: "Dũng"
+      en: "That's a real argument. The lock-in doesn't worry you?"
+      vi: "Đó là lý lẽ thật. Chuyện lock-in em không lo à?"
+    - speaker: "You"
+      en: "A little. The business logic is in a plain library, so moving it later means rewriting the wrapper, not the logic."
+      vi: "Có lo một chút. Nhưng logic nghiệp vụ nằm trong thư viện thường, nên sau này chuyển đi thì viết lại lớp bọc chứ không phải viết lại logic."
+
+listening:
+  context_vi: >
+    Nghe hai người trình bày cùng một lựa chọn. Chú ý ai nói ra phần bất lợi
+    và ai chỉ khen phương án mình chọn.
+  speed: 1.1
+  voice: en_US_male
+  transcript_en: "First speaker: Kubernetes is the modern standard, it scales automatically, it's what everyone uses, and it will solve our deployment problems. Second speaker: we chose Kubernetes over plain VMs because we run fourteen services and deploying them by hand was taking a full day each week. The trade-off is that we now need someone who understands Kubernetes on call, and we don't have that person yet."
+  transcript_vi: "Người thứ nhất: Kubernetes là chuẩn hiện đại, tự mở rộng, ai cũng dùng, và nó sẽ giải quyết vấn đề triển khai của mình. Người thứ hai: bọn tôi chọn Kubernetes thay vì VM thường vì đang chạy mười bốn dịch vụ và triển khai tay mất trọn một ngày mỗi tuần. Đánh đổi là giờ cần người hiểu Kubernetes trực máy, mà bọn tôi chưa có người đó."
+  questions:
+    - kind: mcq_listen
+      prompt_vi: "Người thứ hai nêu con số nào để giải thích lý do?"
+      choices: ["Mười bốn dịch vụ, mất một ngày mỗi tuần", "Hai giây cold start", "Không nêu con số nào"]
+      answer: 0
+      difficulty: 2
+      skill: Listening
+    - kind: mcq_listen
+      prompt_vi: "Điểm khác nhau lớn nhất giữa hai cách trình bày?"
+      choices: ["Người thứ hai nói to hơn", "Người thứ nhất dùng nhiều thuật ngữ hơn", "Người thứ hai nói ra cả phần bất lợi"]
+      answer: 2
+      difficulty: 2
+      skill: Listening
+    - kind: mcq_listen
+      prompt_vi: "Người thứ hai thừa nhận điều gì chưa có?"
+      choices: ["Ngân sách", "Người hiểu Kubernetes để trực", "Môi trường thử nghiệm"]
+      answer: 1
+      difficulty: 3
+      skill: Listening
+
+speaking_drills:
+  - kind: read_aloud
+    expected_text: "We chose containers over plain VMs because the team already knows Docker."
+    prompt_vi: "Nêu lựa chọn kèm lý do trong một câu."
+    ipa: "/wiː tʃoʊz kənˈteɪnərz ˈoʊvər pleɪn viː emz/"
+    focus_phonemes: ["tʃ", "z"]
+  - kind: read_aloud
+    expected_text: "The trade-off is lower cost against more vendor lock-in."
+    prompt_vi: "Nói đánh đổi theo cấu trúc được gì đổi lấy mất gì."
+    ipa: "/ðə ˈtreɪd ɔːf ɪz ˈloʊər kɒst əˈɡenst/"
+    focus_phonemes: ["tr", "st"]
+  - kind: shadow
+    expected_text: "Cold start adds about two seconds on the first call."
+    prompt_vi: "Nói bất lợi kèm con số. Con số làm câu nói thành lý lẽ."
+    ipa: "/koʊld stɑːrt ædz əˈbaʊt tuː ˈsekəndz/"
+    focus_phonemes: ["st", "ld"]
+  - kind: shadow
+    expected_text: "It depends on how often the job runs."
+    prompt_vi: "Câu này cứu bạn khi chưa đủ thông tin để chốt."
+    ipa: "/ɪt dɪˈpendz ɒn haʊ ˈɒfn ðə dʒɒb rʌnz/"
+    focus_phonemes: ["dz", "dʒ"]
+  - kind: respond
+    prompt_en: "You want serverless for this. Tell me what we lose."
+    prompt_vi: "Nêu một điều mất và một điều được, mỗi thứ một câu."
+    accept_patterns:
+      - "we lose"
+      - "cold start"
+      - "the trade-off is"
+
+reading:
+  kind: note
+  context_vi: >
+    Một ghi chú so sánh gửi trước buổi review. Đọc và tìm xem tác giả
+    nêu đánh đổi theo mấy trụ cột của Well-Architected.
+  text_en: |
+    Deployment option for the monthly billing job
+
+    The job runs twice a day for about twenty minutes. It reads from the
+    warehouse, builds a PDF per customer, and drops the files on storage.
+    Nobody waits on a screen while it runs.
+
+    Option A - dedicated VM
+    Full control of the OS and the runtime. We already have the patching
+    pipeline for VMs, so this adds no new tooling. Cost is fixed at roughly
+    forty dollars a month, and we use the machine for forty minutes a day.
+
+    Option B - container on the shared cluster
+    Cheaper than a dedicated VM because it shares nodes. Deployment goes
+    through the pipeline the team uses for everything else. But the cluster
+    is on-call territory, and a heavy billing run has starved a neighbouring
+    service once before.
+
+    Option C - serverless function
+    Lowest cost, around four dollars a month, and no patching at all.
+    Cold start adds two seconds, which does not matter here. The limits are
+    real though: the platform caps a single execution at fifteen minutes,
+    and our January run took eleven. That margin is thin.
+
+    Recommendation
+    Option C, with one condition. We split the run per region so no single
+    execution goes near the fifteen-minute cap. This costs us reliability
+    if the split logic is wrong, so the first three runs go out in parallel
+    with the current VM job and we compare the output before switching over.
+
+    Trade-off summary: we take cost optimization and operational excellence,
+    and we accept a reliability risk that we mitigate by running both for a week.
+  text_vi: |
+    Phương án triển khai cho job xuất hoá đơn hàng tháng
+
+    Job chạy hai lần một ngày, mỗi lần khoảng hai mươi phút. Nó đọc từ kho dữ liệu,
+    dựng một file PDF cho mỗi khách hàng, rồi đẩy file lên bộ nhớ lưu trữ.
+    Không ai ngồi chờ trên màn hình lúc nó chạy.
+
+    Phương án A - máy ảo riêng
+    Toàn quyền với hệ điều hành và môi trường chạy. Bọn mình đã có quy trình vá
+    cho máy ảo nên phương án này không thêm công cụ mới nào. Chi phí cố định
+    khoảng bốn mươi đô một tháng, và mình dùng máy bốn mươi phút mỗi ngày.
+
+    Phương án B - container trên cụm dùng chung
+    Rẻ hơn máy ảo riêng vì dùng chung node. Triển khai đi qua đúng quy trình
+    mà cả nhóm đang dùng. Nhưng cụm đó thuộc phạm vi trực, và một lần chạy hoá đơn
+    nặng đã từng làm đói tài nguyên một dịch vụ bên cạnh.
+
+    Phương án C - hàm serverless
+    Rẻ nhất, khoảng bốn đô một tháng, và không phải vá gì cả.
+    Cold start thêm hai giây, ở đây không quan trọng. Nhưng giới hạn là có thật:
+    nền tảng chặn một lần chạy ở mười lăm phút, mà lần chạy tháng Một mất mười một phút.
+    Khoảng dư đó mỏng.
+
+    Đề xuất
+    Phương án C, kèm một điều kiện. Tách lần chạy theo từng khu vực để không lần nào
+    tiến gần mốc mười lăm phút. Việc này khiến mình mất điểm về độ tin cậy nếu logic
+    tách sai, nên ba lần chạy đầu sẽ chạy song song với job trên máy ảo hiện tại
+    và bọn mình đối chiếu kết quả trước khi chuyển hẳn.
+
+    Tóm tắt đánh đổi: mình lấy tối ưu chi phí và hiệu quả vận hành,
+    và chấp nhận một rủi ro về độ tin cậy, giảm rủi ro đó bằng cách chạy song song một tuần.
+  questions:
+    - kind: mcq_read
+      prompt_en: "Why is cold start acceptable for this job?"
+      choices: ["It is under one second", "The platform removed cold starts", "Nobody waits on a screen while it runs"]
+      answer: 2
+      difficulty: 2
+      reading_skill: scan
+      skill: Reading
+    - kind: mcq_read
+      prompt_en: "What is the thin margin the note warns about?"
+      choices: ["Eleven minutes against a fifteen-minute cap", "Forty dollars against four dollars", "Two seconds against one second"]
+      answer: 0
+      difficulty: 3
+      reading_skill: scan
+      skill: Reading
+    - kind: mcq_read
+      prompt_en: "How does the author reduce the reliability risk?"
+      choices: ["By buying a bigger VM", "By running both jobs in parallel and comparing output", "By ignoring it"]
+      answer: 1
+      difficulty: 3
+      reading_skill: skim
+      skill: Reading
+    - kind: mcq_read
+      prompt_en: "Which Well-Architected pillars does the summary name?"
+      choices: ["Security and sustainability", "Performance efficiency only", "Cost optimization and operational excellence"]
+      answer: 2
+      difficulty: 3
+      reading_skill: skim
+      skill: Reading
+
+writing:
+  kind: GuidedEmail
+  prompt_vi: >
+    Viết ba câu trình bày một lựa chọn triển khai: chọn gì thay vì gì, vì sao,
+    và đánh đổi là gì.
+  prompt_en: "Present a deployment choice in three sentences."
+  required_points:
+    - "we chose"
+    - "over"
+    - "trade-off"
+  hint_vi: "Câu một nêu lựa chọn, câu hai nêu lý do có con số, câu ba nêu phần mất."
+  sample_en: "We chose serverless functions over a dedicated VM because the job runs twice a day for twenty minutes and a VM sits idle the rest of the time. The trade-off is lower cost against a fifteen-minute execution cap that our January run came close to. We split the run per region to stay under it, and we will run both jobs in parallel for a week before switching."
+
+quiz:
+  - kind: mcq
+    prompt_vi: "Cách trình bày nào đáng tin hơn trong buổi review?"
+    choices: ["Nêu lý do kèm con số và nói ra phần bất lợi", "Nêu ba ưu điểm của phương án mình chọn", "Nói đây là chuẩn ngành"]
+    answer: 0
+    difficulty: 1
+    skill: Speaking
+  - kind: mcq
+    prompt_vi: "\"The trade-off is lower cost against more lock-in\" nghĩa là gì?"
+    choices: ["Rẻ hơn và ít lệ thuộc hơn", "Rẻ hơn nhưng lệ thuộc nhà cung cấp nhiều hơn", "Đắt hơn nhưng tự chủ hơn"]
+    answer: 1
+    difficulty: 2
+    skill: Reading
+  - kind: mcq
+    prompt_vi: "Sếp hỏi nên chọn cách nào mà bạn chưa đủ thông tin. Nói gì?"
+    choices: ["It depends on how often the job runs — cho em xem số liệu tải", "Em không biết", "Cách nào cũng được ạ"]
+    answer: 0
+    difficulty: 2
+    skill: Speaking
+  - kind: mcq
+    prompt_vi: "\"Operational overhead\" chỉ điều gì?"
+    choices: ["Chi phí thuê hạ tầng", "Số lượng máy chủ", "Công sức vận hành và duy trì phải bỏ ra"]
+    answer: 2
+    difficulty: 2
+    skill: Reading
+  - kind: mcq
+    prompt_vi: "Vì sao nên nêu đánh đổi theo ít nhất hai trụ cột?"
+    choices: ["Cho dài", "Vì một trụ cột thì luôn có phương án thắng, đánh đổi chỉ hiện ra khi so từ hai trụ cột", "Vì quy định bắt buộc"]
+    answer: 1
+    difficulty: 3
+    skill: Writing
+  - kind: mcq
+    prompt_vi: "Job chạy 20 phút, hai lần mỗi ngày. Vì sao serverless rẻ hơn VM?"
+    choices: ["Vì chỉ trả tiền lúc chạy, còn VM trả cả ngày để dùng bốn mươi phút", "Vì serverless nhanh hơn", "Vì serverless không cần mạng"]
+    answer: 0
+    difficulty: 2
+    skill: Writing
+
+explanation:
+  why_vi: >
+    Trong buổi review kiến trúc, người nghe không đánh giá phương án — họ đánh giá
+    xem bạn có hiểu phương án của mình không. Người chỉ khen phương án mình chọn
+    làm người nghe nghĩ một trong hai điều: bạn chưa xét phương án khác, hoặc bạn
+    có xét nhưng đang giấu phần bất lợi. Cả hai đều khiến đề xuất bị chặn.
+  how_vi: >
+    Ba câu, theo đúng thứ tự: "We chose X over Y" — nêu cả cái không chọn.
+    Rồi lý do có con số. Rồi "The trade-off is ... against ..." — nêu phần mất
+    trước khi người khác chỉ ra. Nêu đánh đổi theo ít nhất hai trụ cột của
+    Well-Architected, vì xét một trụ cột thì phương án nào cũng có vẻ thắng.
+  contrast_vi: >
+    "Kubernetes is the modern standard" là câu quảng cáo, người nghe không kiểm chứng được.
+    "We run fourteen services and deploying by hand took a day a week" là con số,
+    người nghe kiểm chứng được và tự thấy lý do. Con số thuyết phục, tính từ thì không.
+
+common_mistakes:
+  - mistake: "Chỉ nêu ưu điểm của phương án mình chọn"
+    why_vi: >
+      Tiếng Việt trong công ty thường coi việc tự nêu nhược điểm là làm yếu đề xuất.
+      Trong buổi review tiếng Anh thì ngược lại: nêu ra nhược điểm chứng minh bạn đã xét kỹ.
+    fix_vi: "Luôn thêm một câu \"The trade-off is ... against ...\" trước khi người khác hỏi."
+    detect_phoneme_missing: []
+  - mistake: "Lấy phổ biến làm lý do — \"ai cũng dùng cái này\""
+    why_vi: >
+      Đó là lý do dễ nói nhất khi chưa đo gì. Nhưng người nghe muốn biết nó hợp với
+      bài toán của mình ở điểm nào, chứ không phải hợp với người khác ở điểm nào.
+    fix_vi: "Thay bằng một con số của chính hệ thống mình: số dịch vụ, số phút, số tiền."
+    detect_phoneme_missing: []
+  - mistake: "Nói \"it depends\" rồi dừng lại"
+    why_vi: >
+      Câu này đúng nhưng chưa đủ. Dừng ở đó thì người nghe nghĩ bạn đang né câu hỏi.
+    fix_vi: "Luôn nói tiếp phụ thuộc vào cái gì: \"It depends on how often the job runs.\""
+    detect_phoneme_missing: []
+
+memory_trick_vi: >
+  Ba câu: CHỌN GÌ THAY VÌ GÌ — LÝ DO CÓ CON SỐ — ĐÁNH ĐỔI LÀ GÌ.
+  Thiếu câu thứ ba thì đó là quảng cáo, không phải đề xuất kiến trúc.

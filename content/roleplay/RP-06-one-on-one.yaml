@@ -1,0 +1,127 @@
+code: RP-06
+title_vi: "Nói với sếp khi bạn đang quá tải"
+context_vi: >-
+  Bạn đang giữ ba việc cùng deadline tuần này và không thể xong cả ba. Buổi 1-1 với quản lý.
+  Mục tiêu: nói ra tình trạng bằng dữ kiện, đề nghị một cách xử lý cụ thể, và xin quyết định
+  về thứ tự ưu tiên — chứ không chỉ than mệt.
+track: Infrastructure
+level: B1
+partner_name: "Anh Quang — trưởng nhóm hạ tầng"
+start_node: n1
+
+nodes:
+  - code: n1
+    partner_line_en: "How are things going this week?"
+    partner_line_vi: "Tuần này công việc thế nào?"
+    choices:
+      - en: "Honestly, I'm overcommitted. I have three deliverables due Friday and I can realistically finish two."
+        vi: "Thật lòng thì em đang nhận quá sức. Ba đầu việc cùng hạn thứ Sáu, thực tế em chỉ xong được hai."
+        next: n2
+        quality: good
+      - en: "Fine, everything is fine."
+        vi: "Ổn ạ, mọi thứ đều ổn."
+        next: n1b
+        quality: wrong
+        feedback_vi: >-
+          Nói ổn rồi thứ Sáu trượt hạn là cách nhanh nhất làm mất lòng tin. Quản lý điều
+          chỉnh được kế hoạch nếu biết sớm, nhưng không cứu được điều họ không biết.
+      - en: "Very busy. Too much work."
+        vi: "Bận lắm. Nhiều việc quá."
+        next: n2
+        quality: curt
+        feedback_vi: >-
+          "Nhiều việc" thì ai cũng vậy. Con số cụ thể — ba việc, hạn thứ Sáu, làm được hai —
+          biến lời than thành thứ quản lý xử lý được.
+
+  - code: n2
+    partner_line_en: "Which three, and which one would you drop?"
+    partner_line_vi: "Ba việc nào, và em sẽ bỏ việc nào?"
+    choices:
+      - en: "The firewall migration, the backup audit, and the monitoring rollout. I'd push the monitoring rollout to next week — it has no external deadline."
+        vi: "Chuyển firewall, rà soát sao lưu, và triển khai giám sát. Em xin dời triển khai giám sát sang tuần sau — việc đó không có hạn từ bên ngoài."
+        next: n3
+        quality: good
+      - en: "I don't know, they all seem important."
+        vi: "Em không biết, cái nào cũng quan trọng."
+        next: n2b
+        quality: wrong
+        feedback_vi: >-
+          Bạn hiểu ba việc đó hơn sếp. Đưa ra đề xuất kèm lý do thì họ chỉ cần gật hoặc lắc;
+          đẩy nguyên câu hỏi lên là đẩy luôn phần khó.
+
+  - code: n3
+    partner_line_en: "Makes sense. But the backup audit is for the ISO review — that one can't move."
+    partner_line_vi: "Hợp lý. Nhưng rà soát sao lưu là để phục vụ đợt đánh giá ISO — cái đó không dời được."
+    choices:
+      - en: "Understood. Then could Minh take the first half of the backup audit? I'd hand over the evidence collection."
+        vi: "Em hiểu rồi. Vậy Minh nhận giúp nửa đầu phần rà soát sao lưu được không? Em bàn giao phần thu thập bằng chứng."
+        next: n4
+        quality: good
+      - en: "OK, I'll try to do all three."
+        vi: "Vâng, em sẽ cố làm cả ba."
+        next: n3b
+        quality: wrong
+        feedback_vi: >-
+          "Cố làm cả ba" đưa mọi thứ về đúng chỗ ban đầu, chỉ khác là giờ cả hai đều biết
+          nó không khả thi. Đề xuất chia việc là lối thoát duy nhất còn lại.
+
+  - code: n4
+    partner_line_en: "That works. I'll talk to Minh today. Anything else you need?"
+    partner_line_vi: "Được đấy. Hôm nay anh nói với Minh. Em còn cần gì nữa không?"
+    choices:
+      - en: "Just confirmation on the priority order, so I know what to drop if something slips again."
+        vi: "Em chỉ cần anh chốt thứ tự ưu tiên, để nếu lại trượt thì em biết bỏ cái nào."
+        next: nEnd
+        quality: good
+      - en: "No, that's all."
+        vi: "Không ạ, thế thôi."
+        next: nEndCurt
+        quality: curt
+        feedback_vi: >-
+          Xin chốt thứ tự ưu tiên ngay bây giờ giúp lần sau bạn tự quyết được mà không cần
+          họp lại. Một câu hỏi, tiết kiệm cả một buổi 1-1 nữa.
+
+  - code: n1b
+    partner_line_en: "Great, see you Friday then."
+    partner_line_vi: "Tốt, vậy thứ Sáu gặp lại nhé."
+    terminal: true
+    success: false
+    summary_vi: >-
+      Cơ hội duy nhất trong tuần để điều chỉnh kế hoạch vừa trôi qua. Nói sớm về rủi ro
+      trượt hạn không phải là than, đó là quản lý rủi ro.
+
+  - code: n2b
+    partner_line_en: "Well, I need you to make a call here. You know the work better than I do."
+    partner_line_vi: "Anh cần em quyết chỗ này. Em nắm việc rõ hơn anh."
+    terminal: true
+    success: false
+    summary_vi: >-
+      Sếp trả câu hỏi về đúng chỗ. Vào 1-1 với một đề xuất sẵn — kèm lý do — luôn hiệu quả
+      hơn vào với một câu hỏi mở.
+
+  - code: n3b
+    partner_line_en: "Alright, but let me know on Wednesday if it's not going to work."
+    partner_line_vi: "Được, nhưng thứ Tư mà thấy không kịp thì báo anh."
+    terminal: true
+    success: false
+    summary_vi: >-
+      Bạn vừa nhận lại đúng khối lượng không làm nổi. Thứ Tư sẽ phải nói lại chuyện này,
+      lúc đó chỉ còn hai ngày để xoay.
+
+  - code: nEndCurt
+    partner_line_en: "Alright. Talk next week."
+    partner_line_vi: "Được. Tuần sau nói tiếp."
+    terminal: true
+    success: true
+    summary_vi: >-
+      Bạn nói ra được vấn đề và có phương án chia việc — phần khó nhất đã xong.
+      Thiếu phần chốt thứ tự ưu tiên cho lần sau.
+
+  - code: nEnd
+    partner_line_en: "Good thinking. Backup audit first, firewall second, monitoring last. Send me that in chat so it's written down."
+    partner_line_vi: "Nghĩ tốt đấy. Rà soát sao lưu trước, firewall thứ hai, giám sát cuối. Em nhắn lại vào chat để có cái ghi lại."
+    terminal: true
+    success: true
+    summary_vi: >-
+      Đúng cách nói về quá tải: dữ kiện thay vì cảm xúc, đề xuất sẵn kèm lý do, và xin
+      một quyết định cụ thể để lần sau tự xử lý được.

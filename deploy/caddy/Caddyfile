@@ -1,0 +1,53 @@
+# Caddy lớp ngoài: điểm vào duy nhất từ Internet.
+#
+# Web và API cùng một gốc là quyết định có chủ đích: cookie phiên SameSite=Lax
+# chỉ hoạt động khi hai bên cùng site. Tách sang api.domain.com sẽ phải nới sang
+# SameSite=None và mất một lớp phòng CSRF.
+
+{
+	# Log truy cập dạng JSON để gom bằng công cụ ngoài.
+	log {
+		output stdout
+		format json
+	}
+
+	# Muốn nhận email cảnh báo chứng chỉ sắp hết hạn thì bỏ chú thích dòng dưới
+	# và điền địa chỉ thật. KHÔNG dùng biến môi trường ở đây: directive `email`
+	# bắt buộc phải có tham số, nên biến rỗng sẽ làm Caddy không khởi động được.
+	# email ban@congty.com
+}
+
+{$SITE_ADDRESS} {
+	encode gzip zstd
+
+	# Header bảo mật. CSP đủ chặt cho một SPA không nhúng script bên ngoài.
+	header {
+		Strict-Transport-Security "max-age=31536000; includeSubDomains"
+		X-Content-Type-Options "nosniff"
+		X-Frame-Options "DENY"
+		Referrer-Policy "strict-origin-when-cross-origin"
+		Permissions-Policy "microphone=(self), camera=(), geolocation=()"
+		Content-Security-Policy "default-src 'self'; img-src 'self' data: blob:; media-src 'self' blob:; script-src 'self'; style-src 'self' 'unsafe-inline'; connect-src 'self'; font-src 'self'; frame-ancestors 'none'; base-uri 'self'; form-action 'self'"
+		-Server
+	}
+
+	# API và health đi thẳng tới backend.
+	handle /api/* {
+		reverse_proxy api:8080
+	}
+
+	handle /health/* {
+		reverse_proxy api:8080
+	}
+
+	# File âm thanh sinh sẵn. Cache dài vì tên file là hash nội dung.
+	handle /media/* {
+		header Cache-Control "public, max-age=2592000"
+		reverse_proxy api:8080
+	}
+
+	# Còn lại là giao diện.
+	handle {
+		reverse_proxy web:8081
+	}
+}

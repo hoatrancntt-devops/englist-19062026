@@ -177,10 +177,10 @@ function TaskCard({
         title={`Bài ${index + 1} — ${KIND_LABELS[task.kind]}`}
         description={task.promptVi}
         action={
-          task.lastPassed ? (
+          task.passed ? (
             <Badge tone="success">
               <Check className="mr-1 inline size-3" aria-hidden />
-              Đã đạt
+              Đã đạt{task.bestScore !== null ? ` — ${Math.round(task.bestScore)}` : ''}
             </Badge>
           ) : null
         }

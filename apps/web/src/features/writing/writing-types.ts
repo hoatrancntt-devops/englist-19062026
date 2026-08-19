@@ -20,8 +20,10 @@ export interface WritingTaskView {
   fragments: string[]
   /** Dạng FillBlank: số ô cần nhập. Chỉ là con số. */
   blankCount: number
-  lastScore: number | null
-  lastPassed: boolean | null
+  /** Điểm cao nhất từng đạt, không phải điểm lần nộp gần nhất. */
+  bestScore: number | null
+  /** Đã từng đạt hay chưa. Làm lại bị điểm thấp không xoá kết quả đã đạt. */
+  passed: boolean
 }
 
 export interface WritingSetDetail {

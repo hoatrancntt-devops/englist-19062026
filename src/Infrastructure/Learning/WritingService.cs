@@ -29,8 +29,10 @@ public record WritingTaskView(
     IReadOnlyList<string> Fragments,
     /// <summary>Dạng FillBlank: số ô cần nhập. Chỉ là con số, không kèm đáp án.</summary>
     int BlankCount,
-    double? LastScore,
-    bool? LastPassed);
+    /// <summary>Điểm cao nhất từng đạt, không phải điểm lần nộp gần nhất.</summary>
+    double? BestScore,
+    /// <summary>Đã từng đạt hay chưa. Làm lại bị điểm thấp không xoá kết quả đã đạt.</summary>
+    bool Passed);
 
 public record WritingSetDetail(
     string Code,
@@ -121,14 +123,24 @@ public class WritingService(AppDbContext db, ILogger<WritingService> logger)
 
         var taskIds = tasks.Select(t => t.Id).ToList();
 
-        var lastAttempts = await db.WritingAttempts
+        // Điểm cao nhất và "đã từng đạt", KHÔNG phải lần nộp gần nhất.
+        //
+        // Bộ đếm ở danh sách bộ bài đếm theo bài đã từng đạt. Nếu chỗ này lấy lần nộp cuối
+        // thì học viên đạt rồi làm lại bị điểm thấp sẽ thấy thẻ bộ ghi "3/6 đạt" trong khi
+        // không bài nào mang nhãn đạt — hai con số đá nhau trên cùng một màn hình.
+        var stats = await db.WritingAttempts
             .AsNoTracking()
             .Where(a => a.UserId == userId && taskIds.Contains(a.TaskId))
             .GroupBy(a => a.TaskId)
-            .Select(g => g.OrderByDescending(a => a.SubmittedAt).First())
+            .Select(g => new
+            {
+                TaskId = g.Key,
+                Best = g.Max(a => a.Score),
+                EverPassed = g.Any(a => a.Passed),
+            })
             .ToListAsync(ct);
 
-        var byTask = lastAttempts.ToDictionary(a => a.TaskId);
+        var byTask = stats.ToDictionary(s => s.TaskId);
 
         return new WritingSetDetail(
             set.Code,
@@ -139,7 +151,7 @@ public class WritingService(AppDbContext db, ILogger<WritingService> logger)
             [.. tasks.Select(t =>
             {
                 var prompt = ReadPrompt(t.PromptJson);
-                byTask.TryGetValue(t.Id, out var last);
+                var seen = byTask.GetValueOrDefault(t.Id);
 
                 return new WritingTaskView(
                     t.Code,
@@ -150,8 +162,8 @@ public class WritingService(AppDbContext db, ILogger<WritingService> logger)
                     prompt.HintVi,
                     prompt.Fragments,
                     prompt.BlankCount,
-                    last?.Score,
-                    last?.Passed);
+                    seen?.Best,
+                    seen?.EverPassed ?? false);
             })]);
     }
 

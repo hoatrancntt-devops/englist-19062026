@@ -74,8 +74,14 @@ services:
 
     # !override chứ không phải thêm vào: danh sách ports trong compose là gộp, nên nếu không
     # ghi đè thì 80/443 của bản nền vẫn còn và vẫn phơi ra Internet.
+    #
+    # BIND_ADDRESS phải khớp origin mà tunnel đang trỏ tới, xem trong bảng điều khiển Cloudflare.
+    # Ở máy này ingress ghi http://172.16.17.4:8080 — IP của eth0 — nên nghe mỗi 127.0.0.1 là
+    # cloudflared gọi vào và nhận "connection refused". Đặt qua biến chứ không gắn cứng, vì IP
+    # nội bộ đổi theo từng máy. Địa chỉ này chỉ nằm trong mạng riêng của nhà cung cấp và cổng
+    # 8080 không mở ra Internet, nên nghe ở đó không phơi thêm gì.
     ports: !override
-      - "127.0.0.1:8080:80"
+      - "${BIND_ADDRESS:-127.0.0.1}:8080:80"
 
     deploy:
       resources:

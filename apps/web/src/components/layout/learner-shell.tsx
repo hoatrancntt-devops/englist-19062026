@@ -18,6 +18,7 @@ import {
   GraduationCap,
 } from 'lucide-react'
 import { cn } from '@/lib/cn'
+import { SiteFooter } from './site-footer'
 import { useTheme } from '@/providers/theme-provider'
 import { useCurrentUser, useLogout } from '@/features/auth/use-auth'
 import { Button } from '@/components/ui/button'
@@ -117,11 +118,17 @@ export function LearnerShell() {
       <div className="flex">
         <Sidebar mobileOpen={mobileOpen} onNavigate={() => setMobileOpen(false)} />
 
-        <main id="main" className="min-w-0 flex-1 px-4 py-6 lg:px-8">
-          <div className="mx-auto max-w-5xl">
-            <Outlet />
-          </div>
-        </main>
+        {/* Footer nằm TRONG cột nội dung, không phải dưới cả trang: đặt ngoài thì trên màn
+            hình rộng nó chạy ngang qua dưới thanh bên và lệch khỏi mạch đọc. */}
+        <div className="min-w-0 flex-1">
+          <main id="main" className="px-4 py-6 lg:px-8">
+            <div className="mx-auto max-w-5xl">
+              <Outlet />
+            </div>
+          </main>
+
+          <SiteFooter />
+        </div>
       </div>
     </div>
   )

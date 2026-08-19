@@ -1,4 +1,5 @@
 import { Link } from 'react-router-dom'
+import { SiteFooter } from '@/components/layout/site-footer'
 import {
   GraduationCap,
   Sun,
@@ -237,11 +238,7 @@ export function LandingPage() {
         </section>
       </main>
 
-      <footer className="border-t border-[var(--border-subtle)] py-8">
-        <p className="text-center text-xs text-muted">
-          Nội dung tự biên soạn. Thang level bám CEFR Companion Volume 2020.
-        </p>
-      </footer>
+      <SiteFooter />
     </div>
   )
 }

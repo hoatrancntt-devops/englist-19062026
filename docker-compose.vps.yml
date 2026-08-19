@@ -1,4 +1,4 @@
-# Chồng lên bản nền để chạy trên VPS 1 vCPU / 2 GB đứng sau Cloudflare Tunnel.
+# Chồng lên bản nền để chạy trên VPS 2 vCPU / 4 GB đứng sau Cloudflare Tunnel.
 #
 #   docker compose -f docker-compose.yml -f docker-compose.vps.yml up -d
 #
@@ -7,8 +7,9 @@
 #   - Kéo image theo tag từ registry. Máy 1 vCPU build một ảnh .NET mất hàng chục phút
 #     và sẽ nuốt hết RAM mà Postgres đang cần.
 #
-#   - Hạn mức RAM cắt sâu. Bản nền cộng lại là 2,15 GB và bản azure-vm là 2,5 GB, trong khi
-#     máy này chỉ có 1,84 GB. Để nguyên thì nhân OOM sẽ giết Postgres giữa lúc chạy migration.
+#   - Hạn mức RAM đặt theo mức đo thật của từng dịch vụ, không lấy mặc định. Riêng speech phải
+#     có biên rộng: nó chiếm 613 MB lúc rảnh và vọt thêm 200-400 MB mỗi lần phiên dịch, nên
+#     trần sát quá là nhân OOM giết nó giữa lúc học viên đang chấm giọng.
 #
 #   - KHÔNG mở cổng nào ra Internet. Cloudflare Tunnel là đường vào duy nhất, nên proxy chỉ
 #     nghe trên 127.0.0.1:8080 và tường lửa của nhà cung cấp không cần mở 80/443.
@@ -27,8 +28,8 @@ services:
     deploy:
       resources:
         limits:
-          memory: 384m
-    shm_size: 96m
+          memory: 768m
+    shm_size: 256m
 
   api:
     # Không có khoá build: chỉ dùng image đã dựng sẵn và gắn tag cụ thể.
@@ -41,7 +42,7 @@ services:
     deploy:
       resources:
         limits:
-          memory: 512m
+          memory: 768m
     environment:
       # Địa chỉ dịch vụ nhận dạng giọng nói. Giọng học viên đi từ container API sang
       # container speech trong mạng nội bộ và KHÔNG ra khỏi máy chủ này.
@@ -63,7 +64,7 @@ services:
     deploy:
       resources:
         limits:
-          memory: 160m
+          memory: 256m
     environment:
       DOTNET_gcServer: "0"
 
@@ -125,7 +126,7 @@ services:
     deploy:
       resources:
         limits:
-          memory: 768m
+          memory: 1536m
 
   cloudflared:
     image: cloudflare/cloudflared:latest

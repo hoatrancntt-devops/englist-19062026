@@ -102,6 +102,7 @@ public static class DependencyInjection
         services.AddScoped<IAiProviderClient, OllamaClient>();
         services.AddScoped<IAiProviderClient, AzureOpenAiClient>();
         services.AddScoped<RoleplaySeeder>();
+        services.AddScoped<TtsManifestWriter>();
         services.AddSingleton<RoleplayValidator>();
 
         // Vận hành: thông báo, hộp thư đi, và các job định kỳ của worker.

@@ -122,6 +122,7 @@ app.MapAiModule();
 app.MapAdminModule();
 app.MapAdminContentModule();
 app.MapSpeechModule();
+app.MapMedia();
 
 // Migration chạy lúc khởi động thay vì bằng lệnh riêng: một container, một lệnh, không quên bước.
 // Đổi lại: chỉ được chạy một bản sao API lúc nâng cấp. Ghi rõ trong AZURE_VM_DEPLOYMENT.md.
@@ -142,6 +143,7 @@ using (var scope = app.Services.CreateScope())
     if (app.Configuration.GetValue("Content:SeedOnStartup", true))
     {
         var contentRoot = app.Configuration.GetValue<string>("Content:Root") ?? "content";
+        var audioRoot = app.Configuration.GetValue<string>("Storage:AudioRoot") ?? "media";
         var seeder = scope.ServiceProvider.GetRequiredService<ContentSeeder>();
 
         var report = await seeder.SeedAsync(contentRoot);
@@ -194,6 +196,23 @@ using (var scope = app.Services.CreateScope())
         catch (Exception ex)
         {
             logger.LogError(ex, "Seed roleplay thất bại. Kịch bản cũ trong DB giữ nguyên, app vẫn chạy.");
+        }
+
+        // Danh sách đoạn cần đọc thành tiếng, cho bước sinh giọng chạy ngoài API.
+        //
+        // Ghi mỗi lần khởi động vì nội dung thay đổi theo từng lần triển khai. Không sinh audio
+        // ở đây: nạp model Piper và đọc cả nghìn câu là việc của một mẻ chạy riêng, chặn khởi
+        // động API để làm việc đó là bắt học viên chờ vài phút mới đăng nhập được.
+        try
+        {
+            var manifestWriter = scope.ServiceProvider.GetRequiredService<TtsManifestWriter>();
+            await manifestWriter.WriteAsync(contentRoot, audioRoot);
+        }
+        catch (Exception ex)
+        {
+            // Cùng lý do với các seeder trên: không ghi được danh sách thì phần nghe lùi về
+            // giọng của trình duyệt, chứ không được làm sập đường đăng nhập.
+            logger.LogError(ex, "Ghi danh sách đoạn cần đọc thất bại. Phần nghe dùng giọng trình duyệt.");
         }
     }
 

@@ -63,10 +63,11 @@ export function ListeningIntro({ payload }: { payload: Record<string, unknown> }
           </div>
         ) : (
           <p className="mt-3 text-xs text-muted">
-            {speech.ready
-              ? 'Nghe trước ít nhất hai lần rồi mới mở lời thoại — mở sớm thì bạn đang luyện đọc, không phải luyện nghe.'
-              : 'Máy này chưa có giọng đọc tiếng Anh nên phần nghe tạm chưa phát được. '
-                + 'Mở lời thoại để vẫn làm được câu hỏi, hoặc cài gói giọng tiếng Anh trong cài đặt hệ điều hành.'}
+            {/* Chỉ báo hỏng SAU khi đã thử phát và cả hai nguồn đều không ra tiếng.
+                Báo trước khi bấm là đoán mò: bản thu trên máy chủ có thể vẫn dùng được
+                ngay cả khi máy của học viên không có gói giọng nói nào. */}
+            {speech.unavailableVi ??
+              'Nghe trước ít nhất hai lần rồi mới mở lời thoại — mở sớm thì bạn đang luyện đọc, không phải luyện nghe.'}
           </p>
         )}
       </div>

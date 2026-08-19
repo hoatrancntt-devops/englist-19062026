@@ -53,6 +53,11 @@ services:
       # là không có tài khoản nào.
       ADMIN_EMAIL: ${ADMIN_EMAIL:-}
       ADMIN_PASSWORD: ${ADMIN_PASSWORD:-}
+
+      # Nơi đọc file audio sinh sẵn và ghi file ghi âm. Trước đây chỉ worker có biến này,
+      # nên API rơi về đường dẫn tương đối "media" trong thư mục làm việc của container —
+      # không phải volume, và không phải chỗ worker dọn rác.
+      Storage__AudioRoot: /app/media
     volumes:
       # Audio sinh sẵn và file ghi âm. Bind mount để backup bằng tar đơn giản.
       - ./media:/app/media

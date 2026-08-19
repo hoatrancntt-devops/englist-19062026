@@ -221,6 +221,7 @@ public static class LearningModule
         LearningTrack.Restaurant => "Nhà hàng, ăn uống",
         LearningTrack.Shopping => "Đi siêu thị, mua sắm",
         LearningTrack.Hobbies => "Sở thích và giao tiếp đời thường",
+        LearningTrack.Business => "Kinh doanh và quản trị",
         _ => track.ToString(),
     };
 
@@ -236,6 +237,7 @@ public static class LearningModule
         LearningTrack.Restaurant => "Đặt bàn, gọi món, tính tiền và chia tiền.",
         LearningTrack.Shopping => "Tìm hàng, hỏi số lượng, thanh toán và đổi trả.",
         LearningTrack.Hobbies => "Nói về sở thích, kể cuối tuần, rủ đi chơi.",
+        LearningTrack.Business => "Gặp khách, báo giá, đàm phán, họp giao ban, báo cáo số liệu.",
         _ => string.Empty,
     };
 

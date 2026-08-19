@@ -1,0 +1,275 @@
+schema_version: 1
+code: HD-06
+slug: ban-giao-ca-truc
+title_vi: "Bàn giao ca trực — mười phút quyết định cả ca sau"
+title_en: "On-call handover"
+
+layer: Professional
+track: Helpdesk
+level: B1
+unit_code: U-HD
+order_index: 6
+estimated_minutes: 12
+
+illustration: team-standup
+
+objective_vi: >
+  Bàn giao ca trực cho người tiếp theo: cái gì đang cháy, cái gì đã tạm vá,
+  và cái gì họ phải để mắt tới lúc ba giờ sáng.
+
+objective_observable: >
+  Bàn giao được ba mục bắt buộc trong 3 trên 4 drill, và nêu đúng thứ cần theo dõi kèm ngưỡng.
+
+mastery_weights:
+  Listening: 0.25
+  Speaking: 0.35
+  Reading: 0.20
+  Writing: 0.20
+
+prerequisites:
+  - lesson: HD-05
+    min_mastery: 65
+    kind: Hard
+
+vocabulary:
+  - term: "handing over"
+    ipa: "/ˈhændɪŋ ˈoʊvər/"
+    meaning_vi: "đang bàn giao"
+    chunk: "I'm handing over three open issues."
+    tags: [oncall, core]
+  - term: "still open"
+    ipa: "/stɪl ˈoʊpən/"
+    meaning_vi: "chưa xử lý xong"
+    chunk: "The database alert is still open."
+    tags: [oncall, status]
+  - term: "workaround in place"
+    ipa: "/ˈwɜːrkəraʊnd ɪn pleɪs/"
+    meaning_vi: "đã có cách vá tạm"
+    chunk: "There's a workaround in place until Monday."
+    tags: [oncall, status]
+  - term: "keep an eye on"
+    ipa: "/kiːp ən aɪ ɒn/"
+    meaning_vi: "để mắt tới, theo dõi"
+    chunk: "Keep an eye on disk usage on node three."
+    tags: [oncall, core]
+  - term: "if it goes above"
+    ipa: "/ɪf ɪt ɡoʊz əˈbʌv/"
+    meaning_vi: "nếu vượt quá (nêu ngưỡng hành động)"
+    chunk: "If it goes above 90 percent, page me."
+    tags: [oncall, threshold]
+  - term: "page me"
+    ipa: "/peɪdʒ miː/"
+    meaning_vi: "gọi tôi dậy (dù đang đêm)"
+    chunk: "Don't hesitate to page me."
+    tags: [oncall]
+  - term: "nothing pending"
+    ipa: "/ˈnʌθɪŋ ˈpendɪŋ/"
+    meaning_vi: "không còn gì treo lại"
+    chunk: "Everything else is closed, nothing pending."
+    tags: [oncall, status]
+
+sentence_patterns:
+  - pattern: "I'm handing over {number} open issues."
+    meaning_vi: "Tôi bàn giao {number} việc chưa xong."
+    slots:
+      number: ["two", "three", "one"]
+  - pattern: "If it goes above {threshold}, {action}."
+    meaning_vi: "Nếu vượt {threshold} thì {action}."
+    slots:
+      threshold: ["90 percent", "500 milliseconds", "20 errors a minute"]
+      action: ["page me", "restart the service", "escalate to L3"]
+
+dialogue:
+  context_vi: >
+    Bảy giờ tối. Bạn hết ca, Priya vào ca đêm. Cô ấy sẽ một mình xử lý mọi thứ
+    tới bảy giờ sáng, và chỉ có mười phút này để biết chuyện gì đang xảy ra.
+  turns:
+    - speaker: "You"
+      en: "I'm handing over three open issues. The first one is the payment API."
+      vi: "Tôi bàn giao ba việc chưa xong. Việc đầu là API thanh toán."
+    - speaker: "Priya"
+      en: "What's the status?"
+      vi: "Tình trạng thế nào?"
+    - speaker: "You"
+      en: "Still open, but there's a workaround in place. We route through the backup gateway."
+      vi: "Chưa xong, nhưng đã vá tạm. Bọn tôi định tuyến qua cổng dự phòng."
+    - speaker: "Priya"
+      en: "Understood. Anything I should watch?"
+      vi: "Rõ. Có gì tôi cần theo dõi không?"
+    - speaker: "You"
+      en: "Keep an eye on disk usage on node three. If it goes above 90 percent, page me."
+      vi: "Để mắt tới dung lượng đĩa node ba. Nếu vượt 90 phần trăm thì gọi tôi."
+    - speaker: "Priya"
+      en: "Got it. And the other two?"
+      vi: "Rõ rồi. Còn hai việc kia?"
+    - speaker: "You"
+      en: "Both waiting on the vendor. Nothing to do tonight."
+      vi: "Cả hai đang chờ nhà cung cấp. Tối nay không phải làm gì."
+
+listening:
+  context_vi: >
+    Nghe một lượt bàn giao rút gọn. Chú ý ba mục người bàn giao luôn nêu:
+    việc đang mở, cách vá tạm, và ngưỡng phải gọi người.
+  speed: 1.0
+  voice: en_US_male
+  transcript_en: "I'm handing over two open issues. The mail queue is backing up but there's a workaround in place, we drain it manually every hour. Keep an eye on the queue depth. If it goes above five thousand, page me. Everything else is closed, nothing pending."
+  transcript_vi: "Tôi bàn giao hai việc chưa xong. Hàng đợi mail đang ùn nhưng đã vá tạm, cứ mỗi tiếng xả tay một lần. Để mắt tới độ sâu hàng đợi. Nếu vượt năm nghìn thì gọi tôi. Còn lại đóng hết, không còn gì treo."
+  questions:
+    - kind: mcq_listen
+      prompt_vi: "Cách vá tạm cho hàng đợi mail là gì?"
+      choices: ["Khởi động lại máy chủ", "Xả tay mỗi tiếng một lần", "Chuyển sang máy chủ khác"]
+      answer: 1
+      difficulty: 2
+      skill: Listening
+    - kind: mcq_listen
+      prompt_vi: "Ngưỡng nào thì phải gọi người bàn giao?"
+      choices: ["Năm nghìn", "Chín mươi phần trăm", "Một nghìn"]
+      answer: 0
+      difficulty: 2
+      skill: Listening
+
+speaking_drills:
+  - kind: read_aloud
+    expected_text: "I'm handing over three open issues."
+    prompt_vi: "Câu mở đầu. Nói SỐ trước để người nhận biết cần nhớ bao nhiêu việc."
+    ipa: "/aɪm ˈhændɪŋ ˈoʊvər θriː ˈoʊpən ˈɪʃuːz/"
+    focus_phonemes: ["θ", "ʃ"]
+  - kind: read_aloud
+    expected_text: "There's a workaround in place."
+    prompt_vi: "Nói đã vá tạm. Âm /k/ giữa workaround phải bật rõ."
+    ipa: "/ðerz ə ˈwɜːrkəraʊnd ɪn pleɪs/"
+    focus_phonemes: ["ɜːr", "pl"]
+  - kind: shadow
+    expected_text: "Keep an eye on disk usage on node three."
+    prompt_vi: "Giao việc theo dõi. Ba chữ đầu nói dính thành /kiːpənaɪ/."
+    ipa: "/kiːp ən aɪ ɒn dɪsk ˈjuːsɪdʒ/"
+    focus_phonemes: ["k", "dʒ"]
+  - kind: shadow
+    expected_text: "If it goes above ninety percent, page me."
+    prompt_vi: "Nêu ngưỡng và hành động. Câu này cứu cả ca đêm."
+    ipa: "/ɪf ɪt ɡoʊz əˈbʌv ˈnaɪnti pərˈsent peɪdʒ miː/"
+    focus_phonemes: ["v", "dʒ"]
+  - kind: respond
+    prompt_en: "Anything I should watch tonight?"
+    prompt_vi: "Người nhận ca hỏi cần theo dõi gì. Nêu một thứ kèm ngưỡng."
+    accept_patterns:
+      - "Keep an eye on"
+      - "If it goes above"
+      - "watch"
+
+reading:
+  kind: chat
+  context_vi: >
+    Ghi chú bàn giao viết trong kênh trực. Đọc để biết đêm nay phải làm gì.
+  text_en: |
+    HANDOVER 19:00 - Hoa to Priya
+
+    OPEN (2)
+    1. Payment API 5xx - workaround: routing via backup gateway. Vendor ticket #4471.
+    2. Mail queue backing up - drain manually every hour.
+
+    WATCH
+    - Disk on node3. Page me above 90%.
+
+    CLOSED
+    - VPN outage, resolved 16:20. Nothing pending.
+  text_vi: |
+    BÀN GIAO 19:00 - Hoa sang Priya
+
+    ĐANG MỞ (2)
+    1. API thanh toán lỗi 5xx - vá tạm: định tuyến qua cổng dự phòng. Ticket nhà cung cấp #4471.
+    2. Hàng đợi mail ùn - xả tay mỗi tiếng.
+
+    THEO DÕI
+    - Đĩa node3. Vượt 90% thì gọi tôi.
+
+    ĐÃ ĐÓNG
+    - Sự cố VPN, xử lý xong 16:20. Không còn gì treo.
+  questions:
+    - kind: mcq_read
+      prompt_en: "What should Priya do if disk usage on node3 hits 92%?"
+      choices: ["Restart node3", "Wait until morning", "Page Hoa"]
+      answer: 2
+      difficulty: 2
+      reading_skill: scan
+      skill: Reading
+    - kind: mcq_read
+      prompt_en: "Which issue is already resolved?"
+      choices: ["The VPN outage", "The mail queue", "The payment API"]
+      answer: 0
+      difficulty: 1
+      reading_skill: scan
+      skill: Reading
+
+writing:
+  kind: FillBlank
+  prompt_vi: "Điền hai chỗ trống: câu giao việc theo dõi và câu nêu ngưỡng."
+  prompt_en: "___ an eye on the queue depth. If it goes ___ five thousand, page me."
+  blanks:
+    - ["Keep"]
+    - ["above"]
+  hint_vi: "Chỗ đầu là động từ trong cụm nghĩa là để mắt tới. Chỗ sau nghĩa là vượt quá."
+  sample_en: "Keep an eye on the queue depth. If it goes above five thousand, page me."
+
+quiz:
+  - kind: mcq
+    prompt_vi: "Ba mục bắt buộc trong một lượt bàn giao là gì?"
+    choices: ["Tên, ngày, giờ", "Việc đang mở, cách vá tạm, ngưỡng phải gọi người", "Việc đã đóng, người phụ trách, mã ticket"]
+    answer: 1
+    difficulty: 3
+    skill: Reading
+  - kind: mcq
+    prompt_vi: "\"There's a workaround in place\" nghĩa là gì?"
+    choices: ["Đã có cách vá tạm", "Đã xử lý dứt điểm", "Chưa ai làm gì"]
+    answer: 0
+    difficulty: 2
+    skill: Listening
+  - kind: mcq
+    prompt_vi: "Vì sao phải nêu NGƯỠNG chứ không chỉ nói \"theo dõi giúp\"?"
+    choices: ["Vì nghe chuyên nghiệp hơn", "Vì quy định bắt buộc", "Vì người trực đêm cần biết lúc nào thì được gọi bạn dậy"]
+    answer: 2
+    difficulty: 3
+    skill: Reading
+  - kind: mcq
+    prompt_vi: "\"Nothing pending\" nghĩa là gì?"
+    choices: ["Đang chờ xử lý", "Không còn gì treo lại", "Chưa quyết định"]
+    answer: 1
+    difficulty: 1
+    skill: Reading
+
+explanation:
+  why_vi: >
+    Bàn giao ca là lúc thông tin dễ rơi nhất trong cả quy trình vận hành. Người sắp hết ca
+    mệt và muốn về; người vào ca chưa có ngữ cảnh gì. Bàn giao sơ sài thì hai giờ sáng người
+    kia gặp cảnh báo lạ, không biết đó là sự cố mới hay thứ đã biết, rồi hoặc gọi bạn dậy
+    vô ích hoặc để mặc một sự cố thật.
+  how_vi: >
+    Ba mục, luôn theo thứ tự này. MỘT: việc đang mở, kèm số lượng nói trước.
+    HAI: đã vá tạm chưa, vá bằng cách gì. BA: cần theo dõi cái gì, và VƯỢT NGƯỠNG NÀO
+    thì được gọi bạn. Mục ba là mục người ta hay bỏ, và cũng là mục quan trọng nhất.
+  contrast_vi: >
+    "Still open" là chưa xong. "Workaround in place" là chưa xong nhưng đang chạy được.
+    Hai thứ này rất khác nhau lúc ba giờ sáng: cái đầu có thể phải xử lý ngay, cái sau
+    thì để tới sáng.
+
+common_mistakes:
+  - mistake: "Bàn giao mà không nêu ngưỡng, chỉ nói \"theo dõi giúp nhé\""
+    why_vi: >
+      Người bàn giao biết rõ mức nào là bất thường nên thấy không cần nói. Người vào ca
+      thì không có con số nào để so, nên hoặc gọi bạn dậy vì một dao động bình thường,
+      hoặc bỏ qua một mức thật sự nguy hiểm.
+    fix_vi: "Luôn kèm con số và hành động: \"If it goes above 90 percent, page me.\""
+  - mistake: "Nói \"everything is fine\" khi còn việc đã vá tạm"
+    why_vi: >
+      Vá tạm nghe như đã xong nên người bàn giao xếp nó vào nhóm ổn. Nhưng vá tạm là thứ
+      có thể bung ra bất cứ lúc nào, và người vào ca sẽ không hiểu chuyện gì.
+    fix_vi: "Vá tạm luôn thuộc nhóm ĐANG MỞ. Dùng \"still open, but there's a workaround in place\"."
+  - mistake: "Đọc \"issues\" thành /ít-si-ớt/"
+    why_vi: >
+      Người học tách từng chữ cái. Từ này xuất hiện trong mọi lượt bàn giao nên phát âm sai
+      là cả câu mở đầu bị nghe lại.
+    fix_vi: "Đọc hai âm tiết: /ˈɪ-ʃuːz/, âm giữa là /ʃ/ như chữ s trong tiếng Anh của từ sure."
+
+memory_trick_vi: >
+  Ba mục, đọc tắt là MỞ - VÁ - NGƯỠNG. Việc nào đang MỞ, đã VÁ tạm ra sao,
+  và vượt NGƯỠNG nào thì gọi tôi. Thiếu mục ba là ca đêm phải đoán.

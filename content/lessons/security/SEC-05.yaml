@@ -1,0 +1,264 @@
+schema_version: 1
+code: SEC-05
+slug: phishing-va-bao-nghi-ngo
+title_vi: "Phishing và báo nghi ngờ — báo sớm còn hơn báo đúng"
+title_en: "Phishing and reporting suspicions"
+
+layer: Professional
+track: Security
+level: B1
+unit_code: U-SEC
+order_index: 5
+estimated_minutes: 11
+
+illustration: shield-lock
+
+objective_vi: >
+  Nhận ra một email đáng ngờ, báo cho đội bảo mật bằng đúng thông tin họ cần,
+  và cảnh báo đồng nghiệp mà không gây hoảng loạn.
+
+objective_observable: >
+  Báo được một email nghi ngờ kèm ba dấu hiệu cụ thể trong 3 trên 4 drill.
+
+mastery_weights:
+  Listening: 0.20
+  Speaking: 0.30
+  Reading: 0.30
+  Writing: 0.20
+
+prerequisites:
+  - lesson: SEC-04
+    min_mastery: 65
+    kind: Hard
+
+vocabulary:
+  - term: "looks suspicious"
+    ipa: "/lʊks səˈspɪʃəs/"
+    meaning_vi: "trông đáng ngờ"
+    chunk: "This email looks suspicious."
+    tags: [security, core]
+  - term: "sense of urgency"
+    ipa: "/sens əv ˈɜːrdʒənsi/"
+    meaning_vi: "tạo cảm giác gấp gáp (dấu hiệu phishing kinh điển)"
+    chunk: "It creates a false sense of urgency."
+    tags: [security, phishing]
+  - term: "spoofed"
+    ipa: "/spuːft/"
+    meaning_vi: "bị giả mạo (địa chỉ gửi)"
+    chunk: "The sender address is spoofed."
+    tags: [security, phishing]
+  - term: "I didn't click"
+    ipa: "/aɪ ˈdɪdnt klɪk/"
+    meaning_vi: "tôi chưa bấm vào (thông tin đội bảo mật cần đầu tiên)"
+    chunk: "I didn't click the link."
+    tags: [security, report]
+  - term: "forwarding it to"
+    ipa: "/ˈfɔːrwərdɪŋ ɪt tuː/"
+    meaning_vi: "đang chuyển tiếp cho"
+    chunk: "I'm forwarding it to the security team."
+    tags: [security, report]
+  - term: "false alarm"
+    ipa: "/fɔːls əˈlɑːrm/"
+    meaning_vi: "báo động nhầm"
+    chunk: "Better a false alarm than a breach."
+    tags: [security]
+
+sentence_patterns:
+  - pattern: "This email looks suspicious. {reason}"
+    meaning_vi: "Email này đáng ngờ. {reason}"
+    slots:
+      reason: ["The sender address is spoofed.", "It creates a false sense of urgency.", "The link goes somewhere else."]
+  - pattern: "I didn't {action}."
+    meaning_vi: "Tôi chưa {action}."
+    slots:
+      action: ["click the link", "open the attachment", "reply"]
+
+dialogue:
+  context_vi: >
+    Chín giờ sáng. Bạn nhận một email nói tài khoản sắp bị khoá, phải xác minh trong
+    hai tiếng. Bạn chưa bấm gì, và giờ phải báo đội bảo mật.
+  turns:
+    - speaker: "You"
+      en: "Hi, this email looks suspicious. I'm forwarding it to you now."
+      vi: "Chào anh, email này trông đáng ngờ. Tôi chuyển tiếp cho anh ngay."
+    - speaker: "Security"
+      en: "Thanks. Did you click anything?"
+      vi: "Cảm ơn. Anh có bấm vào gì không?"
+    - speaker: "You"
+      en: "No, I didn't click the link and I didn't open the attachment."
+      vi: "Không, tôi chưa bấm link và chưa mở tệp đính kèm."
+    - speaker: "Security"
+      en: "Good. What made you suspicious?"
+      vi: "Tốt. Điều gì làm anh nghi?"
+    - speaker: "You"
+      en: "Three things. The sender address is spoofed, it creates a false sense of urgency, and the link goes to a different domain."
+      vi: "Ba thứ. Địa chỉ gửi bị giả mạo, nó tạo cảm giác gấp gáp giả, và link trỏ sang tên miền khác."
+    - speaker: "Security"
+      en: "That's a phishing attempt. I'll block the sender. Thanks for reporting fast."
+      vi: "Đúng là phishing. Tôi sẽ chặn người gửi. Cảm ơn anh báo nhanh."
+
+listening:
+  context_vi: >
+    Nghe một lượt báo nghi ngờ. Chú ý câu hỏi đầu tiên của đội bảo mật —
+    câu đó quyết định họ xử lý ở mức nào.
+  speed: 1.0
+  voice: en_US_female
+  transcript_en: "This message looks suspicious, I'm forwarding it now. Did you click anything? No, I didn't click the link. Good. What made you suspicious? The sender address is spoofed and it asks for my password. Right, that's phishing. Better a false alarm than a breach."
+  transcript_vi: "Tin nhắn này đáng ngờ, tôi chuyển tiếp ngay. Bạn có bấm gì không? Không, tôi chưa bấm link. Tốt. Điều gì làm bạn nghi? Địa chỉ gửi bị giả mạo và nó hỏi mật khẩu của tôi. Đúng, đó là phishing. Báo nhầm còn hơn bị xâm nhập."
+  questions:
+    - kind: mcq_listen
+      prompt_vi: "Câu hỏi đầu tiên của đội bảo mật là gì?"
+      choices: ["Ai gửi email đó", "Bạn có bấm vào gì không", "Email đến lúc mấy giờ"]
+      answer: 1
+      difficulty: 2
+      skill: Listening
+    - kind: mcq_listen
+      prompt_vi: "Hai dấu hiệu nào được nêu?"
+      choices: ["Địa chỉ giả mạo và hỏi mật khẩu", "Sai chính tả và thiếu chữ ký", "Gửi ban đêm và có tệp đính kèm"]
+      answer: 0
+      difficulty: 2
+      skill: Listening
+
+speaking_drills:
+  - kind: read_aloud
+    expected_text: "This email looks suspicious."
+    prompt_vi: "Câu mở đầu. Trọng âm chữ suspicious rơi vào âm giữa: sus-PI-cious."
+    ipa: "/ðɪs ˈiːmeɪl lʊks səˈspɪʃəs/"
+    focus_phonemes: ["ʃ", "s"]
+  - kind: read_aloud
+    expected_text: "I didn't click the link."
+    prompt_vi: "Thông tin đội bảo mật cần đầu tiên. Âm /t/ trong didn't nói gọn."
+    ipa: "/aɪ ˈdɪdnt klɪk ðə lɪŋk/"
+    focus_phonemes: ["kl", "ŋ"]
+  - kind: shadow
+    expected_text: "The sender address is spoofed."
+    prompt_vi: "Nêu dấu hiệu. Cụm /sp/ đầu chữ spoofed bật gọn, không thêm nguyên âm."
+    ipa: "/ðə ˈsendər əˈdres ɪz spuːft/"
+    focus_phonemes: ["sp", "ft"]
+  - kind: shadow
+    expected_text: "It creates a false sense of urgency."
+    prompt_vi: "Dấu hiệu kinh điển nhất. Âm /dʒ/ giữa urgency phải rung."
+    ipa: "/ɪt kriˈeɪts ə fɔːls sens əv ˈɜːrdʒənsi/"
+    focus_phonemes: ["dʒ", "s"]
+  - kind: respond
+    prompt_en: "Did you click anything?"
+    prompt_vi: "Đội bảo mật hỏi bạn đã bấm gì chưa. Trả lời rõ ràng."
+    accept_patterns:
+      - "I didn't"
+      - "No"
+      - "I did"
+
+reading:
+  kind: chat
+  context_vi: >
+    Chính email đáng ngờ đó. Đọc và tìm ba dấu hiệu.
+  text_en: |
+    From: IT-Support <it-support@company-secure-verify.com>
+    Subject: URGENT - Your account will be locked in 2 hours
+
+    Dear User,
+
+    We detected unusual activity. You must verify your password within 2 hours
+    or your account will be permanently deleted.
+
+    Verify now: http://company-secure-verify.com/login
+
+    IT Department
+  text_vi: |
+    Từ: IT-Support <it-support@company-secure-verify.com>
+    Tiêu đề: KHẨN - Tài khoản của bạn sẽ bị khoá trong 2 tiếng
+
+    Kính gửi Người dùng,
+
+    Chúng tôi phát hiện hoạt động bất thường. Bạn phải xác minh mật khẩu trong 2 tiếng
+    nếu không tài khoản sẽ bị xoá vĩnh viễn.
+
+    Xác minh ngay: http://company-secure-verify.com/login
+
+    Phòng CNTT
+  questions:
+    - kind: mcq_read
+      prompt_en: "Which is NOT a warning sign in this email?"
+      choices: ["It asks you to verify a password", "It has a subject line", "It sets a two-hour deadline"]
+      answer: 1
+      difficulty: 3
+      reading_skill: detail
+      skill: Reading
+    - kind: mcq_read
+      prompt_en: "What is wrong with the sender domain?"
+      choices: ["It is not the real company domain", "It is too long", "It uses capital letters"]
+      answer: 0
+      difficulty: 2
+      reading_skill: scan
+      skill: Reading
+
+writing:
+  kind: FillBlank
+  prompt_vi: "Điền hai chỗ trống: câu báo nghi ngờ và câu xác nhận chưa bấm gì."
+  prompt_en: "This email looks ___. I didn't ___ the link."
+  blanks:
+    - ["suspicious"]
+    - ["click"]
+  hint_vi: "Chỗ đầu là tính từ nghĩa là đáng ngờ. Chỗ sau là động từ nghĩa là bấm vào."
+  sample_en: "This email looks suspicious. I didn't click the link."
+
+quiz:
+  - kind: mcq
+    prompt_vi: "Thông tin nào đội bảo mật cần biết TRƯỚC TIÊN?"
+    choices: ["Email đến lúc mấy giờ", "Ai còn nhận được email đó", "Bạn đã bấm vào gì chưa"]
+    answer: 2
+    difficulty: 2
+    skill: Speaking
+  - kind: mcq
+    prompt_vi: "\"A false sense of urgency\" nghĩa là gì?"
+    choices: ["Cảm giác gấp gáp giả tạo", "Thông tin sai sự thật", "Lời đe doạ trực tiếp"]
+    answer: 0
+    difficulty: 2
+    skill: Reading
+  - kind: mcq
+    prompt_vi: "Bạn nghi nhưng không chắc. Nên làm gì?"
+    choices: ["Bấm thử xem có gì", "Báo luôn — báo nhầm còn hơn bị xâm nhập", "Hỏi đồng nghiệp trước"]
+    answer: 1
+    difficulty: 2
+    skill: Reading
+  - kind: mcq
+    prompt_vi: "\"The sender address is spoofed\" nghĩa là gì?"
+    choices: ["Địa chỉ gửi bị chặn", "Địa chỉ gửi sai chính tả", "Địa chỉ gửi bị giả mạo"]
+    answer: 2
+    difficulty: 2
+    skill: Listening
+
+explanation:
+  why_vi: >
+    Phishing không nhắm vào hệ thống mà nhắm vào người, nên ai cũng là tuyến phòng thủ.
+    Vấn đề là người Việt hay ngại báo khi chưa chắc — sợ làm phiền, sợ bị chê nhầm.
+    Nhưng đội bảo mật thà nhận mười báo nhầm còn hơn bỏ lỡ một vụ thật, và họ nói
+    thẳng điều đó: "better a false alarm than a breach".
+  how_vi: >
+    Báo theo ba phần. MỘT: "This email looks suspicious" và chuyển tiếp ngay.
+    HAI: nói rõ đã bấm gì chưa — đây là thông tin quyết định họ xử lý ở mức nào.
+    BA: nêu dấu hiệu cụ thể chứ không nói chung chung "trông lạ lạ".
+  contrast_vi: >
+    "Spoofed" là địa chỉ gửi bị giả cho giống thật. "Sense of urgency" là chiêu ép bạn
+    hành động trước khi kịp nghĩ. Hai thứ này xuất hiện cùng nhau trong hầu hết email phishing.
+
+common_mistakes:
+  - mistake: "Không báo vì sợ nhầm"
+    why_vi: >
+      Người học sợ làm phiền đội bảo mật và sợ bị chê là không biết phân biệt. Nhưng thời gian
+      là thứ quý nhất trong một vụ xâm nhập, và một email không được báo có thể là email
+      mà đồng nghiệp khác sẽ bấm vào.
+    fix_vi: "Cứ báo. Câu để nói khi không chắc: \"This might be nothing, but this email looks suspicious.\""
+  - mistake: "Bấm thử link để xem có gì"
+    why_vi: >
+      Phản xạ kiểm chứng rất tự nhiên, nhưng chỉ cần mở trang là đã để lại dấu vết,
+      và với một số loại tấn công thì chỉ mở thôi đã đủ.
+    fix_vi: "Không bao giờ bấm. Rê chuột lên link để xem địa chỉ thật, rồi chuyển tiếp nguyên email."
+  - mistake: "Báo bằng câu chung chung \"email này lạ lắm\""
+    why_vi: >
+      Đội bảo mật phải hỏi lại từ đầu, mất thêm vài phút mà trong sự cố thì vài phút là nhiều.
+    fix_vi: "Nêu đúng ba thứ: đã bấm gì chưa, địa chỉ gửi, và dấu hiệu cụ thể."
+
+memory_trick_vi: >
+  Báo phishing chỉ cần ba câu: ĐÁNG NGỜ "looks suspicious", CHƯA BẤM "I didn't click",
+  VÌ SAO — nêu dấu hiệu. Và nhớ: báo nhầm còn hơn bị xâm nhập.

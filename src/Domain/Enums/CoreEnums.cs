@@ -55,7 +55,14 @@ public enum LearningTrack
     // Xếp sau nhánh IT để thứ tự hiển thị cũ không đổi.
     Restaurant = 7,
     Shopping = 8,
-    Hobbies = 9
+    Hobbies = 9,
+
+    // Kinh doanh gộp cả bán hàng lẫn quản trị trong MỘT nhánh.
+    //
+    // Tách thành kinh tế / kinh doanh / quản trị kinh doanh thì ba nhánh chồng nhau quá nửa,
+    // học viên nhìn menu không biết chọn cái nào, và nội dung sẽ gần trùng. Từ vựng kinh tế
+    // nằm trong các bài báo cáo số liệu và thuyết trình — đúng chỗ người ta thật sự dùng.
+    Business = 10
 }
 
 public enum LessonState

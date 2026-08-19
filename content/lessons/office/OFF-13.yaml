@@ -1,0 +1,276 @@
+schema_version: 1
+code: OFF-13
+slug: phong-van-xin-viec
+title_vi: "Phỏng vấn xin việc — ba câu quyết định cả buổi"
+title_en: "The job interview"
+
+layer: Office
+track: Foundation
+level: B1
+unit_code: U-O3
+order_index: 13
+estimated_minutes: 12
+
+illustration: handshake-intro
+
+objective_vi: >
+  Trả lời ba câu chắc chắn được hỏi trong mọi buổi phỏng vấn IT bằng tiếng Anh,
+  và hỏi lại được ít nhất một câu tử tế ở cuối buổi.
+
+objective_observable: >
+  Giới thiệu bản thân theo cấu trúc ba phần trong 3 trên 4 drill, và kể được một
+  tình huống kỹ thuật có kết quả cụ thể.
+
+mastery_weights:
+  Listening: 0.25
+  Speaking: 0.40
+  Reading: 0.15
+  Writing: 0.20
+
+prerequisites:
+  - lesson: OFF-12
+    min_mastery: 70
+    kind: Hard
+
+vocabulary:
+  - term: "walk me through"
+    ipa: "/wɔːk miː θruː/"
+    meaning_vi: "kể cho tôi nghe từ đầu (cách người phỏng vấn hay mở màn)"
+    chunk: "Walk me through your background."
+    tags: [interview, core]
+  - term: "I'm currently"
+    ipa: "/aɪm ˈkɜːrəntli/"
+    meaning_vi: "hiện tại tôi đang"
+    chunk: "I'm currently a system engineer at a bank."
+    tags: [interview, core]
+  - term: "I led"
+    ipa: "/aɪ led/"
+    meaning_vi: "tôi đã dẫn dắt, tôi phụ trách (quá khứ của lead)"
+    chunk: "I led the migration to Azure."
+    tags: [interview, past]
+  - term: "as a result"
+    ipa: "/æz ə rɪˈzʌlt/"
+    meaning_vi: "kết quả là (cụm dẫn vào con số)"
+    chunk: "As a result, downtime dropped by 40 percent."
+    tags: [interview, result]
+  - term: "I'm looking for"
+    ipa: "/aɪm ˈlʊkɪŋ fɔːr/"
+    meaning_vi: "tôi đang tìm kiếm (nói vì sao đổi việc)"
+    chunk: "I'm looking for a bigger cloud environment."
+    tags: [interview]
+  - term: "Could you tell me about"
+    ipa: "/kʊd juː tel miː əˈbaʊt/"
+    meaning_vi: "anh chị cho tôi hỏi về (câu hỏi ngược cuối buổi)"
+    chunk: "Could you tell me about the team structure?"
+    tags: [interview]
+
+sentence_patterns:
+  - pattern: "I'm currently a {role} at {place}."
+    meaning_vi: "Hiện tôi làm {role} ở {place}."
+    slots:
+      role: ["system engineer", "helpdesk lead", "cloud engineer"]
+      place: ["a bank", "a logistics company", "an outsourcing firm"]
+  - pattern: "As a result, {metric} {change}."
+    meaning_vi: "Kết quả là {metric} {change}."
+    slots:
+      metric: ["downtime", "ticket volume", "deployment time"]
+      change: ["dropped by 40 percent", "went down by half", "fell from two hours to twenty minutes"]
+
+dialogue:
+  context_vi: >
+    Phỏng vấn vòng hai, gọi video với quản lý người Singapore. Bạn có ba mươi phút,
+    và mười phút đầu quyết định phần còn lại của buổi.
+  turns:
+    - speaker: "Interviewer"
+      en: "Thanks for joining. Walk me through your background."
+      vi: "Cảm ơn anh đã tham gia. Anh kể cho tôi nghe về nền tảng của anh."
+    - speaker: "You"
+      en: "I'm currently a system engineer at a bank. I've been there three years, mostly on virtualization and backup."
+      vi: "Hiện tôi là kỹ sư hệ thống ở một ngân hàng. Tôi làm ở đó ba năm, chủ yếu về ảo hoá và sao lưu."
+    - speaker: "Interviewer"
+      en: "Tell me about something difficult you handled."
+      vi: "Anh kể một việc khó anh từng xử lý."
+    - speaker: "You"
+      en: "Last year I led the migration of forty servers to Azure. We had one weekend of downtime allowed."
+      vi: "Năm ngoái tôi phụ trách chuyển bốn mươi máy chủ lên Azure. Bọn tôi chỉ được phép dừng một cuối tuần."
+    - speaker: "Interviewer"
+      en: "And how did it go?"
+      vi: "Kết quả thế nào?"
+    - speaker: "You"
+      en: "We finished in eighteen hours. As a result, monthly downtime dropped by forty percent."
+      vi: "Bọn tôi xong trong mười tám tiếng. Kết quả là thời gian dừng hàng tháng giảm bốn mươi phần trăm."
+    - speaker: "Interviewer"
+      en: "Any questions for me?"
+      vi: "Anh có câu hỏi nào cho tôi không?"
+    - speaker: "You"
+      en: "Yes. Could you tell me about the team structure?"
+      vi: "Có ạ. Anh cho tôi hỏi về cơ cấu đội được không?"
+
+listening:
+  context_vi: >
+    Nghe phần mở đầu một buổi phỏng vấn. Chú ý cấu trúc ba phần người trả lời dùng:
+    hiện tại, quá khứ, và lý do muốn đổi.
+  speed: 1.0
+  voice: en_US_male
+  transcript_en: "Walk me through your background. I'm currently a cloud engineer at a logistics company. Before that I spent four years in helpdesk, so I know what breaks and why. I'm looking for a bigger cloud environment. What made you apply here? Your team runs multi-region, and that's what I want to learn next."
+  transcript_vi: "Anh kể về nền tảng của anh. Hiện tôi là kỹ sư cloud ở một công ty logistics. Trước đó tôi làm helpdesk bốn năm nên tôi biết cái gì hay hỏng và vì sao. Tôi đang tìm một môi trường cloud lớn hơn. Vì sao anh ứng tuyển ở đây? Đội của anh chạy đa vùng, và đó là thứ tôi muốn học tiếp."
+  questions:
+    - kind: mcq_listen
+      prompt_vi: "Người ứng tuyển làm helpdesk bao lâu?"
+      choices: ["Ba năm", "Bốn năm", "Hai năm"]
+      answer: 1
+      difficulty: 2
+      skill: Listening
+    - kind: mcq_listen
+      prompt_vi: "Vì sao họ ứng tuyển vào công ty này?"
+      choices: ["Đội chạy đa vùng", "Lương cao hơn", "Gần nhà hơn"]
+      answer: 0
+      difficulty: 2
+      skill: Listening
+
+speaking_drills:
+  - kind: read_aloud
+    expected_text: "I'm currently a system engineer at a bank."
+    prompt_vi: "Câu mở đầu. Trọng âm chữ currently ở âm đầu: CU-rrent-ly."
+    ipa: "/aɪm ˈkɜːrəntli ə ˈsɪstəm ˌendʒɪˈnɪr/"
+    focus_phonemes: ["ɜːr", "dʒ"]
+  - kind: read_aloud
+    expected_text: "I led the migration to Azure."
+    prompt_vi: "\"Led\" là quá khứ của lead, đọc /led/ chứ không phải /liːd/."
+    ipa: "/aɪ led ðə maɪˈɡreɪʃn tuː ˈæʒər/"
+    focus_phonemes: ["e", "ʒ"]
+  - kind: shadow
+    expected_text: "As a result, downtime dropped by forty percent."
+    prompt_vi: "Cụm dẫn vào con số. Đây là câu làm người phỏng vấn ghi chú lại."
+    ipa: "/æz ə rɪˈzʌlt ˈdaʊntaɪm drɒpt/"
+    focus_phonemes: ["z", "pt"]
+  - kind: shadow
+    expected_text: "Could you tell me about the team structure?"
+    prompt_vi: "Câu hỏi ngược cuối buổi. Không hỏi gì là mất điểm."
+    ipa: "/kʊd juː tel miː əˈbaʊt ðə tiːm ˈstrʌktʃər/"
+    focus_phonemes: ["str", "tʃ"]
+  - kind: respond
+    prompt_en: "Walk me through your background."
+    prompt_vi: "Người phỏng vấn mở màn. Nói hiện tại đang làm gì, rồi một việc trước đó."
+    accept_patterns:
+      - "I'm currently"
+      - "I work"
+      - "I've been"
+
+reading:
+  kind: chat
+  context_vi: >
+    Email mời phỏng vấn. Đọc để biết chuẩn bị gì và trả lời ra sao.
+  text_en: |
+    Subject: Interview invitation - Cloud Engineer
+
+    Hi Hoa,
+
+    We would like to invite you to a second-round interview on Thursday 27 at 3 PM
+    Singapore time (4 PM your time).
+
+    Format: 45 minutes video call with the platform lead.
+    Please be ready to discuss one migration project in detail.
+
+    Let us know if the time works.
+  text_vi: |
+    Tiêu đề: Mời phỏng vấn - Kỹ sư Cloud
+
+    Chào Hoa,
+
+    Chúng tôi muốn mời bạn phỏng vấn vòng hai vào thứ Năm ngày 27 lúc 3 giờ chiều
+    giờ Singapore (4 giờ chiều giờ của bạn).
+
+    Hình thức: gọi video 45 phút với trưởng nhóm nền tảng.
+    Bạn chuẩn bị sẵn để trình bày chi tiết một dự án migration.
+
+    Cho chúng tôi biết giờ đó có tiện không.
+  questions:
+    - kind: mcq_read
+      prompt_en: "What time is the interview in the candidate's local time?"
+      choices: ["3 PM", "4 PM", "45 minutes past 3"]
+      answer: 1
+      difficulty: 2
+      reading_skill: scan
+      skill: Reading
+    - kind: mcq_read
+      prompt_en: "What should the candidate prepare?"
+      choices: ["One migration project in detail", "A written test", "Three references"]
+      answer: 0
+      difficulty: 1
+      reading_skill: scan
+      skill: Reading
+
+writing:
+  kind: FillBlank
+  prompt_vi: "Điền hai chỗ trống: câu nói việc hiện tại và cụm dẫn vào kết quả."
+  prompt_en: "I'm ___ a system engineer at a bank. As a ___, downtime dropped by 40 percent."
+  blanks:
+    - ["currently"]
+    - ["result"]
+  hint_vi: "Chỗ đầu nghĩa là hiện tại. Chỗ sau nằm trong cụm dẫn vào con số kết quả."
+  sample_en: "I'm currently a system engineer at a bank. As a result, downtime dropped by 40 percent."
+
+quiz:
+  - kind: mcq
+    prompt_vi: "\"Walk me through your background\" nghĩa là gì?"
+    choices: ["Cho tôi xem bằng cấp", "Kể cho tôi nghe về quá trình của anh", "Dẫn tôi đi tham quan"]
+    answer: 1
+    difficulty: 2
+    skill: Listening
+  - kind: mcq
+    prompt_vi: "Kể một việc đã làm thì phải kèm gì để có sức nặng?"
+    choices: ["Tên công ty", "Tên sếp cũ", "Kết quả bằng con số"]
+    answer: 2
+    difficulty: 2
+    skill: Speaking
+  - kind: mcq
+    prompt_vi: "Cuối buổi người phỏng vấn hỏi \"Any questions for me?\" — nên làm gì?"
+    choices: ["Nói không có để buổi kết thúc sớm", "Hỏi ít nhất một câu về đội hoặc công việc", "Hỏi ngay về lương"]
+    answer: 1
+    difficulty: 2
+    skill: Speaking
+  - kind: mcq
+    prompt_vi: "\"I led the migration\" — chữ led đọc thế nào?"
+    choices: ["/led/, quá khứ của lead", "/liːd/, như kim loại chì", "/leɪd/, như quá khứ của lay"]
+    answer: 0
+    difficulty: 3
+    skill: Speaking
+
+explanation:
+  why_vi: >
+    Phần lớn kỹ sư IT Việt Nam học tiếng Anh chính là để qua được buổi này. Nhưng đây lại là
+    tình huống ít được luyện nhất: ba mươi phút, người lạ, và mọi câu trả lời đều phải vừa
+    đúng kỹ thuật vừa nghe được. Chuyện thường gặp là ứng viên giỏi nghề nhưng kể một dự án
+    lớn bằng ba câu chung chung, rồi người phỏng vấn không có gì để ghi lại.
+  how_vi: >
+    Ba câu chắc chắn được hỏi, và mỗi câu có một khung. GIỚI THIỆU: hiện tại đang làm gì,
+    trước đó làm gì, và đang tìm gì — ba phần, đừng kể theo thứ tự thời gian từ năm nhất đại học.
+    KỂ MỘT VIỆC KHÓ: bối cảnh, việc BẠN làm, và kết quả bằng con số dẫn bằng "As a result".
+    HỎI NGƯỢC: chuẩn bị sẵn hai câu về đội hoặc cách làm việc.
+  contrast_vi: >
+    "We migrated forty servers" và "I led the migration of forty servers" khác nhau hoàn toàn
+    trong một buổi phỏng vấn. Người nghe cần biết phần nào là của BẠN. Dùng "we" cho bối cảnh,
+    "I" cho phần bạn làm.
+
+common_mistakes:
+  - mistake: "Kể dự án mà không có con số nào"
+    why_vi: >
+      Người Việt ngại nghe như khoe nên nói chung chung "dự án chạy tốt". Người phỏng vấn
+      lại đang cần đúng con số để so bạn với ứng viên khác, và không có số thì không có gì để so.
+    fix_vi: "Luôn đóng bằng \"As a result, ... dropped by ... percent\" hoặc một mốc thời gian cụ thể."
+  - mistake: "Trả lời \"No\" khi được hỏi \"Any questions for me?\""
+    why_vi: >
+      Ứng viên nghĩ buổi phỏng vấn đã xong và không muốn kéo dài. Nhưng câu này là một phần
+      của bài đánh giá: không hỏi gì bị hiểu là không thật sự quan tâm công việc.
+    fix_vi: "Chuẩn bị sẵn hai câu, ví dụ \"Could you tell me about the team structure?\""
+  - mistake: "Đọc \"led\" thành /liːd/"
+    why_vi: >
+      Mặt chữ giống lead nên người học đọc theo hiện tại. Người nghe hiểu thành bạn đang
+      dẫn dắt chứ không phải đã từng, và cả câu chuyện mất mốc thời gian.
+    fix_vi: "Quá khứ đọc ngắn /led/, cùng vần với chữ bed."
+
+memory_trick_vi: >
+  Ba câu, ba khung. TÔI LÀ AI: hiện tại - trước đó - đang tìm gì.
+  TÔI ĐÃ LÀM GÌ: bối cảnh - phần TÔI làm - "As a result" cộng một con số.
+  TÔI MUỐN BIẾT GÌ: luôn có sẵn hai câu hỏi ngược.

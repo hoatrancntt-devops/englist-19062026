@@ -51,9 +51,25 @@ export function Scene({
             strokeWidth="2.5"
             opacity="0.16"
           />
-          {/* Vệt ấm góc trên phải: màu thứ hai duy nhất, giữ cảnh khỏi bị một tông. */}
-          <circle cx="171" cy="26" r="26" fill="var(--color-warning)" opacity="0.16" />
-          <circle cx="30" cy="98" r="18" fill="var(--color-warning)" opacity="0.09" />
+          {/* Màu thứ hai vào bằng hai nét cung mảnh ở góc, không bằng mảng tròn đặc.
+              Mảng đặc trên nền tối biến thành đốm xám đục nằm đè lên nét chính —
+              nhìn ra ngay là vết bẩn chứ không phải điểm nhấn. */}
+          <path
+            d="M150 8a44 44 0 0 1 42 30"
+            stroke="var(--color-warning)"
+            strokeWidth="3"
+            strokeLinecap="round"
+            opacity="0.5"
+            fill="none"
+          />
+          <path
+            d="M8 84a30 30 0 0 0 22 28"
+            stroke="var(--color-warning)"
+            strokeWidth="3"
+            strokeLinecap="round"
+            opacity="0.28"
+            fill="none"
+          />
           {/* Bóng dưới chân cảnh để nhân vật không lơ lửng. */}
           <ellipse cx="100" cy="107" rx="66" ry="6" fill="currentColor" opacity="0.10" />
         </>

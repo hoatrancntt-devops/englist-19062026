@@ -1,0 +1,259 @@
+schema_version: 1
+code: TRV-03
+slug: di-lai-o-nuoc-ngoai
+title_vi: "Đi lại ở nước ngoài — taxi, tàu điện và xe công nghệ"
+title_en: "Getting around"
+
+layer: Life
+track: Travel
+level: A1
+unit_code: U-TR1
+order_index: 3
+estimated_minutes: 11
+
+illustration: city-transport
+
+objective_vi: >
+  Đi từ điểm A tới điểm B ở một thành phố lạ: mua vé, nói địa chỉ cho tài xế,
+  và xác nhận giá trước khi lên xe.
+
+objective_observable: >
+  Nói được điểm đến kèm xác nhận giá trong 3 trên 4 drill, và hỏi đúng tuyến tàu cần đi.
+
+mastery_weights:
+  Listening: 0.35
+  Speaking: 0.35
+  Reading: 0.20
+  Writing: 0.10
+
+prerequisites:
+  - lesson: TRV-02
+    min_mastery: 60
+    kind: Hard
+
+vocabulary:
+  - term: "Could you take me to"
+    ipa: "/kʊd juː teɪk miː tuː/"
+    meaning_vi: "cho tôi tới (nói điểm đến với tài xế)"
+    chunk: "Could you take me to this address?"
+    tags: [travel, taxi]
+  - term: "How much is it to"
+    ipa: "/haʊ mʌtʃ ɪz ɪt tuː/"
+    meaning_vi: "đi tới đó hết bao nhiêu"
+    chunk: "How much is it to the airport?"
+    tags: [travel, taxi]
+  - term: "Which line goes to"
+    ipa: "/wɪtʃ laɪn ɡoʊz tuː/"
+    meaning_vi: "tuyến nào đi tới"
+    chunk: "Which line goes to the city centre?"
+    tags: [travel, train]
+  - term: "a single ticket"
+    ipa: "/ə ˈsɪŋɡl ˈtɪkɪt/"
+    meaning_vi: "vé một chiều"
+    chunk: "A single ticket, please."
+    tags: [travel, train]
+  - term: "How many stops"
+    ipa: "/haʊ ˈmeni stɒps/"
+    meaning_vi: "mấy trạm nữa"
+    chunk: "How many stops is it?"
+    tags: [travel, train]
+  - term: "drop me here"
+    ipa: "/drɒp miː hɪr/"
+    meaning_vi: "cho tôi xuống đây"
+    chunk: "You can drop me here, thanks."
+    tags: [travel, taxi]
+
+sentence_patterns:
+  - pattern: "Could you take me to {place}?"
+    meaning_vi: "Cho tôi tới {place} được không?"
+    slots:
+      place: ["this address", "the airport", "the main station"]
+  - pattern: "Which line goes to {place}?"
+    meaning_vi: "Tuyến nào đi {place}?"
+    slots:
+      place: ["the city centre", "the airport", "Chinatown"]
+
+dialogue:
+  context_vi: >
+    Sáng thứ Hai, phải tới văn phòng khách hàng lúc chín giờ. Bạn đứng ở ga tàu,
+    biển chỉ dẫn toàn tiếng Anh và bạn còn hai mươi phút.
+  turns:
+    - speaker: "You"
+      en: "Excuse me, which line goes to the city centre?"
+      vi: "Xin lỗi, tuyến nào đi trung tâm ạ?"
+    - speaker: "Staff"
+      en: "The red line. Platform two, downstairs."
+      vi: "Tuyến đỏ. Sân ga hai, tầng dưới."
+    - speaker: "You"
+      en: "How many stops is it?"
+      vi: "Mấy trạm ạ?"
+    - speaker: "Staff"
+      en: "Four stops. About twelve minutes."
+      vi: "Bốn trạm. Khoảng mười hai phút."
+    - speaker: "You"
+      en: "A single ticket, please. How much?"
+      vi: "Cho tôi một vé một chiều. Bao nhiêu ạ?"
+    - speaker: "Staff"
+      en: "Two dollars forty. The machine takes cards."
+      vi: "Hai đô bốn mươi. Máy nhận thẻ."
+
+listening:
+  context_vi: >
+    Nghe một lượt đi taxi. Chú ý câu khách hỏi giá TRƯỚC khi lên xe —
+    đó là câu tránh được hầu hết chuyện bị tính đắt.
+  speed: 0.9
+  voice: en_US_male
+  transcript_en: "Could you take me to this address? Sure, hop in. How much is it to there? About eighteen dollars, depends on traffic. That's fine. You can drop me here, thanks. That'll be nineteen fifty."
+  transcript_vi: "Cho tôi tới địa chỉ này được không? Được, lên xe đi. Tới đó hết bao nhiêu? Khoảng mười tám đô, tuỳ đường đông không. Vậy được. Cho tôi xuống đây, cảm ơn. Hết mười chín rưỡi."
+  questions:
+    - kind: mcq_listen
+      prompt_vi: "Tài xế báo giá khoảng bao nhiêu?"
+      choices: ["Mười tám đô", "Mười chín rưỡi", "Tám đô"]
+      answer: 0
+      difficulty: 2
+      skill: Listening
+    - kind: mcq_listen
+      prompt_vi: "Vì sao giá cuối khác giá báo?"
+      choices: ["Tài xế tính sai", "Tuỳ đường đông hay vắng", "Khách đi xa hơn dự định"]
+      answer: 1
+      difficulty: 2
+      skill: Listening
+
+speaking_drills:
+  - kind: read_aloud
+    expected_text: "Could you take me to this address?"
+    prompt_vi: "Câu nói điểm đến. Đưa luôn màn hình điện thoại có địa chỉ cho chắc."
+    ipa: "/kʊd juː teɪk miː tuː ðɪs əˈdres/"
+    focus_phonemes: ["k", "dr"]
+  - kind: read_aloud
+    expected_text: "How much is it to the airport?"
+    prompt_vi: "Hỏi giá TRƯỚC khi lên xe. Âm /tʃ/ cuối chữ much phải rõ."
+    ipa: "/haʊ mʌtʃ ɪz ɪt tuː ði ˈerpɔːrt/"
+    focus_phonemes: ["tʃ", "ɔːr"]
+  - kind: shadow
+    expected_text: "Which line goes to the city centre?"
+    prompt_vi: "Hỏi tuyến tàu. Cụm /wɪtʃ/ đầu câu nói gọn một nhịp."
+    ipa: "/wɪtʃ laɪn ɡoʊz tuː ðə ˈsɪti ˈsentər/"
+    focus_phonemes: ["wɪtʃ", "s"]
+  - kind: shadow
+    expected_text: "You can drop me here, thanks."
+    prompt_vi: "Xin xuống xe. Âm /dr/ đầu chữ drop bật liền, không tách."
+    ipa: "/juː kæn drɒp miː hɪr θæŋks/"
+    focus_phonemes: ["dr", "θ"]
+  - kind: respond
+    prompt_en: "Where to?"
+    prompt_vi: "Tài xế hỏi bạn đi đâu. Nói điểm đến."
+    accept_patterns:
+      - "Could you take me to"
+      - "To the"
+      - "this address"
+
+reading:
+  kind: chat
+  context_vi: >
+    Bảng giờ tàu ở ga. Đọc lướt để chọn chuyến kịp giờ hẹn chín giờ.
+  text_en: |
+    RED LINE - Platform 2
+    To City Centre
+
+    08:32   08:40   08:48   08:56
+    Journey time: 12 minutes
+    4 stops
+
+    Single ticket: $2.40
+    Day pass: $6.00 (unlimited)
+  text_vi: |
+    TUYẾN ĐỎ - Sân ga 2
+    Đi Trung tâm
+
+    08:32   08:40   08:48   08:56
+    Thời gian đi: 12 phút
+    4 trạm
+
+    Vé một chiều: 2,40 đô
+    Vé ngày: 6,00 đô (không giới hạn)
+  questions:
+    - kind: mcq_read
+      prompt_en: "Which train arrives in the centre before 09:00?"
+      choices: ["08:56", "08:48", "Both 08:32 and 08:40 only"]
+      answer: 1
+      difficulty: 3
+      reading_skill: detail
+      skill: Reading
+    - kind: mcq_read
+      prompt_en: "How much cheaper is a single ticket than a day pass?"
+      choices: ["$3.60", "$2.40", "$6.00"]
+      answer: 0
+      difficulty: 2
+      reading_skill: detail
+      skill: Reading
+
+writing:
+  kind: FillBlank
+  prompt_vi: "Điền hai chỗ trống: câu nói điểm đến và câu hỏi giá."
+  prompt_en: "Could you ___ me to this address? How ___ is it?"
+  blanks:
+    - ["take"]
+    - ["much"]
+  hint_vi: "Chỗ đầu là động từ nghĩa là đưa đi. Chỗ sau nằm trong câu hỏi giá tiền."
+  sample_en: "Could you take me to this address? How much is it?"
+
+quiz:
+  - kind: mcq
+    prompt_vi: "Nên hỏi giá lúc nào khi đi taxi?"
+    choices: ["Sau khi tới nơi", "Trước khi lên xe", "Giữa đường"]
+    answer: 1
+    difficulty: 2
+    skill: Speaking
+  - kind: mcq
+    prompt_vi: "\"A single ticket\" nghĩa là gì?"
+    choices: ["Vé một người", "Vé rẻ nhất", "Vé một chiều"]
+    answer: 2
+    difficulty: 2
+    skill: Reading
+  - kind: mcq
+    prompt_vi: "Muốn xuống xe giữa đường thì nói gì?"
+    choices: ["You can drop me here, thanks", "Stop now", "I go out here"]
+    answer: 0
+    difficulty: 2
+    skill: Speaking
+  - kind: mcq
+    prompt_vi: "\"How many stops is it?\" là hỏi gì?"
+    choices: ["Mấy trạm nữa", "Dừng bao lâu", "Có mấy tuyến"]
+    answer: 0
+    difficulty: 1
+    skill: Listening
+
+explanation:
+  why_vi: >
+    Đi lại là chỗ du khách mất tiền oan nhiều nhất, và gần như luôn vì cùng một lý do:
+    không hỏi giá trước. Người Việt ngại hỏi vì sợ bị coi là tính toán, rồi tới nơi mới
+    biết giá gấp đôi và lúc đó không cãi được nữa.
+  how_vi: >
+    Taxi cần hai câu: nói điểm đến bằng "Could you take me to ...", rồi hỏi giá ngay
+    bằng "How much is it to there?" trước khi xe lăn bánh. Tàu điện cần ba thông tin:
+    tuyến nào, sân ga nào, mấy trạm — hỏi bằng "Which line goes to ...?"
+  contrast_vi: >
+    "Single ticket" là vé một chiều. "Day pass" là vé ngày đi không giới hạn — đi từ ba
+    chuyến trở lên trong ngày thì vé ngày rẻ hơn, nên nhìn giá cả hai trước khi mua.
+
+common_mistakes:
+  - mistake: "Lên taxi rồi mới hỏi giá"
+    why_vi: >
+      Lên xe rồi là mất thế thương lượng: bạn không xuống được nữa mà cũng không biết
+      quãng đường thật bao xa. Hỏi trước thì có gì bất thường là bắt xe khác.
+    fix_vi: "Hỏi trước khi mở cửa xe: \"How much is it to this address?\""
+  - mistake: "Đọc địa chỉ bằng miệng thay vì đưa màn hình"
+    why_vi: >
+      Tên đường nước ngoài rất khó phát âm đúng, và tài xế nghe nhầm một chữ là đi sai
+      cả quận. Đây là chỗ tiếng Anh giỏi cũng không cứu được.
+    fix_vi: "Nói \"Could you take me to this address?\" rồi đưa màn hình. Câu nói để mở lời, màn hình để chính xác."
+  - mistake: "Đọc \"much\" thành /mắt/"
+    why_vi: >
+      Âm /tʃ/ cuối bị nuốt vì tiếng Việt không có phụ âm đó ở cuối từ. Đây lại nằm trong
+      câu hỏi giá, câu quan trọng nhất của cả bài.
+    fix_vi: "Kết thúc bằng âm /tʃ/ như chữ ch tiếng Việt nhưng bật hơi ra: /mʌtʃ/."
+
+memory_trick_vi: >
+  Taxi hai câu: ĐI ĐÂU "Could you take me to..." và BAO NHIÊU "How much is it?" — câu hai
+  phải hỏi TRƯỚC khi lên xe. Tàu điện ba thứ: TUYẾN nào, SÂN GA nào, MẤY TRẠM.

@@ -249,7 +249,8 @@ public class PrerequisiteEngine(LearningPolicyOptions policy)
         IReadOnlyDictionary<string, MasterySnapshot> progressByCode,
         ContextLayer currentLayer,
         CefrLevel currentLevel,
-        LearningTrack preferredTrack)
+        // null nghĩa là "không ưu tiên nhánh nào" — học viên chọn học tất cả lĩnh vực.
+        LearningTrack? preferredTrack)
     {
         var open = lessons
             .Where(l => evaluations.TryGetValue(l.Code, out var e) && e.IsOpen)
@@ -290,7 +291,10 @@ public class PrerequisiteEngine(LearningPolicyOptions policy)
             .Where(l => evaluations[l.Code].State == LessonState.Available)
             .OrderBy(l => l.Layer == currentLayer ? 0 : 1)
             .ThenBy(l => l.Level == currentLevel ? 0 : 1)
-            .ThenBy(l => l.Track == preferredTrack ? 0 : 1)
+            // Không có nhánh ưu tiên thì bỏ hẳn bước này, để bài kế tiếp đi theo đúng
+            // thứ tự lộ trình. Truyền đại một nhánh vào đây thì nhánh đó được ưu tiên
+            // ngầm, và người chọn "tất cả" vẫn bị đẩy vào một hướng mà họ không chọn.
+            .ThenBy(l => preferredTrack is null || l.Track == preferredTrack ? 0 : 1)
             .ThenBy(l => l.Level)
             .ThenBy(l => l.OrderIndex)
             .FirstOrDefault();

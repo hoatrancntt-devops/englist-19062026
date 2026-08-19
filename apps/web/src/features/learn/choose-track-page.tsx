@@ -120,7 +120,9 @@ export function ChooseTrackPage() {
                       <span className="block text-sm text-secondary">{option.hintVi}</span>
 
                       {/* Số bài thật, để không ai chọn vào một nhánh gần như rỗng mà không biết. */}
-                      <span className="mt-1 block text-xs text-muted">{option.lessonCount} bài</span>
+                      <span className="mt-1 block text-xs text-muted">
+                        {option.value === 'All' ? `Toàn bộ ${option.lessonCount} bài` : `${option.lessonCount} bài`}
+                      </span>
                     </span>
                   </button>
                 </li>

@@ -79,6 +79,14 @@ public record DashboardResponse(
 /// </summary>
 public static class LearningModule
 {
+    /// <summary>
+    /// Giá trị đại diện cho "học tất cả lĩnh vực".
+    ///
+    /// KHÔNG phải một giá trị của <see cref="LearningTrack"/>: thêm vào enum thì nó trở thành
+    /// một nhánh có thể gắn bài, mà đây không phải nhánh nội dung — nó là "đừng ưu tiên nhánh nào".
+    /// </summary>
+    private const string MixedTrackValue = "All";
+
     public static IEndpointRouteBuilder MapLearningModule(this IEndpointRouteBuilder app)
     {
         var group = app.MapGroup("/api/v1/learning").WithTags("Learning");
@@ -144,17 +152,37 @@ public static class LearningModule
             .Select(g => new { Track = g.Key, Count = g.Count() })
             .ToListAsync(ct);
 
-        var tracks = counts
+        // "Tất cả" đứng đầu danh sách và KHÔNG phải một giá trị enum.
+        //
+        // Người đang đi làm cần chuyên ngành, ăn uống, sở thích cùng lúc chứ không phải lần lượt.
+        // Bắt họ chọn đúng một nhánh là bắt họ vào Cài đặt đổi qua đổi lại mỗi lần muốn học thứ khác.
+        //
+        // Lựa chọn này lưu bằng cờ RIÊNG (UserProfile.PreferAllTracks), không mượn một giá trị
+        // của LearningTrack: nhánh nào cũng là nhánh có bài, nên mượn giá trị nào thì engine cũng
+        // ưu tiên đúng nhánh đó và lời hứa "trộn mọi chủ đề" thành sai trong im lặng.
+        var tracks = new List<TrackOption>
+        {
+            new(MixedTrackValue, "Tất cả lĩnh vực",
+                "Trộn mọi chủ đề theo đúng thứ tự lộ trình. Chọn cái này nếu bạn vừa đi làm vừa dùng tiếng Anh ngoài đời.",
+                counts.Sum(c => c.Count)),
+        };
+
+        tracks.AddRange(counts
             .OrderBy(c => c.Track)
             .Select(c => new TrackOption(
                 c.Track.ToString(),
                 TrackLabelVi(c.Track),
                 TrackHintVi(c.Track),
-                c.Count))
-            .ToList();
+                c.Count)));
+
+        // Trả về đúng thứ học viên đã chọn. Trả PrimaryTrack thô thì người chọn "tất cả"
+        // tải lại trang sẽ thấy đang chọn một nhánh cụ thể mà họ không hề bấm.
+        var current = profile?.PreferAllTracks == true
+            ? MixedTrackValue
+            : profile?.PrimaryTrack.ToString() ?? MixedTrackValue;
 
         return Results.Ok(new LearningPreferences(
-            profile?.PrimaryTrack.ToString() ?? nameof(LearningTrack.Foundation),
+            current,
             profile?.StudyMode.ToString() ?? nameof(StudyMode.Mixed),
             profile?.OnboardingCompleted ?? false,
             tracks));
@@ -171,7 +199,10 @@ public static class LearningModule
             return Results.Unauthorized();
         }
 
-        if (!Enum.TryParse<LearningTrack>(body.PrimaryTrack, out var track))
+        // "Tất cả" quy về Foundation: engine coi đó là không ưu tiên nhánh nào.
+        var track = LearningTrack.Foundation;
+
+        if (body.PrimaryTrack != MixedTrackValue && !Enum.TryParse(body.PrimaryTrack, out track))
         {
             return Results.BadRequest(new { message = $"Lĩnh vực không hợp lệ: {body.PrimaryTrack}" });
         }
@@ -200,6 +231,7 @@ public static class LearningModule
         // CỐ Ý không đụng tới lesson_masteries. Đổi lĩnh vực chỉ đổi thứ tự bài gợi ý;
         // xoá tiến độ ở đây thì người thử một nhánh khác rồi quay lại sẽ mất trắng.
         profile.PrimaryTrack = track;
+        profile.PreferAllTracks = body.PrimaryTrack == MixedTrackValue;
         profile.StudyMode = mode;
         profile.OnboardingCompleted = true;
         profile.OnboardingCompletedAt ??= DateTimeOffset.UtcNow;
@@ -222,6 +254,7 @@ public static class LearningModule
         LearningTrack.Shopping => "Đi siêu thị, mua sắm",
         LearningTrack.Hobbies => "Sở thích và giao tiếp đời thường",
         LearningTrack.Business => "Kinh doanh và quản trị",
+        LearningTrack.Travel => "Du lịch và đi lại",
         _ => track.ToString(),
     };
 
@@ -238,6 +271,7 @@ public static class LearningModule
         LearningTrack.Shopping => "Tìm hàng, hỏi số lượng, thanh toán và đổi trả.",
         LearningTrack.Hobbies => "Nói về sở thích, kể cuối tuần, rủ đi chơi.",
         LearningTrack.Business => "Gặp khách, báo giá, đàm phán, họp giao ban, báo cáo số liệu.",
+        LearningTrack.Travel => "Sân bay, khách sạn, thuê xe, hỏi đường, xử lý khi hỏng việc.",
         _ => string.Empty,
     };
 

@@ -62,7 +62,13 @@ public enum LearningTrack
     // Tách thành kinh tế / kinh doanh / quản trị kinh doanh thì ba nhánh chồng nhau quá nửa,
     // học viên nhìn menu không biết chọn cái nào, và nội dung sẽ gần trùng. Từ vựng kinh tế
     // nằm trong các bài báo cáo số liệu và thuyết trình — đúng chỗ người ta thật sự dùng.
-    Business = 10
+    Business = 10,
+
+    // Du lịch đứng cuối mạch học: học, phỏng vấn, đi làm, rồi có tiền thì đi chơi.
+    //
+    // Đây là nhánh duy nhất học viên dùng khi KHÔNG có đồng nghiệp bên cạnh đỡ lời, nên bài
+    // ở đây nhấn vào câu xoay xở lúc một mình và không ai quanh đó nói tiếng Việt.
+    Travel = 11
 }
 
 public enum LessonState

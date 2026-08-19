@@ -1,0 +1,257 @@
+schema_version: 1
+code: TRV-02
+slug: nhan-phong-khach-san
+title_vi: "Nhận phòng khách sạn và hỏi thứ mình cần"
+title_en: "Hotel check-in"
+
+layer: Life
+track: Travel
+level: PreA1
+unit_code: U-TR1
+order_index: 2
+estimated_minutes: 11
+
+illustration: city-transport
+
+objective_vi: >
+  Nhận phòng, hỏi giờ ăn sáng và mật khẩu wifi, và xin đổi phòng khi có vấn đề —
+  ba việc quyết định chuyến đi dễ chịu hay ấm ức suốt mấy đêm.
+
+objective_observable: >
+  Nhận được phòng theo tên đặt trong 3 trên 4 drill, và nêu được một vấn đề kèm yêu cầu cụ thể.
+
+mastery_weights:
+  Listening: 0.35
+  Speaking: 0.35
+  Reading: 0.20
+  Writing: 0.10
+
+prerequisites:
+  - lesson: TRV-01
+    min_mastery: 60
+    kind: Hard
+
+vocabulary:
+  - term: "I have a reservation"
+    ipa: "/aɪ hæv ə ˌrezərˈveɪʃn/"
+    meaning_vi: "tôi có đặt phòng"
+    chunk: "I have a reservation under Hoa."
+    tags: [travel, hotel]
+  - term: "checking out"
+    ipa: "/ˈtʃekɪŋ aʊt/"
+    meaning_vi: "trả phòng"
+    chunk: "I'm checking out on Friday."
+    tags: [travel, hotel]
+  - term: "What time is breakfast"
+    ipa: "/wɒt taɪm ɪz ˈbrekfəst/"
+    meaning_vi: "mấy giờ ăn sáng"
+    chunk: "What time is breakfast?"
+    tags: [travel, hotel]
+  - term: "the wifi password"
+    ipa: "/ðə ˈwaɪfaɪ ˈpæswɜːrd/"
+    meaning_vi: "mật khẩu wifi"
+    chunk: "Could I get the wifi password?"
+    tags: [travel, hotel]
+  - term: "isn't working"
+    ipa: "/ˈɪznt ˈwɜːrkɪŋ/"
+    meaning_vi: "không chạy, hỏng"
+    chunk: "The air conditioning isn't working."
+    tags: [travel, problem]
+  - term: "Could I change rooms"
+    ipa: "/kʊd aɪ tʃeɪndʒ ruːmz/"
+    meaning_vi: "tôi đổi phòng được không"
+    chunk: "Could I change rooms?"
+    tags: [travel, problem]
+
+sentence_patterns:
+  - pattern: "I have a reservation under {name}."
+    meaning_vi: "Tôi có đặt phòng dưới tên {name}."
+    slots:
+      name: ["Hoa", "Tran", "Minh"]
+  - pattern: "The {thing} isn't working."
+    meaning_vi: "{thing} không chạy."
+    slots:
+      thing: ["air conditioning", "shower", "TV"]
+
+dialogue:
+  context_vi: >
+    Mười giờ tối, vừa xuống sân bay và tới khách sạn. Bạn mệt, và chỉ muốn
+    lên phòng nhanh nhất có thể — nhưng vẫn phải hỏi hai thứ.
+  turns:
+    - speaker: "You"
+      en: "Good evening. I have a reservation under Hoa."
+      vi: "Chào buổi tối. Tôi có đặt phòng dưới tên Hoa."
+    - speaker: "Reception"
+      en: "Let me check. Yes, three nights. Checking out on Friday?"
+      vi: "Để tôi kiểm tra. Vâng, ba đêm. Anh trả phòng thứ Sáu ạ?"
+    - speaker: "You"
+      en: "That's right. What time is breakfast?"
+      vi: "Đúng rồi. Mấy giờ ăn sáng ạ?"
+    - speaker: "Reception"
+      en: "Six thirty to ten, second floor."
+      vi: "Sáu rưỡi tới mười giờ, tầng hai."
+    - speaker: "You"
+      en: "And could I get the wifi password?"
+      vi: "Cho tôi xin mật khẩu wifi được không ạ?"
+    - speaker: "Reception"
+      en: "It's on the card with your key. Room 512."
+      vi: "Có trên thẻ kèm chìa khoá. Phòng 512."
+
+listening:
+  context_vi: >
+    Nghe một lượt nhận phòng và một lượt báo sự cố. Chú ý cách khách nêu vấn đề
+    rồi nói luôn mình muốn gì.
+  speed: 0.9
+  voice: en_US_male
+  transcript_en: "I have a reservation under Tran. Two nights, checking out Sunday. Here's your key, room 304. Excuse me, the air conditioning in 304 isn't working. Could I change rooms? Of course, let me move you to 306."
+  transcript_vi: "Tôi có đặt phòng dưới tên Tran. Hai đêm, trả phòng Chủ nhật. Đây là chìa khoá, phòng 304. Xin lỗi, điều hoà phòng 304 không chạy. Tôi đổi phòng được không? Được ạ, để tôi chuyển anh sang 306."
+  questions:
+    - kind: mcq_listen
+      prompt_vi: "Khách ở mấy đêm?"
+      choices: ["Ba đêm", "Hai đêm", "Một đêm"]
+      answer: 1
+      difficulty: 1
+      skill: Listening
+    - kind: mcq_listen
+      prompt_vi: "Khách được chuyển sang phòng nào?"
+      choices: ["306", "304", "512"]
+      answer: 0
+      difficulty: 2
+      skill: Listening
+
+speaking_drills:
+  - kind: read_aloud
+    expected_text: "I have a reservation under Hoa."
+    prompt_vi: "Câu mở đầu ở mọi khách sạn. Trọng âm reservation ở âm thứ ba: re-ser-VA-tion."
+    ipa: "/aɪ hæv ə ˌrezərˈveɪʃn/"
+    focus_phonemes: ["z", "ʃn"]
+  - kind: read_aloud
+    expected_text: "What time is breakfast?"
+    prompt_vi: "Chữ breakfast đọc /ˈbrekfəst/, không phải break-fast hai từ rời."
+    ipa: "/wɒt taɪm ɪz ˈbrekfəst/"
+    focus_phonemes: ["br", "kf"]
+  - kind: shadow
+    expected_text: "The air conditioning isn't working."
+    prompt_vi: "Nêu vấn đề. Nói bình tĩnh, không cần bực."
+    ipa: "/ði er kənˈdɪʃənɪŋ ˈɪznt ˈwɜːrkɪŋ/"
+    focus_phonemes: ["ʃ", "ŋ"]
+  - kind: shadow
+    expected_text: "Could I change rooms?"
+    prompt_vi: "Nói luôn mình muốn gì. Âm /tʃ/ đầu chữ change bật rõ."
+    ipa: "/kʊd aɪ tʃeɪndʒ ruːmz/"
+    focus_phonemes: ["tʃ", "dʒ"]
+  - kind: respond
+    prompt_en: "Do you have a reservation?"
+    prompt_vi: "Lễ tân hỏi bạn có đặt phòng chưa. Trả lời kèm tên đặt."
+    accept_patterns:
+      - "I have a reservation"
+      - "under"
+      - "Yes"
+
+reading:
+  kind: chat
+  context_vi: >
+    Thẻ thông tin phòng đặt trên bàn. Đọc lướt tìm giờ và mật khẩu.
+  text_en: |
+    WELCOME - ROOM 512
+
+    Breakfast: 06:30 - 10:00, 2nd floor
+    Wifi: MarinaGuest / password: marina2026
+    Check-out: before 12:00
+
+    Reception: dial 0
+    Late check-out available until 14:00 for a fee.
+  text_vi: |
+    CHÀO MỪNG - PHÒNG 512
+
+    Ăn sáng: 06:30 - 10:00, tầng 2
+    Wifi: MarinaGuest / mật khẩu: marina2026
+    Trả phòng: trước 12:00
+
+    Lễ tân: bấm số 0
+    Có thể trả phòng muộn tới 14:00, có phụ phí.
+  questions:
+    - kind: mcq_read
+      prompt_en: "Until what time can you stay if you pay extra?"
+      choices: ["12:00", "10:00", "14:00"]
+      answer: 2
+      difficulty: 2
+      reading_skill: scan
+      skill: Reading
+    - kind: mcq_read
+      prompt_en: "Where is breakfast served?"
+      choices: ["2nd floor", "Reception", "Room 512"]
+      answer: 0
+      difficulty: 1
+      reading_skill: scan
+      skill: Reading
+
+writing:
+  kind: FillBlank
+  prompt_vi: "Điền hai chỗ trống: câu nhận phòng và câu báo hỏng."
+  prompt_en: "I have a ___ under Hoa. The shower ___ working."
+  blanks:
+    - ["reservation"]
+    - ["isn't"]
+  hint_vi: "Chỗ đầu là danh từ chỉ việc đặt trước. Chỗ sau là dạng phủ định rút gọn của is not."
+  sample_en: "I have a reservation under Hoa. The shower isn't working."
+
+quiz:
+  - kind: mcq
+    prompt_vi: "Điều hoà hỏng. Nói thế nào cho hiệu quả nhất?"
+    choices: ["Air conditioner bad", "The air conditioning isn't working. Could I change rooms?", "Room no good"]
+    answer: 1
+    difficulty: 2
+    skill: Speaking
+  - kind: mcq
+    prompt_vi: "\"Checking out on Friday\" nghĩa là gì?"
+    choices: ["Nhận phòng thứ Sáu", "Trả phòng thứ Sáu", "Đặt phòng thứ Sáu"]
+    answer: 1
+    difficulty: 1
+    skill: Listening
+  - kind: mcq
+    prompt_vi: "Vì sao nêu vấn đề nên kèm luôn yêu cầu?"
+    choices: ["Vì lịch sự hơn", "Vì lễ tân không biết bạn muốn sửa hay muốn đổi phòng", "Vì quy định khách sạn"]
+    answer: 1
+    difficulty: 3
+    skill: Reading
+  - kind: mcq
+    prompt_vi: "Muốn xin mật khẩu wifi thì nói gì?"
+    choices: ["Could I get the wifi password?", "Give me wifi", "Wifi what?"]
+    answer: 0
+    difficulty: 1
+    skill: Speaking
+
+explanation:
+  why_vi: >
+    Nhận phòng thì dễ, báo sự cố mới khó. Người Việt đi nước ngoài hay chịu đựng một
+    phòng nóng hoặc vòi sen hỏng suốt mấy đêm vì ngại nói, hoặc nói mà chỉ nêu vấn đề
+    rồi im, để lễ tân tự đoán mình muốn gì. Kết quả là họ ghi nhận rồi để đó.
+  how_vi: >
+    Nhận phòng cần đúng một câu: "I have a reservation under TÊN." Báo sự cố cần HAI phần:
+    nêu cái hỏng bằng "The ... isn't working", rồi nói luôn mình muốn gì —
+    "Could I change rooms?" hoặc "Could someone look at it?"
+  contrast_vi: >
+    "Check in" là nhận phòng, "check out" là trả phòng. Lễ tân sẽ xác nhận ngày trả phòng
+    ngay lúc bạn nhận, nên nghe được chữ "checking out" là biết họ đang hỏi ngày về.
+
+common_mistakes:
+  - mistake: "Nêu vấn đề rồi im, không nói mình muốn gì"
+    why_vi: >
+      Người Việt tránh yêu cầu trực tiếp vì sợ đòi hỏi. Nhưng lễ tân nghe xong không biết
+      bạn muốn sửa, muốn đổi phòng, hay chỉ đang phàn nàn, nên họ ghi nhận rồi thôi.
+    fix_vi: "Luôn kèm một câu hỏi cụ thể: \"Could I change rooms?\" Hai câu là xong."
+  - mistake: "Chịu đựng cả chuyến vì ngại nói"
+    why_vi: >
+      Ở khách sạn nước ngoài, báo hỏng là chuyện hoàn toàn bình thường và họ có sẵn phòng
+      trống để đổi. Im lặng chỉ khiến bạn mất tiền cho một phòng không dùng được.
+    fix_vi: "Báo ngay đêm đầu. Càng để lâu càng khó đổi vì phòng trống đã hết."
+  - mistake: "Đọc \"breakfast\" thành hai từ rời break-fast"
+    why_vi: >
+      Nhìn mặt chữ thấy hai từ ghép nên tách ra đọc. Thực tế nó là một từ, âm thứ hai
+      đọc rất nhẹ, và tách ra thì người nghe phải nghĩ một nhịp mới hiểu.
+    fix_vi: "Đọc liền một hơi, nhấn âm đầu: /ˈbrek-fəst/."
+
+memory_trick_vi: >
+  Nhận phòng một câu: "I have a reservation under TÊN."
+  Báo hỏng hai phần: CÁI GÌ HỎNG "The ... isn't working" cộng MUỐN GÌ "Could I change rooms?"

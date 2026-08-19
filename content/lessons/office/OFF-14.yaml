@@ -1,0 +1,254 @@
+schema_version: 1
+code: OFF-14
+slug: ngay-dau-di-lam
+title_vi: "Ngày đầu đi làm — hỏi cho đúng thay vì gật cho qua"
+title_en: "Your first day"
+
+layer: Office
+track: Foundation
+level: B1
+unit_code: U-O3
+order_index: 14
+estimated_minutes: 11
+
+illustration: handshake-intro
+
+objective_vi: >
+  Sống sót ngày đầu ở công ty nói tiếng Anh: nhận việc, hỏi lại thứ chưa rõ,
+  và xin quyền truy cập mà không phải đợi ai đoán ý.
+
+objective_observable: >
+  Hỏi lại được một yêu cầu chưa rõ trong 3 trên 4 drill, và xin đúng thứ mình cần để bắt đầu.
+
+mastery_weights:
+  Listening: 0.30
+  Speaking: 0.35
+  Reading: 0.15
+  Writing: 0.20
+
+prerequisites:
+  - lesson: OFF-13
+    min_mastery: 65
+    kind: Hard
+
+vocabulary:
+  - term: "get me set up"
+    ipa: "/ɡet miː set ʌp/"
+    meaning_vi: "cài đặt cho tôi, mở quyền cho tôi"
+    chunk: "Who can get me set up with VPN access?"
+    tags: [onboarding, core]
+  - term: "I don't have access to"
+    ipa: "/aɪ doʊnt hæv ˈækses tuː/"
+    meaning_vi: "tôi chưa có quyền vào"
+    chunk: "I don't have access to the repo yet."
+    tags: [onboarding, core]
+  - term: "Just so I'm clear"
+    ipa: "/dʒʌst soʊ aɪm klɪr/"
+    meaning_vi: "cho tôi hỏi lại cho rõ (cách hỏi không làm mất mặt ai)"
+    chunk: "Just so I'm clear, you want this by Friday?"
+    tags: [onboarding, core]
+  - term: "Who should I ask about"
+    ipa: "/huː ʃʊd aɪ ɑːsk əˈbaʊt/"
+    meaning_vi: "tôi nên hỏi ai về"
+    chunk: "Who should I ask about the staging server?"
+    tags: [onboarding]
+  - term: "I'll take a look"
+    ipa: "/aɪl teɪk ə lʊk/"
+    meaning_vi: "để tôi xem đã (nhận việc mà không hứa liều)"
+    chunk: "I'll take a look and get back to you."
+    tags: [onboarding]
+  - term: "ramp up"
+    ipa: "/ræmp ʌp/"
+    meaning_vi: "làm quen dần, bắt nhịp"
+    chunk: "Take the first week to ramp up."
+    tags: [onboarding]
+
+sentence_patterns:
+  - pattern: "Just so I'm clear, {question}?"
+    meaning_vi: "Cho tôi hỏi lại cho rõ, {question}?"
+    slots:
+      question: ["you want this by Friday", "I should start with the API", "this goes to the client"]
+  - pattern: "Who should I ask about {topic}?"
+    meaning_vi: "Về {topic} thì tôi nên hỏi ai?"
+    slots:
+      topic: ["VPN access", "the staging server", "the deploy process"]
+
+dialogue:
+  context_vi: >
+    Chín giờ sáng ngày đầu. Quản lý giao việc đầu tiên, nói nhanh, và bạn hiểu
+    khoảng bảy phần. Gật cho qua là cả tuần làm sai hướng.
+  turns:
+    - speaker: "Manager"
+      en: "Welcome aboard. Take the first week to ramp up. Start with the monitoring dashboards."
+      vi: "Chào mừng anh. Tuần đầu cứ làm quen dần. Bắt đầu từ mấy bảng theo dõi."
+    - speaker: "You"
+      en: "Thanks. Just so I'm clear, you want me to review them or rebuild them?"
+      vi: "Cảm ơn anh. Cho tôi hỏi lại cho rõ, anh muốn tôi rà lại hay dựng lại ạ?"
+    - speaker: "Manager"
+      en: "Review first. Tell me what's missing, then we decide."
+      vi: "Rà trước đã. Nói tôi nghe thiếu gì, rồi mình quyết."
+    - speaker: "You"
+      en: "Got it. I don't have access to the monitoring tool yet. Who should I ask?"
+      vi: "Rõ rồi. Tôi chưa có quyền vào công cụ theo dõi. Tôi nên hỏi ai ạ?"
+    - speaker: "Manager"
+      en: "Priya can get you set up. She sits by the window."
+      vi: "Priya mở quyền cho anh được. Cô ấy ngồi cạnh cửa sổ."
+    - speaker: "You"
+      en: "Perfect. I'll take a look this morning and come back with questions."
+      vi: "Tuyệt. Sáng nay tôi xem rồi quay lại hỏi anh."
+
+listening:
+  context_vi: >
+    Nghe một lượt giao việc ngày đầu. Chú ý câu người mới dùng để hỏi lại —
+    nó không làm ai mất mặt mà vẫn lấy được thông tin.
+  speed: 1.0
+  voice: en_US_female
+  transcript_en: "Start with the backup jobs this week. Just so I'm clear, all of them or only the failing ones? Only the failing ones. Right. I don't have access to the backup console yet. Ask David, he can get you set up. Great, I'll take a look and get back to you."
+  transcript_vi: "Tuần này bắt đầu từ mấy job sao lưu. Cho tôi hỏi lại cho rõ, tất cả hay chỉ mấy cái đang lỗi? Chỉ mấy cái đang lỗi. Rõ. Tôi chưa có quyền vào bảng điều khiển sao lưu. Hỏi David, anh ấy mở quyền cho. Vâng, tôi xem rồi quay lại báo anh."
+  questions:
+    - kind: mcq_listen
+      prompt_vi: "Người mới được giao xử lý gì?"
+      choices: ["Tất cả job sao lưu", "Chỉ mấy job đang lỗi", "Dựng job mới"]
+      answer: 1
+      difficulty: 2
+      skill: Listening
+    - kind: mcq_listen
+      prompt_vi: "Ai mở quyền truy cập?"
+      choices: ["David", "Priya", "Quản lý"]
+      answer: 0
+      difficulty: 1
+      skill: Listening
+
+speaking_drills:
+  - kind: read_aloud
+    expected_text: "Just so I'm clear, you want this by Friday?"
+    prompt_vi: "Câu hỏi lại quan trọng nhất bài. Đọc nhẹ nhàng, không nhấn như đang chất vấn."
+    ipa: "/dʒʌst soʊ aɪm klɪr/"
+    focus_phonemes: ["dʒ", "kl"]
+  - kind: read_aloud
+    expected_text: "I don't have access to the repo yet."
+    prompt_vi: "Nói thẳng thứ đang thiếu. Trọng âm chữ access ở âm đầu: AC-cess."
+    ipa: "/aɪ doʊnt hæv ˈækses tuː ðə ˈriːpoʊ jet/"
+    focus_phonemes: ["ks", "j"]
+  - kind: shadow
+    expected_text: "Who should I ask about the staging server?"
+    prompt_vi: "Hỏi đúng người thay vì đoán. Âm /ʃ/ trong should phải tròn."
+    ipa: "/huː ʃʊd aɪ ɑːsk əˈbaʊt/"
+    focus_phonemes: ["ʃ", "st"]
+  - kind: shadow
+    expected_text: "I'll take a look and get back to you."
+    prompt_vi: "Nhận việc mà không hứa liều. Ba chữ đầu nói dính thành /aɪlteɪkə/."
+    ipa: "/aɪl teɪk ə lʊk ənd ɡet bæk tuː juː/"
+    focus_phonemes: ["l", "k"]
+  - kind: respond
+    prompt_en: "Start with the monitoring dashboards this week."
+    prompt_vi: "Quản lý giao việc nhưng chưa rõ. Hỏi lại cho rõ."
+    accept_patterns:
+      - "Just so I'm clear"
+      - "Do you mean"
+      - "Should I"
+
+reading:
+  kind: chat
+  context_vi: >
+    Tin nhắn chào mừng trong kênh đội. Đọc để biết ngày đầu cần làm gì.
+  text_en: |
+    Anna: Welcome Hoa! A few things for day one.
+
+    1. Priya will get you set up with VPN and the monitoring tool.
+    2. Standup is 9:15 every morning, camera optional.
+    3. Don't worry about tickets this week - just ramp up.
+    4. If you're blocked more than 30 minutes, ask. Nobody expects you to know our stack yet.
+  text_vi: |
+    Anna: Chào mừng Hoa! Vài việc cho ngày đầu.
+
+    1. Priya sẽ mở quyền VPN và công cụ theo dõi cho bạn.
+    2. Standup 9:15 mỗi sáng, bật camera hay không tuỳ bạn.
+    3. Tuần này chưa cần lo ticket - cứ làm quen đã.
+    4. Nếu kẹt quá 30 phút thì hỏi. Không ai mong bạn đã biết hệ thống của bọn mình.
+  questions:
+    - kind: mcq_read
+      prompt_en: "How long should you stay blocked before asking for help?"
+      choices: ["Until the end of the day", "No more than 30 minutes", "One hour"]
+      answer: 1
+      difficulty: 2
+      reading_skill: scan
+      skill: Reading
+    - kind: mcq_read
+      prompt_en: "What is expected in the first week?"
+      choices: ["Ramping up, not handling tickets", "Closing tickets", "Leading standup"]
+      answer: 0
+      difficulty: 1
+      reading_skill: scan
+      skill: Reading
+
+writing:
+  kind: FillBlank
+  prompt_vi: "Điền hai chỗ trống: câu hỏi lại cho rõ và câu nói thiếu quyền."
+  prompt_en: "Just so I'm ___, you want this by Friday? I don't have ___ to the repo yet."
+  blanks:
+    - ["clear"]
+    - ["access"]
+  hint_vi: "Chỗ đầu nghĩa là rõ ràng. Chỗ sau là danh từ chỉ quyền vào một hệ thống."
+  sample_en: "Just so I'm clear, you want this by Friday? I don't have access to the repo yet."
+
+quiz:
+  - kind: mcq
+    prompt_vi: "Nghe chưa rõ yêu cầu. Câu nào an toàn nhất?"
+    choices: ["Sorry, I don't understand", "Just so I'm clear, you want me to review or rebuild?", "Can you repeat everything?"]
+    answer: 1
+    difficulty: 2
+    skill: Speaking
+  - kind: mcq
+    prompt_vi: "\"Ramp up\" trong tuần đầu nghĩa là gì?"
+    choices: ["Tăng tốc độ làm việc", "Làm quen dần với hệ thống", "Nhận thêm việc"]
+    answer: 1
+    difficulty: 2
+    skill: Reading
+  - kind: mcq
+    prompt_vi: "Chưa có quyền vào hệ thống thì nói gì?"
+    choices: ["I don't have access to the repo yet", "The repo is closed for me", "I cannot enter repo"]
+    answer: 0
+    difficulty: 2
+    skill: Speaking
+  - kind: mcq
+    prompt_vi: "Vì sao \"I'll take a look and get back to you\" tốt hơn \"OK, I will do it\"?"
+    choices: ["Vì lịch sự hơn", "Vì ngắn hơn", "Vì chưa hứa kết quả khi chưa biết việc lớn cỡ nào"]
+    answer: 2
+    difficulty: 3
+    skill: Reading
+
+explanation:
+  why_vi: >
+    Ngày đầu là lúc người Việt gật nhiều nhất. Chưa quen giọng, chưa quen từ nội bộ, và
+    ngại hỏi vì sợ bị đánh giá là không hiểu. Kết quả là cả tuần đầu làm sai hướng, rồi
+    mất thêm một tuần nữa để sửa — mà nếu hỏi một câu ở phút thứ hai thì đã xong.
+  how_vi: >
+    Ba câu đủ cho cả ngày đầu. HỎI LẠI bằng "Just so I'm clear, ...?" — câu này đặt trách
+    nhiệm hiểu lên phía mình nên không ai thấy bị chất vấn. XIN QUYỀN bằng "I don't have
+    access to ... yet", chữ "yet" cho thấy bạn biết đó là chuyện bình thường.
+    NHẬN VIỆC bằng "I'll take a look and get back to you" thay vì hứa ngay.
+  contrast_vi: >
+    "Sorry, I don't understand" đẩy vấn đề về phía người nói và họ sẽ lặp lại y hệt.
+    "Just so I'm clear, A hay B?" đưa ra hai lựa chọn cụ thể, và người ta chỉ cần chọn một.
+
+common_mistakes:
+  - mistake: "Gật đầu khi chưa hiểu rõ yêu cầu"
+    why_vi: >
+      Ngày đầu ai cũng muốn tỏ ra bắt nhịp nhanh. Nhưng hiểu sai một yêu cầu ở ngày đầu
+      thì mất cả tuần, và người giao việc sẽ nhớ tuần đó chứ không nhớ cái gật.
+    fix_vi: "Hỏi lại bằng hai lựa chọn cụ thể: \"Just so I'm clear, A or B?\" Nhanh hơn nhiều so với sửa sau."
+  - mistake: "Im lặng chờ được cấp quyền"
+    why_vi: >
+      Người mới nghĩ quyền truy cập sẽ tự động có. Thực tế không ai nhớ hết, và im lặng
+      hai ngày thì người ta tưởng bạn đang làm được việc.
+    fix_vi: "Nói ngay ngày đầu: \"I don't have access to ... yet. Who should I ask?\""
+  - mistake: "Hứa deadline khi chưa nhìn vào việc"
+    why_vi: >
+      Muốn gây ấn tượng nên nhận luôn. Nhưng chưa biết hệ thống thì con số đưa ra chỉ là
+      đoán, và lỡ hẹn ngày đầu để lại ấn tượng xấu hơn là xin thêm thời gian.
+    fix_vi: "Dùng \"I'll take a look and get back to you\" rồi báo lại sau khi đã xem."
+
+memory_trick_vi: >
+  Ngày đầu ba câu là đủ: HỎI LẠI "Just so I'm clear...", XIN QUYỀN "I don't have access
+  to ... yet", NHẬN VIỆC "I'll take a look and get back to you". Không câu nào cần bạn giỏi.

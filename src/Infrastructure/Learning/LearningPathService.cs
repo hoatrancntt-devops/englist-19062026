@@ -148,7 +148,7 @@ public class LearningPathService(AppDbContext db, IOptions<LearningPolicyOptions
             progressByCode,
             profile?.CurrentLayer ?? ContextLayer.Life,
             profile?.CurrentLevel ?? CefrLevel.PreA1,
-            profile?.PrimaryTrack ?? LearningTrack.Foundation);
+            profile?.PreferAllTracks == true ? null : profile?.PrimaryTrack ?? LearningTrack.Foundation);
 
         var cards = lessons
             .Select(l => ToCard(l, evaluations[l.Code], progressByCode.GetValueOrDefault(l.Code)))

@@ -1,0 +1,255 @@
+schema_version: 1
+code: TRV-01
+slug: san-bay-va-nhap-canh
+title_vi: "Sân bay và nhập cảnh"
+title_en: "Airport and immigration"
+
+layer: Life
+track: Travel
+level: PreA1
+unit_code: U-TR1
+order_index: 1
+estimated_minutes: 11
+
+illustration: city-transport
+
+objective_vi: >
+  Qua quầy làm thủ tục và quầy nhập cảnh — bốn câu hỏi lặp lại ở mọi sân bay
+  trên thế giới, và cả bốn đều trả lời được bằng một câu ngắn.
+
+objective_observable: >
+  Trả lời đúng bốn câu hỏi nhập cảnh trong 3 trên 4 drill, và hỏi được cửa ra máy bay.
+
+mastery_weights:
+  Listening: 0.40
+  Speaking: 0.35
+  Reading: 0.15
+  Writing: 0.10
+
+prerequisites: []
+
+vocabulary:
+  - term: "window or aisle"
+    ipa: "/ˈwɪndoʊ ɔːr aɪl/"
+    meaning_vi: "ghế cạnh cửa sổ hay cạnh lối đi"
+    chunk: "Window or aisle?"
+    tags: [travel, checkin]
+  - term: "carry-on"
+    ipa: "/ˈkæri ɒn/"
+    meaning_vi: "hành lý xách tay"
+    chunk: "Just one carry-on."
+    tags: [travel, checkin]
+  - term: "purpose of your visit"
+    ipa: "/ˈpɜːrpəs əv jɔːr ˈvɪzɪt/"
+    meaning_vi: "mục đích chuyến đi (câu nhập cảnh luôn hỏi)"
+    chunk: "What's the purpose of your visit?"
+    tags: [travel, immigration]
+  - term: "on business"
+    ipa: "/ɒn ˈbɪznəs/"
+    meaning_vi: "đi công tác"
+    chunk: "I'm here on business."
+    tags: [travel, immigration]
+  - term: "How long are you staying"
+    ipa: "/haʊ lɒŋ ɑːr juː ˈsteɪɪŋ/"
+    meaning_vi: "anh chị ở lại bao lâu"
+    chunk: "How long are you staying?"
+    tags: [travel, immigration]
+  - term: "boarding gate"
+    ipa: "/ˈbɔːrdɪŋ ɡeɪt/"
+    meaning_vi: "cửa ra máy bay"
+    chunk: "Where is the boarding gate?"
+    tags: [travel, airport]
+
+sentence_patterns:
+  - pattern: "I'm here on {reason}."
+    meaning_vi: "Tôi tới đây để {reason}."
+    slots:
+      reason: ["business", "holiday", "a conference"]
+  - pattern: "{duration}, then I fly home."
+    meaning_vi: "{duration}, rồi tôi bay về."
+    slots:
+      duration: ["Five days", "Two weeks", "One week"]
+
+dialogue:
+  context_vi: >
+    Xuống máy bay ở Singapore, xếp hàng nhập cảnh. Nhân viên hỏi rất nhanh và
+    chỉ cần câu trả lời ngắn — dài dòng lại làm họ hỏi thêm.
+  turns:
+    - speaker: "Officer"
+      en: "Passport, please. What's the purpose of your visit?"
+      vi: "Cho xem hộ chiếu. Mục đích chuyến đi của anh là gì?"
+    - speaker: "You"
+      en: "I'm here on business."
+      vi: "Tôi đi công tác."
+    - speaker: "Officer"
+      en: "How long are you staying?"
+      vi: "Anh ở lại bao lâu?"
+    - speaker: "You"
+      en: "Five days, then I fly home."
+      vi: "Năm ngày, rồi tôi bay về."
+    - speaker: "Officer"
+      en: "Where are you staying?"
+      vi: "Anh ở đâu?"
+    - speaker: "You"
+      en: "At the Marina Hotel. Here's the booking."
+      vi: "Ở khách sạn Marina. Đây là phiếu đặt phòng."
+    - speaker: "Officer"
+      en: "Enjoy your stay."
+      vi: "Chúc anh có chuyến đi tốt."
+
+listening:
+  context_vi: >
+    Nghe hai đoạn: quầy làm thủ tục và quầy nhập cảnh. Chú ý bốn câu hỏi lặp lại
+    ở mọi sân bay — nghe quen bốn câu này là qua được cả hai quầy.
+  speed: 0.9
+  voice: en_US_female
+  transcript_en: "Any bags to check in? Just one carry-on. Window or aisle? Aisle, please. Your gate is B12, boarding at seven forty. Next, please. What's the purpose of your visit? I'm here on holiday. How long are you staying? Two weeks."
+  transcript_vi: "Anh có hành lý ký gửi không? Chỉ một túi xách tay. Ghế cạnh cửa sổ hay lối đi? Lối đi ạ. Cửa của anh là B12, lên máy bay lúc bảy giờ bốn mươi. Người tiếp theo. Mục đích chuyến đi của chị? Tôi đi du lịch. Chị ở lại bao lâu? Hai tuần."
+  questions:
+    - kind: mcq_listen
+      prompt_vi: "Cửa ra máy bay là cửa nào?"
+      choices: ["B12", "B20", "A12"]
+      answer: 0
+      difficulty: 2
+      skill: Listening
+    - kind: mcq_listen
+      prompt_vi: "Người thứ hai đi với mục đích gì?"
+      choices: ["Công tác", "Du lịch", "Thăm người thân"]
+      answer: 1
+      difficulty: 1
+      skill: Listening
+
+speaking_drills:
+  - kind: read_aloud
+    expected_text: "I'm here on business."
+    prompt_vi: "Câu trả lời nhập cảnh. Ngắn là tốt — dài dòng làm họ hỏi thêm."
+    ipa: "/aɪm hɪr ɒn ˈbɪznəs/"
+    focus_phonemes: ["h", "z"]
+  - kind: read_aloud
+    expected_text: "Just one carry-on."
+    prompt_vi: "Nói hành lý. Nối hai chữ carry-on thành một cụm liền."
+    ipa: "/dʒʌst wʌn ˈkæri ɒn/"
+    focus_phonemes: ["dʒ", "r"]
+  - kind: shadow
+    expected_text: "What's the purpose of your visit?"
+    prompt_vi: "Câu nhân viên hỏi. Trọng âm chữ purpose ở âm đầu: PUR-pose."
+    ipa: "/wɒts ðə ˈpɜːrpəs əv jɔːr ˈvɪzɪt/"
+    focus_phonemes: ["ɜːr", "z"]
+  - kind: shadow
+    expected_text: "Where is the boarding gate?"
+    prompt_vi: "Hỏi cửa ra máy bay. Âm /ɔːr/ trong boarding kéo dài."
+    ipa: "/wer ɪz ðə ˈbɔːrdɪŋ ɡeɪt/"
+    focus_phonemes: ["ɔːr", "ɡ"]
+  - kind: respond
+    prompt_en: "What's the purpose of your visit?"
+    prompt_vi: "Nhân viên nhập cảnh hỏi mục đích. Trả lời ngắn gọn."
+    accept_patterns:
+      - "on business"
+      - "on holiday"
+      - "I'm here"
+
+reading:
+  kind: chat
+  context_vi: >
+    Thẻ lên máy bay. Đọc lướt để biết ra cửa nào và mấy giờ.
+  text_en: |
+    BOARDING PASS
+    Passenger: TRAN VAN HOA
+    Flight: SQ176   Seat: 24C (aisle)
+    From: HAN   To: SIN
+    Gate: B12   Boarding: 07:40   Departure: 08:15
+
+    Gate closes 10 minutes before departure.
+  text_vi: |
+    THẺ LÊN MÁY BAY
+    Hành khách: TRAN VAN HOA
+    Chuyến: SQ176   Ghế: 24C (lối đi)
+    Từ: HAN   Đến: SIN
+    Cửa: B12   Lên máy bay: 07:40   Khởi hành: 08:15
+
+    Cửa đóng trước giờ bay 10 phút.
+  questions:
+    - kind: mcq_read
+      prompt_en: "What time does the gate close?"
+      choices: ["07:40", "08:15", "08:05"]
+      answer: 2
+      difficulty: 3
+      reading_skill: detail
+      skill: Reading
+    - kind: mcq_read
+      prompt_en: "What kind of seat is 24C?"
+      choices: ["Aisle", "Window", "Middle"]
+      answer: 0
+      difficulty: 1
+      reading_skill: scan
+      skill: Reading
+
+writing:
+  kind: FillBlank
+  prompt_vi: "Điền hai chỗ trống: câu nói mục đích và câu nói thời gian ở lại."
+  prompt_en: "I'm here on ___. Five ___, then I fly home."
+  blanks:
+    - ["business"]
+    - ["days"]
+  hint_vi: "Chỗ đầu là từ chỉ công việc. Chỗ sau là đơn vị thời gian ngắn hơn tuần."
+  sample_en: "I'm here on business. Five days, then I fly home."
+
+quiz:
+  - kind: mcq
+    prompt_vi: "\"Window or aisle?\" là hỏi gì?"
+    choices: ["Cửa sổ hay cửa ra", "Ghế cạnh cửa sổ hay cạnh lối đi", "Đi hay ở lại"]
+    answer: 1
+    difficulty: 2
+    skill: Listening
+  - kind: mcq
+    prompt_vi: "Đi công tác thì trả lời nhập cảnh thế nào?"
+    choices: ["I work here", "I'm here on business", "I come for job"]
+    answer: 1
+    difficulty: 2
+    skill: Speaking
+  - kind: mcq
+    prompt_vi: "Vì sao nên trả lời NGẮN ở quầy nhập cảnh?"
+    choices: ["Vì quy định cấm nói dài", "Vì nhân viên không hiểu câu dài", "Vì câu dài dễ tạo thêm câu hỏi, mà mỗi câu hỏi thêm là thêm thời gian"]
+    answer: 2
+    difficulty: 3
+    skill: Reading
+  - kind: mcq
+    prompt_vi: "\"Carry-on\" nghĩa là gì?"
+    choices: ["Hành lý xách tay", "Hành lý ký gửi", "Hàng quá khổ"]
+    answer: 0
+    difficulty: 1
+    skill: Reading
+
+explanation:
+  why_vi: >
+    Sân bay là nơi đầu tiên bạn phải nói tiếng Anh một mình, không có đồng nghiệp đỡ lời.
+    Nhân viên hỏi nhanh vì sau bạn còn hai trăm người. Người Việt hay trả lời dài để tỏ ra
+    hợp tác, nhưng câu dài lại làm nhân viên hỏi thêm, và hàng phía sau càng dài.
+  how_vi: >
+    Bốn câu hỏi lặp lại ở mọi sân bay: hành lý, chỗ ngồi, mục đích chuyến đi, ở lại bao lâu.
+    Mỗi câu trả lời bằng một cụm ngắn: "Just one carry-on", "Aisle, please",
+    "I'm here on business", "Five days". Không cần câu đầy đủ chủ ngữ vị ngữ.
+  contrast_vi: >
+    "On business" là đi công tác, "on holiday" là đi chơi. Chọn đúng một trong hai là đủ —
+    nhân viên nhập cảnh chỉ cần biết bạn thuộc nhóm nào để đóng đúng loại dấu.
+
+common_mistakes:
+  - mistake: "Trả lời nhập cảnh bằng cả một đoạn dài"
+    why_vi: >
+      Người Việt sợ bị nghi ngờ nên giải thích thật kỹ. Nhưng nhân viên chỉ cần một từ khoá,
+      và mỗi chi tiết thừa lại mở ra một câu hỏi mới.
+    fix_vi: "Trả lời đúng thứ được hỏi, dừng lại. Họ cần thêm thì họ sẽ hỏi."
+  - mistake: "Đọc \"aisle\" thành /ây-sồ/"
+    why_vi: >
+      Chữ s trong aisle hoàn toàn câm, giống chữ aisle trong siêu thị. Nhân viên hỏi câu này
+      ở mọi chuyến bay nên nghe nhầm là chọn nhầm ghế.
+    fix_vi: "Đọc như chữ \"I'll\": /aɪl/."
+  - mistake: "Nói \"I go to business\" thay vì \"I'm here on business\""
+    why_vi: >
+      Dịch thẳng từ "tôi đi công tác". Người nghe hiểu được nhưng đây là cụm cố định,
+      và dùng đúng cụm thì cuộc trao đổi kết thúc sau ba giây.
+    fix_vi: "Học nguyên cụm \"I'm here on business\" hoặc \"on holiday\". Chỉ đổi một từ cuối."
+
+memory_trick_vi: >
+  Bốn câu ở mọi sân bay: HÀNH LÝ "Just one carry-on", GHẾ "Aisle, please",
+  MỤC ĐÍCH "I'm here on business", BAO LÂU "Five days". Ngắn là đúng.

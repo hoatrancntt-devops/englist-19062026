@@ -19,6 +19,16 @@ public class UserProfile : Entity, IConcurrencyStamped
     public LearningTrack PrimaryTrack { get; set; } = LearningTrack.Infrastructure;
 
     /// <summary>
+    /// Học viên chọn "tất cả lĩnh vực" thay vì một nhánh.
+    ///
+    /// Cần cờ RIÊNG chứ không mượn một giá trị của <see cref="LearningTrack"/>: nhánh nào cũng
+    /// là nhánh có bài, nên mượn giá trị nào thì engine cũng sẽ ưu tiên đúng nhánh đó — và lời
+    /// hứa "trộn mọi chủ đề" thành sai trong im lặng. Bật cờ này thì engine bỏ hẳn bước ưu tiên
+    /// theo nhánh, xem PrerequisiteEngine.ChooseNext.
+    /// </summary>
+    public bool PreferAllTracks { get; set; }
+
+    /// <summary>
     /// Chế độ học: đủ bốn kỹ năng hay chỉ một kỹ năng.
     /// Đổi chế độ KHÔNG xoá tiến độ đã có — bước đã đạt vẫn giữ nguyên điểm.
     /// </summary>

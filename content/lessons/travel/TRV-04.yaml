@@ -1,0 +1,258 @@
+schema_version: 1
+code: TRV-04
+slug: khi-chuyen-di-hong-viec
+title_vi: "Khi chuyến đi hỏng việc — lỡ chuyến, mất hành lý, cần bác sĩ"
+title_en: "When things go wrong"
+
+layer: Life
+track: Travel
+level: A2
+unit_code: U-TR1
+order_index: 4
+estimated_minutes: 12
+
+illustration: confused-listener
+
+objective_vi: >
+  Xử lý ba tình huống xấu hay gặp nhất khi đi một mình: lỡ chuyến bay,
+  mất hành lý, và cần thuốc hoặc bác sĩ.
+
+objective_observable: >
+  Nêu được vấn đề kèm yêu cầu cụ thể trong 3 trên 4 drill, và mô tả đúng một triệu chứng.
+
+mastery_weights:
+  Listening: 0.30
+  Speaking: 0.35
+  Reading: 0.20
+  Writing: 0.15
+
+prerequisites:
+  - lesson: TRV-03
+    min_mastery: 60
+    kind: Hard
+
+vocabulary:
+  - term: "I missed my flight"
+    ipa: "/aɪ mɪst maɪ flaɪt/"
+    meaning_vi: "tôi lỡ chuyến bay"
+    chunk: "I missed my flight. What are my options?"
+    tags: [travel, problem]
+  - term: "What are my options"
+    ipa: "/wɒt ɑːr maɪ ˈɒpʃnz/"
+    meaning_vi: "tôi có những cách nào (câu mở ra giải pháp)"
+    chunk: "What are my options?"
+    tags: [travel, problem, core]
+  - term: "my luggage didn't arrive"
+    ipa: "/maɪ ˈlʌɡɪdʒ ˈdɪdnt əˈraɪv/"
+    meaning_vi: "hành lý của tôi không tới"
+    chunk: "My luggage didn't arrive."
+    tags: [travel, problem]
+  - term: "the next available"
+    ipa: "/ðə nekst əˈveɪləbl/"
+    meaning_vi: "chuyến gần nhất còn chỗ"
+    chunk: "Put me on the next available flight."
+    tags: [travel, problem]
+  - term: "I don't feel well"
+    ipa: "/aɪ doʊnt fiːl wel/"
+    meaning_vi: "tôi thấy không khoẻ"
+    chunk: "I don't feel well. I have a fever."
+    tags: [travel, health]
+  - term: "Is there a pharmacy"
+    ipa: "/ɪz ðer ə ˈfɑːrməsi/"
+    meaning_vi: "gần đây có hiệu thuốc không"
+    chunk: "Is there a pharmacy nearby?"
+    tags: [travel, health]
+
+sentence_patterns:
+  - pattern: "{problem}. What are my options?"
+    meaning_vi: "{problem}. Tôi có những cách nào?"
+    slots:
+      problem: ["I missed my flight", "My luggage didn't arrive", "My card was declined"]
+  - pattern: "I have a {symptom}."
+    meaning_vi: "Tôi bị {symptom}."
+    slots:
+      symptom: ["fever", "headache", "stomach ache"]
+
+dialogue:
+  context_vi: >
+    Kẹt xe làm bạn tới sân bay muộn hai mươi phút và cửa đã đóng. Bạn có cuộc họp
+    sáng mai ở nước kia. Hoảng lên thì không giải quyết được gì.
+  turns:
+    - speaker: "You"
+      en: "Excuse me, I missed my flight. What are my options?"
+      vi: "Xin lỗi, tôi lỡ chuyến bay. Tôi có những cách nào ạ?"
+    - speaker: "Agent"
+      en: "Let me check. There's one at 14:20 with seats left."
+      vi: "Để tôi kiểm tra. Có một chuyến 14:20 còn chỗ."
+    - speaker: "You"
+      en: "Put me on the next available flight, please. Is there a fee?"
+      vi: "Cho tôi lên chuyến gần nhất còn chỗ. Có mất phí không ạ?"
+    - speaker: "Agent"
+      en: "Eighty dollars change fee. Same booking, new boarding pass."
+      vi: "Phí đổi tám mươi đô. Cùng mã đặt chỗ, thẻ lên máy bay mới."
+    - speaker: "You"
+      en: "That's fine. One more thing — my luggage is already checked in."
+      vi: "Vậy được. Còn một việc nữa — hành lý tôi đã ký gửi rồi."
+    - speaker: "Agent"
+      en: "We'll pull it and move it to the new flight. Don't worry."
+      vi: "Bọn tôi sẽ lấy ra và chuyển sang chuyến mới. Anh yên tâm."
+
+listening:
+  context_vi: >
+    Nghe một lượt báo mất hành lý. Chú ý ba thông tin nhân viên cần —
+    có sẵn ba thứ đó thì xong trong hai phút.
+  speed: 0.9
+  voice: en_US_female
+  transcript_en: "My luggage didn't arrive. Do you have your baggage tag? Yes, here. And your flight number? SQ176 from Hanoi. Right, it's still in Hanoi. It arrives tonight and we deliver to your hotel tomorrow morning."
+  transcript_vi: "Hành lý của tôi không tới. Anh có phiếu hành lý không? Có, đây ạ. Số hiệu chuyến bay? SQ176 từ Hà Nội. Vâng, nó vẫn ở Hà Nội. Tối nay nó tới và sáng mai bọn tôi giao tới khách sạn."
+  questions:
+    - kind: mcq_listen
+      prompt_vi: "Hành lý đang ở đâu?"
+      choices: ["Ở Hà Nội", "Ở sân bay đến", "Chưa biết"]
+      answer: 0
+      difficulty: 2
+      skill: Listening
+    - kind: mcq_listen
+      prompt_vi: "Hành lý sẽ được giao khi nào?"
+      choices: ["Tối nay", "Khách phải tự ra lấy", "Sáng mai tới khách sạn"]
+      answer: 2
+      difficulty: 2
+      skill: Listening
+
+speaking_drills:
+  - kind: read_aloud
+    expected_text: "I missed my flight. What are my options?"
+    prompt_vi: "Hai câu này đi liền nhau. Câu hai mới là câu mở ra giải pháp."
+    ipa: "/aɪ mɪst maɪ flaɪt wɒt ɑːr maɪ ˈɒpʃnz/"
+    focus_phonemes: ["st", "ʃn"]
+  - kind: read_aloud
+    expected_text: "My luggage didn't arrive."
+    prompt_vi: "Báo mất hành lý. Âm /dʒ/ giữa chữ luggage phải rung."
+    ipa: "/maɪ ˈlʌɡɪdʒ ˈdɪdnt əˈraɪv/"
+    focus_phonemes: ["dʒ", "v"]
+  - kind: shadow
+    expected_text: "Put me on the next available flight."
+    prompt_vi: "Nói rõ mình muốn gì. Trọng âm available ở âm thứ hai: a-VAI-lable."
+    ipa: "/pʊt miː ɒn ðə nekst əˈveɪləbl/"
+    focus_phonemes: ["v", "bl"]
+  - kind: shadow
+    expected_text: "I don't feel well. I have a fever."
+    prompt_vi: "Nói triệu chứng. Ngắn và cụ thể hơn là kể lể dài dòng."
+    ipa: "/aɪ doʊnt fiːl wel aɪ hæv ə ˈfiːvər/"
+    focus_phonemes: ["f", "v"]
+  - kind: respond
+    prompt_en: "I'm sorry, that gate is closed. Your flight has departed."
+    prompt_vi: "Bạn vừa lỡ chuyến. Hỏi cách xử lý."
+    accept_patterns:
+      - "What are my options"
+      - "next available"
+      - "missed my flight"
+
+reading:
+  kind: chat
+  context_vi: >
+    Phiếu báo mất hành lý. Đọc để biết mình được gì và phải làm gì tiếp.
+  text_en: |
+    PROPERTY IRREGULARITY REPORT
+    Reference: SIN-4471
+    Bag: 1 black suitcase
+    Status: Located in HAN, arriving tonight 22:10
+
+    Delivery: to your hotel, expected before 10:00 tomorrow.
+    Immediate expenses: up to $100 for essentials. Keep receipts.
+    Track: airline.com/baggage using the reference above.
+  text_vi: |
+    BIÊN BẢN BẤT THƯỜNG HÀNH LÝ
+    Mã: SIN-4471
+    Kiện: 1 vali đen
+    Trạng thái: Đang ở HAN, tối nay 22:10 tới
+
+    Giao hàng: tới khách sạn, dự kiến trước 10:00 ngày mai.
+    Chi phí khẩn cấp: tối đa 100 đô cho đồ thiết yếu. Giữ hoá đơn.
+    Tra cứu: airline.com/baggage bằng mã ở trên.
+  questions:
+    - kind: mcq_read
+      prompt_en: "How much can the passenger spend on essentials?"
+      choices: ["Up to $100", "Nothing", "Up to $50"]
+      answer: 0
+      difficulty: 1
+      reading_skill: scan
+      skill: Reading
+    - kind: mcq_read
+      prompt_en: "What must the passenger keep?"
+      choices: ["The boarding pass", "Receipts", "The suitcase key"]
+      answer: 1
+      difficulty: 2
+      reading_skill: scan
+      skill: Reading
+
+writing:
+  kind: FillBlank
+  prompt_vi: "Điền hai chỗ trống: câu báo sự cố và câu hỏi cách xử lý."
+  prompt_en: "My luggage didn't ___. What are my ___?"
+  blanks:
+    - ["arrive"]
+    - ["options"]
+  hint_vi: "Chỗ đầu là động từ nghĩa là tới nơi. Chỗ sau là danh từ số nhiều nghĩa là các lựa chọn."
+  sample_en: "My luggage didn't arrive. What are my options?"
+
+quiz:
+  - kind: mcq
+    prompt_vi: "Câu nào mở ra giải pháp nhanh nhất khi có sự cố?"
+    choices: ["This is terrible", "Why did this happen?", "What are my options?"]
+    answer: 2
+    difficulty: 2
+    skill: Speaking
+  - kind: mcq
+    prompt_vi: "Báo mất hành lý cần sẵn ba thứ gì?"
+    choices: ["Hộ chiếu, vé, tiền", "Phiếu hành lý, số hiệu chuyến bay, địa chỉ khách sạn", "Ảnh vali, hoá đơn mua vali, bảo hiểm"]
+    answer: 1
+    difficulty: 3
+    skill: Reading
+  - kind: mcq
+    prompt_vi: "\"The next available flight\" nghĩa là gì?"
+    choices: ["Chuyến gần nhất còn chỗ", "Chuyến rẻ nhất", "Chuyến ngày mai"]
+    answer: 0
+    difficulty: 2
+    skill: Listening
+  - kind: mcq
+    prompt_vi: "Thấy sốt, cần mua thuốc. Nói gì?"
+    choices: ["I am hot", "Give me medicine", "I have a fever. Is there a pharmacy nearby?"]
+    answer: 2
+    difficulty: 2
+    skill: Speaking
+
+explanation:
+  why_vi: >
+    Sự cố khi đi một mình là lúc tiếng Anh khó nhất: bạn đang lo, người kia đang bận, và
+    không có ai dịch giúp. Người Việt trong tình huống này hay kể lại toàn bộ câu chuyện
+    từ đầu — kẹt xe ra sao, tại sao muộn — trong khi nhân viên chỉ cần biết hai điều:
+    chuyện gì xảy ra và bạn muốn gì.
+  how_vi: >
+    Một công thức cho cả ba tình huống: NÊU VẤN ĐỀ bằng một câu ngắn, rồi hỏi
+    "What are my options?" Câu thứ hai là câu quan trọng nhất — nó chuyển cuộc trao đổi
+    từ than phiền sang giải quyết, và nhân viên sẽ liệt kê cho bạn chọn.
+  contrast_vi: >
+    "Why did this happen?" không giúp gì cả — nhân viên quầy không gây ra sự cố và
+    không đổi được quá khứ. "What are my options?" thì họ trả lời được ngay.
+
+common_mistakes:
+  - mistake: "Kể lại toàn bộ câu chuyện trước khi nói mình cần gì"
+    why_vi: >
+      Tâm lý muốn được thông cảm nên kể từ đầu. Nhưng người ở quầy có hàng dài phía sau,
+      và thông tin họ cần chỉ là sự việc cộng yêu cầu.
+    fix_vi: "Một câu sự việc, một câu yêu cầu. Chi tiết để dành cho lúc họ hỏi thêm."
+  - mistake: "To tiếng khi hoảng"
+    why_vi: >
+      Lo lắng dễ thành cáu, và nhân viên đang có quyền quyết định giúp bạn tới đâu.
+      Bình tĩnh không phải phép lịch sự suông, nó thật sự đổi kết quả.
+    fix_vi: "Giữ giọng đều và dùng \"What are my options?\" — câu này khiến cả hai cùng nhìn về phía trước."
+  - mistake: "Đọc \"luggage\" thành /lắt-ga/"
+    why_vi: >
+      Âm /dʒ/ cuối bị bỏ vì tiếng Việt không có. Đây là từ chính khi báo mất hành lý
+      nên nghe nhầm là mất thêm vài phút giải thích.
+    fix_vi: "Kết thúc bằng /dʒ/ như chữ j: /ˈlʌ-ɡɪdʒ/."
+
+memory_trick_vi: >
+  Mọi sự cố dùng chung một công thức hai câu: CHUYỆN GÌ — một câu ngắn — rồi
+  "What are my options?" Câu thứ hai biến than phiền thành giải pháp.

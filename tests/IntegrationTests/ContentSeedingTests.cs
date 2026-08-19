@@ -25,9 +25,9 @@ public class ContentSeedingTests(ApiFactory api)
         var items = await db.LessonItems.CountAsync();
         var forms = await db.PlacementForms.CountAsync();
 
-        Assert.Equal(70, lessons);
-        Assert.Equal(490, activities);
-        Assert.Equal(666, items);
+        Assert.Equal(76, lessons);
+        Assert.Equal(532, activities);
+        Assert.Equal(714, items);
         Assert.Equal(2, forms);
     }
 
@@ -45,7 +45,7 @@ public class ContentSeedingTests(ApiFactory api)
         Assert.Empty(report.Problems);
         Assert.Equal(0, report.Inserted);
         Assert.Equal(0, report.Updated);
-        Assert.Equal(70, report.Unchanged);
+        Assert.Equal(76, report.Unchanged);
 
         // Id giữ nguyên là bằng chứng seeder upsert chứ không xoá rồi tạo lại — nếu tạo lại,
         // khoá ngoại từ hàng đợi ôn tập của học viên sẽ bị cascade xoá theo.
@@ -83,7 +83,7 @@ public class ContentSeedingTests(ApiFactory api)
             .Select(l => l.Illustration)
             .ToListAsync();
 
-        Assert.Equal(70, illustrations.Count);
+        Assert.Equal(76, illustrations.Count);
         Assert.DoesNotContain(illustrations, i => string.IsNullOrWhiteSpace(i));
     }
 

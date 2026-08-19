@@ -1,0 +1,263 @@
+schema_version: 1
+code: TRV-05
+slug: hoi-duong-va-kham-pha-thanh-pho
+title_vi: "Hỏi đường và khám phá thành phố lạ"
+title_en: "Asking directions and exploring"
+
+layer: Life
+track: Travel
+level: A2
+unit_code: U-TR1
+order_index: 5
+estimated_minutes: 11
+
+illustration: map-directions
+
+objective_vi: >
+  Hỏi đường và HIỂU được câu trả lời, hỏi người địa phương nên đi đâu,
+  và nói chuyện dăm câu với người lạ mà không cụt ngủn.
+
+objective_observable: >
+  Hỏi đường và nhắc lại đúng chỉ dẫn trong 3 trên 4 drill, và hỏi được một gợi ý địa phương.
+
+mastery_weights:
+  Listening: 0.40
+  Speaking: 0.35
+  Reading: 0.15
+  Writing: 0.10
+
+prerequisites:
+  - lesson: TRV-04
+    min_mastery: 60
+    kind: Hard
+
+vocabulary:
+  - term: "How do I get to"
+    ipa: "/haʊ duː aɪ ɡet tuː/"
+    meaning_vi: "làm sao để tới"
+    chunk: "How do I get to the museum?"
+    tags: [travel, directions]
+  - term: "go straight"
+    ipa: "/ɡoʊ streɪt/"
+    meaning_vi: "đi thẳng"
+    chunk: "Go straight for two blocks."
+    tags: [travel, directions]
+  - term: "turn left at"
+    ipa: "/tɜːrn left æt/"
+    meaning_vi: "rẽ trái ở"
+    chunk: "Turn left at the traffic lights."
+    tags: [travel, directions]
+  - term: "on your right"
+    ipa: "/ɒn jɔːr raɪt/"
+    meaning_vi: "bên tay phải của bạn"
+    chunk: "It's on your right, next to the bank."
+    tags: [travel, directions]
+  - term: "So, straight then left"
+    ipa: "/soʊ streɪt ðen left/"
+    meaning_vi: "vậy là đi thẳng rồi rẽ trái (nhắc lại để chắc)"
+    chunk: "So, straight then left. Got it."
+    tags: [travel, core]
+  - term: "Any places you'd recommend"
+    ipa: "/ˈeni ˈpleɪsɪz juːd ˌrekəˈmend/"
+    meaning_vi: "có chỗ nào anh chị gợi ý không"
+    chunk: "Any places you'd recommend?"
+    tags: [travel, social]
+
+sentence_patterns:
+  - pattern: "How do I get to {place}?"
+    meaning_vi: "Làm sao để tới {place}?"
+    slots:
+      place: ["the museum", "the old town", "the night market"]
+  - pattern: "So, {step one} then {step two}. Got it."
+    meaning_vi: "Vậy là {step one} rồi {step two}. Rõ rồi."
+    slots:
+      step one: ["straight", "left at the lights", "past the bank"]
+      step two: ["left", "right", "straight for two blocks"]
+
+dialogue:
+  context_vi: >
+    Chiều thứ Bảy, bạn rảnh nửa ngày ở thành phố lạ. Điện thoại gần hết pin
+    nên bản đồ không dùng được, và bạn phải hỏi người đi đường.
+  turns:
+    - speaker: "You"
+      en: "Excuse me, how do I get to the old town?"
+      vi: "Xin lỗi, làm sao để tới khu phố cổ ạ?"
+    - speaker: "Local"
+      en: "Go straight for two blocks, then turn left at the traffic lights."
+      vi: "Đi thẳng hai dãy nhà, rồi rẽ trái ở đèn giao thông."
+    - speaker: "You"
+      en: "So, straight then left. Got it. Is it far?"
+      vi: "Vậy là đi thẳng rồi rẽ trái. Rõ rồi. Có xa không ạ?"
+    - speaker: "Local"
+      en: "About ten minutes walking. It's on your right, next to the bank."
+      vi: "Đi bộ khoảng mười phút. Nó ở bên tay phải, cạnh ngân hàng."
+    - speaker: "You"
+      en: "Thanks. Any places you'd recommend while I'm there?"
+      vi: "Cảm ơn. Ở đó có chỗ nào anh gợi ý không ạ?"
+    - speaker: "Local"
+      en: "The night market opens at six. Better than the tourist restaurants."
+      vi: "Chợ đêm mở lúc sáu giờ. Ngon hơn mấy nhà hàng cho khách du lịch."
+
+listening:
+  context_vi: >
+    Nghe một lượt hỏi đường. Chú ý cách người hỏi NHẮC LẠI chỉ dẫn —
+    đó là bước cứu bạn khỏi đi nhầm cả cây số.
+  speed: 0.9
+  voice: en_US_female
+  transcript_en: "How do I get to the train station? Go past the bank, then turn right. It's about five minutes. So, past the bank then right. Got it. Is there a shortcut? Not really, but the park path is nicer."
+  transcript_vi: "Làm sao để tới ga tàu ạ? Đi qua ngân hàng, rồi rẽ phải. Khoảng năm phút. Vậy là qua ngân hàng rồi rẽ phải. Rõ rồi. Có đường tắt không ạ? Không hẳn, nhưng đi lối công viên đẹp hơn."
+  questions:
+    - kind: mcq_listen
+      prompt_vi: "Sau khi đi qua ngân hàng thì làm gì?"
+      choices: ["Rẽ trái", "Đi thẳng", "Rẽ phải"]
+      answer: 2
+      difficulty: 2
+      skill: Listening
+    - kind: mcq_listen
+      prompt_vi: "Người địa phương gợi ý gì thêm?"
+      choices: ["Đi lối công viên đẹp hơn", "Đi taxi cho nhanh", "Chờ tới chiều hãy đi"]
+      answer: 0
+      difficulty: 2
+      skill: Listening
+
+speaking_drills:
+  - kind: read_aloud
+    expected_text: "How do I get to the old town?"
+    prompt_vi: "Câu hỏi đường chuẩn. Ba chữ đầu nói dính thành /haʊdəwaɪ/."
+    ipa: "/haʊ duː aɪ ɡet tuː ðə oʊld taʊn/"
+    focus_phonemes: ["ɡ", "t"]
+  - kind: read_aloud
+    expected_text: "So, straight then left. Got it."
+    prompt_vi: "Nhắc lại chỉ dẫn. Bước này quan trọng hơn cả câu hỏi."
+    ipa: "/soʊ streɪt ðen left ɡɒt ɪt/"
+    focus_phonemes: ["str", "ð"]
+  - kind: shadow
+    expected_text: "Turn left at the traffic lights."
+    prompt_vi: "Câu bạn sẽ nghe. Cụm /tr/ trong traffic bật liền, không tách."
+    ipa: "/tɜːrn left æt ðə ˈtræfɪk laɪts/"
+    focus_phonemes: ["tr", "ts"]
+  - kind: shadow
+    expected_text: "Any places you'd recommend?"
+    prompt_vi: "Câu mở ra gợi ý địa phương. Trọng âm recommend ở âm cuối: re-com-MEND."
+    ipa: "/ˈeni ˈpleɪsɪz juːd ˌrekəˈmend/"
+    focus_phonemes: ["r", "nd"]
+  - kind: respond
+    prompt_en: "Go straight for two blocks, then turn left."
+    prompt_vi: "Người ta vừa chỉ đường. Nhắc lại để xác nhận."
+    accept_patterns:
+      - "So"
+      - "straight"
+      - "Got it"
+
+reading:
+  kind: chat
+  context_vi: >
+    Bảng chỉ dẫn du lịch ở quảng trường. Đọc lướt tìm chỗ đáng đi và giờ mở cửa.
+  text_en: |
+    OLD TOWN VISITOR INFO
+
+    City Museum - 300m, on your right past the bank
+    Open 09:00-17:00, closed Mondays
+
+    Night Market - 600m, follow the river
+    Opens 18:00 daily
+
+    Free walking tour - meets here at 10:00 and 15:00
+    No booking needed, tip based.
+  text_vi: |
+    THÔNG TIN DU KHÁCH PHỐ CỔ
+
+    Bảo tàng Thành phố - 300m, bên phải, qua ngân hàng
+    Mở 09:00-17:00, nghỉ thứ Hai
+
+    Chợ đêm - 600m, đi dọc bờ sông
+    Mở 18:00 hằng ngày
+
+    Tour đi bộ miễn phí - tập trung tại đây lúc 10:00 và 15:00
+    Không cần đặt trước, tuỳ tâm tiền tip.
+  questions:
+    - kind: mcq_read
+      prompt_en: "When is the museum closed?"
+      choices: ["Mondays", "Sundays", "After 18:00 daily"]
+      answer: 0
+      difficulty: 1
+      reading_skill: scan
+      skill: Reading
+    - kind: mcq_read
+      prompt_en: "What do you need to join the walking tour?"
+      choices: ["A booking", "Nothing, just show up", "A museum ticket"]
+      answer: 1
+      difficulty: 2
+      reading_skill: scan
+      skill: Reading
+
+writing:
+  kind: FillBlank
+  prompt_vi: "Điền hai chỗ trống: câu hỏi đường và câu nhắc lại chỉ dẫn."
+  prompt_en: "How do I ___ to the museum? So, straight then left. ___ it."
+  blanks:
+    - ["get"]
+    - ["Got"]
+  hint_vi: "Chỗ đầu là động từ trong cụm hỏi đường. Chỗ sau là quá khứ của get, dùng để xác nhận đã hiểu."
+  sample_en: "How do I get to the museum? So, straight then left. Got it."
+
+quiz:
+  - kind: mcq
+    prompt_vi: "Sau khi nghe chỉ đường, việc quan trọng nhất là gì?"
+    choices: ["Cảm ơn thật to", "Nhắc lại chỉ dẫn để xác nhận", "Hỏi thêm người thứ hai"]
+    answer: 1
+    difficulty: 2
+    skill: Speaking
+  - kind: mcq
+    prompt_vi: "\"It's on your right\" nghĩa là gì?"
+    choices: ["Nó ở bên tay phải bạn", "Bạn đi đúng rồi", "Nó ở ngay đây"]
+    answer: 0
+    difficulty: 1
+    skill: Listening
+  - kind: mcq
+    prompt_vi: "Muốn xin gợi ý từ người địa phương thì nói gì?"
+    choices: ["Where is good?", "Any places you'd recommend?", "What I do here?"]
+    answer: 1
+    difficulty: 2
+    skill: Speaking
+  - kind: mcq
+    prompt_vi: "Vì sao nên hỏi người địa phương thay vì chỉ tra mạng?"
+    choices: ["Vì mạng hay sai", "Vì lịch sự", "Vì họ biết chỗ nào khách du lịch không tới, và đó là chỗ đáng đi"]
+    answer: 2
+    difficulty: 3
+    skill: Reading
+
+explanation:
+  why_vi: >
+    Hỏi đường thì ai cũng hỏi được, hiểu câu trả lời mới khó. Người địa phương nói nhanh,
+    dùng mốc mà bạn chưa biết, và chỉ tay thay cho một nửa câu. Người học thường gật rồi
+    đi, đi được trăm mét thì đứng lại vì không nhớ nổi bước thứ hai.
+  how_vi: >
+    Ba bước. HỎI bằng "How do I get to ...?" NGHE và bắt lấy hai thứ duy nhất:
+    hướng đi và một mốc. NHẮC LẠI bằng "So, ... then ... Got it." Bước ba là bước
+    người ta hay bỏ, và cũng là bước quyết định bạn có tới nơi không.
+  contrast_vi: >
+    "Go straight" là đi thẳng, "turn left at ..." là rẽ ở một mốc cụ thể. Mốc quan trọng
+    hơn khoảng cách: người địa phương ước lượng mét rất khác nhau, nhưng "ở đèn giao thông"
+    thì không nhầm được.
+
+common_mistakes:
+  - mistake: "Gật đầu rồi đi mà không nhắc lại"
+    why_vi: >
+      Sợ làm phiền thêm nên nghe xong là cảm ơn rồi đi. Đi được vài chục mét mới nhận ra
+      không nhớ bước thứ hai, và lúc đó người chỉ đường đã đi mất.
+    fix_vi: "Luôn nhắc lại: \"So, straight then left. Got it.\" Mất ba giây, tiết kiệm cả cây số."
+  - mistake: "Hỏi \"Where is the museum?\" thay vì \"How do I get there?\""
+    why_vi: >
+      Câu đầu chỉ hỏi vị trí nên người ta thường chỉ tay và nói "over there".
+      Câu sau hỏi ĐƯỜNG ĐI nên họ mới mô tả từng bước.
+    fix_vi: "Dùng \"How do I get to ...?\" khi bạn cần đường đi chứ không chỉ cần hướng."
+  - mistake: "Đọc \"straight\" thành /s-trết/"
+    why_vi: >
+      Cụm phụ âm /str/ đầu từ không có trong tiếng Việt nên người học chèn thêm nguyên âm
+      vào giữa. Đây là từ xuất hiện trong gần như mọi câu chỉ đường.
+    fix_vi: "Bật ba phụ âm liền một hơi /str/ rồi mới tới nguyên âm: /streɪt/."
+
+memory_trick_vi: >
+  Ba bước hỏi đường: HỎI "How do I get to...", BẮT hướng cộng một mốc,
+  NHẮC LẠI "So, ... then ... Got it." Bước ba là bước đưa bạn tới nơi.

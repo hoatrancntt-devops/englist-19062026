@@ -47,8 +47,17 @@ echo "Se nang len: $NEW_TAG"
 echo ""
 
 # 1. Sao lưu trước khi đụng vào bất cứ thứ gì.
+#
+# Lần cài đầu thì chưa có gì để sao lưu. Kiểm ở đây chứ KHÔNG cho backup.sh tự bỏ qua khi
+# thiếu container: nếu container biến mất giữa hai lần nâng cấp thì đó là sự cố thật và phải
+# dừng lại, không được lặng lẽ nâng cấp đè lên.
 echo "[1/5] Sao luu truoc khi nang cap..."
-./deploy/scripts/backup.sh
+
+if docker ps -a --format '{{.Names}}' | grep -qx "${DB_CONTAINER:-englishforit-db-1}"; then
+    ./deploy/scripts/backup.sh
+else
+    echo "     Chua co ban cai nao tren may nay, bo qua sao luu."
+fi
 
 # 2. Kéo image mới về TRƯỚC khi dừng dịch vụ, để thời gian gián đoạn chỉ là thời gian
 #    khởi động lại chứ không gồm cả thời gian tải image.

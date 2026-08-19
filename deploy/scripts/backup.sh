@@ -46,7 +46,33 @@ echo "  DB   -> $(basename "$DB_FILE") ($DB_SIZE)"
 # Audio sinh lại được từ nội dung, nhưng sinh lại tốn vài phút CPU nên vẫn sao lưu.
 if [ -d "$ROOT_DIR/media" ] && [ -n "$(ls -A "$ROOT_DIR/media" 2>/dev/null)" ]; then
     MEDIA_FILE="$BACKUP_DIR/media-$STAMP.tar.gz"
-    tar -czf "$MEDIA_FILE" -C "$ROOT_DIR" media
+
+    # Thư mục này SỐNG trong lúc sao lưu: học viên thu âm bất cứ lúc nào, và mẻ sinh giọng
+    # cũng ghi vào đây. Gặp file đổi giữa chừng thì tar trả mã 1 — đó là cảnh báo, không
+    # phải hỏng — nhưng `set -e` ở đầu script coi nó là lỗi và giết cả lần triển khai.
+    # Đúng một lần như vậy đã làm hỏng một bản nâng cấp hoàn toàn bình thường.
+    #
+    # Mã 2 trở lên mới là lỗi thật (không ghi được, hết đĩa) và vẫn phải dừng.
+    #
+    # Bỏ qua file .tmp: chúng là bản ghi dở của bước sinh giọng, sao lưu chúng vừa vô nghĩa
+    # vừa chính là thứ hay biến mất giữa chừng.
+    set +e
+    tar --exclude='*.tmp' \
+        --warning=no-file-changed \
+        --warning=no-file-removed \
+        -czf "$MEDIA_FILE" -C "$ROOT_DIR" media
+    TAR_STATUS=$?
+    set -e
+
+    if [ "$TAR_STATUS" -gt 1 ]; then
+        echo "  LOI: khong dong goi duoc media (tar tra ma $TAR_STATUS)" >&2
+        exit "$TAR_STATUS"
+    fi
+
+    if [ "$TAR_STATUS" -eq 1 ]; then
+        echo "  MEDIA: co file doi trong luc dong goi, ban sao luu van dung duoc"
+    fi
+
     echo "  MEDIA -> $(basename "$MEDIA_FILE") ($(du -h "$MEDIA_FILE" | cut -f1))"
 fi
 

@@ -30,6 +30,22 @@ APP_UID="${APP_UID:-1654}"
 
 log() { printf '%s %s\n' "$(date '+%H:%M:%S')" "$*"; }
 
+# Chỉ cho một mẻ chạy tại một thời điểm.
+#
+# Deploy tự gọi script này, và người vận hành cũng có thể chạy tay cùng lúc. Hai tiến trình
+# cùng thấy một đoạn còn thiếu sẽ cùng ghi vào một file tạm, và file thắng cuộc là file bị
+# ghi đè giữa chừng — nghe ra tiếng rẹt rồi im.
+#
+# Khoá để ở /tmp chứ không ở media/: thư mục đó thuộc user của container nên script chạy
+# bằng tài khoản vận hành không tạo file trong đó được.
+LOCK_FILE="/tmp/englishforit-generate-audio.lock"
+exec 9>"$LOCK_FILE"
+
+if ! flock -n 9; then
+    echo "Da co mot luot sinh giong dang chay. Bo qua luot nay."
+    exit 0
+fi
+
 if [ ! -f "$TTS_DIR/manifest.jsonl" ]; then
     echo "Khong thay $TTS_DIR/manifest.jsonl" >&2
     echo "API ghi file nay sau khi seed noi dung. Khoi dong API mot lan roi chay lai." >&2

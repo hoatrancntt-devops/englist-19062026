@@ -33,7 +33,7 @@ Kiểm chứng bằng cách chạy stack trên Docker Desktop và gọi thật q
 |---|---|---|
 | **Khu quản trị** | API đã có (tổng quan, mail, nạp lại nội dung, audit, trạng thái AI); giao diện vẫn là màn giữ chỗ | Màn quản lý nội dung, xem DAG, diff và publish |
 | **Mốc nghề nghiệp** | Tính theo số bài đã thạo | Điều kiện thật: điểm nói, bài viết đạt, roleplay không dùng gợi ý |
-| **Điều hướng Nghe/Nói/Đọc/Viết** | Có trên thanh bên | Chưa có trang tương ứng, bấm vào sẽ không khớp route |
+| ~~**Điều hướng Nghe/Nói/Đọc/Viết**~~ | ~~Có trên thanh bên~~ | Đã xong 19/08/2026: mỗi kỹ năng có trang thật (điểm hiện tại, bài đang mở, nút chỉ học kỹ năng đó) |
 
 ---
 
@@ -42,7 +42,8 @@ Kiểm chứng bằng cách chạy stack trên Docker Desktop và gọi thật q
 Theo thứ tự nên làm:
 
 **Part 2 đã đóng** (19/08/2026). Sáu mục của nó nay nằm ở phần 6b, 6c và 6d.
-Còn nợ lại trong phạm vi Part 2: **audio sinh sẵn** (bước Nghe hiện cho mở lời thoại thay thế).
+**Audio sinh sẵn đã xong** (19/08/2026): Piper sinh WAV theo `media/tts/manifest.jsonl`,
+`/api/v1/media/tts` phục vụ, giao diện lùi về giọng trình duyệt khi đoạn chưa sinh.
 
 **Part 3 — kỹ năng và vận hành**
 7. Dịch vụ nhận dạng giọng nói (container Python): faster-whisper, piper, g2p, chấm 3 trục, nhận xét tiếng Việt

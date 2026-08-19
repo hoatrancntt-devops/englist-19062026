@@ -131,6 +131,20 @@ make reset         # dừng và XOÁ SẠCH dữ liệu (chỉ dùng trên máy 
 
 Muốn hot reload frontend: `make web-dev` (Vite ở cổng 5173, proxy `/api` sang cổng 8080).
 
+### Sinh giọng đọc cho phần Nghe
+
+```bash
+./deploy/scripts/generate-audio.sh
+```
+
+Chạy sau mỗi lần triển khai có thêm hoặc sửa bài. API ghi sẵn danh sách đoạn cần đọc vào
+`media/tts/manifest.jsonl` lúc khởi động; script nạp model Piper một lần rồi đọc cả loạt,
+đặt tên file theo hash của chính đoạn văn bản.
+
+Chạy lại bao nhiêu lần cũng được — đoạn nào đã có file thì bỏ qua. Đoạn chưa sinh thì
+`/api/v1/media/tts` trả 404 và giao diện tự lùi về giọng của trình duyệt, nên bài mới thêm
+vẫn nghe được ngay trong lúc chờ mẻ sinh kế tiếp.
+
 ---
 
 ## Bảo mật

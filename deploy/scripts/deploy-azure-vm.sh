@@ -89,6 +89,18 @@ for _ in $(seq 1 40); do
         echo ""
         echo "Nang cap xong: $CURRENT_TAG -> $NEW_TAG"
         rm -f .env.bak
+
+        # Sinh giọng cho những bài mới thêm. Chạy SAU khi API đã sẵn sàng vì danh sách đoạn
+        # cần đọc do API ghi ra lúc khởi động.
+        #
+        # Không để lỗi ở đây làm hỏng một lần nâng cấp đã thành công: thiếu audio thì phần
+        # Nghe lùi về giọng của trình duyệt, còn báo deploy thất bại sẽ kích hoạt quay lui
+        # một bản đang chạy tốt. Lượt sau chỉ sinh phần còn thiếu nên gần như không tốn gì.
+        if [ -x ./deploy/scripts/generate-audio.sh ]; then
+            echo "Sinh giong cho bai moi (bo qua neu loi)..."
+            ./deploy/scripts/generate-audio.sh || echo "Sinh giong that bai, bo qua." >&2
+        fi
+
         exit 0
     fi
     sleep 5

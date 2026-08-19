@@ -126,7 +126,7 @@ jobs:
 
     environment:
       name: production
-      url: https://study.hoatranlab.io.vn
+      url: https://english-v2.hoatranlab.io.vn
 
     steps:
       - name: Chuẩn bị khoá SSH
@@ -140,30 +140,58 @@ jobs:
           printf '%s\n' "${{ secrets.VPS_KNOWN_HOSTS }}" > ~/.ssh/known_hosts
           chmod 600 ~/.ssh/known_hosts
 
-      - name: Kéo mã nguồn mới và triển khai
+      - name: Triển khai lên từng máy chủ
         env:
           TAG: ${{ needs.images.outputs.tag }}
+
+          # Mỗi dòng một máy. Thêm máy thứ ba chỉ là thêm một dòng ở đây cộng hai secret,
+          # không phải chép cả job ra bản thứ hai.
+          HOSTS: |
+            ${{ secrets.VPS_USER }}@${{ secrets.VPS_HOST }}
+            ${{ secrets.VPS2_USER }}@${{ secrets.VPS2_HOST }}
         run: |
-          set -euo pipefail
-          ssh -o BatchMode=yes "${{ secrets.VPS_USER }}@${{ secrets.VPS_HOST }}" bash -euo pipefail <<REMOTE
-            cd ~/englist
+          set -uo pipefail
+          failed=""
 
-            # Máy chủ phải chạy đúng compose và đúng script của commit đang triển khai,
-            # không phải bản cũ còn sót lại từ lần trước.
-            git fetch --quiet origin main
-            git reset --quiet --hard "$TAG"
+          while read -r target; do
+            [ -z "$target" ] && continue
+            echo "::group::$target"
 
-            # Kiểm tra sẵn sàng phải gọi đúng địa chỉ mà proxy đang nghe. Proxy nghe trên
-            # BIND_ADDRESS (xem docker-compose.vps.yml), nên đọc thẳng từ .env của máy chủ
-            # thay vì ghi cứng ở đây — ghi cứng thì đổi một chỗ là chỗ kia lệch, và biểu hiện
-            # là bản tốt bị quay lui vì tưởng không sẵn sàng.
-            BIND=\$(grep -E '^BIND_ADDRESS=' .env | cut -d= -f2)
-            BIND="\${BIND:-127.0.0.1}"
+            # KHÔNG dừng ở máy đầu tiên hỏng. Một máy chết không phải lý do để máy còn lại
+            # nằm lại bản cũ, và gom hết lỗi rồi báo một lần thì đỡ phải chạy lại để xem
+            # máy thứ hai có sao không.
+            if ssh -o BatchMode=yes "$target" bash -euo pipefail <<REMOTE
+              cd ~/englist
 
-            COMPOSE_OVERLAY=docker-compose.vps.yml \\
-            HEALTH_URL="http://\$BIND:8080/health/ready" \\
-              ./deploy/scripts/deploy-azure-vm.sh "$TAG"
+              # Máy chủ phải chạy đúng compose và đúng script của commit đang triển khai,
+              # không phải bản cũ còn sót lại từ lần trước.
+              git fetch --quiet origin main
+              git reset --quiet --hard "$TAG"
+
+              # Kiểm tra sẵn sàng phải gọi đúng chỗ proxy đang nghe. Địa chỉ và cổng khác nhau
+              # theo từng máy nên đọc thẳng từ .env của máy đó — ghi cứng ở đây thì đổi một
+              # chỗ là chỗ kia lệch, và biểu hiện là bản tốt bị quay lui vì tưởng không sẵn sàng.
+              BIND=\$(grep -E '^BIND_ADDRESS=' .env | cut -d= -f2)
+              PORT=\$(grep -E '^BIND_PORT=' .env | cut -d= -f2)
+
+              COMPOSE_OVERLAY=docker-compose.vps.yml \\
+              HEALTH_URL="http://\${BIND:-127.0.0.1}:\${PORT:-8080}/health/ready" \\
+                ./deploy/scripts/deploy-azure-vm.sh "$TAG"
           REMOTE
+            then
+              echo "$target: xong"
+            else
+              echo "::error::$target trien khai that bai"
+              failed="$failed $target"
+            fi
+
+            echo "::endgroup::"
+          done <<< "$HOSTS"
+
+          if [ -n "$failed" ]; then
+            echo "Cac may that bai:$failed" >&2
+            exit 1
+          fi
 
   web:
     name: Web — lint, typecheck, build

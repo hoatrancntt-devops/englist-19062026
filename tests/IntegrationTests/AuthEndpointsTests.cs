@@ -1,3 +1,7 @@
+using Microsoft.Extensions.DependencyInjection;
+using Microsoft.EntityFrameworkCore;
+using EnglishForIT.Domain.Enums;
+using EnglishForIT.Application.Identity;
 using System.Net;
 using System.Net.Http.Json;
 using System.Text.Json;
@@ -14,6 +18,32 @@ namespace EnglishForIT.IntegrationTests;
 [Collection(ApiCollection.Name)]
 public class AuthEndpointsTests(ApiFactory api)
 {
+    [Fact]
+    public async Task SeedTaiKhoanQuanTriTaoDuocVaKhongGhiDeMatKhauDangDung()
+    {
+        await using var scope = api.NewScope();
+        var auth = scope.ServiceProvider.GetRequiredService<IAuthService>();
+        var db = ApiFactory.Db(scope);
+
+        var email = $"quantri-{Guid.NewGuid():N}@vidu.vn";
+
+        await auth.EnsureAdminAsync(email, "mat-khau-ban-dau-2026", "Quản trị");
+
+        var user = await db.Users.SingleAsync(u => u.Email == email);
+        Assert.True(await db.UserRoles.AnyAsync(r => r.UserId == user.Id && r.Role == UserRole.SuperAdmin));
+
+        // Quản trị viên đổi mật khẩu trên web.
+        Assert.True(await auth.ChangePasswordAsync(user.Id, "mat-khau-ban-dau-2026", "mat-khau-da-doi-2026"));
+
+        // Rồi container khởi động lại, và seed chạy lần nữa với giá trị CŨ còn nằm trong .env.
+        await auth.EnsureAdminAsync(email, "mat-khau-ban-dau-2026", "Quản trị");
+
+        // Mật khẩu mới phải còn nguyên. Ghi đè ở đây nghĩa là mỗi lần khởi động lại, mật khẩu
+        // quản trị âm thầm quay về giá trị trong .env — và người đổi nó tưởng mình đã đổi rồi.
+        Assert.True((await auth.AuthenticateAsync(email, "mat-khau-da-doi-2026", null, null)).Success);
+        Assert.False((await auth.AuthenticateAsync(email, "mat-khau-ban-dau-2026", null, null)).Success);
+    }
+
     [Fact]
     public async Task DangKyTrungEmailTraVeYHetLanDau()
     {

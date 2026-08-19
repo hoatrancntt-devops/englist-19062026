@@ -1,6 +1,7 @@
 using System.Threading.RateLimiting;
 using EnglishForIT.Api.Middleware;
 using EnglishForIT.Api.Modules;
+using EnglishForIT.Application.Identity;
 using EnglishForIT.Infrastructure;
 using EnglishForIT.Infrastructure.Content;
 using EnglishForIT.Infrastructure.Persistence;
@@ -194,6 +195,39 @@ using (var scope = app.Services.CreateScope())
         {
             logger.LogError(ex, "Seed roleplay thất bại. Kịch bản cũ trong DB giữ nguyên, app vẫn chạy.");
         }
+    }
+
+    // Tài khoản quản trị đầu tiên.
+    //
+    // AuthService.EnsureAdminAsync có từ đầu nhưng chưa nơi nào gọi, nên ADMIN_EMAIL và
+    // ADMIN_PASSWORD trong .env.example không có tác dụng gì: triển khai xong là không ai vào
+    // được trang quản trị, và cách duy nhất còn lại là sửa thẳng bảng user_roles bằng SQL.
+    //
+    // Chạy lại nhiều lần không sao: đã có tài khoản thì hàm chỉ bảo đảm vai trò, KHÔNG đặt lại
+    // mật khẩu — đổi mật khẩu trên web xong mà lần khởi động sau bị ghi đè về giá trị trong
+    // .env thì còn tệ hơn là không có bước này.
+    var adminEmail = app.Configuration["ADMIN_EMAIL"];
+    var adminPassword = app.Configuration["ADMIN_PASSWORD"];
+
+    if (!string.IsNullOrWhiteSpace(adminEmail) && !string.IsNullOrWhiteSpace(adminPassword))
+    {
+        try
+        {
+            var auth = scope.ServiceProvider.GetRequiredService<IAuthService>();
+            await auth.EnsureAdminAsync(adminEmail, adminPassword, "Quản trị");
+        }
+        catch (Exception ex)
+        {
+            // Bọc vì cùng lý do với các seeder trên: mật khẩu quá ngắn hoặc email sai định dạng
+            // không được làm sập API và cắt luôn đường vào của học viên.
+            logger.LogError(ex, "Tạo tài khoản quản trị thất bại. App vẫn chạy.");
+        }
+    }
+    else
+    {
+        // Mức thông tin chứ không phải cảnh báo: dev và test cố ý không đặt hai biến này, và
+        // một cảnh báo lặp lại mỗi lần khởi động chỉ dạy người đọc log bỏ qua cảnh báo.
+        logger.LogInformation("Chua dat ADMIN_EMAIL/ADMIN_PASSWORD nen bo qua buoc tao tai khoan quan tri.");
     }
 }
 

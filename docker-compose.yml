@@ -47,6 +47,12 @@ services:
       SecretProtection__MasterKey: ${APP_MASTER_KEY:?APP_MASTER_KEY chua duoc dat trong .env}
       Cookies__Secure: ${COOKIES_SECURE:-true}
       Database__MigrateOnStartup: "true"
+
+      # Tài khoản quản trị đầu tiên. Bỏ trống thì bước tạo bị bỏ qua, xem Program.cs.
+      # Không đặt mặc định ở đây: một mật khẩu mặc định trong file công khai còn tệ hơn
+      # là không có tài khoản nào.
+      ADMIN_EMAIL: ${ADMIN_EMAIL:-}
+      ADMIN_PASSWORD: ${ADMIN_PASSWORD:-}
     volumes:
       # Audio sinh sẵn và file ghi âm. Bind mount để backup bằng tar đơn giản.
       - ./media:/app/media

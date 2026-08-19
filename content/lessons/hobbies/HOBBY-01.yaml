@@ -1,0 +1,251 @@
+schema_version: 1
+code: HOBBY-01
+slug: noi-ve-so-thich-cua-minh
+title_vi: "Nói về sở thích của mình"
+title_en: "Talking about your hobbies"
+
+layer: Life
+track: Hobbies
+level: PreA1
+unit_code: U-H1
+order_index: 1
+estimated_minutes: 11
+
+illustration: coffee-chat
+
+objective_vi: >
+  Trả lời câu "What do you do for fun?" bằng ba câu có nội dung — câu hỏi
+  xuất hiện trong mọi cuộc gặp đầu tiên và là chỗ dễ cụt chuyện nhất.
+
+objective_observable: >
+  Nói được sở thích kèm tần suất và một chi tiết trong 3 trên 4 drill.
+
+mastery_weights:
+  Listening: 0.30
+  Speaking: 0.40
+  Reading: 0.15
+  Writing: 0.15
+
+prerequisites: []
+
+vocabulary:
+  - term: "for fun"
+    ipa: "/fɔːr fʌn/"
+    meaning_vi: "để giải trí, lúc rảnh"
+    chunk: "What do you do for fun?"
+    tags: [hobbies, core]
+  - term: "I'm into"
+    ipa: "/aɪm ˈɪntuː/"
+    meaning_vi: "tôi khoái, tôi mê (tự nhiên hơn I like)"
+    chunk: "I'm into photography."
+    tags: [hobbies, core]
+  - term: "once a week"
+    ipa: "/wʌns ə wiːk/"
+    meaning_vi: "một tuần một lần"
+    chunk: "I play football once a week."
+    tags: [hobbies, time]
+  - term: "I've been doing it for"
+    ipa: "/aɪv biːn ˈduːɪŋ ɪt fɔːr/"
+    meaning_vi: "tôi làm việc đó được ... rồi"
+    chunk: "I've been doing it for two years."
+    tags: [hobbies, time]
+  - term: "not really my thing"
+    ipa: "/nɒt ˈrɪəli maɪ θɪŋ/"
+    meaning_vi: "không hợp gu tôi lắm (từ chối nhẹ)"
+    chunk: "Running is not really my thing."
+    tags: [hobbies, social]
+  - term: "How about you"
+    ipa: "/haʊ əˈbaʊt juː/"
+    meaning_vi: "còn bạn thì sao (câu giữ cuộc nói chuyện)"
+    chunk: "How about you?"
+    tags: [hobbies, social]
+
+sentence_patterns:
+  - pattern: "I'm into {hobby}."
+    meaning_vi: "Tôi mê {hobby}."
+    slots:
+      hobby: ["photography", "cooking", "cycling"]
+  - pattern: "I {activity} {frequency}."
+    meaning_vi: "Tôi {activity} {frequency}."
+    slots:
+      activity: ["play football", "go swimming", "read"]
+      frequency: ["once a week", "every morning", "at weekends"]
+
+dialogue:
+  context_vi: >
+    Bữa trưa với đồng nghiệp mới. Sau vài câu về công việc, họ hỏi bạn làm gì lúc rảnh.
+    Đây là lúc cuộc nói chuyện hoặc mở ra, hoặc tắt ngóm.
+  turns:
+    - speaker: "Anna"
+      en: "So, what do you do for fun?"
+      vi: "Thế lúc rảnh anh làm gì?"
+    - speaker: "You"
+      en: "I'm into photography. I've been doing it for two years."
+      vi: "Tôi mê chụp ảnh. Tôi chụp được hai năm rồi."
+    - speaker: "Anna"
+      en: "Nice. What do you shoot?"
+      vi: "Hay đấy. Anh chụp gì?"
+    - speaker: "You"
+      en: "Mostly street photos, at weekends. How about you?"
+      vi: "Chủ yếu ảnh đường phố, vào cuối tuần. Còn chị?"
+    - speaker: "Anna"
+      en: "I run. Every morning before work."
+      vi: "Tôi chạy bộ. Sáng nào cũng chạy trước giờ làm."
+    - speaker: "You"
+      en: "Every morning? Running is not really my thing."
+      vi: "Sáng nào cũng chạy à? Chạy bộ không hợp gu tôi lắm."
+
+listening:
+  context_vi: >
+    Nghe hai người nói về sở thích. Chú ý cấu trúc ba phần mỗi người dùng:
+    sở thích, tần suất, và một chi tiết.
+  speed: 0.9
+  voice: en_US_female
+  transcript_en: "What do you do for fun? I'm into cooking. I cook every Sunday for my family. Nice. How long have you been doing it? About five years now. How about you? I play badminton once a week."
+  transcript_vi: "Lúc rảnh bạn làm gì? Tôi mê nấu ăn. Chủ nhật nào tôi cũng nấu cho cả nhà. Hay đấy. Bạn nấu được bao lâu rồi? Khoảng năm năm rồi. Còn bạn? Tôi chơi cầu lông một tuần một lần."
+  questions:
+    - kind: mcq_listen
+      prompt_vi: "Người thứ nhất mê gì?"
+      choices: ["Nấu ăn", "Chạy bộ", "Chụp ảnh"]
+      answer: 0
+      difficulty: 1
+      skill: Listening
+    - kind: mcq_listen
+      prompt_vi: "Người thứ hai chơi cầu lông bao lâu một lần?"
+      choices: ["Mỗi ngày", "Một tuần một lần", "Mỗi chủ nhật"]
+      answer: 1
+      difficulty: 2
+      skill: Listening
+
+speaking_drills:
+  - kind: read_aloud
+    expected_text: "I'm into photography."
+    prompt_vi: "Đọc to. Trọng âm chữ photography rơi vào âm thứ hai: pho-TO-graphy."
+    ipa: "/aɪm ˈɪntuː fəˈtɒɡrəfi/"
+    focus_phonemes: ["f", "ɒ"]
+  - kind: read_aloud
+    expected_text: "I play football once a week."
+    prompt_vi: "Nói tần suất. \"Once\" đọc /wʌns/, không phải /on-xơ/."
+    ipa: "/aɪ pleɪ ˈfʊtbɔːl wʌns ə wiːk/"
+    focus_phonemes: ["w", "s"]
+  - kind: shadow
+    expected_text: "I've been doing it for two years."
+    prompt_vi: "Câu nói mình làm được bao lâu. \"I've\" đọc gọn một nhịp."
+    ipa: "/aɪv biːn ˈduːɪŋ ɪt fɔːr tuː jɪrz/"
+    focus_phonemes: ["v", "j"]
+  - kind: shadow
+    expected_text: "Running is not really my thing."
+    prompt_vi: "Từ chối nhẹ. Âm /θ/ trong thing phải đưa lưỡi ra giữa hai hàm răng."
+    ipa: "/ˈrʌnɪŋ ɪz nɒt ˈrɪəli maɪ θɪŋ/"
+    focus_phonemes: ["θ", "ŋ"]
+  - kind: respond
+    prompt_en: "What do you do for fun?"
+    prompt_vi: "Có người hỏi sở thích của bạn. Nói sở thích kèm tần suất."
+    accept_patterns:
+      - "I'm into"
+      - "I like"
+      - "I play"
+
+reading:
+  kind: chat
+  context_vi: >
+    Tin nhắn nhóm rủ lập câu lạc bộ. Để ý ai làm gì và bao lâu một lần.
+  text_en: |
+    Anna: Anyone want to start a weekend club?
+    Minh: I'm into cycling. I ride every Saturday morning.
+    Priya: Cycling is not really my thing, but I'd join a book club.
+    David: I play badminton twice a week. Count me in for anything.
+    Anna: Let's do cycling one week, books the next.
+  text_vi: |
+    Anna: Có ai muốn lập câu lạc bộ cuối tuần không?
+    Minh: Tôi mê đạp xe. Sáng thứ Bảy nào tôi cũng đạp.
+    Priya: Đạp xe không hợp gu tôi, nhưng câu lạc bộ sách thì tôi tham gia.
+    David: Tôi chơi cầu lông hai lần một tuần. Cái gì tôi cũng tham gia.
+    Anna: Vậy tuần này đạp xe, tuần sau đọc sách.
+  questions:
+    - kind: mcq_read
+      prompt_en: "Who does not want to cycle?"
+      choices: ["Minh", "David", "Priya"]
+      answer: 2
+      difficulty: 1
+      reading_skill: scan
+      skill: Reading
+    - kind: mcq_read
+      prompt_en: "How often does David play badminton?"
+      choices: ["Twice a week", "Every Saturday", "Once a week"]
+      answer: 0
+      difficulty: 2
+      reading_skill: scan
+      skill: Reading
+
+writing:
+  kind: FillBlank
+  prompt_vi: "Điền hai chỗ trống: câu nói sở thích và câu nói tần suất."
+  prompt_en: "I'm ___ cooking. I cook ___ a week."
+  blanks:
+    - ["into"]
+    - ["once"]
+  hint_vi: "Chỗ đầu đi sau I'm để nói mình mê gì. Chỗ sau nghĩa là một lần."
+  sample_en: "I'm into cooking. I cook once a week."
+
+quiz:
+  - kind: mcq
+    prompt_vi: "Cách nói sở thích tự nhiên nhất là gì?"
+    choices: ["I very like photo", "My hobby is photo", "I'm into photography"]
+    answer: 2
+    difficulty: 2
+    skill: Speaking
+  - kind: mcq
+    prompt_vi: "\"Not really my thing\" nghĩa là gì?"
+    choices: ["Không hợp gu tôi lắm", "Đồ đó không phải của tôi", "Tôi chưa thử bao giờ"]
+    answer: 0
+    difficulty: 2
+    skill: Reading
+  - kind: mcq
+    prompt_vi: "Sau khi trả lời sở thích, nên nói gì để cuộc chuyện không tắt?"
+    choices: ["Nothing more", "How about you?", "That's all"]
+    answer: 1
+    difficulty: 2
+    skill: Speaking
+  - kind: mcq
+    prompt_vi: "Muốn nói làm việc đó được hai năm thì nói gì?"
+    choices: ["I do it two years", "I've been doing it for two years", "Two years I do"]
+    answer: 1
+    difficulty: 3
+    skill: Speaking
+
+explanation:
+  why_vi: >
+    "What do you do for fun?" là câu gần như chắc chắn xuất hiện trong mọi bữa trưa
+    đầu tiên với người nước ngoài. Người học thường trả lời đúng một chữ — "Music" —
+    rồi cả bàn im lặng. Không phải vì không biết từ, mà vì không biết cấu trúc
+    một câu trả lời có chỗ cho người kia hỏi tiếp.
+  how_vi: >
+    Trả lời ba phần: SỞ THÍCH bằng "I'm into...", TẦN SUẤT bằng "once a week" hoặc
+    "every morning", và MỘT CHI TIẾT nhỏ. Kết bằng "How about you?" để đẩy bóng sang
+    người kia. Ba phần này biến một chữ thành một cuộc nói chuyện.
+  contrast_vi: >
+    "I like photography" đúng nhưng phẳng. "I'm into photography" nghe như người thật
+    đang mê thật. Còn từ chối thì đừng nói "I don't like" — dùng "not really my thing",
+    nhẹ hơn nhiều và không làm người kia cụt hứng.
+
+common_mistakes:
+  - mistake: "Trả lời đúng một từ rồi im"
+    why_vi: >
+      Người học nghĩ đã trả lời đúng câu hỏi là xong. Nhưng câu hỏi này không nhằm
+      lấy thông tin, nó nhằm mở một cuộc nói chuyện — trả lời một từ là đóng lại.
+    fix_vi: "Luôn thêm tần suất và một chi tiết, rồi hỏi ngược \"How about you?\""
+  - mistake: "Nói \"My hobby is...\" như trong sách giáo khoa"
+    why_vi: >
+      Cấu trúc này đúng ngữ pháp nhưng người bản xứ hầu như không dùng trong nói
+      chuyện thường, nghe như đang đọc bài luận lớp bảy.
+    fix_vi: "Đổi thành \"I'm into...\" hoặc \"I play/go/do...\" — tự nhiên hơn hẳn."
+  - mistake: "Đọc \"photography\" nhấn vào âm đầu"
+    why_vi: >
+      Người học quen nhấn âm đầu như tiếng Việt nên đọc /PHO-to-graphy/.
+      Trọng âm thật rơi vào âm thứ hai, và sai trọng âm thì người nghe phải đoán.
+    fix_vi: "Nhấn âm thứ hai: pho-TO-gra-phy, /fəˈtɒɡrəfi/."
+
+memory_trick_vi: >
+  Ba phần cho một câu trả lời: MÊ GÌ "I'm into...", BAO LÂU MỘT LẦN "once a week",
+  MỘT CHI TIẾT nhỏ. Rồi đẩy bóng: "How about you?"

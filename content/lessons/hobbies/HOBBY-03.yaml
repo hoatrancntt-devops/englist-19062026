@@ -1,0 +1,251 @@
+schema_version: 1
+code: HOBBY-03
+slug: ru-di-choi-va-tu-choi-tu-te
+title_vi: "Rủ đi chơi và từ chối tử tế"
+title_en: "Making plans and turning them down"
+
+layer: Life
+track: Hobbies
+level: A1
+unit_code: U-H1
+order_index: 3
+estimated_minutes: 11
+
+illustration: clock-calendar
+
+objective_vi: >
+  Rủ người khác đi chơi, chốt được ngày giờ, và từ chối mà người kia vẫn rủ tiếp
+  lần sau — phần cuối mới là phần khó.
+
+objective_observable: >
+  Đưa được lời rủ có ngày giờ cụ thể trong 3 trên 4 drill, và từ chối kèm lý do đúng cấu trúc.
+
+mastery_weights:
+  Listening: 0.30
+  Speaking: 0.40
+  Reading: 0.15
+  Writing: 0.15
+
+prerequisites:
+  - lesson: HOBBY-02
+    min_mastery: 60
+    kind: Hard
+
+vocabulary:
+  - term: "Do you want to"
+    ipa: "/duː juː wɒnt tuː/"
+    meaning_vi: "bạn có muốn ... không (lời rủ chuẩn)"
+    chunk: "Do you want to join us?"
+    tags: [hobbies, social]
+  - term: "Are you free"
+    ipa: "/ɑːr juː friː/"
+    meaning_vi: "bạn có rảnh không"
+    chunk: "Are you free on Saturday?"
+    tags: [hobbies, time]
+  - term: "I'd love to"
+    ipa: "/aɪd lʌv tuː/"
+    meaning_vi: "tôi rất muốn (nhận lời nhiệt tình)"
+    chunk: "I'd love to. What time?"
+    tags: [hobbies, social]
+  - term: "I can't make it"
+    ipa: "/aɪ kɑːnt meɪk ɪt/"
+    meaning_vi: "tôi không đi được (từ chối chuẩn)"
+    chunk: "Sorry, I can't make it."
+    tags: [hobbies, social]
+  - term: "Maybe next time"
+    ipa: "/ˈmeɪbi nekst taɪm/"
+    meaning_vi: "để lần sau nhé (giữ cửa cho lần rủ tiếp)"
+    chunk: "Maybe next time."
+    tags: [hobbies, social]
+  - term: "Let's say"
+    ipa: "/lets seɪ/"
+    meaning_vi: "chốt là (dùng để chốt giờ)"
+    chunk: "Let's say seven o'clock."
+    tags: [hobbies, time]
+
+sentence_patterns:
+  - pattern: "Are you free on {day}?"
+    meaning_vi: "{day} bạn rảnh không?"
+    slots:
+      day: ["Saturday", "Friday evening", "Sunday morning"]
+  - pattern: "Sorry, I can't make it. {reason}"
+    meaning_vi: "Xin lỗi, tôi không đi được. {reason}"
+    slots:
+      reason: ["I have family plans.", "I'm working that day.", "I'm out of town."]
+
+dialogue:
+  context_vi: >
+    Chiều thứ Năm. Nhóm đồng nghiệp rủ đi xem phim cuối tuần. Bạn bận thật,
+    và cách bạn từ chối quyết định lần sau họ có rủ nữa không.
+  turns:
+    - speaker: "Anna"
+      en: "Are you free on Saturday? We're going to see a film."
+      vi: "Thứ Bảy anh rảnh không? Bọn tôi đi xem phim."
+    - speaker: "You"
+      en: "Sorry, I can't make it. I have family plans."
+      vi: "Xin lỗi, tôi không đi được. Tôi có hẹn với gia đình."
+    - speaker: "Anna"
+      en: "No worries. What about Sunday?"
+      vi: "Không sao. Chủ nhật thì sao?"
+    - speaker: "You"
+      en: "Sunday works. What time?"
+      vi: "Chủ nhật được. Mấy giờ?"
+    - speaker: "Anna"
+      en: "Let's say seven o'clock at the cinema."
+      vi: "Chốt bảy giờ ở rạp nhé."
+    - speaker: "You"
+      en: "Perfect. See you then."
+      vi: "Tuyệt. Hẹn gặp lúc đó."
+
+listening:
+  context_vi: >
+    Nghe hai lời rủ, một nhận một từ chối. Chú ý cách người từ chối vẫn giữ được
+    không khí vui vẻ.
+  speed: 0.9
+  voice: en_US_female
+  transcript_en: "Do you want to join us for badminton on Friday? I'd love to. What time? Six thirty. And you, David? Sorry, I can't make it. I'm out of town. Maybe next time."
+  transcript_vi: "Thứ Sáu chơi cầu lông với bọn tôi không? Tôi rất muốn. Mấy giờ? Sáu rưỡi. Còn anh, David? Xin lỗi, tôi không đi được. Tôi đi công tác. Để lần sau nhé."
+  questions:
+    - kind: mcq_listen
+      prompt_vi: "Mấy giờ chơi cầu lông?"
+      choices: ["Sáu rưỡi", "Bảy giờ", "Sáu giờ"]
+      answer: 0
+      difficulty: 2
+      skill: Listening
+    - kind: mcq_listen
+      prompt_vi: "Vì sao David không đi được?"
+      choices: ["Bận làm", "Bị ốm", "Đi công tác"]
+      answer: 2
+      difficulty: 2
+      skill: Listening
+
+speaking_drills:
+  - kind: read_aloud
+    expected_text: "Are you free on Saturday?"
+    prompt_vi: "Đọc to. \"Free\" có cụm /fr/ đầu từ, đừng thêm nguyên âm vào giữa."
+    ipa: "/ɑːr juː friː ɒn ˈsætərdeɪ/"
+    focus_phonemes: ["fr", "d"]
+  - kind: read_aloud
+    expected_text: "Sorry, I can't make it."
+    prompt_vi: "Câu từ chối chuẩn. \"Can't\" nói dứt khoát, âm /t/ cuối gọn."
+    ipa: "/ˈsɒri aɪ kɑːnt meɪk ɪt/"
+    focus_phonemes: ["k", "t"]
+  - kind: shadow
+    expected_text: "I'd love to. What time?"
+    prompt_vi: "Nhận lời nhiệt tình. \"I'd\" gọn một nhịp, không tách thành I would."
+    ipa: "/aɪd lʌv tuː wɒt taɪm/"
+    focus_phonemes: ["aɪd", "v"]
+  - kind: shadow
+    expected_text: "Let's say seven o'clock."
+    prompt_vi: "Câu chốt giờ. Âm /ts/ cuối chữ let's phải bật ra."
+    ipa: "/lets seɪ ˈsevn əˈklɒk/"
+    focus_phonemes: ["ts", "kl"]
+  - kind: respond
+    prompt_en: "Do you want to join us on Saturday?"
+    prompt_vi: "Có người rủ bạn đi chơi thứ Bảy. Nhận lời hoặc từ chối kèm lý do."
+    accept_patterns:
+      - "I'd love to"
+      - "can't make it"
+      - "Sorry"
+
+reading:
+  kind: chat
+  context_vi: >
+    Tin nhắn hẹn nhau trong nhóm. Để ý ai đi được, ai không, và giờ cuối cùng chốt.
+  text_en: |
+    Anna: Badminton this Friday? Six thirty at the sports centre.
+    Minh: I'd love to. See you there.
+    Priya: Sorry, I can't make it. I have a class until eight.
+    David: Can we make it seven? I finish work at six forty-five.
+    Anna: Let's say seven then. Priya, maybe next time!
+  text_vi: |
+    Anna: Thứ Sáu này chơi cầu lông không? Sáu rưỡi ở trung tâm thể thao.
+    Minh: Tôi rất muốn. Hẹn gặp ở đó.
+    Priya: Xin lỗi, tôi không đi được. Tôi có lớp học tới tám giờ.
+    David: Dời sang bảy giờ được không? Tôi tan làm lúc sáu giờ bốn lăm.
+    Anna: Vậy chốt bảy giờ. Priya, để lần sau nhé!
+  questions:
+    - kind: mcq_read
+      prompt_en: "What time did they finally agree on?"
+      choices: ["Six thirty", "Eight", "Seven"]
+      answer: 2
+      difficulty: 2
+      reading_skill: scan
+      skill: Reading
+    - kind: mcq_read
+      prompt_en: "Why can't Priya join?"
+      choices: ["She has a class", "She is working late", "She is out of town"]
+      answer: 0
+      difficulty: 1
+      reading_skill: scan
+      skill: Reading
+
+writing:
+  kind: FillBlank
+  prompt_vi: "Điền hai chỗ trống: câu hỏi rảnh không và câu từ chối."
+  prompt_en: "Are you ___ on Saturday? Sorry, I can't ___ it."
+  blanks:
+    - ["free"]
+    - ["make"]
+  hint_vi: "Chỗ đầu nghĩa là rảnh. Chỗ sau đi với \"it\", cả cụm nghĩa là không đi được."
+  sample_en: "Are you free on Saturday? Sorry, I can't make it."
+
+quiz:
+  - kind: mcq
+    prompt_vi: "Cách từ chối lời rủ mà vẫn giữ được quan hệ là gì?"
+    choices: ["No, I busy", "I don't want to go", "Sorry, I can't make it. Maybe next time."]
+    answer: 2
+    difficulty: 2
+    skill: Speaking
+  - kind: mcq
+    prompt_vi: "Muốn chốt giờ thì nói thế nào?"
+    choices: ["Let's say seven o'clock", "Seven is decided", "We do seven"]
+    answer: 0
+    difficulty: 2
+    skill: Speaking
+  - kind: mcq
+    prompt_vi: "\"I'd love to\" nghĩa là gì?"
+    choices: ["Tôi yêu việc đó", "Tôi rất muốn đi", "Tôi sẽ cân nhắc"]
+    answer: 1
+    difficulty: 1
+    skill: Listening
+  - kind: mcq
+    prompt_vi: "Vì sao nên thêm lý do khi từ chối?"
+    choices: ["Vì lịch sự bắt buộc", "Vì không thêm là sai ngữ pháp", "Vì người rủ biết bạn không từ chối họ, nên sẽ rủ tiếp"]
+    answer: 2
+    difficulty: 3
+    skill: Reading
+
+explanation:
+  why_vi: >
+    Rủ đi chơi thì dễ, từ chối mới khó. Người học hay từ chối bằng đúng một chữ "No"
+    hoặc "I busy" — không sai ngữ pháp nhưng nghe như đang đẩy người ta ra.
+    Sau hai ba lần như vậy, không ai rủ nữa, và người học tưởng là do mình kém tiếng Anh.
+  how_vi: >
+    Lời rủ cần ba thứ: HỎI RẢNH "Are you free on...", NÊU VIỆC, và CHỐT GIỜ
+    "Let's say...". Lời từ chối cũng cần ba thứ: XIN LỖI ngắn, "I can't make it",
+    và MỘT LÝ DO. Thêm "Maybe next time" là giữ được cửa cho lần sau.
+  contrast_vi: >
+    "I'd love to" là nhận lời nhiệt tình, khác hẳn "OK" cụt lủn. "I can't make it"
+    là từ chối chuẩn, nghe trung tính — khác "I don't want to" vốn nghe như chê lời rủ.
+
+common_mistakes:
+  - mistake: "Từ chối bằng \"No, I busy\""
+    why_vi: >
+      Thiếu động từ và thiếu lý do nên nghe cộc. Người rủ không biết bạn bận thật
+      hay chỉ không muốn đi, và lần sau họ sẽ bỏ qua tên bạn.
+    fix_vi: "Dùng đủ ba phần: \"Sorry, I can't make it. I have family plans.\""
+  - mistake: "Rủ chung chung không có ngày giờ"
+    why_vi: >
+      Câu kiểu "We should hang out sometime" nghe lịch sự nhưng không ai coi là
+      lời rủ thật, nên chẳng bao giờ thành buổi đi chơi nào.
+    fix_vi: "Luôn kèm ngày cụ thể: \"Are you free on Saturday?\" rồi chốt giờ bằng \"Let's say...\""
+  - mistake: "Đọc \"can't\" giống \"can\""
+    why_vi: >
+      Người học nuốt âm /t/ cuối nên hai từ nghe như một, mà chúng lại trái nghĩa nhau.
+      Người nghe tưởng bạn nhận lời trong khi bạn đang từ chối.
+    fix_vi: "Nhấn mạnh và kéo dài nguyên âm rồi bật /t/ rõ: /kɑːnt/. Nói chậm lại một nhịp ở từ này."
+
+memory_trick_vi: >
+  RỦ ba phần: rảnh không — làm gì — mấy giờ. TỪ CHỐI cũng ba phần: xin lỗi —
+  "I can't make it" — một lý do. Thêm "Maybe next time" là lần sau vẫn được rủ.

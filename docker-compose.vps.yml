@@ -27,19 +27,26 @@ services:
     deploy:
       resources:
         limits:
-          memory: 512m
-    shm_size: 128m
+          memory: 384m
+    shm_size: 96m
 
   api:
     # Không có khoá build: chỉ dùng image đã dựng sẵn và gắn tag cụ thể.
     build: !reset null
     image: ${IMAGE_REGISTRY}/api:${IMAGE_TAG:?IMAGE_TAG phai la tag cu the, khong dung latest}
     logging: *logging
+    depends_on:
+      speech:
+        condition: service_started
     deploy:
       resources:
         limits:
-          memory: 600m
+          memory: 512m
     environment:
+      # Địa chỉ dịch vụ nhận dạng giọng nói. Giọng học viên đi từ container API sang
+      # container speech trong mạng nội bộ và KHÔNG ra khỏi máy chủ này.
+      Speech__BaseUrl: http://speech:9000/
+
       # Container chạy sau proxy nên biết mình đang phục vụ HTTPS.
       ASPNETCORE_FORWARDEDHEADERS_ENABLED: "true"
 
@@ -56,7 +63,7 @@ services:
     deploy:
       resources:
         limits:
-          memory: 200m
+          memory: 160m
     environment:
       DOTNET_gcServer: "0"
 
@@ -86,7 +93,39 @@ services:
     deploy:
       resources:
         limits:
-          memory: 96m
+          memory: 80m
+
+  # Nhận dạng giọng nói chạy tại chỗ. Giọng học viên không rời máy chủ này.
+  #
+  # Model tiny.en là model NHỎ NHẤT, chọn vì máy chỉ có 1,8 GB RAM. Đo thật trên máy dev:
+  # container này chiếm 620 MB lúc rảnh và vọt thêm 200-400 MB khi đang phiên dịch.
+  # Cộng với 6 container còn lại là chạm trần bộ nhớ, nên có 2 GB swap đỡ phía sau.
+  #
+  # tiny.en đủ để biết học viên NÓI GÌ, nhưng chấm phát âm ở mức âm vị thì yếu.
+  # Muốn nhận xét đúng lỗi cụ thể như thiết kế mô tả thì cần model small — riêng nó
+  # đã 1,5-2 GB, tức là phải nâng máy lên 4 GB trước.
+  speech:
+    image: onerahmet/openai-whisper-asr-webservice:latest
+    restart: unless-stopped
+    logging: *logging
+
+    environment:
+      ASR_MODEL: tiny.en
+      ASR_ENGINE: faster_whisper
+
+    volumes:
+      # Giữ model đã tải. Thiếu volume này thì mỗi lần khởi động lại phải tải lại
+      # từ đầu, và trên máy 1 vCPU đó là vài phút không dùng được phần Nói.
+      - whisper-models:/root/.cache
+
+    # KHÔNG publish cổng ra ngoài. Chỉ container API trong mạng nội bộ gọi tới.
+    networks:
+      - backend
+
+    deploy:
+      resources:
+        limits:
+          memory: 768m
 
   cloudflared:
     image: cloudflare/cloudflared:latest
@@ -106,3 +145,8 @@ services:
       resources:
         limits:
           memory: 96m
+
+# Volume rieng cho model whisper. Thieu no thi moi lan khoi dong lai phai tai model ve,
+# va tren may 1 vCPU do la vai phut khong dung duoc phan Noi.
+volumes:
+  whisper-models:

@@ -1,0 +1,263 @@
+schema_version: 1
+code: REST-03
+slug: tinh-tien-chia-tien-va-tip
+title_vi: "Tính tiền, chia tiền và tiền tip"
+title_en: "The bill, splitting, and tipping"
+
+layer: Life
+track: Restaurant
+level: A1
+unit_code: U-R1
+order_index: 3
+estimated_minutes: 11
+
+illustration: money-receipt
+
+objective_vi: >
+  Xin hoá đơn, chia tiền với bạn, và xử lý chuyện tip — phần cuối bữa ăn mà
+  người Việt lúng túng nhất vì ở nhà không có thói quen này.
+
+objective_observable: >
+  Xin được hoá đơn và đề nghị chia tiền trong 3 trên 4 drill, và đọc đúng một hoá đơn có phí dịch vụ.
+
+mastery_weights:
+  Listening: 0.25
+  Speaking: 0.35
+  Reading: 0.25
+  Writing: 0.15
+
+prerequisites:
+  - lesson: REST-02
+    min_mastery: 60
+    kind: Hard
+
+vocabulary:
+  - term: "Could we get the bill"
+    ipa: "/kʊd wiː ɡet ðə bɪl/"
+    meaning_vi: "cho chúng tôi xin hoá đơn"
+    chunk: "Could we get the bill, please?"
+    tags: [restaurant, money]
+  - term: "split the bill"
+    ipa: "/splɪt ðə bɪl/"
+    meaning_vi: "chia đôi tiền"
+    chunk: "Can we split the bill?"
+    tags: [restaurant, money]
+  - term: "separate checks"
+    ipa: "/ˈseprət tʃeks/"
+    meaning_vi: "tính riêng từng người"
+    chunk: "Separate checks, please."
+    tags: [restaurant, money]
+  - term: "service charge"
+    ipa: "/ˈsɜːrvɪs tʃɑːrdʒ/"
+    meaning_vi: "phí dịch vụ (đã tính sẵn trong hoá đơn)"
+    chunk: "Is the service charge included?"
+    tags: [restaurant, money]
+  - term: "Keep the change"
+    ipa: "/kiːp ðə tʃeɪndʒ/"
+    meaning_vi: "khỏi thối lại (cách tip gọn nhất)"
+    chunk: "Keep the change, thanks."
+    tags: [restaurant, money]
+  - term: "by card"
+    ipa: "/baɪ kɑːrd/"
+    meaning_vi: "trả bằng thẻ"
+    chunk: "Can I pay by card?"
+    tags: [restaurant, money]
+
+sentence_patterns:
+  - pattern: "Could we get the bill, please?"
+    meaning_vi: "Cho chúng tôi xin hoá đơn."
+    slots: {}
+  - pattern: "Can I pay by {method}?"
+    meaning_vi: "Tôi trả bằng {method} được không?"
+    slots:
+      method: ["card", "cash", "phone"]
+
+dialogue:
+  context_vi: >
+    Ăn xong. Bạn và một đồng nghiệp, mỗi người tự trả phần mình. Ở Việt Nam thường
+    một người trả hết, nhưng ở đây chia tiền là bình thường và không ai thấy kỳ.
+  turns:
+    - speaker: "You"
+      en: "Could we get the bill, please?"
+      vi: "Cho chúng tôi xin hoá đơn ạ."
+    - speaker: "Server"
+      en: "Of course. Together or separate?"
+      vi: "Vâng ạ. Anh chị tính chung hay riêng?"
+    - speaker: "You"
+      en: "Separate checks, please."
+      vi: "Tính riêng ạ."
+    - speaker: "Server"
+      en: "Here you go. The service charge is included."
+      vi: "Đây ạ. Phí dịch vụ đã tính sẵn rồi ạ."
+    - speaker: "You"
+      en: "Great. Can I pay by card?"
+      vi: "Tốt. Tôi trả bằng thẻ được không ạ?"
+    - speaker: "Server"
+      en: "Sure, I'll bring the machine."
+      vi: "Được ạ, tôi mang máy ra."
+
+listening:
+  context_vi: >
+    Nghe đoạn cuối bữa. Chú ý câu nhân viên hỏi ngay sau khi bạn xin hoá đơn —
+    câu đó quyết định bạn trả chung hay riêng.
+  speed: 0.9
+  voice: en_US_female
+  transcript_en: "Could we get the bill, please? Together or separate? Together is fine. Here you go. Is the service charge included? Yes, ten percent. Then keep the change, thanks."
+  transcript_vi: "Cho xin hoá đơn ạ. Anh chị tính chung hay riêng? Chung cũng được. Đây ạ. Phí dịch vụ tính sẵn chưa ạ? Rồi ạ, mười phần trăm. Vậy khỏi thối lại, cảm ơn."
+  questions:
+    - kind: mcq_listen
+      prompt_vi: "Khách chọn tính thế nào?"
+      choices: ["Tính riêng", "Tính chung", "Trả sau"]
+      answer: 1
+      difficulty: 1
+      skill: Listening
+    - kind: mcq_listen
+      prompt_vi: "Phí dịch vụ là bao nhiêu phần trăm?"
+      choices: ["Mười", "Năm", "Hai mươi"]
+      answer: 0
+      difficulty: 2
+      skill: Listening
+
+speaking_drills:
+  - kind: read_aloud
+    expected_text: "Could we get the bill, please?"
+    prompt_vi: "Đọc to. \"Could\" không phát âm chữ l, đọc là /kʊd/."
+    ipa: "/kʊd wiː ɡet ðə bɪl pliːz/"
+    focus_phonemes: ["k", "l"]
+  - kind: read_aloud
+    expected_text: "Can we split the bill?"
+    prompt_vi: "Đề nghị chia tiền. Cụm /spl/ đầu từ phải bật gọn, không thêm nguyên âm."
+    ipa: "/kæn wiː splɪt ðə bɪl/"
+    focus_phonemes: ["spl", "t"]
+  - kind: shadow
+    expected_text: "Is the service charge included?"
+    prompt_vi: "Hỏi phí dịch vụ. Âm /dʒ/ cuối chữ charge phải rung."
+    ipa: "/ɪz ðə ˈsɜːrvɪs tʃɑːrdʒ ɪnˈkluːdɪd/"
+    focus_phonemes: ["tʃ", "dʒ"]
+  - kind: shadow
+    expected_text: "Keep the change, thanks."
+    prompt_vi: "Cách tip gọn nhất. Âm /tʃ/ đầu chữ change như chữ ch tiếng Việt nhưng bật hơn."
+    ipa: "/kiːp ðə tʃeɪndʒ θæŋks/"
+    focus_phonemes: ["tʃ", "θ"]
+  - kind: respond
+    prompt_en: "Together or separate?"
+    prompt_vi: "Nhân viên hỏi tính chung hay riêng. Chọn một và trả lời."
+    accept_patterns:
+      - "Together"
+      - "Separate"
+      - "Split"
+
+reading:
+  kind: chat
+  context_vi: >
+    Một hoá đơn thật. Đọc để biết mình thật sự phải trả bao nhiêu và có cần tip thêm không.
+  text_en: |
+    SUNRISE BISTRO
+    Grilled beef            180,000
+    Chicken curry           150,000
+    2 x Water                20,000
+    ------------------------------
+    Subtotal                350,000
+    Service charge (10%)     35,000
+    ------------------------------
+    TOTAL                   385,000
+
+    Service charge included. Tipping is optional.
+  text_vi: |
+    SUNRISE BISTRO
+    Bò nướng                180.000
+    Cà ri gà                150.000
+    2 x Nước                 20.000
+    ------------------------------
+    Tạm tính                350.000
+    Phí dịch vụ (10%)        35.000
+    ------------------------------
+    TỔNG                    385.000
+
+    Đã gồm phí dịch vụ. Tip là tuỳ tâm.
+  questions:
+    - kind: mcq_read
+      prompt_en: "Do you need to add a tip?"
+      choices: ["Yes, 10% more", "No, it is optional", "Yes, 20% more"]
+      answer: 1
+      difficulty: 2
+      reading_skill: scan
+      skill: Reading
+    - kind: mcq_read
+      prompt_en: "What is the total?"
+      choices: ["350,000", "35,000", "385,000"]
+      answer: 2
+      difficulty: 1
+      reading_skill: scan
+      skill: Reading
+
+writing:
+  kind: FillBlank
+  prompt_vi: "Điền hai chỗ trống: câu xin hoá đơn và câu đề nghị chia tiền."
+  prompt_en: "Could we get the ___, please? Can we ___ the bill?"
+  blanks:
+    - ["bill"]
+    - ["split"]
+  hint_vi: "Chỗ đầu là tờ giấy ghi tiền. Chỗ sau là động từ nghĩa là chia ra."
+  sample_en: "Could we get the bill, please? Can we split the bill?"
+
+quiz:
+  - kind: mcq
+    prompt_vi: "Muốn mỗi người trả phần của mình thì nói gì?"
+    choices: ["Separate checks, please", "We pay alone", "Money different"]
+    answer: 0
+    difficulty: 2
+    skill: Speaking
+  - kind: mcq
+    prompt_vi: "\"Service charge included\" nghĩa là gì?"
+    choices: ["Phải trả thêm phí dịch vụ", "Không có phí dịch vụ", "Phí dịch vụ đã tính sẵn"]
+    answer: 2
+    difficulty: 2
+    skill: Reading
+  - kind: mcq
+    prompt_vi: "Cách tip gọn nhất khi trả tiền mặt là gì?"
+    choices: ["No change", "Keep the change, thanks", "Money for you"]
+    answer: 1
+    difficulty: 2
+    skill: Speaking
+  - kind: mcq
+    prompt_vi: "Nhân viên hỏi \"Together or separate?\" là hỏi gì?"
+    choices: ["Ngồi chung hay riêng", "Tính chung hay tính riêng", "Ăn ở đây hay mang về"]
+    answer: 1
+    difficulty: 1
+    skill: Listening
+
+explanation:
+  why_vi: >
+    Phần trả tiền là chỗ người Việt lúng túng nhất, không phải vì tiếng Anh khó mà vì
+    thói quen khác. Ở nhà thường một người trả hết và tip không phổ biến. Ở nhiều nước
+    thì chia tiền là mặc định, và hoá đơn có thêm dòng phí dịch vụ mà nếu không đọc
+    kỹ sẽ tip chồng lên một lần nữa.
+  how_vi: >
+    Xin hoá đơn bằng "Could we get the bill, please?" Nhân viên gần như chắc chắn
+    sẽ hỏi lại "Together or separate?" — chỉ cần trả lời một chữ. Trước khi tip,
+    nhìn hoá đơn xem có dòng service charge chưa.
+  contrast_vi: >
+    "Split the bill" là chia đôi tổng số. "Separate checks" là mỗi người một hoá đơn
+    riêng theo đúng món mình gọi. Đi ăn với đồng nghiệp thì separate checks công bằng hơn.
+
+common_mistakes:
+  - mistake: "Tip thêm 10% dù hoá đơn đã có service charge"
+    why_vi: >
+      Người học nghe nói nước ngoài phải tip nên tip theo phản xạ, không đọc hoá đơn.
+      Kết quả là trả gấp đôi phí dịch vụ cho mỗi bữa ăn.
+    fix_vi: "Nhìn dòng cuối hoá đơn trước. Có chữ \"service charge included\" thì tip là tuỳ tâm, không bắt buộc."
+  - mistake: "Vẫy tay hoặc búng tay gọi nhân viên tính tiền"
+    why_vi: >
+      Ở Việt Nam gọi to hoặc giơ tay là bình thường. Ở nhiều nơi khác búng tay bị coi
+      là rất khiếm nhã, và nhân viên sẽ nhớ bàn đó cả buổi.
+    fix_vi: "Bắt ánh mắt rồi nói \"Could we get the bill, please?\" Không cần to tiếng."
+  - mistake: "Đọc \"bill\" thành /biu/"
+    why_vi: >
+      Tiếng Việt không có âm /l/ cuối từ nên người học tự thay bằng /u/. Từ này lặp lại
+      ở mọi bữa ăn nên sửa một lần dùng được mãi.
+    fix_vi: "Đặt đầu lưỡi chạm lợi trên và giữ ở đó khi kết thúc từ: /bɪl/."
+
+memory_trick_vi: >
+  Cuối bữa chỉ có ba bước: XIN "Could we get the bill", CHỌN "Together or separate",
+  KIỂM "service charge included?". Bước ba là bước giúp bạn không trả thừa tiền.

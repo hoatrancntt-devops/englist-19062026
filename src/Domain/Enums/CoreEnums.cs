@@ -46,7 +46,16 @@ public enum LearningTrack
     Security = 3,
     Cloud = 4,
     Ai = 5,
-    Reading = 6
+    Reading = 6,
+
+    // Ba nhánh đời sống. Chúng KHÔNG nối tiếp Foundation mà là điểm vào riêng: người chỉ cần
+    // tiếng Anh để đi ăn và đi siêu thị không có lý do gì phải học báo sự cố lúc 2 giờ sáng
+    // trước đã. Bài đầu mỗi nhánh không có tiên quyết, xem content/lessons/{restaurant,shopping,hobbies}.
+    //
+    // Xếp sau nhánh IT để thứ tự hiển thị cũ không đổi.
+    Restaurant = 7,
+    Shopping = 8,
+    Hobbies = 9
 }
 
 public enum LessonState

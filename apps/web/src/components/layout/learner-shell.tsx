@@ -16,6 +16,7 @@ import {
   Sun,
   Moon,
   GraduationCap,
+  Compass,
 } from 'lucide-react'
 import { cn } from '@/lib/cn'
 import { SiteFooter } from './site-footer'
@@ -34,6 +35,11 @@ interface NavItem {
 /** Thứ tự trên thanh bên khớp thứ tự ưu tiên kỹ năng: nghe, nói, đọc, viết. */
 const NAV_ITEMS: NavItem[] = [
   { to: '/learn', label: 'Bảng điều khiển', icon: LayoutDashboard, hint: 'Hôm nay học gì' },
+
+  // Đứng ngay dưới bảng điều khiển: đây là thứ quyết định mọi bài phía sau nói về chuyện gì,
+  // nên phải thấy được từ đầu chứ không nằm lẫn trong Cài đặt.
+  { to: '/learn/chon-linh-vuc', label: 'Lĩnh vực học', icon: Compass, hint: 'Đổi chủ đề và kỹ năng' },
+
   { to: '/learn/roadmap', label: 'Lộ trình', icon: Map, hint: 'Toàn bộ chặng đường' },
   // Ôn tập đứng trên bốn kỹ năng vì nó là việc nên làm TRƯỚC khi học bài mới:
   // câu đã tới hạn mà để trôi thì phần học trước đó mất dần.

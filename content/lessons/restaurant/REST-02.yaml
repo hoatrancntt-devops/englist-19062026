@@ -1,0 +1,260 @@
+schema_version: 1
+code: REST-02
+slug: doc-thuc-don-va-goi-mon
+title_vi: "Đọc thực đơn và gọi món"
+title_en: "Reading the menu and ordering"
+
+layer: Life
+track: Restaurant
+level: PreA1
+unit_code: U-R1
+order_index: 2
+estimated_minutes: 12
+
+illustration: food-order
+
+objective_vi: >
+  Đọc hiểu một thực đơn tiếng Anh và gọi trọn một bữa — món chính, đồ uống,
+  và nói được điều mình không ăn được.
+
+objective_observable: >
+  Gọi được món chính kèm đồ uống trong 3 trên 4 drill, và nói đúng một hạn chế ăn uống.
+
+mastery_weights:
+  Listening: 0.25
+  Speaking: 0.35
+  Reading: 0.25
+  Writing: 0.15
+
+prerequisites:
+  - lesson: REST-01
+    min_mastery: 60
+    kind: Hard
+
+vocabulary:
+  - term: "starter"
+    ipa: "/ˈstɑːrtər/"
+    meaning_vi: "món khai vị"
+    chunk: "We'll skip the starter."
+    tags: [restaurant, menu]
+  - term: "main course"
+    ipa: "/meɪn kɔːrs/"
+    meaning_vi: "món chính"
+    chunk: "For the main course, I'll have the beef."
+    tags: [restaurant, menu]
+  - term: "I'm allergic to"
+    ipa: "/aɪm əˈlɜːrdʒɪk tuː/"
+    meaning_vi: "tôi dị ứng với (câu quan trọng nhất bài này)"
+    chunk: "I'm allergic to peanuts."
+    tags: [restaurant, health]
+  - term: "Does it come with"
+    ipa: "/dʌz ɪt kʌm wɪð/"
+    meaning_vi: "món đó có kèm gì không"
+    chunk: "Does it come with rice?"
+    tags: [restaurant, menu]
+  - term: "the same for me"
+    ipa: "/ðə seɪm fɔːr miː/"
+    meaning_vi: "cho tôi giống vậy (khi không muốn chọn lại)"
+    chunk: "The same for me, please."
+    tags: [restaurant, core]
+  - term: "spicy"
+    ipa: "/ˈspaɪsi/"
+    meaning_vi: "cay"
+    chunk: "Is it spicy?"
+    tags: [restaurant, menu]
+
+sentence_patterns:
+  - pattern: "For the main course, I'll have the {dish}."
+    meaning_vi: "Món chính cho tôi {dish}."
+    slots:
+      dish: ["beef", "salmon", "chicken"]
+  - pattern: "I'm allergic to {food}."
+    meaning_vi: "Tôi dị ứng với {food}."
+    slots:
+      food: ["peanuts", "seafood", "milk"]
+
+dialogue:
+  context_vi: >
+    Đã ngồi vào bàn, thực đơn trên tay. Bạn chưa từng thấy nhiều món lạ thế này,
+    và bạn bị dị ứng hải sản — điều bắt buộc phải nói ra.
+  turns:
+    - speaker: "Server"
+      en: "Are you ready to order?"
+      vi: "Anh chị gọi món chưa ạ?"
+    - speaker: "You"
+      en: "Almost. Does the beef come with rice?"
+      vi: "Gần rồi. Món bò có kèm cơm không ạ?"
+    - speaker: "Server"
+      en: "It comes with potatoes, but we can do rice instead."
+      vi: "Kèm khoai tây, nhưng đổi sang cơm được ạ."
+    - speaker: "You"
+      en: "Perfect. The beef with rice, please. And I'm allergic to seafood."
+      vi: "Tuyệt. Cho tôi bò với cơm. Và tôi bị dị ứng hải sản."
+    - speaker: "Server"
+      en: "Noted. I'll tell the kitchen. Anything to drink?"
+      vi: "Tôi ghi lại rồi. Tôi sẽ báo bếp. Anh chị uống gì ạ?"
+    - speaker: "You"
+      en: "Just water, please."
+      vi: "Cho tôi nước lọc thôi."
+
+listening:
+  context_vi: >
+    Nghe một lượt gọi món hai người. Chú ý câu người thứ hai dùng để khỏi phải
+    chọn lại từ đầu.
+  speed: 0.9
+  voice: en_US_male
+  transcript_en: "Are you ready to order? Yes. I'll have the chicken, please. Does it come with salad? It does. Great. And for you? The same for me, please."
+  transcript_vi: "Anh chị gọi món chưa ạ? Rồi. Cho tôi món gà. Có kèm salad không ạ? Có ạ. Tốt. Còn anh dùng gì? Cho tôi giống vậy."
+  questions:
+    - kind: mcq_listen
+      prompt_vi: "Món gà có kèm gì?"
+      choices: ["Khoai tây", "Salad", "Cơm"]
+      answer: 1
+      difficulty: 1
+      skill: Listening
+    - kind: mcq_listen
+      prompt_vi: "Người thứ hai gọi món gì?"
+      choices: ["Giống người thứ nhất", "Món bò", "Chưa gọi"]
+      answer: 0
+      difficulty: 2
+      skill: Listening
+
+speaking_drills:
+  - kind: read_aloud
+    expected_text: "For the main course, I'll have the beef."
+    prompt_vi: "Đọc to. \"Course\" có âm /ɔːr/ dài, đừng đọc thành /co/."
+    ipa: "/fɔːr ðə meɪn kɔːrs aɪl hæv ðə biːf/"
+    focus_phonemes: ["ɔːr", "f"]
+  - kind: read_aloud
+    expected_text: "I'm allergic to peanuts."
+    prompt_vi: "Câu này có thể cứu bạn. Trọng âm rơi vào /ˈlɜːr/ giữa từ allergic."
+    ipa: "/aɪm əˈlɜːrdʒɪk tuː ˈpiːnʌts/"
+    focus_phonemes: ["dʒ", "ɜːr"]
+  - kind: shadow
+    expected_text: "Does it come with rice?"
+    prompt_vi: "Hỏi món kèm gì. Ba chữ đầu nói dính thành /dəzɪt/."
+    ipa: "/dʌz ɪt kʌm wɪð raɪs/"
+    focus_phonemes: ["ð", "r"]
+  - kind: shadow
+    expected_text: "The same for me, please."
+    prompt_vi: "Câu tiết kiệm nhất bàn ăn. Âm /s/ đầu chữ same phải rõ."
+    ipa: "/ðə seɪm fɔːr miː pliːz/"
+    focus_phonemes: ["s", "m"]
+  - kind: respond
+    prompt_en: "Are you ready to order?"
+    prompt_vi: "Nhân viên hỏi bạn gọi món chưa. Gọi một món chính bất kỳ."
+    accept_patterns:
+      - "I'll have"
+      - "main course"
+      - "Can I get"
+
+reading:
+  kind: chat
+  context_vi: >
+    Một phần thực đơn thật. Đọc lướt để tìm giá và tìm món không có hải sản.
+  text_en: |
+    STARTERS
+    Tomato soup - 45,000
+    Prawn salad - 85,000 (contains seafood)
+
+    MAIN COURSES
+    Grilled beef with potatoes - 180,000
+    Chicken curry with rice - 150,000 (mild, not spicy)
+    Salmon steak - 220,000 (contains seafood)
+
+    All main courses come with bread.
+  text_vi: |
+    KHAI VỊ
+    Súp cà chua - 45.000
+    Salad tôm - 85.000 (có hải sản)
+
+    MÓN CHÍNH
+    Bò nướng khoai tây - 180.000
+    Cà ri gà với cơm - 150.000 (nhẹ, không cay)
+    Cá hồi áp chảo - 220.000 (có hải sản)
+
+    Mọi món chính đều kèm bánh mì.
+  questions:
+    - kind: mcq_read
+      prompt_en: "Which main course is safe for someone allergic to seafood?"
+      choices: ["Salmon steak", "Prawn salad", "Chicken curry"]
+      answer: 2
+      difficulty: 2
+      reading_skill: scan
+      skill: Reading
+    - kind: mcq_read
+      prompt_en: "What comes with every main course?"
+      choices: ["Bread", "Soup", "Rice"]
+      answer: 0
+      difficulty: 1
+      reading_skill: scan
+      skill: Reading
+
+writing:
+  kind: FillBlank
+  prompt_vi: "Điền hai chỗ trống: câu hỏi món kèm gì và câu báo dị ứng."
+  prompt_en: "Does it ___ with rice? I'm ___ to seafood."
+  blanks:
+    - ["come"]
+    - ["allergic"]
+  hint_vi: "Chỗ đầu nằm trong câu hỏi món ăn kèm theo gì. Chỗ sau là từ chỉ dị ứng."
+  sample_en: "Does it come with rice? I'm allergic to seafood."
+
+quiz:
+  - kind: mcq
+    prompt_vi: "Bạn dị ứng đậu phộng. Nói với nhân viên thế nào?"
+    choices: ["I no eat peanuts", "I'm allergic to peanuts", "Peanuts bad for me"]
+    answer: 1
+    difficulty: 2
+    skill: Speaking
+  - kind: mcq
+    prompt_vi: "\"Main course\" là món gì?"
+    choices: ["Món tráng miệng", "Món khai vị", "Món chính"]
+    answer: 2
+    difficulty: 1
+    skill: Reading
+  - kind: mcq
+    prompt_vi: "Bạn muốn gọi giống người vừa gọi. Nói gì?"
+    choices: ["The same for me, please", "Me too food", "I want that one"]
+    answer: 0
+    difficulty: 2
+    skill: Speaking
+  - kind: mcq
+    prompt_vi: "Muốn biết món có kèm gì thì hỏi thế nào?"
+    choices: ["What inside food?", "Does it come with rice?", "Food have rice?"]
+    answer: 1
+    difficulty: 2
+    skill: Speaking
+
+explanation:
+  why_vi: >
+    Thực đơn tiếng Anh chia phần rất rõ nhưng người mới hay đọc từ trên xuống dưới
+    rồi hoang mang vì quá nhiều món. Thực ra chỉ cần đọc đúng hai mục: món chính và
+    dòng ghi chú trong ngoặc — dòng ngoặc là chỗ ghi có hải sản, có cay, có kèm gì.
+  how_vi: >
+    Gọi theo thứ tự nhân viên hỏi: món chính trước, đồ uống sau. Câu duy nhất bắt buộc
+    phải nói là câu dị ứng, và nói ngay lúc gọi chứ không đợi món ra.
+  contrast_vi: >
+    "Starter" là khai vị, "main course" là món chính. Bỏ khai vị hoàn toàn bình thường:
+    "We'll skip the starter" — không ai thấy lạ.
+
+common_mistakes:
+  - mistake: "Nói \"I don't eat seafood\" khi thực ra bị dị ứng"
+    why_vi: >
+      Hai câu này khác nhau về hậu quả. "Don't eat" nghe như sở thích nên bếp có thể
+      dùng chung chảo. "Allergic" là cảnh báo y tế, bếp bắt buộc phải tách dụng cụ.
+    fix_vi: "Dị ứng thì luôn nói \"I'm allergic to...\". Đây là lúc dùng đúng từ quan trọng hơn nói hay."
+  - mistake: "Đợi món ra rồi mới báo không ăn được"
+    why_vi: >
+      Người Việt ngại làm phiền nên hay chờ. Lúc đó món đã nấu xong, đổi lại vừa mất
+      thời gian vừa tốn tiền của quán.
+    fix_vi: "Báo ngay khi gọi món. Nhân viên sẽ nói \"Noted\" và ghi vào phiếu bếp."
+  - mistake: "Đọc \"allergic\" nhấn vào âm đầu"
+    why_vi: >
+      Người học quen nhấn âm đầu nên đọc /ˈæ-lơ-gic/. Trọng âm thật rơi vào âm thứ hai,
+      và đọc sai trọng âm ở đúng câu quan trọng nhất thì dễ bị nghe nhầm.
+    fix_vi: "Nhấn mạnh phần giữa: a-LLER-gic, /əˈlɜːrdʒɪk/."
+
+memory_trick_vi: >
+  Một bữa ăn chỉ cần ba câu: MÓN CHÍNH "I'll have the...", KIỂM TRA "Does it come with...?",
+  AN TOÀN "I'm allergic to...". Câu thứ ba là câu duy nhất không được quên.

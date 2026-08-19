@@ -21,6 +21,7 @@ import { LessonPlayerPage } from '@/features/lesson/lesson-player-page'
 import { ReviewPage } from '@/features/review/review-page'
 import { ChallengePage } from '@/features/lesson/challenge-page'
 import { RoadmapPage } from '@/features/learn/roadmap-page'
+import { ChooseTrackPage } from '@/features/learn/choose-track-page'
 import { RoleplayPage } from '@/features/roleplay/roleplay-page'
 
 // Trang quản trị tách bundle riêng: học viên chiếm gần hết lưu lượng và
@@ -115,6 +116,9 @@ export const router = createBrowserRouter([
               { path: 'roleplay', element: <RoleplayPage /> },
               { path: 'notifications', element: <NotificationsPage /> },
               { path: 'settings', element: <SettingsPage /> },
+
+              // Chọn lĩnh vực và chế độ học. Vào được cả sau đăng nhập lần đầu lẫn từ Cài đặt.
+              { path: 'chon-linh-vuc', element: <ChooseTrackPage /> },
               { path: 'lesson/:code', element: <LessonPlayerPage /> },
               { path: 'lesson/:code/challenge', element: <ChallengePage /> },
 

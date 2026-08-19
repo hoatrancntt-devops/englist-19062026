@@ -22,6 +22,18 @@ public record StreakSummary(
 /// <summary>Một câu ôn được nộp. Client gửi lựa chọn, đáp án ở lại máy chủ.</summary>
 public record ReviewAnswerSubmission(string ItemCode, int ChosenIndex);
 
+/// <summary>Một lĩnh vực chọn được, kèm số bài thật để học viên biết mình đang chọn vào đâu.</summary>
+public record TrackOption(string Value, string LabelVi, string HintVi, int LessonCount);
+
+public record LearningPreferences(
+    string PrimaryTrack,
+    string StudyMode,
+    /// <summary>False thì giao diện đưa thẳng vào màn hình chọn thay vì bảng điều khiển.</summary>
+    bool OnboardingCompleted,
+    IReadOnlyList<TrackOption> Tracks);
+
+public record PreferencesUpdate(string PrimaryTrack, string StudyMode);
+
 /// <summary>Bài thi vượt được nộp trọn gói: không chấm từng câu để không lộ đáp án giữa chừng.</summary>
 public record ChallengeSubmission(IReadOnlyList<ItemResponse> Responses);
 
@@ -98,8 +110,134 @@ public static class LearningModule
         group.MapPost("/lessons/{code}/challenge", SubmitChallenge)
             .WithSummary("Nộp bài thi vượt. Qua thì mở bài luôn, trượt thì phải chờ mới thi lại.");
 
+        group.MapGet("/preferences", GetPreferences)
+            .WithSummary("Lĩnh vực và chế độ học đang chọn, kèm danh sách lựa chọn có nội dung thật");
+
+        group.MapPut("/preferences", SavePreferences)
+            .WithSummary("Đổi lĩnh vực và chế độ học. Không đụng tới tiến độ đã có.");
+
         return app;
     }
+
+    /// <summary>
+    /// Chỉ trả về lĩnh vực CÓ BÀI THẬT trong DB.
+    ///
+    /// Liệt kê thẳng từ enum thì học viên chọn được một nhánh rỗng rồi nhìn lộ trình trắng trơn
+    /// mà không hiểu vì sao — lỗi đó không ném ngoại lệ nào nên sẽ không ai phát hiện.
+    /// </summary>
+    private static async Task<IResult> GetPreferences(
+        ClaimsPrincipal principal,
+        AppDbContext db,
+        CancellationToken ct)
+    {
+        if (!TryGetUserId(principal, out var userId))
+        {
+            return Results.Unauthorized();
+        }
+
+        var profile = await db.UserProfiles.AsNoTracking()
+            .FirstOrDefaultAsync(p => p.UserId == userId, ct);
+
+        var counts = await db.Lessons
+            .Where(l => l.Status == ContentStatus.Published)
+            .GroupBy(l => l.Track)
+            .Select(g => new { Track = g.Key, Count = g.Count() })
+            .ToListAsync(ct);
+
+        var tracks = counts
+            .OrderBy(c => c.Track)
+            .Select(c => new TrackOption(
+                c.Track.ToString(),
+                TrackLabelVi(c.Track),
+                TrackHintVi(c.Track),
+                c.Count))
+            .ToList();
+
+        return Results.Ok(new LearningPreferences(
+            profile?.PrimaryTrack.ToString() ?? nameof(LearningTrack.Foundation),
+            profile?.StudyMode.ToString() ?? nameof(StudyMode.Mixed),
+            profile?.OnboardingCompleted ?? false,
+            tracks));
+    }
+
+    private static async Task<IResult> SavePreferences(
+        ClaimsPrincipal principal,
+        [FromBody] PreferencesUpdate body,
+        AppDbContext db,
+        CancellationToken ct)
+    {
+        if (!TryGetUserId(principal, out var userId))
+        {
+            return Results.Unauthorized();
+        }
+
+        if (!Enum.TryParse<LearningTrack>(body.PrimaryTrack, out var track))
+        {
+            return Results.BadRequest(new { message = $"Lĩnh vực không hợp lệ: {body.PrimaryTrack}" });
+        }
+
+        if (!Enum.TryParse<StudyMode>(body.StudyMode, out var mode))
+        {
+            return Results.BadRequest(new { message = $"Chế độ học không hợp lệ: {body.StudyMode}" });
+        }
+
+        // Chặn cả nhánh có trong enum nhưng chưa có bài nào. Cho chọn thì lộ trình sẽ trắng.
+        var hasLessons = await db.Lessons
+            .AnyAsync(l => l.Track == track && l.Status == ContentStatus.Published, ct);
+
+        if (!hasLessons)
+        {
+            return Results.BadRequest(new { message = $"Lĩnh vực {track} chưa có bài nào." });
+        }
+
+        var profile = await db.UserProfiles.FirstOrDefaultAsync(p => p.UserId == userId, ct);
+
+        if (profile is null)
+        {
+            return Results.NotFound(new { message = "Chưa có hồ sơ học." });
+        }
+
+        // CỐ Ý không đụng tới lesson_masteries. Đổi lĩnh vực chỉ đổi thứ tự bài gợi ý;
+        // xoá tiến độ ở đây thì người thử một nhánh khác rồi quay lại sẽ mất trắng.
+        profile.PrimaryTrack = track;
+        profile.StudyMode = mode;
+        profile.OnboardingCompleted = true;
+        profile.OnboardingCompletedAt ??= DateTimeOffset.UtcNow;
+
+        await db.SaveChangesAsync(ct);
+
+        return Results.Ok(new { message = "Đã lưu." });
+    }
+
+    private static string TrackLabelVi(LearningTrack track) => track switch
+    {
+        LearningTrack.Foundation => "Nền tảng chung",
+        LearningTrack.Helpdesk => "Helpdesk",
+        LearningTrack.Infrastructure => "Hạ tầng và vận hành",
+        LearningTrack.Security => "Bảo mật",
+        LearningTrack.Cloud => "Cloud",
+        LearningTrack.Ai => "AI",
+        LearningTrack.Reading => "Đọc tài liệu nghề",
+        LearningTrack.Restaurant => "Nhà hàng, ăn uống",
+        LearningTrack.Shopping => "Đi siêu thị, mua sắm",
+        LearningTrack.Hobbies => "Sở thích và giao tiếp đời thường",
+        _ => track.ToString(),
+    };
+
+    private static string TrackHintVi(LearningTrack track) => track switch
+    {
+        LearningTrack.Foundation => "Đời sống và văn phòng. Mất gốc thì bắt đầu ở đây.",
+        LearningTrack.Helpdesk => "Nhận ticket, hỏi để chẩn đoán, hướng dẫn từng bước.",
+        LearningTrack.Infrastructure => "Standup, báo sự cố, bàn giao ca trực.",
+        LearningTrack.Security => "Báo sự cố bảo mật, viết advisory nội bộ.",
+        LearningTrack.Cloud => "Trình bày đánh đổi kiến trúc, viết migration plan.",
+        LearningTrack.Ai => "Trình bày use case cho người không chuyên.",
+        LearningTrack.Reading => "Email, ticket, log, release notes, postmortem.",
+        LearningTrack.Restaurant => "Đặt bàn, gọi món, tính tiền và chia tiền.",
+        LearningTrack.Shopping => "Tìm hàng, hỏi số lượng, thanh toán và đổi trả.",
+        LearningTrack.Hobbies => "Nói về sở thích, kể cuối tuần, rủ đi chơi.",
+        _ => string.Empty,
+    };
 
     private static async Task<IResult> GetChallenge(
         string code,

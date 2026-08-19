@@ -1,0 +1,256 @@
+schema_version: 1
+code: SHOP-03
+slug: quay-thanh-toan-va-doi-tra
+title_vi: "Quầy thanh toán và đổi trả hàng"
+title_en: "Checkout and returns"
+
+layer: Life
+track: Shopping
+level: A1
+unit_code: U-S1
+order_index: 3
+estimated_minutes: 11
+
+illustration: money-receipt
+
+objective_vi: >
+  Qua quầy thanh toán trơn tru và quay lại đổi hàng khi mua nhầm — việc thứ hai
+  cần đúng một câu mở đầu, và hầu hết người học không biết câu đó.
+
+objective_observable: >
+  Trả lời đúng ba câu hỏi thường gặp ở quầy trong 3 trên 4 drill, và mở lời đổi hàng đúng cách.
+
+mastery_weights:
+  Listening: 0.30
+  Speaking: 0.35
+  Reading: 0.20
+  Writing: 0.15
+
+prerequisites:
+  - lesson: SHOP-02
+    min_mastery: 60
+    kind: Hard
+
+vocabulary:
+  - term: "Do you need a bag"
+    ipa: "/duː juː niːd ə bæɡ/"
+    meaning_vi: "anh chị có cần túi không"
+    chunk: "Do you need a bag?"
+    tags: [shopping, checkout]
+  - term: "cash or card"
+    ipa: "/kæʃ ɔːr kɑːrd/"
+    meaning_vi: "tiền mặt hay thẻ"
+    chunk: "Cash or card?"
+    tags: [shopping, checkout]
+  - term: "I'd like to return this"
+    ipa: "/aɪd laɪk tuː rɪˈtɜːrn ðɪs/"
+    meaning_vi: "tôi muốn trả lại món này (câu mở đầu khi đổi hàng)"
+    chunk: "I'd like to return this, please."
+    tags: [shopping, returns]
+  - term: "receipt"
+    ipa: "/rɪˈsiːt/"
+    meaning_vi: "hoá đơn (chữ p câm)"
+    chunk: "Here's the receipt."
+    tags: [shopping, returns]
+  - term: "the wrong size"
+    ipa: "/ðə rɒŋ saɪz/"
+    meaning_vi: "sai cỡ"
+    chunk: "It's the wrong size."
+    tags: [shopping, returns]
+  - term: "exchange it for"
+    ipa: "/ɪksˈtʃeɪndʒ ɪt fɔːr/"
+    meaning_vi: "đổi lấy cái khác"
+    chunk: "Can I exchange it for a larger one?"
+    tags: [shopping, returns]
+
+sentence_patterns:
+  - pattern: "I'd like to return this {item}."
+    meaning_vi: "Tôi muốn trả lại {item} này."
+    slots:
+      item: ["shirt", "kettle", "bag"]
+  - pattern: "Can I exchange it for a {size} one?"
+    meaning_vi: "Đổi lấy cái {size} được không?"
+    slots:
+      size: ["larger", "smaller", "different"]
+
+dialogue:
+  context_vi: >
+    Bạn mua một chiếc áo hôm qua, về thử thì chật. Hoá đơn vẫn còn trong túi.
+    Ở đây đổi hàng trong bảy ngày là chuyện bình thường, không ai khó chịu.
+  turns:
+    - speaker: "You"
+      en: "Hi, I'd like to return this, please."
+      vi: "Chào chị, tôi muốn trả lại cái này ạ."
+    - speaker: "Staff"
+      en: "Sure. Do you have the receipt?"
+      vi: "Vâng ạ. Anh có hoá đơn không ạ?"
+    - speaker: "You"
+      en: "Yes, here it is. It's the wrong size."
+      vi: "Có, đây ạ. Nó sai cỡ ạ."
+    - speaker: "Staff"
+      en: "No problem. Refund or exchange?"
+      vi: "Không sao ạ. Anh muốn hoàn tiền hay đổi hàng?"
+    - speaker: "You"
+      en: "Can I exchange it for a larger one?"
+      vi: "Tôi đổi lấy cỡ to hơn được không ạ?"
+    - speaker: "Staff"
+      en: "Let me check the stock. One moment."
+      vi: "Để tôi kiểm tra hàng. Chờ chút ạ."
+
+listening:
+  context_vi: >
+    Nghe một lượt thanh toán. Ba câu nhân viên hỏi lặp lại ở mọi siêu thị —
+    nghe quen là qua quầy không cần suy nghĩ.
+  speed: 0.9
+  voice: en_US_female
+  transcript_en: "Do you have a loyalty card? No, I don't. Do you need a bag? Yes, one please. That's two hundred and forty thousand. Cash or card? Card, please."
+  transcript_vi: "Anh chị có thẻ thành viên không ạ? Không ạ. Có cần túi không ạ? Có, một cái ạ. Hết hai trăm bốn mươi nghìn. Tiền mặt hay thẻ ạ? Thẻ ạ."
+  questions:
+    - kind: mcq_listen
+      prompt_vi: "Khách trả bằng gì?"
+      choices: ["Tiền mặt", "Thẻ", "Chuyển khoản"]
+      answer: 1
+      difficulty: 1
+      skill: Listening
+    - kind: mcq_listen
+      prompt_vi: "Khách có thẻ thành viên không?"
+      choices: ["Không", "Có", "Quên mang"]
+      answer: 0
+      difficulty: 2
+      skill: Listening
+
+speaking_drills:
+  - kind: read_aloud
+    expected_text: "I'd like to return this, please."
+    prompt_vi: "Đọc to. \"I'd\" đọc gọn một nhịp, đừng tách thành I would."
+    ipa: "/aɪd laɪk tuː rɪˈtɜːrn ðɪs pliːz/"
+    focus_phonemes: ["aɪd", "ɜːr"]
+  - kind: read_aloud
+    expected_text: "Here's the receipt."
+    prompt_vi: "Chữ receipt có p CÂM. Đọc là /rɪˈsiːt/."
+    ipa: "/hɪrz ðə rɪˈsiːt/"
+    focus_phonemes: ["s", "t"]
+  - kind: shadow
+    expected_text: "Can I exchange it for a larger one?"
+    prompt_vi: "Câu đổi hàng. Cụm /kstʃ/ giữa chữ exchange nói liền một hơi."
+    ipa: "/kæn aɪ ɪksˈtʃeɪndʒ ɪt fɔːr ə ˈlɑːrdʒər wʌn/"
+    focus_phonemes: ["tʃ", "dʒ"]
+  - kind: shadow
+    expected_text: "Do you need a bag?"
+    prompt_vi: "Câu nhân viên hỏi ở mọi quầy. Nghe quen để trả lời ngay."
+    ipa: "/duː juː niːd ə bæɡ/"
+    focus_phonemes: ["d", "ɡ"]
+  - kind: respond
+    prompt_en: "Cash or card?"
+    prompt_vi: "Nhân viên hỏi bạn trả bằng gì. Chọn một."
+    accept_patterns:
+      - "Card"
+      - "Cash"
+      - "please"
+
+reading:
+  kind: chat
+  context_vi: >
+    Chính sách đổi trả in sau hoá đơn. Đọc để biết mình còn bao nhiêu ngày và cần mang gì.
+  text_en: |
+    RETURNS POLICY
+    Items can be returned within 14 days.
+    You must bring the original receipt.
+    Items must be unused and in original packaging.
+
+    Food and opened items cannot be returned.
+    Refunds go back to the original payment method.
+  text_vi: |
+    CHÍNH SÁCH ĐỔI TRẢ
+    Hàng đổi trả trong vòng 14 ngày.
+    Phải mang hoá đơn gốc.
+    Hàng chưa dùng và còn nguyên bao bì.
+
+    Thực phẩm và hàng đã mở không đổi trả được.
+    Tiền hoàn về đúng phương thức đã thanh toán.
+  questions:
+    - kind: mcq_read
+      prompt_en: "How many days do you have to return an item?"
+      choices: ["7 days", "14 days", "30 days"]
+      answer: 1
+      difficulty: 1
+      reading_skill: scan
+      skill: Reading
+    - kind: mcq_read
+      prompt_en: "What can NOT be returned?"
+      choices: ["Food and opened items", "Clothes", "Anything with a receipt"]
+      answer: 0
+      difficulty: 2
+      reading_skill: scan
+      skill: Reading
+
+writing:
+  kind: FillBlank
+  prompt_vi: "Điền hai chỗ trống: câu mở đầu khi đổi hàng và tên tờ giấy cần mang."
+  prompt_en: "I'd like to ___ this, please. Here's the ___."
+  blanks:
+    - ["return"]
+    - ["receipt"]
+  hint_vi: "Chỗ đầu là động từ nghĩa là trả lại. Chỗ sau là tờ giấy ghi tiền, có chữ p câm."
+  sample_en: "I'd like to return this, please. Here's the receipt."
+
+quiz:
+  - kind: mcq
+    prompt_vi: "Bạn muốn trả lại hàng. Câu mở đầu là gì?"
+    choices: ["This is bad", "I'd like to return this, please", "Give money back"]
+    answer: 1
+    difficulty: 2
+    skill: Speaking
+  - kind: mcq
+    prompt_vi: "\"Receipt\" đọc thế nào?"
+    choices: ["/rɪˈsiːt/, chữ p câm", "/re-xép/", "/ri-xíp-t/"]
+    answer: 0
+    difficulty: 2
+    skill: Listening
+  - kind: mcq
+    prompt_vi: "Nhân viên hỏi \"Refund or exchange?\" nghĩa là gì?"
+    choices: ["Trả tiền mặt hay thẻ", "Mua thêm hay thôi", "Hoàn tiền hay đổi hàng"]
+    answer: 2
+    difficulty: 2
+    skill: Listening
+  - kind: mcq
+    prompt_vi: "Áo bị chật, muốn đổi cỡ to hơn. Nói gì?"
+    choices: ["Can I exchange it for a larger one?", "This small, change big", "I need other size"]
+    answer: 0
+    difficulty: 3
+    skill: Speaking
+
+explanation:
+  why_vi: >
+    Qua quầy thì chỉ có ba câu hỏi lặp đi lặp lại, học một lần dùng mãi. Nhưng phần
+    đổi trả mới là chỗ người Việt bỏ cuộc: ở nhà đổi hàng thường phải năn nỉ nên
+    nhiều người ngại quay lại, cứ để món đồ mua nhầm nằm đó. Ở nơi có chính sách
+    đổi trả rõ ràng, bạn chỉ cần một câu và tờ hoá đơn.
+  how_vi: >
+    Mở đầu bằng "I'd like to return this, please." Không cần xin lỗi, không cần
+    giải thích dài. Nhân viên sẽ hỏi hoá đơn, rồi hỏi bạn muốn hoàn tiền hay đổi hàng.
+    Trả lời một trong hai là xong.
+  contrast_vi: >
+    "Refund" là lấy lại tiền. "Exchange" là đổi lấy món khác. Nhân viên luôn hỏi
+    bạn chọn cái nào, nên biết trước mình muốn gì thì đỡ lúng túng.
+
+common_mistakes:
+  - mistake: "Xin lỗi rối rít trước khi đổi hàng"
+    why_vi: >
+      Người Việt quen thấy đổi trả là làm phiền nên mở đầu bằng một tràng xin lỗi.
+      Nhân viên lại tưởng có chuyện gì nghiêm trọng và không hiểu bạn cần gì.
+    fix_vi: "Vào thẳng: \"I'd like to return this, please.\" Đổi trả là quyền của khách, không phải xin xỏ."
+  - mistake: "Đọc \"receipt\" thành /ri-xíp/"
+    why_vi: >
+      Chữ p trong receipt hoàn toàn câm nhưng người học nhìn mặt chữ rồi đọc ra.
+      Đây đúng là từ nhân viên hỏi bạn nên phát âm sai là hỏng cả cuộc trao đổi.
+    fix_vi: "Bỏ chữ p: /rɪˈsiːt/, nghe như \"ri-SÍT\"."
+  - mistake: "Vứt hoá đơn ngay sau khi mua"
+    why_vi: >
+      Ở Việt Nam nhiều nơi không cần hoá đơn để đổi hàng. Ở đây gần như mọi cửa hàng
+      đều yêu cầu hoá đơn gốc, không có là không đổi được.
+    fix_vi: "Giữ hoá đơn ít nhất hết thời hạn đổi trả in trên đó, thường là 14 ngày."
+
+memory_trick_vi: >
+  Qua quầy: ba câu hỏi cố định — thẻ thành viên, túi, tiền mặt hay thẻ.
+  Đổi hàng: một câu mở đầu "I'd like to return this" cộng một tờ RECEIPT. Không cần xin lỗi.

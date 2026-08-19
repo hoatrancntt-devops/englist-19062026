@@ -25,9 +25,9 @@ public class ContentSeedingTests(ApiFactory api)
         var items = await db.LessonItems.CountAsync();
         var forms = await db.PlacementForms.CountAsync();
 
-        Assert.Equal(58, lessons);
-        Assert.Equal(406, activities);
-        Assert.Equal(570, items);
+        Assert.Equal(67, lessons);
+        Assert.Equal(469, activities);
+        Assert.Equal(642, items);
         Assert.Equal(2, forms);
     }
 
@@ -45,7 +45,7 @@ public class ContentSeedingTests(ApiFactory api)
         Assert.Empty(report.Problems);
         Assert.Equal(0, report.Inserted);
         Assert.Equal(0, report.Updated);
-        Assert.Equal(58, report.Unchanged);
+        Assert.Equal(67, report.Unchanged);
 
         // Id giữ nguyên là bằng chứng seeder upsert chứ không xoá rồi tạo lại — nếu tạo lại,
         // khoá ngoại từ hàng đợi ôn tập của học viên sẽ bị cascade xoá theo.
@@ -75,7 +75,7 @@ public class ContentSeedingTests(ApiFactory api)
 
         // Khoá rỗng làm bài rơi về hình mặc định mà không báo lỗi nào.
         //
-        // KHÔNG đòi mỗi bài một khoá riêng: 58 bài dùng chung 33 khoá là có chủ đích —
+        // KHÔNG đòi mỗi bài một khoá riêng: 67 bài dùng chung khoảng 33 khoá là có chủ đích —
         // shield-lock cho ba bài bảo mật, clock-calendar cho các bài về thời gian.
         // Hình minh hoạ theo chủ đề chứ không theo bài.
         var illustrations = await db.Lessons
@@ -83,7 +83,7 @@ public class ContentSeedingTests(ApiFactory api)
             .Select(l => l.Illustration)
             .ToListAsync();
 
-        Assert.Equal(58, illustrations.Count);
+        Assert.Equal(67, illustrations.Count);
         Assert.DoesNotContain(illustrations, i => string.IsNullOrWhiteSpace(i));
     }
 
@@ -152,15 +152,18 @@ public class ContentSeedingTests(ApiFactory api)
             Assert.Empty(report.Problems);
             Assert.Equal(1, report.Updated);
 
-            // Cạnh MỚI phải vào được DB. Đây mới là chỗ từng vỡ: EF coi bản ghi mới là Modified
-            // vì khoá GUID đã có sẵn, rồi UPDATE một dòng chưa tồn tại.
+            // Cạnh MỚI phải vào được DB, và phải là ĐÚNG cạnh vừa thêm ở trên.
+            //
+            // Bản trước kiểm cặp CLD-01/OFF-12 trong khi phần sửa lại nhắm vào CLD-03/OFF-01.
+            // Cặp đó vốn đã có sẵn trong giáo trình nên test xanh mà không hề chạm tới thứ nó
+            // khai là đang kiểm — hỏng seeder vẫn xanh.
             var added = await db.LessonPrerequisites
-                .CountAsync(p => p.Lesson!.Code == "CLD-01" && p.RequiredLesson!.Code == "OFF-12");
+                .CountAsync(p => p.Lesson!.Code == "CLD-03" && p.RequiredLesson!.Code == "OFF-01");
 
             Assert.Equal(1, added);
 
             var kind = await db.LessonPrerequisites
-                .Where(p => p.Lesson!.Code == "CLD-01" && p.RequiredLesson!.Code == "INF-05")
+                .Where(p => p.Lesson!.Code == "CLD-03" && p.RequiredLesson!.Code == "OFF-01")
                 .Select(p => p.Kind)
                 .SingleAsync();
 

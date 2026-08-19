@@ -75,6 +75,22 @@ public class LessonPlayerService(
     private readonly ActivityGrader _grader = new();
     private readonly WritingGrader _writingGrader = new();
 
+    /// <summary>
+    /// Những loại bước còn lại theo chế độ học.
+    ///
+    /// Vocab và Quiz giữ trong MỌI chế độ: từ vựng là nền cho cả bốn kỹ năng, còn quiz là chỗ
+    /// duy nhất chấm được bằng máy ở bài không có phần viết. Bỏ chúng đi thì chế độ "chỉ nói"
+    /// còn đúng hai bước và bài mất hết chỗ bám.
+    /// </summary>
+    private static HashSet<ActivityKind> KindsFor(StudyMode mode) => mode switch
+    {
+        StudyMode.ListeningOnly => [ActivityKind.Listen, ActivityKind.Vocab, ActivityKind.Quiz],
+        StudyMode.SpeakingOnly => [ActivityKind.Shadow, ActivityKind.Speak, ActivityKind.Vocab, ActivityKind.Quiz],
+        StudyMode.ReadingOnly => [ActivityKind.Read, ActivityKind.Vocab, ActivityKind.Quiz],
+        StudyMode.WritingOnly => [ActivityKind.Write, ActivityKind.Vocab, ActivityKind.Quiz],
+        _ => [.. Enum.GetValues<ActivityKind>()],
+    };
+
     public async Task<PlayerLesson?> GetLessonAsync(
         Guid userId, string code, DateTimeOffset now, CancellationToken ct = default)
     {
@@ -100,7 +116,20 @@ public class LessonPlayerService(
             .OrderByDescending(a => a.StartedAt)
             .FirstOrDefaultAsync(ct);
 
+        // Chế độ học lọc bước ngay ở đây.
+        //
+        // Trước đó StudyMode chỉ được HIỂN THỊ trên bảng điều khiển chứ không lọc gì: chọn
+        // "chỉ nghe" vẫn phải đi qua đủ bảy bước, tức là lựa chọn đó không có tác dụng nào.
+        //
+        // Lọc ở đây an toàn cho phần tính mastery: engine đã bỏ qua kỹ năng không có điểm
+        // (xem ComputeMasteryRaw và SkillsBelowThreshold), nên học một kỹ năng vẫn qua được bài.
+        var profile = await db.UserProfiles.AsNoTracking()
+            .FirstOrDefaultAsync(p => p.UserId == userId, ct);
+
+        var kept = KindsFor(profile?.StudyMode ?? StudyMode.Mixed);
+
         var activities = lesson.Activities
+            .Where(a => kept.Contains(a.Kind))
             .OrderBy(a => a.OrderIndex)
             .Select(a => new PlayerActivity(
                 a.Id,

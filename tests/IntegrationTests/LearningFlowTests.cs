@@ -39,7 +39,7 @@ public class LearningFlowTests(ApiFactory api)
         var roadmap = await client.GetFromJsonAsync<JsonElement>("/api/v1/learning/roadmap");
         var lessons = roadmap.GetProperty("lessons").EnumerateArray().ToList();
 
-        Assert.Equal(58, lessons.Count);
+        Assert.Equal(67, lessons.Count);
 
         // Bài đầu tiên phải mở sẵn, nếu không học viên mới không có chỗ nào bắt đầu.
         var first = lessons.First(l => l.GetProperty("code").GetString() == "LIFE-01");
@@ -164,6 +164,66 @@ public class LearningFlowTests(ApiFactory api)
         Assert.False(life03.GetProperty("unlockedByChallenge").GetBoolean());
         Assert.Equal(1, roadmap.GetProperty("mastered").GetInt32());
         Assert.Equal("Available", await StateAsync(client, "LIFE-04"));
+    }
+
+    [Fact]
+    public async Task ChonLinhVucVaCheDoHocThiLuuLaiVaLocDungBuoc()
+    {
+        var client = await api.NewLearnerAsync();
+
+        // Chỉ được chọn lĩnh vực CÓ bài thật. Liệt kê thẳng từ enum thì học viên chọn phải
+        // một nhánh rỗng rồi nhìn lộ trình trắng trơn mà không hiểu vì sao.
+        var before = await client.GetFromJsonAsync<JsonElement>("/api/v1/learning/preferences");
+        var tracks = before.GetProperty("tracks").EnumerateArray().ToList();
+
+        Assert.All(tracks, t => Assert.True(t.GetProperty("lessonCount").GetInt32() > 0));
+        Assert.Contains(tracks, t => t.GetProperty("value").GetString() == "Restaurant");
+        Assert.False(before.GetProperty("onboardingCompleted").GetBoolean());
+
+        // Đủ bảy bước khi để chế độ mặc định.
+        var full = await client.GetFromJsonAsync<JsonElement>("/api/v1/learning/lessons/LIFE-01");
+        Assert.Equal(7, full.GetProperty("activities").GetArrayLength());
+
+        var saved = await client.PutAsJsonAsync("/api/v1/learning/preferences",
+            new { primaryTrack = "Restaurant", studyMode = "ListeningOnly" });
+
+        Assert.Equal(HttpStatusCode.OK, saved.StatusCode);
+
+        // Chọn "chỉ nghe" thì bài chỉ còn bước nghe, từ vựng và quiz.
+        //
+        // Đây là chỗ trước đây hỏng trong im lặng: StudyMode được lưu và hiển thị trên bảng
+        // điều khiển nhưng KHÔNG lọc gì, nên lựa chọn của học viên không có tác dụng nào.
+        var filtered = await client.GetFromJsonAsync<JsonElement>("/api/v1/learning/lessons/LIFE-01");
+        var kinds = filtered.GetProperty("activities").EnumerateArray()
+            .Select(a => a.GetProperty("kind").GetString())
+            .ToList();
+
+        Assert.DoesNotContain("Speak", kinds);
+        Assert.DoesNotContain("Write", kinds);
+        Assert.DoesNotContain("Read", kinds);
+        Assert.Contains("Listen", kinds);
+
+        var after = await client.GetFromJsonAsync<JsonElement>("/api/v1/learning/preferences");
+        Assert.Equal("Restaurant", after.GetProperty("primaryTrack").GetString());
+        Assert.True(after.GetProperty("onboardingCompleted").GetBoolean());
+    }
+
+    [Fact]
+    public async Task ChonLinhVucKhongCoBaiThiBiTuChoi()
+    {
+        var client = await api.NewLearnerAsync();
+
+        // Foundation có bài nên hợp lệ; tên bịa thì phải bị chặn ngay ở API chứ không
+        // được lưu vào hồ sơ rồi mới lộ ra là lộ trình trắng.
+        var bad = await client.PutAsJsonAsync("/api/v1/learning/preferences",
+            new { primaryTrack = "KhongTonTai", studyMode = "Mixed" });
+
+        Assert.Equal(HttpStatusCode.BadRequest, bad.StatusCode);
+
+        var badMode = await client.PutAsJsonAsync("/api/v1/learning/preferences",
+            new { primaryTrack = "Foundation", studyMode = "KhongTonTai" });
+
+        Assert.Equal(HttpStatusCode.BadRequest, badMode.StatusCode);
     }
 
     private static async Task<string?> StateAsync(HttpClient client, string code)

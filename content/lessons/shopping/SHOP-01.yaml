@@ -1,0 +1,251 @@
+schema_version: 1
+code: SHOP-01
+slug: tim-hang-trong-sieu-thi
+title_vi: "Tìm hàng trong siêu thị"
+title_en: "Finding things in the supermarket"
+
+layer: Life
+track: Shopping
+level: PreA1
+unit_code: U-S1
+order_index: 1
+estimated_minutes: 11
+
+illustration: map-directions
+
+objective_vi: >
+  Hỏi nhân viên siêu thị món hàng nằm ở đâu và hiểu câu chỉ đường của họ —
+  ba mươi giây tiết kiệm được nửa tiếng đi lòng vòng.
+
+objective_observable: >
+  Hỏi được vị trí một món hàng trong 3 trên 4 drill, và hiểu đúng câu chỉ dãy kệ.
+
+mastery_weights:
+  Listening: 0.35
+  Speaking: 0.35
+  Reading: 0.15
+  Writing: 0.15
+
+prerequisites: []
+
+vocabulary:
+  - term: "Where can I find"
+    ipa: "/wer kæn aɪ faɪnd/"
+    meaning_vi: "tôi tìm ... ở đâu (câu chính của bài)"
+    chunk: "Where can I find the milk?"
+    tags: [shopping, core]
+  - term: "aisle"
+    ipa: "/aɪl/"
+    meaning_vi: "dãy kệ (chữ s câm)"
+    chunk: "It's in aisle four."
+    tags: [shopping, core]
+  - term: "next to"
+    ipa: "/nekst tuː/"
+    meaning_vi: "ngay cạnh"
+    chunk: "It's next to the bread."
+    tags: [shopping, place]
+  - term: "at the back"
+    ipa: "/æt ðə bæk/"
+    meaning_vi: "ở phía trong cùng"
+    chunk: "The dairy is at the back."
+    tags: [shopping, place]
+  - term: "out of stock"
+    ipa: "/aʊt əv stɒk/"
+    meaning_vi: "hết hàng"
+    chunk: "Sorry, it's out of stock."
+    tags: [shopping]
+  - term: "trolley"
+    ipa: "/ˈtrɒli/"
+    meaning_vi: "xe đẩy"
+    chunk: "Where are the trolleys?"
+    tags: [shopping]
+
+sentence_patterns:
+  - pattern: "Where can I find the {item}?"
+    meaning_vi: "Tôi tìm {item} ở đâu?"
+    slots:
+      item: ["milk", "rice", "soap"]
+  - pattern: "It's in aisle {number}."
+    meaning_vi: "Nó ở dãy {number}."
+    slots:
+      number: ["three", "four", "seven"]
+
+dialogue:
+  context_vi: >
+    Siêu thị lớn, biển hiệu toàn tiếng Anh, và bạn cần mua ba thứ trong mười phút.
+    Hỏi một câu nhanh hơn đi hết mười hai dãy kệ.
+  turns:
+    - speaker: "You"
+      en: "Excuse me, where can I find the milk?"
+      vi: "Xin lỗi, sữa ở đâu ạ?"
+    - speaker: "Staff"
+      en: "The dairy section is at the back, aisle seven."
+      vi: "Khu sữa ở phía trong cùng, dãy bảy."
+    - speaker: "You"
+      en: "Thanks. And the rice?"
+      vi: "Cảm ơn. Còn gạo ạ?"
+    - speaker: "Staff"
+      en: "Aisle three, next to the noodles."
+      vi: "Dãy ba, ngay cạnh mì."
+    - speaker: "You"
+      en: "Got it. Thank you."
+      vi: "Rõ rồi. Cảm ơn ạ."
+
+listening:
+  context_vi: >
+    Nghe hai lượt hỏi đường trong siêu thị. Chú ý số dãy kệ và từ chỉ vị trí —
+    hai thông tin duy nhất bạn cần nhớ.
+  speed: 0.85
+  voice: en_US_male
+  transcript_en: "Excuse me, where can I find the sugar? Aisle two, next to the flour. And the eggs? At the back, near the dairy. Sorry, the large eggs are out of stock today."
+  transcript_vi: "Xin lỗi, đường ở đâu ạ? Dãy hai, cạnh bột mì. Còn trứng ạ? Ở trong cùng, gần khu sữa. Xin lỗi, trứng cỡ to hôm nay hết hàng rồi ạ."
+  questions:
+    - kind: mcq_listen
+      prompt_vi: "Đường nằm ở dãy nào?"
+      choices: ["Dãy hai", "Dãy bảy", "Dãy bốn"]
+      answer: 0
+      difficulty: 1
+      skill: Listening
+    - kind: mcq_listen
+      prompt_vi: "Món nào hết hàng?"
+      choices: ["Bột mì", "Trứng cỡ to", "Sữa"]
+      answer: 1
+      difficulty: 2
+      skill: Listening
+
+speaking_drills:
+  - kind: read_aloud
+    expected_text: "Excuse me, where can I find the milk?"
+    prompt_vi: "Đọc to. Bắt đầu bằng \"Excuse me\" để người ta quay lại đã, rồi mới hỏi."
+    ipa: "/ɪkˈskjuːz miː wer kæn aɪ faɪnd ðə mɪlk/"
+    focus_phonemes: ["skj", "f"]
+  - kind: read_aloud
+    expected_text: "Where are the trolleys?"
+    prompt_vi: "Hỏi xe đẩy. Âm /r/ trong trolley cuộn lưỡi, không rung như chữ r tiếng Việt."
+    ipa: "/wer ɑːr ðə ˈtrɒliz/"
+    focus_phonemes: ["tr", "z"]
+  - kind: shadow
+    expected_text: "It's in aisle four."
+    prompt_vi: "Chữ aisle có s CÂM, đọc đúng như chữ I'll."
+    ipa: "/ɪts ɪn aɪl fɔːr/"
+    focus_phonemes: ["aɪ", "l"]
+  - kind: shadow
+    expected_text: "Sorry, it's out of stock."
+    prompt_vi: "Câu bạn sẽ nghe khi hết hàng. Ba chữ cuối nói dính thành /aʊtəvstɒk/."
+    ipa: "/ˈsɒri ɪts aʊt əv stɒk/"
+    focus_phonemes: ["st", "k"]
+  - kind: respond
+    prompt_en: "Can I help you find anything?"
+    prompt_vi: "Nhân viên hỏi bạn cần tìm gì. Hỏi vị trí một món bất kỳ."
+    accept_patterns:
+      - "Where can I find"
+      - "Where is"
+      - "I'm looking for"
+
+reading:
+  kind: chat
+  context_vi: >
+    Bảng chỉ dẫn treo ở cửa siêu thị. Đọc lướt để biết đi dãy nào.
+  text_en: |
+    STORE GUIDE
+    Aisle 1 - Fruit and vegetables
+    Aisle 2 - Sugar, flour, baking
+    Aisle 3 - Rice and noodles
+    Aisle 4 - Drinks
+    Aisle 7 - Dairy and eggs (at the back)
+
+    Trolleys are at the main entrance.
+  text_vi: |
+    SƠ ĐỒ SIÊU THỊ
+    Dãy 1 - Rau củ quả
+    Dãy 2 - Đường, bột, đồ làm bánh
+    Dãy 3 - Gạo và mì
+    Dãy 4 - Đồ uống
+    Dãy 7 - Sữa và trứng (phía trong cùng)
+
+    Xe đẩy ở cửa chính.
+  questions:
+    - kind: mcq_read
+      prompt_en: "Which aisle has drinks?"
+      choices: ["Aisle 2", "Aisle 4", "Aisle 7"]
+      answer: 1
+      difficulty: 1
+      reading_skill: scan
+      skill: Reading
+    - kind: mcq_read
+      prompt_en: "Where are the trolleys?"
+      choices: ["At the main entrance", "At the back", "In aisle 1"]
+      answer: 0
+      difficulty: 1
+      reading_skill: scan
+      skill: Reading
+
+writing:
+  kind: FillBlank
+  prompt_vi: "Điền hai chỗ trống: câu hỏi vị trí và từ chỉ dãy kệ."
+  prompt_en: "Where can I ___ the rice? It's in ___ three."
+  blanks:
+    - ["find"]
+    - ["aisle"]
+  hint_vi: "Chỗ đầu là động từ nghĩa là tìm thấy. Chỗ sau là từ chỉ dãy kệ, có chữ s câm."
+  sample_en: "Where can I find the rice? It's in aisle three."
+
+quiz:
+  - kind: mcq
+    prompt_vi: "Muốn hỏi sữa ở đâu thì nói gì?"
+    choices: ["Milk where?", "Where can I find the milk?", "I find milk"]
+    answer: 1
+    difficulty: 1
+    skill: Speaking
+  - kind: mcq
+    prompt_vi: "\"Aisle\" đọc thế nào?"
+    choices: ["/aɪl/ như chữ I'll", "/eɪ-sồ/", "/a-si-le/"]
+    answer: 0
+    difficulty: 2
+    skill: Listening
+  - kind: mcq
+    prompt_vi: "\"Out of stock\" nghĩa là gì?"
+    choices: ["Đang giảm giá", "Hàng mới về", "Hết hàng"]
+    answer: 2
+    difficulty: 1
+    skill: Reading
+  - kind: mcq
+    prompt_vi: "Nhân viên nói \"next to the bread\" nghĩa là gì?"
+    choices: ["Ngay cạnh bánh mì", "Phía sau bánh mì", "Đối diện bánh mì"]
+    answer: 0
+    difficulty: 2
+    skill: Listening
+
+explanation:
+  why_vi: >
+    Siêu thị lớn ở nước ngoài có hơn mười dãy kệ và biển hiệu chỉ ghi tên nhóm hàng.
+    Người mới thường đi hết từng dãy vì ngại hỏi. Một câu hỏi bốn chữ tiết kiệm
+    được cả nửa tiếng, và nhân viên siêu thị được trả lương để trả lời câu đó.
+  how_vi: >
+    Mở đầu bằng "Excuse me" để người ta quay lại, rồi "Where can I find the ...?"
+    Câu trả lời gần như luôn có hai phần: số dãy và một từ chỉ vị trí như
+    "next to", "at the back". Nhớ hai thứ đó là đủ.
+  contrast_vi: >
+    "Aisle" là dãy kệ trong cửa hàng, chữ s không đọc. "Section" là cả khu hàng
+    gồm nhiều dãy, như "the dairy section". Nhân viên dùng cả hai từ trong một câu.
+
+common_mistakes:
+  - mistake: "Đọc \"aisle\" thành /ây-sồ/"
+    why_vi: >
+      Người học nhìn mặt chữ rồi đọc theo, mà từ này có chữ s hoàn toàn câm.
+      Đọc sai thì nhân viên không hiểu, mà đây lại là từ họ dùng để trả lời bạn.
+    fix_vi: "Đọc đúng như chữ \"I'll\": /aɪl/. Bỏ hẳn chữ s trong đầu."
+  - mistake: "Hỏi cụt lủn \"Milk where?\""
+    why_vi: >
+      Dịch thẳng cấu trúc tiếng Việt "sữa ở đâu". Người ta vẫn đoán ra nhưng nghe
+      như ra lệnh, và bạn sẽ ngại hỏi tiếp món thứ hai.
+    fix_vi: "Dùng nguyên mẫu \"Where can I find the milk?\" — chỉ dài hơn ba chữ."
+  - mistake: "Không nghe ra số dãy vì mải hiểu cả câu"
+    why_vi: >
+      Nhân viên nói nhanh và thêm nhiều thông tin phụ. Người học cố hiểu trọn câu
+      nên bỏ lỡ đúng con số cần nhớ.
+    fix_vi: "Chỉ bắt hai thứ: CON SỐ và từ chỉ vị trí. Phần còn lại bỏ qua được."
+
+memory_trick_vi: >
+  Một câu hỏi, hai thứ cần nghe. Hỏi "Where can I find...?", rồi bắt lấy SỐ DÃY
+  và một từ vị trí. Nghe được hai thứ đó là tìm ra hàng.

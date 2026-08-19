@@ -1,0 +1,257 @@
+schema_version: 1
+code: SHOP-02
+slug: so-luong-can-nang-va-han-dung
+title_vi: "Số lượng, cân nặng và hạn dùng"
+title_en: "Quantities, weights, and expiry dates"
+
+layer: Life
+track: Shopping
+level: PreA1
+unit_code: U-S1
+order_index: 2
+estimated_minutes: 11
+
+illustration: money-receipt
+
+objective_vi: >
+  Nói đúng số lượng cần mua, đọc được nhãn cân nặng, và tìm ra hạn dùng trên bao bì —
+  ba con số quyết định bạn mua đúng hay mua nhầm.
+
+objective_observable: >
+  Xin đúng số lượng và đơn vị trong 3 trên 4 drill, và đọc đúng hạn dùng trên một nhãn hàng.
+
+mastery_weights:
+  Listening: 0.30
+  Speaking: 0.30
+  Reading: 0.25
+  Writing: 0.15
+
+prerequisites:
+  - lesson: SHOP-01
+    min_mastery: 60
+    kind: Hard
+
+vocabulary:
+  - term: "half a kilo"
+    ipa: "/hɑːf ə ˈkiːloʊ/"
+    meaning_vi: "nửa cân"
+    chunk: "Half a kilo of beef, please."
+    tags: [shopping, quantity]
+  - term: "a pack of"
+    ipa: "/ə pæk əv/"
+    meaning_vi: "một gói, một vỉ"
+    chunk: "Two packs of eggs, please."
+    tags: [shopping, quantity]
+  - term: "best before"
+    ipa: "/best bɪˈfɔːr/"
+    meaning_vi: "dùng tốt nhất trước ngày (còn ăn được sau đó)"
+    chunk: "Best before 12 March."
+    tags: [shopping, label]
+  - term: "use by"
+    ipa: "/juːz baɪ/"
+    meaning_vi: "hạn dùng cuối (sau ngày này không ăn)"
+    chunk: "Use by 5 March."
+    tags: [shopping, label]
+  - term: "a bit more"
+    ipa: "/ə bɪt mɔːr/"
+    meaning_vi: "thêm một chút nữa"
+    chunk: "A bit more, please."
+    tags: [shopping, quantity]
+  - term: "That's enough"
+    ipa: "/ðæts ɪˈnʌf/"
+    meaning_vi: "đủ rồi ạ"
+    chunk: "That's enough, thanks."
+    tags: [shopping, quantity]
+
+sentence_patterns:
+  - pattern: "{amount} of {item}, please."
+    meaning_vi: "Cho tôi {amount} {item}."
+    slots:
+      amount: ["Half a kilo", "Two packs", "Three bottles"]
+      item: ["beef", "eggs", "water"]
+  - pattern: "Can I have a bit {direction}?"
+    meaning_vi: "Cho tôi {direction} một chút được không?"
+    slots:
+      direction: ["more", "less"]
+
+dialogue:
+  context_vi: >
+    Quầy thịt trong siêu thị. Nhân viên cân theo yêu cầu, và bạn phải nói được
+    số lượng trước khi họ cắt — cắt rồi thì khó đổi.
+  turns:
+    - speaker: "Staff"
+      en: "What can I get you?"
+      vi: "Anh chị cần gì ạ?"
+    - speaker: "You"
+      en: "Half a kilo of beef, please."
+      vi: "Cho tôi nửa cân thịt bò ạ."
+    - speaker: "Staff"
+      en: "This is a bit over. Is that okay?"
+      vi: "Chỗ này hơi dư một chút. Có được không ạ?"
+    - speaker: "You"
+      en: "A bit less, please."
+      vi: "Bớt một chút ạ."
+    - speaker: "Staff"
+      en: "How about now?"
+      vi: "Giờ được chưa ạ?"
+    - speaker: "You"
+      en: "That's enough, thanks."
+      vi: "Đủ rồi ạ, cảm ơn."
+
+listening:
+  context_vi: >
+    Nghe một lượt mua ở quầy cân. Chú ý cách khách điều chỉnh số lượng —
+    hai câu ngắn thay cho cả đoạn giải thích.
+  speed: 0.85
+  voice: en_US_female
+  transcript_en: "What can I get you? One kilo of chicken, please. That's a bit over, is that okay? A bit less, please. How about now? That's enough, thanks. Anything else? Two packs of eggs."
+  transcript_vi: "Anh chị cần gì ạ? Cho tôi một cân gà. Chỗ này hơi dư, có được không ạ? Bớt chút ạ. Giờ được chưa ạ? Đủ rồi, cảm ơn. Cần gì nữa không ạ? Hai vỉ trứng."
+  questions:
+    - kind: mcq_listen
+      prompt_vi: "Khách mua bao nhiêu thịt gà?"
+      choices: ["Nửa cân", "Hai cân", "Một cân"]
+      answer: 2
+      difficulty: 1
+      skill: Listening
+    - kind: mcq_listen
+      prompt_vi: "Khách mua thêm gì?"
+      choices: ["Hai vỉ trứng", "Hai chai nước", "Hai gói mì"]
+      answer: 0
+      difficulty: 2
+      skill: Listening
+
+speaking_drills:
+  - kind: read_aloud
+    expected_text: "Half a kilo of beef, please."
+    prompt_vi: "Đọc to. Chữ \"half\" có l CÂM, đọc là /hɑːf/."
+    ipa: "/hɑːf ə ˈkiːloʊ əv biːf pliːz/"
+    focus_phonemes: ["h", "f"]
+  - kind: read_aloud
+    expected_text: "Two packs of eggs, please."
+    prompt_vi: "Âm /ks/ cuối chữ packs phải bật ra, đừng nuốt mất."
+    ipa: "/tuː pæks əv eɡz pliːz/"
+    focus_phonemes: ["ks", "ɡz"]
+  - kind: shadow
+    expected_text: "A bit more, please."
+    prompt_vi: "Câu điều chỉnh số lượng. Ngắn nhưng phải rõ chữ cuối."
+    ipa: "/ə bɪt mɔːr pliːz/"
+    focus_phonemes: ["b", "mɔːr"]
+  - kind: shadow
+    expected_text: "That's enough, thanks."
+    prompt_vi: "Câu dừng lại. Âm /f/ cuối enough là f chứ không phải gh."
+    ipa: "/ðæts ɪˈnʌf θæŋks/"
+    focus_phonemes: ["ð", "f"]
+  - kind: respond
+    prompt_en: "How much would you like?"
+    prompt_vi: "Nhân viên hỏi bạn cần bao nhiêu. Nói một số lượng kèm đơn vị."
+    accept_patterns:
+      - "kilo"
+      - "pack"
+      - "please"
+
+reading:
+  kind: chat
+  context_vi: >
+    Nhãn trên hai hộp sữa. Hai kiểu ghi hạn khác nhau, và khác nhau về hậu quả.
+  text_en: |
+    FRESH MILK 1L
+    Use by: 5 March
+    Keep refrigerated. Do not use after this date.
+
+    BISCUITS 200g
+    Best before: 12 September
+    Still safe after this date, but less crisp.
+  text_vi: |
+    SỮA TƯƠI 1L
+    Hạn dùng: 5 tháng 3
+    Bảo quản lạnh. Không dùng sau ngày này.
+
+    BÁNH QUY 200g
+    Dùng tốt nhất trước: 12 tháng 9
+    Sau ngày này vẫn an toàn, chỉ kém giòn.
+  questions:
+    - kind: mcq_read
+      prompt_en: "Which product must not be used after its date?"
+      choices: ["The biscuits", "The milk", "Both"]
+      answer: 1
+      difficulty: 2
+      reading_skill: scan
+      skill: Reading
+    - kind: mcq_read
+      prompt_en: "How heavy is the pack of biscuits?"
+      choices: ["200g", "1L", "12g"]
+      answer: 0
+      difficulty: 1
+      reading_skill: scan
+      skill: Reading
+
+writing:
+  kind: FillBlank
+  prompt_vi: "Điền hai chỗ trống: câu xin nửa cân và câu nói đủ rồi."
+  prompt_en: "___ a kilo of beef, please. That's ___, thanks."
+  blanks:
+    - ["Half"]
+    - ["enough"]
+  hint_vi: "Chỗ đầu nghĩa là một nửa, có chữ l câm. Chỗ sau nghĩa là đủ."
+  sample_en: "Half a kilo of beef, please. That's enough, thanks."
+
+quiz:
+  - kind: mcq
+    prompt_vi: "Khác nhau giữa \"use by\" và \"best before\" là gì?"
+    choices: ["Giống nhau", "Use by là hạn cuối, best before vẫn dùng được sau đó", "Best before là hạn cuối"]
+    answer: 1
+    difficulty: 3
+    skill: Reading
+  - kind: mcq
+    prompt_vi: "Muốn mua nửa cân thịt thì nói gì?"
+    choices: ["Half a kilo, please", "Fifty percent kilo", "Small kilo please"]
+    answer: 0
+    difficulty: 2
+    skill: Speaking
+  - kind: mcq
+    prompt_vi: "Nhân viên cân hơi nhiều, bạn muốn bớt. Nói gì?"
+    choices: ["Too much", "No good", "A bit less, please"]
+    answer: 2
+    difficulty: 2
+    skill: Speaking
+  - kind: mcq
+    prompt_vi: "\"A pack of eggs\" nghĩa là gì?"
+    choices: ["Một quả trứng", "Một vỉ trứng", "Một cân trứng"]
+    answer: 1
+    difficulty: 1
+    skill: Reading
+
+explanation:
+  why_vi: >
+    Ở quầy cân, nói sai số lượng thì hàng đã cắt đã cân rồi, đổi lại rất ngại.
+    Còn trên bao bì, hai dòng "use by" và "best before" trông giống nhau nhưng
+    một dòng là hạn an toàn thực phẩm, dòng kia chỉ là chất lượng — nhầm hai
+    dòng này là đổ bỏ đồ ăn còn tốt, hoặc tệ hơn là ăn đồ đã hỏng.
+  how_vi: >
+    Nói số lượng theo mẫu "SỐ + ĐƠN VỊ + of + MÓN": "Half a kilo of beef."
+    Cần chỉnh thì chỉ hai câu: "A bit more" hoặc "A bit less", rồi chốt bằng
+    "That's enough, thanks."
+  contrast_vi: >
+    "Use by" là hạn cuối cùng, quá ngày là bỏ — thường trên đồ tươi như sữa, thịt.
+    "Best before" chỉ là mốc ngon nhất, quá ngày vẫn ăn được — thường trên đồ khô.
+
+common_mistakes:
+  - mistake: "Đọc \"half\" thành /háp/ hoặc /han/"
+    why_vi: >
+      Chữ l trong half hoàn toàn câm, nhưng người học nhìn mặt chữ nên cố đọc ra.
+      Đây là từ dùng mỗi lần mua đồ theo cân nên sai một lần là sai mãi.
+    fix_vi: "Bỏ hẳn chữ l: /hɑːf/, giống chữ \"far\" đổi âm cuối thành f."
+  - mistake: "Vứt đồ vì thấy quá ngày \"best before\""
+    why_vi: >
+      Người học dịch cả hai dòng thành "hạn sử dụng" nên xử lý như nhau.
+      Đồ khô quá best before vài tuần vẫn ăn tốt, bỏ đi là lãng phí.
+    fix_vi: "Nhìn chữ đầu: \"use\" thì bỏ, \"best\" thì vẫn dùng được, chỉ kém ngon."
+  - mistake: "Nói \"I want 500 gram beef\" ở quầy cân"
+    why_vi: >
+      Đúng nghĩa nhưng người bán ở nước nói tiếng Anh quen đơn vị kilo và cách nói
+      "half a kilo" hơn, nên phải dừng lại quy đổi.
+    fix_vi: "Dùng \"half a kilo\" cho 500g và \"a kilo\" cho 1kg. Nhanh hơn cho cả hai bên."
+
+memory_trick_vi: >
+  Mua theo cân chỉ cần ba câu: XIN "Half a kilo of...", CHỈNH "A bit more/less",
+  CHỐT "That's enough". Trên nhãn thì nhớ: USE by là bỏ, BEST before là vẫn ăn được.

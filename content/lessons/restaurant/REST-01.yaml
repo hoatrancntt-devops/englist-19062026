@@ -1,0 +1,248 @@
+schema_version: 1
+code: REST-01
+slug: dat-ban-va-toi-nha-hang
+title_vi: "Đặt bàn và bước vào nhà hàng"
+title_en: "Booking a table and arriving"
+
+layer: Life
+track: Restaurant
+level: PreA1
+unit_code: U-R1
+order_index: 1
+estimated_minutes: 11
+
+illustration: food-order
+
+objective_vi: >
+  Đặt bàn qua điện thoại và nói đúng câu đầu tiên khi bước vào nhà hàng —
+  hai mươi giây đầu quyết định cả bữa ăn diễn ra thoải mái hay lúng túng.
+
+objective_observable: >
+  Đặt được bàn có đủ số người và giờ trong 3 trên 4 drill, và trả lời đúng câu
+  đón khách của nhân viên.
+
+mastery_weights:
+  Listening: 0.30
+  Speaking: 0.40
+  Reading: 0.15
+  Writing: 0.15
+
+prerequisites: []
+
+vocabulary:
+  - term: "a table for"
+    ipa: "/ə ˈteɪbl fɔːr/"
+    meaning_vi: "bàn cho mấy người"
+    chunk: "A table for two, please."
+    tags: [restaurant, core]
+  - term: "under the name"
+    ipa: "/ˈʌndər ðə neɪm/"
+    meaning_vi: "đặt dưới tên (khi đã đặt trước)"
+    chunk: "It's under the name Hoa."
+    tags: [restaurant, core]
+  - term: "Do you have a reservation"
+    ipa: "/duː juː hæv ə ˌrezərˈveɪʃn/"
+    meaning_vi: "anh chị đã đặt bàn chưa"
+    chunk: "Do you have a reservation?"
+    tags: [restaurant]
+  - term: "walk-in"
+    ipa: "/ˈwɔːk ɪn/"
+    meaning_vi: "khách vãng lai, không đặt trước"
+    chunk: "No, we're a walk-in."
+    tags: [restaurant]
+  - term: "How long is the wait"
+    ipa: "/haʊ lɒŋ ɪz ðə weɪt/"
+    meaning_vi: "phải chờ bao lâu"
+    chunk: "How long is the wait?"
+    tags: [restaurant, time]
+  - term: "by the window"
+    ipa: "/baɪ ðə ˈwɪndoʊ/"
+    meaning_vi: "cạnh cửa sổ (nêu chỗ mình thích)"
+    chunk: "Could we sit by the window?"
+    tags: [restaurant]
+
+sentence_patterns:
+  - pattern: "A table for {number}, please."
+    meaning_vi: "Cho bàn {number} người."
+    slots:
+      number: ["two", "four", "six"]
+  - pattern: "It's under the name {name}."
+    meaning_vi: "Đặt dưới tên {name}."
+    slots:
+      name: ["Hoa", "Minh", "Lan"]
+
+dialogue:
+  context_vi: >
+    Bảy giờ tối thứ Sáu. Bạn dẫn hai người bạn nước ngoài đi ăn. Bạn đã gọi điện
+    đặt bàn từ chiều, giờ tới nơi và nhân viên đứng ngay cửa.
+  turns:
+    - speaker: "Host"
+      en: "Good evening. Do you have a reservation?"
+      vi: "Chào buổi tối. Anh chị đã đặt bàn chưa ạ?"
+    - speaker: "You"
+      en: "Yes, a table for three. It's under the name Hoa."
+      vi: "Rồi, bàn ba người. Đặt dưới tên Hoa."
+    - speaker: "Host"
+      en: "Let me check. Yes, seven o'clock. Right this way."
+      vi: "Để tôi kiểm tra. Vâng, bảy giờ. Mời anh chị đi lối này."
+    - speaker: "You"
+      en: "Could we sit by the window?"
+      vi: "Cho chúng tôi ngồi cạnh cửa sổ được không?"
+    - speaker: "Host"
+      en: "Of course. Here are your menus."
+      vi: "Được ạ. Đây là thực đơn."
+
+listening:
+  context_vi: >
+    Nghe một lượt đón khách. Chú ý hai câu nhân viên luôn hỏi — nghe quen hai câu
+    này là qua được cửa nhà hàng ở bất kỳ nước nào.
+  speed: 0.85
+  voice: en_US_female
+  transcript_en: "Good evening. Do you have a reservation? No, we're a walk-in. A table for two. Of course. It'll be about ten minutes. You can wait at the bar."
+  transcript_vi: "Chào buổi tối. Anh chị đặt bàn chưa ạ? Chưa, chúng tôi vào luôn. Bàn hai người. Vâng ạ. Khoảng mười phút nữa. Anh chị chờ ở quầy bar được ạ."
+  questions:
+    - kind: mcq_listen
+      prompt_vi: "Khách đã đặt bàn trước chưa?"
+      choices: ["Đã đặt từ hôm qua", "Chưa, vào luôn", "Đặt qua ứng dụng"]
+      answer: 1
+      difficulty: 1
+      skill: Listening
+    - kind: mcq_listen
+      prompt_vi: "Phải chờ khoảng bao lâu?"
+      choices: ["Mười phút", "Nửa tiếng", "Không phải chờ"]
+      answer: 0
+      difficulty: 2
+      skill: Listening
+
+speaking_drills:
+  - kind: read_aloud
+    expected_text: "A table for two, please."
+    prompt_vi: "Đọc to. \"Table\" có âm /eɪ/ dài, không phải /a/ ngắn như tiếng Việt."
+    ipa: "/ə ˈteɪbl fɔːr tuː pliːz/"
+    focus_phonemes: ["eɪ", "l"]
+  - kind: read_aloud
+    expected_text: "It's under the name Hoa."
+    prompt_vi: "Nói tên mình vào cuối. Âm /ð/ trong \"the\" phải đưa lưỡi ra."
+    ipa: "/ɪts ˈʌndər ðə neɪm/"
+    focus_phonemes: ["ð", "n"]
+  - kind: shadow
+    expected_text: "Do you have a reservation?"
+    prompt_vi: "Đây là câu nhân viên hỏi. Nghe quen để không đứng hình ở cửa."
+    ipa: "/duː juː hæv ə ˌrezərˈveɪʃn/"
+    focus_phonemes: ["v", "ʃn"]
+  - kind: shadow
+    expected_text: "How long is the wait?"
+    prompt_vi: "Hỏi phải chờ bao lâu. Âm /w/ tròn môi."
+    ipa: "/haʊ lɒŋ ɪz ðə weɪt/"
+    focus_phonemes: ["w", "ŋ"]
+  - kind: respond
+    prompt_en: "Do you have a reservation?"
+    prompt_vi: "Nhân viên hỏi bạn đặt bàn chưa. Trả lời rồi nói số người."
+    accept_patterns:
+      - "Yes"
+      - "No"
+      - "table for"
+
+reading:
+  kind: chat
+  context_vi: >
+    Tin nhắn xác nhận đặt bàn của nhà hàng. Để ý ba con số: giờ, số người, và thời
+    gian giữ bàn.
+  text_en: |
+    Sunrise Bistro: Your table is confirmed.
+    Name: Hoa
+    Time: 7:00 PM, Friday
+    Guests: 3
+    We hold tables for 15 minutes. Reply CANCEL to cancel.
+  text_vi: |
+    Sunrise Bistro: Bàn của bạn đã được xác nhận.
+    Tên: Hoa
+    Giờ: 7 giờ tối, thứ Sáu
+    Số khách: 3
+    Chúng tôi giữ bàn trong 15 phút. Nhắn CANCEL để huỷ.
+  questions:
+    - kind: mcq_read
+      prompt_en: "How long does the restaurant hold the table?"
+      choices: ["30 minutes", "1 hour", "15 minutes"]
+      answer: 2
+      difficulty: 1
+      reading_skill: scan
+      skill: Reading
+    - kind: mcq_read
+      prompt_en: "How many people is the booking for?"
+      choices: ["3", "7", "15"]
+      answer: 0
+      difficulty: 1
+      reading_skill: scan
+      skill: Reading
+
+writing:
+  kind: FillBlank
+  prompt_vi: "Điền hai chỗ trống: câu xin bàn và câu nói tên đặt chỗ."
+  prompt_en: "A ___ for four, please. It's under the ___ Minh."
+  blanks:
+    - ["table"]
+    - ["name"]
+  hint_vi: "Chỗ đầu là thứ bạn xin khi vào quán. Chỗ sau là thứ nhân viên tra trong sổ."
+  sample_en: "A table for four, please. It's under the name Minh."
+
+quiz:
+  - kind: mcq
+    prompt_vi: "Bạn vào quán mà chưa đặt bàn. Nói gì?"
+    choices: ["I want a table", "A table for two, please", "Give me table"]
+    answer: 1
+    difficulty: 2
+    skill: Speaking
+  - kind: mcq
+    prompt_vi: "\"Walk-in\" nghĩa là gì?"
+    choices: ["Khách có đặt trước", "Khách mang đồ về", "Khách vào luôn không đặt trước"]
+    answer: 2
+    difficulty: 2
+    skill: Reading
+  - kind: mcq
+    prompt_vi: "Muốn ngồi cạnh cửa sổ thì nói thế nào?"
+    choices: ["Could we sit by the window?", "I sit window", "Window table now"]
+    answer: 0
+    difficulty: 2
+    skill: Speaking
+  - kind: mcq
+    prompt_vi: "Nhân viên hỏi \"Do you have a reservation?\" nghĩa là gì?"
+    choices: ["Anh chị muốn uống gì", "Anh chị đặt bàn chưa", "Anh chị mấy người"]
+    answer: 1
+    difficulty: 1
+    skill: Listening
+
+explanation:
+  why_vi: >
+    Hai mươi giây đầu ở cửa nhà hàng là lúc dễ lúng túng nhất: nhân viên hỏi nhanh,
+    xung quanh ồn, và mình chưa kịp vào nhịp. Người Việt thường im rồi giơ ngón tay
+    ra hiệu số người — làm được, nhưng cả bữa sau đó sẽ ngại nói tiếp.
+  how_vi: >
+    Chỉ cần hai câu. Chưa đặt trước thì "A table for two, please." Đã đặt rồi thì
+    "It's under the name ..." Nhân viên chỉ cần đúng hai thông tin đó, không hỏi thêm gì.
+  contrast_vi: >
+    "Reservation" là đặt trước, "walk-in" là vào luôn. Nhân viên hỏi câu đầu để biết
+    họ tra sổ hay xếp bàn mới — trả lời đúng một chữ Yes hoặc No là đủ.
+
+common_mistakes:
+  - mistake: "Nói \"I want a table for two\" khi vào quán"
+    why_vi: >
+      Dịch thẳng từ "tôi muốn một bàn hai người". Đúng ngữ pháp nhưng nghe như đang
+      đòi hỏi, trong khi đây là câu đầu tiên bạn nói với người sắp phục vụ mình cả bữa.
+    fix_vi: "Bỏ hẳn \"I want\". Chỉ cần \"A table for two, please.\" — ngắn hơn và lịch sự hơn."
+  - mistake: "Đọc \"table\" thành /ta-bồ/"
+    why_vi: >
+      Tiếng Việt không có nguyên âm đôi /eɪ/ nên người học tự thay bằng /a/ ngắn.
+      Nhân viên vẫn hiểu, nhưng đây là từ bạn nói mỗi lần đi ăn nên đáng sửa sớm.
+    fix_vi: "Kéo dài thành /ˈteɪ-bl/, miệng đi từ /e/ sang /ɪ/ trong cùng một hơi."
+  - mistake: "Im lặng khi nghe \"Do you have a reservation?\""
+    why_vi: >
+      Câu này nói nhanh và dính vào nhau nên người mới nghe không kịp tách chữ,
+      rồi đứng hình ngay ở cửa.
+    fix_vi: >
+      Nghe kỹ chữ cuối "reservation". Nghe thấy chữ đó là trả lời Yes hoặc No,
+      không cần hiểu trọn câu.
+
+memory_trick_vi: >
+  Ở cửa nhà hàng chỉ có hai kịch bản. Chưa đặt: "A table for HAI người, please."
+  Đặt rồi: "Under the name TÊN TÔI." Học thuộc hai câu là qua cửa.

@@ -1,0 +1,253 @@
+schema_version: 1
+code: HOBBY-02
+slug: cuoi-tuan-va-ke-lai-mot-buoi-di-choi
+title_vi: "Cuối tuần và kể lại một buổi đi chơi"
+title_en: "Weekends and telling a short story"
+
+layer: Life
+track: Hobbies
+level: A1
+unit_code: U-H1
+order_index: 2
+estimated_minutes: 12
+
+illustration: coffee-chat
+
+objective_vi: >
+  Kể lại cuối tuần vừa rồi bằng thì quá khứ — câu hỏi sáng thứ Hai ở mọi văn phòng,
+  và là lúc người học lộ ra mình chỉ nói được thì hiện tại.
+
+objective_observable: >
+  Kể được ba việc đã làm bằng động từ quá khứ đúng trong 3 trên 4 drill.
+
+mastery_weights:
+  Listening: 0.30
+  Speaking: 0.35
+  Reading: 0.20
+  Writing: 0.15
+
+prerequisites:
+  - lesson: HOBBY-01
+    min_mastery: 60
+    kind: Hard
+
+vocabulary:
+  - term: "How was your weekend"
+    ipa: "/haʊ wɒz jɔːr ˈwiːkend/"
+    meaning_vi: "cuối tuần của bạn thế nào (câu sáng thứ Hai)"
+    chunk: "How was your weekend?"
+    tags: [hobbies, social]
+  - term: "went to"
+    ipa: "/went tuː/"
+    meaning_vi: "đã đi tới (quá khứ của go)"
+    chunk: "I went to the beach."
+    tags: [hobbies, past]
+  - term: "It was great"
+    ipa: "/ɪt wɒz ɡreɪt/"
+    meaning_vi: "vui lắm, tuyệt lắm"
+    chunk: "It was great, thanks."
+    tags: [hobbies, past]
+  - term: "pretty quiet"
+    ipa: "/ˈprɪti ˈkwaɪət/"
+    meaning_vi: "khá yên tĩnh, chẳng làm gì nhiều"
+    chunk: "It was pretty quiet."
+    tags: [hobbies, past]
+  - term: "ended up"
+    ipa: "/ˈendɪd ʌp/"
+    meaning_vi: "cuối cùng lại (kết quả ngoài dự tính)"
+    chunk: "We ended up staying home."
+    tags: [hobbies, past]
+  - term: "next time"
+    ipa: "/nekst taɪm/"
+    meaning_vi: "lần tới"
+    chunk: "You should come next time."
+    tags: [hobbies, social]
+
+sentence_patterns:
+  - pattern: "I went to {place} at the weekend."
+    meaning_vi: "Cuối tuần tôi đi {place}."
+    slots:
+      place: ["the beach", "my hometown", "a concert"]
+  - pattern: "We ended up {action}."
+    meaning_vi: "Cuối cùng bọn tôi lại {action}."
+    slots:
+      action: ["staying home", "eating out", "watching a film"]
+
+dialogue:
+  context_vi: >
+    Sáng thứ Hai, pha cà phê ở pantry. Đồng nghiệp hỏi cuối tuần thế nào —
+    câu này hỏi mỗi tuần, và trả lời được thì cả tuần dễ bắt chuyện hơn.
+  turns:
+    - speaker: "David"
+      en: "Morning. How was your weekend?"
+      vi: "Chào buổi sáng. Cuối tuần của anh thế nào?"
+    - speaker: "You"
+      en: "It was great. I went to Da Nang with some friends."
+      vi: "Vui lắm. Tôi đi Đà Nẵng với mấy người bạn."
+    - speaker: "David"
+      en: "Nice. What did you do there?"
+      vi: "Hay đấy. Anh làm gì ở đó?"
+    - speaker: "You"
+      en: "We swam a lot and ate too much seafood."
+      vi: "Bọn tôi bơi nhiều và ăn hải sản hơi quá tay."
+    - speaker: "You"
+      en: "How about yours?"
+      vi: "Còn cuối tuần của anh?"
+    - speaker: "David"
+      en: "Pretty quiet. We planned to go hiking but ended up staying home."
+      vi: "Khá yên tĩnh. Định đi leo núi nhưng cuối cùng lại ở nhà."
+
+listening:
+  context_vi: >
+    Nghe hai người kể cuối tuần. Chú ý động từ quá khứ — chúng là thứ duy nhất
+    cho biết chuyện đã xảy ra rồi.
+  speed: 0.9
+  voice: en_US_male
+  transcript_en: "How was your weekend? Pretty quiet. I stayed home and watched three films. Nice. I went to my hometown and saw my parents. We cooked together on Sunday."
+  transcript_vi: "Cuối tuần của bạn thế nào? Khá yên tĩnh. Tôi ở nhà và xem ba bộ phim. Hay đấy. Tôi về quê thăm bố mẹ. Chủ nhật cả nhà nấu ăn cùng nhau."
+  questions:
+    - kind: mcq_listen
+      prompt_vi: "Người thứ nhất làm gì cuối tuần?"
+      choices: ["Về quê", "Ở nhà xem phim", "Đi leo núi"]
+      answer: 1
+      difficulty: 1
+      skill: Listening
+    - kind: mcq_listen
+      prompt_vi: "Người thứ hai nấu ăn vào hôm nào?"
+      choices: ["Chủ nhật", "Thứ Bảy", "Thứ Sáu"]
+      answer: 0
+      difficulty: 2
+      skill: Listening
+
+speaking_drills:
+  - kind: read_aloud
+    expected_text: "I went to the beach at the weekend."
+    prompt_vi: "Đọc to. \"Went\" là quá khứ của go — không phải \"goed\"."
+    ipa: "/aɪ went tuː ðə biːtʃ æt ðə ˈwiːkend/"
+    focus_phonemes: ["w", "tʃ"]
+  - kind: read_aloud
+    expected_text: "We ended up staying home."
+    prompt_vi: "Hai chữ đầu nói dính thành /wiˈendɪdʌp/."
+    ipa: "/wiː ˈendɪd ʌp ˈsteɪɪŋ hoʊm/"
+    focus_phonemes: ["d", "ŋ"]
+  - kind: shadow
+    expected_text: "How was your weekend?"
+    prompt_vi: "Câu sáng thứ Hai. \"Was\" đọc nhẹ thành /wəz/ khi nói nhanh."
+    ipa: "/haʊ wɒz jɔːr ˈwiːkend/"
+    focus_phonemes: ["w", "z"]
+  - kind: shadow
+    expected_text: "It was pretty quiet."
+    prompt_vi: "Cách nói cuối tuần chẳng có gì. Âm /kw/ trong quiet tròn môi."
+    ipa: "/ɪt wɒz ˈprɪti ˈkwaɪət/"
+    focus_phonemes: ["kw", "t"]
+  - kind: respond
+    prompt_en: "How was your weekend?"
+    prompt_vi: "Đồng nghiệp hỏi cuối tuần bạn thế nào. Kể một việc đã làm."
+    accept_patterns:
+      - "It was"
+      - "I went"
+      - "I stayed"
+
+reading:
+  kind: chat
+  context_vi: >
+    Tin nhắn nhóm sau chuyến đi. Để ý các động từ quá khứ và ai rủ ai lần sau.
+  text_en: |
+    Minh: That was a great weekend. Thanks everyone.
+    Anna: The beach was perfect. I swam for two hours.
+    Priya: I ate too much seafood but no regrets.
+    David: Sorry I missed it. I was sick on Saturday.
+    Minh: You should come next time, David. Same place in June?
+  text_vi: |
+    Minh: Cuối tuần tuyệt vời. Cảm ơn mọi người.
+    Anna: Biển đẹp quá. Tôi bơi hai tiếng liền.
+    Priya: Tôi ăn hải sản hơi quá nhưng không hối hận.
+    David: Tiếc là tôi lỡ mất. Thứ Bảy tôi bị ốm.
+    Minh: Lần tới đi nhé David. Tháng Sáu cũng chỗ đó?
+  questions:
+    - kind: mcq_read
+      prompt_en: "Why did David miss the trip?"
+      choices: ["He was working", "He was sick", "He was away"]
+      answer: 1
+      difficulty: 1
+      reading_skill: scan
+      skill: Reading
+    - kind: mcq_read
+      prompt_en: "How long did Anna swim?"
+      choices: ["Two hours", "All day", "One hour"]
+      answer: 0
+      difficulty: 2
+      reading_skill: scan
+      skill: Reading
+
+writing:
+  kind: FillBlank
+  prompt_vi: "Điền hai chỗ trống bằng động từ quá khứ đúng."
+  prompt_en: "I ___ to Da Nang last weekend. We ___ up eating a lot of seafood."
+  blanks:
+    - ["went"]
+    - ["ended"]
+  hint_vi: "Chỗ đầu là quá khứ của go. Chỗ sau đi với \"up\", nghĩa là cuối cùng lại."
+  sample_en: "I went to Da Nang last weekend. We ended up eating a lot of seafood."
+
+quiz:
+  - kind: mcq
+    prompt_vi: "Quá khứ của \"go\" là gì?"
+    choices: ["goed", "went", "gone to"]
+    answer: 1
+    difficulty: 1
+    skill: Writing
+  - kind: mcq
+    prompt_vi: "Cuối tuần bạn chẳng làm gì. Nói thế nào cho tự nhiên?"
+    choices: ["Nothing happened", "It was pretty quiet", "Weekend no good"]
+    answer: 1
+    difficulty: 2
+    skill: Speaking
+  - kind: mcq
+    prompt_vi: "\"We ended up staying home\" nghĩa là gì?"
+    choices: ["Bọn tôi phải ở nhà", "Bọn tôi thích ở nhà", "Định đi nhưng cuối cùng lại ở nhà"]
+    answer: 2
+    difficulty: 3
+    skill: Reading
+  - kind: mcq
+    prompt_vi: "Muốn rủ người lỡ chuyến đi lần sau thì nói gì?"
+    choices: ["You should come next time", "You come after", "Next you go"]
+    answer: 0
+    difficulty: 2
+    skill: Speaking
+
+explanation:
+  why_vi: >
+    Sáng thứ Hai ở văn phòng nào cũng có câu "How was your weekend?". Người học
+    thường trả lời "Good" rồi thôi, vì kể chuyện đã xảy ra đòi hỏi thì quá khứ,
+    mà thì quá khứ là chỗ người Việt hay tránh — tiếng Việt không đổi dạng động từ
+    nên phải nhớ thêm một bảng từ bất quy tắc.
+  how_vi: >
+    Chỉ cần ba động từ quá khứ là kể được hầu hết cuối tuần: went, stayed, ate.
+    Cấu trúc: "I went to ĐÂU" + "We ĐÃ LÀM GÌ" + một nhận xét như "It was great"
+    hoặc "It was pretty quiet". Rồi hỏi ngược "How about yours?"
+  contrast_vi: >
+    "It was great" dùng khi có chuyện để kể. "It was pretty quiet" dùng khi chẳng
+    làm gì — và đây là câu trả lời hoàn toàn ổn, không cần bịa ra hoạt động nào.
+
+common_mistakes:
+  - mistake: "Dùng thì hiện tại để kể chuyện đã xảy ra"
+    why_vi: >
+      Tiếng Việt không đổi động từ theo thì, chỉ thêm "đã". Người học bê nguyên
+      thói quen đó sang nên nói "I go to Da Nang" khi kể chuyện tuần trước.
+      Người nghe hiểu nhầm là bạn sắp đi.
+    fix_vi: "Nhớ ba từ hay dùng nhất: go thành went, eat thành ate, stay thành stayed."
+  - mistake: "Trả lời \"Good\" rồi im"
+    why_vi: >
+      Đúng nhưng đóng cuộc nói chuyện lại. Người hỏi đang muốn bắt chuyện chứ không
+      cần biết cuối tuần bạn tốt hay xấu.
+    fix_vi: "Thêm một việc cụ thể đã làm, rồi hỏi ngược \"How about yours?\""
+  - mistake: "Đọc \"went\" thành /oen/"
+    why_vi: >
+      Âm /w/ đầu từ bị bỏ vì tiếng Việt không có phụ âm này ở vị trí đó.
+      Went là động từ quá khứ dùng nhiều nhất khi kể chuyện nên đáng sửa.
+    fix_vi: "Tròn môi trước khi bật ra: /w/ rồi mới tới /ent/."
+
+memory_trick_vi: >
+  Ba động từ kể được cả cuối tuần: WENT đi đâu, ATE ăn gì, STAYED ở đâu.
+  Thêm một nhận xét: "It was great" hoặc "It was pretty quiet". Rồi hỏi ngược.

@@ -1,0 +1,32 @@
+code: ST-09
+number: 9
+title_vi: "Cái email lạ"
+track: Security
+unlock_after_lesson: SEC-01
+hook_vi: "Bạn tìm ra lỗ hổng lúc mười giờ sáng. Điều khó nhất trong ngày hôm đó là không sửa nó ngay."
+
+new_characters:
+  - "Elena — trưởng nhóm bảo mật, làm việc từ văn phòng Singapore"
+
+body_vi: |-
+  Chị Hạnh chuyển tiếp cho bạn một email, kèm đúng ba chữ: "cái này thật không em?"
+
+  Email trông như từ phòng nhân sự, báo cập nhật bảng lương, có nút bấm. Tên người gửi đúng. Chữ ký đúng. Logo đúng.
+
+  Tên miền sai một chữ cái.
+
+  Bạn kiểm thêm. Không phải một mình chị Hạnh nhận — cả phòng kế toán đều nhận, từ bốn mươi phút trước. Và có người đã bấm.
+
+  Phản xạ đầu tiên của bạn là khoá tài khoản người đó ngay. Tay bạn đã đặt lên bàn phím.
+
+  Bạn dừng lại, mở tài liệu quy trình, đọc lại một dòng bạn từng đọc lướt: báo trước, xử lý sau. Không phải vì thủ tục — mà vì mỗi thao tác bạn làm lúc này đều xoá dấu vết của thứ vừa xảy ra.
+
+  Bạn viết cho Elena. Bốn dòng: chuyện gì, lúc mấy giờ, ai bị ảnh hưởng, bạn chưa đụng vào gì.
+
+  Elena gọi lại sau hai phút. Câu đầu tiên của chị: "Thank you for not touching it."
+
+  Chị điều phối trong hai mươi phút. Bạn làm phần của mình. Cuối buổi chị nhắn: "You did the hard part. Not fixing it immediately is harder than fixing it — most people can't."
+
+  Tối đó bạn nghĩ mãi về câu ấy. Cả đời làm kỹ thuật, bạn được khen vì sửa nhanh. Đây là lần đầu bạn được khen vì đã không sửa.
+
+ends_vi: "Trong bảo mật, câu bạn viết ra quan trọng hơn lệnh bạn gõ. Nhánh này dạy bạn viết cái câu đó trước khi kịp gõ."

@@ -118,6 +118,8 @@ app.MapAuthModule();
 app.MapLearningModule();
 app.MapPlacementModule();
 app.MapRoleplayModule();
+app.MapStoryModule();
+app.MapWritingModule();
 app.MapAiModule();
 app.MapAdminModule();
 app.MapAdminContentModule();
@@ -196,6 +198,38 @@ using (var scope = app.Services.CreateScope())
         catch (Exception ex)
         {
             logger.LogError(ex, "Seed roleplay thất bại. Kịch bản cũ trong DB giữ nguyên, app vẫn chạy.");
+        }
+
+        // Chương truyện nạp sau bài học vì cổng chất lượng của nó tra mốc mở trên
+        // danh sách bài vừa vào DB.
+        try
+        {
+            var storySeeder = scope.ServiceProvider.GetRequiredService<StorySeeder>();
+            var storyReport = await storySeeder.SeedAsync(contentRoot);
+
+            foreach (var problem in storyReport.Problems)
+            {
+                logger.LogError("Chương truyện có vấn đề: {Problem}", problem);
+            }
+        }
+        catch (Exception ex)
+        {
+            logger.LogError(ex, "Seed truyện thất bại. Chương cũ trong DB giữ nguyên, app vẫn chạy.");
+        }
+
+        try
+        {
+            var writingSeeder = scope.ServiceProvider.GetRequiredService<WritingSeeder>();
+            var writingReport = await writingSeeder.SeedAsync(contentRoot);
+
+            foreach (var problem in writingReport.Problems)
+            {
+                logger.LogError("Bộ bài viết có vấn đề: {Problem}", problem);
+            }
+        }
+        catch (Exception ex)
+        {
+            logger.LogError(ex, "Seed bài viết thất bại. Bộ cũ trong DB giữ nguyên, app vẫn chạy.");
         }
 
         // Danh sách đoạn cần đọc thành tiếng, cho bước sinh giọng chạy ngoài API.

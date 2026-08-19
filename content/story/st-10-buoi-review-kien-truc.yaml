@@ -1,0 +1,34 @@
+code: ST-10
+number: 10
+title_vi: "Buổi review kiến trúc"
+track: Cloud
+unlock_after_lesson: CLD-01
+hook_vi: "\"Tại sao không dùng serverless?\" — và bạn nhận ra mình chưa bao giờ tập trả lời câu hỏi tại sao."
+
+new_characters:
+  - "Kenji — kiến trúc sư văn phòng Singapore"
+
+body_vi: |-
+  Bạn được giao trình bày phương án hạ tầng cho dịch vụ mới. Mười phút, năm slide.
+
+  Bạn chuẩn bị kỹ. Sơ đồ đẹp, số liệu đủ, chi phí tính tới từng đô. Bạn trình bày trôi chảy tám phút.
+
+  Rồi Kenji hỏi: "Why not serverless?"
+
+  Bạn có câu trả lời. Bạn đã cân nhắc serverless, đã loại nó vì cold start ảnh hưởng tới độ trễ của luồng thanh toán. Bạn biết chính xác lý do.
+
+  Nhưng bạn nói: "Because... we use container. It's more stable."
+
+  Kenji không phản bác. Anh hỏi tiếp, nhẹ nhàng: "Stable in what sense? Latency? Cost predictability? Operational familiarity?"
+
+  Và bạn nhận ra vấn đề không nằm ở tiếng Anh. Nếu Kenji hỏi bằng tiếng Việt, bạn cũng sẽ trả lời "vì nó ổn định hơn" — rồi mới lúng túng khi bị hỏi ổn định theo nghĩa nào.
+
+  Bạn nói thật: "Can I take a minute? I know the reason, I'm just saying it badly."
+
+  Kenji cười: "Take two."
+
+  Bạn nói lại, chậm hơn: cold start, luồng thanh toán, ngưỡng độ trễ 300ms, và cái đánh đổi bạn chấp nhận là chi phí cao hơn khoảng mười tám phần trăm.
+
+  Kenji gật: "That's a good answer. Say that next time — the first time."
+
+ends_vi: "Kiến trúc không được duyệt vì sơ đồ đẹp. Nó được duyệt khi bạn nói được mình đã đánh đổi cái gì để lấy cái gì."

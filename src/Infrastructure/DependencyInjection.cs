@@ -91,6 +91,8 @@ public static class DependencyInjection
         services.AddScoped<StreakService>();
         services.AddScoped<RoleplayService>();
         services.AddScoped<SpeechService>();
+        services.AddScoped<StoryService>();
+        services.AddScoped<WritingService>();
 
         // AI: gateway là cửa vào duy nhất, các client chỉ biết hình dạng API của hãng mình.
         services.AddHttpClient();
@@ -104,6 +106,10 @@ public static class DependencyInjection
         services.AddScoped<RoleplaySeeder>();
         services.AddScoped<TtsManifestWriter>();
         services.AddSingleton<RoleplayValidator>();
+        services.AddScoped<StorySeeder>();
+        services.AddSingleton<StoryValidator>();
+        services.AddScoped<WritingSeeder>();
+        services.AddSingleton<WritingValidator>();
 
         // Vận hành: thông báo, hộp thư đi, và các job định kỳ của worker.
         services.AddScoped<NotificationService>();

@@ -26,6 +26,16 @@ public record LoadedRoleplay(RoleplayDocument Document, string SourceHash, strin
 
 public record RoleplayLoadResult(IReadOnlyList<LoadedRoleplay> Scenarios, IReadOnlyList<LoadError> Errors);
 
+/// <summary>Một chương truyện đã đọc, kèm hash để seeder biết có đổi hay không.</summary>
+public record LoadedStory(StoryDocument Document, string SourceHash, string FilePath);
+
+public record StoryLoadResult(IReadOnlyList<LoadedStory> Chapters, IReadOnlyList<LoadError> Errors);
+
+/// <summary>Một bộ bài luyện viết đã đọc, kèm hash để seeder biết có đổi hay không.</summary>
+public record LoadedWriting(WritingSetDocument Document, string SourceHash, string FilePath);
+
+public record WritingLoadResult(IReadOnlyList<LoadedWriting> Sets, IReadOnlyList<LoadError> Errors);
+
 /// <summary>
 /// Đọc content/lessons/**/*.yaml thành đối tượng.
 ///
@@ -67,6 +77,24 @@ public class YamlContentLoader(ILogger<YamlContentLoader> logger)
 
         return new RoleplayLoadResult(
             docs.Select(d => new LoadedRoleplay(d.Document, d.Hash, d.FilePath)).ToList(),
+            errors);
+    }
+
+    public StoryLoadResult LoadStoryChapters(string contentRoot)
+    {
+        var (docs, errors) = LoadFolder<StoryDocument>(contentRoot, "story");
+
+        return new StoryLoadResult(
+            docs.Select(d => new LoadedStory(d.Document, d.Hash, d.FilePath)).ToList(),
+            errors);
+    }
+
+    public WritingLoadResult LoadWritingSets(string contentRoot)
+    {
+        var (docs, errors) = LoadFolder<WritingSetDocument>(contentRoot, "writing");
+
+        return new WritingLoadResult(
+            docs.Select(d => new LoadedWriting(d.Document, d.Hash, d.FilePath)).ToList(),
             errors);
     }
 

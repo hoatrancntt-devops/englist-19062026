@@ -1,0 +1,31 @@
+code: ST-14
+number: 14
+title_vi: "Chuyến bay đi Singapore"
+track: Travel
+unlock_after_lesson: TRV-01
+hook_vi: "Ở quầy nhập cảnh, người ta hỏi bạn một câu rất đơn giản. Bạn trả lời sai, không phải vì tiếng Anh."
+
+body_vi: |-
+  Công ty cử bạn sang văn phòng Singapore một tuần, làm việc trực tiếp với nhóm của Kenji.
+
+  Chuyến bay đầu tiên trong đời bạn đi một mình ra nước ngoài.
+
+  Ở quầy nhập cảnh, nhân viên hỏi: "What's the purpose of your visit?"
+
+  Bạn đã chuẩn bị câu này. Bạn nói: "Business."
+
+  Anh ta hỏi tiếp: "Which company are you visiting?"
+
+  Và bạn đứng hình. Không phải vì không hiểu — bạn hiểu rõ từng chữ. Mà vì trong đầu bạn lúc đó chỉ có tên công ty mình, không có tên pháp nhân của văn phòng Singapore, không có địa chỉ, không có tên người đón.
+
+  Bạn lục điện thoại. Mạng roaming chưa kích hoạt. Hàng sau bạn có bốn người.
+
+  Cuối cùng bạn tìm được email của Kenji trong hộp thư đã tải sẵn, đưa ra tên và địa chỉ. Mất hai phút rưỡi. Nhân viên đóng dấu, không nói gì thêm.
+
+  Ra khỏi quầy bạn thấy tay mình ướt.
+
+  Tối đó bạn nhắn cho Mai: "Chị ơi, đi công tác nhớ lưu sẵn địa chỉ với tên người đón vào ghi chú offline nhé. Em vừa đứng ngu hai phút ở sân bay."
+
+  Mai trả lời: "Chị cũng từng. Ai cũng từng. Cái này không ai dạy vì nó không giống bài học nào."
+
+ends_vi: "Tiếng Anh đi lại ít khi hỏng ở từ vựng. Nó hỏng ở chỗ bạn không chuẩn bị sẵn thông tin mà người ta chắc chắn sẽ hỏi."

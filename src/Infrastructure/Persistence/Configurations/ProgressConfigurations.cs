@@ -201,6 +201,21 @@ public class StoryProgressConfiguration : IEntityTypeConfiguration<StoryProgress
     }
 }
 
+public class WritingAttemptConfiguration : IEntityTypeConfiguration<WritingAttempt>
+{
+    public void Configure(EntityTypeBuilder<WritingAttempt> b)
+    {
+        b.Property(x => x.SubmissionJson).HasColumnType("jsonb").IsRequired();
+        b.Property(x => x.FeedbackJson).HasColumnType("jsonb").IsRequired();
+
+        // Tra theo người học và bài, sắp theo lúc nộp: đúng hình dạng của câu hỏi
+        // "lần gần nhất mình làm bài này được bao nhiêu".
+        b.HasIndex(x => new { x.UserId, x.TaskId, x.SubmittedAt });
+
+        b.HasOne(x => x.Task).WithMany().HasForeignKey(x => x.TaskId).OnDelete(DeleteBehavior.Cascade);
+    }
+}
+
 public class RoleplayAttemptConfiguration : IEntityTypeConfiguration<RoleplayAttempt>
 {
     public void Configure(EntityTypeBuilder<RoleplayAttempt> b)

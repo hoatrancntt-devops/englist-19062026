@@ -1,0 +1,32 @@
+code: ST-08
+number: 8
+title_vi: "Dòng log lúc hai giờ sáng"
+track: Reading
+unlock_after_lesson: RD-01
+hook_vi: "Hai nghìn dòng log. Cái làm hệ thống sập nằm ở dòng thứ chín — và nó không có chữ ERROR."
+
+new_characters:
+  - "Dave — kỹ sư trực ca sau, ở Sydney"
+
+body_vi: |-
+  Một giờ bốn mươi sáng. Bạn trực. Hệ thống thanh toán nội bộ ngừng nhận yêu cầu.
+
+  Bạn mở log. Hai nghìn dòng trong mười phút cuối. Bạn làm cái mà ai cũng làm lần đầu: lọc chữ ERROR.
+
+  Sáu trăm dòng ERROR. Tất cả đều giống nhau: "connection refused". Đọc xong sáu trăm dòng đó bạn biết chính xác một điều — dịch vụ không kết nối được. Điều mà bạn đã biết từ trước khi mở log.
+
+  Bạn cuộn lên. Lên nữa. Lên tới trước lúc cơn bão ERROR bắt đầu.
+
+  Dòng thứ chín từ trên xuống, mức WARN, chữ nhỏ, không màu đỏ:
+
+  "connection pool exhausted, waiting for available slot"
+
+  Đó là nó. Không phải lỗi — mới chỉ là cảnh báo. Sáu trăm dòng ERROR phía sau chỉ là hậu quả, tất cả cùng kêu về một chuyện đã xảy ra xong từ bốn mươi giây trước.
+
+  Bạn tăng pool, dịch vụ sống lại lúc hai giờ mười.
+
+  Sáng ra bạn bàn giao cho Dave. Bạn viết: "Root cause: pool exhausted at 01:38 (WARN, line 9). The 600 ERROR lines after are downstream noise."
+
+  Dave trả lời một câu: "Thanks — that's the first handover this month that told me where to look instead of what happened."
+
+ends_vi: "Đọc log không phải là đọc nhanh hơn. Là biết dòng nào là nguyên nhân và dòng nào chỉ đang la làng theo."

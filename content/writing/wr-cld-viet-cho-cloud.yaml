@@ -1,0 +1,90 @@
+code: WR-CLD
+title_vi: "Viết cho công việc cloud"
+context_vi: >-
+  Ghi chép quyết định kiến trúc, kế hoạch chuyển đổi, và trả lời khi kế toán hỏi vì sao
+  hoá đơn tăng. Người đọc thường là người sẽ ký duyệt, không phải người sẽ triển khai.
+track: Cloud
+level: B1
+
+tasks:
+  - code: t1
+    kind: FillBlank
+    pass_score: 80
+    prompt_vi: "Điền ba chỗ trống trong một dòng ghi chép quyết định kiến trúc."
+    prompt_en: "We chose containers over serverless ___ the payment flow needs a latency ___ 300 milliseconds. The ___ is roughly eighteen percent higher monthly cost."
+    blanks:
+      - ["because"]
+      - ["under", "below"]
+      - ["trade-off", "tradeoff", "cost"]
+    hint_vi: "Chỗ cuối là danh từ chỉ thứ mình chấp nhận mất để lấy thứ khác."
+    sample_en: "We chose containers over serverless because the payment flow needs a latency under 300 milliseconds. The trade-off is roughly eighteen percent higher monthly cost."
+
+  - code: t2
+    kind: FillBlank
+    pass_score: 80
+    prompt_vi: "Điền hai chỗ trống trong câu phân biệt HA và DR."
+    prompt_en: "High availability keeps the service running when one node fails; disaster ___ is how we come back when the whole region goes ___."
+    blanks:
+      - ["recovery"]
+      - ["down", "offline"]
+    hint_vi: "Hai thứ này hay bị gọi nhầm là một. Vế sau nói về mất cả một vùng."
+    sample_en: "High availability keeps the service running when one node fails; disaster recovery is how we come back when the whole region goes down."
+
+  - code: t3
+    kind: Reorder
+    pass_score: 80
+    prompt_vi: "Sắp lại thành một câu trả lời khi bị hỏi về chi phí tăng."
+    fragments:
+      - "which we can cut by about a third"
+      - "the increase is mostly data transfer"
+      - "by moving the backups to the same region"
+    correct_order:
+      - "the increase is mostly data transfer"
+      - "which we can cut by about a third"
+      - "by moving the backups to the same region"
+    hint_vi: "Nêu nguyên nhân trước, rồi tới mức cắt được, rồi tới cách cắt."
+    sample_en: "The increase is mostly data transfer, which we can cut by about a third by moving the backups to the same region."
+
+  - code: t4
+    kind: Reorder
+    pass_score: 80
+    prompt_vi: "Sắp lại thành một câu mở đầu kế hoạch chuyển đổi."
+    fragments:
+      - "starting with the reporting service"
+      - "we'll move in four waves"
+      - "which has no external dependencies"
+    correct_order:
+      - "we'll move in four waves"
+      - "starting with the reporting service"
+      - "which has no external dependencies"
+    hint_vi: "Cách làm trước, bắt đầu từ đâu, và vì sao chọn chỗ đó."
+    sample_en: "We'll move in four waves, starting with the reporting service, which has no external dependencies."
+
+  - code: t5
+    kind: GuidedEmail
+    pass_score: 75
+    prompt_vi: >-
+      Viết bốn câu ghi chép quyết định kiến trúc: lựa chọn, lý do, đánh đổi,
+      và điều kiện khiến ta xem lại quyết định này.
+    prompt_en: "Write a one-paragraph architecture decision note."
+    required_points:
+      - "we chose"
+      - "because"
+      - "trade-off"
+      - "revisit"
+    hint_vi: "Phần ai cũng quên là câu cuối: khi nào thì quyết định này nên được xem lại."
+    sample_en: "We chose a managed Postgres instance over running our own cluster. We did that because the team is three people and none of us wants to be paged for replication at 2 a.m. The trade-off is that we lose two extensions we currently use, and the monthly cost is about forty percent higher at our current size. We should revisit this if our write volume passes roughly ten times today's level, where the managed tier stops being cheaper than an engineer's time."
+
+  - code: t6
+    kind: GuidedEmail
+    pass_score: 75
+    prompt_vi: >-
+      Viết ba câu trả lời phòng kế toán về hoá đơn cloud tăng: nêu con số, nêu nguyên nhân,
+      và nêu việc bạn sẽ làm.
+    prompt_en: "Answer finance about a rise in the monthly cloud bill."
+    required_points:
+      - "increase"
+      - "mostly"
+      - "will"
+    hint_vi: "Kế toán không cần tên dịch vụ. Họ cần biết vì sao tăng và bao giờ hết tăng."
+    sample_en: "The increase is about 2,300 dollars compared to last month. It's mostly data transfer between regions after we moved the reporting jobs in March, not extra servers. I will move those backups into the same region this week, which should bring roughly a third of the increase back down by the next billing cycle."

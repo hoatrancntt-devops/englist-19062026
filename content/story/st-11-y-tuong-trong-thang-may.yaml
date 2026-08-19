@@ -1,0 +1,27 @@
+code: ST-11
+number: 11
+title_vi: "Ý tưởng trong thang máy"
+track: Ai
+unlock_after_lesson: AI-01
+hook_vi: "Bạn có bốn mươi giây với giám đốc kỹ thuật, và một ý tưởng đã ấp ủ ba tuần."
+
+body_vi: |-
+  Thang máy tầng một. Cửa đóng. Trong thang có bạn và anh giám đốc kỹ thuật khu vực, người bạn mới gặp hai lần, cả hai lần đều trong phòng họp đông người.
+
+  Anh hỏi xã giao: "How's the ticket queue these days?"
+
+  Ba tuần nay bạn nghĩ mãi về một chuyện: sáu mươi phần trăm ticket helpdesk lặp lại cùng năm loại câu hỏi. Bạn đã thử phân loại tự động chúng bằng một mô hình nhỏ, chạy trên máy bạn, kết quả khá tốt.
+
+  Bạn có bốn mươi giây.
+
+  Bạn nói: "Actually — sixty percent of our tickets are the same five questions. I ran a test last week: a small model can route them correctly about nine times out of ten. If it just routes, not answers, the risk is low and it saves the team maybe six hours a week."
+
+  Cửa mở tầng chín. Anh bước ra, quay lại: "Send me that. Two pages, not ten. Include what happens when it gets it wrong."
+
+  Bạn về chỗ, mở tài liệu trắng, và ngồi im mười lăm phút.
+
+  Vì phần khó không phải là phần bạn vừa nói. Phần khó là hai trang kia — chỗ bạn phải viết ra chuyện gì xảy ra khi mô hình đoán sai, ai chịu trách nhiệm, và làm sao biết nó đang sai.
+
+  Ý tưởng thì bốn mươi giây là đủ. Đề xuất thì không.
+
+ends_vi: "Nói được ý tưởng chỉ mở cửa. Thứ quyết định là bản đề xuất — và nó luôn hỏi bạn cùng một câu: khi sai thì sao?"

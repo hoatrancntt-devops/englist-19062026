@@ -123,7 +123,7 @@ Nhồi 15 từ một bài thì học viên nhớ được 3.
 Ba câu cứu hộ dạy ở LIFE-05, tức **bài thứ năm của cả giáo trình**. Lý do: học viên cần công cụ thoát hiểm trước khi cần bất cứ thứ gì khác.
 Không có nó, buổi nói chuyện thật đầu tiên sẽ kết thúc bằng im lặng và học viên bỏ học.
 
-### 5.2 Tầng Office — 12 bài (L2–L3)
+### 5.2 Tầng Office — 14 bài (L2–L3)
 
 | Mã | Nội dung | Bậc |
 |---|---|---|
@@ -132,9 +132,14 @@ Không có nó, buổi nói chuyện thật đầu tiên sẽ kết thúc bằng
 | OFF-07 → 09 | Đặt và dời lịch họp; xin giúp khi bị kẹt; từ chối lịch sự | L3 |
 | OFF-10 → 12 | Viết tin nhắn Teams/Slack ngắn; viết email nội bộ; nói trong họp online (mute, share, hear me?) | L3 |
 
-### 5.3 Tầng Professional — 30 bài (L3–L4)
+### 5.3 Tầng Professional — 42 bài (L3–L4)
 
-Chia theo sáu nhánh nghề. Học viên học nhánh chính trước, các nhánh khác mở sau checkpoint.
+Chia theo bảy nhánh nghề: Helpdesk 6, Infrastructure 7, Security 5, Cloud 6, AI 4, Reading 4, Business 10.
+Học viên học nhánh chính trước, các nhánh khác mở sau checkpoint.
+
+Ngoài ba tầng trên còn **bốn nhánh đời sống** mở song song, không phụ thuộc tầng:
+Restaurant 8, Shopping 8, Hobbies 8, Travel 5. Chúng phục vụ học viên cần tiếng Anh
+ngoài công việc — đi ăn, mua sắm, đi công tác, nói chuyện phiếm với đồng nghiệp nước ngoài.
 
 #### Nhánh Helpdesk — 5 bài
 Nhận ticket và xác nhận · hỏi thông tin để chẩn đoán · hướng dẫn người dùng từng bước · giải thích cho người không rành kỹ thuật · leo thang (*escalate*) và bàn giao.
@@ -231,6 +236,53 @@ Giữ ghi âm 45 ngày là điểm cân bằng: đủ dài để gom dữ liệu
 ## 10. Việc chưa chốt
 
 1. ~~**Số bài tầng Professional (30) là dự kiến**, chưa soạn xong.~~
-   Đã soạn xong ngày 18/08/2026: 58/58 bài, cả 58 qua cổng chất lượng và có hình minh hoạ riêng.
-   Phân bố thực tế: Life 16, Office 12, Helpdesk 5, Infrastructure 7, Security 4, Cloud 6, AI 4, Reading 4.
+   Đã soạn xong ngày 18/08/2026, và mở rộng tiếp ngày 19/08/2026.
+   Phân bố hiện tại: **101 bài trên 12 nhánh** — Foundation 30 (Life 16 + Office 14), Business 10,
+   Restaurant 8, Shopping 8, Hobbies 8, Infrastructure 7, Cloud 6, Helpdesk 6, Security 5, Travel 5, AI 4, Reading 4.
 2. **Ngưỡng điểm từng kỹ năng** (hiện 65 cho từng trục, 80 cho mastery, 85 cho thi vượt) là giá trị khởi điểm, chưa hiệu chỉnh trên học viên thật.
+3. **Mốc mở chương truyện** hiện gắn cứng vào một mã bài mỗi chương (xem mục 11).
+   Chưa kiểm trên học viên thật xem nhịp 16 chương trên 101 bài có đúng là nhịp giữ chân tốt nhất không.
+
+---
+
+## 11. Hai lớp nội dung ngoài bài học
+
+Soạn ngày 19/08/2026. Cả hai đều không tính vào mastery và không nằm trong lộ trình —
+chúng phục vụ hai việc mà bài học không làm được.
+
+### 11.1 Mạch truyện — 16 chương
+
+Một câu chuyện xuyên suốt: sáu tháng đầu đi làm của học viên ở HT Group, cùng dàn nhân vật
+đã có sẵn trong các kịch bản đóng vai (Mai, anh Quang, Tom, Priya, Dave, chị Hạnh, Sarah).
+
+Chương **không phải bài học**: không có bước, không chấm điểm, không tính mastery.
+Nó tồn tại để trả lời câu "học tiếp làm gì" đúng lúc học viên bắt đầu chán.
+
+| Cơ chế | Cách làm |
+|---|---|
+| Mở chương | Khi học viên **thông thạo** một mã bài khai trong `unlock_after_lesson` |
+| Nhịp mở | 16 chương trên 101 bài, trung bình một chương mỗi ~6 bài |
+| Chương chưa mở | Hiện tiêu đề, câu mở, và mã bài cần đạt. **Thân chương ở lại máy chủ** |
+| Sửa nội dung | An toàn tuyệt đối — `story_progresses` trỏ khoá ngoại, không sao chép nội dung |
+
+Cổng chất lượng chặn cứng ba lỗi không ai báo được: mốc mở trỏ tới bài không tồn tại
+(chương khoá vĩnh viễn), hai chương cùng một mốc (bật một lúc rồi im bặt), và số chương
+thủng lỗ giữa danh sách.
+
+### 11.2 Bộ bài luyện viết — 8 bộ
+
+Ngân hàng drill độc lập cho tám nhánh nghề: Foundation, Business, Helpdesk, Infrastructure,
+Security, Cloud, AI, Reading. Mỗi bộ 6 bài, ít nhất hai dạng khác nhau.
+
+Bốn nhánh đời sống (Restaurant, Shopping, Hobbies, Travel) **cố ý không có bộ viết** —
+đó là tình huống nói, bài viết ở đó sẽ gượng ép.
+
+Ba dạng bài, đúng ba dạng của bước viết trong bài học: `FillBlank`, `Reorder`, `GuidedEmail`.
+
+Hai điểm thiết kế đáng ghi:
+
+- **Dùng lại nguyên bộ chấm của bước viết trong bài học.** Cùng một bài viết phải được chấm
+  y hệt nhau dù nó nằm trong bài học hay trong bộ drill. Viết bộ chấm thứ hai là cách chắc
+  chắn để hai chỗ trôi dần khỏi nhau.
+- **Đề và đáp án nằm ở hai cột khác nhau** (`prompt_json` và `rubric_json`). Chỉ cột đề đi ra
+  ngoài. Câu mẫu chỉ xuất hiện sau khi đã nộp.

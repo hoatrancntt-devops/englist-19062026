@@ -54,6 +54,7 @@ public class AppDbContext(DbContextOptions<AppDbContext> options) : DbContext(op
     public DbSet<StoryProgress> StoryProgresses => Set<StoryProgress>();
     public DbSet<RoleplayAttempt> RoleplayAttempts => Set<RoleplayAttempt>();
     public DbSet<ChallengePass> ChallengePasses => Set<ChallengePass>();
+    public DbSet<WritingAttempt> WritingAttempts => Set<WritingAttempt>();
 
     // Ops
     public DbSet<Notification> Notifications => Set<Notification>();

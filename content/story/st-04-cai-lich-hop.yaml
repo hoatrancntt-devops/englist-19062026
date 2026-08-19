@@ -1,0 +1,28 @@
+code: ST-04
+number: 4
+title_vi: "Cái lịch họp"
+track: Foundation
+unlock_after_lesson: OFF-06
+hook_vi: "Một câu email bốn chữ của bạn làm sáu người dậy lúc năm giờ sáng."
+
+new_characters:
+  - "Tom — scrum master, người chạy standup mỗi sáng"
+
+body_vi: |-
+  Tom nhờ bạn dời buổi review sang giờ khác vì hai bạn Sydney kẹt lịch. Bạn mở lịch, tìm được một khung trống, gửi lời mời, kèm một dòng: "Moved to 9. Thanks."
+
+  Chín giờ. Không ai vào phòng họp.
+
+  Đúng hơn: không ai vào phòng họp lúc chín giờ giờ Việt Nam. Sáu người đã vào lúc chín giờ giờ Sydney — tức là sáu giờ sáng ở đây — vì lời mời của bạn không ghi múi giờ, và lịch của họ hiển thị theo giờ của họ.
+
+  Tom nhắn cho bạn một dòng, không trách móc: "No drama, we've all done it. Two things for next time."
+
+  Rồi anh viết ra hai thứ đó. Một: luôn ghi cả hai múi giờ trong tiêu đề, kiểu "Review — 9:00 ICT / 12:00 AEST". Hai: khi dời lịch, câu đầu tiên phải nói lý do, vì người nhận cần biết có phải việc gấp không trước khi họ quyết định dậy sớm.
+
+  Bạn đọc lại email mình gửi. "Moved to 9. Thanks." Bốn chữ. Đúng ngữ pháp. Không sai một dấu phẩy nào.
+
+  Và nó vừa làm sáu người dậy lúc năm giờ sáng.
+
+  Buổi chiều bạn viết lại lời mời, lần này ba dòng thay vì một. Mai đọc qua vai bạn, gật đầu: "Dài hơn nhưng không ai phải đoán. Ở đây viết ngắn không phải là viết giỏi."
+
+ends_vi: "Tiếng Anh văn phòng ít khi sai ở ngữ pháp. Nó sai ở chỗ thiếu — thiếu múi giờ, thiếu lý do, thiếu một câu mà người đọc cần."

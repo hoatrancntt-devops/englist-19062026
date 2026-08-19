@@ -1,0 +1,27 @@
+code: ST-06
+number: 6
+title_vi: "Ticket đầu tiên"
+track: Helpdesk
+unlock_after_lesson: HD-01
+hook_vi: "Người dùng viết: \"It's broken.\" Hết. Đó là toàn bộ nội dung ticket."
+
+body_vi: |-
+  Tám giờ mười lăm. Ticket đầu tiên rơi vào hàng đợi của bạn.
+
+  Tiêu đề: "urgent". Nội dung: "It's broken, please fix asap." Người gửi: chị Hạnh, phòng kế toán — người bạn đã gặp ở quán cơm tháng trước.
+
+  Bạn ngồi nhìn ba chữ đó khá lâu.
+
+  Cái gì broken? Ứng dụng nào? Từ lúc nào? Chỉ mình chị hay cả phòng? Chị đang thấy thông báo lỗi gì, hay chỉ là màn hình trắng?
+
+  Bạn định gọi điện. Rồi nhớ ra chị Hạnh nói tiếng Anh kiểu chị Hạnh, còn bạn nói tiếng Anh kiểu bạn, và một cuộc gọi có thể thành mười lăm phút hai người cùng đoán.
+
+  Nên bạn viết. Bốn câu hỏi, đánh số, mỗi câu một dòng. Câu cuối bạn thêm: "If you can, a screenshot helps a lot."
+
+  Bốn phút sau chị trả lời. Có ảnh chụp màn hình. Có giờ. Có tên ứng dụng. Hoá ra không phải hệ thống hỏng — chị đang đăng nhập bằng tài khoản cũ đã bị khoá từ đợt rà quyền tuần trước.
+
+  Bạn xử lý xong trong sáu phút.
+
+  Anh Quang đi ngang, liếc màn hình, dừng lại đọc cái ticket. Anh không nói gì về chuyện bạn sửa nhanh. Anh chỉ vào bốn câu hỏi và nói: "Cái này giữ lại. Lần sau dùng lại nguyên xi."
+
+ends_vi: "Nhánh Helpdesk không dạy bạn sửa lỗi — bạn đã biết sửa rồi. Nó dạy bạn hỏi sao cho người không rành kỹ thuật trả lời được."

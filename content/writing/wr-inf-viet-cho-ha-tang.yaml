@@ -1,0 +1,91 @@
+code: WR-INF
+title_vi: "Viết cho công việc hạ tầng"
+context_vi: >-
+  Báo sự cố, cập nhật trạng thái, xin duyệt thay đổi. Người đọc đang phải quyết định
+  làm gì tiếp — họ cần biết ảnh hưởng và mốc thời gian, không cần biết bạn đã gõ lệnh gì.
+track: Infrastructure
+level: A2
+
+tasks:
+  - code: t1
+    kind: FillBlank
+    pass_score: 80
+    prompt_vi: "Điền ba chỗ trống trong thông báo sự cố đầu tiên."
+    prompt_en: "We are currently ___ an issue ___ the payment service. We will provide an ___ within thirty minutes."
+    blanks:
+      - ["investigating", "looking into"]
+      - ["affecting", "with"]
+      - ["update"]
+    hint_vi: "Câu đầu nói đang làm gì. Chỗ cuối là danh từ chỉ bản tin tiếp theo."
+    sample_en: "We are currently investigating an issue affecting the payment service. We will provide an update within thirty minutes."
+
+  - code: t2
+    kind: FillBlank
+    pass_score: 80
+    prompt_vi: "Điền hai chỗ trống trong bản cập nhật khi đã tìm ra nguyên nhân."
+    prompt_en: "We have ___ the root cause and a fix is being deployed now. We expect full service to be ___ by 16:00 ICT."
+    blanks:
+      - ["identified", "found"]
+      - ["restored", "back"]
+    hint_vi: "Chỗ sau nói dịch vụ trở lại bình thường. Chú ý ghi cả múi giờ."
+    sample_en: "We have identified the root cause and a fix is being deployed now. We expect full service to be restored by 16:00 ICT."
+
+  - code: t3
+    kind: Reorder
+    pass_score: 80
+    prompt_vi: "Sắp lại thành một dòng xin duyệt thay đổi."
+    fragments:
+      - "with a rollback tested"
+      - "during Sunday's window"
+      - "we're requesting approval"
+      - "to patch the four database nodes"
+    correct_order:
+      - "we're requesting approval"
+      - "to patch the four database nodes"
+      - "during Sunday's window"
+      - "with a rollback tested"
+    hint_vi: "Xin gì trước, làm gì, lúc nào, và đường lui để cuối — đó là thứ CAB hỏi."
+    sample_en: "We're requesting approval to patch the four database nodes during Sunday's window, with a rollback tested."
+
+  - code: t4
+    kind: Reorder
+    pass_score: 80
+    prompt_vi: "Sắp lại thành một câu báo cáo trong standup."
+    fragments:
+      - "I'm on the firewall review today"
+      - "and I need network access to finish it"
+      - "yesterday I closed the backup tickets"
+    correct_order:
+      - "yesterday I closed the backup tickets"
+      - "I'm on the firewall review today"
+      - "and I need network access to finish it"
+    hint_vi: "Ba phần standup theo đúng thứ tự: hôm qua, hôm nay, đang vướng gì."
+    sample_en: "Yesterday I closed the backup tickets, I'm on the firewall review today, and I need network access to finish it."
+
+  - code: t5
+    kind: GuidedEmail
+    pass_score: 75
+    prompt_vi: >-
+      Viết ba câu báo sự cố cho nhóm kinh doanh: ai bị ảnh hưởng, từ lúc nào,
+      và khi nào có tin tiếp theo.
+    prompt_en: "Report an ongoing incident to the sales team."
+    required_points:
+      - "affected"
+      - "since"
+      - "next update"
+    hint_vi: "Nhóm kinh doanh cần biết nói gì với khách. Đừng nêu tên máy chủ hay mã lỗi."
+    sample_en: "Customers in Singapore and Malaysia are affected and cannot complete checkout. This has been happening since 09:20 ICT this morning and we have the payment provider on the call. The next update will come at 11:00 ICT even if nothing has changed by then."
+
+  - code: t6
+    kind: GuidedEmail
+    pass_score: 75
+    prompt_vi: >-
+      Viết ba câu xin hoãn một thay đổi đã được duyệt: nêu thay đổi, nêu lý do hoãn,
+      và nêu ngày mới.
+    prompt_en: "Ask to postpone an approved change window."
+    required_points:
+      - "postpone"
+      - "because"
+      - "instead"
+    hint_vi: "Xin hoãn mà không đưa ngày mới thì người duyệt phải họp lại từ đầu."
+    sample_en: "I'd like to postpone Sunday's database patching. The vendor released a second advisory yesterday and we haven't finished testing the rollback because of it. Could we run the same window next Sunday instead, with the tested rollback attached?"

@@ -1,0 +1,92 @@
+code: WR-SEC
+title_vi: "Viết cho công việc bảo mật"
+context_vi: >-
+  Báo sự cố bảo mật, cảnh báo nội bộ, và xin quyền. Đây là loại email mà câu chữ sai
+  làm người ta hoảng hoặc làm người ta coi thường — cả hai đều tốn kém.
+track: Security
+level: B1
+
+tasks:
+  - code: t1
+    kind: FillBlank
+    pass_score: 80
+    prompt_vi: "Điền ba chỗ trống trong dòng báo sự cố bảo mật đầu tiên."
+    prompt_en: "I'm reporting a ___ phishing email received by the finance team at 09:10. I have ___ touched the mailbox. Please ___ before we take any action."
+    blanks:
+      - ["suspected", "possible", "likely"]
+      - ["not"]
+      - ["advise", "confirm"]
+    hint_vi: "Chỗ đầu nói mình chưa chắc chắn. Chỗ giữa là điểm quan trọng nhất của cả câu."
+    sample_en: "I'm reporting a suspected phishing email received by the finance team at 09:10. I have not touched the mailbox. Please advise before we take any action."
+
+  - code: t2
+    kind: FillBlank
+    pass_score: 80
+    prompt_vi: "Điền hai chỗ trống trong email xin cấp quyền."
+    prompt_en: "I'm requesting read-only ___ to the audit logs for the next two weeks. It's ___ for the quarterly review and I'll confirm when I no longer need it."
+    blanks:
+      - ["access"]
+      - ["needed", "required"]
+    hint_vi: "Xin quyền phải nêu phạm vi, thời hạn, và lý do — câu này có cả ba."
+    sample_en: "I'm requesting read-only access to the audit logs for the next two weeks. It's needed for the quarterly review and I'll confirm when I no longer need it."
+
+  - code: t3
+    kind: Reorder
+    pass_score: 80
+    prompt_vi: "Sắp lại thành một câu cảnh báo nội bộ."
+    fragments:
+      - "do not click the link"
+      - "claiming to be from HR"
+      - "and forward it to security"
+      - "if you receive an email"
+    correct_order:
+      - "if you receive an email"
+      - "claiming to be from HR"
+      - "do not click the link"
+      - "and forward it to security"
+    hint_vi: "Điều kiện trước, mô tả sau, rồi tới việc không được làm và việc phải làm."
+    sample_en: "If you receive an email claiming to be from HR, do not click the link, and forward it to security."
+
+  - code: t4
+    kind: Reorder
+    pass_score: 80
+    prompt_vi: "Sắp lại thành một câu báo trạng thái lỗ hổng."
+    fragments:
+      - "and the patch is scheduled for Sunday"
+      - "on three internet-facing servers"
+      - "the vulnerability is confirmed"
+    correct_order:
+      - "the vulnerability is confirmed"
+      - "on three internet-facing servers"
+      - "and the patch is scheduled for Sunday"
+    hint_vi: "Xác nhận trước, phạm vi, rồi tới kế hoạch."
+    sample_en: "The vulnerability is confirmed on three internet-facing servers, and the patch is scheduled for Sunday."
+
+  - code: t5
+    kind: GuidedEmail
+    pass_score: 75
+    prompt_vi: >-
+      Viết bốn câu cảnh báo nội bộ về một đợt phishing đang diễn ra: dấu hiệu nhận biết,
+      việc không được làm, việc phải làm, và người liên hệ.
+    prompt_en: "Write an internal warning about an active phishing campaign."
+    required_points:
+      - "looks like"
+      - "do not"
+      - "forward"
+      - "contact"
+    hint_vi: "Viết cho cả công ty đọc, kể cả người không rành kỹ thuật. Không doạ, chỉ hướng dẫn."
+    sample_en: "Since this morning several people have received an email that looks like a payroll update from HR, with a link to a sign-in page. The sender address is one letter different from ours. Do not enter your password on that page, even if you have already clicked the link. Please forward the email to security@ and contact the service desk if you entered anything, and no one will be blamed for reporting late."
+
+  - code: t6
+    kind: GuidedEmail
+    pass_score: 75
+    prompt_vi: >-
+      Viết ba câu giải thích cho trưởng phòng vì sao chưa sửa ngay một lỗ hổng vừa phát hiện:
+      nêu việc đã làm, nêu lý do chờ, và nêu mốc.
+    prompt_en: "Explain why a newly found vulnerability has not been patched yet."
+    required_points:
+      - "reported"
+      - "because"
+      - "by"
+    hint_vi: "Người đọc muốn biết vì sao chưa sửa. Trả lời thẳng câu đó ở câu thứ hai."
+    sample_en: "I reported the finding to the security lead within ten minutes and we have monitoring in place on the affected servers. We haven't patched yet because the vendor fix requires a restart and that would take checkout offline during business hours. The patch is scheduled for Sunday's window and I'll confirm by Monday morning."

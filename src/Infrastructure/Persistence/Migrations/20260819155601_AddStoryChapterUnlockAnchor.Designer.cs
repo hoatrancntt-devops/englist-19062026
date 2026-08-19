@@ -3,6 +3,7 @@ using System;
 using EnglishForIT.Infrastructure.Persistence;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using Npgsql.EntityFrameworkCore.PostgreSQL.Metadata;
 
@@ -11,9 +12,11 @@ using Npgsql.EntityFrameworkCore.PostgreSQL.Metadata;
 namespace EnglishForIT.Infrastructure.Persistence.Migrations
 {
     [DbContext(typeof(AppDbContext))]
-    partial class AppDbContextModelSnapshot : ModelSnapshot
+    [Migration("20260819155601_AddStoryChapterUnlockAnchor")]
+    partial class AddStoryChapterUnlockAnchor
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -2923,63 +2926,6 @@ namespace EnglishForIT.Infrastructure.Persistence.Migrations
                         });
                 });
 
-            modelBuilder.Entity("EnglishForIT.Domain.Entities.Progress.WritingAttempt", b =>
-                {
-                    b.Property<Guid>("Id")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("uuid")
-                        .HasColumnName("id");
-
-                    b.Property<DateTimeOffset>("CreatedAt")
-                        .HasColumnType("timestamp with time zone")
-                        .HasColumnName("created_at");
-
-                    b.Property<string>("FeedbackJson")
-                        .IsRequired()
-                        .HasColumnType("jsonb")
-                        .HasColumnName("feedback_json");
-
-                    b.Property<bool>("Passed")
-                        .HasColumnType("boolean")
-                        .HasColumnName("passed");
-
-                    b.Property<double>("Score")
-                        .HasColumnType("double precision")
-                        .HasColumnName("score");
-
-                    b.Property<string>("SubmissionJson")
-                        .IsRequired()
-                        .HasColumnType("jsonb")
-                        .HasColumnName("submission_json");
-
-                    b.Property<DateTimeOffset>("SubmittedAt")
-                        .HasColumnType("timestamp with time zone")
-                        .HasColumnName("submitted_at");
-
-                    b.Property<Guid>("TaskId")
-                        .HasColumnType("uuid")
-                        .HasColumnName("task_id");
-
-                    b.Property<DateTimeOffset>("UpdatedAt")
-                        .HasColumnType("timestamp with time zone")
-                        .HasColumnName("updated_at");
-
-                    b.Property<Guid>("UserId")
-                        .HasColumnType("uuid")
-                        .HasColumnName("user_id");
-
-                    b.HasKey("Id")
-                        .HasName("pk_writing_attempts");
-
-                    b.HasIndex("TaskId")
-                        .HasDatabaseName("ix_writing_attempts_task_id");
-
-                    b.HasIndex("UserId", "TaskId", "SubmittedAt")
-                        .HasDatabaseName("ix_writing_attempts_user_id_task_id_submitted_at");
-
-                    b.ToTable("writing_attempts");
-                });
-
             modelBuilder.Entity("EnglishForIT.Domain.Entities.Content.LessonActivity", b =>
                 {
                     b.HasOne("EnglishForIT.Domain.Entities.Content.Lesson", "Lesson")
@@ -3254,18 +3200,6 @@ namespace EnglishForIT.Infrastructure.Persistence.Migrations
                         .HasConstraintName("fk_story_progresses_story_chapters_chapter_id");
 
                     b.Navigation("Chapter");
-                });
-
-            modelBuilder.Entity("EnglishForIT.Domain.Entities.Progress.WritingAttempt", b =>
-                {
-                    b.HasOne("EnglishForIT.Domain.Entities.Content.WritingTask", "Task")
-                        .WithMany()
-                        .HasForeignKey("TaskId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired()
-                        .HasConstraintName("fk_writing_attempts_writing_tasks_task_id");
-
-                    b.Navigation("Task");
                 });
 
             modelBuilder.Entity("EnglishForIT.Domain.Entities.Content.Lesson", b =>

@@ -1,0 +1,90 @@
+code: WR-AI
+title_vi: "Viết cho công việc AI"
+context_vi: >-
+  Đề xuất ứng dụng AI, báo cáo chất lượng, và viết phần đánh giá rủi ro. Người duyệt
+  thường không quan tâm mô hình nào — họ quan tâm chuyện gì xảy ra khi nó đoán sai.
+track: Ai
+level: B1
+
+tasks:
+  - code: t1
+    kind: FillBlank
+    pass_score: 80
+    prompt_vi: "Điền ba chỗ trống trong câu giới thiệu một ứng dụng AI cho người không chuyên."
+    prompt_en: "The system ___ a category for each new ticket. A person still ___ every ticket before it moves. When it's ___, the agent changes it in one click."
+    blanks:
+      - ["suggests", "proposes", "recommends"]
+      - ["reviews", "checks", "sees"]
+      - ["wrong", "incorrect"]
+    hint_vi: "Ba câu, ba ý: nó làm gì, ai duyệt, sai thì sao. Tránh từ mô hình và huấn luyện."
+    sample_en: "The system suggests a category for each new ticket. A person still reviews every ticket before it moves. When it's wrong, the agent changes it in one click."
+
+  - code: t2
+    kind: FillBlank
+    pass_score: 80
+    prompt_vi: "Điền hai chỗ trống trong câu báo cáo chất lượng."
+    prompt_en: "Accuracy is 86 percent ___, but that average ___ a split between English and mixed-language tickets."
+    blanks:
+      - ["overall"]
+      - ["hides", "conceals", "masks"]
+    hint_vi: "Vế sau nói con số trung bình đang che giấu điều gì."
+    sample_en: "Accuracy is 86 percent overall, but that average hides a split between English and mixed-language tickets."
+
+  - code: t3
+    kind: Reorder
+    pass_score: 80
+    prompt_vi: "Sắp lại thành một câu nêu giới hạn của hệ thống."
+    fragments:
+      - "so we route those to a person"
+      - "the model has not seen enough mixed-language tickets"
+      - "instead of guessing"
+    correct_order:
+      - "the model has not seen enough mixed-language tickets"
+      - "so we route those to a person"
+      - "instead of guessing"
+    hint_vi: "Nêu giới hạn trước, rồi tới cách xử lý, rồi tới cái mình cố ý không làm."
+    sample_en: "The model has not seen enough mixed-language tickets, so we route those to a person instead of guessing."
+
+  - code: t4
+    kind: Reorder
+    pass_score: 80
+    prompt_vi: "Sắp lại thành một câu mở đầu đề xuất."
+    fragments:
+      - "and the same five questions come up every week"
+      - "sixty percent of our tickets are repeats"
+      - "which is about six hours of agent time"
+    correct_order:
+      - "sixty percent of our tickets are repeats"
+      - "and the same five questions come up every week"
+      - "which is about six hours of agent time"
+    hint_vi: "Con số trước, mô tả sau, và quy ra thời gian ở cuối — đó là thứ người duyệt nhớ."
+    sample_en: "Sixty percent of our tickets are repeats, and the same five questions come up every week, which is about six hours of agent time."
+
+  - code: t5
+    kind: GuidedEmail
+    pass_score: 75
+    prompt_vi: >-
+      Viết bốn câu đề xuất một ứng dụng AI: vấn đề, cách làm, chuyện gì xảy ra khi sai,
+      và cách đo xem có hiệu quả không.
+    prompt_en: "Write a short AI use case proposal."
+    required_points:
+      - "problem"
+      - "suggest"
+      - "when it is wrong"
+      - "measure"
+    hint_vi: "Người duyệt sẽ hỏi đúng một câu: khi nó sai thì sao. Trả lời trước khi bị hỏi."
+    sample_en: "The problem is that sixty percent of our tickets are the same five questions, and agents retype the same answers every week. We would have the system suggest a category and a draft reply, which the agent can accept or ignore. When it is wrong, nothing reaches the customer, because the agent sends the reply, not the system. We would measure it on handling time and on how often agents accept the draft, and stop if acceptance stays under half after a month."
+
+  - code: t6
+    kind: GuidedEmail
+    pass_score: 75
+    prompt_vi: >-
+      Viết ba câu phần đánh giá rủi ro: rủi ro cụ thể, cách giảm, và ai chịu trách nhiệm
+      khi rủi ro xảy ra.
+    prompt_en: "Write the risk section of an AI proposal."
+    required_points:
+      - "risk"
+      - "reduce"
+      - "responsible"
+    hint_vi: "Rủi ro chung chung như bảo mật hay đạo đức thì không ai xử lý được. Nêu một rủi ro cụ thể."
+    sample_en: "The main risk is that the draft reply contains a customer's data from a different ticket. We reduce that by never letting the system read tickets outside the one being answered, and by keeping the draft in the agent's window rather than sending it. The service desk lead is responsible for reviewing any case where that happens, and we log every draft for thirty days so a review is possible."

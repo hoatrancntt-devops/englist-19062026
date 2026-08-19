@@ -293,6 +293,8 @@ public static class AdminModule
         ContentSeeder content,
         PlacementSeeder placement,
         RoleplaySeeder roleplay,
+        StorySeeder story,
+        WritingSeeder writing,
         AppDbContext db,
         CancellationToken ct)
     {
@@ -303,10 +305,13 @@ public static class AdminModule
 
         var root = config.GetValue<string>("Content:Root") ?? "content";
 
-        // Ba loại nội dung nạp riêng: một loại hỏng không được ngăn hai loại còn lại.
+        // Mỗi loại nội dung nạp riêng: một loại hỏng không được ngăn các loại còn lại.
+        // Truyện nạp sau bài học vì cổng chất lượng của nó tra mốc mở trên danh sách bài.
         var lessons = await content.SeedAsync(root, ct);
         var forms = await placement.SeedAsync(root, ct);
         var scenarios = await roleplay.SeedAsync(root, ct);
+        var chapters = await story.SeedAsync(root, ct);
+        var writingSets = await writing.SeedAsync(root, ct);
 
         db.AuditLogs.Add(new AuditLog
         {
@@ -318,6 +323,8 @@ public static class AdminModule
                 lessons = lessons.ToString(),
                 forms = forms.ToString(),
                 scenarios = scenarios.ToString(),
+                chapters = chapters.ToString(),
+                writing = writingSets.ToString(),
             }),
         });
 
@@ -328,6 +335,8 @@ public static class AdminModule
             lessons = new { lessons.Inserted, lessons.Updated, lessons.Unchanged, problems = lessons.Problems },
             placement = new { forms.Inserted, forms.Updated, forms.Unchanged, problems = forms.Problems },
             roleplay = new { scenarios.Inserted, scenarios.Updated, scenarios.Unchanged, problems = scenarios.Problems },
+            story = new { chapters.Inserted, chapters.Updated, chapters.Unchanged, problems = chapters.Problems },
+            writing = new { writingSets.Inserted, writingSets.Updated, writingSets.Unchanged, problems = writingSets.Problems },
         });
     }
 

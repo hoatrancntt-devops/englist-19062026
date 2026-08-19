@@ -1,0 +1,27 @@
+code: ST-07
+number: 7
+title_vi: "Hai phút mỗi sáng"
+track: Infrastructure
+unlock_after_lesson: INF-01
+hook_vi: "Bạn nói năm phút trong standup. Tom để bạn nói hết, rồi hỏi một câu làm bạn nhớ mãi."
+
+body_vi: |-
+  Sáng thứ Ba, standup. Đêm qua có sự cố, bạn trực, bạn xử lý.
+
+  Tới lượt bạn, bạn kể. Kể từ lúc cảnh báo bật, kể chuyện bạn nghĩ là do mạng, kể chuyện bạn kiểm tra switch trước rồi mới nhớ ra phải xem log, kể cái lệnh bạn gõ sai làm mất thêm mười phút, kể tới lúc hai giờ sáng thì tìm ra nguyên nhân là một job backup chạy đè.
+
+  Năm phút. Tom không ngắt lời một lần nào.
+
+  Bạn nói xong, Tom cảm ơn, rồi hỏi cả nhóm: "So — is anyone blocked because of it?"
+
+  Không ai bị chặn. Sự cố đã xong từ hai giờ sáng.
+
+  Tom chuyển sang người kế tiếp. Cuộc họp mười lăm phút hôm đó kéo hai mươi ba phút.
+
+  Cuối buổi Tom nhắn riêng, vẫn không trách: "Great work last night. One tip — standup answers three questions: what you did, what you're doing, what's in your way. Everything else goes in the incident channel."
+
+  Bạn đọc lại năm phút của mình. Trong đó, phần trả lời ba câu hỏi kia chiếm khoảng hai mươi giây. Bốn phút bốn mươi giây còn lại là chuyện của đêm qua — thứ mà bạn muốn kể, vì bạn đã thức tới hai giờ sáng và bạn muốn có người biết điều đó.
+
+  Tom biết điều đó. Anh vừa cảm ơn bạn xong. Chỉ là không phải trong standup.
+
+ends_vi: "Nói ngắn không phải nói ít. Nó là bỏ đúng phần mà người nghe không cần — và giữ lại phần họ phải hành động."

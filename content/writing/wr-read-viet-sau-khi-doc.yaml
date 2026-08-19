@@ -1,0 +1,90 @@
+code: WR-READ
+title_vi: "Viết lại sau khi đọc"
+context_vi: >-
+  Tóm tắt log, release notes, tài liệu API và postmortem cho người khác đọc. Kỹ năng ở đây
+  không phải đọc hiểu — mà là viết lại cho người không có thời gian đọc bản gốc.
+track: Reading
+level: B1
+
+tasks:
+  - code: t1
+    kind: FillBlank
+    pass_score: 80
+    prompt_vi: "Điền ba chỗ trống trong câu tóm tắt nguyên nhân từ log."
+    prompt_en: "The ___ cause was a connection pool exhausted at 01:38. The six hundred errors ___ it are downstream noise, not ___ problems."
+    blanks:
+      - ["root"]
+      - ["after", "following"]
+      - ["separate", "different", "new"]
+    hint_vi: "Chỗ cuối nói sáu trăm lỗi kia không phải sáu trăm vấn đề khác nhau."
+    sample_en: "The root cause was a connection pool exhausted at 01:38. The six hundred errors after it are downstream noise, not separate problems."
+
+  - code: t2
+    kind: FillBlank
+    pass_score: 80
+    prompt_vi: "Điền hai chỗ trống trong câu cảnh báo lấy từ release notes."
+    prompt_en: "Version 4.2 ___ the old authentication header. Anything still using it will ___ working after we upgrade."
+    blanks:
+      - ["removes", "drops"]
+      - ["stop"]
+    hint_vi: "Đây là loại câu bạn phải tìm trong release notes: thứ sẽ làm hỏng hệ thống của mình."
+    sample_en: "Version 4.2 removes the old authentication header. Anything still using it will stop working after we upgrade."
+
+  - code: t3
+    kind: Reorder
+    pass_score: 80
+    prompt_vi: "Sắp lại thành một câu phân biệt nguyên nhân gốc với thứ châm ngòi."
+    fragments:
+      - "but the root cause was the missing alert"
+      - "the trigger was the backup job"
+      - "that would have caught it hours earlier"
+    correct_order:
+      - "the trigger was the backup job"
+      - "but the root cause was the missing alert"
+      - "that would have caught it hours earlier"
+    hint_vi: "Thứ châm ngòi trước, nguyên nhân gốc sau — postmortem tốt luôn tách hai thứ này."
+    sample_en: "The trigger was the backup job, but the root cause was the missing alert that would have caught it hours earlier."
+
+  - code: t4
+    kind: Reorder
+    pass_score: 80
+    prompt_vi: "Sắp lại thành một câu tóm tắt tài liệu API cho đồng nghiệp."
+    fragments:
+      - "and it returns 429 with a retry-after header"
+      - "the endpoint accepts up to fifty items per call"
+      - "if you go over"
+    correct_order:
+      - "the endpoint accepts up to fifty items per call"
+      - "if you go over"
+      - "and it returns 429 with a retry-after header"
+    hint_vi: "Giới hạn trước, điều kiện vượt, rồi tới thứ API trả về."
+    sample_en: "The endpoint accepts up to fifty items per call, and if you go over it returns 429 with a retry-after header."
+
+  - code: t5
+    kind: GuidedEmail
+    pass_score: 75
+    prompt_vi: >-
+      Viết bốn câu tóm tắt một postmortem cho người không dự sự cố: ảnh hưởng, thứ châm ngòi,
+      nguyên nhân gốc, và việc sẽ làm.
+    prompt_en: "Summarise a postmortem for someone who wasn't involved."
+    required_points:
+      - "impact"
+      - "trigger"
+      - "root cause"
+      - "action"
+    hint_vi: "Bốn mục này là bốn mục đầu của postmortem chuẩn. Đừng kể trình tự xử lý."
+    sample_en: "The impact was that checkout was unavailable for fifty-two minutes and about nine hundred orders failed. The trigger was a backup job that started an hour earlier than usual after a schedule change. The root cause was that the connection pool had no alert on saturation, so nobody knew until users complained. The action items are an alert at eighty percent pool usage and a review of every job we moved in that schedule change."
+
+  - code: t6
+    kind: GuidedEmail
+    pass_score: 75
+    prompt_vi: >-
+      Viết ba câu cảnh báo nhóm về một thay đổi trong release notes: thứ bị bỏ,
+      thứ của mình bị ảnh hưởng, và hạn phải sửa.
+    prompt_en: "Warn your team about a breaking change in release notes."
+    required_points:
+      - "removes"
+      - "we use"
+      - "before"
+    hint_vi: "Đừng dán nguyên release notes. Nêu đúng phần chạm vào hệ thống của nhóm."
+    sample_en: "Version 4.2 removes the old authentication header that we use in the reporting job and in the two nightly scripts. Both will stop working the moment we upgrade, and there is no fallback. We need to move them to the new token method before the upgrade window on the fifteenth."

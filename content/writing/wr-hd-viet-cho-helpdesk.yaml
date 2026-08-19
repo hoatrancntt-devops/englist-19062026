@@ -1,0 +1,93 @@
+code: WR-HD
+title_vi: "Viết cho công việc helpdesk"
+context_vi: >-
+  Ticket, câu hỏi chẩn đoán, hướng dẫn từng bước, và bàn giao. Người đọc những dòng này
+  thường không rành kỹ thuật và đang bực — câu chữ phải làm họ bớt bực chứ không thêm.
+track: Helpdesk
+level: A2
+
+tasks:
+  - code: t1
+    kind: FillBlank
+    pass_score: 80
+    prompt_vi: "Điền ba chỗ trống trong câu mở đầu trả lời ticket."
+    prompt_en: "Thanks for reporting this. I'm ___ into it now. Could you tell me when you ___ noticed it, and whether anyone ___ is affected?"
+    blanks:
+      - ["looking", "checking"]
+      - ["first"]
+      - ["else"]
+    hint_vi: "Chỗ hai hỏi lần đầu tiên thấy lỗi. Chỗ ba hỏi có ai khác bị không."
+    sample_en: "Thanks for reporting this. I'm looking into it now. Could you tell me when you first noticed it, and whether anyone else is affected?"
+
+  - code: t2
+    kind: FillBlank
+    pass_score: 80
+    prompt_vi: "Điền hai chỗ trống trong câu leo thang ticket cho nhóm khác."
+    prompt_en: "I'm ___ this to the network team because the issue is outside my ___. They'll contact you directly."
+    blanks:
+      - ["escalating", "passing", "handing"]
+      - ["scope", "area"]
+    hint_vi: "Chỗ đầu là động từ chuyên dùng khi đẩy ticket lên tuyến trên."
+    sample_en: "I'm escalating this to the network team because the issue is outside my scope. They'll contact you directly."
+
+  - code: t3
+    kind: Reorder
+    pass_score: 80
+    prompt_vi: "Sắp lại thành một bước hướng dẫn cho người không rành kỹ thuật."
+    fragments:
+      - "and tell me what you see"
+      - "in the top right corner"
+      - "click the small gear icon"
+      - "Open the app"
+    correct_order:
+      - "Open the app"
+      - "click the small gear icon"
+      - "in the top right corner"
+      - "and tell me what you see"
+    hint_vi: "Mở trước, chỉ chỗ bấm sau, mô tả vị trí, rồi mới xin xác nhận."
+    sample_en: "Open the app, click the small gear icon in the top right corner, and tell me what you see."
+
+  - code: t4
+    kind: Reorder
+    pass_score: 80
+    prompt_vi: "Sắp lại thành một câu bàn giao ca trực."
+    fragments:
+      - "the database is stable"
+      - "but watch the disk on node three"
+      - "since 2 a.m."
+      - "it's at eighty percent"
+    correct_order:
+      - "the database is stable"
+      - "since 2 a.m."
+      - "but watch the disk on node three"
+      - "it's at eighty percent"
+    hint_vi: "Trạng thái tốt trước, mốc thời gian, rồi tới thứ ca sau phải để mắt."
+    sample_en: "The database is stable since 2 a.m., but watch the disk on node three, it's at eighty percent."
+
+  - code: t5
+    kind: GuidedEmail
+    pass_score: 75
+    prompt_vi: >-
+      Viết ba câu trả lời một người dùng đang bực vì đã báo lỗi hai lần:
+      ghi nhận, nêu tình trạng thật, và nêu mốc tiếp theo.
+    prompt_en: "Reply to a frustrated user who has reported the same issue twice."
+    required_points:
+      - "sorry"
+      - "still"
+      - "by"
+    hint_vi: "Đừng hứa sửa xong. Hứa một mốc mà bạn chắc chắn giữ được."
+    sample_en: "I'm sorry you've had to report this twice, that shouldn't have happened. The fix is still with the vendor and I'm chasing it every morning. I'll send you an update by Thursday afternoon whether or not it's resolved by then."
+
+  - code: t6
+    kind: GuidedEmail
+    pass_score: 75
+    prompt_vi: >-
+      Viết ba câu giải thích cho người không rành kỹ thuật vì sao tài khoản của họ bị khoá:
+      chuyện gì xảy ra, vì sao, và họ cần làm gì.
+    prompt_en: "Explain to a non-technical user why their account was locked."
+    required_points:
+      - "locked"
+      - "because"
+      - "you need to"
+    hint_vi: "Không dùng từ policy, provisioning, directory. Nói bằng việc họ đã làm và sẽ làm."
+    sample_en: "Your account was locked this morning after five failed sign-in attempts. That happens automatically because too many wrong passwords look the same as someone trying to break in. You need to reset your password using the link I've sent, and it will unlock straight away."

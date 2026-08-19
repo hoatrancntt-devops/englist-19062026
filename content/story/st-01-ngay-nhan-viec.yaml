@@ -1,0 +1,29 @@
+code: ST-01
+number: 1
+title_vi: "Ngày nhận việc"
+track: Foundation
+unlock_after_lesson: LIFE-04
+hook_vi: "Bạn đã qua vòng phỏng vấn bằng tiếng Việt. Sáng thứ Hai, câu đầu tiên người ta nói với bạn lại không phải tiếng Việt."
+
+new_characters:
+  - "Mai — kỹ sư cùng nhóm, người được giao kèm bạn tuần đầu"
+  - "Anh Quang — trưởng nhóm hạ tầng, sếp trực tiếp của bạn"
+
+body_vi: |-
+  Bảy giờ bốn mươi. Bạn tới sớm hai mươi phút vì sợ kẹt xe, và bây giờ đang ngồi ở sảnh HT Group nhìn cửa kính, tập lại trong đầu một câu đã tập cả tối qua.
+
+  Mai xuống đón bạn. Mai nói tiếng Việt, thở phào. Cô dẫn bạn qua chỗ ngồi, chỉ cái máy, chỉ chỗ để cốc, rồi bảo: "Chín giờ có standup, nhóm mình có hai bạn ở Sydney nên họp bằng tiếng Anh. Em cứ nghe thôi, chưa cần nói gì."
+
+  Chín giờ. Màn hình bật lên bốn khuôn mặt. Anh Quang giới thiệu bạn bằng một câu, và bốn người cùng nói một thứ gì đó vui vẻ mà bạn nghe được đúng hai từ: "welcome" và tên mình.
+
+  Rồi có người hỏi bạn một câu.
+
+  Bạn không nghe kịp. Không phải vì họ nói nhanh — sau này bạn sẽ biết là họ nói không nhanh chút nào — mà vì trong đầu bạn lúc đó không có sẵn một câu nào để trả lời khi chưa nghe rõ. Bạn im. Ba giây im lặng trong một cuộc họp dài bằng ba mươi giây.
+
+  Mai đỡ lời. Cuộc họp đi tiếp.
+
+  Buổi trưa Mai nói với bạn, không phải giọng an ủi: "Lúc nãy em chỉ cần nói 'Sorry, could you say that again?' là xong. Không ai đánh giá gì đâu. Cái làm người ta khó xử là im lặng, không phải là nghe không kịp."
+
+  Bạn ghi câu đó vào mặt sau tờ giấy nhớ, dán lên màn hình.
+
+ends_vi: "Ba câu cứu hộ bạn vừa học chính là ba câu để không bao giờ phải im lặng ba giây nữa. Chúng không giúp bạn nói hay hơn — chúng giúp bạn ở lại trong cuộc hội thoại."

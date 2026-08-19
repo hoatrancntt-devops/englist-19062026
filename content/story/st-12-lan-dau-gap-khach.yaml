@@ -1,0 +1,32 @@
+code: ST-12
+number: 12
+title_vi: "Lần đầu gặp khách"
+track: Business
+unlock_after_lesson: BIZ-01
+hook_vi: "Mười lăm phút đầu, bạn nói bốn mươi phút. Khách hàng nói bốn câu. Đó là lý do hợp đồng không ký."
+
+new_characters:
+  - "Bà Rachel — giám đốc dự án phía khách hàng"
+
+body_vi: |-
+  Anh Quang đưa bạn đi cùng buổi gặp khách hàng đầu tiên. Vai của bạn: giải thích phần kỹ thuật khi được hỏi.
+
+  Bà Rachel mở đầu bằng một câu chung chung về việc hệ thống hiện tại "chưa đáp ứng được".
+
+  Và bạn bắt đầu nói.
+
+  Bạn nói về kiến trúc bạn đề xuất. Nói về khả năng mở rộng. Nói về giám sát, về sao lưu, về cái đánh đổi giữa chi phí và độ trễ mà bạn vừa học được từ Kenji. Bạn nói hay. Tiếng Anh của bạn hôm đó tốt hơn bất kỳ ngày nào trước đó.
+
+  Bốn mươi phút.
+
+  Bà Rachel gật đầu nhiều lần, hỏi bốn câu ngắn, ghi chú vài dòng. Cuối buổi bà cảm ơn, nói sẽ trao đổi nội bộ rồi phản hồi.
+
+  Trên xe về, anh Quang không nói gì một lúc. Rồi anh hỏi: "Em có biết hệ thống hiện tại của họ hỏng ở chỗ nào không?"
+
+  Bạn không biết. Bà Rachel chưa bao giờ nói. Vì bạn chưa bao giờ hỏi.
+
+  "Em vừa bán một giải pháp rất tốt," anh Quang nói, "cho một vấn đề mà mình chưa biết là gì."
+
+  Hai tuần sau khách chọn nhà cung cấp khác. Trong email từ chối có một câu: "Their team spent more time understanding our situation."
+
+ends_vi: "Nhánh Kinh doanh không dạy bạn nói hay hơn. Nó dạy bạn hỏi trước — vì người mua chỉ tin giải pháp của người đã hiểu vấn đề của họ."

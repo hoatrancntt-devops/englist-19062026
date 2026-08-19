@@ -100,3 +100,28 @@ public class ChallengePass : Entity
     /// <summary>Các item đã dùng trong bài thi vượt, JSONB. Chống thi lại đúng bộ câu.</summary>
     public required string ItemCodesJson { get; set; }
 }
+
+/// <summary>
+/// Một lần nộp bài luyện viết.
+///
+/// Lưu cả bài học viên viết chứ không chỉ điểm: với dạng viết email, thứ đáng xem lại sau
+/// vài tuần là câu chữ mình đã dùng, không phải con số 80.
+/// </summary>
+public class WritingAttempt : Entity
+{
+    public Guid UserId { get; set; }
+
+    public Guid TaskId { get; set; }
+    public WritingTask? Task { get; set; }
+
+    public DateTimeOffset SubmittedAt { get; set; } = DateTimeOffset.UtcNow;
+
+    public double Score { get; set; }
+    public bool Passed { get; set; }
+
+    /// <summary>Bài đã nộp, JSONB. Hình dạng tuỳ dạng bài: chỗ trống, thứ tự, hoặc đoạn văn.</summary>
+    public required string SubmissionJson { get; set; }
+
+    /// <summary>Nhận xét từng ý đã sinh lúc chấm, JSONB. Giữ lại để xem lại không phải chấm lại.</summary>
+    public required string FeedbackJson { get; set; }
+}

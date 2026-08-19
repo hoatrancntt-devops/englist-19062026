@@ -132,6 +132,23 @@ export function SkillPage({ skill }: { skill: Skill }) {
             <strong>{open.length} bài đang mở</strong>.
           </p>
 
+          {/* Bộ drill viết không nằm trong lộ trình nên không xuất hiện ở danh sách bài phía
+              dưới. Không có lối vào ở đây thì gần như không ai tìm ra nó. */}
+          {skill === 'Writing' && (
+            <div className="rounded-[var(--radius-control)] bg-[var(--surface-sunken)] p-3">
+              <p className="text-sm">
+                Muốn luyện tay ngay mà không mở bài nào?{' '}
+                <Link
+                  to="/learn/luyen-viet"
+                  className="font-medium text-brand-600 underline dark:text-brand-300"
+                >
+                  Vào bộ bài luyện viết
+                </Link>{' '}
+                — chấm ngay tại máy chủ, làm lại bao nhiêu lần cũng được.
+              </p>
+            </div>
+          )}
+
           {/* Đổi chế độ ngay tại đây thay vì bắt người học đi tìm trong Cài đặt. */}
           {onlyThisSkill ? (
             <p className="text-sm text-secondary">

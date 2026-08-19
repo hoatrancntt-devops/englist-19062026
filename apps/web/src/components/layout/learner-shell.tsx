@@ -7,6 +7,7 @@ import {
   MessagesSquare,
   PenLine,
   BookOpen,
+  BookMarked,
   RotateCcw,
   Bell,
   Settings,
@@ -45,6 +46,10 @@ const NAV_ITEMS: NavItem[] = [
   // câu đã tới hạn mà để trôi thì phần học trước đó mất dần.
   { to: '/learn/review', label: 'Ôn tập', icon: RotateCcw, hint: 'Câu sắp quên' },
   { to: '/learn/roleplay', label: 'Đóng vai', icon: MessagesSquare, hint: 'Tình huống nghề' },
+
+  // Mạch truyện đứng cạnh Đóng vai chứ không lẫn vào bốn kỹ năng: nó không dạy kỹ năng nào,
+  // nó là lý do để học tiếp.
+  { to: '/learn/truyen', label: 'Mạch truyện', icon: BookMarked, hint: 'Sáu tháng đầu đi làm' },
   { to: '/learn/listening', label: 'Nghe', icon: Headphones },
   { to: '/learn/speaking', label: 'Nói', icon: MessagesSquare },
   { to: '/learn/reading', label: 'Đọc', icon: BookOpen },

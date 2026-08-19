@@ -1,0 +1,93 @@
+code: WR-FOUND
+title_vi: "Viết cơ bản nơi làm việc"
+context_vi: >-
+  Những dòng bạn gõ nhiều nhất trong ngày mà không ai dạy: xin nghỉ, báo đến muộn,
+  nhắn Teams cho đồng nghiệp, và trả lời một câu hỏi mình chưa hiểu rõ.
+track: Foundation
+level: A1
+
+tasks:
+  - code: t1
+    kind: FillBlank
+    pass_score: 80
+    prompt_vi: "Điền hai chỗ trống trong tin nhắn báo đến muộn."
+    prompt_en: "Sorry, I'm running about twenty minutes ___. I'll join the standup as ___ as I get in."
+    blanks:
+      - ["late", "behind"]
+      - ["soon"]
+    hint_vi: "Chỗ đầu là từ trái nghĩa với early. Chỗ sau nằm trong cụm as ... as."
+    sample_en: "Sorry, I'm running about twenty minutes late. I'll join the standup as soon as I get in."
+
+  - code: t2
+    kind: FillBlank
+    pass_score: 80
+    prompt_vi: "Điền ba chỗ trống trong câu hỏi lại khi chưa rõ yêu cầu."
+    prompt_en: "Just to ___ sure I understood: you want the report by Friday, ___? And should it ___ last month's numbers?"
+    blanks:
+      - ["make", "be"]
+      - ["right", "correct", "is that right"]
+      - ["include", "cover", "contain"]
+    hint_vi: "Câu giữa là câu hỏi đuôi ngắn để xác nhận. Câu cuối hỏi báo cáo có chứa gì."
+    sample_en: "Just to make sure I understood: you want the report by Friday, right? And should it include last month's numbers?"
+
+  - code: t3
+    kind: Reorder
+    pass_score: 80
+    prompt_vi: "Sắp lại thành một câu xin nghỉ phép đúng thứ tự."
+    fragments:
+      - "next Tuesday"
+      - "I'd like to"
+      - "if that works for the team"
+      - "take a day off"
+    correct_order:
+      - "I'd like to"
+      - "take a day off"
+      - "next Tuesday"
+      - "if that works for the team"
+    hint_vi: "Nêu mong muốn trước, rồi tới ngày, rồi tới câu nhường quyết định cho nhóm."
+    sample_en: "I'd like to take a day off next Tuesday if that works for the team."
+
+  - code: t4
+    kind: Reorder
+    pass_score: 80
+    prompt_vi: "Sắp lại thành một tin nhắn nhờ giúp đỡ."
+    fragments:
+      - "when you have five minutes"
+      - "on the staging server"
+      - "I'm stuck"
+      - "could you take a look"
+    correct_order:
+      - "I'm stuck"
+      - "on the staging server"
+      - "could you take a look"
+      - "when you have five minutes"
+    hint_vi: "Nói mình kẹt ở đâu trước, rồi mới nhờ, và để câu nhường thời gian ở cuối."
+    sample_en: "I'm stuck on the staging server, could you take a look when you have five minutes?"
+
+  - code: t5
+    kind: GuidedEmail
+    pass_score: 75
+    prompt_vi: >-
+      Viết ba câu báo tiến độ cuối ngày cho trưởng nhóm: việc đã xong, việc đang làm,
+      và thứ đang chặn bạn.
+    prompt_en: "Write a short end-of-day update to your team lead."
+    required_points:
+      - "finished"
+      - "working on"
+      - "blocked"
+    hint_vi: "Ba câu, mỗi câu một phần. Đừng kể quá trình, chỉ nêu trạng thái."
+    sample_en: "I finished the backup check on all four servers this morning and everything looks clean. I'm working on the firewall rule review now and expect to finish it tomorrow morning. I'm blocked on the VPN ticket because I still need access from the network team."
+
+  - code: t6
+    kind: GuidedEmail
+    pass_score: 75
+    prompt_vi: >-
+      Viết ba câu từ chối lịch sự một lời mời họp trùng lịch: cảm ơn, nêu lý do,
+      và đề xuất cách khác.
+    prompt_en: "Politely decline a meeting invitation that clashes with another commitment."
+    required_points:
+      - "thanks"
+      - "already"
+      - "instead"
+    hint_vi: "Từ chối mà không đề xuất gì thay thế thì người mời vẫn phải tự xoay."
+    sample_en: "Thanks for the invite. I'm already in the customer review at that time, so I can't join. Could you share the notes afterwards instead, or move it to Thursday morning if that works for everyone?"

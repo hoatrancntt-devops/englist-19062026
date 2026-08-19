@@ -1,0 +1,90 @@
+code: WR-BIZ
+title_vi: "Viết cho công việc kinh doanh"
+context_vi: >-
+  Email chào hàng, theo đuổi khách, báo giá, và trả lời khi khách từ chối. Người đọc
+  có ba giây để quyết định đọc tiếp hay không — câu đầu phải nói về họ, không phải về mình.
+track: Business
+level: A2
+
+tasks:
+  - code: t1
+    kind: FillBlank
+    pass_score: 80
+    prompt_vi: "Điền ba chỗ trống trong câu mở đầu email chào hàng."
+    prompt_en: "We ___ companies like yours cut cloud costs without moving anything. Would it be ___ having a short call next week? If not, just ___ me know."
+    blanks:
+      - ["help"]
+      - ["worth"]
+      - ["let"]
+    hint_vi: "Câu giữa là cách hỏi lịch sự xem có đáng dành thời gian không."
+    sample_en: "We help companies like yours cut cloud costs without moving anything. Would it be worth having a short call next week? If not, just let me know."
+
+  - code: t2
+    kind: FillBlank
+    pass_score: 80
+    prompt_vi: "Điền hai chỗ trống trong câu theo đuổi khách sau khi không có hồi âm."
+    prompt_en: "I'm ___ up on my note from last week. If the timing isn't right, I'm happy to check back in a ___ months."
+    blanks:
+      - ["following"]
+      - ["few", "couple of"]
+    hint_vi: "Theo đuổi mà cho khách một lối thoát thì tỷ lệ trả lời cao hơn hẳn."
+    sample_en: "I'm following up on my note from last week. If the timing isn't right, I'm happy to check back in a few months."
+
+  - code: t3
+    kind: Reorder
+    pass_score: 80
+    prompt_vi: "Sắp lại thành một câu hỏi tìm hiểu nhu cầu khách."
+    fragments:
+      - "in your current setup"
+      - "what's the part that costs you the most time"
+      - "before I suggest anything"
+    correct_order:
+      - "before I suggest anything"
+      - "what's the part that costs you the most time"
+      - "in your current setup"
+    hint_vi: "Câu nhường quyền đứng trước để khách biết bạn chưa định bán gì vội."
+    sample_en: "Before I suggest anything, what's the part that costs you the most time in your current setup?"
+
+  - code: t4
+    kind: Reorder
+    pass_score: 80
+    prompt_vi: "Sắp lại thành một câu trả lời khi khách nói giá cao."
+    fragments:
+      - "and drop the parts you don't need yet"
+      - "I understand"
+      - "let's look at what's in the quote"
+    correct_order:
+      - "I understand"
+      - "let's look at what's in the quote"
+      - "and drop the parts you don't need yet"
+    hint_vi: "Ghi nhận trước, rồi mới bàn nội dung — đừng bảo vệ giá ngay câu đầu."
+    sample_en: "I understand. Let's look at what's in the quote and drop the parts you don't need yet."
+
+  - code: t5
+    kind: GuidedEmail
+    pass_score: 75
+    prompt_vi: >-
+      Viết bốn câu email chào hàng: nói về vấn đề của khách, nói mình làm được gì,
+      nêu một bằng chứng, và đề nghị một bước nhỏ.
+    prompt_en: "Write a short cold outreach email."
+    required_points:
+      - "you"
+      - "we help"
+      - "for example"
+      - "would you be open"
+    hint_vi: "Câu đầu tiên không được bắt đầu bằng tên công ty mình. Bắt đầu bằng khách."
+    sample_en: "You're running three regions on separate contracts, which usually means paying twice for the same transfer. We help teams in that situation consolidate without migrating anything. For example, a logistics company in Ho Chi Minh City cut about twenty percent of their monthly bill in six weeks. Would you be open to a twenty-minute call to see whether the same pattern applies?"
+
+  - code: t6
+    kind: GuidedEmail
+    pass_score: 75
+    prompt_vi: >-
+      Viết ba câu trả lời khách vừa chọn nhà cung cấp khác: cảm ơn, không nài nỉ,
+      và để ngỏ một cửa.
+    prompt_en: "Reply to a customer who chose a different vendor."
+    required_points:
+      - "thank you"
+      - "wish"
+      - "if"
+    hint_vi: "Đây là email dễ viết dở nhất. Không xin lý do, không hạ đối thủ."
+    sample_en: "Thank you for letting me know, and for the time your team spent with us. I wish you a smooth rollout with them. If anything changes in the next year, or if you'd like a second opinion on the migration plan, my line is open and there's no pitch attached."

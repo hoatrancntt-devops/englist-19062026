@@ -75,6 +75,17 @@ public class StoryChapter : Entity
 
     /// <summary>Nhân vật xuất hiện lần đầu ở chương này, JSONB mảng tên.</summary>
     public required string NewCharactersJson { get; set; }
+
+    /// <summary>
+    /// Mã bài phải thông thạo thì chương mới mở.
+    ///
+    /// Mốc khai tường minh chứ không suy từ <see cref="Track"/>: tầng Foundation có 30 bài
+    /// chia làm nhiều chương, cùng một track thì không có cách nào phân biệt chương nào mở trước.
+    /// </summary>
+    public required string UnlockAfterLessonCode { get; set; }
+
+    /// <summary>Hash nội dung nguồn, để seeder bỏ qua file không đổi.</summary>
+    public required string SourceHash { get; set; }
 }
 
 /// <summary>Kịch bản đóng vai. Chạy hoàn toàn bằng graph, không cần AI.</summary>

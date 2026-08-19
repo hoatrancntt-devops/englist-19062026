@@ -160,9 +160,14 @@ public class StoryChapterConfiguration : IEntityTypeConfiguration<StoryChapter>
         b.Property(x => x.HookVi).HasMaxLength(500).IsRequired();
         b.Property(x => x.Track).HasConversion<string>().HasMaxLength(32);
         b.Property(x => x.NewCharactersJson).HasColumnType("jsonb").IsRequired();
+        b.Property(x => x.UnlockAfterLessonCode).HasMaxLength(32).IsRequired();
+        b.Property(x => x.SourceHash).HasMaxLength(64).IsRequired();
 
         b.HasIndex(x => x.Code).IsUnique();
         b.HasIndex(x => x.Number).IsUnique();
+
+        // Mốc mở chương tra theo mã bài mỗi lần dựng danh sách chương cho một học viên.
+        b.HasIndex(x => x.UnlockAfterLessonCode);
     }
 }
 

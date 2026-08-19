@@ -23,6 +23,8 @@ import { ChallengePage } from '@/features/lesson/challenge-page'
 import { RoadmapPage } from '@/features/learn/roadmap-page'
 import { ChooseTrackPage } from '@/features/learn/choose-track-page'
 import { RoleplayPage } from '@/features/roleplay/roleplay-page'
+import { StoryPage } from '@/features/story/story-page'
+import { WritingDrillPage } from '@/features/writing/writing-page'
 
 // Trang quản trị tách bundle riêng: học viên chiếm gần hết lưu lượng và
 // không bao giờ cần tải mã của khu quản trị.
@@ -114,6 +116,11 @@ export const router = createBrowserRouter([
               { path: 'roadmap', element: <RoadmapPage /> },
               { path: 'review', element: <ReviewPage /> },
               { path: 'roleplay', element: <RoleplayPage /> },
+              { path: 'truyen', element: <StoryPage /> },
+
+              // Bộ drill viết đứng riêng khỏi /learn/writing: trang kia liệt kê bài học dạy
+              // kỹ năng viết, trang này là chỗ luyện tay, vào làm được ngay không cần mở bài.
+              { path: 'luyen-viet', element: <WritingDrillPage /> },
               { path: 'notifications', element: <NotificationsPage /> },
               { path: 'settings', element: <SettingsPage /> },
 

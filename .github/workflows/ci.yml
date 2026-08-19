@@ -153,8 +153,15 @@ jobs:
             git fetch --quiet origin main
             git reset --quiet --hard "$TAG"
 
+            # Kiểm tra sẵn sàng phải gọi đúng địa chỉ mà proxy đang nghe. Proxy nghe trên
+            # BIND_ADDRESS (xem docker-compose.vps.yml), nên đọc thẳng từ .env của máy chủ
+            # thay vì ghi cứng ở đây — ghi cứng thì đổi một chỗ là chỗ kia lệch, và biểu hiện
+            # là bản tốt bị quay lui vì tưởng không sẵn sàng.
+            BIND=\$(grep -E '^BIND_ADDRESS=' .env | cut -d= -f2)
+            BIND="\${BIND:-127.0.0.1}"
+
             COMPOSE_OVERLAY=docker-compose.vps.yml \\
-            HEALTH_URL=http://127.0.0.1:8080/health/ready \\
+            HEALTH_URL="http://\$BIND:8080/health/ready" \\
               ./deploy/scripts/deploy-azure-vm.sh "$TAG"
           REMOTE
 

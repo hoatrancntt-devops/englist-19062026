@@ -72,8 +72,15 @@ echo "[3/5] Cap nhat .env..."
 sed -i.bak "s/^IMAGE_TAG=.*/IMAGE_TAG=$NEW_TAG/" .env
 
 # 4. Khởi động lại. Migration tự chạy lúc API khởi động.
+#
+# Phải truyền IMAGE_TAG lần nữa dù bước 3 đã ghi nó vào .env.
+#
+# Đầu script có `set -a && . ./.env`, nên IMAGE_TAG CŨ đang nằm trong biến môi trường, mà biến
+# môi trường thì thắng file .env khi compose phân giải ${IMAGE_TAG}. Thiếu dòng này, compose
+# dựng lại đúng bản cũ, kiểm tra sẵn sàng ở bước 5 vẫn xanh vì dịch vụ vẫn chạy, và script báo
+# "nang cap xong" trong khi không có gì được nâng cấp.
 echo "[4/5] Khoi dong lai dich vu..."
-$COMPOSE up -d
+IMAGE_TAG="$NEW_TAG" $COMPOSE up -d
 
 # 5. Chờ tới khi thật sự sẵn sàng; thất bại thì quay lui.
 echo "[5/5] Doi dich vu san sang..."
@@ -90,6 +97,9 @@ done
 echo "" >&2
 echo "KHONG SAN SANG sau 200 giay. Dang quay lui ve $CURRENT_TAG..." >&2
 mv .env.bak .env
-$COMPOSE up -d
+
+# Cùng lý do như bước 4: biến môi trường thắng .env, mà biến đang giữ tag CŨ. Ở đây nó tình cờ
+# đúng thứ ta muốn, nhưng vẫn ghi rõ ra để lần sau đọc không phải đoán.
+IMAGE_TAG="$CURRENT_TAG" $COMPOSE up -d
 echo "Da quay lui. Xem log: $COMPOSE logs api --tail 100" >&2
 exit 1

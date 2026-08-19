@@ -48,6 +48,12 @@ services:
         limits:
           memory: 768m
     environment:
+      # Bật chấm phát âm. Thiếu dòng này thì SpeechService mặc định TẮT, và triệu chứng rất
+      # dễ bỏ qua: container speech vẫn chạy, vẫn giữ hơn một GB RAM, health check vẫn xanh —
+      # chỉ có học viên là nhận được "phần chấm phát âm chưa được bật trên máy chủ này" ở mọi
+      # drill nói. Đúng tình trạng của máy này cho tới 19/08/2026.
+      Speech__Enabled: "true"
+
       # Địa chỉ dịch vụ nhận dạng giọng nói. Giọng học viên đi từ container API sang
       # container speech trong mạng nội bộ và KHÔNG ra khỏi máy chủ này.
       Speech__BaseUrl: http://speech:9000/

@@ -43,7 +43,12 @@ DB_SIZE=$(du -h "$DB_FILE" | cut -f1)
 echo "  DB   -> $(basename "$DB_FILE") ($DB_SIZE)"
 
 # --- Media ---
-# Audio sinh lại được từ nội dung, nhưng sinh lại tốn vài phút CPU nên vẫn sao lưu.
+# Chỉ sao lưu thứ KHÔNG dựng lại được: file ghi âm của học viên.
+#
+# media/tts nằm ngoài vì nó suy ra hoàn toàn từ nội dung trong kho mã — chạy
+# generate-audio.sh là có lại đúng từng file, vì tên file là hash của chính đoạn văn bản.
+# Đóng gói nó thì mỗi lần triển khai đẻ ra một tệp 180 MB và giữ bảy ngày, tức vài GB cho
+# thứ dựng lại mất mười phút.
 if [ -d "$ROOT_DIR/media" ] && [ -n "$(ls -A "$ROOT_DIR/media" 2>/dev/null)" ]; then
     MEDIA_FILE="$BACKUP_DIR/media-$STAMP.tar.gz"
 
@@ -58,6 +63,7 @@ if [ -d "$ROOT_DIR/media" ] && [ -n "$(ls -A "$ROOT_DIR/media" 2>/dev/null)" ]; 
     # vừa chính là thứ hay biến mất giữa chừng.
     set +e
     tar --exclude='*.tmp' \
+        --exclude='media/tts' \
         --warning=no-file-changed \
         --warning=no-file-removed \
         -czf "$MEDIA_FILE" -C "$ROOT_DIR" media

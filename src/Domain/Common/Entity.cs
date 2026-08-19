@@ -4,7 +4,13 @@ namespace EnglishForIT.Domain.Common;
 public abstract class Entity
 {
     public Guid Id { get; set; } = Guid.CreateVersion7();
-    public DateTimeOffset CreatedAt { get; set; } = DateTimeOffset.UtcNow;
+    /// <summary>
+    /// Bỏ TRỐNG có chủ đích. AppDbContext đóng dấu lúc lưu nếu service chưa tự đặt.
+    ///
+    /// Gán sẵn DateTimeOffset.UtcNow ở đây thì không phân biệt được "chưa đặt" với "đã đặt",
+    /// nên tầng lưu buộc phải ghi đè vô điều kiện — và giờ logic mà service truyền vào bị mất.
+    /// </summary>
+    public DateTimeOffset CreatedAt { get; set; }
     public DateTimeOffset UpdatedAt { get; set; } = DateTimeOffset.UtcNow;
 }
 

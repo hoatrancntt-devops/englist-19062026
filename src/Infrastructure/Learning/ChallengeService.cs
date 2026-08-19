@@ -206,7 +206,7 @@ public class ChallengeService(
         {
             var nextTry = now.AddHours(_policy.ChallengeCooldownHours);
             retryAt = nextTry;
-            RecordFailure(userId, lesson.Id, previousState, grade.Score, below, nextTry);
+            RecordFailure(userId, lesson.Id, previousState, grade.Score, below, now, nextTry);
         }
 
         await db.SaveChangesAsync(ct);
@@ -300,6 +300,7 @@ public class ChallengeService(
         LessonState currentState,
         double score,
         IReadOnlyList<SkillType> below,
+        DateTimeOffset now,
         DateTimeOffset retryAt)
     {
         db.LessonStateEvents.Add(new LessonStateEvent
@@ -308,6 +309,16 @@ public class ChallengeService(
             LessonId = lessonId,
             FromState = currentState,
             ToState = currentState,
+
+            // Ghi mốc thời gian ĐƯỢC TRUYỀN VÀO, không để Entity tự đặt bằng giờ thực.
+            //
+            // RetryAvailableAtAsync tính hạn thi lại từ chính cột này. Để mặc định thì đường
+            // GHI dùng giờ thực còn đường ĐỌC dùng giờ truyền vào, hai mốc lệch nhau và hạn
+            // chờ tính sai. Trên production hai giờ trùng nhau nên không ai thấy, nhưng nó
+            // làm cơ chế chờ không kiểm được — và test dùng giờ cố định sẽ đỏ theo giờ trong
+            // ngày, mỗi ngày một lần, mà không ai hiểu vì sao.
+            CreatedAt = now,
+
             Reason = LessonStateReason.ChallengeFailed,
             DetailJson = JsonSerializer.Serialize(new
             {

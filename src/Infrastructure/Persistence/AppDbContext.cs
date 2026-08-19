@@ -110,7 +110,18 @@ public class AppDbContext(DbContextOptions<AppDbContext> options) : DbContext(op
             switch (entry.State)
             {
                 case EntityState.Added:
-                    entry.Entity.CreatedAt = now;
+                    // Chỉ đóng dấu khi service CHƯA tự đặt.
+                    //
+                    // Ghi đè vô điều kiện thì tham số `now` mà các service truyền qua lại
+                    // thành vô nghĩa ở đường ghi: chúng so sánh bằng giờ logic nhưng lưu
+                    // bằng giờ thực. Trên production hai giờ trùng nhau nên không ai thấy,
+                    // nhưng mọi cơ chế dựa trên mốc thời gian đã lưu — như hạn chờ thi lại —
+                    // thành không kiểm được, và test dùng giờ cố định sẽ đỏ theo giờ trong ngày.
+                    if (entry.Entity.CreatedAt == default)
+                    {
+                        entry.Entity.CreatedAt = now;
+                    }
+
                     entry.Entity.UpdatedAt = now;
                     break;
                 case EntityState.Modified:

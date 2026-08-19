@@ -13,6 +13,12 @@ concurrency:
   group: ${{ github.workflow }}-${{ github.ref }}
   cancel-in-progress: true
 
+# Mặc định chỉ-đọc cho MỌI job. Cài đặt repo phải để "write" thì job đẩy image mới đẩy được
+# lên GHCR, nhưng quyền đó không nên rơi xuống các job chạy test — chúng chỉ cần đọc mã nguồn.
+# Job nào cần hơn thì tự khai riêng, xem `permissions` trong job images.
+permissions:
+  contents: read
+
 jobs:
   backend:
     name: .NET — build, test đơn vị, cổng nội dung
@@ -56,22 +62,101 @@ jobs:
         run: dotnet test tests/IntegrationTests --configuration Release --verbosity minimal
 
   images:
-    name: Dockerfile — build được cả ba ảnh
+    name: Dockerfile — build cả ba ảnh, đẩy lên GHCR khi vào main
     runs-on: ubuntu-latest
+
+    permissions:
+      contents: read
+      packages: write
+
+    outputs:
+      tag: ${{ steps.tag.outputs.tag }}
 
     steps:
       - uses: actions/checkout@v4
 
-      # Chỉ build, không đẩy đi đâu. Mục đích là bắt Dockerfile hỏng ngay trong PR
-      # thay vì lúc triển khai.
-      - name: Build ảnh API
-        run: docker build -f apps/api/Dockerfile -t efit-api:ci .
+      # Tag là SHA ngắn của commit, KHÔNG dùng 'latest'.
+      # Có tag cụ thể thì mới biết máy chủ đang chạy đúng bản nào và mới quay lui được.
+      - id: tag
+        run: echo "tag=$(git rev-parse --short HEAD)" >> "$GITHUB_OUTPUT"
 
-      - name: Build ảnh worker
-        run: docker build -f src/Worker/Dockerfile -t efit-worker:ci .
+      # Trên PR chỉ build để bắt Dockerfile hỏng. Chỉ commit đã vào main mới được đẩy đi:
+      # PR từ fork không có secret, và cũng không được phép sinh ra thứ đem triển khai.
+      - name: Đăng nhập GHCR
+        if: github.event_name == 'push' && github.ref == 'refs/heads/main'
+        uses: docker/login-action@v3
+        with:
+          registry: ghcr.io
+          username: ${{ github.actor }}
+          password: ${{ secrets.GITHUB_TOKEN }}
 
-      - name: Build ảnh web
-        run: docker build -f apps/web/Dockerfile -t efit-web:ci .
+      - name: Build và đẩy ba ảnh
+        env:
+          REGISTRY: ghcr.io/${{ github.repository_owner }}
+          TAG: ${{ steps.tag.outputs.tag }}
+          PUSH: ${{ github.event_name == 'push' && github.ref == 'refs/heads/main' }}
+        run: |
+          set -euo pipefail
+          build() {
+            local name="$1" dockerfile="$2"
+            docker build -f "$dockerfile" -t "$REGISTRY/$name:$TAG" .
+            if [ "$PUSH" = "true" ]; then
+              docker push "$REGISTRY/$name:$TAG"
+            fi
+          }
+          build api    apps/api/Dockerfile
+          build worker src/Worker/Dockerfile
+          build web    apps/web/Dockerfile
+
+  deploy:
+    name: Triển khai lên VPS
+    runs-on: ubuntu-latest
+
+    # Chỉ triển khai khi MỌI cổng đã xanh. Thiếu một `needs` ở đây là mở đường cho bản hỏng
+    # đi thẳng ra người dùng trong lúc test vẫn đang chạy.
+    needs: [backend, integration, images, web]
+
+    if: github.event_name == 'push' && github.ref == 'refs/heads/main'
+
+    # KHÔNG huỷ lượt đang chạy. Huỷ đúng lúc đang đổi container sẽ để lại trạng thái nửa vời:
+    # image mới đã kéo về, dịch vụ đã dừng, mà bước kiểm tra sẵn sàng chưa kịp chạy.
+    concurrency:
+      group: deploy-production
+      cancel-in-progress: false
+
+    environment:
+      name: production
+      url: https://study.hoatranlab.io.vn
+
+    steps:
+      - name: Chuẩn bị khoá SSH
+        run: |
+          set -euo pipefail
+          mkdir -p ~/.ssh && chmod 700 ~/.ssh
+          printf '%s\n' "${{ secrets.VPS_SSH_KEY }}" > ~/.ssh/id_ed25519
+          chmod 600 ~/.ssh/id_ed25519
+          # Ghim khoá máy chủ. Thiếu dòng này thì phải dùng StrictHostKeyChecking=no,
+          # tức là chấp nhận bất kỳ máy nào trả lời địa chỉ đó.
+          printf '%s\n' "${{ secrets.VPS_KNOWN_HOSTS }}" > ~/.ssh/known_hosts
+          chmod 600 ~/.ssh/known_hosts
+
+      - name: Kéo mã nguồn mới và triển khai
+        env:
+          TAG: ${{ needs.images.outputs.tag }}
+        run: |
+          set -euo pipefail
+          ssh -o BatchMode=yes "${{ secrets.VPS_USER }}@${{ secrets.VPS_HOST }}" bash -euo pipefail <<REMOTE
+            cd ~/englist
+
+            # Máy chủ phải chạy đúng compose và đúng script của commit đang triển khai,
+            # không phải bản cũ còn sót lại từ lần trước.
+            git fetch --quiet origin main
+            git reset --quiet --hard "$TAG"
+
+            COMPOSE_OVERLAY=docker-compose.vps.yml \\
+            HEALTH_URL=http://127.0.0.1:8080/health/ready \\
+              ./deploy/scripts/deploy-azure-vm.sh "$TAG"
+          REMOTE
 
   web:
     name: Web — lint, typecheck, build

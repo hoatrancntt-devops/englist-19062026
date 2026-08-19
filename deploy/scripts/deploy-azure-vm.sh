@@ -1,8 +1,16 @@
 #!/usr/bin/env bash
 #
-# Nâng cấp phiên bản đang chạy trên Azure VM.
+# Nâng cấp phiên bản đang chạy trên một máy chủ đơn.
 #
 #   ./deploy/scripts/deploy-azure-vm.sh v0.3.0
+#
+# Mặc định nhắm Azure VM. Máy khác thì đổi hai biến dưới đây, KHÔNG chép script ra bản thứ hai:
+# phần sao lưu, chờ sẵn sàng và quay lui phải giống nhau ở mọi nơi, mà hai bản song song thì
+# chỉ một bản được sửa khi có lỗi.
+#
+#   COMPOSE_OVERLAY=docker-compose.vps.yml \
+#   HEALTH_URL=http://127.0.0.1:8080/health/ready \
+#     ./deploy/scripts/deploy-azure-vm.sh v0.3.0
 #
 # Nguyên tắc: image gắn tag cụ thể, không dùng 'latest'. Có tag cụ thể thì mới
 # quay lui được, và mới biết chắc VM đang chạy đúng bản nào.
@@ -29,7 +37,10 @@ fi
 set -a && . ./.env && set +a
 
 CURRENT_TAG="${IMAGE_TAG:-<chua-dat>}"
-COMPOSE="docker compose -f docker-compose.yml -f docker-compose.azure-vm.yml"
+
+COMPOSE_OVERLAY="${COMPOSE_OVERLAY:-docker-compose.azure-vm.yml}"
+HEALTH_URL="${HEALTH_URL:-http://localhost/health/ready}"
+COMPOSE="docker compose -f docker-compose.yml -f $COMPOSE_OVERLAY"
 
 echo "Dang chay:   $CURRENT_TAG"
 echo "Se nang len: $NEW_TAG"
@@ -42,7 +53,10 @@ echo "[1/5] Sao luu truoc khi nang cap..."
 # 2. Kéo image mới về TRƯỚC khi dừng dịch vụ, để thời gian gián đoạn chỉ là thời gian
 #    khởi động lại chứ không gồm cả thời gian tải image.
 echo "[2/5] Keo image $NEW_TAG..."
-IMAGE_TAG="$NEW_TAG" $COMPOSE pull api web
+
+# Kéo cả worker. Bỏ sót nó thì `up -d` ở bước 4 mới đi tải, tức là tải image DIỄN RA trong
+# lúc dịch vụ đã dừng — đúng thứ mà việc kéo trước đang cố tránh.
+IMAGE_TAG="$NEW_TAG" $COMPOSE pull api worker web
 
 # 3. Ghi tag mới vào .env để lần khởi động lại sau vẫn đúng phiên bản.
 echo "[3/5] Cap nhat .env..."
@@ -55,7 +69,7 @@ $COMPOSE up -d
 # 5. Chờ tới khi thật sự sẵn sàng; thất bại thì quay lui.
 echo "[5/5] Doi dich vu san sang..."
 for _ in $(seq 1 40); do
-    if curl -fsS http://localhost/health/ready > /dev/null 2>&1; then
+    if curl -fsS "$HEALTH_URL" > /dev/null 2>&1; then
         echo ""
         echo "Nang cap xong: $CURRENT_TAG -> $NEW_TAG"
         rm -f .env.bak

@@ -1,0 +1,102 @@
+# Chồng lên bản nền để chạy trên VPS 1 vCPU / 2 GB đứng sau Cloudflare Tunnel.
+#
+#   docker compose -f docker-compose.yml -f docker-compose.vps.yml up -d
+#
+# Khác bản nền và khác cả bản azure-vm:
+#
+#   - Kéo image theo tag từ registry. Máy 1 vCPU build một ảnh .NET mất hàng chục phút
+#     và sẽ nuốt hết RAM mà Postgres đang cần.
+#
+#   - Hạn mức RAM cắt sâu. Bản nền cộng lại là 2,15 GB và bản azure-vm là 2,5 GB, trong khi
+#     máy này chỉ có 1,84 GB. Để nguyên thì nhân OOM sẽ giết Postgres giữa lúc chạy migration.
+#
+#   - KHÔNG mở cổng nào ra Internet. Cloudflare Tunnel là đường vào duy nhất, nên proxy chỉ
+#     nghe trên 127.0.0.1:8080 và tường lửa của nhà cung cấp không cần mở 80/443.
+#
+#   - Có luôn cloudflared trong stack. Trước đó tunnel chạy bằng `docker run` trần: tên ngẫu
+#     nhiên, không restart policy, và token nằm trong dòng lệnh nên `ps` của bất kỳ ai trên máy
+#     cũng đọc được. Đưa vào đây thì nó tự bật lại sau reboot và token đọc từ .env.
+
+services:
+  db:
+    logging: &logging
+      driver: json-file
+      options:
+        max-size: "10m"
+        max-file: "3"
+    deploy:
+      resources:
+        limits:
+          memory: 512m
+    shm_size: 128m
+
+  api:
+    # Không có khoá build: chỉ dùng image đã dựng sẵn và gắn tag cụ thể.
+    build: !reset null
+    image: ${IMAGE_REGISTRY}/api:${IMAGE_TAG:?IMAGE_TAG phai la tag cu the, khong dung latest}
+    logging: *logging
+    deploy:
+      resources:
+        limits:
+          memory: 600m
+    environment:
+      # Container chạy sau proxy nên biết mình đang phục vụ HTTPS.
+      ASPNETCORE_FORWARDEDHEADERS_ENABLED: "true"
+
+      # GC chế độ workstation. Server GC dựng một heap cho mỗi lõi và giữ bộ nhớ lại rất lâu
+      # trước khi trả về hệ điều hành — trên máy 1 lõi nó không nhanh hơn, chỉ tốn RAM hơn.
+      DOTNET_gcServer: "0"
+
+  worker:
+    # Bản azure-vm quên khoá này nên worker vẫn build tại chỗ. Trên máy 1 vCPU đó là hàng chục
+    # phút và gần như chắc chắn hết RAM.
+    build: !reset null
+    image: ${IMAGE_REGISTRY}/worker:${IMAGE_TAG}
+    logging: *logging
+    deploy:
+      resources:
+        limits:
+          memory: 200m
+    environment:
+      DOTNET_gcServer: "0"
+
+  web:
+    build: !reset null
+    image: ${IMAGE_REGISTRY}/web:${IMAGE_TAG}
+    logging: *logging
+    deploy:
+      resources:
+        limits:
+          memory: 64m
+
+  proxy:
+    logging: *logging
+
+    # !override chứ không phải thêm vào: danh sách ports trong compose là gộp, nên nếu không
+    # ghi đè thì 80/443 của bản nền vẫn còn và vẫn phơi ra Internet.
+    ports: !override
+      - "127.0.0.1:8080:80"
+
+    deploy:
+      resources:
+        limits:
+          memory: 96m
+
+  cloudflared:
+    image: cloudflare/cloudflared:latest
+    restart: unless-stopped
+    command: tunnel --no-autoupdate run
+    logging: *logging
+
+    # Dùng mạng của host để "localhost:8080" mà tunnel đang trỏ tới thật sự là cổng 8080 của
+    # máy. Chạy trong mạng riêng của compose thì localhost là chính container cloudflared, và
+    # tunnel sẽ trả 502 mãi mãi — đó đúng là trạng thái trước khi có file này.
+    network_mode: host
+
+    environment:
+      TUNNEL_TOKEN: ${TUNNEL_TOKEN:?TUNNEL_TOKEN chua duoc dat trong .env}
+
+    deploy:
+      resources:
+        limits:
+          memory: 96m

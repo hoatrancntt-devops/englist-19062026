@@ -89,6 +89,31 @@ public class TtsCatalogueTests
     }
 
     [Fact]
+    public void DoanKhongCoChuBiBoQua()
+    {
+        // OFF-10 để lượt thoại của một nhân vật là "..." vì người đó đang tắt tiếng.
+        // Nội dung đúng, nhưng không có gì để đọc thành tiếng.
+        var lesson = new LessonDocument
+        {
+            Code = "TEST-03",
+            Dialogue = new DialogueDocument
+            {
+                Turns =
+                [
+                    new DialogueTurnDocument { En = "..." },
+                    new DialogueTurnDocument { En = "—" },
+                    new DialogueTurnDocument { En = "You're on mute." },
+                ],
+            },
+        };
+
+        var entries = TtsCatalogue.Collect([lesson], [], []);
+
+        Assert.Single(entries);
+        Assert.Equal("You're on mute.", entries[0].Text);
+    }
+
+    [Fact]
     public void DoanQuaDaiBiBoQua()
     {
         var lesson = new LessonDocument

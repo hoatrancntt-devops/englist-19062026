@@ -117,6 +117,16 @@ public static class TtsCatalogue
                 return;
             }
 
+            // Đoạn không có chữ hay số thì không có gì để đọc. Nghe thì thừa, nhưng nội dung
+            // thật sự có những chỗ như vậy: OFF-10 để lượt thoại của Priya là "..." vì nhân
+            // vật đang tắt tiếng. Piper nhận chuỗi đó thì không sinh ra khung âm thanh nào và
+            // ngã ở bước đóng file WAV, nên mẻ sinh nào cũng báo đúng một lỗi vô hại — kiểu
+            // lỗi dạy người đọc log bỏ qua log.
+            if (!normalized.Any(char.IsLetterOrDigit))
+            {
+                return;
+            }
+
             var hash = HashOf(normalized);
             seen.TryAdd(hash, new TtsEntry(hash, normalized));
         }

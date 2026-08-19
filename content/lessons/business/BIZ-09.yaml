@@ -1,0 +1,272 @@
+schema_version: 1
+code: BIZ-09
+slug: thuyet-trinh-voi-lanh-dao
+title_vi: "Thuyết trình với lãnh đạo — năm phút và ba slide"
+title_en: "Presenting to leadership"
+
+layer: Professional
+track: Business
+level: B1
+unit_code: U-BIZ
+order_index: 9
+estimated_minutes: 12
+
+illustration: video-call
+
+objective_vi: >
+  Trình bày một đề xuất trước lãnh đạo: xin gì, vì sao, tốn bao nhiêu —
+  và trả lời câu hỏi cắt ngang mà không mất mạch.
+
+objective_observable: >
+  Trình bày đề xuất đủ ba phần trong 3 trên 4 drill, và xử lý được một câu cắt ngang.
+
+mastery_weights:
+  Listening: 0.30
+  Speaking: 0.40
+  Reading: 0.15
+  Writing: 0.15
+
+prerequisites:
+  - lesson: BIZ-08
+    min_mastery: 65
+    kind: Hard
+
+vocabulary:
+  - term: "I'm asking for"
+    ipa: "/aɪm ˈɑːskɪŋ fɔːr/"
+    meaning_vi: "tôi đề xuất xin (nói thẳng thứ mình cần)"
+    chunk: "I'm asking for two engineers for six months."
+    tags: [business, presenting, core]
+  - term: "the cost of doing nothing"
+    ipa: "/ðə kɒst əv ˈduːɪŋ ˈnʌθɪŋ/"
+    meaning_vi: "cái giá của việc không làm gì"
+    chunk: "The cost of doing nothing is two more outages a quarter."
+    tags: [business, presenting]
+  - term: "Let me finish this point"
+    ipa: "/let miː ˈfɪnɪʃ ðɪs pɔɪnt/"
+    meaning_vi: "cho tôi nói nốt ý này (giữ mạch khi bị cắt)"
+    chunk: "Let me finish this point, then I'll come to that."
+    tags: [business, presenting]
+  - term: "I'll come back to that"
+    ipa: "/aɪl kʌm bæk tuː ðæt/"
+    meaning_vi: "tôi sẽ quay lại chuyện đó"
+    chunk: "Good question — I'll come back to that in slide three."
+    tags: [business, presenting]
+  - term: "the ask is"
+    ipa: "/ði ɑːsk ɪz/"
+    meaning_vi: "điều tôi xin là (nói gọn phần đề xuất)"
+    chunk: "The ask is one hundred thousand and two engineers."
+    tags: [business, presenting]
+  - term: "if we do nothing"
+    ipa: "/ɪf wiː duː ˈnʌθɪŋ/"
+    meaning_vi: "nếu mình không làm gì"
+    chunk: "If we do nothing, churn keeps rising."
+    tags: [business, presenting]
+
+sentence_patterns:
+  - pattern: "The ask is {resource}."
+    meaning_vi: "Điều tôi xin là {resource}."
+    slots:
+      resource: ["two engineers for six months", "one hundred thousand", "a three-month pause on new features"]
+  - pattern: "If we do nothing, {consequence}."
+    meaning_vi: "Nếu mình không làm gì, {consequence}."
+    slots:
+      consequence: ["churn keeps rising", "we lose two more deals", "the bill doubles by Q2"]
+
+dialogue:
+  context_vi: >
+    Năm phút trước ban lãnh đạo để xin người cho một dự án. Họ sẽ cắt ngang,
+    và cách bạn xử lý câu cắt ngang quan trọng ngang nội dung.
+  turns:
+    - speaker: "You"
+      en: "The ask is two engineers for six months. Here's why."
+      vi: "Điều tôi xin là hai kỹ sư trong sáu tháng. Đây là lý do."
+    - speaker: "You"
+      en: "Churn went from three to six percent, concentrated in customers under a year."
+      vi: "Tỷ lệ rời bỏ tăng từ ba lên sáu phần trăm, tập trung ở khách dưới một năm."
+    - speaker: "Director"
+      en: "Is that not just the market?"
+      vi: "Đó chẳng phải chỉ là do thị trường sao?"
+    - speaker: "You"
+      en: "Good question — I'll come back to that in a second. Let me finish this point first."
+      vi: "Câu hỏi hay — tôi sẽ quay lại ngay. Cho tôi nói nốt ý này đã."
+    - speaker: "You"
+      en: "Every one of those customers filed a support ticket about onboarding. That's not the market, that's us."
+      vi: "Mọi khách trong nhóm đó đều mở ticket về khâu triển khai. Đó không phải thị trường, đó là bọn mình."
+    - speaker: "You"
+      en: "If we do nothing, we lose about four hundred thousand a year. The ask costs one hundred and twenty."
+      vi: "Nếu mình không làm gì, mất khoảng bốn trăm nghìn một năm. Đề xuất này tốn một trăm hai mươi."
+
+listening:
+  context_vi: >
+    Nghe một đề xuất năm phút. Chú ý người trình bày nói ĐIỀU XIN ngay câu đầu,
+    chứ không để tới cuối.
+  speed: 1.0
+  voice: en_US_male
+  transcript_en: "The ask is one hundred thousand for automated testing. Here's why. Each release takes three days of manual checks. If we do nothing, we ship monthly while competitors ship weekly. The cost of doing nothing is roughly two enterprise deals a year. Payback is eleven months."
+  transcript_vi: "Điều tôi xin là một trăm nghìn cho kiểm thử tự động. Đây là lý do. Mỗi bản phát hành mất ba ngày kiểm tay. Nếu không làm gì, mình phát hành hàng tháng trong khi đối thủ hàng tuần. Cái giá của việc không làm gì là khoảng hai hợp đồng doanh nghiệp một năm. Hoàn vốn sau mười một tháng."
+  questions:
+    - kind: mcq_listen
+      prompt_vi: "Đề xuất xin bao nhiêu tiền?"
+      choices: ["Một trăm nghìn", "Hai trăm nghìn", "Mười một nghìn"]
+      answer: 0
+      difficulty: 1
+      skill: Listening
+    - kind: mcq_listen
+      prompt_vi: "Cái giá của việc không làm gì là gì?"
+      choices: ["Ba ngày mỗi bản phát hành", "Khoảng hai hợp đồng doanh nghiệp một năm", "Mười một tháng chờ đợi"]
+      answer: 1
+      difficulty: 2
+      skill: Listening
+
+speaking_drills:
+  - kind: read_aloud
+    expected_text: "The ask is two engineers for six months."
+    prompt_vi: "Nói điều mình xin ngay CÂU ĐẦU, không để tới cuối."
+    ipa: "/ði ɑːsk ɪz tuː ˌendʒɪˈnɪrz/"
+    focus_phonemes: ["sk", "dʒ"]
+  - kind: read_aloud
+    expected_text: "If we do nothing, churn keeps rising."
+    prompt_vi: "Nêu cái giá của việc không làm gì. Âm /θ/ trong nothing."
+    ipa: "/ɪf wiː duː ˈnʌθɪŋ tʃɜːrn kiːps ˈraɪzɪŋ/"
+    focus_phonemes: ["θ", "tʃ"]
+  - kind: shadow
+    expected_text: "Good question — I'll come back to that in a second."
+    prompt_vi: "Ghi nhận câu cắt ngang mà không bỏ mạch đang nói."
+    ipa: "/ɡʊd ˈkwestʃən aɪl kʌm bæk tuː ðæt/"
+    focus_phonemes: ["kw", "b"]
+  - kind: shadow
+    expected_text: "Let me finish this point, then I'll come to that."
+    prompt_vi: "Giữ mạch. Nói bình tĩnh, không nghe như đang cự lại."
+    ipa: "/let miː ˈfɪnɪʃ ðɪs pɔɪnt/"
+    focus_phonemes: ["ʃ", "pɔɪ"]
+  - kind: respond
+    prompt_en: "Is that not just the market?"
+    prompt_vi: "Lãnh đạo cắt ngang giữa chừng. Ghi nhận nhưng giữ mạch."
+    accept_patterns:
+      - "Good question"
+      - "come back to that"
+      - "finish this point"
+
+reading:
+  kind: chat
+  context_vi: >
+    Một slide đề xuất. Đọc để thấy ba phần bắt buộc của mọi đề xuất.
+  text_en: |
+    PROPOSAL - Onboarding automation
+
+    THE ASK
+    2 engineers, 6 months. Budget 120,000.
+
+    WHY NOW
+    Churn 3% to 6%. All affected customers raised onboarding tickets.
+
+    COST OF DOING NOTHING
+    ~400,000 lost revenue per year at current churn.
+
+    PAYBACK
+    Under 5 months if churn returns to 3%.
+
+    DECISION NEEDED BY: 30 September (to staff in Q4)
+  text_vi: |
+    ĐỀ XUẤT - Tự động hoá khâu triển khai
+
+    ĐIỀU XIN
+    2 kỹ sư, 6 tháng. Ngân sách 120.000.
+
+    VÌ SAO LÚC NÀY
+    Rời bỏ từ 3% lên 6%. Mọi khách bị ảnh hưởng đều mở ticket về khâu triển khai.
+
+    CÁI GIÁ CỦA VIỆC KHÔNG LÀM GÌ
+    Mất khoảng 400.000 doanh thu mỗi năm ở mức rời bỏ hiện tại.
+
+    HOÀN VỐN
+    Dưới 5 tháng nếu rời bỏ về lại 3%.
+
+    CẦN QUYẾT TRƯỚC: 30 tháng 9 (để kịp bố trí người quý 4)
+  questions:
+    - kind: mcq_read
+      prompt_en: "Why does the proposal need a decision by 30 September?"
+      choices: ["The budget expires", "To staff the team in Q4", "Churn peaks then"]
+      answer: 1
+      difficulty: 2
+      reading_skill: scan
+      skill: Reading
+    - kind: mcq_read
+      prompt_en: "What is the ratio of cost to potential loss?"
+      choices: ["120,000 spend against 400,000 loss", "Equal", "400,000 spend against 120,000 loss"]
+      answer: 0
+      difficulty: 3
+      reading_skill: detail
+      skill: Reading
+
+writing:
+  kind: FillBlank
+  prompt_vi: "Điền hai chỗ trống: câu nói điều mình xin và câu nêu cái giá của việc không làm."
+  prompt_en: "The ___ is two engineers for six months. If we do ___, churn keeps rising."
+  blanks:
+    - ["ask"]
+    - ["nothing"]
+  hint_vi: "Chỗ đầu là danh từ nghĩa là điều đề xuất. Chỗ sau nghĩa là không gì cả."
+  sample_en: "The ask is two engineers for six months. If we do nothing, churn keeps rising."
+
+quiz:
+  - kind: mcq
+    prompt_vi: "Thuyết trình với lãnh đạo nên bắt đầu bằng gì?"
+    choices: ["Bối cảnh và lịch sử vấn đề", "Điều mình xin", "Phương pháp phân tích"]
+    answer: 1
+    difficulty: 2
+    skill: Speaking
+  - kind: mcq
+    prompt_vi: "Bị cắt ngang giữa chừng. Nên làm gì?"
+    choices: ["Trả lời ngay rồi quay lại", "Bỏ qua câu hỏi", "Ghi nhận, xin nói nốt ý, rồi quay lại"]
+    answer: 2
+    difficulty: 3
+    skill: Speaking
+  - kind: mcq
+    prompt_vi: "\"The cost of doing nothing\" dùng để làm gì?"
+    choices: ["So sánh chi phí đề xuất với thiệt hại nếu không làm", "Chỉ trích quyết định cũ", "Tính lại ngân sách"]
+    answer: 0
+    difficulty: 2
+    skill: Reading
+  - kind: mcq
+    prompt_vi: "Vì sao đề xuất cần một MỐC QUYẾT ĐỊNH?"
+    choices: ["Cho đủ hình thức", "Để tạo áp lực", "Vì không có mốc thì đề xuất bị hoãn vô thời hạn"]
+    answer: 2
+    difficulty: 3
+    skill: Reading
+
+explanation:
+  why_vi: >
+    Kỹ sư trình bày với lãnh đạo hay kể theo trình tự đã điều tra: bối cảnh, phân tích,
+    phương án, rồi mới tới đề xuất ở slide cuối. Nhưng lãnh đạo thường chỉ nghe hết ba
+    phút đầu, và nếu tới phút thứ tư mới biết bạn xin gì thì họ đã hết chú ý.
+  how_vi: >
+    Ba phần, đảo ngược thứ tự tự nhiên. ĐIỀU XIN ngay câu đầu: "The ask is ..."
+    VÌ SAO LÚC NÀY, kèm số. CÁI GIÁ CỦA VIỆC KHÔNG LÀM: "If we do nothing, ..." —
+    phần này biến đề xuất từ "chi tiền" thành "tránh mất tiền". Kết bằng một mốc quyết định.
+  contrast_vi: >
+    "Chúng ta nên đầu tư vào tự động hoá" là một ý kiến. "The ask is 120,000; if we do
+    nothing we lose 400,000 a year" là một phép so sánh — và lãnh đạo quyết được ngay.
+
+common_mistakes:
+  - mistake: "Để đề xuất ở slide cuối"
+    why_vi: >
+      Thói quen trình bày theo trình tự điều tra để người nghe theo được lập luận.
+      Nhưng lãnh đạo nghe với câu hỏi "anh muốn tôi làm gì" trong đầu, và không có
+      câu trả lời trong ba phút đầu thì họ chuyển sang việc khác.
+    fix_vi: "Đưa \"The ask is ...\" lên câu đầu tiên. Lập luận để sau, và họ sẽ nghe kỹ hơn."
+  - mistake: "Bỏ mạch đang nói khi bị cắt ngang"
+    why_vi: >
+      Bị hỏi giữa chừng thì phản xạ là trả lời ngay cho lịch sự. Nhưng trả lời xong thường
+      không quay lại được ý cũ, và phần quan trọng nhất bị bỏ dở.
+    fix_vi: "Dùng \"Good question — let me finish this point, then I'll come to that.\" Rồi nhớ quay lại thật."
+  - mistake: "Chỉ nói chi phí, không nói cái giá của việc không làm"
+    why_vi: >
+      Trình bày đề xuất như một khoản chi. Lãnh đạo so nó với mọi khoản chi khác và
+      thường hoãn lại.
+    fix_vi: "Luôn đặt cạnh nhau: xin bao nhiêu, và mất bao nhiêu nếu không làm."
+
+memory_trick_vi: >
+  Ba phần, đảo ngược: XIN GÌ ngay câu đầu, VÌ SAO LÚC NÀY kèm số,
+  NẾU KHÔNG LÀM THÌ MẤT GÌ. Bị cắt ngang thì "Good question, let me finish this point".

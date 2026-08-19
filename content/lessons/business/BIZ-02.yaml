@@ -1,0 +1,262 @@
+schema_version: 1
+code: BIZ-02
+slug: tim-hieu-nhu-cau-khach
+title_vi: "Tìm hiểu nhu cầu khách — hỏi để bán, không phải để nói"
+title_en: "Discovering client needs"
+
+layer: Professional
+track: Business
+level: B1
+unit_code: U-BIZ
+order_index: 2
+estimated_minutes: 12
+
+illustration: video-call
+
+objective_vi: >
+  Hỏi đúng bốn câu để biết khách thật sự cần gì, và đào sâu khi câu trả lời
+  còn chung chung — thay vì đoán rồi chào hàng sai thứ.
+
+objective_observable: >
+  Hỏi được câu đào sâu sau một câu trả lời chung chung trong 3 trên 4 drill.
+
+mastery_weights:
+  Listening: 0.30
+  Speaking: 0.40
+  Reading: 0.15
+  Writing: 0.15
+
+prerequisites:
+  - lesson: BIZ-01
+    min_mastery: 65
+    kind: Hard
+
+vocabulary:
+  - term: "What's driving this"
+    ipa: "/wɒts ˈdraɪvɪŋ ðɪs/"
+    meaning_vi: "điều gì thúc đẩy việc này (hỏi lý do thật)"
+    chunk: "What's driving this project now?"
+    tags: [business, discovery, core]
+  - term: "How are you handling it today"
+    ipa: "/haʊ ɑːr juː ˈhændlɪŋ ɪt təˈdeɪ/"
+    meaning_vi: "hiện giờ anh chị đang xử lý thế nào"
+    chunk: "How are you handling it today?"
+    tags: [business, discovery]
+  - term: "What happens if"
+    ipa: "/wɒt ˈhæpənz ɪf/"
+    meaning_vi: "chuyện gì xảy ra nếu (làm rõ mức độ nghiêm trọng)"
+    chunk: "What happens if it isn't fixed this quarter?"
+    tags: [business, discovery]
+  - term: "Can you give me an example"
+    ipa: "/kæn juː ɡɪv miː ən ɪɡˈzɑːmpl/"
+    meaning_vi: "cho tôi một ví dụ được không (đào sâu)"
+    chunk: "Can you give me an example?"
+    tags: [business, discovery, core]
+  - term: "So if I understand right"
+    ipa: "/soʊ ɪf aɪ ˌʌndərˈstænd raɪt/"
+    meaning_vi: "vậy nếu tôi hiểu đúng (tóm lại để xác nhận)"
+    chunk: "So if I understand right, the issue is cost, not speed."
+    tags: [business, discovery]
+  - term: "Who else is affected"
+    ipa: "/huː els ɪz əˈfektɪd/"
+    meaning_vi: "còn ai bị ảnh hưởng"
+    chunk: "Who else is affected by this?"
+    tags: [business, discovery]
+
+sentence_patterns:
+  - pattern: "What's driving this {thing} now?"
+    meaning_vi: "Điều gì thúc đẩy {thing} này lúc này?"
+    slots:
+      thing: ["project", "change", "decision"]
+  - pattern: "So if I understand right, {summary}."
+    meaning_vi: "Vậy nếu tôi hiểu đúng, {summary}."
+    slots:
+      summary: ["the issue is cost, not speed", "the deadline is the real constraint", "audit is the trigger"]
+
+dialogue:
+  context_vi: >
+    Phút thứ mười của buổi gặp. Khách vừa nói "chúng tôi cần tối ưu chi phí" —
+    một câu ai cũng nói, và không cho biết gì cả.
+  turns:
+    - speaker: "Client"
+      en: "Basically we need to optimise our cloud costs."
+      vi: "Về cơ bản bọn tôi cần tối ưu chi phí cloud."
+    - speaker: "You"
+      en: "Understood. What's driving this now, rather than last year?"
+      vi: "Tôi hiểu. Điều gì thúc đẩy việc này lúc này, thay vì năm ngoái?"
+    - speaker: "Client"
+      en: "The bill went up forty percent after we moved the data platform."
+      vi: "Hoá đơn tăng bốn mươi phần trăm sau khi bọn tôi chuyển nền tảng dữ liệu."
+    - speaker: "You"
+      en: "Can you give me an example of where it went up most?"
+      vi: "Cho tôi một ví dụ chỗ nào tăng nhiều nhất được không ạ?"
+    - speaker: "Client"
+      en: "Storage. We keep every log for three years because of audit."
+      vi: "Lưu trữ. Bọn tôi giữ mọi log ba năm vì yêu cầu kiểm toán."
+    - speaker: "You"
+      en: "So if I understand right, the driver is audit retention, not compute. Who else is affected by that rule?"
+      vi: "Vậy nếu tôi hiểu đúng, nguyên nhân là quy định lưu trữ cho kiểm toán, không phải phần tính toán. Còn ai bị quy định đó ảnh hưởng ạ?"
+
+listening:
+  context_vi: >
+    Nghe một đoạn tìm hiểu nhu cầu. Chú ý cách người bán KHÔNG chào hàng ngay
+    sau câu trả lời đầu tiên, mà đào thêm hai lớp nữa.
+  speed: 1.0
+  voice: en_US_male
+  transcript_en: "We want to move faster on releases. What's driving this now? Our competitor ships weekly, we ship monthly. Can you give me an example of what slows you down? Testing. Every release needs three days of manual checks. What happens if that doesn't change this year? We lose two more enterprise deals."
+  transcript_vi: "Bọn tôi muốn phát hành nhanh hơn. Điều gì thúc đẩy việc này lúc này? Đối thủ phát hành hàng tuần, bọn tôi hàng tháng. Cho tôi ví dụ cái gì làm chậm được không? Kiểm thử. Mỗi bản phát hành cần ba ngày kiểm tay. Nếu năm nay không đổi thì sao? Bọn tôi mất thêm hai hợp đồng doanh nghiệp."
+  questions:
+    - kind: mcq_listen
+      prompt_vi: "Cái gì làm họ chậm?"
+      choices: ["Kiểm thử thủ công", "Thiếu người", "Hạ tầng cũ"]
+      answer: 0
+      difficulty: 2
+      skill: Listening
+    - kind: mcq_listen
+      prompt_vi: "Hậu quả nếu không thay đổi là gì?"
+      choices: ["Chi phí tăng", "Mất thêm hai hợp đồng doanh nghiệp", "Nhân viên nghỉ việc"]
+      answer: 1
+      difficulty: 2
+      skill: Listening
+
+speaking_drills:
+  - kind: read_aloud
+    expected_text: "What's driving this now?"
+    prompt_vi: "Câu hỏi quan trọng nhất bài. Chữ now ở cuối đổi hẳn ý nghĩa câu hỏi."
+    ipa: "/wɒts ˈdraɪvɪŋ ðɪs naʊ/"
+    focus_phonemes: ["dr", "ŋ"]
+  - kind: read_aloud
+    expected_text: "Can you give me an example?"
+    prompt_vi: "Câu đào sâu. Trọng âm example ở âm thứ hai: ex-AM-ple."
+    ipa: "/kæn juː ɡɪv miː ən ɪɡˈzɑːmpl/"
+    focus_phonemes: ["ɡz", "pl"]
+  - kind: shadow
+    expected_text: "What happens if it isn't fixed this quarter?"
+    prompt_vi: "Làm rõ mức nghiêm trọng. Câu này cho biết ngân sách có thật hay không."
+    ipa: "/wɒt ˈhæpənz ɪf ɪt ˈɪznt fɪkst/"
+    focus_phonemes: ["h", "kst"]
+  - kind: shadow
+    expected_text: "So if I understand right, the issue is cost, not speed."
+    prompt_vi: "Tóm lại để xác nhận. Nói chậm phần sau dấu phẩy."
+    ipa: "/soʊ ɪf aɪ ˌʌndərˈstænd raɪt/"
+    focus_phonemes: ["st", "nd"]
+  - kind: respond
+    prompt_en: "We just need something more modern."
+    prompt_vi: "Khách trả lời rất chung chung. Đào sâu bằng một câu hỏi."
+    accept_patterns:
+      - "Can you give me an example"
+      - "What's driving"
+      - "What happens if"
+
+reading:
+  kind: chat
+  context_vi: >
+    Ghi chú sau buổi gặp, gửi lại cho đội. Đọc để thấy đâu là thông tin thật, đâu là suy đoán.
+  text_en: |
+    Discovery notes - Northwind, 19 Aug
+
+    Stated need: "optimise cloud costs"
+    Real driver: bill up 40% after data platform move
+    Root cause: 3-year log retention for audit, not compute
+    Impact if unchanged: budget freeze on new projects in Q1
+    Decision maker: Wei Lin. Raj influences but does not sign.
+
+    Open question: is the 3-year rule internal policy or regulator requirement?
+  text_vi: |
+    Ghi chú tìm hiểu - Northwind, 19/8
+
+    Nhu cầu họ nói: "tối ưu chi phí cloud"
+    Nguyên nhân thật: hoá đơn tăng 40% sau khi chuyển nền tảng dữ liệu
+    Gốc rễ: giữ log 3 năm cho kiểm toán, không phải phần tính toán
+    Hậu quả nếu không đổi: đóng băng ngân sách dự án mới quý 1
+    Người quyết định: Wei Lin. Raj có ảnh hưởng nhưng không ký.
+
+    Câu còn bỏ ngỏ: quy định 3 năm là chính sách nội bộ hay yêu cầu của cơ quan quản lý?
+  questions:
+    - kind: mcq_read
+      prompt_en: "What is the real cause of the cost increase?"
+      choices: ["Compute usage", "Too many users", "Three-year log retention"]
+      answer: 2
+      difficulty: 2
+      reading_skill: scan
+      skill: Reading
+    - kind: mcq_read
+      prompt_en: "Why does the open question matter?"
+      choices: ["Internal policy can be changed, a regulator rule cannot", "It decides the price", "It shows who signs"]
+      answer: 0
+      difficulty: 3
+      reading_skill: detail
+      skill: Reading
+
+writing:
+  kind: FillBlank
+  prompt_vi: "Điền hai chỗ trống: câu hỏi lý do thật và câu tóm lại xác nhận."
+  prompt_en: "What's ___ this now? So if I ___ right, the issue is cost."
+  blanks:
+    - ["driving"]
+    - ["understand"]
+  hint_vi: "Chỗ đầu là động từ dạng ing nghĩa là thúc đẩy. Chỗ sau nghĩa là hiểu."
+  sample_en: "What's driving this now? So if I understand right, the issue is cost."
+
+quiz:
+  - kind: mcq
+    prompt_vi: "Khách nói \"chúng tôi cần tối ưu chi phí\". Nên làm gì tiếp?"
+    choices: ["Trình bày giải pháp giảm chi phí", "Hỏi điều gì thúc đẩy việc này lúc này", "Gửi báo giá"]
+    answer: 1
+    difficulty: 3
+    skill: Speaking
+  - kind: mcq
+    prompt_vi: "Vì sao thêm chữ \"now\" vào câu hỏi lại quan trọng?"
+    choices: ["Cho câu nghe tự nhiên hơn", "Để khách trả lời nhanh hơn", "Vì nó hỏi ra thứ vừa thay đổi khiến việc này thành cấp bách"]
+    answer: 2
+    difficulty: 3
+    skill: Reading
+  - kind: mcq
+    prompt_vi: "\"What happens if it isn't fixed?\" cho biết điều gì?"
+    choices: ["Mức nghiêm trọng, và ngân sách có thật hay không", "Kỹ thuật khó tới đâu", "Ai là người quyết định"]
+    answer: 0
+    difficulty: 3
+    skill: Listening
+  - kind: mcq
+    prompt_vi: "Sau khi nghe xong, nên làm gì trước khi chào hàng?"
+    choices: ["Gửi tài liệu", "Tóm lại bằng \"So if I understand right...\" để xác nhận", "Hỏi ngân sách"]
+    answer: 1
+    difficulty: 2
+    skill: Speaking
+
+explanation:
+  why_vi: >
+    Câu khách nói đầu tiên gần như luôn là triệu chứng, không phải bệnh. "Tối ưu chi phí"
+    có thể là do hoá đơn tăng, do sếp mới, hoặc do sắp kiểm toán — ba nguyên nhân cần ba
+    giải pháp khác nhau. Người bán vội chào hàng ngay sau câu đầu sẽ chào sai thứ, và
+    khách lịch sự nghe hết rồi không trả lời email nữa.
+  how_vi: >
+    Bốn câu, hỏi theo thứ tự. VÌ SAO LÚC NÀY "What's driving this now?" — chữ now hỏi ra
+    thứ vừa thay đổi. HIỆN ĐANG LÀM SAO "How are you handling it today?"
+    VÍ DỤ CỤ THỂ "Can you give me an example?" NẾU KHÔNG SỬA "What happens if...?"
+    Rồi tóm lại bằng "So if I understand right, ..." để khách xác nhận hoặc sửa bạn.
+  contrast_vi: >
+    "What are your requirements?" nhận về một danh sách tính năng — thứ khách nghĩ họ cần.
+    "What's driving this now?" nhận về nguyên nhân — thứ họ thật sự cần giải quyết.
+
+common_mistakes:
+  - mistake: "Chào hàng ngay sau câu trả lời đầu tiên"
+    why_vi: >
+      Nghe thấy một từ khoá quen thuộc là muốn trình bày ngay phần mình chuẩn bị kỹ nhất.
+      Nhưng câu đầu của khách luôn ở mức chung chung, và giải pháp cho một triệu chứng
+      thường không trúng bệnh.
+    fix_vi: "Đào ít nhất hai lớp nữa trước khi nói về giải pháp. Dùng \"Can you give me an example?\""
+  - mistake: "Hỏi liên tiếp như phỏng vấn"
+    why_vi: >
+      Có danh sách câu hỏi nên hỏi hết một lượt. Khách thấy như đang bị điều tra và bắt đầu
+      trả lời ngắn dần, rồi thông tin quan trọng không ra.
+    fix_vi: "Sau mỗi hai câu thì tóm lại một lần bằng \"So if I understand right...\" — nó biến cuộc hỏi thành cuộc trao đổi."
+  - mistake: "Không hỏi hậu quả nếu không sửa"
+    why_vi: >
+      Người học ngại hỏi câu nghe như ép. Nhưng đây là câu duy nhất cho biết vấn đề có đủ lớn
+      để họ chi tiền hay không — thiếu nó, bạn có thể theo đuổi một việc không ai định làm.
+    fix_vi: "Hỏi nhẹ nhàng: \"What happens if it isn't fixed this quarter?\""
+
+memory_trick_vi: >
+  Bốn câu đào: VÌ SAO LÚC NÀY, ĐANG LÀM SAO, VÍ DỤ, NẾU KHÔNG SỬA THÌ SAO.
+  Rồi tóm lại "So if I understand right..." để khách sửa bạn trước khi bạn chào sai hàng.

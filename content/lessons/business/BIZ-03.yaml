@@ -1,0 +1,265 @@
+schema_version: 1
+code: BIZ-03
+slug: bao-gia-va-noi-ve-chi-phi
+title_vi: "Báo giá và nói về chi phí"
+title_en: "Quoting and talking about cost"
+
+layer: Professional
+track: Business
+level: B1
+unit_code: U-BIZ
+order_index: 3
+estimated_minutes: 12
+
+illustration: money-receipt
+
+objective_vi: >
+  Đưa ra một con số mà không xin lỗi vì nó, giải thích giá dựa trên giá trị,
+  và trả lời câu "đắt quá" mà không giảm giá ngay lập tức.
+
+objective_observable: >
+  Báo giá kèm căn cứ trong 3 trên 4 drill, và trả lời được một phản đối về giá.
+
+mastery_weights:
+  Listening: 0.25
+  Speaking: 0.40
+  Reading: 0.15
+  Writing: 0.20
+
+prerequisites:
+  - lesson: BIZ-02
+    min_mastery: 65
+    kind: Hard
+
+vocabulary:
+  - term: "comes to"
+    ipa: "/kʌmz tuː/"
+    meaning_vi: "tổng cộng là (cách nói giá trung tính)"
+    chunk: "That comes to forty thousand a year."
+    tags: [business, price, core]
+  - term: "based on"
+    ipa: "/beɪst ɒn/"
+    meaning_vi: "tính theo, dựa trên"
+    chunk: "That's based on three hundred users."
+    tags: [business, price]
+  - term: "what's included"
+    ipa: "/wɒts ɪnˈkluːdɪd/"
+    meaning_vi: "gồm những gì"
+    chunk: "Let me walk you through what's included."
+    tags: [business, price]
+  - term: "compared to"
+    ipa: "/kəmˈperd tuː/"
+    meaning_vi: "so với"
+    chunk: "Compared to what you spend today, it pays back in eight months."
+    tags: [business, price]
+  - term: "pays back in"
+    ipa: "/peɪz bæk ɪn/"
+    meaning_vi: "hoàn vốn sau"
+    chunk: "It pays back in eight months."
+    tags: [business, price]
+  - term: "What budget do you have"
+    ipa: "/wɒt ˈbʌdʒɪt duː juː hæv/"
+    meaning_vi: "anh chị có ngân sách bao nhiêu"
+    chunk: "What budget do you have in mind?"
+    tags: [business, price]
+
+sentence_patterns:
+  - pattern: "That comes to {amount} {period}."
+    meaning_vi: "Tổng cộng {amount} {period}."
+    slots:
+      amount: ["forty thousand", "twelve thousand", "eighty thousand"]
+      period: ["a year", "a month", "for the first phase"]
+  - pattern: "That's based on {basis}."
+    meaning_vi: "Con số đó tính theo {basis}."
+    slots:
+      basis: ["three hundred users", "two environments", "a twelve-month term"]
+
+dialogue:
+  context_vi: >
+    Buổi thứ hai với khách. Họ đã hiểu vấn đề, giờ hỏi giá. Đây là lúc giọng nói
+    của bạn quan trọng ngang với con số.
+  turns:
+    - speaker: "Client"
+      en: "So what would this cost us?"
+      vi: "Vậy cái này tốn của bọn tôi bao nhiêu?"
+    - speaker: "You"
+      en: "For the first phase, that comes to forty thousand a year. That's based on three hundred users and two environments."
+      vi: "Giai đoạn đầu, tổng cộng bốn mươi nghìn một năm. Con số đó tính theo ba trăm người dùng và hai môi trường."
+    - speaker: "Client"
+      en: "That's higher than we expected."
+      vi: "Cao hơn bọn tôi nghĩ."
+    - speaker: "You"
+      en: "I understand. Can I ask what you had in mind?"
+      vi: "Tôi hiểu. Cho tôi hỏi anh chị dự tính khoảng bao nhiêu ạ?"
+    - speaker: "Client"
+      en: "We were thinking twenty-five."
+      vi: "Bọn tôi nghĩ khoảng hai mươi lăm."
+    - speaker: "You"
+      en: "Compared to what you spend on storage today, this pays back in eight months. But if twenty-five is the ceiling, we can start with one environment instead of two."
+      vi: "So với chi phí lưu trữ hiện tại, cái này hoàn vốn sau tám tháng. Nhưng nếu hai mươi lăm là trần, mình có thể bắt đầu với một môi trường thay vì hai."
+
+listening:
+  context_vi: >
+    Nghe một lượt báo giá. Chú ý ba phần: con số, căn cứ, và điều khách nhận được.
+    Thiếu phần hai thì con số trở thành tuỳ tiện.
+  speed: 1.0
+  voice: en_US_female
+  transcript_en: "What does the licence cost? That comes to twelve thousand a month. That's based on two environments and unlimited users. Does that include support? Yes, twenty-four seven support and quarterly reviews are included."
+  transcript_vi: "Giấy phép giá bao nhiêu? Tổng cộng mười hai nghìn một tháng. Con số đó tính theo hai môi trường và không giới hạn người dùng. Có gồm hỗ trợ không? Có, hỗ trợ hai tư trên bảy và rà soát hàng quý đều đã gồm."
+  questions:
+    - kind: mcq_listen
+      prompt_vi: "Giá tính theo cái gì?"
+      choices: ["Số người dùng", "Hai môi trường và không giới hạn người dùng", "Số giờ hỗ trợ"]
+      answer: 1
+      difficulty: 2
+      skill: Listening
+    - kind: mcq_listen
+      prompt_vi: "Hỗ trợ có nằm trong giá không?"
+      choices: ["Có, kèm cả rà soát hàng quý", "Không, tính riêng", "Chỉ trong ba tháng đầu"]
+      answer: 0
+      difficulty: 1
+      skill: Listening
+
+speaking_drills:
+  - kind: read_aloud
+    expected_text: "That comes to forty thousand a year."
+    prompt_vi: "Nói con số bằng giọng đều. Đừng hạ giọng hay cười trừ ở cuối câu."
+    ipa: "/ðæt kʌmz tuː ˈfɔːrti ˈθaʊznd ə jɪr/"
+    focus_phonemes: ["θ", "z"]
+  - kind: read_aloud
+    expected_text: "That's based on three hundred users."
+    prompt_vi: "Nêu căn cứ ngay sau con số. Không có căn cứ thì giá thành tuỳ tiện."
+    ipa: "/ðæts beɪst ɒn θriː ˈhʌndrəd ˈjuːzərz/"
+    focus_phonemes: ["st", "dr"]
+  - kind: shadow
+    expected_text: "Can I ask what you had in mind?"
+    prompt_vi: "Trả lời câu chê đắt bằng một câu hỏi, không phải bằng giảm giá."
+    ipa: "/kæn aɪ ɑːsk wɒt juː hæd ɪn maɪnd/"
+    focus_phonemes: ["k", "nd"]
+  - kind: shadow
+    expected_text: "It pays back in eight months."
+    prompt_vi: "Đổi câu chuyện từ chi phí sang hoàn vốn."
+    ipa: "/ɪt peɪz bæk ɪn eɪt mʌnθs/"
+    focus_phonemes: ["z", "nθs"]
+  - kind: respond
+    prompt_en: "That's more than we expected."
+    prompt_vi: "Khách chê đắt. Đừng giảm giá — hỏi lại."
+    accept_patterns:
+      - "what you had in mind"
+      - "Can I ask"
+      - "understand"
+
+reading:
+  kind: chat
+  context_vi: >
+    Bảng báo giá gửi khách. Đọc để biết cái gì đã gồm và cái gì tính thêm.
+  text_en: |
+    QUOTE - Phase 1, 12 months
+
+    Platform licence (2 environments)      32,000
+    Onboarding and migration (one-off)      8,000
+    ---------------------------------------------
+    Total year one                         40,000
+    Year two onwards                       32,000
+
+    Included: 24/7 support, quarterly reviews, unlimited users.
+    Not included: custom integrations, on-site training.
+    Valid 30 days.
+  text_vi: |
+    BÁO GIÁ - Giai đoạn 1, 12 tháng
+
+    Giấy phép nền tảng (2 môi trường)      32.000
+    Triển khai và chuyển đổi (một lần)      8.000
+    ---------------------------------------------
+    Tổng năm đầu                           40.000
+    Từ năm thứ hai                         32.000
+
+    Đã gồm: hỗ trợ 24/7, rà soát hàng quý, không giới hạn người dùng.
+    Chưa gồm: tích hợp riêng, đào tạo tại chỗ.
+    Có hiệu lực 30 ngày.
+  questions:
+    - kind: mcq_read
+      prompt_en: "How much is year two?"
+      choices: ["40,000", "8,000", "32,000"]
+      answer: 2
+      difficulty: 2
+      reading_skill: detail
+      skill: Reading
+    - kind: mcq_read
+      prompt_en: "Which is NOT included?"
+      choices: ["Custom integrations", "24/7 support", "Quarterly reviews"]
+      answer: 0
+      difficulty: 1
+      reading_skill: scan
+      skill: Reading
+
+writing:
+  kind: FillBlank
+  prompt_vi: "Điền hai chỗ trống: câu nói giá và câu nêu căn cứ."
+  prompt_en: "That ___ to forty thousand a year. That's ___ on three hundred users."
+  blanks:
+    - ["comes"]
+    - ["based"]
+  hint_vi: "Chỗ đầu đi với to, cả cụm nghĩa là tổng cộng. Chỗ sau đi với on, nghĩa là tính theo."
+  sample_en: "That comes to forty thousand a year. That's based on three hundred users."
+
+quiz:
+  - kind: mcq
+    prompt_vi: "Khách nói \"đắt quá\". Phản ứng đầu tiên nên là gì?"
+    choices: ["Giảm giá ngay", "Hỏi họ dự tính bao nhiêu", "Giải thích lại tính năng"]
+    answer: 1
+    difficulty: 3
+    skill: Speaking
+  - kind: mcq
+    prompt_vi: "Vì sao phải nêu CĂN CỨ ngay sau con số?"
+    choices: ["Vì quy định báo giá", "Vì nghe chuyên nghiệp hơn", "Vì không có căn cứ thì con số nghe như tuỳ tiện và khách sẽ mặc cả"]
+    answer: 2
+    difficulty: 3
+    skill: Reading
+  - kind: mcq
+    prompt_vi: "\"It pays back in eight months\" làm gì cho cuộc trao đổi?"
+    choices: ["Đổi câu chuyện từ chi phí sang hoàn vốn", "Kéo dài thời gian đàm phán", "Giảm giá gián tiếp"]
+    answer: 0
+    difficulty: 2
+    skill: Listening
+  - kind: mcq
+    prompt_vi: "Nếu ngân sách khách thấp hơn thật sự, nên làm gì?"
+    choices: ["Giữ nguyên giá và chờ", "Giảm giá xuống bằng ngân sách", "Giảm PHẠM VI cho vừa ngân sách, không giảm đơn giá"]
+    answer: 2
+    difficulty: 3
+    skill: Speaking
+
+explanation:
+  why_vi: >
+    Nói giá là chỗ người Việt lúng túng nhất trong bán hàng. Văn hoá mình coi nói thẳng về
+    tiền là hơi thô, nên người bán hay hạ giọng, cười trừ, hoặc thêm "khoảng khoảng" vào
+    trước con số. Khách nghe được sự ngập ngừng đó và hiểu ngay là giá còn mặc cả được.
+  how_vi: >
+    Ba phần, nói liền một hơi. CON SỐ bằng giọng đều: "That comes to ..."
+    CĂN CỨ ngay sau: "That's based on ..." — biến con số thành phép tính chứ không phải
+    ý muốn. GIÁ TRỊ: "Compared to ..., it pays back in ..." Khi bị chê đắt thì
+    ĐỪNG giảm giá, hãy hỏi "Can I ask what you had in mind?"
+  contrast_vi: >
+    Giảm GIÁ là hạ đơn giá — lần sau khách sẽ chờ giảm tiếp. Giảm PHẠM VI là bớt phần việc
+    cho vừa ngân sách — đơn giá giữ nguyên, và khách hiểu tiền nào của nấy.
+
+common_mistakes:
+  - mistake: "Hạ giọng hoặc cười trừ khi nói con số"
+    why_vi: >
+      Ngại nói thẳng về tiền nên giọng tự nhỏ lại. Khách nghe thấy sự thiếu tự tin và
+      kết luận rằng chính bạn cũng thấy giá đó cao, nên chắc chắn sẽ mặc cả.
+    fix_vi: "Nói con số bằng đúng giọng như nói ngày tháng, rồi nêu căn cứ ngay. Không thêm từ đệm."
+  - mistake: "Giảm giá ngay khi khách nói đắt"
+    why_vi: >
+      Sợ mất hợp đồng nên nhượng bộ liền. Nhưng "đắt" thường chỉ là phản xạ đàm phán,
+      và giảm ngay dạy khách rằng cứ nói đắt là được giảm.
+    fix_vi: "Hỏi \"Can I ask what you had in mind?\" trước. Nhiều khi khoảng cách nhỏ hơn bạn tưởng."
+  - mistake: "Đọc \"thousand\" thành /thao-den/"
+    why_vi: >
+      Âm /θ/ đầu từ và cụm /nd/ cuối đều không có trong tiếng Việt. Đây là từ nằm trong
+      mọi câu báo giá nên nghe nhầm con số là hỏng cả buổi.
+    fix_vi: "Đưa lưỡi ra giữa hai hàm răng cho /θ/, rồi kết thúc rõ /-znd/: /ˈθaʊznd/."
+
+memory_trick_vi: >
+  Báo giá ba phần liền một hơi: CON SỐ "That comes to...", CĂN CỨ "That's based on...",
+  GIÁ TRỊ "It pays back in..." Bị chê đắt thì HỎI, đừng GIẢM.

@@ -1,0 +1,265 @@
+schema_version: 1
+code: BIZ-01
+slug: gap-khach-hang-lan-dau
+title_vi: "Gặp khách hàng lần đầu — mười lăm phút mở đầu"
+title_en: "Meeting a client for the first time"
+
+layer: Professional
+track: Business
+level: B1
+unit_code: U-BIZ
+order_index: 1
+estimated_minutes: 12
+
+illustration: handshake-intro
+
+objective_vi: >
+  Mở đầu một buổi gặp khách: giới thiệu mình và công ty trong ba câu,
+  đặt chương trình làm việc, và chuyển sang phần khách nói.
+
+objective_observable: >
+  Giới thiệu công ty theo cấu trúc ba phần trong 3 trên 4 drill, và chốt được
+  chương trình buổi họp.
+
+mastery_weights:
+  Listening: 0.25
+  Speaking: 0.40
+  Reading: 0.15
+  Writing: 0.20
+
+prerequisites:
+  - lesson: OFF-12
+    min_mastery: 70
+    kind: Hard
+
+vocabulary:
+  - term: "Thanks for making the time"
+    ipa: "/θæŋks fɔːr ˈmeɪkɪŋ ðə taɪm/"
+    meaning_vi: "cảm ơn anh chị đã dành thời gian"
+    chunk: "Thanks for making the time today."
+    tags: [business, meeting]
+  - term: "We help companies"
+    ipa: "/wiː help ˈkʌmpəniz/"
+    meaning_vi: "chúng tôi giúp các công ty (cách giới thiệu theo giá trị)"
+    chunk: "We help companies cut cloud costs."
+    tags: [business, pitch]
+  - term: "What I'd like to cover"
+    ipa: "/wɒt aɪd laɪk tuː ˈkʌvər/"
+    meaning_vi: "những gì tôi muốn trao đổi (đặt chương trình)"
+    chunk: "What I'd like to cover today is three things."
+    tags: [business, meeting]
+  - term: "Does that work for you"
+    ipa: "/dʌz ðæt wɜːrk fɔːr juː/"
+    meaning_vi: "như vậy có được với anh chị không"
+    chunk: "Does that work for you?"
+    tags: [business, meeting, core]
+  - term: "Before I go further"
+    ipa: "/bɪˈfɔːr aɪ ɡoʊ ˈfɜːrðər/"
+    meaning_vi: "trước khi tôi nói tiếp (nhường lời cho khách)"
+    chunk: "Before I go further, tell me about your setup."
+    tags: [business, meeting]
+  - term: "on your side"
+    ipa: "/ɒn jɔːr saɪd/"
+    meaning_vi: "về phía anh chị"
+    chunk: "Who handles this on your side?"
+    tags: [business]
+
+sentence_patterns:
+  - pattern: "We help {who} {do what}."
+    meaning_vi: "Chúng tôi giúp {who} {do what}."
+    slots:
+      who: ["companies", "banks", "logistics firms"]
+      do what: ["cut cloud costs", "move off legacy systems", "meet audit requirements"]
+  - pattern: "What I'd like to cover today is {number} things."
+    meaning_vi: "Hôm nay tôi muốn trao đổi {number} việc."
+    slots:
+      number: ["three", "two", "a few"]
+
+dialogue:
+  context_vi: >
+    Buổi gặp đầu với một khách hàng tiềm năng ở Singapore. Bốn mươi lăm phút,
+    và mười lăm phút đầu quyết định họ có nghe tiếp hay không.
+  turns:
+    - speaker: "You"
+      en: "Thanks for making the time today. I'm Hoa, I lead the cloud team at Vertex."
+      vi: "Cảm ơn anh chị đã dành thời gian hôm nay. Tôi là Hoa, phụ trách đội cloud ở Vertex."
+    - speaker: "Client"
+      en: "Good to meet you. What does Vertex do exactly?"
+      vi: "Rất vui được gặp. Vertex làm gì chính xác nhỉ?"
+    - speaker: "You"
+      en: "We help companies cut cloud costs without slowing their teams down. Mostly banks and logistics."
+      vi: "Chúng tôi giúp các công ty giảm chi phí cloud mà không làm chậm đội của họ. Chủ yếu ngân hàng và logistics."
+    - speaker: "You"
+      en: "What I'd like to cover today is three things: your current setup, where the cost goes, and what we'd change first. Does that work for you?"
+      vi: "Hôm nay tôi muốn trao đổi ba việc: hệ thống hiện tại, tiền đang đi đâu, và việc gì nên đổi trước. Như vậy được không ạ?"
+    - speaker: "Client"
+      en: "That works. Let's start with the cost part."
+      vi: "Được. Bắt đầu từ phần chi phí đi."
+    - speaker: "You"
+      en: "Sure. Before I go further, who handles the cloud budget on your side?"
+      vi: "Vâng. Trước khi tôi nói tiếp, bên anh chị ai phụ trách ngân sách cloud ạ?"
+
+listening:
+  context_vi: >
+    Nghe phần mở đầu một buổi gặp khách. Chú ý cấu trúc ba phần và câu chốt
+    chương trình — hai thứ khiến khách yên tâm là buổi họp có hướng.
+  speed: 1.0
+  voice: en_US_female
+  transcript_en: "Thanks for making the time. I'm Anna from Northwind. We help logistics firms move off legacy systems. What I'd like to cover today is two things: where you are now, and what a first phase would look like. Does that work for you? Yes, that's fine."
+  transcript_vi: "Cảm ơn anh chị đã dành thời gian. Tôi là Anna từ Northwind. Chúng tôi giúp các công ty logistics rời khỏi hệ thống cũ. Hôm nay tôi muốn trao đổi hai việc: hiện trạng của anh chị, và giai đoạn đầu sẽ trông như thế nào. Như vậy được không ạ? Vâng, được."
+  questions:
+    - kind: mcq_listen
+      prompt_vi: "Northwind giúp khách hàng làm gì?"
+      choices: ["Giảm chi phí nhân sự", "Rời khỏi hệ thống cũ", "Tuyển kỹ sư"]
+      answer: 1
+      difficulty: 2
+      skill: Listening
+    - kind: mcq_listen
+      prompt_vi: "Buổi họp dự kiến bàn mấy việc?"
+      choices: ["Hai", "Ba", "Bốn"]
+      answer: 0
+      difficulty: 1
+      skill: Listening
+
+speaking_drills:
+  - kind: read_aloud
+    expected_text: "Thanks for making the time today."
+    prompt_vi: "Câu mở đầu. Âm /θ/ trong thanks đưa lưỡi ra giữa hai hàm răng."
+    ipa: "/θæŋks fɔːr ˈmeɪkɪŋ ðə taɪm/"
+    focus_phonemes: ["θ", "ŋ"]
+  - kind: read_aloud
+    expected_text: "We help companies cut cloud costs."
+    prompt_vi: "Giới thiệu bằng GIÁ TRỊ chứ không bằng danh sách sản phẩm."
+    ipa: "/wiː help ˈkʌmpəniz kʌt klaʊd kɒsts/"
+    focus_phonemes: ["kl", "sts"]
+  - kind: shadow
+    expected_text: "What I'd like to cover today is three things."
+    prompt_vi: "Đặt chương trình. Nói SỐ để khách biết buổi họp dài bao nhiêu."
+    ipa: "/wɒt aɪd laɪk tuː ˈkʌvər/"
+    focus_phonemes: ["aɪd", "v"]
+  - kind: shadow
+    expected_text: "Does that work for you?"
+    prompt_vi: "Câu chốt. Hỏi rồi DỪNG LẠI chờ họ trả lời."
+    ipa: "/dʌz ðæt wɜːrk fɔːr juː/"
+    focus_phonemes: ["ð", "wɜːr"]
+  - kind: respond
+    prompt_en: "So, what does your company do?"
+    prompt_vi: "Khách hỏi công ty bạn làm gì. Trả lời bằng giá trị mang lại."
+    accept_patterns:
+      - "We help"
+      - "We work with"
+      - "We"
+
+reading:
+  kind: chat
+  context_vi: >
+    Email xác nhận lịch gặp. Đọc để biết ai dự và bàn gì.
+  text_en: |
+    Subject: Confirming Thursday 10:00
+
+    Hi Hoa,
+
+    Confirmed for Thursday 10:00, 45 minutes, our office.
+
+    Attending from our side:
+    - Wei Lin, Head of Infrastructure (decision maker)
+    - Raj, Cloud Architect
+
+    Wei has to leave at 10:30, so please cover the cost topic first.
+  text_vi: |
+    Tiêu đề: Xác nhận thứ Năm 10:00
+
+    Chào Hoa,
+
+    Xác nhận thứ Năm 10:00, 45 phút, tại văn phòng bên tôi.
+
+    Bên tôi tham dự:
+    - Wei Lin, Trưởng phòng Hạ tầng (người quyết định)
+    - Raj, Kiến trúc sư Cloud
+
+    Wei phải đi lúc 10:30, nên anh trình bày phần chi phí trước giúp.
+  questions:
+    - kind: mcq_read
+      prompt_en: "Who makes the decision?"
+      choices: ["Raj", "Both equally", "Wei Lin"]
+      answer: 2
+      difficulty: 2
+      reading_skill: scan
+      skill: Reading
+    - kind: mcq_read
+      prompt_en: "Why should the cost topic come first?"
+      choices: ["Wei leaves at 10:30", "It is the shortest topic", "Raj asked for it"]
+      answer: 0
+      difficulty: 2
+      reading_skill: detail
+      skill: Reading
+
+writing:
+  kind: FillBlank
+  prompt_vi: "Điền hai chỗ trống: câu giới thiệu theo giá trị và câu chốt chương trình."
+  prompt_en: "We ___ companies cut cloud costs. Does that ___ for you?"
+  blanks:
+    - ["help"]
+    - ["work"]
+  hint_vi: "Chỗ đầu là động từ nghĩa là giúp. Chỗ sau nằm trong câu hỏi xem khách có đồng ý không."
+  sample_en: "We help companies cut cloud costs. Does that work for you?"
+
+quiz:
+  - kind: mcq
+    prompt_vi: "Cách giới thiệu công ty hiệu quả nhất với khách mới là gì?"
+    choices: ["Liệt kê mọi sản phẩm", "Nói năm thành lập và quy mô", "Nói mình giúp ai làm được việc gì"]
+    answer: 2
+    difficulty: 3
+    skill: Speaking
+  - kind: mcq
+    prompt_vi: "Vì sao nên nói SỐ việc sẽ bàn ngay đầu buổi?"
+    choices: ["Vì khách biết buổi họp có hướng và dài bao nhiêu", "Vì quy định họp", "Vì để nói được nhiều hơn"]
+    answer: 0
+    difficulty: 2
+    skill: Reading
+  - kind: mcq
+    prompt_vi: "\"Does that work for you?\" dùng để làm gì?"
+    choices: ["Hỏi công việc của khách", "Chốt xem khách đồng ý chương trình không", "Hỏi hệ thống có chạy không"]
+    answer: 1
+    difficulty: 2
+    skill: Listening
+  - kind: mcq
+    prompt_vi: "Sau khi đặt chương trình, việc tiếp theo nên là gì?"
+    choices: ["Trình bày luôn phần một", "Nhường lời cho khách nói về họ", "Gửi báo giá"]
+    answer: 1
+    difficulty: 3
+    skill: Speaking
+
+explanation:
+  why_vi: >
+    Kỹ sư Việt Nam khi gặp khách nước ngoài hay mở đầu bằng lịch sử công ty và danh sách
+    sản phẩm — đó là cách giới thiệu trong hồ sơ thầu, không phải trong một buổi gặp.
+    Khách chỉ có bốn mươi lăm phút và điều họ muốn biết là bạn giúp được gì cho HỌ.
+  how_vi: >
+    Mở đầu ba phần. CẢM ƠN một câu. GIỚI THIỆU bằng giá trị: "We help AI làm được VIỆC GÌ" —
+    một câu, không liệt kê. ĐẶT CHƯƠNG TRÌNH kèm số việc, rồi chốt bằng "Does that work for you?"
+    và dừng lại chờ. Sau đó nhường lời cho khách bằng "Before I go further, tell me about..."
+  contrast_vi: >
+    "We are a company founded in 2015 with 200 employees" nói về bạn.
+    "We help companies cut cloud costs" nói về thứ khách nhận được. Câu thứ hai làm họ hỏi tiếp.
+
+common_mistakes:
+  - mistake: "Mở đầu bằng lịch sử và quy mô công ty"
+    why_vi: >
+      Thói quen từ hồ sơ thầu và slide giới thiệu. Nhưng khách chưa quan tâm bạn là ai
+      cho tới khi biết bạn giải quyết được vấn đề gì của họ.
+    fix_vi: "Đổi thành một câu giá trị: \"We help AI DOING WHAT.\" Lịch sử để dành cho lúc họ hỏi."
+  - mistake: "Hỏi \"Does that work for you?\" rồi nói tiếp luôn"
+    why_vi: >
+      Người học hỏi cho có rồi sợ khoảng lặng nên nói tiếp. Khách mất cơ hội điều chỉnh
+      chương trình, và tới phút ba mươi mới nói ra thứ họ thật sự cần.
+    fix_vi: "Hỏi xong thì im. Khoảng lặng hai giây là chỗ khách nói ra thứ quan trọng nhất."
+  - mistake: "Nói hết bốn mươi lăm phút rồi mới để khách nói"
+    why_vi: >
+      Chuẩn bị kỹ nên muốn trình bày hết. Nhưng nửa nội dung chuẩn bị thường không liên quan
+      tới vấn đề thật của khách, và bạn không biết điều đó nếu chưa nghe họ.
+    fix_vi: "Sau chương trình là nhường lời ngay: \"Before I go further, tell me about your setup.\""
+
+memory_trick_vi: >
+  Mười lăm phút đầu bốn bước: CẢM ƠN, GIÚP AI LÀM GÌ, BÀN MẤY VIỆC, "Does that work for you?"
+  Rồi im lặng và nghe.

@@ -1,0 +1,259 @@
+schema_version: 1
+code: BIZ-06
+slug: hop-giao-ban-va-giao-viec
+title_vi: "Họp giao ban và giao việc"
+title_en: "Running a team meeting and delegating"
+
+layer: Professional
+track: Business
+level: B1
+unit_code: U-BIZ
+order_index: 6
+estimated_minutes: 12
+
+illustration: team-standup
+
+objective_vi: >
+  Điều hành một buổi giao ban ngắn và giao việc sao cho người nhận biết
+  chính xác phải làm gì, xong khi nào, và ai duyệt.
+
+objective_observable: >
+  Giao được một việc đủ ba yếu tố trong 3 trên 4 drill, và cắt được một phần lạc đề.
+
+mastery_weights:
+  Listening: 0.30
+  Speaking: 0.40
+  Reading: 0.15
+  Writing: 0.15
+
+prerequisites:
+  - lesson: BIZ-05
+    min_mastery: 65
+    kind: Hard
+
+vocabulary:
+  - term: "Let's keep this to"
+    ipa: "/lets kiːp ðɪs tuː/"
+    meaning_vi: "mình gói buổi này trong (đặt giới hạn thời gian)"
+    chunk: "Let's keep this to fifteen minutes."
+    tags: [business, meeting, core]
+  - term: "Can you take"
+    ipa: "/kæn juː teɪk/"
+    meaning_vi: "anh chị nhận việc này nhé"
+    chunk: "Can you take the vendor call?"
+    tags: [business, delegation]
+  - term: "by end of day"
+    ipa: "/baɪ end əv deɪ/"
+    meaning_vi: "trước cuối ngày"
+    chunk: "I need it by end of day Thursday."
+    tags: [business, deadline]
+  - term: "let's take that offline"
+    ipa: "/lets teɪk ðæt ˈɒflaɪn/"
+    meaning_vi: "chuyện đó mình bàn riêng (cắt phần lạc đề)"
+    chunk: "Good point — let's take that offline."
+    tags: [business, meeting]
+  - term: "anything blocking you"
+    ipa: "/ˈeniθɪŋ ˈblɒkɪŋ juː/"
+    meaning_vi: "có gì đang chặn anh chị không"
+    chunk: "Anything blocking you this week?"
+    tags: [business, meeting]
+  - term: "who's the owner"
+    ipa: "/huːz ði ˈoʊnər/"
+    meaning_vi: "ai là người chịu trách nhiệm chính"
+    chunk: "Who's the owner on this?"
+    tags: [business, delegation]
+
+sentence_patterns:
+  - pattern: "Can you take {task} by {deadline}?"
+    meaning_vi: "Anh chị nhận {task} và xong trước {deadline} nhé?"
+    slots:
+      task: ["the vendor call", "the migration plan", "the cost review"]
+      deadline: ["end of day Thursday", "Friday noon", "next Monday"]
+  - pattern: "Let's keep this to {duration}."
+    meaning_vi: "Mình gói buổi này trong {duration}."
+    slots:
+      duration: ["fifteen minutes", "half an hour", "twenty minutes"]
+
+dialogue:
+  context_vi: >
+    Giao ban sáng thứ Hai, sáu người, mười lăm phút. Không cắt đúng lúc thì
+    buổi này thành bốn mươi phút và ba người ngồi im suốt.
+  turns:
+    - speaker: "You"
+      en: "Morning everyone. Let's keep this to fifteen minutes. Three items today."
+      vi: "Chào cả nhà. Mình gói trong mười lăm phút. Hôm nay ba việc."
+    - speaker: "You"
+      en: "First, the migration. Raj, where are we?"
+      vi: "Đầu tiên, phần chuyển đổi. Raj, mình đang tới đâu?"
+    - speaker: "Raj"
+      en: "Two servers left. But we should really discuss the backup policy again —"
+      vi: "Còn hai máy chủ. Nhưng mình nên bàn lại chính sách sao lưu —"
+    - speaker: "You"
+      en: "Good point — let's take that offline. Anything blocking you this week?"
+      vi: "Ý hay — chuyện đó mình bàn riêng. Tuần này có gì đang chặn anh không?"
+    - speaker: "Raj"
+      en: "I need firewall access from the network team."
+      vi: "Tôi cần quyền tường lửa từ đội mạng."
+    - speaker: "You"
+      en: "Anna, can you take that and get it opened by end of day Thursday? You're the owner."
+      vi: "Anna, chị nhận việc đó và mở quyền trước cuối ngày thứ Năm nhé? Chị là người chịu trách nhiệm."
+
+listening:
+  context_vi: >
+    Nghe một đoạn giao ban. Chú ý ba yếu tố mỗi lần giao việc: việc gì, hạn nào, ai chủ trì.
+  speed: 1.0
+  voice: en_US_female
+  transcript_en: "Let's keep this to twenty minutes. David, can you take the vendor call and send a summary by Friday noon? You're the owner. Sure. Anything blocking you? I need the contract from legal. Priya, can you chase that today?"
+  transcript_vi: "Mình gói trong hai mươi phút. David, anh nhận cuộc gọi với nhà cung cấp và gửi tóm tắt trước trưa thứ Sáu nhé? Anh chịu trách nhiệm chính. Được. Có gì chặn anh không? Tôi cần hợp đồng từ bộ phận pháp lý. Priya, chị hối giúp hôm nay được không?"
+  questions:
+    - kind: mcq_listen
+      prompt_vi: "David phải gửi tóm tắt khi nào?"
+      choices: ["Trưa thứ Sáu", "Cuối ngày thứ Năm", "Thứ Hai tuần sau"]
+      answer: 0
+      difficulty: 2
+      skill: Listening
+    - kind: mcq_listen
+      prompt_vi: "Cái gì đang chặn David?"
+      choices: ["Thiếu người", "Chưa có hợp đồng từ pháp lý", "Chưa có quyền truy cập"]
+      answer: 1
+      difficulty: 2
+      skill: Listening
+
+speaking_drills:
+  - kind: read_aloud
+    expected_text: "Let's keep this to fifteen minutes."
+    prompt_vi: "Đặt giới hạn ngay câu đầu. Âm /ts/ cuối chữ let's phải bật."
+    ipa: "/lets kiːp ðɪs tuː ˈfɪftiːn ˈmɪnɪts/"
+    focus_phonemes: ["ts", "f"]
+  - kind: read_aloud
+    expected_text: "Can you take the vendor call by Friday noon?"
+    prompt_vi: "Giao việc đủ ba yếu tố trong một câu."
+    ipa: "/kæn juː teɪk ðə ˈvendər kɔːl/"
+    focus_phonemes: ["k", "v"]
+  - kind: shadow
+    expected_text: "Good point — let's take that offline."
+    prompt_vi: "Cắt phần lạc đề mà không làm người nói cụt hứng."
+    ipa: "/ɡʊd pɔɪnt lets teɪk ðæt ˈɒflaɪn/"
+    focus_phonemes: ["pɔɪ", "fl"]
+  - kind: shadow
+    expected_text: "Anything blocking you this week?"
+    prompt_vi: "Câu này moi ra vướng mắc mà người ta ngại tự nói."
+    ipa: "/ˈeniθɪŋ ˈblɒkɪŋ juː ðɪs wiːk/"
+    focus_phonemes: ["θ", "bl"]
+  - kind: respond
+    prompt_en: "The migration is almost done, two servers left."
+    prompt_vi: "Người báo cáo xong. Hỏi xem có gì đang chặn họ."
+    accept_patterns:
+      - "Anything blocking"
+      - "blocked"
+      - "need"
+
+reading:
+  kind: chat
+  context_vi: >
+    Ghi chú sau giao ban gửi lên kênh chung. Đọc để thấy một việc giao đúng trông thế nào.
+  text_en: |
+    Standup notes - Mon 19 Aug
+
+    Migration: 2 servers left, on track for Friday.
+    ACTION: Anna - open firewall access for Raj. Due EOD Thursday. Owner: Anna.
+    ACTION: David - vendor call + summary. Due Friday 12:00. Owner: David.
+
+    Parked for a separate call: backup retention policy.
+    Next standup: Wed 09:15.
+  text_vi: |
+    Ghi chú giao ban - Thứ Hai 19/8
+
+    Chuyển đổi: còn 2 máy chủ, đúng tiến độ thứ Sáu.
+    VIỆC: Anna - mở quyền tường lửa cho Raj. Hạn cuối ngày thứ Năm. Chịu trách nhiệm: Anna.
+    VIỆC: David - gọi nhà cung cấp và gửi tóm tắt. Hạn thứ Sáu 12:00. Chịu trách nhiệm: David.
+
+    Để lại cho một buổi riêng: chính sách lưu trữ sao lưu.
+    Giao ban tiếp: thứ Tư 09:15.
+  questions:
+    - kind: mcq_read
+      prompt_en: "What was moved to a separate call?"
+      choices: ["The vendor call", "Backup retention policy", "Firewall access"]
+      answer: 1
+      difficulty: 1
+      reading_skill: scan
+      skill: Reading
+    - kind: mcq_read
+      prompt_en: "What three things does each ACTION line contain?"
+      choices: ["Task, deadline, owner", "Task, cost, owner", "Person, date, priority"]
+      answer: 0
+      difficulty: 2
+      reading_skill: detail
+      skill: Reading
+
+writing:
+  kind: FillBlank
+  prompt_vi: "Điền hai chỗ trống: câu đặt giới hạn thời gian và câu cắt lạc đề."
+  prompt_en: "Let's ___ this to fifteen minutes. Good point — let's take that ___."
+  blanks:
+    - ["keep"]
+    - ["offline"]
+  hint_vi: "Chỗ đầu là động từ nghĩa là giữ. Chỗ sau nghĩa là bàn riêng ngoài buổi họp."
+  sample_en: "Let's keep this to fifteen minutes. Good point — let's take that offline."
+
+quiz:
+  - kind: mcq
+    prompt_vi: "Một việc giao đúng phải có ba yếu tố nào?"
+    choices: ["Việc gì, hạn nào, ai chịu trách nhiệm", "Việc gì, ai làm, tốn bao nhiêu", "Ai làm, khi nào họp lại, độ ưu tiên"]
+    answer: 0
+    difficulty: 2
+    skill: Reading
+  - kind: mcq
+    prompt_vi: "Ai đó lạc đề giữa buổi. Nên nói gì?"
+    choices: ["Cắt lời ngay", "\"Good point — let's take that offline\"", "Để họ nói hết"]
+    answer: 1
+    difficulty: 2
+    skill: Speaking
+  - kind: mcq
+    prompt_vi: "Vì sao phải hỏi \"Anything blocking you?\""
+    choices: ["Để buổi họp dài hơn", "Vì người ta thường ngại tự nói ra vướng mắc", "Vì quy định giao ban"]
+    answer: 1
+    difficulty: 3
+    skill: Listening
+  - kind: mcq
+    prompt_vi: "\"Who's the owner on this?\" nghĩa là gì?"
+    choices: ["Ai sở hữu hệ thống", "Ai trả tiền", "Ai chịu trách nhiệm chính cho việc này"]
+    answer: 2
+    difficulty: 2
+    skill: Listening
+
+explanation:
+  why_vi: >
+    Giao ban bằng tiếng Anh khó ở hai chỗ: cắt người lạc đề, và giao việc rõ ràng.
+    Người Việt ngại cả hai — cắt lời sợ mất lòng, giao việc thì nói chung chung
+    "nhờ anh xem giúp" để đỡ nghe như ra lệnh. Kết quả là buổi họp dài gấp đôi
+    và tuần sau không ai nhớ ai phải làm gì.
+  how_vi: >
+    Mở đầu bằng giới hạn thời gian và số việc. Giao việc luôn đủ BA yếu tố trong một câu:
+    "Can you take VIỆC GÌ by HẠN NÀO?" cộng "You're the owner." Ai lạc đề thì cắt bằng
+    "Good point — let's take that offline" — vế đầu ghi nhận, vế sau dời chỗ.
+    Kết mỗi phần bằng "Anything blocking you?"
+  contrast_vi: >
+    "Nhờ anh xem giúp cái này" không có hạn và không có người chịu trách nhiệm, nên
+    tuần sau nó vẫn nằm đó. "Can you take this by Thursday? You're the owner" thì có cả hai.
+
+common_mistakes:
+  - mistake: "Giao việc không kèm hạn"
+    why_vi: >
+      Ngại ép người khác nên bỏ phần deadline. Nhưng việc không có hạn luôn xếp sau việc
+      có hạn, và tới buổi giao ban sau nó vẫn ở nguyên chỗ cũ.
+    fix_vi: "Luôn kèm hạn cụ thể: \"by end of day Thursday\", không dùng \"khi nào rảnh\"."
+  - mistake: "Để người lạc đề nói hết cho lịch sự"
+    why_vi: >
+      Cắt lời bị coi là bất lịch sự trong văn hoá Việt. Nhưng trong buổi mười lăm phút,
+      để một người nói mười phút là lấy mất phần của bốn người còn lại.
+    fix_vi: "Dùng \"Good point — let's take that offline.\" Vế đầu là khen, nên không ai thấy bị cắt."
+  - mistake: "Không chỉ định người chịu trách nhiệm khi có nhiều người liên quan"
+    why_vi: >
+      Nghĩ cả đội cùng lo là tinh thần tốt. Nhưng việc thuộc về cả đội là việc không
+      thuộc về ai, và nó sẽ không xong.
+    fix_vi: "Luôn nói rõ một cái tên: \"You're the owner.\" Người khác hỗ trợ, nhưng một người chịu."
+
+memory_trick_vi: >
+  Giao việc ba yếu tố trong một câu: VIỆC GÌ - HẠN NÀO - AI CHỊU.
+  Lạc đề thì "Good point, let's take that offline". Kết thúc mỗi phần: "Anything blocking you?"

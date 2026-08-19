@@ -39,7 +39,7 @@ public class LearningFlowTests(ApiFactory api)
         var roadmap = await client.GetFromJsonAsync<JsonElement>("/api/v1/learning/roadmap");
         var lessons = roadmap.GetProperty("lessons").EnumerateArray().ToList();
 
-        Assert.Equal(76, lessons.Count);
+        Assert.Equal(86, lessons.Count);
 
         // Bài đầu tiên phải mở sẵn, nếu không học viên mới không có chỗ nào bắt đầu.
         var first = lessons.First(l => l.GetProperty("code").GetString() == "LIFE-01");

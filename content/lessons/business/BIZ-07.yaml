@@ -1,0 +1,262 @@
+schema_version: 1
+code: BIZ-07
+slug: bao-cao-so-lieu-kinh-doanh
+title_vi: "Báo cáo số liệu — nói về tăng trưởng và chi phí"
+title_en: "Reporting business numbers"
+
+layer: Professional
+track: Business
+level: B1
+unit_code: U-BIZ
+order_index: 7
+estimated_minutes: 12
+
+illustration: desk-laptop
+
+objective_vi: >
+  Trình bày số liệu kinh doanh bằng tiếng Anh: nói mức tăng giảm, so sánh kỳ,
+  và giải thích nguyên nhân — không đọc bảng số từ trên xuống.
+
+objective_observable: >
+  Nói được một chỉ số kèm mức thay đổi và nguyên nhân trong 3 trên 4 drill.
+
+mastery_weights:
+  Listening: 0.30
+  Speaking: 0.35
+  Reading: 0.20
+  Writing: 0.15
+
+prerequisites:
+  - lesson: BIZ-06
+    min_mastery: 65
+    kind: Hard
+
+vocabulary:
+  - term: "up from"
+    ipa: "/ʌp frɒm/"
+    meaning_vi: "tăng từ (mức cũ)"
+    chunk: "Revenue is up from 1.2 to 1.5 million."
+    tags: [business, numbers, core]
+  - term: "quarter on quarter"
+    ipa: "/ˈkwɔːrtər ɒn ˈkwɔːrtər/"
+    meaning_vi: "so với quý trước"
+    chunk: "Costs fell eight percent quarter on quarter."
+    tags: [business, numbers]
+  - term: "flat"
+    ipa: "/flæt/"
+    meaning_vi: "đi ngang, không đổi"
+    chunk: "Headcount stayed flat."
+    tags: [business, numbers]
+  - term: "margin"
+    ipa: "/ˈmɑːrdʒɪn/"
+    meaning_vi: "biên lợi nhuận"
+    chunk: "Our margin improved by two points."
+    tags: [business, numbers]
+  - term: "driven by"
+    ipa: "/ˈdrɪvn baɪ/"
+    meaning_vi: "do ... mà có (nêu nguyên nhân)"
+    chunk: "That's driven by the new enterprise deals."
+    tags: [business, numbers, core]
+  - term: "the headline is"
+    ipa: "/ðə ˈhedlaɪn ɪz/"
+    meaning_vi: "điểm chính là (mở đầu bằng kết luận)"
+    chunk: "The headline is: we grew, but slower than planned."
+    tags: [business, report]
+
+sentence_patterns:
+  - pattern: "{metric} is up from {old} to {new}."
+    meaning_vi: "{metric} tăng từ {old} lên {new}."
+    slots:
+      metric: ["Revenue", "Margin", "Active users"]
+      old: ["1.2 million", "18 percent", "4,000"]
+      new: ["1.5 million", "20 percent", "5,200"]
+  - pattern: "That's driven by {cause}."
+    meaning_vi: "Do {cause} mà có."
+    slots:
+      cause: ["the new enterprise deals", "lower storage costs", "the pricing change"]
+
+dialogue:
+  context_vi: >
+    Họp tổng kết quý với ban lãnh đạo, có người nước ngoài dự. Bạn có năm phút
+    và họ chỉ nhớ được ba con số.
+  turns:
+    - speaker: "You"
+      en: "The headline is: we grew, but slower than planned."
+      vi: "Điểm chính là: mình có tăng, nhưng chậm hơn kế hoạch."
+    - speaker: "Director"
+      en: "Give me the numbers."
+      vi: "Cho tôi con số."
+    - speaker: "You"
+      en: "Revenue is up from 1.2 to 1.5 million, so twenty-five percent quarter on quarter."
+      vi: "Doanh thu tăng từ 1,2 lên 1,5 triệu, tức hai mươi lăm phần trăm so với quý trước."
+    - speaker: "You"
+      en: "That's driven by three enterprise deals. But margin stayed flat at eighteen percent."
+      vi: "Do ba hợp đồng doanh nghiệp mà có. Nhưng biên lợi nhuận đi ngang ở mười tám phần trăm."
+    - speaker: "Director"
+      en: "Why didn't margin move?"
+      vi: "Vì sao biên không nhúc nhích?"
+    - speaker: "You"
+      en: "Onboarding cost. Each enterprise deal took six weeks instead of three. We're fixing that next quarter."
+      vi: "Chi phí triển khai. Mỗi hợp đồng doanh nghiệp mất sáu tuần thay vì ba. Quý tới bọn tôi sẽ xử lý."
+
+listening:
+  context_vi: >
+    Nghe một báo cáo số liệu ngắn. Chú ý thứ tự: kết luận trước, con số sau,
+    nguyên nhân cuối.
+  speed: 1.0
+  voice: en_US_male
+  transcript_en: "The headline is: costs are under control. Cloud spend fell eight percent quarter on quarter, down from ninety thousand to eighty-three. That's driven by the storage clean-up. Headcount stayed flat. Margin improved by two points."
+  transcript_vi: "Điểm chính là: chi phí đã trong tầm kiểm soát. Chi cho cloud giảm tám phần trăm so với quý trước, từ chín mươi nghìn xuống tám mươi ba. Do dọn dẹp lưu trữ mà có. Nhân sự đi ngang. Biên lợi nhuận cải thiện hai điểm."
+  questions:
+    - kind: mcq_listen
+      prompt_vi: "Chi phí cloud giảm bao nhiêu phần trăm?"
+      choices: ["Hai phần trăm", "Tám phần trăm", "Mười ba phần trăm"]
+      answer: 1
+      difficulty: 2
+      skill: Listening
+    - kind: mcq_listen
+      prompt_vi: "Nhân sự thay đổi thế nào?"
+      choices: ["Đi ngang", "Tăng", "Giảm"]
+      answer: 0
+      difficulty: 1
+      skill: Listening
+
+speaking_drills:
+  - kind: read_aloud
+    expected_text: "Revenue is up from one point two to one point five million."
+    prompt_vi: "Nói mức thay đổi kèm cả hai đầu, không chỉ nói con số cuối."
+    ipa: "/ˈrevənjuː ɪz ʌp frɒm/"
+    focus_phonemes: ["v", "nj"]
+  - kind: read_aloud
+    expected_text: "That's driven by three enterprise deals."
+    prompt_vi: "Nêu nguyên nhân ngay sau con số. Âm /dr/ đầu driven bật liền."
+    ipa: "/ðæts ˈdrɪvn baɪ θriː ˈentərpraɪz diːlz/"
+    focus_phonemes: ["dr", "pr"]
+  - kind: shadow
+    expected_text: "Margin stayed flat at eighteen percent."
+    prompt_vi: "Nói chỉ số không đổi. Chữ flat ngắn và dứt khoát."
+    ipa: "/ˈmɑːrdʒɪn steɪd flæt/"
+    focus_phonemes: ["dʒ", "fl"]
+  - kind: shadow
+    expected_text: "The headline is: we grew, but slower than planned."
+    prompt_vi: "Mở đầu bằng KẾT LUẬN. Lãnh đạo cần câu này trước mọi con số."
+    ipa: "/ðə ˈhedlaɪn ɪz wiː ɡruː/"
+    focus_phonemes: ["h", "ɡr"]
+  - kind: respond
+    prompt_en: "How did the quarter go?"
+    prompt_vi: "Lãnh đạo hỏi quý vừa rồi thế nào. Mở đầu bằng kết luận."
+    accept_patterns:
+      - "The headline is"
+      - "up from"
+      - "grew"
+
+reading:
+  kind: chat
+  context_vi: >
+    Bảng số liệu quý. Đọc và tìm chỉ số nào đáng lo nhất.
+  text_en: |
+    Q3 SUMMARY
+
+    Revenue        1.5M   (up from 1.2M, +25% QoQ)
+    Gross margin   18%    (flat)
+    Cloud spend    83K    (down from 90K, -8% QoQ)
+    Headcount      42     (flat)
+    Churn          6%     (up from 3%)
+
+    Note: churn increase concentrated in customers under 12 months.
+  text_vi: |
+    TÓM TẮT QUÝ 3
+
+    Doanh thu       1,5 triệu   (từ 1,2 triệu, +25% so quý trước)
+    Biên gộp        18%         (đi ngang)
+    Chi cho cloud   83 nghìn    (từ 90 nghìn, -8% so quý trước)
+    Nhân sự         42          (đi ngang)
+    Tỷ lệ rời bỏ    6%          (từ 3%)
+
+    Ghi chú: rời bỏ tăng tập trung ở khách dưới 12 tháng.
+  questions:
+    - kind: mcq_read
+      prompt_en: "Which number is the most worrying?"
+      choices: ["Revenue", "Churn doubled from 3% to 6%", "Headcount"]
+      answer: 1
+      difficulty: 3
+      reading_skill: detail
+      skill: Reading
+    - kind: mcq_read
+      prompt_en: "Where is the churn concentrated?"
+      choices: ["Customers under 12 months", "Enterprise customers", "All segments equally"]
+      answer: 0
+      difficulty: 2
+      reading_skill: scan
+      skill: Reading
+
+writing:
+  kind: FillBlank
+  prompt_vi: "Điền hai chỗ trống: câu nói mức tăng và câu nêu nguyên nhân."
+  prompt_en: "Revenue is ___ from 1.2 to 1.5 million. That's ___ by three enterprise deals."
+  blanks:
+    - ["up"]
+    - ["driven"]
+  hint_vi: "Chỗ đầu nghĩa là tăng. Chỗ sau đi với by, cả cụm nghĩa là do cái gì mà có."
+  sample_en: "Revenue is up from 1.2 to 1.5 million. That's driven by three enterprise deals."
+
+quiz:
+  - kind: mcq
+    prompt_vi: "Báo cáo số liệu nên bắt đầu bằng gì?"
+    choices: ["Bảng số từ trên xuống", "Kết luận trong một câu", "Bối cảnh thị trường"]
+    answer: 1
+    difficulty: 2
+    skill: Speaking
+  - kind: mcq
+    prompt_vi: "\"Margin stayed flat\" nghĩa là gì?"
+    choices: ["Biên lợi nhuận giảm mạnh", "Biên lợi nhuận không đổi", "Biên lợi nhuận âm"]
+    answer: 1
+    difficulty: 1
+    skill: Listening
+  - kind: mcq
+    prompt_vi: "Vì sao nên nói CẢ HAI đầu khi báo mức thay đổi?"
+    choices: ["Cho câu dài hơn", "Vì quy định báo cáo", "Vì chỉ nói con số cuối thì người nghe không biết đó là tốt hay xấu"]
+    answer: 2
+    difficulty: 3
+    skill: Reading
+  - kind: mcq
+    prompt_vi: "\"Quarter on quarter\" nghĩa là gì?"
+    choices: ["So với quý trước", "So với cùng kỳ năm ngoái", "Trung bình bốn quý"]
+    answer: 0
+    difficulty: 2
+    skill: Listening
+
+explanation:
+  why_vi: >
+    Người Việt báo cáo số liệu hay đọc bảng từ trên xuống dưới, để kết luận ở cuối cho
+    trọn vẹn. Lãnh đạo nước ngoài thì quen nghe kết luận TRƯỚC, rồi mới nghe số để kiểm
+    chứng — và họ thường chỉ nghe hết ba mươi giây đầu.
+  how_vi: >
+    Ba lớp, theo đúng thứ tự. KẾT LUẬN một câu: "The headline is: ..."
+    CON SỐ kèm cả hai đầu: "up from A to B" — chỉ nói B thì người nghe không biết tốt hay xấu.
+    NGUYÊN NHÂN: "That's driven by ..." Nói được ba lớp này thì mọi câu hỏi tiếp theo
+    đều là câu hỏi tốt.
+  contrast_vi: >
+    "Revenue is 1.5 million" là một con số. "Revenue is up from 1.2 to 1.5, driven by three
+    enterprise deals" là một câu chuyện — và người nghe nhớ được câu chuyện.
+
+common_mistakes:
+  - mistake: "Đọc bảng số từ trên xuống, để kết luận ở cuối"
+    why_vi: >
+      Thói quen trình bày theo trình tự cho đầy đủ. Nhưng người nghe cần biết ngay là
+      tin tốt hay tin xấu để quyết định nghe kỹ tới đâu.
+    fix_vi: "Mở đầu bằng \"The headline is: ...\" rồi mới tới số."
+  - mistake: "Chỉ nói con số hiện tại, không nói mức cũ"
+    why_vi: >
+      Người báo cáo đã biết bối cảnh nên thấy con số tự nói lên tất cả. Người nghe thì
+      không có mốc so, nên 18% là tốt hay tệ họ không biết.
+    fix_vi: "Luôn nói \"up from A to B\" hoặc \"down from A to B\"."
+  - mistake: "Nêu số xấu mà không nói đang làm gì"
+    why_vi: >
+      Ngại nói phần tệ nên nói nhanh rồi chuyển. Nhưng lãnh đạo lo nhất khi thấy một con số
+      xấu mà không ai có kế hoạch.
+    fix_vi: "Số xấu luôn kèm một câu: nguyên nhân, và việc đang làm để sửa."
+
+memory_trick_vi: >
+  Ba lớp theo thứ tự: KẾT LUẬN "The headline is...", SỐ kèm cả hai đầu "up from A to B",
+  NGUYÊN NHÂN "That's driven by..." Số xấu thì thêm một câu: đang làm gì để sửa.

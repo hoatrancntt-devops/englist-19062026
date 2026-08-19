@@ -1,0 +1,271 @@
+schema_version: 1
+code: BIZ-08
+slug: phong-van-tuyen-dung
+title_vi: "Phỏng vấn tuyển dụng — ở vai người tuyển"
+title_en: "Interviewing a candidate"
+
+layer: Professional
+track: Business
+level: B1
+unit_code: U-BIZ
+order_index: 8
+estimated_minutes: 12
+
+illustration: handshake-intro
+
+objective_vi: >
+  Dẫn một buổi phỏng vấn: mở đầu cho ứng viên bớt căng, hỏi để lấy ví dụ thật
+  thay vì lời tự nhận xét, và kết thúc mà không hứa hão.
+
+objective_observable: >
+  Hỏi được câu lấy ví dụ cụ thể trong 3 trên 4 drill, và kết buổi bằng bước tiếp theo rõ ràng.
+
+mastery_weights:
+  Listening: 0.35
+  Speaking: 0.35
+  Reading: 0.15
+  Writing: 0.15
+
+prerequisites:
+  - lesson: BIZ-07
+    min_mastery: 65
+    kind: Hard
+
+vocabulary:
+  - term: "Tell me about a time when"
+    ipa: "/tel miː əˈbaʊt ə taɪm wen/"
+    meaning_vi: "kể tôi nghe một lần khi (câu hỏi lấy ví dụ thật)"
+    chunk: "Tell me about a time when a deploy went wrong."
+    tags: [business, hiring, core]
+  - term: "What did you do specifically"
+    ipa: "/wɒt dɪd juː duː spəˈsɪfɪkli/"
+    meaning_vi: "cụ thể anh chị đã làm gì (tách phần của họ khỏi phần của đội)"
+    chunk: "What did you do specifically?"
+    tags: [business, hiring, core]
+  - term: "walk me through it"
+    ipa: "/wɔːk miː θruː ɪt/"
+    meaning_vi: "kể tôi nghe từng bước"
+    chunk: "Walk me through it from the alert to the fix."
+    tags: [business, hiring]
+  - term: "take your time"
+    ipa: "/teɪk jɔːr taɪm/"
+    meaning_vi: "cứ từ từ (làm ứng viên bớt căng)"
+    chunk: "Take your time, there's no rush."
+    tags: [business, hiring]
+  - term: "we'll get back to you by"
+    ipa: "/wiːl ɡet bæk tuː juː baɪ/"
+    meaning_vi: "chúng tôi sẽ phản hồi trước ngày"
+    chunk: "We'll get back to you by Friday."
+    tags: [business, hiring]
+  - term: "What questions do you have"
+    ipa: "/wɒt ˈkwestʃənz duː juː hæv/"
+    meaning_vi: "anh chị có câu hỏi gì (mở hơn Any questions)"
+    chunk: "What questions do you have for us?"
+    tags: [business, hiring]
+
+sentence_patterns:
+  - pattern: "Tell me about a time when {situation}."
+    meaning_vi: "Kể tôi nghe một lần khi {situation}."
+    slots:
+      situation: ["a deploy went wrong", "you disagreed with your lead", "you had to learn something fast"]
+  - pattern: "We'll get back to you by {day}."
+    meaning_vi: "Bọn tôi sẽ phản hồi trước {day}."
+    slots:
+      day: ["Friday", "the end of next week", "Wednesday"]
+
+dialogue:
+  context_vi: >
+    Bạn phỏng vấn một ứng viên nước ngoài cho vị trí kỹ sư hạ tầng. Ứng viên
+    đang căng, và câu trả lời đầu tiên toàn lời tự nhận xét.
+  turns:
+    - speaker: "You"
+      en: "Thanks for joining. Take your time, there's no rush."
+      vi: "Cảm ơn anh đã tham gia. Cứ từ từ, không vội đâu."
+    - speaker: "Candidate"
+      en: "Thank you. I'd say I'm very good under pressure."
+      vi: "Cảm ơn chị. Tôi nghĩ mình rất tốt khi chịu áp lực."
+    - speaker: "You"
+      en: "Tell me about a time when a deploy went wrong. Walk me through it from the alert to the fix."
+      vi: "Anh kể tôi nghe một lần triển khai bị hỏng. Kể từng bước từ lúc có cảnh báo tới lúc sửa xong."
+    - speaker: "Candidate"
+      en: "We had a database migration fail at 2 AM. The team rolled back."
+      vi: "Bọn tôi có một lần chuyển đổi cơ sở dữ liệu hỏng lúc 2 giờ sáng. Đội đã quay lui."
+    - speaker: "You"
+      en: "What did you do specifically?"
+      vi: "Cụ thể anh đã làm gì?"
+    - speaker: "Candidate"
+      en: "I made the rollback call and wrote the postmortem. It took twenty minutes."
+      vi: "Tôi là người quyết định quay lui và viết postmortem. Mất hai mươi phút."
+    - speaker: "You"
+      en: "Good. What questions do you have for us? We'll get back to you by Friday."
+      vi: "Tốt. Anh có câu hỏi gì cho bọn tôi không? Bọn tôi sẽ phản hồi trước thứ Sáu."
+
+listening:
+  context_vi: >
+    Nghe một đoạn phỏng vấn. Chú ý câu người tuyển dùng để tách phần ứng viên
+    thật sự làm khỏi phần cả đội làm.
+  speed: 1.0
+  voice: en_US_female
+  transcript_en: "Tell me about a time when you disagreed with your lead. We wanted to ship on Friday, I thought it was too risky. What did you do specifically? I wrote up the three failure cases and asked for one more day of testing. And what happened? We shipped Monday. No incidents."
+  transcript_vi: "Kể tôi nghe một lần anh không đồng ý với trưởng nhóm. Bọn tôi muốn phát hành thứ Sáu, tôi thấy quá rủi ro. Cụ thể anh đã làm gì? Tôi viết ra ba tình huống có thể hỏng và xin thêm một ngày kiểm thử. Rồi sao? Bọn tôi phát hành thứ Hai. Không có sự cố nào."
+  questions:
+    - kind: mcq_listen
+      prompt_vi: "Ứng viên đã làm gì cụ thể?"
+      choices: ["Báo cáo lên cấp trên", "Từ chối tham gia", "Viết ra ba tình huống hỏng và xin thêm một ngày"]
+      answer: 2
+      difficulty: 2
+      skill: Listening
+    - kind: mcq_listen
+      prompt_vi: "Kết quả cuối cùng ra sao?"
+      choices: ["Phát hành thứ Hai, không sự cố", "Phát hành thứ Sáu như kế hoạch", "Huỷ bản phát hành"]
+      answer: 0
+      difficulty: 2
+      skill: Listening
+
+speaking_drills:
+  - kind: read_aloud
+    expected_text: "Tell me about a time when a deploy went wrong."
+    prompt_vi: "Câu hỏi lấy ví dụ THẬT. Đừng hỏi \"anh có giỏi xử lý sự cố không\"."
+    ipa: "/tel miː əˈbaʊt ə taɪm wen/"
+    focus_phonemes: ["t", "w"]
+  - kind: read_aloud
+    expected_text: "What did you do specifically?"
+    prompt_vi: "Tách phần của họ khỏi phần của đội. Trọng âm: spe-CI-fically."
+    ipa: "/wɒt dɪd juː duː spəˈsɪfɪkli/"
+    focus_phonemes: ["sp", "f"]
+  - kind: shadow
+    expected_text: "Take your time, there's no rush."
+    prompt_vi: "Làm ứng viên bớt căng. Người căng thẳng trả lời tệ hơn khả năng thật."
+    ipa: "/teɪk jɔːr taɪm ðerz noʊ rʌʃ/"
+    focus_phonemes: ["j", "rʌʃ"]
+  - kind: shadow
+    expected_text: "We'll get back to you by Friday."
+    prompt_vi: "Kết buổi bằng mốc cụ thể, không nói \"chúng tôi sẽ liên hệ\"."
+    ipa: "/wiːl ɡet bæk tuː juː baɪ ˈfraɪdeɪ/"
+    focus_phonemes: ["l", "fr"]
+  - kind: respond
+    prompt_en: "I'd say I'm very good under pressure."
+    prompt_vi: "Ứng viên tự nhận xét. Hỏi ra một ví dụ thật."
+    accept_patterns:
+      - "Tell me about a time"
+      - "example"
+      - "Walk me through"
+
+reading:
+  kind: chat
+  context_vi: >
+    Ghi chú đánh giá ứng viên gửi cho đội tuyển dụng. Đọc để thấy đâu là bằng chứng, đâu là cảm tính.
+  text_en: |
+    Candidate: R. Kumar - Infrastructure Engineer
+
+    Evidence:
+    - Made the rollback call on a failed 2AM migration, alone. 20 min to recover.
+    - Wrote the postmortem. Distinguished trigger from root cause correctly.
+    - Pushed back on a Friday release with three written failure cases.
+
+    Gaps:
+    - No cloud cost experience. Would need ramp-up.
+
+    Recommend: yes, with a cost-focused onboarding.
+    Committed to reply by Friday.
+  text_vi: |
+    Ứng viên: R. Kumar - Kỹ sư Hạ tầng
+
+    Bằng chứng:
+    - Tự quyết định quay lui một lần chuyển đổi hỏng lúc 2 giờ sáng. Khôi phục trong 20 phút.
+    - Viết postmortem. Phân biệt đúng thứ châm ngòi với nguyên nhân gốc.
+    - Phản đối bản phát hành thứ Sáu kèm ba tình huống hỏng viết ra giấy.
+
+    Còn thiếu:
+    - Chưa có kinh nghiệm về chi phí cloud. Cần thời gian làm quen.
+
+    Đề xuất: nhận, kèm chương trình làm quen tập trung vào chi phí.
+    Đã hẹn phản hồi trước thứ Sáu.
+  questions:
+    - kind: mcq_read
+      prompt_en: "What makes this evaluation useful?"
+      choices: ["It is short", "It lists specific evidence, not impressions", "It recommends hiring"]
+      answer: 1
+      difficulty: 3
+      reading_skill: detail
+      skill: Reading
+    - kind: mcq_read
+      prompt_en: "What is the candidate's main gap?"
+      choices: ["Cloud cost experience", "Incident handling", "Written communication"]
+      answer: 0
+      difficulty: 1
+      reading_skill: scan
+      skill: Reading
+
+writing:
+  kind: FillBlank
+  prompt_vi: "Điền hai chỗ trống: câu hỏi lấy ví dụ và câu tách phần cá nhân."
+  prompt_en: "___ me about a time when a deploy went wrong. What did you do ___?"
+  blanks:
+    - ["Tell"]
+    - ["specifically"]
+  hint_vi: "Chỗ đầu là động từ mở câu hỏi kể chuyện. Chỗ sau là trạng từ nghĩa là một cách cụ thể."
+  sample_en: "Tell me about a time when a deploy went wrong. What did you do specifically?"
+
+quiz:
+  - kind: mcq
+    prompt_vi: "Ứng viên nói \"tôi rất giỏi làm việc nhóm\". Nên hỏi gì?"
+    choices: ["Anh làm nhóm mấy năm rồi", "Đồng nghiệp đánh giá anh thế nào", "Kể tôi nghe một lần cụ thể"]
+    answer: 2
+    difficulty: 2
+    skill: Speaking
+  - kind: mcq
+    prompt_vi: "Vì sao phải hỏi \"What did you do specifically?\""
+    choices: ["Để ứng viên nói nhiều hơn", "Vì ứng viên hay dùng \"we\" và không rõ phần nào là của họ", "Để kiểm tra trí nhớ"]
+    answer: 1
+    difficulty: 3
+    skill: Reading
+  - kind: mcq
+    prompt_vi: "Kết thúc buổi phỏng vấn nên nói gì?"
+    choices: ["Chúng tôi sẽ liên hệ", "Anh chờ tin nhé", "Bọn tôi sẽ phản hồi trước thứ Sáu"]
+    answer: 2
+    difficulty: 2
+    skill: Speaking
+  - kind: mcq
+    prompt_vi: "Vì sao mở đầu bằng \"Take your time\"?"
+    choices: ["Cho buổi dài hơn", "Vì lịch sự", "Vì người căng thẳng trả lời tệ hơn khả năng thật, và bạn muốn đánh giá đúng"]
+    answer: 2
+    difficulty: 3
+    skill: Listening
+
+explanation:
+  why_vi: >
+    Ở vai người tuyển, sai lầm phổ biến nhất là hỏi những câu chỉ nhận về lời tự nhận xét:
+    "anh có chịu được áp lực không", "anh làm việc nhóm thế nào". Ứng viên nào cũng trả lời
+    tốt, và bạn không biết gì thêm. Câu hỏi lấy được thông tin là câu bắt họ kể một chuyện
+    đã xảy ra.
+  how_vi: >
+    Ba câu là đủ cho phần chuyên môn. LẤY VÍ DỤ: "Tell me about a time when ..."
+    ĐÀO SÂU: "Walk me through it" — bắt kể từng bước, người bịa sẽ hụt ở đây.
+    TÁCH PHẦN CÁ NHÂN: "What did you do specifically?" — ứng viên hay dùng "we",
+    và câu này tách ra phần nào thật sự là của họ.
+  contrast_vi: >
+    "Are you good under pressure?" nhận về một chữ Yes. "Tell me about a time when a deploy
+    went wrong" nhận về một câu chuyện có thời gian, con số và quyết định — thứ kiểm chứng được.
+
+common_mistakes:
+  - mistake: "Hỏi câu chỉ nhận về lời tự nhận xét"
+    why_vi: >
+      Câu kiểu "anh có giỏi X không" dễ hỏi và nghe hợp lý. Nhưng mọi ứng viên đều trả lời
+      có, nên câu đó không phân biệt được ai với ai.
+    fix_vi: "Đổi thành \"Tell me about a time when ...\" Mọi câu hỏi năng lực đều đổi được sang dạng này."
+  - mistake: "Không tách phần cá nhân khỏi phần của đội"
+    why_vi: >
+      Ứng viên kể bằng "we" theo thói quen, không hẳn cố ý nhận công. Nhưng bạn cần biết
+      họ làm được gì một mình, chứ không phải đội cũ của họ giỏi tới đâu.
+    fix_vi: "Hỏi \"What did you do specifically?\" ngay sau mỗi câu chuyện dùng chữ we."
+  - mistake: "Kết thúc bằng \"chúng tôi sẽ liên hệ\""
+    why_vi: >
+      Câu này không có mốc nên ứng viên chờ trong vô định, và những người giỏi thường
+      đã nhận lời nơi khác trước khi bạn kịp gọi.
+    fix_vi: "Luôn nêu ngày: \"We'll get back to you by Friday.\" Rồi giữ đúng lời."
+
+memory_trick_vi: >
+  Ba câu cho phần chuyên môn: VÍ DỤ "Tell me about a time when...",
+  TỪNG BƯỚC "Walk me through it", PHẦN CỦA ANH "What did you do specifically?"
+  Kết buổi luôn kèm một NGÀY cụ thể.

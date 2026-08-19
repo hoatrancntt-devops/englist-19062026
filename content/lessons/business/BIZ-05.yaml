@@ -1,0 +1,268 @@
+schema_version: 1
+code: BIZ-05
+slug: email-chao-hang-va-theo-duoi
+title_vi: "Email chào hàng và theo đuổi khách"
+title_en: "Outreach and follow-up emails"
+
+layer: Professional
+track: Business
+level: B1
+unit_code: U-BIZ
+order_index: 5
+estimated_minutes: 12
+
+illustration: email-inbox
+
+objective_vi: >
+  Viết email chào hàng bốn dòng mà người ta đọc hết, và theo đuổi khách im lặng
+  mà không nghe như đang làm phiền.
+
+objective_observable: >
+  Viết được email chào hàng đủ bốn phần trong 3 trên 4 drill, và một email theo đuổi có giá trị mới.
+
+mastery_weights:
+  Listening: 0.15
+  Speaking: 0.20
+  Reading: 0.25
+  Writing: 0.40
+
+prerequisites:
+  - lesson: BIZ-04
+    min_mastery: 65
+    kind: Hard
+
+vocabulary:
+  - term: "I noticed"
+    ipa: "/aɪ ˈnoʊtɪst/"
+    meaning_vi: "tôi để ý thấy (mở đầu bằng thứ riêng của họ)"
+    chunk: "I noticed you just opened a second data centre."
+    tags: [business, email, core]
+  - term: "worth a short call"
+    ipa: "/wɜːrθ ə ʃɔːrt kɔːl/"
+    meaning_vi: "đáng để gọi nhau một cuộc ngắn"
+    chunk: "Might be worth a short call."
+    tags: [business, email]
+  - term: "circling back"
+    ipa: "/ˈsɜːrklɪŋ bæk/"
+    meaning_vi: "quay lại chuyện cũ (theo đuổi)"
+    chunk: "Circling back on my note from last week."
+    tags: [business, email]
+  - term: "no rush"
+    ipa: "/noʊ rʌʃ/"
+    meaning_vi: "không gấp đâu (giảm áp lực)"
+    chunk: "No rush — just let me know either way."
+    tags: [business, email]
+  - term: "either way"
+    ipa: "/ˈaɪðər weɪ/"
+    meaning_vi: "dù có hay không"
+    chunk: "Let me know either way."
+    tags: [business, email]
+  - term: "close the loop"
+    ipa: "/kloʊz ðə luːp/"
+    meaning_vi: "chốt lại cho xong (email cuối cùng)"
+    chunk: "Just closing the loop on this."
+    tags: [business, email]
+
+sentence_patterns:
+  - pattern: "I noticed {observation}."
+    meaning_vi: "Tôi để ý thấy {observation}."
+    slots:
+      observation: ["you just opened a second data centre", "your team is hiring cloud engineers", "you moved to a new platform"]
+  - pattern: "Would {time} work for a short call?"
+    meaning_vi: "{time} gọi nhau một cuộc ngắn được không?"
+    slots:
+      time: ["Thursday morning", "next week", "fifteen minutes on Friday"]
+
+dialogue:
+  context_vi: >
+    Bạn muốn tiếp cận một công ty chưa quen biết. Email đầu tiên có khoảng năm giây
+    để người ta quyết định đọc tiếp hay xoá.
+  turns:
+    - speaker: "You"
+      en: "Subject: Second data centre — storage costs"
+      vi: "Tiêu đề: Trung tâm dữ liệu thứ hai — chi phí lưu trữ"
+    - speaker: "You"
+      en: "Hi Wei, I noticed Northwind opened a second data centre last month."
+      vi: "Chào Wei, tôi để ý thấy Northwind vừa mở trung tâm dữ liệu thứ hai tháng trước."
+    - speaker: "You"
+      en: "Teams doing that usually see storage costs jump before the second quarter."
+      vi: "Các đội làm việc đó thường thấy chi phí lưu trữ tăng vọt trước quý hai."
+    - speaker: "You"
+      en: "We cut that by forty percent for a logistics firm your size."
+      vi: "Bọn tôi đã giảm được bốn mươi phần trăm cho một công ty logistics cỡ như bên anh."
+    - speaker: "You"
+      en: "Would Thursday morning work for a short call? No rush — let me know either way."
+      vi: "Sáng thứ Năm gọi nhau một cuộc ngắn được không? Không gấp đâu — anh cho tôi biết dù có hay không."
+    - speaker: "Client"
+      en: "Thursday works. Keep it to twenty minutes."
+      vi: "Thứ Năm được. Gói trong hai mươi phút nhé."
+
+listening:
+  context_vi: >
+    Nghe một người đọc to email theo đuổi. Chú ý nó KHÔNG nhắc lại email cũ
+    mà mang tới một thứ mới.
+  speed: 1.0
+  voice: en_US_female
+  transcript_en: "Hi Wei, circling back on my note from last week. We just published a short case study on the exact setup you have, two data centres and audit retention. I attached it. Worth a fifteen-minute call? No rush, just let me know either way."
+  transcript_vi: "Chào Wei, tôi quay lại chuyện tuần trước. Bọn tôi vừa công bố một nghiên cứu tình huống ngắn đúng mô hình bên anh, hai trung tâm dữ liệu và lưu trữ cho kiểm toán. Tôi đính kèm rồi. Gọi nhau mười lăm phút được không? Không gấp đâu, anh cho tôi biết dù có hay không."
+  questions:
+    - kind: mcq_listen
+      prompt_vi: "Email theo đuổi này mang tới thứ gì mới?"
+      choices: ["Một nghiên cứu tình huống đúng mô hình của khách", "Một bảng giá mới", "Một lời mời sự kiện"]
+      answer: 0
+      difficulty: 2
+      skill: Listening
+    - kind: mcq_listen
+      prompt_vi: "Người gửi đề nghị cuộc gọi dài bao lâu?"
+      choices: ["Ba mươi phút", "Mười lăm phút", "Một tiếng"]
+      answer: 1
+      difficulty: 1
+      skill: Listening
+
+speaking_drills:
+  - kind: read_aloud
+    expected_text: "I noticed Northwind opened a second data centre."
+    prompt_vi: "Mở đầu bằng thứ RIÊNG của họ, không phải giới thiệu bản thân."
+    ipa: "/aɪ ˈnoʊtɪst/"
+    focus_phonemes: ["n", "st"]
+  - kind: read_aloud
+    expected_text: "Would Thursday morning work for a short call?"
+    prompt_vi: "Đề nghị cụ thể. Âm /θ/ đầu chữ Thursday đưa lưỡi ra."
+    ipa: "/wʊd ˈθɜːrzdeɪ ˈmɔːrnɪŋ wɜːrk/"
+    focus_phonemes: ["θ", "w"]
+  - kind: shadow
+    expected_text: "Circling back on my note from last week."
+    prompt_vi: "Mở đầu email theo đuổi. Trọng âm ở âm đầu: CIR-cling."
+    ipa: "/ˈsɜːrklɪŋ bæk ɒn maɪ noʊt/"
+    focus_phonemes: ["s", "kl"]
+  - kind: shadow
+    expected_text: "No rush — just let me know either way."
+    prompt_vi: "Giảm áp lực. Câu này làm người ta dễ trả lời hơn hẳn."
+    ipa: "/noʊ rʌʃ dʒʌst let miː noʊ ˈaɪðər weɪ/"
+    focus_phonemes: ["rʌʃ", "ð"]
+  - kind: respond
+    prompt_en: "Why are you reaching out to us?"
+    prompt_vi: "Khách hỏi vì sao bạn liên hệ. Mở đầu bằng thứ bạn để ý thấy ở họ."
+    accept_patterns:
+      - "I noticed"
+      - "I saw"
+      - "your"
+
+reading:
+  kind: chat
+  context_vi: >
+    Hai email chào hàng cùng gửi tới một người. Đọc và so xem cái nào được trả lời.
+  text_en: |
+    EMAIL A
+    Subject: Introduction to Vertex Solutions
+    Dear Sir/Madam, Vertex was founded in 2015 and is a leading provider of cloud
+    optimisation services with over 200 clients worldwide. Our portfolio includes...
+
+    EMAIL B
+    Subject: Second data centre - storage costs
+    Hi Wei, I noticed Northwind opened a second data centre last month. Teams doing
+    that usually see storage costs jump before Q2. We cut that 40% for a logistics
+    firm your size. Would Thursday work for a short call?
+  text_vi: |
+    EMAIL A
+    Tiêu đề: Giới thiệu về Vertex Solutions
+    Kính gửi Quý ông/Quý bà, Vertex thành lập năm 2015 và là nhà cung cấp hàng đầu về
+    dịch vụ tối ưu cloud với hơn 200 khách hàng toàn cầu. Danh mục của chúng tôi gồm...
+
+    EMAIL B
+    Tiêu đề: Trung tâm dữ liệu thứ hai - chi phí lưu trữ
+    Chào Wei, tôi để ý thấy Northwind vừa mở trung tâm dữ liệu thứ hai tháng trước. Các đội
+    làm việc đó thường thấy chi phí lưu trữ tăng vọt trước quý 2. Bọn tôi giảm được 40%
+    cho một công ty logistics cỡ như bên anh. Thứ Năm gọi nhau ngắn được không?
+  questions:
+    - kind: mcq_read
+      prompt_en: "Why is email B more likely to get a reply?"
+      choices: ["It is longer", "It lists more clients", "It opens with something specific about the reader"]
+      answer: 2
+      difficulty: 2
+      reading_skill: detail
+      skill: Reading
+    - kind: mcq_read
+      prompt_en: "What does email A talk about first?"
+      choices: ["Itself", "The reader", "The price"]
+      answer: 0
+      difficulty: 1
+      reading_skill: scan
+      skill: Reading
+
+writing:
+  kind: GuidedEmail
+  prompt_vi: >
+    Viết email chào hàng bốn câu cho một công ty vừa mở văn phòng thứ hai:
+    điều bạn để ý thấy, vấn đề thường đi kèm, kết quả bạn từng làm được, và đề nghị một cuộc gọi.
+  prompt_en: "Write a four-sentence outreach email to a company that just opened a second office."
+  hint_vi: "Câu một bắt đầu bằng I noticed. Câu cuối là một đề nghị cụ thể kèm no rush."
+  required_points:
+    - "noticed"
+    - "call"
+  sample_en: >
+    Hi Wei, I noticed Northwind opened a second office last month. Teams doing that usually
+    see support tickets double within a quarter. We cut response time by half for a firm
+    your size. Would Thursday work for a short call? No rush, just let me know either way.
+
+quiz:
+  - kind: mcq
+    prompt_vi: "Email chào hàng nên mở đầu bằng gì?"
+    choices: ["Giới thiệu công ty mình", "Một thứ cụ thể bạn để ý thấy ở HỌ", "Bảng giá"]
+    answer: 1
+    difficulty: 2
+    skill: Writing
+  - kind: mcq
+    prompt_vi: "Email theo đuổi lần hai nên có gì?"
+    choices: ["Nhắc lại email cũ", "Một thứ MỚI có giá trị", "Lời xin lỗi vì làm phiền"]
+    answer: 1
+    difficulty: 3
+    skill: Writing
+  - kind: mcq
+    prompt_vi: "\"No rush — just let me know either way\" có tác dụng gì?"
+    choices: ["Giảm áp lực nên người ta dễ trả lời hơn", "Cho thấy bạn không cần hợp đồng", "Kéo dài thời gian chờ"]
+    answer: 0
+    difficulty: 2
+    skill: Reading
+  - kind: mcq
+    prompt_vi: "\"Closing the loop\" dùng khi nào?"
+    choices: ["Email đầu tiên", "Email cuối cùng trước khi dừng theo đuổi", "Sau khi ký hợp đồng"]
+    answer: 1
+    difficulty: 2
+    skill: Reading
+
+explanation:
+  why_vi: >
+    Email chào hàng của người Việt hay mở đầu bằng "Kính gửi Quý công ty, chúng tôi là..."
+    — đúng văn phong công văn nhưng người nhận đọc hai dòng đầu là biết đây là thư hàng loạt
+    và xoá. Người ta chỉ đọc tiếp khi hai dòng đầu nói về CHÍNH HỌ.
+  how_vi: >
+    Bốn câu, không hơn. MỘT: "I noticed ..." — một thứ cụ thể về họ, có thật, kiểm được.
+    HAI: vấn đề thường đi kèm thứ đó. BA: kết quả bạn từng làm được, có con số.
+    BỐN: đề nghị cụ thể kèm "No rush — let me know either way."
+    Theo đuổi thì KHÔNG nhắc lại email cũ, mà mang tới một thứ mới.
+  contrast_vi: >
+    "Chúng tôi là nhà cung cấp hàng đầu" nói về bạn và ai cũng viết được câu đó.
+    "I noticed you opened a second data centre" chỉ viết được nếu bạn thật sự tìm hiểu họ —
+    và người nhận biết điều đó ngay.
+
+common_mistakes:
+  - mistake: "Mở đầu bằng giới thiệu công ty mình"
+    why_vi: >
+      Thói quen từ công văn và hồ sơ năng lực. Nhưng người nhận chưa có lý do gì để quan tâm
+      bạn là ai, và dòng đầu là chỗ duy nhất bạn có để tạo ra lý do đó.
+    fix_vi: "Đổi dòng đầu thành \"I noticed ...\" cộng một chi tiết thật về họ. Giới thiệu để dòng ba."
+  - mistake: "Theo đuổi bằng cách hỏi \"anh đã xem email chưa\""
+    why_vi: >
+      Câu đó không mang lại gì cho người nhận, chỉ nhắc họ rằng họ đang nợ bạn một câu trả lời.
+      Phản xạ tự nhiên là để đó thêm lần nữa.
+    fix_vi: "Mỗi lần theo đuổi mang một thứ MỚI: một case study, một số liệu, một bài viết. Không có gì mới thì đừng gửi."
+  - mistake: "Viết email dài để trình bày đủ ý"
+    why_vi: >
+      Sợ nói thiếu nên viết dài. Nhưng email chào hàng chỉ có mục tiêu duy nhất là xin
+      một cuộc gọi — mọi thứ khác để dành cho cuộc gọi đó.
+    fix_vi: "Bốn câu. Nếu dài hơn, cắt cho tới khi còn bốn."
+
+memory_trick_vi: >
+  Bốn câu: TÔI ĐỂ Ý "I noticed...", VẤN ĐỀ thường đi kèm, KẾT QUẢ có số, ĐỀ NGHỊ kèm "no rush".
+  Theo đuổi thì mang thứ MỚI, đừng hỏi "đã xem chưa".

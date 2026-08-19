@@ -1,0 +1,270 @@
+schema_version: 1
+code: BIZ-04
+slug: dam-phan-va-xu-ly-tu-choi
+title_vi: "Đàm phán và xử lý từ chối"
+title_en: "Negotiating and handling objections"
+
+layer: Professional
+track: Business
+level: B1
+unit_code: U-BIZ
+order_index: 4
+estimated_minutes: 12
+
+illustration: video-call
+
+objective_vi: >
+  Nhượng bộ có điều kiện thay vì cho không, và trả lời ba câu từ chối hay gặp nhất
+  mà không tranh cãi với khách.
+
+objective_observable: >
+  Đưa được một nhượng bộ có điều kiện trong 3 trên 4 drill, và xử lý một lời từ chối.
+
+mastery_weights:
+  Listening: 0.25
+  Speaking: 0.40
+  Reading: 0.15
+  Writing: 0.20
+
+prerequisites:
+  - lesson: BIZ-03
+    min_mastery: 65
+    kind: Hard
+
+vocabulary:
+  - term: "If you can, then we can"
+    ipa: "/ɪf juː kæn ðen wiː kæn/"
+    meaning_vi: "nếu anh chị làm được thì bên tôi làm được (nhượng bộ có điều kiện)"
+    chunk: "If you can commit to two years, then we can hold this price."
+    tags: [business, negotiation, core]
+  - term: "I hear you"
+    ipa: "/aɪ hɪr juː/"
+    meaning_vi: "tôi hiểu ý anh chị (ghi nhận trước khi trả lời)"
+    chunk: "I hear you. Let me address that."
+    tags: [business, objection]
+  - term: "help me understand"
+    ipa: "/help miː ˌʌndərˈstænd/"
+    meaning_vi: "giúp tôi hiểu rõ hơn"
+    chunk: "Help me understand what's behind that."
+    tags: [business, objection]
+  - term: "the sticking point"
+    ipa: "/ðə ˈstɪkɪŋ pɔɪnt/"
+    meaning_vi: "điểm vướng mắc"
+    chunk: "Is price the sticking point, or is it timing?"
+    tags: [business, negotiation]
+  - term: "walk away from"
+    ipa: "/wɔːk əˈweɪ frɒm/"
+    meaning_vi: "rút khỏi, bỏ thương vụ"
+    chunk: "We'd rather walk away than promise a date we can't hit."
+    tags: [business, negotiation]
+  - term: "where does that leave us"
+    ipa: "/wer dʌz ðæt liːv ʌs/"
+    meaning_vi: "vậy giờ mình đứng ở đâu (chốt lại tình hình)"
+    chunk: "So where does that leave us?"
+    tags: [business, negotiation]
+
+sentence_patterns:
+  - pattern: "If you can {their side}, then we can {our side}."
+    meaning_vi: "Nếu anh chị {their side}, thì bên tôi {our side}."
+    slots:
+      their side: ["commit to two years", "sign this month", "start with one environment"]
+      our side: ["hold this price", "include onboarding", "add the second environment free"]
+  - pattern: "Is {A} the sticking point, or is it {B}?"
+    meaning_vi: "Vướng ở {A} hay ở {B}?"
+    slots:
+      A: ["price", "the timeline", "the contract"]
+      B: ["timing", "scope", "approval"]
+
+dialogue:
+  context_vi: >
+    Buổi thứ ba. Khách muốn giảm giá hai mươi phần trăm. Bạn không được phép giảm
+    nhiều vậy, nhưng vẫn còn cách để đi tiếp.
+  turns:
+    - speaker: "Client"
+      en: "We can do this, but we need twenty percent off."
+      vi: "Bọn tôi làm được, nhưng cần giảm hai mươi phần trăm."
+    - speaker: "You"
+      en: "I hear you. Help me understand — is price the sticking point, or is it the first-year total?"
+      vi: "Tôi hiểu ý anh. Giúp tôi hiểu rõ hơn — vướng ở đơn giá, hay ở tổng chi năm đầu?"
+    - speaker: "Client"
+      en: "Honestly it's year one. Our budget resets in April."
+      vi: "Thật ra là năm đầu. Ngân sách bọn tôi đặt lại vào tháng Tư."
+    - speaker: "You"
+      en: "That helps. If you can sign for two years, then we can move the onboarding fee into year two."
+      vi: "Vậy thì rõ rồi. Nếu anh ký hai năm, bên tôi chuyển phí triển khai sang năm thứ hai."
+    - speaker: "Client"
+      en: "So year one drops to thirty-two?"
+      vi: "Vậy năm đầu còn ba mươi hai?"
+    - speaker: "You"
+      en: "Correct, with the same scope. So where does that leave us?"
+      vi: "Đúng vậy, phạm vi giữ nguyên. Vậy giờ mình đứng ở đâu ạ?"
+
+listening:
+  context_vi: >
+    Nghe một lượt xử lý từ chối. Chú ý người bán KHÔNG cãi lại, mà hỏi ra
+    thứ đứng sau lời từ chối.
+  speed: 1.0
+  voice: en_US_male
+  transcript_en: "We're happy with our current vendor. I hear you. Help me understand what's working well there. They respond fast when something breaks. That matters. If response time is the priority, then we can put a two-hour guarantee in writing. Our current one is four hours."
+  transcript_vi: "Bọn tôi đang hài lòng với nhà cung cấp hiện tại. Tôi hiểu. Giúp tôi hiểu bên đó tốt ở điểm nào. Họ phản hồi nhanh khi có sự cố. Điều đó quan trọng. Nếu thời gian phản hồi là ưu tiên, bên tôi ghi cam kết hai tiếng vào hợp đồng. Bên hiện tại là bốn tiếng."
+  questions:
+    - kind: mcq_listen
+      prompt_vi: "Khách hài lòng với nhà cung cấp cũ ở điểm nào?"
+      choices: ["Giá rẻ", "Phản hồi nhanh khi có sự cố", "Nhiều tính năng"]
+      answer: 1
+      difficulty: 2
+      skill: Listening
+    - kind: mcq_listen
+      prompt_vi: "Người bán đề nghị gì?"
+      choices: ["Giảm giá", "Tặng thêm tính năng", "Cam kết phản hồi hai tiếng bằng văn bản"]
+      answer: 2
+      difficulty: 2
+      skill: Listening
+
+speaking_drills:
+  - kind: read_aloud
+    expected_text: "I hear you. Let me address that."
+    prompt_vi: "Ghi nhận trước khi trả lời. Đừng bắt đầu bằng \"But\"."
+    ipa: "/aɪ hɪr juː let miː əˈdres ðæt/"
+    focus_phonemes: ["h", "dr"]
+  - kind: read_aloud
+    expected_text: "If you can commit to two years, then we can hold this price."
+    prompt_vi: "Nhượng bộ CÓ ĐIỀU KIỆN. Vế if phải nói trước vế then."
+    ipa: "/ɪf juː kæn kəˈmɪt tuː tuː jɪrz/"
+    focus_phonemes: ["k", "j"]
+  - kind: shadow
+    expected_text: "Help me understand what's behind that."
+    prompt_vi: "Câu hỏi ra lý do thật đằng sau lời từ chối."
+    ipa: "/help miː ˌʌndərˈstænd wɒts bɪˈhaɪnd ðæt/"
+    focus_phonemes: ["nd", "h"]
+  - kind: shadow
+    expected_text: "So where does that leave us?"
+    prompt_vi: "Chốt lại tình hình. Câu này buộc cả hai nói ra bước tiếp theo."
+    ipa: "/soʊ wer dʌz ðæt liːv ʌs/"
+    focus_phonemes: ["w", "v"]
+  - kind: respond
+    prompt_en: "We're happy with our current vendor."
+    prompt_vi: "Khách từ chối. Ghi nhận rồi hỏi ra lý do thật."
+    accept_patterns:
+      - "I hear you"
+      - "Help me understand"
+      - "What's working"
+
+reading:
+  kind: chat
+  context_vi: >
+    Email chốt lại sau buổi đàm phán. Đọc để thấy cách ghi lại nhượng bộ có điều kiện.
+  text_en: |
+    Subject: Summary of today's call
+
+    Hi Wei,
+
+    To confirm what we agreed:
+
+    - Scope unchanged: 2 environments, unlimited users, 24/7 support
+    - If Northwind signs a 24-month term, we move the 8,000 onboarding fee to year two
+    - Year one becomes 32,000, year two 40,000
+    - Two-hour response guarantee added to the contract
+
+    This offer holds until 15 September.
+    If the term stays at 12 months, the original quote applies.
+  text_vi: |
+    Tiêu đề: Tóm tắt cuộc gọi hôm nay
+
+    Chào Wei,
+
+    Xác nhận lại những gì mình đã thống nhất:
+
+    - Phạm vi giữ nguyên: 2 môi trường, không giới hạn người dùng, hỗ trợ 24/7
+    - Nếu Northwind ký hợp đồng 24 tháng, bên tôi chuyển phí triển khai 8.000 sang năm hai
+    - Năm đầu còn 32.000, năm hai 40.000
+    - Bổ sung cam kết phản hồi hai tiếng vào hợp đồng
+
+    Đề nghị này có hiệu lực tới 15 tháng 9.
+    Nếu vẫn ký 12 tháng thì áp dụng báo giá ban đầu.
+  questions:
+    - kind: mcq_read
+      prompt_en: "What does the client give in return for the lower year one?"
+      choices: ["A 24-month term", "A bigger scope", "Faster payment"]
+      answer: 0
+      difficulty: 2
+      reading_skill: scan
+      skill: Reading
+    - kind: mcq_read
+      prompt_en: "What happens if they keep a 12-month term?"
+      choices: ["They get a smaller discount", "The original quote applies", "The deal is cancelled"]
+      answer: 1
+      difficulty: 2
+      reading_skill: detail
+      skill: Reading
+
+writing:
+  kind: FillBlank
+  prompt_vi: "Điền hai chỗ trống: câu ghi nhận và câu nhượng bộ có điều kiện."
+  prompt_en: "I ___ you. If you can commit to two years, ___ we can hold this price."
+  blanks:
+    - ["hear"]
+    - ["then"]
+  hint_vi: "Chỗ đầu là động từ nghĩa là nghe. Chỗ sau là từ nối vế kết quả của câu điều kiện."
+  sample_en: "I hear you. If you can commit to two years, then we can hold this price."
+
+quiz:
+  - kind: mcq
+    prompt_vi: "Vì sao nhượng bộ phải KÈM ĐIỀU KIỆN?"
+    choices: ["Vì lịch sự", "Vì hợp đồng bắt buộc", "Vì cho không thì lần sau khách sẽ xin tiếp mà không đổi lại gì"]
+    answer: 2
+    difficulty: 3
+    skill: Reading
+  - kind: mcq
+    prompt_vi: "Khách nói \"bọn tôi hài lòng với nhà cung cấp hiện tại\". Nên làm gì?"
+    choices: ["Hỏi bên đó tốt ở điểm nào", "Chỉ ra điểm yếu của đối thủ", "Chào giá thấp hơn"]
+    answer: 0
+    difficulty: 3
+    skill: Speaking
+  - kind: mcq
+    prompt_vi: "\"Is price the sticking point, or is it timing?\" để làm gì?"
+    choices: ["Kéo dài đàm phán", "Tách ra xem vướng thật nằm ở đâu", "Ép khách chọn nhanh"]
+    answer: 1
+    difficulty: 2
+    skill: Listening
+  - kind: mcq
+    prompt_vi: "Sau khi đưa nhượng bộ, nên nói gì?"
+    choices: ["Im lặng chờ", "\"So where does that leave us?\"", "Gửi hợp đồng luôn"]
+    answer: 1
+    difficulty: 2
+    skill: Speaking
+
+explanation:
+  why_vi: >
+    Đàm phán bằng tiếng Anh khó không phải vì từ vựng mà vì phản xạ. Người Việt hay
+    nhượng bộ để giữ hoà khí — giảm giá luôn cho xong. Nhưng nhượng bộ không điều kiện
+    dạy khách rằng cứ đòi là được, và vòng đàm phán sau sẽ bắt đầu từ mức vừa giảm.
+  how_vi: >
+    Từ chối thì XỬ LÝ ba bước: ghi nhận "I hear you", hỏi ra lý do thật
+    "Help me understand what's behind that", rồi tách vướng mắc
+    "Is A the sticking point, or is it B?" Nhượng bộ thì luôn dùng khung
+    "If you can ..., then we can ..." — vế điều kiện nói TRƯỚC.
+  contrast_vi: >
+    "We can give you 10% off" là cho không. "If you can sign for two years, then we can
+    hold this price" là trao đổi. Cùng một con số, nhưng vế sau giữ được giá trị món hàng.
+
+common_mistakes:
+  - mistake: "Bắt đầu câu trả lời bằng \"But\""
+    why_vi: >
+      Phản xạ tự nhiên khi không đồng ý. Nhưng chữ đó báo cho khách biết bạn sắp cãi lại,
+      và họ chuyển sang thế thủ trước cả khi nghe hết câu.
+    fix_vi: "Bắt đầu bằng \"I hear you\" rồi mới nói tiếp. Cùng nội dung, khác hẳn phản ứng."
+  - mistake: "Nhượng bộ mà không đòi lại gì"
+    why_vi: >
+      Muốn thể hiện thiện chí nên giảm trước. Khách ghi nhận mức mới làm điểm xuất phát
+      và tiếp tục đòi từ đó.
+    fix_vi: "Luôn dùng khung \"If you can ..., then we can ...\" Không có vế if thì không có vế then."
+  - mistake: "Chỉ ra điểm yếu của đối thủ khi khách khen họ"
+    why_vi: >
+      Phản xạ muốn giành lại thế. Nhưng khách đã chọn đối thủ đó nên chê họ là gián tiếp
+      chê quyết định của khách, và cuộc trao đổi chuyển sang phòng thủ.
+    fix_vi: "Hỏi bên đó tốt ở điểm nào. Câu trả lời cho bạn biết đúng thứ cần cam kết."
+
+memory_trick_vi: >
+  Từ chối ba bước: GHI NHẬN "I hear you", ĐÀO "Help me understand", TÁCH "sticking point A hay B".
+  Nhượng bộ một khung duy nhất: "IF you can..., THEN we can..." Không bao giờ cho không.

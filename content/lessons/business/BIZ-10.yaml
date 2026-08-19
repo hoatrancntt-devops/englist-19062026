@@ -1,0 +1,287 @@
+schema_version: 1
+code: BIZ-10
+slug: checkpoint-nhanh-kinh-doanh
+title_vi: "Checkpoint: Nhánh Kinh doanh"
+title_en: "Checkpoint: Business track"
+
+layer: Professional
+track: Business
+level: B1
+unit_code: U-BIZ
+order_index: 10
+estimated_minutes: 12
+
+illustration: handshake-intro
+
+is_checkpoint: true
+
+objective_vi: >
+  Chạy trọn một vòng thương vụ trong một buổi: gặp khách, tìm hiểu nhu cầu,
+  báo giá, xử lý từ chối, và chốt bước tiếp theo.
+
+objective_observable: >
+  Đi được cả năm bước trong một hội thoại liền mạch, đạt 3 trên 4 drill.
+
+mastery_weights:
+  Listening: 0.30
+  Speaking: 0.40
+  Reading: 0.15
+  Writing: 0.15
+
+prerequisites:
+  - lesson: BIZ-09
+    min_mastery: 70
+    kind: Hard
+  - lesson: BIZ-04
+    min_mastery: 70
+    kind: Hard
+
+vocabulary:
+  - term: "next steps"
+    ipa: "/nekst steps/"
+    meaning_vi: "bước tiếp theo"
+    chunk: "Let's agree the next steps."
+    tags: [business, closing, core]
+  - term: "who needs to sign off"
+    ipa: "/huː niːdz tuː saɪn ɒf/"
+    meaning_vi: "ai cần phê duyệt"
+    chunk: "Who needs to sign off on this?"
+    tags: [business, closing]
+  - term: "put it in writing"
+    ipa: "/pʊt ɪt ɪn ˈraɪtɪŋ/"
+    meaning_vi: "ghi lại bằng văn bản"
+    chunk: "I'll put it in writing today."
+    tags: [business, closing]
+  - term: "by when"
+    ipa: "/baɪ wen/"
+    meaning_vi: "trước khi nào"
+    chunk: "And by when do you need it?"
+    tags: [business, closing]
+  - term: "does that sound fair"
+    ipa: "/dʌz ðæt saʊnd fer/"
+    meaning_vi: "như vậy có hợp lý không"
+    chunk: "Does that sound fair?"
+    tags: [business, closing]
+  - term: "I'll follow up on"
+    ipa: "/aɪl ˈfɒloʊ ʌp ɒn/"
+    meaning_vi: "tôi sẽ theo sát việc"
+    chunk: "I'll follow up on the security review."
+    tags: [business, closing]
+
+sentence_patterns:
+  - pattern: "Who needs to sign off on {thing}?"
+    meaning_vi: "Ai cần phê duyệt {thing}?"
+    slots:
+      thing: ["this", "the budget", "the contract"]
+  - pattern: "I'll {action} by {day}. Does that sound fair?"
+    meaning_vi: "Tôi sẽ {action} trước {day}. Như vậy có hợp lý không?"
+    slots:
+      action: ["put it in writing", "send the revised quote", "set up the technical call"]
+      day: ["tomorrow", "Thursday", "the end of the week"]
+
+dialogue:
+  context_vi: >
+    Buổi chốt. Khách đã thấy giá trị, đã bàn xong giá, và giờ là mười phút cuối —
+    lúc dễ để mọi thứ trôi vào im lặng nhất.
+  turns:
+    - speaker: "You"
+      en: "So if I understand right, the scope works and the year-one number works. Is there anything still open?"
+      vi: "Vậy nếu tôi hiểu đúng, phạm vi ổn và con số năm đầu ổn. Còn gì chưa rõ không ạ?"
+    - speaker: "Client"
+      en: "Security review. Our team has to check the data flows."
+      vi: "Rà soát bảo mật. Đội bên tôi phải kiểm luồng dữ liệu."
+    - speaker: "You"
+      en: "Understood. I'll follow up on the security review — who's the right person there?"
+      vi: "Tôi hiểu. Tôi sẽ theo sát phần rà soát bảo mật — bên anh ai phụ trách ạ?"
+    - speaker: "Client"
+      en: "Raj. He'll need the architecture diagram."
+      vi: "Raj. Anh ấy cần sơ đồ kiến trúc."
+    - speaker: "You"
+      en: "I'll send it to Raj tomorrow and put the revised quote in writing. Who needs to sign off after that?"
+      vi: "Mai tôi gửi cho Raj và ghi lại báo giá đã sửa bằng văn bản. Sau đó ai cần phê duyệt ạ?"
+    - speaker: "Client"
+      en: "Wei signs. If security clears, we can close this month."
+      vi: "Wei ký. Nếu bảo mật thông thì tháng này mình chốt được."
+    - speaker: "You"
+      en: "Then let's aim for that. I'll send both by tomorrow. Does that sound fair?"
+      vi: "Vậy mình nhắm mốc đó. Mai tôi gửi cả hai. Như vậy có hợp lý không ạ?"
+
+listening:
+  context_vi: >
+    Nghe mười phút cuối một thương vụ. Chú ý ba thứ người bán chốt trước khi
+    tắt máy: việc gì, ai làm, khi nào.
+  speed: 1.0
+  voice: en_US_female
+  transcript_en: "Is there anything still open? Just the legal review. Right, I'll follow up on that. Who's the right person? Priya in legal. I'll send the draft to Priya tomorrow. Who needs to sign off after that? Wei signs. Then I'll send it by tomorrow. Does that sound fair? That works."
+  transcript_vi: "Còn gì chưa rõ không ạ? Chỉ còn rà soát pháp lý. Vâng, tôi sẽ theo sát việc đó. Bên anh ai phụ trách? Priya bên pháp lý. Mai tôi gửi bản thảo cho Priya. Sau đó ai cần phê duyệt? Wei ký. Vậy mai tôi gửi. Như vậy có hợp lý không? Được."
+  questions:
+    - kind: mcq_listen
+      prompt_vi: "Việc gì còn chưa xong?"
+      choices: ["Rà soát pháp lý", "Rà soát bảo mật", "Đàm phán giá"]
+      answer: 0
+      difficulty: 1
+      skill: Listening
+    - kind: mcq_listen
+      prompt_vi: "Ai là người ký?"
+      choices: ["Priya", "Người bán", "Wei"]
+      answer: 2
+      difficulty: 2
+      skill: Listening
+
+speaking_drills:
+  - kind: read_aloud
+    expected_text: "Is there anything still open?"
+    prompt_vi: "Câu moi ra vướng mắc cuối. Không hỏi thì nó xuất hiện sau khi bạn tắt máy."
+    ipa: "/ɪz ðer ˈeniθɪŋ stɪl ˈoʊpən/"
+    focus_phonemes: ["ð", "θ"]
+  - kind: read_aloud
+    expected_text: "Who needs to sign off on this?"
+    prompt_vi: "Tìm ra người quyết định thật. Âm /s/ và /f/ trong sign off nối liền."
+    ipa: "/huː niːdz tuː saɪn ɒf ɒn ðɪs/"
+    focus_phonemes: ["s", "f"]
+  - kind: shadow
+    expected_text: "I'll follow up on the security review."
+    prompt_vi: "Nhận trách nhiệm theo sát. Đừng để việc treo cho khách."
+    ipa: "/aɪl ˈfɒloʊ ʌp ɒn ðə sɪˈkjʊrəti/"
+    focus_phonemes: ["f", "kj"]
+  - kind: shadow
+    expected_text: "I'll send it by tomorrow. Does that sound fair?"
+    prompt_vi: "Cam kết kèm mốc, rồi xin xác nhận. Hỏi xong thì im."
+    ipa: "/aɪl send ɪt baɪ təˈmɒroʊ dʌz ðæt saʊnd fer/"
+    focus_phonemes: ["nd", "fer"]
+  - kind: respond
+    prompt_en: "Everything looks good on our side."
+    prompt_vi: "Khách nói mọi thứ ổn. Chốt bước tiếp theo, đừng để buổi trôi qua."
+    accept_patterns:
+      - "next steps"
+      - "sign off"
+      - "I'll send"
+
+reading:
+  kind: chat
+  context_vi: >
+    Email chốt gửi ngay sau buổi họp. Đọc để thấy một email chốt đúng gồm những gì.
+  text_en: |
+    Subject: Next steps - Northwind
+
+    Hi Wei,
+
+    Summary of today:
+    - Scope and year-one number agreed
+    - Open: security review of data flows
+
+    Next steps:
+    1. I send the architecture diagram to Raj - tomorrow (me)
+    2. I send the revised quote in writing - tomorrow (me)
+    3. Security review - by 29 Aug (Raj)
+    4. Sign-off - Wei, once security clears
+
+    Target: close by end of September. Shout if I've missed anything.
+  text_vi: |
+    Tiêu đề: Bước tiếp theo - Northwind
+
+    Chào Wei,
+
+    Tóm tắt hôm nay:
+    - Đã thống nhất phạm vi và con số năm đầu
+    - Còn mở: rà soát bảo mật luồng dữ liệu
+
+    Bước tiếp theo:
+    1. Tôi gửi sơ đồ kiến trúc cho Raj - ngày mai (tôi)
+    2. Tôi gửi báo giá đã sửa bằng văn bản - ngày mai (tôi)
+    3. Rà soát bảo mật - trước 29/8 (Raj)
+    4. Phê duyệt - Wei, sau khi bảo mật thông
+
+    Mục tiêu: chốt trước cuối tháng 9. Anh báo giúp nếu tôi sót gì.
+  questions:
+    - kind: mcq_read
+      prompt_en: "How many of the next steps belong to the seller?"
+      choices: ["One", "Two", "All four"]
+      answer: 1
+      difficulty: 2
+      reading_skill: detail
+      skill: Reading
+    - kind: mcq_read
+      prompt_en: "What has to happen before Wei signs?"
+      choices: ["Security review clears", "The quote is paid", "Raj approves the price"]
+      answer: 0
+      difficulty: 2
+      reading_skill: scan
+      skill: Reading
+
+writing:
+  kind: GuidedEmail
+  prompt_vi: >
+    Viết email chốt sau một buổi họp khách: tóm tắt điều đã thống nhất, việc còn mở,
+    và các bước tiếp theo kèm người phụ trách và mốc thời gian.
+  prompt_en: "Write a follow-up email after a client meeting with agreed points and next steps."
+  hint_vi: "Mỗi bước phải có NGƯỜI và MỐC. Kết bằng một câu mời họ bổ sung nếu bạn sót."
+  required_points:
+    - "next steps"
+    - "by"
+  sample_en: >
+    Hi Wei, summary of today: scope and year-one number agreed. Open: security review.
+    Next steps: I send the diagram to Raj tomorrow. Security review by 29 August (Raj).
+    Sign-off with you once security clears. Target close by end of September.
+    Shout if I've missed anything.
+
+quiz:
+  - kind: mcq
+    prompt_vi: "Mười phút cuối buổi họp khách nên dùng để làm gì?"
+    choices: ["Nhắc lại điểm mạnh sản phẩm", "Chốt bước tiếp theo kèm người và mốc", "Bàn thêm về giá"]
+    answer: 1
+    difficulty: 2
+    skill: Speaking
+  - kind: mcq
+    prompt_vi: "Vì sao phải hỏi \"Who needs to sign off?\""
+    choices: ["Cho đủ thủ tục", "Vì người ngồi họp không phải lúc nào cũng là người ký", "Để biết gửi hoá đơn cho ai"]
+    answer: 1
+    difficulty: 3
+    skill: Reading
+  - kind: mcq
+    prompt_vi: "\"Is there anything still open?\" moi ra điều gì?"
+    choices: ["Vướng mắc cuối mà khách chưa nói ra", "Ngân sách còn lại", "Đối thủ đang chào gì"]
+    answer: 0
+    difficulty: 2
+    skill: Listening
+  - kind: mcq
+    prompt_vi: "Email chốt sau họp nên gồm gì?"
+    choices: ["Bảng giá chi tiết", "Lời cảm ơn dài", "Điều đã thống nhất, việc còn mở, bước tiếp theo kèm người và mốc"]
+    answer: 2
+    difficulty: 2
+    skill: Writing
+
+explanation:
+  why_vi: >
+    Thương vụ chết nhiều nhất không phải vì giá mà vì im lặng. Buổi họp kết thúc bằng
+    "chúng tôi sẽ trao đổi nội bộ rồi báo lại", ai cũng thấy dễ chịu, và ba tuần sau
+    không ai nhắn gì. Mười phút cuối là chỗ ngăn điều đó.
+  how_vi: >
+    Ba câu chốt. MOI VƯỚNG MẮC: "Is there anything still open?"
+    TÌM NGƯỜI KÝ: "Who needs to sign off on this?" — người ngồi họp thường không phải người ký.
+    CAM KẾT KÈM MỐC: "I'll send it by tomorrow. Does that sound fair?"
+    Rồi gửi email chốt trong ngày, mỗi bước có NGƯỜI và MỐC.
+  contrast_vi: >
+    "Chúng tôi sẽ liên hệ lại" là không có gì. "Tôi gửi sơ đồ cho Raj ngày mai, bảo mật
+    rà trước 29/8, Wei ký sau đó" là một kế hoạch — và ai chậm thì nhìn vào là biết.
+
+common_mistakes:
+  - mistake: "Kết thúc bằng \"chúng ta sẽ giữ liên lạc\""
+    why_vi: >
+      Nghe lịch sự và tránh được cảm giác thúc ép. Nhưng không có việc nào được giao,
+      không ai có hạn, nên mặc định là không có gì xảy ra.
+    fix_vi: "Luôn chốt ít nhất một việc của BẠN kèm mốc: \"I'll send X by tomorrow.\""
+  - mistake: "Cho rằng người ngồi họp là người quyết định"
+    why_vi: >
+      Họ nói chuyện tự tin và hỏi câu chuyên môn nên dễ tưởng họ có quyền ký.
+      Nhiều thương vụ chết ở đúng chỗ này: người thật sự ký chưa từng nghe gì về nó.
+    fix_vi: "Hỏi thẳng và sớm: \"Who needs to sign off on this?\" Không ai thấy câu đó bất lịch sự."
+  - mistake: "Để việc theo dõi cho phía khách"
+    why_vi: >
+      Ngại nghe như thúc giục nên để họ chủ động. Nhưng thương vụ này là ưu tiên số một
+      của bạn và là việc thứ mười lăm của họ.
+    fix_vi: "Nhận phần theo sát về mình: \"I'll follow up on the security review.\""
+
+memory_trick_vi: >
+  Mười phút cuối ba câu: CÒN GÌ MỞ "anything still open?", AI KÝ "who needs to sign off?",
+  TÔI LÀM GÌ TRƯỚC KHI NÀO "I'll send it by...". Rồi email chốt trong ngày.

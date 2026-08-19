@@ -5,6 +5,7 @@ import { api } from '@/lib/api-client'
 import { Button } from '@/components/ui/button'
 import { Card, CardBody, CardHeader } from '@/components/ui/card'
 import { Badge, ProgressBar, SkeletonCard } from '@/components/ui/feedback'
+import { LessonIllustration } from '@/components/illustrations/scene-illustrations'
 
 type Skill = 'Listening' | 'Speaking' | 'Reading' | 'Writing'
 
@@ -17,6 +18,7 @@ interface LessonCard {
   supportedSkills: string[]
   lockExplanationVi: string
   unlockedByChallenge: boolean
+  illustration: string | null
 }
 
 interface RoadmapResult {
@@ -28,30 +30,37 @@ interface Dashboard {
   studyMode: string
 }
 
-const SKILLS: Record<Skill, { label: string; icon: typeof Headphones; mode: string; hint: string }> = {
+const SKILLS: Record<
+  Skill,
+  { label: string; icon: typeof Headphones; mode: string; hint: string; scene: string }
+> = {
   Listening: {
     label: 'Nghe',
     icon: Headphones,
     mode: 'ListeningOnly',
     hint: 'Hội thoại nghề theo tốc độ tăng dần, có phụ đề Anh và Việt bật tắt được.',
+    scene: 'phone-call',
   },
   Speaking: {
     label: 'Nói',
     icon: Mic,
     mode: 'SpeakingOnly',
     hint: 'Đọc theo mẫu và trả lời tình huống. Giọng chấm ngay tại máy chủ, không gửi đi đâu.',
+    scene: 'coffee-chat',
   },
   Reading: {
     label: 'Đọc',
     icon: BookOpen,
     mode: 'ReadingOnly',
     hint: 'Email, ticket, log, hoá đơn, hợp đồng — văn bản thật của nghề và của đời sống.',
+    scene: 'email-inbox',
   },
   Writing: {
     label: 'Viết',
     icon: PenLine,
     mode: 'WritingOnly',
     hint: 'Điền chỗ trống, sắp câu, viết email có hướng dẫn. Chấm bằng luật tại máy chủ.',
+    scene: 'chat-message',
   },
 }
 
@@ -112,6 +121,10 @@ export function SkillPage({ skill }: { skill: Skill }) {
           icon={<meta.icon className="size-5 text-brand-600" aria-hidden />}
         />
         <CardBody className="space-y-4">
+          <div className="flex justify-center">
+            <LessonIllustration name={meta.scene} size={240} className="text-brand-500" />
+          </div>
+
           <ProgressBar value={score} max={100} label={`Điểm ${meta.label} hiện tại`} />
 
           <p className="text-sm text-secondary">
@@ -199,7 +212,15 @@ function LessonRow({ lesson }: { lesson: LessonCard }) {
   return (
     <li className="rounded-[var(--radius-card)] border border-[var(--border-subtle)] p-3">
       <div className="flex flex-wrap items-start justify-between gap-3">
-        <div className="min-w-0">
+        <div className="flex min-w-0 gap-3">
+          <LessonIllustration
+            name={lesson.illustration}
+            size={76}
+            variant="bare"
+            className={`mt-0.5 hidden shrink-0 sm:block ${locked ? 'text-muted opacity-60' : 'text-brand-500'}`}
+          />
+
+          <div className="min-w-0">
           <p className="flex flex-wrap items-center gap-2 text-sm font-medium">
             {mastered && <Check className="size-4 shrink-0 text-[var(--color-success)]" aria-label="Đã thạo" />}
             {locked && <Lock className="size-4 shrink-0 text-muted" aria-label="Đang khoá" />}
@@ -216,6 +237,7 @@ function LessonRow({ lesson }: { lesson: LessonCard }) {
           {lesson.lockExplanationVi && (
             <p className="mt-1.5 text-sm text-secondary">{lesson.lockExplanationVi}</p>
           )}
+          </div>
         </div>
 
         <Link to={`/learn/lesson/${lesson.code}`} className="shrink-0">

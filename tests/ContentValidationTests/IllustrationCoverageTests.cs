@@ -20,6 +20,7 @@ public class IllustrationCoverageTests
     [
         Path.Combine("apps", "web", "src", "components", "illustrations", "scene-illustrations.tsx"),
         Path.Combine("apps", "web", "src", "components", "illustrations", "tech-scene-illustrations.tsx"),
+        Path.Combine("apps", "web", "src", "components", "illustrations", "life-scene-illustrations.tsx"),
     ];
 
     [Fact]

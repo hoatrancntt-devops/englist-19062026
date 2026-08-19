@@ -206,7 +206,7 @@ function LessonHeader({ lesson }: { lesson: PlayerLesson }) {
         </div>
 
         <div className="shrink-0 self-center">
-          <LessonIllustration name={lesson.illustration} size={180} className="text-brand-500" />
+          <LessonIllustration name={lesson.illustration} size={260} className="text-brand-500" />
         </div>
       </div>
     </header>

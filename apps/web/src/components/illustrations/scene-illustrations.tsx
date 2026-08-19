@@ -11,6 +11,7 @@
 
 import { Scene, type SceneProps } from './scene-frame'
 import { TECH_SCENES } from './tech-scene-illustrations'
+import { LIFE_SCENES } from './life-scene-illustrations'
 
 /** Hai người đứng nói chuyện, có ly cà phê — pantry, small talk, rủ đi ăn. */
 function CoffeeChat(props: SceneProps) {
@@ -466,6 +467,8 @@ const SCENES: Record<string, (props: SceneProps) => React.ReactElement> = {
 
   // Cloud, AI và đọc tài liệu kỹ thuật sống ở tệp riêng.
   ...TECH_SCENES,
+  // Nhà hàng, siêu thị và sở thích cũng vậy.
+  ...LIFE_SCENES,
 }
 
 interface LessonIllustrationProps extends SceneProps {

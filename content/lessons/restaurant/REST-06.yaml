@@ -11,7 +11,7 @@ unit_code: U-R2
 order_index: 6
 estimated_minutes: 12
 
-illustration: food-order
+illustration: allergy-alert
 
 objective_vi: >
   Báo dị ứng cho đúng cách, hỏi món có thành phần gì, và xin đổi hoặc bỏ một

@@ -210,7 +210,7 @@ function NextLessonCard({ data }: { data: DashboardData }) {
         <div className="flex shrink-0 flex-col items-center gap-3">
           {/* Hình gợi bối cảnh của bài kế — nhìn là hình dung ra tình huống
               trước cả khi đọc tiêu đề. */}
-          <LessonIllustration name={lesson.illustration} size={150} className="text-brand-500" />
+          <LessonIllustration name={lesson.illustration} size={220} className="text-brand-500" />
 
           <Link to={`/learn/lesson/${lesson.code}`} className="w-full">
             <Button size="lg" className="w-full">

@@ -7,6 +7,7 @@ import { cn } from '@/lib/cn'
 import { Button } from '@/components/ui/button'
 import { Card, CardBody, CardHeader } from '@/components/ui/card'
 import { Badge, ProgressBar, SkeletonCard } from '@/components/ui/feedback'
+import { LessonIllustration } from '@/components/illustrations/scene-illustrations'
 
 interface LessonCard {
   code: string
@@ -176,7 +177,18 @@ function LessonRow({ lesson }: { lesson: LessonCard }) {
   return (
     <li className="rounded-[var(--radius-card)] border border-[var(--border-subtle)] p-3">
       <div className="flex flex-wrap items-start justify-between gap-3">
-        <div className="min-w-0">
+        {/* Hình nhỏ bên trái mỗi thẻ. Lộ trình dài trăm bài mà chỉ toàn chữ thì lướt
+            xuống một lúc là các dòng nhoè vào nhau; hình cho mắt một chỗ bám để
+            nhận ra bài nào là bài nào trước cả khi đọc tiêu đề. */}
+        <div className="flex min-w-0 gap-3">
+          <LessonIllustration
+            name={lesson.illustration}
+            size={76}
+            variant="bare"
+            className={`mt-0.5 hidden shrink-0 sm:block ${locked ? 'text-muted opacity-60' : 'text-brand-500'}`}
+          />
+
+          <div className="min-w-0">
           <p className="flex flex-wrap items-center gap-2 text-sm font-medium">
             <StateIcon state={lesson.state} markedKnown={markedKnown} />
             <span>
@@ -215,6 +227,7 @@ function LessonRow({ lesson }: { lesson: LessonCard }) {
           {lesson.lockExplanationVi && (
             <p className="mt-1.5 text-sm text-secondary">{lesson.lockExplanationVi}</p>
           )}
+          </div>
         </div>
 
         <div className="flex shrink-0 flex-wrap gap-2">

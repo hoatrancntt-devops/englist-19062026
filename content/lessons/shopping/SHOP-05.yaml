@@ -11,7 +11,7 @@ unit_code: U-S2
 order_index: 5
 estimated_minutes: 11
 
-illustration: money-receipt
+illustration: price-tag
 
 objective_vi: >
   Đọc nhãn khuyến mãi cho đúng, hỏi giá và hỏi có giảm không, và tính xem gói to

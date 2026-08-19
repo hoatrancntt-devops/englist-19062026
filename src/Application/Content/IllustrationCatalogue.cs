@@ -58,6 +58,20 @@ public static class IllustrationCatalogue
     public const string ApiDoc = "api-doc";
     public const string PostmortemTimeline = "postmortem-timeline";
 
+    /// <summary>Cảnh nhà hàng, siêu thị và sở thích.</summary>
+    public const string ShoppingCart = "shopping-cart";
+    public const string ClothesRack = "clothes-rack";
+    public const string PriceTag = "price-tag";
+    public const string ParcelDelivery = "parcel-delivery";
+    public const string ReturnParcel = "return-parcel";
+    public const string AllergyAlert = "allergy-alert";
+    public const string CoffeeToGo = "coffee-togo";
+    public const string GymDumbbell = "gym-dumbbell";
+    public const string MediaPlay = "media-play";
+    public const string StoryTimeline = "story-timeline";
+    public const string DiningTable = "dining-table";
+    public const string LaptopSpecs = "laptop-specs";
+
     private static readonly HashSet<string> Known = new(StringComparer.Ordinal)
     {
         CoffeeChat, PhoneCall, ClockCalendar, ConfusedListener, HandshakeIntro,
@@ -67,6 +81,8 @@ public static class IllustrationCatalogue
         CloudStack, HaFailover, ScaleGraph, ArchitectureReview, CloudMigration,
         AiBrain, DataPipeline, MetricsDashboard, RiskMatrix,
         LogLines, ReleaseNotes, ApiDoc, PostmortemTimeline,
+        ShoppingCart, ClothesRack, PriceTag, ParcelDelivery, ReturnParcel, AllergyAlert,
+        CoffeeToGo, GymDumbbell, MediaPlay, StoryTimeline, DiningTable, LaptopSpecs,
     };
 
     public static bool IsKnown(string key) => Known.Contains(key);

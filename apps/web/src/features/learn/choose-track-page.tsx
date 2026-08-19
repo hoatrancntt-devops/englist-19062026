@@ -41,9 +41,12 @@ export function ChooseTrackPage() {
   const navigate = useNavigate()
   const queryClient = useQueryClient()
 
+  // Đường dẫn phải ĐỦ tiền tố /api/v1: api-client không có base URL, nó fetch nguyên văn.
+  // Thiếu tiền tố thì request rơi vào route SPA và trả về index.html, rồi component vỡ ở
+  // chỗ .map() với một lỗi không liên quan gì tới nguyên nhân thật.
   const { data, isLoading } = useQuery({
     queryKey: ['preferences'],
-    queryFn: () => api.get<Preferences>('/learning/preferences'),
+    queryFn: () => api.get<Preferences>('/api/v1/learning/preferences'),
   })
 
   const [track, setTrack] = useState<string | null>(null)
@@ -51,7 +54,7 @@ export function ChooseTrackPage() {
 
   const save = useMutation({
     mutationFn: (body: { primaryTrack: string; studyMode: string }) =>
-      api.put('/learning/preferences', body),
+      api.put('/api/v1/learning/preferences', body),
     onSuccess: async () => {
       // Lộ trình và bảng điều khiển đều phụ thuộc lựa chọn này nên phải nạp lại,
       // nếu không học viên đổi xong vẫn thấy màn hình cũ và tưởng không ăn.

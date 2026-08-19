@@ -1,5 +1,6 @@
 using EnglishForIT.Domain.Common;
 using EnglishForIT.Domain.Entities.Content;
+using EnglishForIT.Domain.Entities.Identity;
 using EnglishForIT.Domain.Enums;
 
 namespace EnglishForIT.Domain.Entities.Progress;
@@ -56,6 +57,10 @@ public class Streak : Entity, IConcurrencyStamped
 public class StoryProgress : Entity
 {
     public Guid UserId { get; set; }
+
+    /// <summary>Khai navigation để có khoá ngoại cascade: xoá học viên phải cuốn theo tiến độ đọc.</summary>
+    public User? User { get; set; }
+
     public Guid ChapterId { get; set; }
     public StoryChapter? Chapter { get; set; }
 
@@ -110,6 +115,9 @@ public class ChallengePass : Entity
 public class WritingAttempt : Entity
 {
     public Guid UserId { get; set; }
+
+    /// <summary>Khai navigation để có khoá ngoại cascade: xoá học viên phải cuốn theo bài đã nộp.</summary>
+    public User? User { get; set; }
 
     public Guid TaskId { get; set; }
     public WritingTask? Task { get; set; }

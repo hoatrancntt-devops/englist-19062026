@@ -198,6 +198,7 @@ public class StoryProgressConfiguration : IEntityTypeConfiguration<StoryProgress
     {
         b.HasIndex(x => new { x.UserId, x.ChapterId }).IsUnique();
         b.HasOne(x => x.Chapter).WithMany().HasForeignKey(x => x.ChapterId).OnDelete(DeleteBehavior.Cascade);
+        b.HasOne(x => x.User).WithMany().HasForeignKey(x => x.UserId).OnDelete(DeleteBehavior.Cascade);
     }
 }
 
@@ -213,6 +214,7 @@ public class WritingAttemptConfiguration : IEntityTypeConfiguration<WritingAttem
         b.HasIndex(x => new { x.UserId, x.TaskId, x.SubmittedAt });
 
         b.HasOne(x => x.Task).WithMany().HasForeignKey(x => x.TaskId).OnDelete(DeleteBehavior.Cascade);
+        b.HasOne(x => x.User).WithMany().HasForeignKey(x => x.UserId).OnDelete(DeleteBehavior.Cascade);
     }
 }
 

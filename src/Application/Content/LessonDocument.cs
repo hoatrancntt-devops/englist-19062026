@@ -87,6 +87,25 @@ public class VocabularyDocument
     /// <summary>Cụm dùng được ngay, không phải câu ví dụ chung chung.</summary>
     public string Chunk { get; set; } = string.Empty;
 
+    /// <summary>
+    /// Một hoặc hai emoji gợi nghĩa, hiện cạnh từ.
+    ///
+    /// Có cơ sở chứ không phải trang trí: thuyết mã kép cho rằng kênh hình và kênh chữ được
+    /// xử lý độc lập, nên từ được mã hoá cả hai đường thì nhớ lâu hơn hẳn. Từ trừu tượng khó
+    /// tìm emoji đúng thì bỏ trống, đừng gán bừa — emoji sai nghĩa còn hại hơn không có.
+    /// </summary>
+    public string? Emoji { get; set; }
+
+    /// <summary>
+    /// Mẹo nhớ theo phương pháp keyword: một từ tiếng Việt NGHE GIỐNG từ tiếng Anh, rồi một
+    /// câu nối hai nghĩa lại. Ví dụ với "escalate": "ét-ca-lây-tờ nghe như thang cuốn
+    /// (escalator) — đẩy ticket lên thang cuốn cho tuyến trên."
+    ///
+    /// Đây là kỹ thuật ghi nhớ từ vựng được nghiên cứu nhiều nhất, và nó mạnh nhất khi câu nối
+    /// càng cụ thể càng vô lý. Mẹo chung chung kiểu "nhớ theo ngữ cảnh" thì vô dụng.
+    /// </summary>
+    public string? MnemonicVi { get; set; }
+
     public List<string> Tags { get; set; } = [];
 }
 

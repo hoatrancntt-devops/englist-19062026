@@ -240,7 +240,11 @@ public class LessonPlayerService(
             return new ActivitySubmitResult(null, Expired: true);
         }
 
-        var grade = activity.Kind is ActivityKind.Shadow or ActivityKind.Speak
+        // Từ vựng cũng chấm bằng giọng: học viên nghe rồi phải nói lại được từng từ.
+        //
+        // Trước đây bước này chỉ là bảng tra có nút "đã thuộc, đi tiếp" — không đo gì cả, nên
+        // học viên đi qua nó mà chưa chắc đọc nổi một từ nào, rồi vấp ở phần nghe.
+        var grade = activity.Kind is ActivityKind.Shadow or ActivityKind.Speak or ActivityKind.Vocab
             ? await GradeSpeakingAsync(activity, userId, open?.StartedAt ?? now, ct)
             : GradeActivity(activity, submission);
 
@@ -585,7 +589,9 @@ public class LessonPlayerService(
         DateTimeOffset since,
         CancellationToken ct)
     {
-        var expectedTexts = ReadDrillTexts(activity.PayloadJson);
+        var expectedTexts = activity.Kind == ActivityKind.Vocab
+            ? ReadVocabularyTerms(activity.PayloadJson)
+            : ReadDrillTexts(activity.PayloadJson);
 
         if (expectedTexts.Count == 0)
         {
@@ -635,6 +641,37 @@ public class LessonPlayerService(
             : $"{score} điểm trên {expectedTexts.Count} câu.";
 
         return new ActivityGrade(score, score >= activity.PassScore, [], message);
+    }
+
+    /// <summary>Từ cần đọc được ở bước từ vựng. Chấm trên chính từ, không chấm trên cụm ví dụ.</summary>
+    private static List<string> ReadVocabularyTerms(string payloadJson)
+    {
+        try
+        {
+            using var doc = JsonDocument.Parse(payloadJson);
+
+            if (!doc.RootElement.TryGetProperty("Vocabulary", out var words)
+                && !doc.RootElement.TryGetProperty("vocabulary", out words))
+            {
+                return [];
+            }
+
+            if (words.ValueKind != JsonValueKind.Array)
+            {
+                return [];
+            }
+
+            return [.. words.EnumerateArray()
+                .Select(w => w.TryGetProperty("Term", out var t) || w.TryGetProperty("term", out t)
+                    ? t.GetString()
+                    : null)
+                .Where(t => !string.IsNullOrWhiteSpace(t))
+                .Select(t => t!)];
+        }
+        catch (JsonException)
+        {
+            return [];
+        }
     }
 
     /// <summary>Câu mẫu của từng drill trong payload. Đọc tha cả hai kiểu hoa thường của khoá.</summary>

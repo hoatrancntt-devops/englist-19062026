@@ -4,6 +4,7 @@ import { Button } from '@/components/ui/button'
 import { Badge } from '@/components/ui/feedback'
 import { useSpeech } from '@/lib/use-speech'
 import { SpeakingDrill } from './speaking-drill'
+import { VocabCard } from './vocab-card'
 import type { ActivityGrade, LessonActivity, VocabularyEntry } from '../lesson-types'
 
 /** Phần dẫn của bước Nghe: bối cảnh và bản ghi lời thoại. */
@@ -124,23 +125,25 @@ export function VocabStep({
 
   return (
     <div className="space-y-4">
-      <ul className="grid gap-2 sm:grid-cols-2">
+      <p className="text-sm text-secondary">
+        Nghe từng từ, đổi giọng và tốc độ tuỳ ý, rồi đọc to để máy chấm. Đây là bước đầu tiên
+        của bài vì nghe một đoạn hội thoại toàn từ lạ thì không bắt được chữ nào.
+      </p>
+
+      <ul className="grid gap-3">
         {vocabulary.map((entry) => (
-          <li key={entry.Term} className="rounded-[var(--radius-control)] border border-[var(--border-subtle)] p-3">
-            <div className="flex flex-wrap items-baseline gap-2">
-              <span className="font-semibold">{entry.Term}</span>
-              <span className="font-mono text-xs text-muted">{entry.Ipa}</span>
-            </div>
-            <p className="mt-0.5 text-sm text-secondary">{entry.MeaningVi}</p>
-            {/* Cụm dùng được ngay quan trọng hơn nghĩa của từ đứng một mình. */}
-            <p className="mt-1.5 rounded bg-[var(--surface-sunken)] px-2 py-1 font-mono text-xs">{entry.Chunk}</p>
-          </li>
+          <VocabCard key={entry.Term} entry={entry} activityId={activity.id} />
         ))}
       </ul>
 
       <Button onClick={onDone} loading={submitting}>
-        Đã thuộc, đi tiếp
+        Chấm bước từ vựng
       </Button>
+
+      <p className="text-xs text-muted">
+        Cần {activity.passScore} điểm mới qua bước này. Từ nào chưa thu âm tính 0 điểm, và thu
+        lại bao nhiêu lần cũng được — máy lấy lần tốt nhất.
+      </p>
     </div>
   )
 }

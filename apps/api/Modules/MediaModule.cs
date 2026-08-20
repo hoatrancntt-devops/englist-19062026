@@ -31,6 +31,7 @@ public static class MediaModule
 
     private static IResult Tts(
         string? text,
+        string? voice,
         ClaimsPrincipal principal,
         HttpContext http,
         IConfiguration configuration)
@@ -46,7 +47,13 @@ public static class MediaModule
             return Results.BadRequest(new { error = "text_invalid" });
         }
 
-        var hash = TtsCatalogue.HashOf(text);
+        // Giọng lạ bị quy về giọng chính chứ không báo lỗi: tham số này do client truyền, và
+        // một giá trị gõ sai không đáng làm câm cả nút nghe.
+        var requested = TtsCatalogue.VocabVoices.Contains(voice, StringComparer.Ordinal)
+            ? voice
+            : TtsCatalogue.PrimaryVoice;
+
+        var hash = TtsCatalogue.HashOf(text, requested);
 
         if (hash.Length == 0)
         {

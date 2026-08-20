@@ -25,6 +25,10 @@ import wave
 TTS_DIR = os.environ.get("TTS_DIR", "/media/tts")
 MODEL_PATH = os.environ.get("PIPER_MODEL", "/voices/en_US-lessac-medium.onnx")
 
+# Giọng của lượt chạy này. Manifest chứa đoạn của nhiều giọng, mỗi lượt chỉ nạp một model
+# nên phải bỏ qua đoạn không thuộc giọng đang chạy — script gọi lại một lần cho mỗi giọng.
+VOICE = os.environ.get("PIPER_VOICE", "en_US-lessac-medium")
+
 # Trần số file sinh trong một lượt. Đặt >0 khi muốn chạy thử một mẻ nhỏ trước.
 LIMIT = int(os.environ.get("TTS_LIMIT", "0"))
 
@@ -49,7 +53,9 @@ def load_manifest():
             except json.JSONDecodeError as error:
                 sys.exit(f"Dong {line_number} trong manifest khong phai JSON hop le: {error}")
 
-            if item.get("hash") and item.get("text"):
+            # Manifest cũ không có trường voice: coi như giọng chính để file đã sinh
+            # trước khi có nhiều giọng vẫn khớp.
+            if item.get("hash") and item.get("text") and item.get("voice", VOICE) == VOICE:
                 entries.append((item["hash"], item["text"]))
 
     return entries

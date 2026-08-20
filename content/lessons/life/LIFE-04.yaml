@@ -36,31 +36,43 @@ vocabulary:
     ipa: "/ˈsɒri/"
     meaning_vi: "Xin lỗi, nói lại được không? (lên giọng cuối)"
     chunk: "Sorry? I didn't catch that."
+    emoji: "🙉"
+    mnemonic_vi: "\"so-ri\" ai cũng biết là xin lỗi. Điều phải nhớ là DẤU HỎI: lên giọng cuối thì nó thành \"nói lại giúp\", xuống giọng thì chỉ là xin lỗi suông."
     tags: [rescue, core]
   - term: "say that again"
     ipa: "/seɪ ðæt əˈɡen/"
     meaning_vi: "nói lại điều đó"
     chunk: "Could you say that again?"
+    emoji: "🔁"
+    mnemonic_vi: "\"say\" nghe như \"xây\" — xây lại câu đó lần nữa cho tôi."
     tags: [rescue, core]
   - term: "more slowly"
     ipa: "/mɔːr ˈsloʊli/"
     meaning_vi: "chậm hơn"
     chunk: "Could you speak more slowly?"
+    emoji: "🐢"
+    mnemonic_vi: "\"slâu\" nghe như \"sâu\" — con sâu bò chậm. \"More slowly\" là bò chậm thêm nữa."
     tags: [rescue, core]
   - term: "I didn't catch that"
     ipa: "/aɪ ˈdɪdnt kætʃ ðæt/"
     meaning_vi: "tôi nghe không kịp"
     chunk: "Sorry, I didn't catch that."
+    emoji: "🧤"
+    mnemonic_vi: "\"catch\" là bắt bóng. Câu nói bay qua mà tôi không bắt kịp — lỗi ở tay tôi, không phải ở người ném. Vì vậy câu này lịch sự hơn \"bạn nói khó hiểu quá\"."
     tags: [rescue]
   - term: "How do you say"
     ipa: "/haʊ duː juː seɪ/"
     meaning_vi: "nói thế nào là"
     chunk: "How do you say this in English?"
+    emoji: "❓"
+    mnemonic_vi: "\"hao\" nghe như \"hao\" trong \"hao hụt\" — chỗ nào hao mất chữ thì hỏi câu này để lấp vào."
     tags: [rescue]
   - term: "bear with me"
     ipa: "/ber wɪð miː/"
     meaning_vi: "chờ tôi một chút"
     chunk: "Bear with me, I'm checking."
+    emoji: "🐻"
+    mnemonic_vi: "\"bear\" là con GẤU. Hình dung: bảo người ta ôm con gấu bông một lát trong lúc mình đi tra cứu. Vô lý nên nhớ lâu."
     tags: [rescue, office]
 
 sentence_patterns:

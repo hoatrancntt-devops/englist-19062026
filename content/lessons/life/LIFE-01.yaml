@@ -33,31 +33,43 @@ vocabulary:
     ipa: "/spel/"
     meaning_vi: "đánh vần"
     chunk: "How do you spell that?"
+    emoji: "🔤"
+    mnemonic_vi: "\"spel\" nghe như \"sờ-peo\" — sờ từng chữ cái mà đọc lên, đó là đánh vần."
     tags: [core, verb]
   - term: "as in"
     ipa: "/æz ɪn/"
     meaning_vi: "như trong (dùng để làm rõ chữ cái)"
     chunk: "M as in Mike."
+    emoji: "🅰️"
+    mnemonic_vi: "\"ét-in\" nghe như \"ét\" trong tên. Muốn rõ chữ M thì lấy một cái tên có M: M as in Mike."
     tags: [core, phone]
   - term: "double"
     ipa: "/ˈdʌbl/"
     meaning_vi: "hai chữ giống nhau liền nhau"
     chunk: "Double N."
+    emoji: "👯"
+    mnemonic_vi: "\"đắp-bồ\" nghe như \"đắp\" thêm một cái nữa chồng lên — hai chữ giống hệt đứng cạnh nhau."
     tags: [core]
   - term: "capital"
     ipa: "/ˈkæpɪtl/"
     meaning_vi: "chữ in hoa"
     chunk: "Capital T."
+    emoji: "🔠"
+    mnemonic_vi: "\"cáp-pi-tồ\" nghe như \"cái pi-tô\" — thủ đô đội mũ to. Chữ đội mũ to là chữ in hoa."
     tags: [core]
   - term: "last name"
     ipa: "/lɑːst neɪm/"
     meaning_vi: "họ"
     chunk: "My last name is Tran."
+    emoji: "👨‍👩‍👧"
+    mnemonic_vi: "\"lát\" là cuối cùng. Người Anh Mỹ viết họ ở CUỐI, ngược với ta — nên \"last name\" là họ, không phải tên."
     tags: [core, personal]
   - term: "first name"
     ipa: "/fɜːrst neɪm/"
     meaning_vi: "tên"
     chunk: "My first name is Minh."
+    emoji: "🙋"
+    mnemonic_vi: "\"phớt\" là đầu tiên. Tên riêng viết ĐẦU, ngược thứ tự tiếng Việt — Minh Tran chứ không phải Tran Minh."
     tags: [core, personal]
 
 sentence_patterns:

@@ -37,6 +37,10 @@ export interface VocabularyEntry {
   Ipa: string
   MeaningVi: string
   Chunk: string
+  /** Emoji gợi nghĩa. Từ trừu tượng có thể không có. */
+  Emoji?: string | null
+  /** Mẹo nhớ theo phương pháp keyword: từ tiếng Việt nghe giống, kèm câu nối hai nghĩa. */
+  MnemonicVi?: string | null
 }
 
 export interface DialogueTurn {

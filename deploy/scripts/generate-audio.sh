@@ -54,38 +54,61 @@ fi
 
 mkdir -p "$VOICE_DIR"
 
-# Tải giọng nếu chưa có. Chỉ tải một lần, lần sau dùng lại file trên đĩa.
+# Tải một giọng nếu chưa có. Chỉ tải một lần, lần sau dùng lại file trên đĩa.
 #
 # Tên giọng theo dạng <ngonngu>-<ten>-<chatluong>, còn đường dẫn trên kho lại tách thành
 # bốn cấp, nên phải bóc từng phần chứ không ghép thẳng được.
-voice_locale="${VOICE%%-*}"                 # en_US
-voice_rest="${VOICE#*-}"                    # lessac-medium
-voice_name="${voice_rest%-*}"               # lessac
-voice_quality="${voice_rest##*-}"           # medium
+download_voice() {
+    local name="$1"
+    local locale="${name%%-*}"              # en_US
+    local rest="${name#*-}"                 # lessac-medium
+    local short="${rest%-*}"                # lessac
+    local quality="${rest##*-}"             # medium
 
-BASE_URL="https://huggingface.co/rhasspy/piper-voices/resolve/main"
-BASE_URL="$BASE_URL/${voice_locale%%_*}/$voice_locale/$voice_name/$voice_quality"
+    local base="https://huggingface.co/rhasspy/piper-voices/resolve/main"
+    base="$base/${locale%%_*}/$locale/$short/$quality"
 
-for suffix in .onnx .onnx.json; do
-    target="$VOICE_DIR/$VOICE$suffix"
-    if [ ! -s "$target" ]; then
-        log "Tai giong $VOICE$suffix ..."
-        curl -fsSL -o "$target" "$BASE_URL/$VOICE$suffix?download=true"
-    fi
-done
+    local suffix target
+    for suffix in .onnx .onnx.json; do
+        target="$VOICE_DIR/$name$suffix"
+        if [ ! -s "$target" ]; then
+            log "Tai giong $name$suffix ..."
+            curl -fsSL -o "$target" "$base/$name$suffix?download=true"
+        fi
+    done
+}
+
+# Giọng cần sinh lấy thẳng từ manifest chứ không khai cứng ở đây: danh sách giọng do nội
+# dung quyết định (xem TtsCatalogue.VocabVoices), và khai hai nơi là hai nơi sẽ lệch nhau.
+#
+# Dùng grep/sed thay vì jq vì máy chủ không có jq và không nên cài thêm chỉ vì việc này.
+VOICES="$(grep -o '"voice":"[^"]*"' "$TTS_DIR/manifest.jsonl" | sed 's/.*:"//; s/"$//' | sort -u)"
+
+if [ -z "$VOICES" ]; then
+    # Manifest cũ chưa có trường voice.
+    VOICES="$VOICE"
+fi
 
 log "Bat dau sinh giong. Thu muc: $TTS_DIR"
+log "Cac giong can sinh: $(echo "$VOICES" | tr '\n' ' ')"
 
-docker run --rm \
-    --user "$APP_UID:$APP_UID" \
-    -e HOME=/tmp \
-    -e TTS_DIR=/media/tts \
-    -e PIPER_MODEL="/voices/$VOICE.onnx" \
-    -e TTS_LIMIT="${TTS_LIMIT:-0}" \
-    -v "$MEDIA_DIR:/media" \
-    -v "$VOICE_DIR:/voices:ro" \
-    -v "$ROOT_DIR/deploy/scripts/generate-audio.py:/generate.py:ro" \
-    --entrypoint python3 \
-    "$IMAGE" /generate.py
+for voice in $VOICES; do
+    download_voice "$voice"
+
+    log "Sinh cho giong $voice ..."
+
+    docker run --rm \
+        --user "$APP_UID:$APP_UID" \
+        -e HOME=/tmp \
+        -e TTS_DIR=/media/tts \
+        -e PIPER_MODEL="/voices/$voice.onnx" \
+        -e PIPER_VOICE="$voice" \
+        -e TTS_LIMIT="${TTS_LIMIT:-0}" \
+        -v "$MEDIA_DIR:/media" \
+        -v "$VOICE_DIR:/voices:ro" \
+        -v "$ROOT_DIR/deploy/scripts/generate-audio.py:/generate.py:ro" \
+        --entrypoint python3 \
+        "$IMAGE" /generate.py
+done
 
 log "Hoan tat."

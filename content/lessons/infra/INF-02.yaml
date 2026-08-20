@@ -36,31 +36,43 @@ vocabulary:
     ipa: "/ɪz daʊn/"
     meaning_vi: "mất hẳn, không truy cập được"
     chunk: "The portal is down."
+    emoji: "🔴"
+    mnemonic_vi: "\"down\" là NẰM XUỐNG — hệ thống nằm hẳn. Dùng sai chữ này khi hệ thống chỉ chậm là kéo cả đội trực dậy lúc nửa đêm không cần thiết."
     tags: [incident, core]
   - term: "degraded"
     ipa: "/dɪˈɡreɪdɪd/"
     meaning_vi: "suy giảm — vẫn chạy nhưng chậm hoặc lỗi từng phần"
     chunk: "It's not down, it's degraded."
+    emoji: "🟡"
+    mnemonic_vi: "\"grade\" là BẬC, hạng. \"De-\" là tụt xuống — tụt hạng chứ chưa chết. Đèn vàng, không phải đèn đỏ."
     tags: [incident, core]
   - term: "since"
     ipa: "/sɪns/"
     meaning_vi: "từ lúc (mốc thời gian bắt đầu)"
     chunk: "Down since 02:00."
+    emoji: "🕑"
+    mnemonic_vi: "\"since\" đi với MỘT MỐC (từ 2 giờ); \"for\" đi với KHOẢNG DÀI (được ba tiếng). Lẫn hai chữ này là lỗi phổ biến nhất khi báo sự cố."
     tags: [incident, core]
   - term: "affected"
     ipa: "/əˈfektɪd/"
     meaning_vi: "bị ảnh hưởng"
     chunk: "About twenty users are affected."
+    emoji: "👥"
+    mnemonic_vi: "Luôn kèm CON SỐ. \"Nhiều người bị ảnh hưởng\" không giúp ai xếp ưu tiên; \"khoảng hai mươi người\" thì có."
     tags: [incident, core]
   - term: "customer facing"
     ipa: "/ˈkʌstəmər ˈfeɪsɪŋ/"
     meaning_vi: "có ảnh hưởng tới khách hàng"
     chunk: "This one is customer facing."
+    emoji: "🏪"
+    mnemonic_vi: "\"facing\" là QUAY MẶT RA — quay mặt về phía khách hàng. Hai chữ này nâng mức ưu tiên nhanh hơn bất kỳ lời nào khác."
     tags: [incident, core]
   - term: "the logs show"
     ipa: "/ðə lɒɡz ʃoʊ/"
     meaning_vi: "log cho thấy"
     chunk: "The logs show a timeout error."
+    emoji: "📄"
+    mnemonic_vi: "Ôn lại \"log\" — khúc gỗ ghi nhật ký hành trình. Nói \"log cho thấy\" là dựa vào BẰNG CHỨNG, khác hẳn \"tôi nghĩ là\"."
     tags: [incident, core]
 
 sentence_patterns:

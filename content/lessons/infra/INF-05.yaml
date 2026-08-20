@@ -36,31 +36,43 @@ vocabulary:
     ipa: "/ɑːr piː oʊ/"
     meaning_vi: "mất tối đa bao nhiêu dữ liệu — tính bằng thời gian"
     chunk: "Our RPO is fifteen minutes."
+    emoji: "💾"
+    mnemonic_vi: "Chữ P là POINT — điểm quay lui gần nhất. Nhìn về QUÁ KHỨ: mất dữ liệu của bao nhiêu phút vừa rồi. Đọc từng chữ cái."
     tags: [dr, core]
   - term: "RTO"
     ipa: "/ɑːr tiː oʊ/"
     meaning_vi: "khôi phục xong trong bao lâu"
     chunk: "The RTO for that system is four hours."
+    emoji: "⏱️"
+    mnemonic_vi: "Chữ T là TIME — thời gian sửa. Nhìn về TƯƠNG LAI: bao lâu nữa thì chạy lại. Mẹo phân biệt: P là Point (quá khứ), T là Time (tương lai)."
     tags: [dr, core]
   - term: "restore test"
     ipa: "/rɪˈstɔːr test/"
     meaning_vi: "bài kiểm tra khôi phục thật"
     chunk: "We ran a restore test last Saturday."
+    emoji: "🧪"
+    mnemonic_vi: "Câu nói kinh điển của ngành: bản sao lưu chưa từng khôi phục thử thì chưa phải bản sao lưu. Chỉ có bài test mới chứng minh nó dùng được."
     tags: [dr, core]
   - term: "failover"
     ipa: "/ˈfeɪloʊvər/"
     meaning_vi: "chuyển sang hệ thống dự phòng"
     chunk: "Failover to the DR site took twenty minutes."
+    emoji: "🔀"
+    mnemonic_vi: "\"fail over\" là HỎNG THÌ NGÃ SANG bên kia. Hình dung cây cầu gãy một nhịp, xe tự chuyển sang nhịp dự phòng."
     tags: [dr, core]
   - term: "retention"
     ipa: "/rɪˈtenʃn/"
     meaning_vi: "thời gian giữ bản sao lưu"
     chunk: "Retention is sixty days for file shares."
+    emoji: "🗄️"
+    mnemonic_vi: "\"retain\" là GIỮ LẠI. Giữ bao lâu rồi mới xoá. Đây là con số quyết định bạn cứu được dữ liệu của bao lâu về trước."
     tags: [dr, core]
   - term: "snapshot"
     ipa: "/ˈsnæpʃɒt/"
     meaning_vi: "ảnh chụp trạng thái máy ảo tại một thời điểm"
     chunk: "We take a snapshot before every patch."
+    emoji: "📸"
+    mnemonic_vi: "Ôn lại \"shot\" — cú chụp, như \"screenshot\". Chụp cả cỗ máy lại thành một khoảnh khắc để quay về được."
     tags: [dr]
 
 sentence_patterns:

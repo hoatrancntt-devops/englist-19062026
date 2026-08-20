@@ -36,31 +36,43 @@ vocabulary:
     ipa: "/wɪr ɪnˈvestɪɡeɪtɪŋ/"
     meaning_vi: "chúng tôi đang điều tra"
     chunk: "We're investigating, next update in thirty minutes."
+    emoji: "🔎"
+    mnemonic_vi: "Trạng thái ĐẦU của một sự cố: biết có chuyện, chưa biết vì sao. Thà nói câu này sớm còn hơn im lặng chờ tới lúc biết rõ."
     tags: [incident, core]
   - term: "we've identified"
     ipa: "/wiːv aɪˈdentɪfaɪd/"
     meaning_vi: "chúng tôi đã xác định được"
     chunk: "We've identified the cause."
+    emoji: "🎯"
+    mnemonic_vi: "Trạng thái THỨ HAI: đã tìm ra nguyên nhân, chưa chắc đã sửa xong. Đừng nhảy thẳng sang câu này khi mới chỉ đoán."
     tags: [incident, core]
   - term: "workaround"
     ipa: "/ˈwɜːrkəraʊnd/"
     meaning_vi: "giải pháp tạm — giảm ảnh hưởng khi chưa sửa được gốc"
     chunk: "A workaround is in place."
+    emoji: "🩹"
+    mnemonic_vi: "Ôn lại: LÀM VÒNG QUA chỗ hỏng chứ không sửa nó. Miếng băng dán tạm — sự cố vẫn mở dù người dùng đã làm việc lại được."
     tags: [itil, core]
   - term: "next update at"
     ipa: "/nekst ˈʌpdeɪt æt/"
     meaning_vi: "cập nhật tiếp theo lúc"
     chunk: "Next update at 04:00."
+    emoji: "⏰"
+    mnemonic_vi: "Phần quan trọng nhất mọi bản tin sự cố. Có mốc thì người ta yên tâm chờ; không có mốc thì cứ năm phút lại có người hỏi."
     tags: [incident, core]
   - term: "no change since"
     ipa: "/noʊ tʃeɪndʒ sɪns/"
     meaning_vi: "chưa có gì thay đổi so với"
     chunk: "No change since the last update."
+    emoji: "➖"
+    mnemonic_vi: "Tới hạn mà chưa có tin mới thì VẪN PHẢI báo. Im lặng khiến người ta nghĩ đội xử lý đã bỏ đi ngủ."
     tags: [incident, core]
   - term: "monitoring"
     ipa: "/ˈmɒnɪtərɪŋ/"
     meaning_vi: "đang theo dõi (sau khi đã khắc phục)"
     chunk: "Service is restored, we're monitoring."
+    emoji: "📡"
+    mnemonic_vi: "Trạng thái CUỐI trước khi đóng: đã chạy lại nhưng chưa dám rời mắt. Đóng ngay khi vừa chạy lại là cách hay bị lỗi tái phát."
     tags: [incident, core]
 
 sentence_patterns:

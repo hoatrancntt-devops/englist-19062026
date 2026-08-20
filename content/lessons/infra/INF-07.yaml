@@ -43,31 +43,43 @@ vocabulary:
     ipa: "/dɪˈɡreɪdɪd/"
     meaning_vi: "suy giảm — vẫn chạy nhưng kém"
     chunk: "It's degraded, not down."
+    emoji: "🟡"
+    mnemonic_vi: "Ôn lại: TỤT HẠNG chứ chưa chết. Đèn vàng, không phải đèn đỏ."
     tags: [review, core]
   - term: "next update at"
     ipa: "/nekst ˈʌpdeɪt æt/"
     meaning_vi: "cập nhật tiếp theo lúc"
     chunk: "Next update at 04:00."
+    emoji: "⏰"
+    mnemonic_vi: "Ôn lại: có mốc thì người ta yên tâm chờ, không có mốc thì cứ năm phút lại có người hỏi."
     tags: [review, core]
   - term: "rollback plan"
     ipa: "/ˈroʊlbæk plæn/"
     meaning_vi: "phương án quay lui"
     chunk: "The rollback plan is a snapshot restore."
+    emoji: "⏪"
+    mnemonic_vi: "Ôn lại: LĂN NGƯỢC lại như tua ngược cuộn phim. Không có nó thì không được phép bắt đầu."
     tags: [review, core]
   - term: "blocked on"
     ipa: "/blɒkt ɒn/"
     meaning_vi: "đang kẹt vì"
     chunk: "I'm blocked on console access."
+    emoji: "🚧"
+    mnemonic_vi: "Ôn lại: tảng đá chắn đường. Luôn ghép với \"I need\"."
     tags: [review]
   - term: "ruled out"
     ipa: "/ruːld aʊt/"
     meaning_vi: "đã loại trừ"
     chunk: "DNS is ruled out."
+    emoji: "🚫"
+    mnemonic_vi: "\"rule out\" là GẠCH KHỎI DANH SÁCH nghi phạm. Nói ra những gì đã loại trừ cũng quan trọng như nói ra thứ mình nghi — nó chặn người khác đi lại đường cũ."
     tags: [review, core]
   - term: "RTO"
     ipa: "/ɑːr tiː oʊ/"
     meaning_vi: "khôi phục xong trong bao lâu"
     chunk: "The RTO is four hours."
+    emoji: "⏱️"
+    mnemonic_vi: "Ôn lại: chữ T là TIME, nhìn về tương lai — bao lâu nữa thì chạy lại. Còn RPO chữ P là Point, nhìn về quá khứ."
     tags: [review]
 
 sentence_patterns:

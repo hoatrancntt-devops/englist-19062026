@@ -36,31 +36,43 @@ vocabulary:
     ipa: "/ˈriːtʃəbl/"
     meaning_vi: "tới được (bằng mạng)"
     chunk: "The server is reachable from the office but not from the VPN."
+    emoji: "📶"
+    mnemonic_vi: "\"reach\" là VỚI TỚI. Luôn nói rõ tới được TỪ ĐÂU — cùng một máy chủ có thể với tới từ chỗ này mà không với tới từ chỗ khác."
     tags: [network, core]
   - term: "hop"
     ipa: "/hɒp/"
     meaning_vi: "chặng — một thiết bị trên đường đi của gói tin"
     chunk: "It fails at the third hop."
+    emoji: "🐇"
+    mnemonic_vi: "\"hop\" là CÚ NHẢY của con thỏ. Gói tin nhảy từ thiết bị này sang thiết bị kia. Nói \"chết ở chặng thứ ba\" là đã khoanh vùng được lỗi."
     tags: [network, core]
   - term: "blocked at the firewall"
     ipa: "/blɒkt æt ðə ˈfaɪərwɔːl/"
     meaning_vi: "bị tường lửa chặn"
     chunk: "Port 443 is blocked at the firewall."
+    emoji: "🧱"
+    mnemonic_vi: "\"firewall\" dịch sát là BỨC TƯỜNG LỬA — gốc từ ngành xây dựng, bức tường chặn cháy lan. Ôn lại \"block\": tảng đá chắn đường."
     tags: [network, core]
   - term: "on a different VLAN"
     ipa: "/ɒn ə ˈdɪfrənt viː læn/"
     meaning_vi: "nằm ở VLAN khác"
     chunk: "The printers are on a different VLAN."
+    emoji: "🚧"
+    mnemonic_vi: "Đọc \"vi-lan\" như một từ. Hình dung hai khu phố cùng toà nhà nhưng không có cửa thông nhau — muốn qua phải đi vòng qua cổng."
     tags: [network, core]
   - term: "route"
     ipa: "/ruːt/"
     meaning_vi: "tuyến đường (của gói tin)"
     chunk: "There's no route back to that subnet."
+    emoji: "🗺️"
+    mnemonic_vi: "Chú ý chữ \"BACK\": đường đi được mà đường VỀ không có cũng là hỏng. Lỗi mạng một chiều rất hay bị bỏ sót vì người ta chỉ kiểm một hướng."
     tags: [network, core]
   - term: "resolves to"
     ipa: "/rɪˈzɒlvz tuː/"
     meaning_vi: "phân giải ra thành (DNS)"
     chunk: "The name resolves to the old IP."
+    emoji: "🔤"
+    mnemonic_vi: "\"resolve\" là GIẢI RA. Cái tên được giải ra thành con số. Phân giải ra IP cũ là lỗi kinh điển sau khi chuyển máy chủ."
     tags: [network, core]
 
 sentence_patterns:

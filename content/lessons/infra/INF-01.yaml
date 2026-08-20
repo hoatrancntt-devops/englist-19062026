@@ -42,31 +42,43 @@ vocabulary:
     ipa: "/ræpt ʌp/"
     meaning_vi: "làm xong, khép lại"
     chunk: "I wrapped up the patching yesterday."
+    emoji: "🎁"
+    mnemonic_vi: "Ôn lại: GÓI LẠI như gói quà, buộc nơ là xong. Đây là chữ mở đầu phần \"hôm qua tôi làm gì\" trong họp nhanh."
     tags: [standup, core]
   - term: "picking up"
     ipa: "/ˈpɪkɪŋ ʌp/"
     meaning_vi: "bắt tay vào (việc mới)"
     chunk: "Today I'm picking up the DR test."
+    emoji: "🫳"
+    mnemonic_vi: "Ôn lại \"pick up\" — NHẶT LÊN, như \"pick me up\". Nhặt một việc mới lên tay. Đây là phần \"hôm nay tôi làm gì\"."
     tags: [standup, core]
   - term: "no blockers"
     ipa: "/noʊ ˈblɒkərz/"
     meaning_vi: "không vướng gì"
     chunk: "No blockers from my side."
+    emoji: "🟢"
+    mnemonic_vi: "Ôn lại \"block\" — tảng đá chắn đường. Ba phần của họp nhanh: hôm qua, hôm nay, và có tảng đá nào không."
     tags: [standup, core]
   - term: "waiting on"
     ipa: "/ˈweɪtɪŋ ɒn/"
     meaning_vi: "đang chờ (ai đó, cái gì đó)"
     chunk: "I'm waiting on the DBA team for access."
+    emoji: "⏳"
+    mnemonic_vi: "Giới từ \"on\" khi chờ NGƯỜI hoặc VIỆC; \"for\" khi chờ một mốc thời gian. Nói rõ chờ AI thì người đó nghe được trong họp và gỡ ngay."
     tags: [standup, core]
   - term: "carry over"
     ipa: "/ˈkæri ˈoʊvər/"
     meaning_vi: "chuyển sang hôm sau"
     chunk: "That one carries over to today."
+    emoji: "📤"
+    mnemonic_vi: "\"carry\" là KHIÊNG, vác. Vác việc chưa xong sang ngày hôm sau. Việc bị vác quá ba ngày là dấu hiệu có tảng đá mà chưa ai nói ra."
     tags: [standup]
   - term: "take it offline"
     ipa: "/teɪk ɪt ˈɒflaɪn/"
     meaning_vi: "bàn riêng sau buổi họp"
     chunk: "Let's take it offline after standup."
+    emoji: "🔕"
+    mnemonic_vi: "\"offline\" ở đây KHÔNG liên quan tới mạng — nghĩa là ra ngoài cuộc họp này. Câu cứu họp nhanh khỏi biến thành họp dài."
     tags: [standup, core]
 
 sentence_patterns:

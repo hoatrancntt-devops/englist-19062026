@@ -36,31 +36,43 @@ vocabulary:
     ipa: "/tʃeɪndʒ rɪˈkwest/"
     meaning_vi: "yêu cầu thay đổi"
     chunk: "I'm raising a change request for Saturday."
+    emoji: "📋"
+    mnemonic_vi: "Động từ đi kèm là \"raise\" (giơ lên, dựng lên), không phải \"make\" hay \"create\". \"Raise a change\" — nhớ nguyên cụm."
     tags: [itil, core]
   - term: "standard change"
     ipa: "/ˈstændərd tʃeɪndʒ/"
     meaning_vi: "thay đổi chuẩn — rủi ro thấp, đã được duyệt trước"
     chunk: "That's a standard change, no CAB needed."
+    emoji: "🟢"
+    mnemonic_vi: "Đã có sẵn trong danh mục và duyệt trước một lần cho mãi mãi. Việc lặp đi lặp lại, rủi ro thấp — không phải họp duyệt lại từng lần."
     tags: [itil, core]
   - term: "emergency change"
     ipa: "/ɪˈmɜːrdʒənsi tʃeɪndʒ/"
     meaning_vi: "thay đổi khẩn — làm ngay, duyệt rút gọn, rủi ro cao hơn"
     chunk: "We raised it as an emergency change."
+    emoji: "🚑"
+    mnemonic_vi: "Đầu kia của thang so với \"standard change\": rủi ro cao, duyệt tắt, và luôn phải giải trình sau. Lạm dụng loại này là dấu hiệu quy trình có vấn đề."
     tags: [itil, core]
   - term: "rollback plan"
     ipa: "/ˈroʊlbæk plæn/"
     meaning_vi: "phương án quay lui"
     chunk: "The rollback plan is a snapshot restore."
+    emoji: "⏪"
+    mnemonic_vi: "\"roll back\" là LĂN NGƯỢC lại — như cuộn phim tua ngược. Không có phương án lăn ngược thì không được phép bắt đầu."
     tags: [itil, core]
   - term: "change freeze"
     ipa: "/tʃeɪndʒ friːz/"
     meaning_vi: "giai đoạn đóng băng, không cho thay đổi"
     chunk: "We're in a change freeze until Monday."
+    emoji: "🧊"
+    mnemonic_vi: "\"freeze\" là ĐÓNG BĂNG. Thường rơi vào mùa cao điểm kinh doanh hoặc cuối năm — lúc hỏng thì thiệt hại lớn nhất."
     tags: [itil, core]
   - term: "blast radius"
     ipa: "/blɑːst ˈreɪdiəs/"
     meaning_vi: "phạm vi ảnh hưởng nếu hỏng"
     chunk: "The blast radius is two servers."
+    emoji: "💣"
+    mnemonic_vi: "\"blast\" là VỤ NỔ, \"radius\" là bán kính. Nếu quả bom này nổ thì bán kính sát thương tới đâu. Hình ảnh rất mạnh nên rất dễ nhớ."
     tags: [change]
 
 sentence_patterns:

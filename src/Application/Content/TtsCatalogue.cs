@@ -133,6 +133,17 @@ public static class TtsCatalogue
 
         foreach (var lesson in lessons)
         {
+            // Từ vựng và cụm dùng được của nó.
+            //
+            // Bước từ vựng nay đứng đầu bài và học viên phải nghe rồi nói lại từng từ, nên
+            // thiếu giọng đọc ở đây thì bước đầu tiên của mọi bài không làm được. Từ ngắn nên
+            // rẻ, và đây là chỗ phát âm chuẩn đáng giá nhất: sai từ đầu thì sai cả bài.
+            foreach (var word in lesson.Vocabulary)
+            {
+                Add(word.Term);
+                Add(word.Chunk);
+            }
+
             // Đoạn nghe của bài — dài nhất và cũng là chỗ giọng đồng nhất đáng giá nhất.
             Add(lesson.Listening?.TranscriptEn);
 

@@ -407,6 +407,15 @@ public class ContentSeeder(
         }
     }
 
+    /// <summary>
+    /// Ngưỡng đạt của MỌI bước, không phân biệt loại.
+    ///
+    /// Trước đây từ vựng và nhắc lại chỉ cần 70, nói cần 75, còn lại 80. Ngưỡng thấp ở những
+    /// bước đầu nghe thì nhân văn, nhưng hệ quả là học viên đi hết bài với vốn từ nhớ lõm bõm
+    /// rồi vấp ở bước kiểm tra — và không hiểu vì sao, vì mọi bước trước đều báo "đạt".
+    /// </summary>
+    private const int StepPassScore = 80;
+
     private static List<PlannedActivity> PlanActivities(LessonDocument doc)
     {
         var planned = new List<PlannedActivity>();
@@ -414,6 +423,19 @@ public class ContentSeeder(
         // Payload CỐ Ý không chứa câu hỏi. Câu hỏi và đáp án chỉ sống trong lesson_items,
         // và chỉ cột prompt của item mới được trả ra client. Nhét nguyên đối tượng
         // có kèm `answer` vào payload là cách rò đáp án mà không ai nhận ra.
+        // TỪ VỰNG ĐỨNG ĐẦU, trước cả phần nghe.
+        //
+        // Trước đây bài mở bằng đoạn hội thoại, tức là bắt học viên nghe một đoạn chứa những từ
+        // họ chưa từng gặp rồi mới cho xem nghĩa. Người đã biết vốn từ thì thấy bình thường,
+        // người mất gốc thì nghe xong không bắt được chữ nào và kết luận mình không học nổi.
+        // Biết mặt chữ và phát âm trước, rồi mới nghe chúng trong câu.
+        if (doc.Vocabulary.Count > 0)
+        {
+            planned.Add(new PlannedActivity(
+                ActivityKind.Vocab, SkillType.Reading,
+                new { doc.Vocabulary, doc.SentencePatterns }, StepPassScore, []));
+        }
+
         if (doc.Listening is { } listening)
         {
             planned.Add(new PlannedActivity(
@@ -427,29 +449,22 @@ public class ContentSeeder(
                     listening.Speed,
                     listening.Voice,
                 },
-                80,
+                StepPassScore,
                 listening.Questions));
-        }
-
-        if (doc.Vocabulary.Count > 0)
-        {
-            planned.Add(new PlannedActivity(
-                ActivityKind.Vocab, SkillType.Reading,
-                new { doc.Vocabulary, doc.SentencePatterns }, 70, []));
         }
 
         var shadowDrills = doc.SpeakingDrills.Where(d => d.Kind == "shadow").ToList();
         if (shadowDrills.Count > 0)
         {
             planned.Add(new PlannedActivity(
-                ActivityKind.Shadow, SkillType.Speaking, new { Drills = shadowDrills }, 70, []));
+                ActivityKind.Shadow, SkillType.Speaking, new { Drills = shadowDrills }, StepPassScore, []));
         }
 
         var speakDrills = doc.SpeakingDrills.Where(d => d.Kind != "shadow").ToList();
         if (speakDrills.Count > 0)
         {
             planned.Add(new PlannedActivity(
-                ActivityKind.Speak, SkillType.Speaking, new { Drills = speakDrills }, 75, []));
+                ActivityKind.Speak, SkillType.Speaking, new { Drills = speakDrills }, StepPassScore, []));
         }
 
         if (doc.Reading is { } reading)
@@ -458,21 +473,21 @@ public class ContentSeeder(
                 ActivityKind.Read,
                 SkillType.Reading,
                 new { reading.Kind, reading.ContextVi, reading.TextEn, reading.TextVi },
-                80,
+                StepPassScore,
                 reading.Questions));
         }
 
         if (doc.Writing is { } writing)
         {
             planned.Add(new PlannedActivity(
-                ActivityKind.Write, SkillType.Writing, writing, 80, []));
+                ActivityKind.Write, SkillType.Writing, writing, StepPassScore, []));
         }
 
         if (doc.Quiz.Count > 0)
         {
             // Bước kiểm tra không có payload riêng: toàn bộ nội dung nằm ở item.
             planned.Add(new PlannedActivity(
-                ActivityKind.Quiz, SkillType.Listening, new { }, 80, doc.Quiz));
+                ActivityKind.Quiz, SkillType.Listening, new { }, StepPassScore, doc.Quiz));
         }
 
         return planned;

@@ -88,10 +88,8 @@ public class SpeechService(
 
         var score = SpeechScorer.Score(expectedText, transcript, durationMs);
 
-        var overall = Math.Round(
-            score.PronunciationScore * PronunciationWeight
-            + score.FluencyScore * FluencyWeight
-            + score.CommunicationScore * CommunicationWeight, 1);
+        var overall = SpeechScorer.Overall(
+            score.PronunciationScore, score.FluencyScore, score.CommunicationScore);
 
         // Lưu file để hiệu chỉnh ngưỡng chấm về sau. Job dọn dẹp xoá sau 45 ngày,
         // chỉ xoá file và giữ lại dòng điểm.

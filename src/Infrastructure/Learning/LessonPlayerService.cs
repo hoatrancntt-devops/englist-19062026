@@ -240,7 +240,9 @@ public class LessonPlayerService(
             return new ActivitySubmitResult(null, Expired: true);
         }
 
-        var grade = GradeActivity(activity, submission);
+        var grade = activity.Kind is ActivityKind.Shadow or ActivityKind.Speak
+            ? await GradeSpeakingAsync(activity, userId, open?.StartedAt ?? now, ct)
+            : GradeActivity(activity, submission);
 
         var attempt = await GetOrCreateAttemptAsync(userId, lesson.Id, now, ct);
         attempt.CurrentActivityIndex = Math.Max(attempt.CurrentActivityIndex, activity.OrderIndex + 1);
@@ -539,13 +541,9 @@ public class LessonPlayerService(
         {
             case ActivityKind.Shadow:
             case ActivityKind.Speak:
-                // Chấm phát âm cần dịch vụ nhận dạng giọng nói, chưa có ở giai đoạn này.
-                // Trả về chưa-chấm-được thay vì bịa điểm.
-                return new ActivityGrade(
-                    0, false, [],
-                    "Phần nói chưa chấm được tự động. Bạn vẫn nên đọc to theo mẫu — "
-                    + "phần chấm phát âm sẽ bật ở bản sau.",
-                    Graded: false);
+                // Xử lý riêng ở SubmitActivityAsync vì phải đọc bản ghi giọng đã chấm trong DB.
+                // Nhánh này không bao giờ chạy tới.
+                return new ActivityGrade(0, false, [], "Bước nói chấm ở nhánh riêng.", Graded: false);
 
             case ActivityKind.Write:
             {
@@ -570,6 +568,111 @@ public class LessonPlayerService(
             }
         }
     }
+
+    /// <summary>
+    /// Chấm bước Nói và Nhắc lại từ những lần thu giọng ĐÃ được chấm và lưu ở máy chủ.
+    ///
+    /// Điểm không đi qua client một lần nào: trình duyệt gửi file ghi âm tới /speech/grade,
+    /// máy chủ chấm và lưu, rồi chỗ này đọc lại. Nếu để client gửi điểm lên thì bước Nói thành
+    /// bước duy nhất trong bài mà học viên tự cho mình bao nhiêu điểm cũng được.
+    ///
+    /// Câu chưa thu tính 0 chứ không bị loại khỏi phép trung bình — thu một câu rồi nộp mà được
+    /// 100 thì bước này vô nghĩa.
+    /// </summary>
+    private async Task<ActivityGrade> GradeSpeakingAsync(
+        Domain.Entities.Content.LessonActivity activity,
+        Guid userId,
+        DateTimeOffset since,
+        CancellationToken ct)
+    {
+        var expectedTexts = ReadDrillTexts(activity.PayloadJson);
+
+        if (expectedTexts.Count == 0)
+        {
+            return new ActivityGrade(0, false, [], "Bước này không có câu mẫu nào.", Graded: false);
+        }
+
+        var attempts = await db.SpeechAttempts
+            .AsNoTracking()
+            .Where(a => a.UserId == userId
+                && a.ContextId == activity.Id
+                && a.CreatedAt >= since)
+            .Select(a => new
+            {
+                a.ExpectedText,
+                a.PronunciationScore,
+                a.FluencyScore,
+                a.CommunicationScore,
+            })
+            .ToListAsync(ct);
+
+        if (attempts.Count == 0)
+        {
+            return new ActivityGrade(
+                0, false, [],
+                $"Bạn chưa thu âm câu nào. Nghe câu mẫu rồi bấm thu, đủ {expectedTexts.Count} câu mới chấm được.",
+                Graded: false);
+        }
+
+        // Mỗi câu lấy lần thu tốt nhất: học viên được phép thu lại tới khi nói được.
+        var bestByText = attempts
+            .GroupBy(a => Normalize(a.ExpectedText), StringComparer.Ordinal)
+            .ToDictionary(
+                g => g.Key,
+                g => g.Max(a => SpeechScorer.Overall(
+                    a.PronunciationScore, a.FluencyScore, a.CommunicationScore)),
+                StringComparer.Ordinal);
+
+        var perDrill = expectedTexts
+            .Select(t => bestByText.GetValueOrDefault(Normalize(t), 0))
+            .ToList();
+
+        var score = Math.Round(perDrill.Average(), 1);
+        var missing = perDrill.Count(s => s == 0);
+
+        var message = missing > 0
+            ? $"{score} điểm. Còn {missing}/{expectedTexts.Count} câu chưa thu, câu chưa thu tính 0."
+            : $"{score} điểm trên {expectedTexts.Count} câu.";
+
+        return new ActivityGrade(score, score >= activity.PassScore, [], message);
+    }
+
+    /// <summary>Câu mẫu của từng drill trong payload. Đọc tha cả hai kiểu hoa thường của khoá.</summary>
+    private static List<string> ReadDrillTexts(string payloadJson)
+    {
+        try
+        {
+            using var doc = JsonDocument.Parse(payloadJson);
+
+            if (!doc.RootElement.TryGetProperty("Drills", out var drills)
+                && !doc.RootElement.TryGetProperty("drills", out drills))
+            {
+                return [];
+            }
+
+            if (drills.ValueKind != JsonValueKind.Array)
+            {
+                return [];
+            }
+
+            return [.. drills.EnumerateArray()
+                .Select(d =>
+                    d.TryGetProperty("ExpectedText", out var t) || d.TryGetProperty("expectedText", out t)
+                        ? t.GetString()
+                        : null)
+                .Where(t => !string.IsNullOrWhiteSpace(t))
+                .Select(t => t!)];
+        }
+        catch (JsonException)
+        {
+            return [];
+        }
+    }
+
+    private static string Normalize(string value) =>
+        string.Join(' ', value.ToLowerInvariant().Split(
+            [' ', '\t', '\n', '\r', '.', ',', '?', '!', ';', ':'],
+            StringSplitOptions.RemoveEmptyEntries));
 
     private static WritingRubric? ReadWritingRubric(string payloadJson)
     {

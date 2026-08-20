@@ -21,6 +21,23 @@ public record SpeechScore(
 /// </summary>
 public static class SpeechScorer
 {
+    /// <summary>
+    /// Trọng số gộp ba trục thành một điểm.
+    ///
+    /// Truyền đạt nặng nhất vì mục tiêu là nói cho người ta hiểu, không phải nói cho giống
+    /// người bản xứ. Đặt ở đây thay vì trong dịch vụ chấm để chỗ chấm bước Nói của bài học
+    /// gộp ra đúng cùng một con số — hai công thức là hai điểm khác nhau cho cùng một lần nói.
+    /// </summary>
+    private const double PronunciationWeight = 0.35;
+    private const double FluencyWeight = 0.20;
+    private const double CommunicationWeight = 0.45;
+
+    public static double Overall(double pronunciation, double fluency, double communication) =>
+        Math.Round(
+            pronunciation * PronunciationWeight
+            + fluency * FluencyWeight
+            + communication * CommunicationWeight, 1);
+
     /// <summary>Tốc độ nói tự nhiên của người bản xứ, từ mỗi phút.</summary>
     private const double NaturalWordsPerMinute = 150;
 

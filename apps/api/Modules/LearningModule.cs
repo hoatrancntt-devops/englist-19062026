@@ -595,6 +595,15 @@ public static class LearningModule
             });
         }
 
+        if (result.BlockedReasonVi is not null)
+        {
+            return Results.Conflict(new
+            {
+                error = "step_locked",
+                message = result.BlockedReasonVi,
+            });
+        }
+
         return Results.Ok(result.Grade);
     }
 

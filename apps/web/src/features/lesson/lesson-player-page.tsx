@@ -41,8 +41,12 @@ export function LessonPlayerPage() {
    */
   const [expired, setExpired] = useState(false)
 
+  /** Câu giải thích của máy chủ khi bước sau bị khoá vì bước trước chưa đạt. */
+  const [stepBlocked, setStepBlocked] = useState<string | null>(null)
+
   const restartAfterExpiry = () => {
     setExpired(true)
+    setStepBlocked(null)
     setStepIndex(0)
     setGrades({})
     setResult(null)
@@ -67,6 +71,7 @@ export function LessonPlayerPage() {
       // hai đồng hồ lệch nhau đúng mười phút. Lấy lại con số thật ngay sau bước đầu.
       const firstStep = Object.keys(grades).length === 0
 
+      setStepBlocked(null)
       setGrades((prev) => ({ ...prev, [variables.activityId]: grade }))
 
       if (firstStep) {
@@ -74,11 +79,20 @@ export function LessonPlayerPage() {
       }
     },
 
-    // Máy chủ trả 409 khi bước tới muộn hơn trần thời gian. Đồng hồ ở client có thể lệch
-    // vài giây, nên đây mới là nguồn quyết định thật.
+    // Hai loại 409 khác hẳn nhau và PHẢI phân biệt bằng mã lỗi, không phải bằng mã trạng thái:
+    // hết giờ thì xoá sạch bài làm, còn bước bị khoá thì tuyệt đối không được xoá gì.
     onError: (error) => {
-      if (error instanceof ApiError && error.status === 409) {
+      if (!(error instanceof ApiError) || error.status !== 409) {
+        return
+      }
+
+      if (error.code === 'lesson_expired') {
         restartAfterExpiry()
+        return
+      }
+
+      if (error.code === 'step_locked') {
+        setStepBlocked(error.message)
       }
     },
   })
@@ -148,6 +162,14 @@ export function LessonPlayerPage() {
             Hết {lesson.timeLimitMinutes} phút cho một lượt làm bài. Các bước đã làm được đặt lại,
             bạn bắt đầu lại từ bước một với đồng hồ mới.
           </p>
+        </div>
+      ) : null}
+
+      {/* Bước bị khoá KHÔNG xoá gì cả — chỉ nói cần quay lại bước nào. */}
+      {stepBlocked ? (
+        <div className="flex items-start gap-2 rounded-[var(--radius-control)] bg-[color-mix(in_oklch,var(--color-warning)_18%,transparent)] p-3 text-sm text-[var(--color-warning-text)]">
+          <Lock className="mt-0.5 size-4 shrink-0" aria-hidden />
+          <p>{stepBlocked}</p>
         </div>
       ) : null}
 

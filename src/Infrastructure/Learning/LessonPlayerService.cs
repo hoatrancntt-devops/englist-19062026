@@ -4,6 +4,7 @@ using EnglishForIT.Domain.Entities.Progress;
 using EnglishForIT.Domain.Enums;
 using EnglishForIT.Infrastructure.Persistence;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.Logging;
 using Microsoft.Extensions.Options;
 
@@ -52,7 +53,11 @@ public record PlayerLesson(
 /// <c>Expired</c> nghĩa là lượt đã quá trần thời gian: bài vừa bị đặt lại về đầu và bước vừa
 /// nộp KHÔNG được chấm. Đây là trạng thái thứ ba, khác hẳn "không tìm thấy bài" (null).
 /// </summary>
-public record ActivitySubmitResult(ActivityGrade? Grade, bool Expired);
+public record ActivitySubmitResult(
+    ActivityGrade? Grade,
+    bool Expired,
+    /// <summary>Có giá trị thì bước bị chặn vì bước trước chưa đạt. Client hiện nguyên câu này.</summary>
+    string? BlockedReasonVi = null);
 
 public record ActivitySubmission(
     Guid ActivityId,
@@ -80,9 +85,19 @@ public class LessonPlayerService(
     LearningPathService pathService,
     StreakService streaks,
     IOptions<LearningPolicyOptions> policyOptions,
+    IConfiguration configuration,
     ILogger<LessonPlayerService> logger)
 {
     private readonly LearningPolicyOptions _policy = policyOptions.Value;
+
+    /// <summary>
+    /// Máy chủ này có chấm phát âm được không.
+    ///
+    /// Quyết định cổng thứ tự bước có áp cho bước nói hay không: máy chủ không bật chấm giọng
+    /// thì từ vựng, nhắc lại và nói KHÔNG BAO GIỜ đạt được, và chặn theo thứ tự sẽ khoá cứng
+    /// mọi bài ngay ở bước đầu tiên.
+    /// </summary>
+    private readonly bool _speechEnabled = configuration.GetValue("Speech:Enabled", false);
     private readonly PrerequisiteEngine _engine = new(policyOptions.Value);
     private readonly ActivityGrader _grader = new();
     private readonly WritingGrader _writingGrader = new();
@@ -238,6 +253,17 @@ public class LessonPlayerService(
             await db.SaveChangesAsync(ct);
 
             return new ActivitySubmitResult(null, Expired: true);
+        }
+
+        // Cổng thứ tự: bước trước chưa đạt thì chưa được nộp bước sau.
+        //
+        // Chặn ở máy chủ chứ không chỉ ẩn nút ở giao diện, vì thanh bước cho phép bấm thẳng
+        // vào bước bất kỳ và request nộp thì gọi tay cũng được.
+        var blocked = await BlockedByEarlierStepAsync(lesson, activity, userId, open, ct);
+
+        if (blocked is not null)
+        {
+            return new ActivitySubmitResult(null, Expired: false, BlockedReasonVi: blocked);
         }
 
         // Từ vựng cũng chấm bằng giọng: học viên nghe rồi phải nói lại được từng từ.
@@ -642,6 +668,80 @@ public class LessonPlayerService(
 
         return new ActivityGrade(score, score >= activity.PassScore, [], message);
     }
+
+    /// <summary>
+    /// Bước trước đã đạt chưa. Trả về câu giải thích nếu chưa, null nếu được đi tiếp.
+    ///
+    /// Chỉ tính những bước HỌC VIÊN NHÌN THẤY: chế độ "chỉ nghe" không hiện bước viết, nên
+    /// đòi họ đạt bước viết là khoá cứng bài mà không có cách nào gỡ.
+    /// </summary>
+    private async Task<string?> BlockedByEarlierStepAsync(
+        Domain.Entities.Content.Lesson lesson,
+        Domain.Entities.Content.LessonActivity activity,
+        Guid userId,
+        LessonAttempt? open,
+        CancellationToken ct)
+    {
+        var profile = await db.UserProfiles.AsNoTracking()
+            .FirstOrDefaultAsync(p => p.UserId == userId, ct);
+
+        var kept = KindsFor(profile?.StudyMode ?? StudyMode.Mixed);
+
+        var earlier = await db.LessonActivities.AsNoTracking()
+            .Where(a => a.LessonId == lesson.Id && a.OrderIndex < activity.OrderIndex)
+            .Select(a => new { a.Id, a.Kind, a.OrderIndex })
+            .ToListAsync(ct);
+
+        var required = earlier.Where(a => kept.Contains(a.Kind)).ToList();
+
+        // Van an toàn: máy chủ không chấm được giọng thì bỏ qua những bước chấm bằng giọng.
+        if (!_speechEnabled)
+        {
+            required = [.. required.Where(a =>
+                a.Kind is not (ActivityKind.Vocab or ActivityKind.Shadow or ActivityKind.Speak))];
+        }
+
+        if (required.Count == 0)
+        {
+            return null;
+        }
+
+        var requiredIds = required.Select(a => a.Id).ToHashSet();
+
+        var passedIds = open is null
+            ? []
+            : await db.ActivityAttempts.AsNoTracking()
+                .Where(a => a.LessonAttemptId == open.Id && a.Passed && requiredIds.Contains(a.ActivityId))
+                .Select(a => a.ActivityId)
+                .ToHashSetAsync(ct);
+
+        var missing = required
+            .Where(a => !passedIds.Contains(a.Id))
+            .OrderBy(a => a.OrderIndex)
+            .ToList();
+
+        if (missing.Count == 0)
+        {
+            return null;
+        }
+
+        // Nêu đích danh bước còn thiếu chứ không nói "chưa đủ điều kiện": học viên phải biết
+        // quay lại bước nào.
+        return $"Cần đạt bước {KindLabelVi(missing[0].Kind)} trước đã. "
+            + $"Mỗi bước phải từ {activity.PassScore} điểm trở lên mới qua được.";
+    }
+
+    private static string KindLabelVi(ActivityKind kind) => kind switch
+    {
+        ActivityKind.Vocab => "Từ vựng",
+        ActivityKind.Listen => "Nghe",
+        ActivityKind.Shadow => "Nhắc lại",
+        ActivityKind.Speak => "Nói",
+        ActivityKind.Read => "Đọc",
+        ActivityKind.Write => "Viết",
+        ActivityKind.Quiz => "Kiểm tra",
+        _ => kind.ToString(),
+    };
 
     /// <summary>Từ cần đọc được ở bước từ vựng. Chấm trên chính từ, không chấm trên cụm ví dụ.</summary>
     private static List<string> ReadVocabularyTerms(string payloadJson)

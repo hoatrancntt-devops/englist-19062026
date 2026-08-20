@@ -18,6 +18,7 @@ import {
   Moon,
   GraduationCap,
   Compass,
+  Sparkles,
 } from 'lucide-react'
 import { cn } from '@/lib/cn'
 import { SiteFooter } from './site-footer'
@@ -42,6 +43,10 @@ const NAV_ITEMS: NavItem[] = [
   { to: '/learn/chon-linh-vuc', label: 'Lĩnh vực học', icon: Compass, hint: 'Đổi chủ đề và kỹ năng' },
 
   { to: '/learn/roadmap', label: 'Lộ trình', icon: Map, hint: 'Toàn bộ chặng đường' },
+
+  // Vốn từ đứng cạnh Lộ trình chứ không lẫn vào bốn kỹ năng: nó chạy SONG SONG, không khoá
+  // bài nào, và là thứ người mất gốc cần trước khi nghe hiểu được bất cứ đoạn nào.
+  { to: '/learn/tu-vung', label: 'Vốn từ', icon: Sparkles, hint: 'Từ thông dụng nhất' },
   // Ôn tập đứng trên bốn kỹ năng vì nó là việc nên làm TRƯỚC khi học bài mới:
   // câu đã tới hạn mà để trôi thì phần học trước đó mất dần.
   { to: '/learn/review', label: 'Ôn tập', icon: RotateCcw, hint: 'Câu sắp quên' },

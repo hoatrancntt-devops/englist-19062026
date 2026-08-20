@@ -110,6 +110,8 @@ public static class DependencyInjection
         services.AddScoped<StorySeeder>();
         services.AddSingleton<StoryValidator>();
         services.AddScoped<WritingSeeder>();
+        services.AddScoped<VocabDeckSeeder>();
+        services.AddScoped<VocabDeckService>();
         services.AddSingleton<WritingValidator>();
 
         // Vận hành: thông báo, hộp thư đi, và các job định kỳ của worker.

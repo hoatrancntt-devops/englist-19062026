@@ -57,6 +57,10 @@ public class AppDbContext(DbContextOptions<AppDbContext> options) : DbContext(op
     public DbSet<WritingAttempt> WritingAttempts => Set<WritingAttempt>();
     public DbSet<ConsolidationPass> ConsolidationPasses => Set<ConsolidationPass>();
 
+    public DbSet<VocabDeck> VocabDecks => Set<VocabDeck>();
+    public DbSet<VocabWord> VocabWords => Set<VocabWord>();
+    public DbSet<VocabWordProgress> VocabWordProgresses => Set<VocabWordProgress>();
+
     // Ops
     public DbSet<Notification> Notifications => Set<Notification>();
     public DbSet<NotificationPreference> NotificationPreferences => Set<NotificationPreference>();

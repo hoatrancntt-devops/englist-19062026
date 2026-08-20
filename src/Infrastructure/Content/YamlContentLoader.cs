@@ -36,6 +36,10 @@ public record LoadedWriting(WritingSetDocument Document, string SourceHash, stri
 
 public record WritingLoadResult(IReadOnlyList<LoadedWriting> Sets, IReadOnlyList<LoadError> Errors);
 
+public record LoadedVocabDeck(VocabDeckDocument Document, string SourceHash, string FilePath);
+
+public record VocabDeckLoadResult(IReadOnlyList<LoadedVocabDeck> Decks, IReadOnlyList<LoadError> Errors);
+
 /// <summary>
 /// Đọc content/lessons/**/*.yaml thành đối tượng.
 ///
@@ -95,6 +99,15 @@ public class YamlContentLoader(ILogger<YamlContentLoader> logger)
 
         return new WritingLoadResult(
             docs.Select(d => new LoadedWriting(d.Document, d.Hash, d.FilePath)).ToList(),
+            errors);
+    }
+
+    public VocabDeckLoadResult LoadVocabDecks(string contentRoot)
+    {
+        var (docs, errors) = LoadFolder<VocabDeckDocument>(contentRoot, "vocab");
+
+        return new VocabDeckLoadResult(
+            docs.Select(d => new LoadedVocabDeck(d.Document, d.Hash, d.FilePath)).ToList(),
             errors);
     }
 

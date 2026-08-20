@@ -35,7 +35,9 @@ public class TtsManifestWriter(YamlContentLoader loader, ILogger<TtsManifestWrit
         var placements = loader.LoadPlacementForms(contentRoot).Forms.Select(p => p.Document);
         var roleplays = loader.LoadRoleplayScenarios(contentRoot).Scenarios.Select(r => r.Document);
 
-        var entries = TtsCatalogue.Collect(lessons, placements, roleplays);
+        var vocabDecks = loader.LoadVocabDecks(contentRoot).Decks.Select(d => d.Document);
+
+        var entries = TtsCatalogue.Collect(lessons, placements, roleplays, vocabDecks);
 
         var directory = Path.Combine(audioRoot, DirectoryName);
         Directory.CreateDirectory(directory);

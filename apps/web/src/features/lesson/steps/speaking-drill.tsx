@@ -29,11 +29,18 @@ export function SpeakingDrill({
   promptVi,
   ipa,
   activityId,
+  contextType = 'lesson_activity',
+  onGraded,
 }: {
   expectedText: string
   promptVi: string
   ipa?: string
+  /** Id của thứ đang luyện: bước học, hoặc từ trong bộ từ vựng. */
   activityId: string
+  /** Gắn nhãn bản ghi để về sau còn biết nó thuộc mạch nào. */
+  contextType?: 'lesson_activity' | 'vocab_word'
+  /** Gọi sau khi máy chủ chấm xong, để nơi dùng cập nhật tiến độ của mình. */
+  onGraded?: () => void
 }) {
   const speech = useSpeech()
   const recorder = useRecorder()
@@ -53,12 +60,13 @@ export function SpeakingDrill({
     const form = new FormData()
     form.append('audio', recorder.recording.blob, 'loi-noi.webm')
     form.append('expectedText', expectedText)
-    form.append('contextType', 'lesson_activity')
+    form.append('contextType', contextType)
     form.append('contextId', activityId)
     form.append('durationMs', String(recorder.recording.durationMs))
 
     try {
       setGrade(await api.postForm<SpeechGrade>('/api/v1/speech/grade', form))
+      onGraded?.()
     } catch (caught) {
       setError(
         caught instanceof ApiError

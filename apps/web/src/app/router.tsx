@@ -26,6 +26,8 @@ import { RoleplayPage } from '@/features/roleplay/roleplay-page'
 import { StoryPage } from '@/features/story/story-page'
 import { WritingDrillPage } from '@/features/writing/writing-page'
 import { ConsolidationPage } from '@/features/learn/consolidation-page'
+import { VocabDeckListPage } from '@/features/vocab/vocab-page'
+import { VocabDeckPage } from '@/features/vocab/vocab-deck-page'
 
 // Trang quản trị tách bundle riêng: học viên chiếm gần hết lưu lượng và
 // không bao giờ cần tải mã của khu quản trị.
@@ -125,6 +127,10 @@ export const router = createBrowserRouter([
 
               // Bài tổng hợp không nằm trong danh sách bài nên không có đường /lesson/:code.
               { path: 'on-tap-tong-hop', element: <ConsolidationPage /> },
+
+              // Bộ từ vựng chạy song song lộ trình, không khoá bài nào.
+              { path: 'tu-vung', element: <VocabDeckListPage /> },
+              { path: 'tu-vung/:code', element: <VocabDeckPage /> },
               { path: 'notifications', element: <NotificationsPage /> },
               { path: 'settings', element: <SettingsPage /> },
 

@@ -120,6 +120,7 @@ app.MapPlacementModule();
 app.MapRoleplayModule();
 app.MapStoryModule();
 app.MapWritingModule();
+app.MapVocabModule();
 app.MapAiModule();
 app.MapAdminModule();
 app.MapAdminContentModule();
@@ -230,6 +231,21 @@ using (var scope = app.Services.CreateScope())
         catch (Exception ex)
         {
             logger.LogError(ex, "Seed bài viết thất bại. Bộ cũ trong DB giữ nguyên, app vẫn chạy.");
+        }
+
+        try
+        {
+            var vocabSeeder = scope.ServiceProvider.GetRequiredService<VocabDeckSeeder>();
+            var vocabReport = await vocabSeeder.SeedAsync(contentRoot);
+
+            foreach (var problem in vocabReport.Problems)
+            {
+                logger.LogError("Bộ từ vựng có vấn đề: {Problem}", problem);
+            }
+        }
+        catch (Exception ex)
+        {
+            logger.LogError(ex, "Seed từ vựng thất bại. Bộ cũ trong DB giữ nguyên, app vẫn chạy.");
         }
 
         // Danh sách đoạn cần đọc thành tiếng, cho bước sinh giọng chạy ngoài API.

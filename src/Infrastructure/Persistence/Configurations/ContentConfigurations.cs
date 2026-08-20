@@ -236,6 +236,56 @@ public class PlacementFormItemConfiguration : IEntityTypeConfiguration<Placement
     }
 }
 
+public class VocabDeckConfiguration : IEntityTypeConfiguration<VocabDeck>
+{
+    public void Configure(EntityTypeBuilder<VocabDeck> b)
+    {
+        b.Property(x => x.Code).HasMaxLength(32).IsRequired();
+        b.Property(x => x.TitleVi).HasMaxLength(300).IsRequired();
+        b.Property(x => x.ContextVi).HasMaxLength(2000).IsRequired();
+        b.Property(x => x.SourceHash).HasMaxLength(64).IsRequired();
+
+        b.HasIndex(x => x.Code).IsUnique();
+        b.HasIndex(x => x.Band);
+    }
+}
+
+public class VocabWordConfiguration : IEntityTypeConfiguration<VocabWord>
+{
+    public void Configure(EntityTypeBuilder<VocabWord> b)
+    {
+        b.Property(x => x.Term).HasMaxLength(120).IsRequired();
+        b.Property(x => x.Ipa).HasMaxLength(160).IsRequired();
+        b.Property(x => x.MeaningVi).HasMaxLength(500).IsRequired();
+        b.Property(x => x.Chunk).HasMaxLength(500).IsRequired();
+        b.Property(x => x.Emoji).HasMaxLength(32);
+        b.Property(x => x.MnemonicVi).HasMaxLength(1000);
+
+        b.HasOne(x => x.Deck)
+            .WithMany(d => d.Words)
+            .HasForeignKey(x => x.DeckId)
+            .OnDelete(DeleteBehavior.Cascade);
+
+        // Một từ chỉ xuất hiện một lần trong một bộ. Cổng nội dung đã chặn, ràng buộc này là
+        // lớp thứ hai để một lần seed lỗi không âm thầm nhân đôi từ.
+        b.HasIndex(x => new { x.DeckId, x.Term }).IsUnique();
+    }
+}
+
+public class VocabWordProgressConfiguration : IEntityTypeConfiguration<VocabWordProgress>
+{
+    public void Configure(EntityTypeBuilder<VocabWordProgress> b)
+    {
+        b.HasIndex(x => new { x.UserId, x.WordId }).IsUnique();
+        b.HasIndex(x => new { x.UserId, x.DueAt });
+
+        // Xoá học viên là xoá sạch tiến độ của họ. Thiếu dòng này thì bảng đầy dần những dòng
+        // mồ côi trỏ về tài khoản không còn tồn tại — đúng lỗi đã gặp ở story và writing.
+        b.HasOne(x => x.User).WithMany().HasForeignKey(x => x.UserId).OnDelete(DeleteBehavior.Cascade);
+        b.HasOne(x => x.Word).WithMany().HasForeignKey(x => x.WordId).OnDelete(DeleteBehavior.Cascade);
+    }
+}
+
 public class WritingSetConfiguration : IEntityTypeConfiguration<WritingSet>
 {
     public void Configure(EntityTypeBuilder<WritingSet> b)

@@ -34,6 +34,22 @@ public record LearningPreferences(
 
 public record PreferencesUpdate(string PrimaryTrack, string StudyMode);
 
+/// <summary>
+/// Lịch học: mỗi ngày định học bao nhiêu phút, và muốn được nhắc lúc mấy giờ.
+///
+/// Ba giá trị này đã được engine dùng từ trước — chuỗi ngày đo theo mục tiêu phút, job nhắc học
+/// gửi theo giờ địa phương — nhưng chưa có đường nào cho học viên tự đổi.
+/// </summary>
+public record LearningSchedule(
+    int DailyMinutesTarget,
+    int ReminderHourLocal,
+    string TimeZone,
+    IReadOnlyList<TimeZoneOption> TimeZones);
+
+public record TimeZoneOption(string Id, string LabelVi);
+
+public record ScheduleUpdate(int DailyMinutesTarget, int ReminderHourLocal, string TimeZone);
+
 /// <summary>Bài thi vượt được nộp trọn gói: không chấm từng câu để không lộ đáp án giữa chừng.</summary>
 public record ChallengeSubmission(IReadOnlyList<ItemResponse> Responses);
 
@@ -121,6 +137,12 @@ public static class LearningModule
         group.MapGet("/preferences", GetPreferences)
             .WithSummary("Lĩnh vực và chế độ học đang chọn, kèm danh sách lựa chọn có nội dung thật");
 
+        group.MapGet("/schedule", GetSchedule)
+            .WithSummary("Mục tiêu phút mỗi ngày, giờ nhắc học và múi giờ");
+
+        group.MapPut("/schedule", SaveSchedule)
+            .WithSummary("Đổi mục tiêu phút mỗi ngày, giờ nhắc học và múi giờ");
+
         group.MapPut("/preferences", SavePreferences)
             .WithSummary("Đổi lĩnh vực và chế độ học. Không đụng tới tiến độ đã có.");
 
@@ -186,6 +208,126 @@ public static class LearningModule
             profile?.StudyMode.ToString() ?? nameof(StudyMode.Mixed),
             profile?.OnboardingCompleted ?? false,
             tracks));
+    }
+
+    /// <summary>Dưới ngưỡng này thì một bài cũng không xong, mục tiêu thành vô nghĩa.</summary>
+    private const int MinDailyMinutes = 10;
+
+    /// <summary>Trên ngưỡng này là đặt mục tiêu để tự trách mình, không phải để học.</summary>
+    private const int MaxDailyMinutes = 240;
+
+    /// <summary>
+    /// Múi giờ gợi ý cho ô chọn. Không phải danh sách hợp lệ — máy chủ nhận mọi IANA id
+    /// mà hệ thống phân giải được, đây chỉ là những nơi học viên thực tế đang ở.
+    /// </summary>
+    private static readonly TimeZoneOption[] SuggestedTimeZones =
+    [
+        new("Asia/Ho_Chi_Minh", "Việt Nam (GMT+7)"),
+        new("Asia/Bangkok", "Thái Lan (GMT+7)"),
+        new("Asia/Singapore", "Singapore (GMT+8)"),
+        new("Asia/Tokyo", "Nhật Bản (GMT+9)"),
+        new("Asia/Seoul", "Hàn Quốc (GMT+9)"),
+        new("Australia/Sydney", "Sydney (GMT+10/+11)"),
+        new("Europe/London", "London (GMT+0/+1)"),
+        new("Europe/Berlin", "Trung Âu (GMT+1/+2)"),
+        new("America/Los_Angeles", "Bờ Tây Mỹ (GMT-8/-7)"),
+        new("UTC", "UTC"),
+    ];
+
+    private static async Task<IResult> GetSchedule(
+        ClaimsPrincipal principal,
+        AppDbContext db,
+        CancellationToken ct)
+    {
+        if (!TryGetUserId(principal, out var userId))
+        {
+            return Results.Unauthorized();
+        }
+
+        var profile = await db.UserProfiles.AsNoTracking()
+            .FirstOrDefaultAsync(p => p.UserId == userId, ct);
+
+        if (profile is null)
+        {
+            return Results.NotFound(new { message = "Chưa có hồ sơ học." });
+        }
+
+        // Múi giờ đang dùng phải có mặt trong danh sách, kể cả khi nó không nằm trong nhóm
+        // gợi ý: thiếu nó thì ô chọn hiện sai và bấm Lưu sẽ âm thầm đổi múi giờ của học viên.
+        var options = SuggestedTimeZones.Any(z => z.Id == profile.TimeZone)
+            ? SuggestedTimeZones
+            : [.. SuggestedTimeZones, new TimeZoneOption(profile.TimeZone, profile.TimeZone)];
+
+        return Results.Ok(new LearningSchedule(
+            profile.DailyMinutesTarget,
+            profile.ReminderHourLocal,
+            profile.TimeZone,
+            options));
+    }
+
+    private static async Task<IResult> SaveSchedule(
+        ClaimsPrincipal principal,
+        [FromBody] ScheduleUpdate body,
+        AppDbContext db,
+        CancellationToken ct)
+    {
+        if (!TryGetUserId(principal, out var userId))
+        {
+            return Results.Unauthorized();
+        }
+
+        if (body.DailyMinutesTarget is < MinDailyMinutes or > MaxDailyMinutes)
+        {
+            return Results.BadRequest(new
+            {
+                message = $"Mục tiêu mỗi ngày phải trong khoảng {MinDailyMinutes}–{MaxDailyMinutes} phút.",
+            });
+        }
+
+        if (body.ReminderHourLocal is < 0 or > 23)
+        {
+            return Results.BadRequest(new { message = "Giờ nhắc học phải trong khoảng 0–23." });
+        }
+
+        // Phân giải thật chứ không dùng LocalDay.Resolve: hàm đó nuốt lỗi và trả về UTC,
+        // nên một múi giờ gõ sai sẽ được lưu và chuỗi ngày của học viên lệch trong im lặng.
+        if (!TryResolveTimeZone(body.TimeZone))
+        {
+            return Results.BadRequest(new { message = $"Múi giờ không hợp lệ: {body.TimeZone}" });
+        }
+
+        var profile = await db.UserProfiles.FirstOrDefaultAsync(p => p.UserId == userId, ct);
+
+        if (profile is null)
+        {
+            return Results.NotFound(new { message = "Chưa có hồ sơ học." });
+        }
+
+        profile.DailyMinutesTarget = body.DailyMinutesTarget;
+        profile.ReminderHourLocal = body.ReminderHourLocal;
+        profile.TimeZone = body.TimeZone;
+
+        await db.SaveChangesAsync(ct);
+
+        return Results.Ok(new { message = "Đã lưu." });
+    }
+
+    private static bool TryResolveTimeZone(string? id)
+    {
+        if (string.IsNullOrWhiteSpace(id))
+        {
+            return false;
+        }
+
+        try
+        {
+            TimeZoneInfo.FindSystemTimeZoneById(id);
+            return true;
+        }
+        catch (Exception e) when (e is TimeZoneNotFoundException or InvalidTimeZoneException)
+        {
+            return false;
+        }
     }
 
     private static async Task<IResult> SavePreferences(
@@ -389,15 +531,29 @@ public static class LearningModule
             return Results.Unauthorized();
         }
 
-        var grade = await player.SubmitActivityAsync(userId, code, submission, DateTimeOffset.UtcNow, ct);
+        var result = await player.SubmitActivityAsync(userId, code, submission, DateTimeOffset.UtcNow, ct);
 
-        return grade is null
-            ? Results.BadRequest(new
+        if (result is null)
+        {
+            return Results.BadRequest(new
             {
                 error = "activity_not_submittable",
                 message = "Bài hoặc bước học không hợp lệ, hoặc bài đang bị khoá.",
-            })
-            : Results.Ok(grade);
+            });
+        }
+
+        // 409 chứ không phải 400: bước nộp lên hoàn toàn hợp lệ, chỉ là nó tới muộn.
+        // Client cần phân biệt để tải lại bài từ đầu thay vì hiện lỗi nhập liệu.
+        if (result.Expired)
+        {
+            return Results.Conflict(new
+            {
+                error = "lesson_expired",
+                message = "Hết giờ làm bài. Bài đã được đặt lại về đầu, bạn làm lại từ bước một.",
+            });
+        }
+
+        return Results.Ok(result.Grade);
     }
 
     private static async Task<IResult> SubmitLesson(

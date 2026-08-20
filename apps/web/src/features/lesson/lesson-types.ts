@@ -83,6 +83,10 @@ export interface PlayerLesson {
   mastery: number
   lockExplanationVi: string
   resumeAtActivityIndex: number
+  /** Số giây còn lại của lượt làm bài. Hết giờ thì bài bị đặt lại về đầu. */
+  secondsRemaining: number
+  /** Trần thời gian mỗi lượt, tính bằng phút. */
+  timeLimitMinutes: number
 }
 
 export interface GradedItem {

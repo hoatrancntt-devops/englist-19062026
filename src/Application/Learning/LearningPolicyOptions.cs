@@ -100,4 +100,14 @@ public class LearningPolicyOptions
 
     /// <summary>Thời gian cộng thêm sau hạn nộp lý thuyết, phòng mạng chậm lúc nộp bài.</summary>
     public int PlacementGraceMinutes { get; set; } = 5;
+
+    /// <summary>
+    /// Trần thời gian cho một lượt làm bài, tính từ lúc mở bài. Quá giờ thì mọi bước đã làm
+    /// trong lượt đó bị huỷ và học viên bắt đầu lại từ đầu.
+    ///
+    /// Bài dài nhất được thiết kế 12 phút, nên 30 phút là rộng rãi cho người làm chậm.
+    /// Nó tồn tại để chặn kiểu mở bài rồi để đó cả ngày, làm rải rác vài bước một lúc —
+    /// điểm thu được kiểu đó không phản ánh việc học viên nhớ được gì trong một buổi.
+    /// </summary>
+    public int LessonTimeLimitMinutes { get; set; } = 30;
 }

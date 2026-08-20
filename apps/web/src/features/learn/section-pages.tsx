@@ -1,4 +1,4 @@
-import { Bell, Settings } from 'lucide-react'
+import { Bell } from 'lucide-react'
 import { UpcomingSection } from './upcoming-section'
 import { SkillPage } from './skill-page'
 
@@ -9,7 +9,7 @@ import { SkillPage } from './skill-page'
  * giữ chỗ liệt kê "còn thiếu" — và danh sách đó đã lỗi thời từ lâu, khiến người học bấm vào
  * rồi tưởng cả mảng chưa làm được gì trong khi bài nằm ngay trong lộ trình.
  *
- * Những mục còn lại vẫn dùng UpcomingSection: chúng khai đúng phần còn thiếu THẬT.
+ * Chỉ còn Thông báo dùng UpcomingSection: nó khai đúng phần còn thiếu THẬT.
  */
 
 export function ListeningPage() {
@@ -43,16 +43,4 @@ export function NotificationsPage() {
   )
 }
 
-export function SettingsPage() {
-  return (
-    <UpcomingSection
-      icon={Settings}
-      title="Cài đặt"
-      description="Đổi mục tiêu phút mỗi ngày, múi giờ, giờ nhận nhắc học, và mật khẩu."
-      todo={[
-        'Đổi mục tiêu phút mỗi ngày và giờ nhắc học',
-        'Đổi mật khẩu làm mọi thiết bị khác đăng xuất ngay',
-      ]}
-    />
-  )
-}
+export { SettingsPage } from '@/features/settings/settings-page'

@@ -40,7 +40,19 @@ public record PlayerLesson(
     /// <summary>Rỗng khi bài đang mở. Có giá trị thì client hiện màn "vì sao bị khoá".</summary>
     string LockExplanationVi,
     /// <summary>Chỉ số bước đang làm dở, để mở lại đúng chỗ.</summary>
-    int ResumeAtActivityIndex);
+    int ResumeAtActivityIndex,
+    /// <summary>Số giây còn lại của lượt. Hết giờ thì bài bị đặt lại về đầu.</summary>
+    int SecondsRemaining,
+    /// <summary>Trần thời gian mỗi lượt, tính bằng phút. Client hiện để học viên biết mình có bao lâu.</summary>
+    int TimeLimitMinutes);
+
+/// <summary>
+/// Kết quả nộp một bước.
+///
+/// <c>Expired</c> nghĩa là lượt đã quá trần thời gian: bài vừa bị đặt lại về đầu và bước vừa
+/// nộp KHÔNG được chấm. Đây là trạng thái thứ ba, khác hẳn "không tìm thấy bài" (null).
+/// </summary>
+public record ActivitySubmitResult(ActivityGrade? Grade, bool Expired);
 
 public record ActivitySubmission(
     Guid ActivityId,
@@ -110,11 +122,20 @@ public class LessonPlayerService(
         var roadmap = await pathService.GetRoadmapAsync(userId, now, ct);
         var card = roadmap.Lessons.FirstOrDefault(c => c.Code == code);
 
+        // CỐ Ý theo dõi (không AsNoTracking): lượt quá giờ phải được đặt lại ngay khi mở lại bài.
+        //
+        // Chỉ đọc thôi thì màn học hiện đồng hồ 00:00 và học viên không đi tiếp được — họ sẽ
+        // nghĩ bài hỏng chứ không nghĩ mình hết giờ.
         var draft = await db.LessonAttempts
-            .AsNoTracking()
             .Where(a => a.UserId == userId && a.LessonId == lesson.Id && a.SubmittedAt == null)
             .OrderByDescending(a => a.StartedAt)
             .FirstOrDefaultAsync(ct);
+
+        if (draft is not null && IsExpired(draft, now))
+        {
+            await ResetAttemptAsync(draft, userId, now, ct);
+            await db.SaveChangesAsync(ct);
+        }
 
         // Chế độ học lọc bước ngay ở đây.
         //
@@ -161,11 +182,16 @@ public class LessonPlayerService(
             card?.State ?? nameof(LessonState.Locked),
             card?.Mastery ?? 0,
             card?.LockExplanationVi ?? string.Empty,
-            draft?.CurrentActivityIndex ?? 0);
+            draft?.CurrentActivityIndex ?? 0,
+
+            // Chưa mở lượt nào thì đồng hồ chưa chạy: hiện trọn quỹ thời gian, và nó bắt đầu
+            // đếm khi học viên nộp bước đầu tiên.
+            draft is null ? _policy.LessonTimeLimitMinutes * 60 : SecondsLeft(draft, now),
+            _policy.LessonTimeLimitMinutes);
     }
 
     /// <summary>Chấm một bước và ghi lại kết quả. Trả về điểm để client hiện ngay.</summary>
-    public async Task<ActivityGrade?> SubmitActivityAsync(
+    public async Task<ActivitySubmitResult?> SubmitActivityAsync(
         Guid userId, string lessonCode, ActivitySubmission submission, DateTimeOffset now, CancellationToken ct = default)
     {
         var lesson = await db.Lessons
@@ -194,6 +220,24 @@ public class LessonPlayerService(
         {
             logger.LogWarning("Từ chối chấm bài {Code} cho {UserId}: bài đang khoá", lessonCode, userId);
             return null;
+        }
+
+        // Kiểm hết giờ TRƯỚC khi chấm.
+        //
+        // Để GetOrCreateAttemptAsync tự đặt lại ở dưới thì bước vừa nộp sẽ được ghi vào một
+        // lượt vừa bị xoá trắng: học viên phải làm lại từ đầu nhưng vẫn có một điểm treo lơ
+        // lửng ở bước giữa bài.
+        var open = await db.LessonAttempts
+            .Where(a => a.UserId == userId && a.LessonId == lesson.Id && a.SubmittedAt == null)
+            .OrderByDescending(a => a.StartedAt)
+            .FirstOrDefaultAsync(ct);
+
+        if (open is not null && IsExpired(open, now))
+        {
+            await ResetAttemptAsync(open, userId, now, ct);
+            await db.SaveChangesAsync(ct);
+
+            return new ActivitySubmitResult(null, Expired: true);
         }
 
         var grade = GradeActivity(activity, submission);
@@ -231,7 +275,7 @@ public class LessonPlayerService(
         // nghỉ vẫn phải được cộng đủ số phút của ba bước đó vào ngày hôm nay.
         await streaks.RecordStudyAsync(userId, now, ct);
 
-        return grade;
+        return new ActivitySubmitResult(grade, Expired: false);
     }
 
     /// <summary>
@@ -257,6 +301,16 @@ public class LessonPlayerService(
 
         if (attempt is null)
         {
+            return null;
+        }
+
+        // Chốt bài cũng phải chịu trần thời gian. Không chặn ở đây thì mở bài, để đó cả buổi,
+        // rồi bấm chốt vẫn ăn điểm — đúng cái kiểu học mà trần thời gian sinh ra để chặn.
+        if (IsExpired(attempt, now))
+        {
+            await ResetAttemptAsync(attempt, userId, now, ct);
+            await db.SaveChangesAsync(ct);
+
             return null;
         }
 
@@ -541,6 +595,13 @@ public class LessonPlayerService(
 
         if (attempt is not null)
         {
+            if (!IsExpired(attempt, now))
+            {
+                return attempt;
+            }
+
+            await ResetAttemptAsync(attempt, userId, now, ct);
+
             return attempt;
         }
 
@@ -548,6 +609,42 @@ public class LessonPlayerService(
         db.LessonAttempts.Add(attempt);
 
         return attempt;
+    }
+
+    /// <summary>
+    /// Huỷ mọi bước đã làm trong lượt và mở lại đồng hồ từ đầu.
+    ///
+    /// Xoá thật chứ không chỉ đánh dấu, vì mastery tính trên activity_attempts: giữ lại thì
+    /// học viên gom điểm của nhiều buổi rời rạc thành một bài "đã thông thạo", mà điểm kiểu đó
+    /// không nói lên họ nhớ được gì trong một buổi.
+    /// </summary>
+    private async Task ResetAttemptAsync(
+        LessonAttempt attempt, Guid userId, DateTimeOffset now, CancellationToken ct)
+    {
+        await db.ActivityAttempts
+            .Where(a => a.LessonAttemptId == attempt.Id)
+            .ExecuteDeleteAsync(ct);
+
+        attempt.StartedAt = now;
+        attempt.CurrentActivityIndex = 0;
+        attempt.DraftStateJson = null;
+        attempt.Score = null;
+
+        logger.LogInformation(
+            "Lượt làm bài {AttemptId} của học viên {UserId} quá {Limit} phút, đã đặt lại về đầu",
+            attempt.Id, userId, _policy.LessonTimeLimitMinutes);
+    }
+
+    private bool IsExpired(LessonAttempt attempt, DateTimeOffset now) =>
+        now - attempt.StartedAt >= TimeSpan.FromMinutes(_policy.LessonTimeLimitMinutes);
+
+    /// <summary>Số giây còn lại của lượt, không bao giờ âm.</summary>
+    private int SecondsLeft(LessonAttempt attempt, DateTimeOffset now)
+    {
+        var deadline = attempt.StartedAt.AddMinutes(_policy.LessonTimeLimitMinutes);
+        var left = (deadline - now).TotalSeconds;
+
+        return left <= 0 ? 0 : (int)Math.Ceiling(left);
     }
 
     private async Task<LessonMastery> GetOrCreateMasteryAsync(Guid userId, Guid lessonId, CancellationToken ct)

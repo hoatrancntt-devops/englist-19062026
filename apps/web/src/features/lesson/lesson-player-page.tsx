@@ -2,7 +2,7 @@ import { useMemo, useRef, useState } from 'react'
 import { Link, useNavigate, useParams } from 'react-router-dom'
 import { useMutation, useQuery, useQueryClient } from '@tanstack/react-query'
 import { ArrowLeft, ArrowRight, Check, Clock, Lock, Lightbulb, Rocket, TriangleAlert } from 'lucide-react'
-import { api } from '@/lib/api-client'
+import { api, ApiError } from '@/lib/api-client'
 import { cn } from '@/lib/cn'
 import { Button } from '@/components/ui/button'
 import { Card, CardBody, CardHeader } from '@/components/ui/card'
@@ -11,6 +11,7 @@ import { SKILL_META } from '@/components/skill-badge'
 import { ACTIVITY_LABEL } from './lesson-types'
 import type { ActivityGrade, LessonSubmissionResult, PlayerLesson } from './lesson-types'
 import { LessonIllustration } from '@/components/illustrations/scene-illustrations'
+import { LessonCountdown, useLessonCountdown } from './lesson-timer'
 import { QuizStep } from './steps/quiz-step'
 import { ListeningIntro, ReadingIntro, SpeakingStep, VocabStep, WritingStep } from './steps/content-steps'
 
@@ -32,6 +33,24 @@ export function LessonPlayerPage() {
     queryFn: () => api.get<PlayerLesson>(`/api/v1/learning/lessons/${code}`),
   })
 
+  /**
+   * Hết giờ: bỏ mọi thứ đã làm ở phía client và tải lại bài từ máy chủ.
+   *
+   * Máy chủ đã xoá bản ghi các bước của lượt này rồi, nên giữ lại điểm trên màn hình chỉ làm
+   * học viên tưởng mình vẫn còn tiến độ.
+   */
+  const [expired, setExpired] = useState(false)
+
+  const restartAfterExpiry = () => {
+    setExpired(true)
+    setStepIndex(0)
+    setGrades({})
+    setResult(null)
+    stepStartedAt.current = Date.now()
+
+    void queryClient.invalidateQueries({ queryKey: ['lesson', code] })
+  }
+
   const submitActivity = useMutation({
     mutationFn: (body: {
       activityId: string
@@ -42,7 +61,26 @@ export function LessonPlayerPage() {
         ...body,
         durationSeconds: Math.round((Date.now() - stepStartedAt.current) / 1000),
       }),
-    onSuccess: (grade, variables) => setGrades((prev) => ({ ...prev, [variables.activityId]: grade })),
+    onSuccess: (grade, variables) => {
+      // Đồng hồ phía máy chủ chỉ bắt đầu chạy khi lượt được mở, tức là ở bước nộp đầu tiên.
+      // Trước đó màn hình đếm từ trọn 30 phút, nên đọc bài mười phút rồi mới làm sẽ khiến
+      // hai đồng hồ lệch nhau đúng mười phút. Lấy lại con số thật ngay sau bước đầu.
+      const firstStep = Object.keys(grades).length === 0
+
+      setGrades((prev) => ({ ...prev, [variables.activityId]: grade }))
+
+      if (firstStep) {
+        void queryClient.invalidateQueries({ queryKey: ['lesson', code] })
+      }
+    },
+
+    // Máy chủ trả 409 khi bước tới muộn hơn trần thời gian. Đồng hồ ở client có thể lệch
+    // vài giây, nên đây mới là nguồn quyết định thật.
+    onError: (error) => {
+      if (error instanceof ApiError && error.status === 409) {
+        restartAfterExpiry()
+      }
+    },
   })
 
   const submitLesson = useMutation({
@@ -53,6 +91,8 @@ export function LessonPlayerPage() {
       void queryClient.invalidateQueries({ queryKey: ['learning'] })
     },
   })
+
+  const secondsLeft = useLessonCountdown(lesson?.secondsRemaining, restartAfterExpiry)
 
   const activity = lesson?.activities[stepIndex]
   const grade = activity ? (grades[activity.id] ?? null) : null
@@ -97,7 +137,19 @@ export function LessonPlayerPage() {
 
   return (
     <div className="space-y-4">
-      <LessonHeader lesson={lesson} />
+      <LessonHeader lesson={lesson} secondsLeft={secondsLeft} />
+
+      {/* Chỉ hiện sau khi vừa bị đặt lại. Không có dòng này thì học viên quay lại thấy màn
+          hình trắng trơn ở bước một và tưởng hệ thống nuốt mất bài làm của mình. */}
+      {expired ? (
+        <div className="flex items-start gap-2 rounded-[var(--radius-control)] bg-[color-mix(in_oklch,var(--color-warning)_18%,transparent)] p-3 text-sm text-[var(--color-warning-text)]">
+          <TriangleAlert className="mt-0.5 size-4 shrink-0" aria-hidden />
+          <p>
+            Hết {lesson.timeLimitMinutes} phút cho một lượt làm bài. Các bước đã làm được đặt lại,
+            bạn bắt đầu lại từ bước một với đồng hồ mới.
+          </p>
+        </div>
+      ) : null}
 
       <StepRail
         lesson={lesson}
@@ -179,7 +231,13 @@ export function LessonPlayerPage() {
   )
 }
 
-function LessonHeader({ lesson }: { lesson: PlayerLesson }) {
+function LessonHeader({
+  lesson,
+  secondsLeft,
+}: {
+  lesson: PlayerLesson
+  secondsLeft: number
+}) {
   return (
     <header>
       <Link to="/learn" className="mb-2 inline-flex items-center gap-1.5 text-sm text-secondary hover:underline">
@@ -200,6 +258,8 @@ function LessonHeader({ lesson }: { lesson: PlayerLesson }) {
               <Clock className="size-3" aria-hidden />
               {lesson.estimatedMinutes} phút
             </Badge>
+
+            <LessonCountdown secondsLeft={secondsLeft} limitMinutes={lesson.timeLimitMinutes} />
           </div>
 
           <p className="mt-2 text-sm text-secondary">{lesson.objectiveVi}</p>

@@ -152,7 +152,12 @@ function Sidebar({ mobileOpen, onNavigate }: { mobileOpen: boolean; onNavigate: 
       className={cn(
         'w-60 shrink-0 border-r border-[var(--border-subtle)] bg-[var(--surface-raised)] p-3',
         // Trên màn hình nhỏ, thanh bên trượt ra như một lớp phủ.
-        'fixed inset-y-14 left-0 z-20 overflow-y-auto transition-transform lg:static lg:inset-auto lg:translate-x-0',
+        'fixed inset-y-14 left-0 z-20 overflow-y-auto transition-transform',
+        // Trên màn hình rộng thì dính dưới thanh tiêu đề (cao 3.5rem) và tự cuộn riêng.
+        //
+        // Trước đây dùng lg:static nên thanh bên cuộn đi mất cùng nội dung: đọc tới giữa một
+        // bài dài rồi muốn nhảy sang mục khác thì phải cuộn ngược lên đầu trang.
+        'lg:sticky lg:inset-auto lg:top-14 lg:h-[calc(100dvh-3.5rem)] lg:translate-x-0',
         mobileOpen ? 'translate-x-0' : '-translate-x-full',
       )}
     >

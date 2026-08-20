@@ -37,31 +37,43 @@ vocabulary:
     ipa: "/tə ɡoʊ/"
     meaning_vi: "mang đi (không ngồi lại quán)"
     chunk: "One latte to go, please."
+    emoji: "🥤"
+    mnemonic_vi: "Ôn lại: \"go\" là ĐI — đồ uống đi theo mình. Người Anh nói \"takeaway\"."
     tags: [cafe, drink]
   - term: "for here"
     ipa: "/fər hɪr/"
     meaning_vi: "uống tại quán"
     chunk: "For here, please."
+    emoji: "☕"
+    mnemonic_vi: "Ôn lại cặp: \"here\" ở ĐÂY, \"go\" là ĐI. Nhân viên quầy hỏi đúng hai chữ này, nghe được là trả lời được."
     tags: [cafe, drink]
   - term: "regular"
     ipa: "/ˈreɡjələr/"
     meaning_vi: "cỡ vừa, cỡ thường"
     chunk: "A regular, please."
+    emoji: "🥛"
+    mnemonic_vi: "Bẫy cỡ ly: \"regular\" của Mỹ thường to hơn \"regular\" ở châu Á. Không chắc thì chỉ tay vào ly mẫu trên quầy."
     tags: [cafe, size]
   - term: "iced"
     ipa: "/aɪst/"
     meaning_vi: "đá, lạnh"
     chunk: "An iced coffee, please."
+    emoji: "🧊"
+    mnemonic_vi: "Đọc \"AI-xt\" một âm tiết, đuôi -ed KHÔNG thành \"ai-xịt\". Đặt TRƯỚC tên đồ uống: iced coffee, iced tea."
     tags: [cafe, drink]
   - term: "no sugar"
     ipa: "/noʊ ˈʃʊɡər/"
     meaning_vi: "không đường"
     chunk: "No sugar, thanks."
+    emoji: "🚫"
+    mnemonic_vi: "Chữ \"sugar\" có chữ s đọc thành \"SH\" — \"SHU-gơ\", không phải \"su-ga\". Một trong số ít chữ s đọc như vậy."
     tags: [cafe, drink]
   - term: "Anything else"
     ipa: "/ˈeniθɪŋ els/"
     meaning_vi: "còn gì nữa không ạ"
     chunk: "Anything else for you?"
+    emoji: "➕"
+    mnemonic_vi: "Câu nhân viên hỏi trước khi tính tiền. Trả lời gọn: \"That's it, thanks\" là xong — hết rồi, cảm ơn."
     tags: [cafe, service]
 
 sentence_patterns:

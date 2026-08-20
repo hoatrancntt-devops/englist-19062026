@@ -37,31 +37,43 @@ vocabulary:
     ipa: "/rɪˈtɜːrn ðɪs/"
     meaning_vi: "trả lại món hàng này"
     chunk: "I'd like to return this."
+    emoji: "↩️"
+    mnemonic_vi: "Ôn lại: \"return\" là TRẢ VỀ. Nêu ngay từ câu đầu bạn muốn gì — trả lại, đổi, hay bảo hành, ba đường khác nhau."
     tags: [shopping, return]
   - term: "a refund"
     ipa: "/ə ˈriːfʌnd/"
     meaning_vi: "hoàn tiền"
     chunk: "Can I get a refund?"
+    emoji: "💵"
+    mnemonic_vi: "\"re-\" là LẠI, \"fund\" là tiền — trả tiền lại. Đây là thứ khó xin nhất trong ba lựa chọn, nên nói rõ ngay từ đầu."
     tags: [shopping, return]
   - term: "an exchange"
     ipa: "/ən ɪksˈtʃeɪndʒ/"
     meaning_vi: "đổi sang món khác"
     chunk: "I'd prefer an exchange."
+    emoji: "🔄"
+    mnemonic_vi: "Ôn lại từ bài trước, ở đây dùng làm DANH TỪ. \"I'd prefer\" là cách nói mềm khi họ đề nghị thứ bạn không thích."
     tags: [shopping, return]
   - term: "store credit"
     ipa: "/stɔːr ˈkredɪt/"
     meaning_vi: "phiếu mua hàng (không phải tiền mặt)"
     chunk: "We can only offer store credit."
+    emoji: "🎟️"
+    mnemonic_vi: "Nghe qua tưởng được hoàn tiền, thật ra là tiền BỊ KHOÁ TRONG cửa hàng đó. Nghe thấy chữ này thì biết mình chưa lấy được tiền thật."
     tags: [shopping, return]
   - term: "under warranty"
     ipa: "/ˈʌndər ˈwɔːrənti/"
     meaning_vi: "còn trong thời hạn bảo hành"
     chunk: "Is it still under warranty?"
+    emoji: "🛡️"
+    mnemonic_vi: "\"under\" là NẰM DƯỚI sự che chở của bảo hành — cùng cách dùng với \"under the weather\". Hỏi câu này trước khi bàn chuyện tiền."
     tags: [shopping, warranty]
   - term: "faulty"
     ipa: "/ˈfɔːlti/"
     meaning_vi: "bị lỗi, hỏng do sản phẩm"
     chunk: "The item is faulty."
+    emoji: "⚠️"
+    mnemonic_vi: "Ôn lại \"fault\" — cái sai, như trong \"my fault\". Chữ này quan trọng về pháp lý: lỗi SẢN PHẨM thì quyền đổi trả mạnh hơn hẳn lỗi người dùng."
     tags: [shopping, warranty]
 
 sentence_patterns:

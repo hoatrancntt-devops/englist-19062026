@@ -36,31 +36,43 @@ vocabulary:
     ipa: "/hɑːf ə ˈkiːloʊ/"
     meaning_vi: "nửa cân"
     chunk: "Half a kilo of beef, please."
+    emoji: "⚖️"
+    mnemonic_vi: "Ôn lại \"half\" — một nửa, như \"half past\". Trật tự tiếng Anh là \"half A kilo\", có mạo từ \"a\" ở giữa."
     tags: [shopping, quantity]
   - term: "a pack of"
     ipa: "/ə pæk əv/"
     meaning_vi: "một gói, một vỉ"
     chunk: "Two packs of eggs, please."
+    emoji: "📦"
+    mnemonic_vi: "\"pack\" là ĐÓNG GÓI. Nhiều thứ trong tiếng Anh không đếm trực tiếp được — phải mượn đơn vị: a pack of, a bottle of, a bag of."
     tags: [shopping, quantity]
   - term: "best before"
     ipa: "/best bɪˈfɔːr/"
     meaning_vi: "dùng tốt nhất trước ngày (còn ăn được sau đó)"
     chunk: "Best before 12 March."
+    emoji: "🥫"
+    mnemonic_vi: "Chữ \"best\" là mấu chốt: NGON NHẤT trước ngày đó, quá ngày vẫn ăn được, chỉ kém ngon. Dùng cho đồ khô, đồ hộp."
     tags: [shopping, label]
   - term: "use by"
     ipa: "/juːz baɪ/"
     meaning_vi: "hạn dùng cuối (sau ngày này không ăn)"
     chunk: "Use by 5 March."
+    emoji: "☠️"
+    mnemonic_vi: "Cặp đối nguy hiểm với \"best before\": cái này là hạn AN TOÀN, quá ngày là bỏ. Dùng cho thịt cá sữa. Lẫn hai nhãn này có thể gây ngộ độc."
     tags: [shopping, label]
   - term: "a bit more"
     ipa: "/ə bɪt mɔːr/"
     meaning_vi: "thêm một chút nữa"
     chunk: "A bit more, please."
+    emoji: "➕"
+    mnemonic_vi: "\"a bit\" là MỘT MẨU nhỏ. Câu dùng ở quầy thịt cá khi người bán đang cân — nói ngay lúc họ còn cầm kẹp."
     tags: [shopping, quantity]
   - term: "That's enough"
     ipa: "/ðæts ɪˈnʌf/"
     meaning_vi: "đủ rồi ạ"
     chunk: "That's enough, thanks."
+    emoji: "✋"
+    mnemonic_vi: "Cặp đối với \"a bit more\". Ôn lại \"enough\" từ \"good enough\" — đủ dùng. Thêm \"thanks\" cho khỏi cộc lốc."
     tags: [shopping, quantity]
 
 sentence_patterns:

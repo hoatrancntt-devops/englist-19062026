@@ -37,31 +37,43 @@ vocabulary:
     ipa: "/ɑːn seɪl/"
     meaning_vi: "đang giảm giá"
     chunk: "Is this on sale?"
+    emoji: "🏷️"
+    mnemonic_vi: "Bẫy nghĩa: \"on sale\" là ĐANG GIẢM GIÁ, còn \"for sale\" chỉ là ĐANG BÁN. Nhầm hai giới từ là hiểu ngược."
     tags: [shopping, price]
   - term: "buy one get one free"
     ipa: "/baɪ wʌn ɡet wʌn friː/"
     meaning_vi: "mua một tặng một"
     chunk: "It's buy one get one free."
+    emoji: "🎁"
+    mnemonic_vi: "Viết tắt \"BOGO\" trên biển quảng cáo. Đọc thẳng từng chữ, không có ngữ pháp gì — cứ nhớ nguyên cụm."
     tags: [shopping, price]
   - term: "unit price"
     ipa: "/ˈjuːnɪt praɪs/"
     meaning_vi: "đơn giá (giá trên mỗi kg hoặc mỗi lít)"
     chunk: "Check the unit price first."
+    emoji: "🔢"
+    mnemonic_vi: "\"unit\" là ĐƠN VỊ. Con số thật để so sánh: gói to chưa chắc rẻ hơn, phải nhìn giá mỗi kilogam mới biết."
     tags: [shopping, price]
   - term: "How much is this"
     ipa: "/haʊ mʌtʃ ɪz ðɪs/"
     meaning_vi: "cái này bao nhiêu tiền"
     chunk: "Excuse me, how much is this?"
+    emoji: "💰"
+    mnemonic_vi: "Ôn lại \"much\" cho thứ không đếm được như tiền. Mở đầu bằng \"excuse me\" khi bắt chuyện với nhân viên."
     tags: [shopping, price]
   - term: "member price"
     ipa: "/ˈmembər praɪs/"
     meaning_vi: "giá dành cho khách có thẻ thành viên"
     chunk: "Is that the member price?"
+    emoji: "💳"
+    mnemonic_vi: "Bẫy giá phổ biến: biển quảng cáo ghi giá rẻ nhưng đó là giá cho hội viên. Hỏi câu này trước khi ra quầy."
     tags: [shopping, price]
   - term: "expires"
     ipa: "/ɪkˈspaɪərz/"
     meaning_vi: "hết hạn (khuyến mãi hoặc phiếu giảm giá)"
     chunk: "The offer expires on Sunday."
+    emoji: "⌛"
+    mnemonic_vi: "Cùng gốc với \"expire\" nghĩa TẮT THỞ — cái gì hết hạn thì coi như chết. Dùng cho khuyến mãi, phiếu giảm giá, hộ chiếu, thẻ."
     tags: [shopping, price]
 
 sentence_patterns:

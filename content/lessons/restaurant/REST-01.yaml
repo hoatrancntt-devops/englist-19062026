@@ -34,31 +34,43 @@ vocabulary:
     ipa: "/ə ˈteɪbl fɔːr/"
     meaning_vi: "bàn cho mấy người"
     chunk: "A table for two, please."
+    emoji: "🪑"
+    mnemonic_vi: "Ba chữ là đủ, không cần câu đầy đủ. Người tiếp tân nghe \"a table for two\" là hiểu ngay — thêm chữ chỉ làm rối."
     tags: [restaurant, core]
   - term: "under the name"
     ipa: "/ˈʌndər ðə neɪm/"
     meaning_vi: "đặt dưới tên (khi đã đặt trước)"
     chunk: "It's under the name Hoa."
+    emoji: "📖"
+    mnemonic_vi: "Ôn lại từ bài khách sạn — cùng một chữ \"under\". Đưa tên NGẮN và dễ đọc; tên đầy đủ tiếng Việt hay bị tra nhầm thứ tự họ và tên."
     tags: [restaurant, core]
   - term: "Do you have a reservation"
     ipa: "/duː juː hæv ə ˌrezərˈveɪʃn/"
     meaning_vi: "anh chị đã đặt bàn chưa"
     chunk: "Do you have a reservation?"
+    emoji: "📋"
+    mnemonic_vi: "Câu đầu tiên tiếp tân hỏi. Nghe được nó là bạn biết ngay cần trả lời có hay không — nghe hụt thì cả cuộc đối thoại lệch."
     tags: [restaurant]
   - term: "walk-in"
     ipa: "/ˈwɔːk ɪn/"
     meaning_vi: "khách vãng lai, không đặt trước"
     chunk: "No, we're a walk-in."
+    emoji: "🚶"
+    mnemonic_vi: "Dịch sát là ĐI BỘ VÀO — cứ thế bước vào, không hẹn trước. Danh từ ghép, dùng được cả cho phòng khám lẫn tiệm cắt tóc."
     tags: [restaurant]
   - term: "How long is the wait"
     ipa: "/haʊ lɒŋ ɪz ðə weɪt/"
     meaning_vi: "phải chờ bao lâu"
     chunk: "How long is the wait?"
+    emoji: "⏳"
+    mnemonic_vi: "\"wait\" ở đây là DANH TỪ — thời gian chờ, không phải động từ. Hỏi trước khi đứng vào hàng để còn quyết định đi chỗ khác."
     tags: [restaurant, time]
   - term: "by the window"
     ipa: "/baɪ ðə ˈwɪndoʊ/"
     meaning_vi: "cạnh cửa sổ (nêu chỗ mình thích)"
     chunk: "Could we sit by the window?"
+    emoji: "🪟"
+    mnemonic_vi: "Giới từ \"by\" nghĩa SÁT BÊN. Ôn lại khuôn \"Could we\" — xin phép lịch sự, không phải đòi hỏi."
     tags: [restaurant]
 
 sentence_patterns:

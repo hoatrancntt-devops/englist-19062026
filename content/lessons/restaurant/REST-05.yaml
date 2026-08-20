@@ -37,31 +37,43 @@ vocabulary:
     ipa: "/ə ˈkɑːmboʊ/"
     meaning_vi: "phần ăn gồm món chính, món phụ và đồ uống"
     chunk: "I'll have the number two combo."
+    emoji: "🍔"
+    mnemonic_vi: "Rút gọn của \"combination\" — sự KẾT HỢP. Mẹo thực dụng: gọi theo SỐ trên bảng menu thì không phải đọc tên món."
     tags: [restaurant, fastfood]
   - term: "a side"
     ipa: "/ə saɪd/"
     meaning_vi: "món phụ ăn kèm"
     chunk: "Can I get fries as my side?"
+    emoji: "🍟"
+    mnemonic_vi: "\"side\" là BÊN CẠNH — món đặt bên cạnh món chính. Cùng chữ với \"on the side\" ở bài dị ứng."
     tags: [restaurant, fastfood]
   - term: "eat in"
     ipa: "/iːt ɪn/"
     meaning_vi: "ăn tại quán"
     chunk: "Eat in, please."
+    emoji: "🪑"
+    mnemonic_vi: "Bản của quán ăn nhanh cho \"for here\". Cặp đối là \"take away\" — cùng một câu hỏi, khác cách nói theo loại quán."
     tags: [restaurant, fastfood]
   - term: "delivery fee"
     ipa: "/dɪˈlɪvəri fiː/"
     meaning_vi: "phí giao hàng"
     chunk: "The delivery fee is fifteen thousand."
+    emoji: "🛵"
+    mnemonic_vi: "\"deliver\" là GIAO, chuyển tới. \"Fee\" là khoản phí nhỏ cho một dịch vụ — khác \"fine\" là tiền phạt, hai chữ nghe gần nhau."
     tags: [restaurant, delivery]
   - term: "on its way"
     ipa: "/ɑːn ɪts weɪ/"
     meaning_vi: "đang trên đường tới"
     chunk: "Your order is on its way."
+    emoji: "🚚"
+    mnemonic_vi: "Ôn lại \"on my way\" ở bài đi lại — cùng khuôn, chỉ đổi chủ sở hữu sang đồ vật. \"Its\" không có dấu nháy: có nháy là viết tắt của \"it is\"."
     tags: [restaurant, delivery]
   - term: "How long will it take"
     ipa: "/haʊ lɔːŋ wɪl ɪt teɪk/"
     meaning_vi: "mất bao lâu"
     chunk: "How long will it take?"
+    emoji: "⏱️"
+    mnemonic_vi: "Ôn lại: \"take\" nghĩa NGỐN thời gian. Cùng câu đã học ở bài taxi — một khuôn dùng được nhiều cảnh."
     tags: [restaurant, delivery]
 
 sentence_patterns:

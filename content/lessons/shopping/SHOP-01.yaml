@@ -33,31 +33,43 @@ vocabulary:
     ipa: "/wer kæn aɪ faɪnd/"
     meaning_vi: "tôi tìm ... ở đâu (câu chính của bài)"
     chunk: "Where can I find the milk?"
+    emoji: "🔎"
+    mnemonic_vi: "Ôn lại khuôn \"Can I\" — xin phép cho mình. Lịch sự hơn hẳn \"where is the milk\" nói trống không."
     tags: [shopping, core]
   - term: "aisle"
     ipa: "/aɪl/"
     meaning_vi: "dãy kệ (chữ s câm)"
     chunk: "It's in aisle four."
+    emoji: "🛒"
+    mnemonic_vi: "Ôn lại bẫy phát âm từ bài máy bay: đọc \"AI-ồl\", chữ S CÂM. Cùng một chữ dùng cho lối đi trên máy bay và dãy kệ siêu thị."
     tags: [shopping, core]
   - term: "next to"
     ipa: "/nekst tuː/"
     meaning_vi: "ngay cạnh"
     chunk: "It's next to the bread."
+    emoji: "↔️"
+    mnemonic_vi: "\"next\" là KẾ TIẾP — thứ đứng kế bên. Khác \"across from\" là đối diện phải băng qua lối đi."
     tags: [shopping, place]
   - term: "at the back"
     ipa: "/æt ðə bæk/"
     meaning_vi: "ở phía trong cùng"
     chunk: "The dairy is at the back."
+    emoji: "🔚"
+    mnemonic_vi: "Mẹo đời thực: siêu thị luôn đặt sữa và trứng ở TRONG CÙNG, để khách phải đi qua hết cửa hàng mới tới."
     tags: [shopping, place]
   - term: "out of stock"
     ipa: "/aʊt əv stɒk/"
     meaning_vi: "hết hàng"
     chunk: "Sorry, it's out of stock."
+    emoji: "📦"
+    mnemonic_vi: "\"stock\" là KHO HÀNG. Ra khỏi kho tức là kho không còn. Cặp đối là \"in stock\" — còn hàng."
     tags: [shopping]
   - term: "trolley"
     ipa: "/ˈtrɒli/"
     meaning_vi: "xe đẩy"
     chunk: "Where are the trolleys?"
+    emoji: "🛒"
+    mnemonic_vi: "Chữ của người Anh; người Mỹ nói \"cart\". Nghe được cả hai thì đi siêu thị ở đâu cũng ổn."
     tags: [shopping]
 
 sentence_patterns:

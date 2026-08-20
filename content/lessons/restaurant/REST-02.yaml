@@ -36,31 +36,43 @@ vocabulary:
     ipa: "/ˈstɑːrtər/"
     meaning_vi: "món khai vị"
     chunk: "We'll skip the starter."
+    emoji: "🥗"
+    mnemonic_vi: "\"start\" là BẮT ĐẦU — món mở màn bữa ăn. Người Mỹ hay gọi là \"appetizer\", người Anh gọi \"starter\"."
     tags: [restaurant, menu]
   - term: "main course"
     ipa: "/meɪn kɔːrs/"
     meaning_vi: "món chính"
     chunk: "For the main course, I'll have the beef."
+    emoji: "🍖"
+    mnemonic_vi: "\"course\" ở đây là MỘT LƯỢT MÓN trong bữa, không phải khoá học. Bữa ăn phương Tây đi theo lượt: khai vị, món chính, tráng miệng."
     tags: [restaurant, menu]
   - term: "I'm allergic to"
     ipa: "/aɪm əˈlɜːrdʒɪk tuː/"
     meaning_vi: "tôi dị ứng với (câu quan trọng nhất bài này)"
     chunk: "I'm allergic to peanuts."
+    emoji: "🥜"
+    mnemonic_vi: "Câu có thể cứu mạng — học thuộc lòng. Nói DỊ ỨNG chứ đừng nói \"tôi không thích\": nhà bếp xử lý hai câu đó khác hẳn nhau."
     tags: [restaurant, health]
   - term: "Does it come with"
     ipa: "/dʌz ɪt kʌm wɪð/"
     meaning_vi: "món đó có kèm gì không"
     chunk: "Does it come with rice?"
+    emoji: "🍚"
+    mnemonic_vi: "\"come with\" là ĐI KÈM. Hỏi trước để khỏi gọi thừa — nhiều món phương Tây đã kèm sẵn món phụ mà thực đơn không ghi rõ."
     tags: [restaurant, menu]
   - term: "the same for me"
     ipa: "/ðə seɪm fɔːr miː/"
     meaning_vi: "cho tôi giống vậy (khi không muốn chọn lại)"
     chunk: "The same for me, please."
+    emoji: "👥"
+    mnemonic_vi: "Câu cứu nguy khi thực đơn toàn từ lạ: để người khác gọi trước rồi gọi theo. Không ai thấy lạ cả."
     tags: [restaurant, core]
   - term: "spicy"
     ipa: "/ˈspaɪsi/"
     meaning_vi: "cay"
     chunk: "Is it spicy?"
+    emoji: "🌶️"
+    mnemonic_vi: "\"spice\" là GIA VỊ. Lưu ý: mức cay của người phương Tây rất khác người Việt — \"not spicy\" với họ có thể vẫn cay với bạn, và ngược lại."
     tags: [restaurant, menu]
 
 sentence_patterns:

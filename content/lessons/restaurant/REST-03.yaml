@@ -36,31 +36,43 @@ vocabulary:
     ipa: "/kʊd wiː ɡet ðə bɪl/"
     meaning_vi: "cho chúng tôi xin hoá đơn"
     chunk: "Could we get the bill, please?"
+    emoji: "🧾"
+    mnemonic_vi: "Người Anh nói \"bill\", người Mỹ nói \"check\". Ở phương Tây nhân viên KHÔNG tự mang hoá đơn ra — họ chờ bạn xin, vì mang sớm bị coi là đuổi khách."
     tags: [restaurant, money]
   - term: "split the bill"
     ipa: "/splɪt ðə bɪl/"
     meaning_vi: "chia đôi tiền"
     chunk: "Can we split the bill?"
+    emoji: "➗"
+    mnemonic_vi: "\"split\" là CHẺ ĐÔI. Chia đều tổng số cho số người, bất kể ai ăn gì."
     tags: [restaurant, money]
   - term: "separate checks"
     ipa: "/ˈseprət tʃeks/"
     meaning_vi: "tính riêng từng người"
     chunk: "Separate checks, please."
+    emoji: "🧍"
+    mnemonic_vi: "Khác \"split the bill\": chia đôi là chẻ tổng, còn cái này là mỗi người MỘT HOÁ ĐƠN RIÊNG theo đúng món mình gọi. Báo trước khi gọi món thì dễ cho bếp hơn."
     tags: [restaurant, money]
   - term: "service charge"
     ipa: "/ˈsɜːrvɪs tʃɑːrdʒ/"
     meaning_vi: "phí dịch vụ (đã tính sẵn trong hoá đơn)"
     chunk: "Is the service charge included?"
+    emoji: "💸"
+    mnemonic_vi: "Câu hỏi tiết kiệm tiền: đã có phí dịch vụ trong hoá đơn thì không cần tip thêm. Không hỏi là rất dễ trả tiền boa hai lần."
     tags: [restaurant, money]
   - term: "Keep the change"
     ipa: "/kiːp ðə tʃeɪndʒ/"
     meaning_vi: "khỏi thối lại (cách tip gọn nhất)"
     chunk: "Keep the change, thanks."
+    emoji: "🪙"
+    mnemonic_vi: "Ôn lại: \"change\" vừa là thay đổi vừa là TIỀN THỐI — phần bị đổi từ tờ to sang tiền lẻ."
     tags: [restaurant, money]
   - term: "by card"
     ipa: "/baɪ kɑːrd/"
     meaning_vi: "trả bằng thẻ"
     chunk: "Can I pay by card?"
+    emoji: "💳"
+    mnemonic_vi: "Giới từ \"by\" chỉ PHƯƠNG TIỆN thanh toán — by card, by cash, by transfer. Cùng chữ \"by\" như \"by bus\", \"by train\"."
     tags: [restaurant, money]
 
 sentence_patterns:

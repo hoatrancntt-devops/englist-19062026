@@ -37,31 +37,43 @@ vocabulary:
     ipa: "/traɪ ðɪs ɑːn/"
     meaning_vi: "thử món đồ này"
     chunk: "Can I try this on?"
+    emoji: "👕"
+    mnemonic_vi: "Chữ \"on\" là mấu chốt: \"try this\" là thử NẾM, \"try this ON\" mới là mặc thử lên người. Thiếu chữ on là câu khác nghĩa hẳn."
     tags: [shopping, clothes]
   - term: "fitting room"
     ipa: "/ˈfɪtɪŋ ruːm/"
     meaning_vi: "phòng thử đồ"
     chunk: "Where is the fitting room?"
+    emoji: "🚪"
+    mnemonic_vi: "\"fit\" là VỪA VẶN — phòng để xem có vừa không. Ôn lại chữ \"suit\" cùng ý ở \"whenever suits you\". Người Mỹ hay nói \"dressing room\"."
     tags: [shopping, clothes]
   - term: "a size up"
     ipa: "/ə saɪz ʌp/"
     meaning_vi: "cỡ lớn hơn một số"
     chunk: "Do you have a size up?"
+    emoji: "⬆️"
+    mnemonic_vi: "\"up\" là LÊN một nấc. Cặp đối là \"a size down\" — nhỏ hơn một số. Gọn hơn nhiều so với đọc tên cỡ cụ thể."
     tags: [shopping, clothes]
   - term: "too tight"
     ipa: "/tuː taɪt/"
     meaning_vi: "chật quá"
     chunk: "It's a bit too tight."
+    emoji: "😣"
+    mnemonic_vi: "\"tight\" là BÓ SÁT, siết chặt. Chữ \"a bit\" làm nhẹ lời chê — không phải chê áo xấu, chỉ là chưa vừa người mình."
     tags: [shopping, clothes]
   - term: "in another colour"
     ipa: "/ɪn əˈnʌðər ˈkʌlər/"
     meaning_vi: "màu khác"
     chunk: "Do you have it in another colour?"
+    emoji: "🎨"
+    mnemonic_vi: "Giới từ \"in\" dùng cho màu sắc và chất liệu: in blue, in cotton. Người Anh viết \"colour\", người Mỹ viết \"color\" — đọc như nhau."
     tags: [shopping, clothes]
   - term: "I'll take it"
     ipa: "/aɪl teɪk ɪt/"
     meaning_vi: "tôi lấy món này"
     chunk: "I'll take it, thanks."
+    emoji: "✅"
+    mnemonic_vi: "Ôn lại \"take\" — CẦM LẤY. Câu chốt mua hàng, ngắn gọn hơn hẳn \"tôi muốn mua cái này\"."
     tags: [shopping, clothes]
 
 sentence_patterns:

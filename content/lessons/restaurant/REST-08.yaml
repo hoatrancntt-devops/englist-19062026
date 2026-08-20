@@ -37,31 +37,43 @@ vocabulary:
     ipa: "/wʊd juː laɪk tə dʒɔɪn ʌs fər ˈdɪnər/"
     meaning_vi: "anh chị dùng bữa tối với chúng tôi nhé"
     chunk: "Would you like to join us for dinner?"
+    emoji: "🍽️"
+    mnemonic_vi: "Ôn lại \"would\" — lùi một bước thì lịch sự hơn một bậc. Khuôn mời chuẩn mực nhất trong bối cảnh công việc."
     tags: [restaurant, business]
   - term: "my treat"
     ipa: "/maɪ triːt/"
     meaning_vi: "tôi mời (tôi trả tiền)"
     chunk: "It's my treat tonight."
+    emoji: "🎁"
+    mnemonic_vi: "\"treat\" là ĐÃI, chiêu đãi — cũng là chữ trẻ con nói khi xin kẹo Halloween. Nói câu này SỚM, ngay lúc mời, thì lúc tính tiền không phải giằng co."
     tags: [restaurant, business]
   - term: "How is the project going"
     ipa: "/haʊ ɪz ðə ˈprɑːdʒekt ˈɡoʊɪŋ/"
     meaning_vi: "dự án đang thế nào rồi"
     chunk: "How is the project going on your side?"
+    emoji: "📊"
+    mnemonic_vi: "Ôn lại khuôn \"how's it going\". Trên bàn ăn thì hỏi công việc ở mức NHẸ — bàn sâu chuyện kỹ thuật giữa bữa là làm hỏng cả bữa."
     tags: [restaurant, smalltalk]
   - term: "Have you been to"
     ipa: "/hæv juː biːn tuː/"
     meaning_vi: "anh chị đã tới ... chưa"
     chunk: "Have you been to Da Nang before?"
+    emoji: "🌏"
+    mnemonic_vi: "Câu mở chuyện an toàn nhất với khách nước ngoài: hỏi trải nghiệm của họ. Ai cũng thích kể về nơi mình đã đi."
     tags: [restaurant, smalltalk]
   - term: "Let me get this"
     ipa: "/let miː ɡet ðɪs/"
     meaning_vi: "để tôi trả (khi giành hoá đơn)"
     chunk: "Please, let me get this."
+    emoji: "🧾"
+    mnemonic_vi: "\"get\" ở đây là TRẢ TIỀN, không phải lấy. Giành trả một lần rồi thôi — giằng co quá ba lần thì thành khó xử cho cả hai."
     tags: [restaurant, business]
   - term: "Shall we"
     ipa: "/ʃæl wiː/"
     meaning_vi: "mình cùng ... nhé (đề nghị nhẹ nhàng)"
     chunk: "Shall we order some starters?"
+    emoji: "🤝"
+    mnemonic_vi: "\"Shall we\" gộp cả hai người vào một việc, nghe như bàn bạc chứ không phải quyết thay. Trang trọng hơn \"let's\" một chút."
     tags: [restaurant, business]
 
 sentence_patterns:

@@ -37,31 +37,43 @@ vocabulary:
     ipa: "/haʊ mʌtʃ ræm dʌz ɪt hæv/"
     meaning_vi: "máy này có bao nhiêu RAM"
     chunk: "How much RAM does it have?"
+    emoji: "🧠"
+    mnemonic_vi: "RAM đọc thành một từ \"ram\" như con cừu đực, không đọc từng chữ cái. Ôn lại \"much\" — dung lượng không đếm được."
     tags: [shopping, tech]
   - term: "storage"
     ipa: "/ˈstɔːrɪdʒ/"
     meaning_vi: "dung lượng ổ cứng"
     chunk: "It has 512 gigabytes of storage."
+    emoji: "💾"
+    mnemonic_vi: "\"store\" là CẤT GIỮ, cũng là cửa hàng — chỗ chứa đồ. Phân biệt với RAM: storage là tủ chứa lâu dài, RAM là mặt bàn làm việc."
     tags: [shopping, tech]
   - term: "battery life"
     ipa: "/ˈbætəri laɪf/"
     meaning_vi: "thời lượng pin"
     chunk: "What's the battery life like?"
+    emoji: "🔋"
+    mnemonic_vi: "\"life\" ở đây là TUỔI THỌ một lần sạc, không phải tuổi thọ cả viên pin. Chữ \"like\" ở cuối câu nghĩa \"thế nào\"."
     tags: [shopping, tech]
   - term: "What's the difference between"
     ipa: "/wʌts ðə ˈdɪfrəns bɪˈtwiːn/"
     meaning_vi: "khác nhau ở chỗ nào giữa"
     chunk: "What's the difference between these two?"
+    emoji: "⚖️"
+    mnemonic_vi: "Câu đáng giá nhất khi đứng trước hai model gần giống nhau. Nó buộc nhân viên nêu điểm khác thật thay vì kể lại thông số trên tờ rơi."
     tags: [shopping, tech]
   - term: "international warranty"
     ipa: "/ˌɪntərˈnæʃnəl ˈwɔːrənti/"
     meaning_vi: "bảo hành toàn cầu"
     chunk: "Does it come with an international warranty?"
+    emoji: "🌍"
+    mnemonic_vi: "Câu quan trọng khi mua máy ở nước ngoài. Bảo hành nội địa thì mang về Việt Nam là thành tờ giấy vô dụng."
     tags: [shopping, tech]
   - term: "worth the extra"
     ipa: "/wɜːrθ ði ˈekstrə/"
     meaning_vi: "đáng để trả thêm tiền"
     chunk: "Is it worth the extra money?"
+    emoji: "🤔"
+    mnemonic_vi: "\"worth\" là ĐÁNG GIÁ. Câu hỏi hay hơn \"cái nào tốt hơn\" — bản đắt hơn thì gần như luôn tốt hơn, câu hỏi thật là tốt hơn có bõ tiền không."
     tags: [shopping, tech]
 
 sentence_patterns:

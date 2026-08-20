@@ -37,31 +37,43 @@ vocabulary:
     ipa: "/aɪm əˈlɜːrdʒɪk tuː/"
     meaning_vi: "tôi bị dị ứng với"
     chunk: "I'm allergic to peanuts."
+    emoji: "🥜"
+    mnemonic_vi: "Ôn lại câu có thể cứu mạng. Nhấn mạnh: nói DỊ ỨNG chứ đừng nói \"không thích\" — nhà bếp xử lý hai câu đó khác hẳn nhau."
     tags: [restaurant, health]
   - term: "Does this contain"
     ipa: "/dʌz ðɪs kənˈteɪn/"
     meaning_vi: "món này có chứa ... không"
     chunk: "Does this contain dairy?"
+    emoji: "🥛"
+    mnemonic_vi: "Ôn lại \"contain\" — CHỨA, giữ trong hộp, cùng chữ với \"containment\". Hỏi từng thành phần cụ thể chứ đừng hỏi chung chung."
     tags: [restaurant, health]
   - term: "vegetarian"
     ipa: "/ˌvedʒəˈteriən/"
     meaning_vi: "ăn chay (vẫn dùng trứng, sữa)"
     chunk: "Do you have a vegetarian option?"
+    emoji: "🥦"
+    mnemonic_vi: "Phân biệt quan trọng: \"vegetarian\" vẫn ăn trứng sữa, còn \"vegan\" thì KHÔNG dùng bất cứ thứ gì từ động vật. Chay của nhà chùa gần với vegan hơn."
     tags: [restaurant, diet]
   - term: "without"
     ipa: "/wɪˈðaʊt/"
     meaning_vi: "không có, bỏ đi"
     chunk: "Can I have it without onions?"
+    emoji: "➖"
+    mnemonic_vi: "\"with\" là CÓ, \"without\" là KHÔNG CÓ. Cách gọn nhất để bỏ một thành phần mà không phải giải thích dài dòng."
     tags: [restaurant, diet]
   - term: "on the side"
     ipa: "/ɑːn ðə saɪd/"
     meaning_vi: "để riêng ra đĩa nhỏ, không rưới lên món"
     chunk: "Can I get the sauce on the side?"
+    emoji: "🥣"
+    mnemonic_vi: "Ôn lại \"side\" — BÊN CẠNH. Hữu ích khi không chắc mình có hợp loại sốt đó không: để riêng thì tự quyết được."
     tags: [restaurant, diet]
   - term: "cross-contamination"
     ipa: "/krɔːs kənˌtæmɪˈneɪʃn/"
     meaning_vi: "lây nhiễm chéo (dùng chung dụng cụ với món có dị nguyên)"
     chunk: "Is there a risk of cross-contamination?"
+    emoji: "⚠️"
+    mnemonic_vi: "Ôn lại \"cross\" — BĂNG QUA, như \"across from\". Thứ dính từ món này băng sang món kia. Với người dị ứng nặng, đây mới là câu hỏi quan trọng nhất."
     tags: [restaurant, health]
 
 sentence_patterns:

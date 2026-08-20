@@ -37,31 +37,43 @@ vocabulary:
     ipa: "/ɪkˈskjuːz miː ˈsɑːri tə ˈbɑːðər juː/"
     meaning_vi: "xin lỗi làm phiền anh chị một chút"
     chunk: "Excuse me, sorry to bother you."
+    emoji: "🙋"
+    mnemonic_vi: "Ôn lại: \"excuse me\" dùng TRƯỚC khi làm phiền. Mở lời phàn nàn bằng câu này thì nhân viên tiếp nhận với thái độ hoàn toàn khác."
     tags: [restaurant, complaint]
   - term: "I think there's been a mix-up"
     ipa: "/aɪ θɪŋk ðerz biːn ə ˈmɪks ʌp/"
     meaning_vi: "hình như có nhầm lẫn"
     chunk: "I think there's been a mix-up."
+    emoji: "🔀"
+    mnemonic_vi: "\"mix up\" là TRỘN LẪN. Câu không đổ lỗi cho ai — thứ bị trộn lẫn, không phải người làm sai. Ôn lại mẹo \"I think\" chừa đường lui."
     tags: [restaurant, complaint]
   - term: "I ordered"
     ipa: "/aɪ ˈɔːrdərd/"
     meaning_vi: "tôi đã gọi"
     chunk: "I ordered the beef, not the pork."
+    emoji: "📝"
+    mnemonic_vi: "Nêu cả cái ĐÚNG và cái SAI (\"gọi bò, không phải heo\") — nhân viên sửa được ngay mà không phải hỏi lại."
     tags: [restaurant, complaint]
   - term: "cold"
     ipa: "/koʊld/"
     meaning_vi: "nguội, lạnh (món lẽ ra phải nóng)"
     chunk: "The soup is cold."
+    emoji: "🥶"
+    mnemonic_vi: "Nêu SỰ VIỆC chứ đừng nêu cảm xúc: \"món nguội\" là dữ kiện sửa được, \"tệ quá\" thì không ai biết phải làm gì."
     tags: [restaurant, complaint]
   - term: "Could you check"
     ipa: "/kʊd juː tʃek/"
     meaning_vi: "anh chị kiểm tra giúp được không"
     chunk: "Could you check the bill, please?"
+    emoji: "🔍"
+    mnemonic_vi: "Ôn lại khuôn \"Could you\" — nhờ, không đòi. Xin họ KIỂM TRA chứ không tuyên bố họ tính sai."
     tags: [restaurant, complaint]
   - term: "No worries"
     ipa: "/noʊ ˈwɜːriz/"
     meaning_vi: "không sao đâu (nhận lời xin lỗi)"
     chunk: "No worries, thanks for fixing it."
+    emoji: "😌"
+    mnemonic_vi: "Ôn lại: đừng lo. Khép lại một lời phàn nàn bằng câu này giữ được không khí dễ chịu cho cả bữa ăn còn lại."
     tags: [restaurant, complaint]
 
 sentence_patterns:

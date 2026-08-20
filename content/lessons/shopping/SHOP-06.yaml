@@ -37,31 +37,43 @@ vocabulary:
     ipa: "/ˈɔːrdər ˈnʌmbər/"
     meaning_vi: "mã đơn hàng"
     chunk: "My order number is A2317."
+    emoji: "🔢"
+    mnemonic_vi: "Đọc mã theo TỪNG KÝ TỰ — ôn lại bài đánh vần: \"A as in Alpha, two, three, one, seven\". Đọc liền một hơi là bên kia nghe nhầm."
     tags: [shopping, online]
   - term: "shipped"
     ipa: "/ʃɪpt/"
     meaning_vi: "đã gửi đi khỏi kho"
     chunk: "Your order has been shipped."
+    emoji: "🚢"
+    mnemonic_vi: "\"ship\" là CON TÀU — ngày xưa hàng đi bằng tàu. Trạng thái này chỉ nghĩa ĐÃ RỜI KHO, chưa nói gì về ngày tới tay bạn."
     tags: [shopping, online]
   - term: "out for delivery"
     ipa: "/aʊt fər dɪˈlɪvəri/"
     meaning_vi: "shipper đang mang đi giao trong hôm nay"
     chunk: "It's out for delivery today."
+    emoji: "🛵"
+    mnemonic_vi: "Trạng thái SÁT NHẤT trước khi nhận: hàng đã ra khỏi kho địa phương, đang trên xe. Thấy chữ này là nên ở nhà."
     tags: [shopping, online]
   - term: "tracking number"
     ipa: "/ˈtrækɪŋ ˈnʌmbər/"
     meaning_vi: "mã vận đơn để tra cứu"
     chunk: "Could you send me the tracking number?"
+    emoji: "📍"
+    mnemonic_vi: "Ôn lại \"track\" — ĐƯỜNG RAY, dấu vết, như trong \"on track\". Mã để lần theo dấu vết gói hàng."
     tags: [shopping, online]
   - term: "delayed"
     ipa: "/dɪˈleɪd/"
     meaning_vi: "bị chậm so với hẹn"
     chunk: "My order seems to be delayed."
+    emoji: "🐢"
+    mnemonic_vi: "Chữ \"seems to be\" làm nhẹ lời phàn nàn: \"hình như bị chậm\" chứ không phải \"các anh giao trễ\". Dễ được giúp hơn."
     tags: [shopping, online]
   - term: "estimated delivery"
     ipa: "/ˈestɪmeɪtɪd dɪˈlɪvəri/"
     meaning_vi: "ngày giao dự kiến"
     chunk: "The estimated delivery was Monday."
+    emoji: "📅"
+    mnemonic_vi: "\"estimate\" là ƯỚC LƯỢNG — dự kiến, không phải cam kết. Nhưng nêu ngày dự kiến khi khiếu nại vẫn là cách nói có căn cứ nhất."
     tags: [shopping, online]
 
 sentence_patterns:

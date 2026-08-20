@@ -36,31 +36,43 @@ vocabulary:
     ipa: "/duː juː niːd ə bæɡ/"
     meaning_vi: "anh chị có cần túi không"
     chunk: "Do you need a bag?"
+    emoji: "🛍️"
+    mnemonic_vi: "Câu thu ngân hỏi. Ở nhiều nước túi nilon MẤT TIỀN — trả lời \"no thanks\" nếu bạn mang túi riêng."
     tags: [shopping, checkout]
   - term: "cash or card"
     ipa: "/kæʃ ɔːr kɑːrd/"
     meaning_vi: "tiền mặt hay thẻ"
     chunk: "Cash or card?"
+    emoji: "💳"
+    mnemonic_vi: "Hai chữ cùng bắt đầu bằng \"ca-\" nên nghe nhanh dễ lẫn. Nghe được nhịp \"cash or card\" như một cụm là đủ hiểu."
     tags: [shopping, checkout]
   - term: "I'd like to return this"
     ipa: "/aɪd laɪk tuː rɪˈtɜːrn ðɪs/"
     meaning_vi: "tôi muốn trả lại món này (câu mở đầu khi đổi hàng)"
     chunk: "I'd like to return this, please."
+    emoji: "↩️"
+    mnemonic_vi: "\"I'd like\" mềm hơn \"I want\" nhiều. Ôn lại \"return\" — TRẢ VỀ, cùng chữ với \"it returns 404\" trong tài liệu API."
     tags: [shopping, returns]
   - term: "receipt"
     ipa: "/rɪˈsiːt/"
     meaning_vi: "hoá đơn (chữ p câm)"
     chunk: "Here's the receipt."
+    emoji: "🧾"
+    mnemonic_vi: "Ôn lại: chữ P CÂM, đọc \"ri-XÍT\". Không có nó thì phần lớn cửa hàng từ chối đổi trả — giữ hoá đơn tới hết hạn đổi."
     tags: [shopping, returns]
   - term: "the wrong size"
     ipa: "/ðə rɒŋ saɪz/"
     meaning_vi: "sai cỡ"
     chunk: "It's the wrong size."
+    emoji: "📏"
+    mnemonic_vi: "Lý do đổi trả dễ được chấp nhận nhất — không phải lỗi sản phẩm, chỉ là chọn nhầm. Nêu lý do cụ thể thì thủ tục nhanh hơn."
     tags: [shopping, returns]
   - term: "exchange it for"
     ipa: "/ɪksˈtʃeɪndʒ ɪt fɔːr/"
     meaning_vi: "đổi lấy cái khác"
     chunk: "Can I exchange it for a larger one?"
+    emoji: "🔄"
+    mnemonic_vi: "Giới từ \"for\" chỉ thứ mình MUỐN LẤY VỀ. Xin đổi thường dễ được đồng ý hơn xin hoàn tiền — cửa hàng không mất doanh thu."
     tags: [shopping, returns]
 
 sentence_patterns:

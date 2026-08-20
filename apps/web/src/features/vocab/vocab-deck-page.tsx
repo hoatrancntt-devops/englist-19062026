@@ -5,25 +5,13 @@ import { ArrowLeft, Check, Clock, Lightbulb, Play, Volume2 } from 'lucide-react'
 import { api } from '@/lib/api-client'
 import { cn } from '@/lib/cn'
 import { useSpeech } from '@/lib/use-speech'
+import { VOCAB_SPEEDS as SPEEDS, VOCAB_VOICES as VOICES } from '@/lib/vocab-voices'
+import type { VocabVoiceId } from '@/lib/vocab-voices'
 import { Button } from '@/components/ui/button'
 import { Card, CardBody, CardHeader } from '@/components/ui/card'
 import { Badge, ProgressBar, SkeletonCard } from '@/components/ui/feedback'
 import { SpeakingDrill } from '@/features/lesson/steps/speaking-drill'
 import type { VocabDeckView, VocabWordResult, VocabWordView } from './vocab-types'
-
-/** Bốn giọng dùng cho từ vựng. Phải khớp TtsCatalogue.VocabVoices ở máy chủ. */
-const VOICES = [
-  { id: 'en_US-lessac-medium', labelVi: 'Nữ · Mỹ' },
-  { id: 'en_US-ryan-medium', labelVi: 'Nam · Mỹ' },
-  { id: 'en_GB-alan-medium', labelVi: 'Nam · Anh' },
-  { id: 'en_US-amy-medium', labelVi: 'Nữ · Mỹ 2' },
-]
-
-const SPEEDS = [
-  { rate: 0.7, labelVi: 'Chậm' },
-  { rate: 1, labelVi: 'Thường' },
-  { rate: 1.25, labelVi: 'Nhanh' },
-]
 
 /**
  * Một bộ từ vựng.
@@ -122,7 +110,7 @@ function VocabDeckCard({
   const speech = useSpeech()
 
   const [speed, setSpeed] = useState(1)
-  const [voice, setVoice] = useState(VOICES[0].id)
+  const [voice, setVoice] = useState<VocabVoiceId>(VOICES[0].id)
   const [showMnemonic, setShowMnemonic] = useState(false)
   const [result, setResult] = useState<VocabWordResult | null>(null)
 

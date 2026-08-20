@@ -2,23 +2,10 @@ import { useState } from 'react'
 import { Lightbulb, Play, Volume2 } from 'lucide-react'
 import { cn } from '@/lib/cn'
 import { useSpeech } from '@/lib/use-speech'
+import { VOCAB_SPEEDS as SPEEDS, VOCAB_VOICES as VOICES } from '@/lib/vocab-voices'
+import type { VocabVoiceId } from '@/lib/vocab-voices'
 import { SpeakingDrill } from './speaking-drill'
 import type { VocabularyEntry } from '../lesson-types'
-
-/** Bốn giọng dùng cho từ vựng. Phải khớp TtsCatalogue.VocabVoices ở máy chủ. */
-const VOICES = [
-  { id: 'en_US-lessac-medium', labelVi: 'Nữ · Mỹ' },
-  { id: 'en_US-ryan-medium', labelVi: 'Nam · Mỹ' },
-  { id: 'en_GB-alan-medium', labelVi: 'Nam · Anh' },
-  { id: 'en_US-amy-medium', labelVi: 'Nữ · Mỹ 2' },
-]
-
-/** Ba tốc độ. Chậm để nghe rõ từng âm, thường để quen nhịp, nhanh để bắt kịp người bản xứ. */
-const SPEEDS = [
-  { rate: 0.7, labelVi: 'Chậm' },
-  { rate: 1, labelVi: 'Thường' },
-  { rate: 1.25, labelVi: 'Nhanh' },
-]
 
 /**
  * Một thẻ từ vựng.
@@ -45,7 +32,7 @@ export function VocabCard({
   activityId: string
 }) {
   const [speed, setSpeed] = useState(1)
-  const [voice, setVoice] = useState(VOICES[0].id)
+  const [voice, setVoice] = useState<VocabVoiceId>(VOICES[0].id)
   const [showMnemonic, setShowMnemonic] = useState(false)
 
   // Dùng lại hook đọc chung: nó đã có sẵn phần lùi về giọng trình duyệt khi máy chủ chưa

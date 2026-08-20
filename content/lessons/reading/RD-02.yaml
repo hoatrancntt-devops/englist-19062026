@@ -40,31 +40,43 @@ vocabulary:
     ipa: "/ˈbreɪkɪŋ tʃeɪndʒ/"
     meaning_vi: "thay đổi phá vỡ tương thích"
     chunk: "There are two breaking changes in this release."
+    emoji: "💔"
+    mnemonic_vi: "\"break\" là LÀM VỠ — vỡ thứ đang chạy tốt của bạn. Hai chữ đầu tiên cần tìm trong mọi ghi chú phát hành; thấy chúng là phải đọc kỹ."
     tags: [reading, core]
   - term: "deprecated"
     ipa: "/ˈdeprəkeɪtɪd/"
     meaning_vi: "vẫn chạy nhưng sẽ bị bỏ"
     chunk: "The old endpoint is deprecated, not removed yet."
+    emoji: "⚠️"
+    mnemonic_vi: "Lời cảnh báo, chưa phải án tử. Như biển \"toà nhà này sắp phá\" — vẫn vào được nhưng đừng sửa sang gì thêm. Đây là lúc bắt đầu chuyển đi."
     tags: [reading, core]
   - term: "removed"
     ipa: "/rɪˈmuːvd/"
     meaning_vi: "đã bị bỏ hẳn"
     chunk: "The flag was removed in this version."
+    emoji: "🗑️"
+    mnemonic_vi: "Cặp với \"deprecated\": deprecated là sắp phá, removed là ĐÃ PHÁ XONG. Nâng cấp lên bản có chữ này mà chưa chuyển đi thì hỏng ngay."
     tags: [reading, core]
   - term: "no longer"
     ipa: "/noʊ ˈlɒŋɡər/"
     meaning_vi: "không còn"
     chunk: "The API no longer accepts plain text."
+    emoji: "🚫"
+    mnemonic_vi: "Cách viết lịch sự của một thay đổi phá vỡ. Ghi chú phát hành hay giấu chuyện lớn sau ba chữ nhẹ nhàng này."
     tags: [reading, core]
   - term: "upgrade path"
     ipa: "/ˈʌpɡreɪd pɑːθ/"
     meaning_vi: "đường nâng cấp — phải qua phiên bản nào"
     chunk: "The upgrade path goes through version 15 first."
+    emoji: "🪜"
+    mnemonic_vi: "\"path\" là LỐI ĐI. Không phải lúc nào cũng nhảy thẳng từ 13 lên 16 được — có bậc thang bắt buộc phải giẫm qua."
     tags: [reading, core]
   - term: "backwards compatible"
     ipa: "/ˈbækwərdz kəmˈpætəbl/"
     meaning_vi: "vẫn tương thích với bản cũ"
     chunk: "This change is backwards compatible."
+    emoji: "🤝"
+    mnemonic_vi: "\"backwards\" là NGOẢNH VỀ SAU — bản mới vẫn bắt tay được với thứ cũ. Ngược hẳn với \"breaking change\": thấy chữ này là thở phào."
     tags: [reading, core]
 
 sentence_patterns:

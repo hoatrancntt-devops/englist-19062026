@@ -40,31 +40,43 @@ vocabulary:
     ipa: "/ˈækjərəsi/"
     meaning_vi: "độ chính xác"
     chunk: "Accuracy dropped from 88 to 79 percent."
+    emoji: "🎯"
+    mnemonic_vi: "Nói kèm cả HAI mốc (\"từ 88 xuống 79\") chứ đừng chỉ nói con số cuối. Một con số đứng một mình không cho biết đang tốt lên hay xấu đi."
     tags: [ai, core]
   - term: "p95 latency"
     ipa: "/piː ˈnaɪnti faɪv ˈleɪtnsi/"
     meaning_vi: "độ trễ mà 95% yêu cầu nằm dưới mức đó"
     chunk: "The p95 latency is 1.4 seconds."
+    emoji: "📊"
+    mnemonic_vi: "Đọc \"pi-nine-ty-five\". Nghĩa: xếp mọi yêu cầu theo độ chậm, lấy mốc của người thứ 95 trên 100. Nó cho thấy trải nghiệm của người XUI NHẤT, thứ mà trung bình che mất."
     tags: [ai, core]
   - term: "the average hides"
     ipa: "/ði ˈævərɪdʒ haɪdz/"
     meaning_vi: "con số trung bình che mất"
     chunk: "The average hides a group that gets much worse answers."
+    emoji: "🫥"
+    mnemonic_vi: "Một chân trong lò lửa, một chân trong thùng đá — trung bình là dễ chịu. Câu này là lý do tồn tại của p95 và của việc tách nhỏ số liệu."
     tags: [ai, core]
   - term: "drift"
     ipa: "/drɪft/"
     meaning_vi: "chất lượng trôi dần theo thời gian"
     chunk: "We watch for drift every week."
+    emoji: "🛶"
+    mnemonic_vi: "\"drift\" là TRÔI DẠT — con thuyền không buộc dây trôi dần khỏi bến. Mô hình không đổi, nhưng thế giới quanh nó đổi, nên nó dần lệch."
     tags: [ai, core]
   - term: "break down by"
     ipa: "/breɪk daʊn baɪ/"
     meaning_vi: "tách nhỏ theo"
     chunk: "Break it down by language and by team."
+    emoji: "🧩"
+    mnemonic_vi: "\"break down\" là ĐẬP NHỎ RA. Thuốc giải cho \"the average hides\": đập con số tổng thành từng nhóm thì nhóm bị thiệt lộ ra ngay."
     tags: [ai, core]
   - term: "flag for review"
     ipa: "/flæɡ fɔːr rɪˈvjuː/"
     meaning_vi: "đánh dấu để người xem lại"
     chunk: "Low-confidence answers are flagged for review."
+    emoji: "🚩"
+    mnemonic_vi: "\"flag\" là CẮM CỜ. Cắm cờ lên những câu máy tự thấy không chắc, để người xem trước. Rẻ hơn nhiều so với bắt người duyệt tất cả."
     tags: [ai, core]
 
 sentence_patterns:

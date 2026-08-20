@@ -36,31 +36,43 @@ vocabulary:
     ipa: "/haʊ duː aɪ ɡet tuː/"
     meaning_vi: "làm sao để tới"
     chunk: "How do I get to the museum?"
+    emoji: "🧭"
+    mnemonic_vi: "Ôn lại: hỏi \"where is\" chỉ được VỊ TRÍ, hỏi câu này mới được LỐI ĐI. Người mất phương hướng cần lối đi."
     tags: [travel, directions]
   - term: "go straight"
     ipa: "/ɡoʊ streɪt/"
     meaning_vi: "đi thẳng"
     chunk: "Go straight for two blocks."
+    emoji: "⬆️"
+    mnemonic_vi: "Ôn lại: \"strết\" — thẳng căng như sợi dây kéo hết cỡ."
     tags: [travel, directions]
   - term: "turn left at"
     ipa: "/tɜːrn left æt/"
     meaning_vi: "rẽ trái ở"
     chunk: "Turn left at the traffic lights."
+    emoji: "⬅️"
+    mnemonic_vi: "Ôn lại: tay trái là tay hay BỎ QUÊN không dùng. Giới từ \"at\" cho một điểm mốc cụ thể."
     tags: [travel, directions]
   - term: "on your right"
     ipa: "/ɒn jɔːr raɪt/"
     meaning_vi: "bên tay phải của bạn"
     chunk: "It's on your right, next to the bank."
+    emoji: "➡️"
+    mnemonic_vi: "Ôn lại: tay phải là tay ĐÚNG, tay đa số người dùng để viết."
     tags: [travel, directions]
   - term: "So, straight then left"
     ipa: "/soʊ streɪt ðen left/"
     meaning_vi: "vậy là đi thẳng rồi rẽ trái (nhắc lại để chắc)"
     chunk: "So, straight then left. Got it."
+    emoji: "🔁"
+    mnemonic_vi: "Kỹ năng quan trọng nhất bài, không phải từ vựng: NHẮC LẠI chỉ dẫn bằng lời mình. Người kia sửa ngay nếu bạn hiểu sai, và bạn cũng nhớ lâu hơn."
     tags: [travel, core]
   - term: "Any places you'd recommend"
     ipa: "/ˈeni ˈpleɪsɪz juːd ˌrekəˈmend/"
     meaning_vi: "có chỗ nào anh chị gợi ý không"
     chunk: "Any places you'd recommend?"
+    emoji: "🗺️"
+    mnemonic_vi: "\"recommend\" viết HAI chữ m, một chữ c — lỗi chính tả rất hay gặp. Câu này biến người chỉ đường thành người trò chuyện."
     tags: [travel, social]
 
 sentence_patterns:

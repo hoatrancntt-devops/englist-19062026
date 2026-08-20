@@ -40,36 +40,50 @@ vocabulary:
     ipa: "/rɪˈkwaɪərd/"
     meaning_vi: "bắt buộc"
     chunk: "The customer id is required."
+    emoji: "❗"
+    mnemonic_vi: "Ôn lại \"request\" cùng gốc — thứ hệ thống ĐÒI phải có. Thiếu nó thì gọi API trả lỗi ngay, chưa kịp làm gì."
     tags: [reading, core]
   - term: "optional"
     ipa: "/ˈɒpʃənl/"
     meaning_vi: "không bắt buộc"
     chunk: "The date range is optional and defaults to today."
+    emoji: "🔘"
+    mnemonic_vi: "\"option\" là LỰA CHỌN. Nhưng cẩn thận: bỏ trống không có nghĩa là không có giá trị — nó rơi về mặc định, và mặc định có thể không như bạn tưởng."
     tags: [reading, core]
   - term: "defaults to"
     ipa: "/dɪˈfɔːlts tuː/"
     meaning_vi: "mặc định là"
     chunk: "The page size defaults to 50."
+    emoji: "⚙️"
+    mnemonic_vi: "Dòng đáng đọc nhất trong tài liệu API. Không đọc mặc định thì rất dễ tưởng mình lấy hết dữ liệu trong khi chỉ lấy được 50 dòng đầu."
     tags: [reading, core]
   - term: "rate limit"
     ipa: "/reɪt ˈlɪmɪt/"
     meaning_vi: "giới hạn số lần gọi"
     chunk: "The rate limit is 60 requests per minute."
+    emoji: "🚦"
+    mnemonic_vi: "\"rate\" là NHỊP ĐỘ, như nhịp tim. Vượt nhịp cho phép thì bị chặn — đây là thứ làm hỏng những đoạn script chạy vòng lặp không nghỉ."
     tags: [reading, core]
   - term: "returns"
     ipa: "/rɪˈtɜːrnz/"
     meaning_vi: "trả về"
     chunk: "It returns 404 if the order does not exist."
+    emoji: "↩️"
+    mnemonic_vi: "Đọc kỹ phần \"returns\" cho trường hợp LỖI, không chỉ trường hợp thành công. Phần lớn lỗi lập trình nằm ở nhánh không ai đọc."
     tags: [reading, core]
   - term: "idempotent"
     ipa: "/aɪˈdempətənt/"
     meaning_vi: "gọi lại nhiều lần vẫn cho cùng kết quả"
     chunk: "The endpoint is idempotent, so a retry is safe."
+    emoji: "🔂"
+    mnemonic_vi: "\"idem\" tiếng Latin là NHƯ TRÊN, y hệt. Như nút bấm thang máy: bấm mười lần cũng chỉ gọi một lần thang. Có tính chất này thì thử lại mới an toàn."
     tags: [reading, core]
   - term: "pagination"
     ipa: "/ˌpædʒɪˈneɪʃn/"
     meaning_vi: "chia trang kết quả"
     chunk: "Use the next_cursor field for pagination."
+    emoji: "📄"
+    mnemonic_vi: "\"page\" là TRANG. Dữ liệu quá nhiều thì chia trang mà trả. Không xử lý phần này là chỉ lấy được trang đầu mà tưởng đã lấy hết."
     tags: [reading, core]
 
 sentence_patterns:

@@ -43,31 +43,43 @@ vocabulary:
     ipa: "/stæk treɪs/"
     meaning_vi: "chuỗi hàm dẫn tới lỗi"
     chunk: "The stack trace points to the config loader."
+    emoji: "🥞"
+    mnemonic_vi: "\"stack\" là CHỒNG ĐĨA. Hàm gọi hàm chồng lên nhau; khi đổ, ta thấy cả chồng. Đọc từ DƯỚI lên trên là đi từ chỗ bắt đầu tới chỗ vỡ."
     tags: [reading, core]
   - term: "caused by"
     ipa: "/kɔːzd baɪ/"
     meaning_vi: "gây ra bởi — dẫn tới lỗi gốc bên dưới"
     chunk: "Caused by: connection refused."
+    emoji: "⛓️"
+    mnemonic_vi: "Hai chữ vàng trong một trang log dài. Cứ lần theo \"caused by\" xuống dưới cùng — cái cuối cùng thường là thủ phạm thật."
     tags: [reading, core]
   - term: "the first error"
     ipa: "/ðə fɜːrst ˈerər/"
     meaning_vi: "lỗi đầu tiên theo thời gian"
     chunk: "Scroll up to the first error, not the last one."
+    emoji: "⏮️"
+    mnemonic_vi: "Phản xạ sai phổ biến nhất: nhìn lỗi CUỐI vì nó nằm ngay trước mắt. Lỗi cuối thường chỉ là hậu quả — lỗi ĐẦU mới là nguyên nhân."
     tags: [reading, core]
   - term: "timed out"
     ipa: "/taɪmd aʊt/"
     meaning_vi: "hết thời gian chờ"
     chunk: "The request timed out after 30 seconds."
+    emoji: "⌛"
+    mnemonic_vi: "Không phải \"bị từ chối\" mà là CHỜ MÃI KHÔNG THẤY TRẢ LỜI. Hai loại lỗi này chỉ về hai hướng khác nhau: một bên có người đóng cửa, một bên không ai ra mở."
     tags: [reading, core]
   - term: "retry"
     ipa: "/ˈriːtraɪ/"
     meaning_vi: "thử lại"
     chunk: "It retried three times before giving up."
+    emoji: "🔄"
+    mnemonic_vi: "Ôn lại tiền tố \"re-\" — LÀM LẠI. Thấy có thử lại nhiều lần thì biết lỗi thật xảy ra sớm hơn dấu thời gian ghi trong log."
     tags: [reading, core]
   - term: "knock-on effect"
     ipa: "/nɒk ɒn ɪˈfekt/"
     meaning_vi: "hậu quả dây chuyền"
     chunk: "The other errors are a knock-on effect."
+    emoji: "🁣"
+    mnemonic_vi: "\"knock on\" là GÕ SANG — quân domino đổ gõ vào quân kế tiếp. Trăm dòng lỗi thường chỉ là domino của một quân đầu tiên."
     tags: [reading, core]
 
 sentence_patterns:

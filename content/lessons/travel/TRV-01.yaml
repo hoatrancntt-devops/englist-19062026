@@ -33,31 +33,43 @@ vocabulary:
     ipa: "/ˈwɪndoʊ ɔːr aɪl/"
     meaning_vi: "ghế cạnh cửa sổ hay cạnh lối đi"
     chunk: "Window or aisle?"
+    emoji: "💺"
+    mnemonic_vi: "Bẫy phát âm: \"aisle\" đọc là \"AI-ồl\", chữ S CÂM hoàn toàn. Đọc thành \"ây-sồ\" thì nhân viên không hiểu."
     tags: [travel, checkin]
   - term: "carry-on"
     ipa: "/ˈkæri ɒn/"
     meaning_vi: "hành lý xách tay"
     chunk: "Just one carry-on."
+    emoji: "🎒"
+    mnemonic_vi: "Ôn lại \"carry\" — KHIÊNG, vác. Thứ bạn tự vác lên máy bay. Ngược với \"checked bag\" là túi ký gửi."
     tags: [travel, checkin]
   - term: "purpose of your visit"
     ipa: "/ˈpɜːrpəs əv jɔːr ˈvɪzɪt/"
     meaning_vi: "mục đích chuyến đi (câu nhập cảnh luôn hỏi)"
     chunk: "What's the purpose of your visit?"
+    emoji: "🛂"
+    mnemonic_vi: "Câu hỏi số một ở quầy nhập cảnh, gần như không bao giờ thiếu. Trả lời NGẮN và rõ — kể dài dòng chỉ khiến họ hỏi thêm."
     tags: [travel, immigration]
   - term: "on business"
     ipa: "/ɒn ˈbɪznəs/"
     meaning_vi: "đi công tác"
     chunk: "I'm here on business."
+    emoji: "💼"
+    mnemonic_vi: "Giới từ là \"on\", không phải \"for\". Hai chữ này là câu trả lời chuẩn cho câu hỏi phía trên — cặp đôi đi liền nhau."
     tags: [travel, immigration]
   - term: "How long are you staying"
     ipa: "/haʊ lɒŋ ɑːr juː ˈsteɪɪŋ/"
     meaning_vi: "anh chị ở lại bao lâu"
     chunk: "How long are you staying?"
+    emoji: "📆"
+    mnemonic_vi: "Câu hỏi thứ hai ở quầy nhập cảnh. Trả lời bằng SỐ NGÀY hoặc ngày về cụ thể — nói \"chưa biết\" là dấu hiệu khiến họ hỏi sâu hơn."
     tags: [travel, immigration]
   - term: "boarding gate"
     ipa: "/ˈbɔːrdɪŋ ɡeɪt/"
     meaning_vi: "cửa ra máy bay"
     chunk: "Where is the boarding gate?"
+    emoji: "🚪"
+    mnemonic_vi: "\"board\" là LÊN TÀU, lên máy bay. Cổng để lên. Nhớ rằng cổng có thể ĐỔI sau khi in vé — luôn nhìn lại bảng điện tử."
     tags: [travel, airport]
 
 sentence_patterns:

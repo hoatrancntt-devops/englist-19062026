@@ -46,31 +46,43 @@ vocabulary:
     ipa: "/juːs keɪs/"
     meaning_vi: "trường hợp ứng dụng cụ thể"
     chunk: "The use case is sorting incoming tickets."
+    emoji: "🎯"
+    mnemonic_vi: "\"case\" là CA, vụ việc cụ thể. Không phải \"chúng tôi dùng AI\" mà là \"AI làm đúng việc gì\". Không nêu được ca cụ thể thì chưa có dự án."
     tags: [ai, core]
   - term: "it drafts, a person approves"
     ipa: "/ɪt drɑːfts ə ˈpɜːrsn əˈpruːvz/"
     meaning_vi: "máy soạn nháp, người duyệt"
     chunk: "It drafts the reply, a person approves it."
+    emoji: "✍️"
+    mnemonic_vi: "\"draft\" là BẢN NHÁP. Câu trấn an mạnh nhất khi trình bày dự án AI: máy không quyết, máy chỉ soạn — người vẫn cầm bút ký."
     tags: [ai, core]
   - term: "when it is wrong"
     ipa: "/wen ɪt ɪz rɒŋ/"
     meaning_vi: "khi nó sai"
     chunk: "When it is wrong, the ticket goes to the queue as before."
+    emoji: "🔀"
+    mnemonic_vi: "Chữ \"WHEN\" chứ không phải \"if\" — thừa nhận nó CHẮC CHẮN sẽ sai đôi lúc. Nói \"if\" nghe như hứa hẹn không tưởng."
     tags: [ai, core]
   - term: "it makes things up"
     ipa: "/ɪt meɪks θɪŋz ʌp/"
     meaning_vi: "nó bịa ra"
     chunk: "Sometimes it makes things up, so we check the source."
+    emoji: "🎭"
+    mnemonic_vi: "\"make up\" là BỊA, dựng chuyện. Cách nói dân dã của \"hallucination\" — dùng chữ này với sếp không chuyên thì họ hiểu ngay."
     tags: [ai, core]
   - term: "saves about"
     ipa: "/seɪvz əˈbaʊt/"
     meaning_vi: "tiết kiệm khoảng"
     chunk: "It saves about two hours a day for the team."
+    emoji: "⏱️"
+    mnemonic_vi: "Chữ \"about\" chừa sai số — hứa con số chính xác rồi không đạt là mất tin. Nhưng phải CÓ con số: \"tiết kiệm nhiều thời gian\" thì không ai duyệt ngân sách."
     tags: [ai, core]
   - term: "we start small"
     ipa: "/wiː stɑːrt smɔːl/"
     meaning_vi: "chúng tôi làm nhỏ trước"
     chunk: "We start small: one team, four weeks."
+    emoji: "🌱"
+    mnemonic_vi: "Kèm luôn PHẠM VI và HẠN. \"Một đội, bốn tuần\" nghe như một thí nghiệm bỏ được; \"triển khai toàn công ty\" nghe như một canh bạc."
     tags: [ai, core]
 
 sentence_patterns:

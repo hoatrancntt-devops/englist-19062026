@@ -40,31 +40,43 @@ vocabulary:
     ipa: "/rɪˈtriːvl/"
     meaning_vi: "tra cứu — tìm tài liệu liên quan rồi đưa cho mô hình"
     chunk: "Retrieval pulls the three closest documents."
+    emoji: "🐕"
+    mnemonic_vi: "Cùng gốc với giống chó \"retriever\" — con chó tha đồ về. Nó chạy đi tha tài liệu về đặt trước mặt mô hình."
     tags: [ai, core]
   - term: "fine-tuning"
     ipa: "/faɪn ˈtjuːnɪŋ/"
     meaning_vi: "huấn luyện thêm để đổi cách trả lời"
     chunk: "Fine-tuning changes the style, not the facts."
+    emoji: "🎚️"
+    mnemonic_vi: "\"tune\" là CHỈNH ĐÀI, vặn núm cho đúng sóng. Cặp đối với retrieval: chỉnh đài đổi GIỌNG nói, tha tài liệu đổi NỘI DUNG nói."
     tags: [ai, core]
   - term: "grounded in"
     ipa: "/ˈɡraʊndɪd ɪn/"
     meaning_vi: "dựa trên nguồn cụ thể"
     chunk: "The answer is grounded in our own documents."
+    emoji: "⚓"
+    mnemonic_vi: "\"ground\" là MẶT ĐẤT. Câu trả lời có chân chạm đất chứ không lơ lửng trên mây. Ngược hẳn với \"bịa ra\"."
     tags: [ai, core]
   - term: "out of date"
     ipa: "/aʊt ɒv deɪt/"
     meaning_vi: "đã lỗi thời"
     chunk: "The model's knowledge is out of date."
+    emoji: "📅"
+    mnemonic_vi: "Mô hình biết mọi thứ tới ngày nó ngừng học, sau đó là khoảng trống. Đây là lý do phải tha tài liệu mới về cho nó."
     tags: [ai, core]
   - term: "cite the source"
     ipa: "/saɪt ðə sɔːrs/"
     meaning_vi: "dẫn nguồn"
     chunk: "It must cite the source for every answer."
+    emoji: "🔗"
+    mnemonic_vi: "\"cite\" đọc giống \"sight\" (tầm nhìn) và \"site\" (địa điểm) nhưng nghĩa là DẪN NGUỒN. Không dẫn nguồn thì không ai kiểm được nó có bịa hay không."
     tags: [ai, core]
   - term: "good enough"
     ipa: "/ɡʊd ɪˈnʌf/"
     meaning_vi: "đủ dùng"
     chunk: "The smaller model is good enough for this."
+    emoji: "👌"
+    mnemonic_vi: "Ba chữ tiết kiệm rất nhiều tiền. Mô hình mạnh nhất không phải lúc nào cũng cần — câu hỏi đúng là \"đủ dùng cho việc này chưa\"."
     tags: [ai, core]
 
 sentence_patterns:

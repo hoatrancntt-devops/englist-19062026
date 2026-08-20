@@ -36,31 +36,43 @@ vocabulary:
     ipa: "/aɪ mɪst maɪ flaɪt/"
     meaning_vi: "tôi lỡ chuyến bay"
     chunk: "I missed my flight. What are my options?"
+    emoji: "✈️"
+    mnemonic_vi: "Ôn lại \"miss\" — TRƯỢT, bắn trượt mục tiêu, như trong \"you can't miss it\". Ở đây là trượt mất chuyến."
     tags: [travel, problem]
   - term: "What are my options"
     ipa: "/wɒt ɑːr maɪ ˈɒpʃnz/"
     meaning_vi: "tôi có những cách nào (câu mở ra giải pháp)"
     chunk: "What are my options?"
+    emoji: "🔀"
+    mnemonic_vi: "Câu giá trị nhất cả bài, và dùng được ngoài chuyện du lịch. Nó chuyển cuộc nói chuyện từ \"tôi gặp rắc rối\" sang \"ta cùng tìm lối ra\"."
     tags: [travel, problem, core]
   - term: "my luggage didn't arrive"
     ipa: "/maɪ ˈlʌɡɪdʒ ˈdɪdnt əˈraɪv/"
     meaning_vi: "hành lý của tôi không tới"
     chunk: "My luggage didn't arrive."
+    emoji: "🧳"
+    mnemonic_vi: "\"luggage\" là danh từ KHÔNG ĐẾM ĐƯỢC — không có \"luggages\". Muốn đếm phải nói \"two pieces of luggage\"."
     tags: [travel, problem]
   - term: "the next available"
     ipa: "/ðə nekst əˈveɪləbl/"
     meaning_vi: "chuyến gần nhất còn chỗ"
     chunk: "Put me on the next available flight."
+    emoji: "⏭️"
+    mnemonic_vi: "Chữ \"available\" quan trọng: chuyến kế tiếp chưa chắc còn chỗ. Xin \"chuyến gần nhất CÒN CHỖ\" là xin đúng thứ nhân viên tra được."
     tags: [travel, problem]
   - term: "I don't feel well"
     ipa: "/aɪ doʊnt fiːl wel/"
     meaning_vi: "tôi thấy không khoẻ"
     chunk: "I don't feel well. I have a fever."
+    emoji: "🤒"
+    mnemonic_vi: "Ôn lại \"well\" nghĩa KHOẺ, như trong \"get well soon\". Nói kèm triệu chứng cụ thể (sốt, đau bụng) thì được giúp nhanh hơn."
     tags: [travel, health]
   - term: "Is there a pharmacy"
     ipa: "/ɪz ðer ə ˈfɑːrməsi/"
     meaning_vi: "gần đây có hiệu thuốc không"
     chunk: "Is there a pharmacy nearby?"
+    emoji: "💊"
+    mnemonic_vi: "Người Anh hay nói \"chemist\" thay vì \"pharmacy\" — nghe thấy chữ đó ở Anh thì đừng tưởng người ta chỉ sang phòng thí nghiệm hoá học."
     tags: [travel, health]
 
 sentence_patterns:

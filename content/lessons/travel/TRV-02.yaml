@@ -36,31 +36,43 @@ vocabulary:
     ipa: "/aɪ hæv ə ˌrezərˈveɪʃn/"
     meaning_vi: "tôi có đặt phòng"
     chunk: "I have a reservation under Hoa."
+    emoji: "🏨"
+    mnemonic_vi: "\"reserve\" là GIỮ CHỖ TRƯỚC. Chữ \"under\" ở cuối rất hữu ích: đặt dưới tên nào — người Việt có họ và tên dễ bị tra nhầm thứ tự."
     tags: [travel, hotel]
   - term: "checking out"
     ipa: "/ˈtʃekɪŋ aʊt/"
     meaning_vi: "trả phòng"
     chunk: "I'm checking out on Friday."
+    emoji: "🧳"
+    mnemonic_vi: "Cặp \"check in\" là nhận phòng, \"check out\" là trả. Giống siêu thị: quầy check out là quầy đi ra."
     tags: [travel, hotel]
   - term: "What time is breakfast"
     ipa: "/wɒt taɪm ɪz ˈbrekfəst/"
     meaning_vi: "mấy giờ ăn sáng"
     chunk: "What time is breakfast?"
+    emoji: "🍳"
+    mnemonic_vi: "\"break fast\" là PHÁ VỠ SỰ NHỊN ĂN qua đêm — bữa đầu tiên phá vỡ giấc nhịn. Từ ghép này lộ hẳn nghĩa gốc."
     tags: [travel, hotel]
   - term: "the wifi password"
     ipa: "/ðə ˈwaɪfaɪ ˈpæswɜːrd/"
     meaning_vi: "mật khẩu wifi"
     chunk: "Could I get the wifi password?"
+    emoji: "📶"
+    mnemonic_vi: "Ôn lại khuôn \"Could I\" — xin phép cho mình. Câu này có lẽ là câu tiếng Anh được dùng nhiều nhất của dân đi công tác."
     tags: [travel, hotel]
   - term: "isn't working"
     ipa: "/ˈɪznt ˈwɜːrkɪŋ/"
     meaning_vi: "không chạy, hỏng"
     chunk: "The air conditioning isn't working."
+    emoji: "🔧"
+    mnemonic_vi: "Ôn lại \"work\" nghĩa CHẠY ĐƯỢC, như trong \"does that work\". Khuôn dùng được cho mọi thứ hỏng: đèn, nước nóng, thang máy, khoá cửa."
     tags: [travel, problem]
   - term: "Could I change rooms"
     ipa: "/kʊd aɪ tʃeɪndʒ ruːmz/"
     meaning_vi: "tôi đổi phòng được không"
     chunk: "Could I change rooms?"
+    emoji: "🔑"
+    mnemonic_vi: "Chú ý chữ \"rooms\" SỐ NHIỀU — đổi giữa hai phòng nên tiếng Anh dùng số nhiều. Nói \"change room\" nghe sai tai người bản xứ."
     tags: [travel, problem]
 
 sentence_patterns:

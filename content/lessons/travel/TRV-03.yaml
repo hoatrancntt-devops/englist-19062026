@@ -36,31 +36,43 @@ vocabulary:
     ipa: "/kʊd juː teɪk miː tuː/"
     meaning_vi: "cho tôi tới (nói điểm đến với tài xế)"
     chunk: "Could you take me to this address?"
+    emoji: "🚕"
+    mnemonic_vi: "Ôn lại khuôn \"Could you\" — nhờ người khác. Mẹo thực dụng: đưa luôn địa chỉ viết ra giấy hoặc trên điện thoại, khỏi phải đánh vần tên phố lạ."
     tags: [travel, taxi]
   - term: "How much is it to"
     ipa: "/haʊ mʌtʃ ɪz ɪt tuː/"
     meaning_vi: "đi tới đó hết bao nhiêu"
     chunk: "How much is it to the airport?"
+    emoji: "💵"
+    mnemonic_vi: "Hỏi giá TRƯỚC khi lên xe, nhất là ở nơi taxi không chạy đồng hồ. Ôn lại \"much\" dùng cho thứ không đếm được như tiền."
     tags: [travel, taxi]
   - term: "Which line goes to"
     ipa: "/wɪtʃ laɪn ɡoʊz tuː/"
     meaning_vi: "tuyến nào đi tới"
     chunk: "Which line goes to the city centre?"
+    emoji: "🚇"
+    mnemonic_vi: "Ôn lại \"which\" — dùng khi có tập lựa chọn có hạn, và tàu điện đúng là một tập có hạn. \"Line\" là tuyến, thường gọi theo màu hoặc số."
     tags: [travel, train]
   - term: "a single ticket"
     ipa: "/ə ˈsɪŋɡl ˈtɪkɪt/"
     meaning_vi: "vé một chiều"
     chunk: "A single ticket, please."
+    emoji: "🎫"
+    mnemonic_vi: "Người Anh nói \"single / return\", người Mỹ nói \"one-way / round-trip\". Cùng nghĩa, khác vùng — nghe được cả hai thì không bị hụt."
     tags: [travel, train]
   - term: "How many stops"
     ipa: "/haʊ ˈmeni stɒps/"
     meaning_vi: "mấy trạm nữa"
     chunk: "How many stops is it?"
+    emoji: "🚏"
+    mnemonic_vi: "\"many\" dùng cho thứ ĐẾM ĐƯỢC — trạm đếm được, tiền thì không. Đây chính là cặp đối với \"how much\" ở trên."
     tags: [travel, train]
   - term: "drop me here"
     ipa: "/drɒp miː hɪr/"
     meaning_vi: "cho tôi xuống đây"
     chunk: "You can drop me here, thanks."
+    emoji: "🛑"
+    mnemonic_vi: "Ôn lại \"drop\" — THẢ RƠI, cặp với \"pick up\" nhặt lên. Câu này dùng khi muốn xuống sớm hơn điểm đã báo."
     tags: [travel, taxi]
 
 sentence_patterns:

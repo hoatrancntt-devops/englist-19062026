@@ -43,31 +43,43 @@ vocabulary:
     ipa: "/əˈkaʊntəbl/"
     meaning_vi: "người chịu trách nhiệm cuối cùng"
     chunk: "The service owner is accountable for the output."
+    emoji: "🧍"
+    mnemonic_vi: "Khác \"responsible\": nhiều người có thể cùng LÀM (responsible), nhưng chỉ MỘT người CHỊU (accountable). Câu hỏi chuẩn: ai bị hỏi khi có chuyện?"
     tags: [ai, core]
   - term: "in scope"
     ipa: "/ɪn skoʊp/"
     meaning_vi: "nằm trong phạm vi"
     chunk: "Only internal tickets are in scope."
+    emoji: "🔲"
+    mnemonic_vi: "Ôn lại \"scope\" — ống nhòm, tầm nhìn. Vẽ đường biên rõ ràng ngay từ đầu là cách chặn dự án phình ra ngoài tầm kiểm soát."
     tags: [ai, core]
   - term: "human in the loop"
     ipa: "/ˈhjuːmən ɪn ðə luːp/"
     meaning_vi: "có người kiểm trong quy trình"
     chunk: "There is a human in the loop for every reply."
+    emoji: "🔁"
+    mnemonic_vi: "Ôn lại \"loop\" — vòng dây. Có một con người đứng TRONG vòng lặp, không đứng ngoài nhìn. Cụm được hỏi nhiều nhất trong mọi buổi duyệt AI."
     tags: [ai, core]
   - term: "likelihood and impact"
     ipa: "/ˈlaɪklihʊd ænd ˈɪmpækt/"
     meaning_vi: "khả năng xảy ra và mức tác động"
     chunk: "We rate each risk by likelihood and impact."
+    emoji: "🎲"
+    mnemonic_vi: "Hai trục của mọi bảng đánh giá rủi ro. Hay xảy ra mà nhẹ thì chịu được; hiếm xảy ra mà chết người thì phải chặn."
     tags: [risk, core]
   - term: "mitigation"
     ipa: "/ˌmɪtɪˈɡeɪʃn/"
     meaning_vi: "biện pháp giảm thiểu"
     chunk: "The mitigation is a confidence threshold."
+    emoji: "🧰"
+    mnemonic_vi: "\"mitigate\" là LÀM DỊU. Không phải xoá rủi ro — chỉ hạ nó xuống mức chịu được. Nêu rủi ro mà không nêu cách làm dịu thì chỉ là than thở."
     tags: [risk, core]
   - term: "kill switch"
     ipa: "/kɪl swɪtʃ/"
     meaning_vi: "công tắc tắt ngay"
     chunk: "Any team lead can use the kill switch."
+    emoji: "🛑"
+    mnemonic_vi: "Cái nút đỏ to. Điều đáng nói không phải là có nút, mà là AI ĐƯỢC BẤM — nút mà chỉ giám đốc bấm được thì lúc cần chẳng ai bấm kịp."
     tags: [risk, core]
 
 sentence_patterns:

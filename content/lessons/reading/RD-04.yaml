@@ -43,31 +43,43 @@ vocabulary:
     ipa: "/ruːt kɔːz/"
     meaning_vi: "nguyên nhân gốc — điều kiện khiến sự cố có thể xảy ra"
     chunk: "The root cause was a missing disk alert."
+    emoji: "🌳"
+    mnemonic_vi: "\"root\" là RỄ CÂY. Cắt lá thì lá mọc lại; nhổ rễ mới hết. Ôn lại cặp với \"problem\" trong ITIL — cùng một ý."
     tags: [reading, core]
   - term: "trigger"
     ipa: "/ˈtrɪɡər/"
     meaning_vi: "thứ châm ngòi — sự kiện làm nó bùng ra hôm đó"
     chunk: "The trigger was a large export at 02:00."
+    emoji: "🔫"
+    mnemonic_vi: "\"trigger\" là CÒ SÚNG. Cò không phải là viên đạn — súng đã nạp sẵn từ trước (root cause), cò chỉ quyết định lúc nào nổ."
     tags: [reading, core]
   - term: "detection"
     ipa: "/dɪˈtekʃn/"
     meaning_vi: "cách phát hiện ra sự cố"
     chunk: "Detection: a customer called, not an alert."
+    emoji: "🔔"
+    mnemonic_vi: "Mục hay bị bỏ qua nhưng đắt giá nhất. \"Khách hàng gọi báo\" thay vì \"hệ thống tự báo\" là một sự cố thứ hai nằm trong sự cố thứ nhất."
     tags: [reading, core]
   - term: "blameless"
     ipa: "/ˈbleɪmləs/"
     meaning_vi: "không quy trách nhiệm cá nhân"
     chunk: "This is a blameless postmortem."
+    emoji: "🕊️"
+    mnemonic_vi: "\"blame\" là ĐỔ LỖI, \"-less\" là KHÔNG CÓ. Lý do rất thực dụng: nơi nào đổ lỗi thì người ta giấu sự thật, và không ai học được gì."
     tags: [reading, core]
   - term: "action item"
     ipa: "/ˈækʃn ˈaɪtəm/"
     meaning_vi: "việc phải làm, có người và có hạn"
     chunk: "Each action item has an owner and a date."
+    emoji: "📌"
+    mnemonic_vi: "Thiếu TÊN NGƯỜI hoặc HẠN thì không phải action item, chỉ là một câu ước. Đây là chỗ phần lớn biên bản sự cố chết yểu."
     tags: [reading, core]
   - term: "contributing factor"
     ipa: "/kənˈtrɪbjuːtɪŋ ˈfæktər/"
     meaning_vi: "yếu tố góp phần"
     chunk: "A contributing factor was the stale runbook."
+    emoji: "🧩"
+    mnemonic_vi: "\"contribute\" là GÓP VÀO. Không đủ gây ra sự cố một mình, nhưng góp phần làm nó tệ hơn. Sự cố lớn hiếm khi chỉ có một nguyên nhân."
     tags: [reading, core]
 
 sentence_patterns:

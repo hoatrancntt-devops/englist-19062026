@@ -35,7 +35,12 @@ public record RoadmapResult(
     NextLessonResult? Next,
     int TotalPublished,
     int Mastered,
-    int InProgress);
+    int InProgress,
+    /// <summary>
+    /// Số thứ tự nhóm bài tổng hợp đang chặn lộ trình, null khi không có.
+    /// Có giá trị thì mọi bài chưa bắt đầu đều khoá cho tới khi qua nhóm đó.
+    /// </summary>
+    int? PendingConsolidationGroup = null);
 
 /// <summary>
 /// Ghép dữ liệu từ DB vào engine thuần rồi trả kết quả cho tầng API.
@@ -45,6 +50,40 @@ public record RoadmapResult(
 public class LearningPathService(AppDbContext db, IOptions<LearningPolicyOptions> policyOptions)
 {
     private readonly PrerequisiteEngine _engine = new(policyOptions.Value);
+    private readonly LearningPolicyOptions _policy = policyOptions.Value;
+
+    /// <summary>
+    /// Nhóm bài tổng hợp đang chờ, hoặc null khi không có.
+    ///
+    /// Chỉ đếm chứ không dựng đề: lộ trình được gọi ở gần như mọi màn hình, nên phép kiểm ở đây
+    /// phải rẻ. Việc dựng đề nằm ở <see cref="ConsolidationService"/> và chỉ chạy khi học viên
+    /// thực sự mở bài tổng hợp.
+    /// </summary>
+    private async Task<int?> PendingConsolidationGroupAsync(Guid userId, CancellationToken ct)
+    {
+        var size = Math.Max(1, _policy.ConsolidationGroupSize);
+
+        var masteredCount = await db.LessonMasteries
+            .AsNoTracking()
+            .CountAsync(m => m.UserId == userId && m.MasteredAt != null && !m.UnlockedByChallenge, ct);
+
+        var completeGroups = masteredCount / size;
+
+        if (completeGroups == 0)
+        {
+            return null;
+        }
+
+        var passed = await db.ConsolidationPasses
+            .AsNoTracking()
+            .Where(c => c.UserId == userId)
+            .Select(c => c.GroupIndex)
+            .ToHashSetAsync(ct);
+
+        var pending = Enumerable.Range(1, completeGroups).FirstOrDefault(g => !passed.Contains(g));
+
+        return pending == 0 ? null : pending;
+    }
 
     public async Task<RoadmapResult> GetRoadmapAsync(Guid userId, DateTimeOffset now, CancellationToken ct = default)
     {
@@ -154,9 +193,27 @@ public class LearningPathService(AppDbContext db, IOptions<LearningPolicyOptions
             .Select(l => ToCard(l, evaluations[l.Code], progressByCode.GetValueOrDefault(l.Code)))
             .ToList();
 
+        var pendingGroup = await PendingConsolidationGroupAsync(userId, ct);
+
+        if (pendingGroup is not null)
+        {
+            // Chặn bài CHƯA bắt đầu, không đụng bài đang làm dở hay đã thạo.
+            //
+            // Khoá cả bài đang dở thì học viên bị kẹt giữa chừng một bài mà không có cách nào
+            // đóng nó lại; còn khoá bài đã thạo thì mất luôn nút học lại vừa mở.
+            var gate = $"Bạn vừa thạo đủ {_policy.ConsolidationGroupSize} bài. " +
+                       "Qua bài tổng hợp ôn lại ba bài đó thì lộ trình mở tiếp.";
+
+            cards = [.. cards.Select(c =>
+                c.State == nameof(LessonState.Available) || c.State == nameof(LessonState.Previewable)
+                    ? c with { State = nameof(LessonState.Locked), LockExplanationVi = gate }
+                    : c)];
+        }
+
         var cardByCode = cards.ToDictionary(c => c.Code, StringComparer.OrdinalIgnoreCase);
 
-        var next = choice is null
+        // Đang bị chặn thì không gợi ý bài kế tiếp: gợi ý một bài vừa bị khoá là tự mâu thuẫn.
+        var next = choice is null || pendingGroup is not null
             ? null
             : new NextLessonResult(cardByCode[choice.Lesson.Code], choice.ReasonVi);
 
@@ -171,7 +228,9 @@ public class LearningPathService(AppDbContext db, IOptions<LearningPolicyOptions
             // một bài đo trình độ thật.
             cards.Count(c => c.State == nameof(LessonState.Mastered) && !c.UnlockedByChallenge),
 
-            cards.Count(c => c.State == nameof(LessonState.InProgress)));
+            cards.Count(c => c.State == nameof(LessonState.InProgress)),
+
+            pendingGroup);
     }
 
     private LessonCard ToCard(

@@ -107,6 +107,33 @@ public class ChallengePass : Entity
 }
 
 /// <summary>
+/// Một nhóm bài tổng hợp đã qua.
+///
+/// Nhóm gom ba bài theo đúng thứ tự học viên thạo chúng, nên nhóm của mỗi người một khác —
+/// người trộn nhiều lĩnh vực có bộ ba trộn lĩnh vực. Vì vậy đề bài sinh lúc chạy chứ không
+/// soạn sẵn, và bảng này chỉ lưu kết quả.
+/// </summary>
+public class ConsolidationPass : Entity
+{
+    public Guid UserId { get; set; }
+    public User? User { get; set; }
+
+    /// <summary>Nhóm thứ mấy, đếm từ 1. Nhóm 1 là ba bài đầu tiên học viên thạo.</summary>
+    public int GroupIndex { get; set; }
+
+    public double Score { get; set; }
+    public DateTimeOffset PassedAt { get; set; } = DateTimeOffset.UtcNow;
+
+    /// <summary>
+    /// Mã ba bài của nhóm lúc qua, JSONB.
+    ///
+    /// Giữ lại vì nhóm suy ra từ thứ tự thạo: nếu sau này thứ tự đó đổi vì bất cứ lý do gì,
+    /// vẫn phải biết được học viên đã ôn đúng ba bài nào.
+    /// </summary>
+    public required string LessonCodesJson { get; set; }
+}
+
+/// <summary>
 /// Một lần nộp bài luyện viết.
 ///
 /// Lưu cả bài học viên viết chứ không chỉ điểm: với dạng viết email, thứ đáng xem lại sau

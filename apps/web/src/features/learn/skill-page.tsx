@@ -258,8 +258,8 @@ function LessonRow({ lesson }: { lesson: LessonCard }) {
         </div>
 
         <Link to={`/learn/lesson/${lesson.code}`} className="shrink-0">
-          <Button size="sm" variant={locked ? 'secondary' : 'primary'}>
-            {locked ? 'Xem lý do' : 'Học'}
+          <Button size="sm" variant={locked || mastered ? 'secondary' : 'primary'}>
+            {locked ? 'Xem lý do' : mastered ? 'Học lại' : 'Học'}
             {!locked && <ChevronRight className="size-4" aria-hidden />}
           </Button>
         </Link>

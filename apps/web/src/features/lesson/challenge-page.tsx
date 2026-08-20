@@ -207,7 +207,14 @@ function NotEligible({ offer, code }: { offer: ChallengeOffer; code: string }) {
   )
 }
 
-function ChallengeQuestion({
+/**
+ * Một câu trắc nghiệm có đề, lựa chọn và nút nghe.
+ *
+ * Xuất ra ngoài để bài tổng hợp dùng lại: hai màn hình đều là "chọn một đáp án, nộp trọn gói",
+ * và dựng hai bản sẽ khiến chúng trôi dần khỏi nhau ở đúng những chi tiết khó thấy nhất —
+ * cách phát âm câu hỏi, cách đánh dấu câu chưa chọn.
+ */
+export function ChallengeQuestion({
   item,
   index,
   chosen,

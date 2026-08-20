@@ -137,6 +137,12 @@ public static class LearningModule
         group.MapGet("/preferences", GetPreferences)
             .WithSummary("Lĩnh vực và chế độ học đang chọn, kèm danh sách lựa chọn có nội dung thật");
 
+        group.MapGet("/consolidation", GetConsolidation)
+            .WithSummary("Bài tổng hợp đang chờ, nếu có");
+
+        group.MapPost("/consolidation", SubmitConsolidation)
+            .WithSummary("Nộp bài tổng hợp. Đạt ngưỡng thì lộ trình mở tiếp.");
+
         group.MapGet("/schedule", GetSchedule)
             .WithSummary("Mục tiêu phút mỗi ngày, giờ nhắc học và múi giờ");
 
@@ -208,6 +214,42 @@ public static class LearningModule
             profile?.StudyMode.ToString() ?? nameof(StudyMode.Mixed),
             profile?.OnboardingCompleted ?? false,
             tracks));
+    }
+
+    private static async Task<IResult> GetConsolidation(
+        ClaimsPrincipal principal,
+        ConsolidationService consolidation,
+        CancellationToken ct)
+    {
+        if (!TryGetUserId(principal, out var userId))
+        {
+            return Results.Unauthorized();
+        }
+
+        return Results.Ok(await consolidation.GetOfferAsync(userId, ct));
+    }
+
+    private static async Task<IResult> SubmitConsolidation(
+        [FromBody] ChallengeSubmission submission,
+        ClaimsPrincipal principal,
+        ConsolidationService consolidation,
+        CancellationToken ct)
+    {
+        if (!TryGetUserId(principal, out var userId))
+        {
+            return Results.Unauthorized();
+        }
+
+        var result = await consolidation.SubmitAsync(
+            userId, submission.Responses, DateTimeOffset.UtcNow, ct);
+
+        return result is null
+            ? Results.BadRequest(new
+            {
+                error = "no_pending_consolidation",
+                message = "Hiện không có bài tổng hợp nào đang chờ bạn.",
+            })
+            : Results.Ok(result);
     }
 
     /// <summary>Dưới ngưỡng này thì một bài cũng không xong, mục tiêu thành vô nghĩa.</summary>

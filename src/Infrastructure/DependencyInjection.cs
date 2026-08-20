@@ -88,6 +88,7 @@ public static class DependencyInjection
         services.AddScoped<ReviewService>();
         services.AddScoped<PlacementService>();
         services.AddScoped<ChallengeService>();
+        services.AddScoped<ConsolidationService>();
         services.AddScoped<StreakService>();
         services.AddScoped<RoleplayService>();
         services.AddScoped<SpeechService>();

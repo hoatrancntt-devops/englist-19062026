@@ -110,4 +110,18 @@ public class LearningPolicyOptions
     /// điểm thu được kiểu đó không phản ánh việc học viên nhớ được gì trong một buổi.
     /// </summary>
     public int LessonTimeLimitMinutes { get; set; } = 30;
+
+    /// <summary>
+    /// Cứ bấy nhiêu bài thạo thì phải qua một bài tổng hợp ôn lại đúng bấy nhiêu bài đó.
+    /// </summary>
+    public int ConsolidationGroupSize { get; set; } = 3;
+
+    /// <summary>
+    /// Ngưỡng qua bài tổng hợp. Bằng ngưỡng thạo bài thường chứ không cao hơn: đây là bài ôn
+    /// lại thứ đã học, không phải bài thi vượt.
+    /// </summary>
+    public int ConsolidationPassThreshold { get; set; } = 80;
+
+    /// <summary>Số câu lấy từ mỗi bài trong nhóm. Ba bài, bốn câu mỗi bài là mười hai câu.</summary>
+    public int ConsolidationItemsPerLesson { get; set; } = 4;
 }

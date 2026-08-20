@@ -202,6 +202,20 @@ public class StoryProgressConfiguration : IEntityTypeConfiguration<StoryProgress
     }
 }
 
+public class ConsolidationPassConfiguration : IEntityTypeConfiguration<ConsolidationPass>
+{
+    public void Configure(EntityTypeBuilder<ConsolidationPass> b)
+    {
+        b.Property(x => x.LessonCodesJson).HasColumnType("jsonb").IsRequired();
+
+        // Mỗi nhóm chỉ qua một lần. Ràng buộc này là thứ giữ cho bộ đếm nhóm không đếm trùng
+        // khi hai request nộp cùng lúc.
+        b.HasIndex(x => new { x.UserId, x.GroupIndex }).IsUnique();
+
+        b.HasOne(x => x.User).WithMany().HasForeignKey(x => x.UserId).OnDelete(DeleteBehavior.Cascade);
+    }
+}
+
 public class WritingAttemptConfiguration : IEntityTypeConfiguration<WritingAttempt>
 {
     public void Configure(EntityTypeBuilder<WritingAttempt> b)

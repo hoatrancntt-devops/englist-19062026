@@ -1,7 +1,7 @@
 import { useMemo, useState } from 'react'
 import { Link } from 'react-router-dom'
 import { useQuery } from '@tanstack/react-query'
-import { Check, ChevronRight, Flag, Lock, Map as MapIcon, Rocket, Eye } from 'lucide-react'
+import { Check, ChevronRight, Flag, Layers, Lock, Map as MapIcon, Rocket, Eye } from 'lucide-react'
 import { api } from '@/lib/api-client'
 import { cn } from '@/lib/cn'
 import { Button } from '@/components/ui/button'
@@ -32,6 +32,8 @@ interface RoadmapResult {
   totalPublished: number
   mastered: number
   inProgress: number
+  /** Có giá trị thì lộ trình đang bị chặn cho tới khi qua bài tổng hợp nhóm này. */
+  pendingConsolidationGroup: number | null
 }
 
 const LAYER_LABEL: Record<string, string> = {
@@ -100,6 +102,25 @@ export function RoadmapPage() {
         />
         <CardBody className="space-y-4">
           <ProgressBar value={data.mastered} max={data.totalPublished} label="Đã thạo" />
+
+          {/* Cổng tổng hợp đứng TRÊN gợi ý bài kế tiếp, vì lúc nó bật thì gợi ý bài kế tiếp
+              không còn và mọi bài mới đều khoá. Không nói ở đây thì học viên chỉ thấy một
+              lộ trình đột nhiên khoá sạch mà không hiểu vì sao. */}
+          {data.pendingConsolidationGroup && (
+            <div className="rounded-[var(--radius-card)] bg-[color-mix(in_oklch,var(--color-warning)_14%,transparent)] p-4">
+              <p className="flex items-center gap-2 font-medium">
+                <Layers className="size-4 shrink-0" aria-hidden />
+                Bài tổng hợp {data.pendingConsolidationGroup} đang chờ
+              </p>
+              <p className="mt-1 text-sm text-secondary">
+                Bạn vừa thạo đủ ba bài. Ôn lại đúng ba bài đó rồi lộ trình mở tiếp.
+              </p>
+
+              <Link to="/learn/on-tap-tong-hop" className="mt-3 inline-block">
+                <Button size="sm">Làm bài tổng hợp</Button>
+              </Link>
+            </div>
+          )}
 
           {data.next && (
             <div className="rounded-[var(--radius-card)] bg-[var(--surface-sunken)] p-4">
@@ -234,13 +255,22 @@ function LessonRow({ lesson }: { lesson: LessonCard }) {
           {/* Bài đã đánh dấu biết VẪN phải còn nút học.
               Ẩn nút ở đây là dựng ngõ cụt: hệ thống bảo "cần học bài đó rồi mới mở bài sau"
               trong khi không còn chỗ nào bấm vào để học. */}
-          {!mastered && (
-            <Link to={`/learn/lesson/${lesson.code}`}>
-              <Button size="sm" variant={locked ? 'secondary' : 'primary'}>
-                {previewable ? 'Xem trước' : locked ? 'Xem lý do' : markedKnown ? 'Học để mở bài sau' : 'Học'}
-              </Button>
-            </Link>
-          )}
+          {/* Bài đã thạo VẪN có nút, chỉ đổi chữ thành "Học lại".
+              Ẩn nút ở bài đã qua là khoá học viên khỏi chính thứ họ muốn ôn, và họ không có
+              đường nào khác để mở lại bài đó. Học lại không hạ điểm: máy chủ giữ lần tốt nhất. */}
+          <Link to={`/learn/lesson/${lesson.code}`}>
+            <Button size="sm" variant={locked || mastered ? 'secondary' : 'primary'}>
+              {previewable
+                ? 'Xem trước'
+                : locked
+                  ? 'Xem lý do'
+                  : mastered
+                    ? 'Học lại'
+                    : markedKnown
+                      ? 'Học để mở bài sau'
+                      : 'Học'}
+            </Button>
+          </Link>
 
           {/* Thi vượt chỉ có nghĩa với bài chưa qua. Qua rồi thì nút này chỉ gây nhiễu. */}
           {!mastered && !markedKnown && (

@@ -350,9 +350,21 @@ public class LessonPlayerService(
         var mastery = await GetOrCreateMasteryAsync(userId, lesson.Id, ct);
         var previousState = mastery.State;
 
-        mastery.MasteryRaw = masteryRaw;
-        mastery.MasteryEffective = masteryRaw;
-        mastery.SkillScores = skillScores;
+        // Học lại KHÔNG được làm tụt kết quả đã đạt: giữ lần làm tốt nhất.
+        //
+        // Bài đã thạo vẫn mở nút học lại, nên một buổi ôn qua loa hoàn toàn có thể ra điểm
+        // thấp hơn lần trước. Ghi đè thì bài rơi từ Mastered xuống InProgress và kéo theo
+        // những bài phía sau đang lấy nó làm tiên quyết — tức là học viên bị phạt vì đã ôn bài,
+        // đúng thứ mà nút học lại sinh ra để khuyến khích.
+        //
+        // Số lần làm, thời gian học và mốc hoạt động vẫn ghi thật: đó là việc đã xảy ra.
+        if (masteryRaw >= mastery.MasteryRaw)
+        {
+            mastery.MasteryRaw = masteryRaw;
+            mastery.MasteryEffective = masteryRaw;
+            mastery.SkillScores = skillScores;
+        }
+
         mastery.AttemptsCount++;
 
         // Đã học thật thì điểm này không còn là điểm thi vượt nữa, nên bỏ cờ.
@@ -368,12 +380,22 @@ public class LessonPlayerService(
         if (reachedMastery)
         {
             mastery.State = LessonState.Mastered;
-            mastery.MasteredAt = now;
+
+            // Chỉ ghi mốc thạo LẦN ĐẦU.
+            //
+            // Nhóm bài tổng hợp gom ba bài theo đúng thứ tự thạo. Dời mốc mỗi lần học lại thì
+            // một buổi ôn bài cũ sẽ đẩy bài đó xuống cuối hàng và xáo lại toàn bộ các nhóm —
+            // học viên đang chờ nhóm 4 bỗng thấy nhóm 2 mở lại.
+            mastery.MasteredAt ??= now;
         }
-        else
+        else if (previousState != LessonState.Mastered)
         {
             mastery.State = LessonState.InProgress;
         }
+
+        // Đã thạo từ trước mà lần học lại này chưa đạt ngưỡng: giữ nguyên Mastered.
+        // Suy giảm theo thời gian vẫn hạ bài xuống NeedsReview như cũ — đó là việc của job
+        // tính suy giảm, không phải của một lần ôn tự nguyện.
 
         attempt.SubmittedAt = now;
         attempt.Score = masteryRaw;

@@ -35,31 +35,43 @@ vocabulary:
     ipa: "/haʊ mʌtʃ dʌz ɪt kɒst/"
     meaning_vi: "cái này giá bao nhiêu"
     chunk: "How much does it cost?"
+    emoji: "🏷️"
+    mnemonic_vi: "\"cost\" nghe như \"cốt\" — cái giá cốt lõi. Bản ngắn gọn hơn là \"How much is it?\", dùng thay được."
     tags: [money, core]
   - term: "Do you take card"
     ipa: "/duː juː teɪk kɑːrd/"
     meaning_vi: "ở đây có nhận thẻ không"
     chunk: "Do you take card?"
+    emoji: "💳"
+    mnemonic_vi: "\"take\" là NHẬN LẤY. Không nói \"receive card\" — người bản xứ dùng \"take\" cho chuyện thanh toán."
     tags: [money, core]
   - term: "Keep the change"
     ipa: "/kiːp ðə tʃeɪndʒ/"
     meaning_vi: "khỏi thối lại"
     chunk: "Keep the change, thanks."
+    emoji: "🪙"
+    mnemonic_vi: "\"change\" vừa là thay đổi vừa là TIỀN THỐI. Mẹo: tiền thối là phần bị đổi từ tờ to sang tiền lẻ."
     tags: [money]
   - term: "receipt"
     ipa: "/rɪˈsiːt/"
     meaning_vi: "hoá đơn (chữ p câm)"
     chunk: "Could I get a receipt?"
+    emoji: "🧾"
+    mnemonic_vi: "Chữ P CÂM: đọc \"ri-XÍT\", không đọc \"ri-xép\". Cùng họ với \"receive\" (nhận) — giấy chứng nhận đã nhận tiền."
     tags: [money, core]
   - term: "I think there's a mistake"
     ipa: "/aɪ θɪŋk ðerz ə mɪˈsteɪk/"
     meaning_vi: "tôi nghĩ có nhầm lẫn"
     chunk: "Sorry, I think there's a mistake on the bill."
+    emoji: "⚠️"
+    mnemonic_vi: "Bắt đầu bằng \"I think\" để chừa đường lui cho cả hai bên. Nói thẳng \"you are wrong\" là gây căng thẳng không cần thiết."
     tags: [money, core]
   - term: "It's declined"
     ipa: "/ɪts dɪˈklaɪnd/"
     meaning_vi: "thẻ bị từ chối"
     chunk: "Sorry, it's declined. Try another card?"
+    emoji: "❌"
+    mnemonic_vi: "\"decline\" là DỐC XUỐNG, đi xuống — cũng có nghĩa từ chối. Hình dung giao dịch trượt dốc rồi rơi mất."
     tags: [money]
 
 sentence_patterns:

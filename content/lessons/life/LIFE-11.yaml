@@ -36,31 +36,43 @@ vocabulary:
     ipa: "/ɡoʊ streɪt/"
     meaning_vi: "đi thẳng"
     chunk: "Go straight for two blocks."
+    emoji: "⬆️"
+    mnemonic_vi: "\"straight\" nghe như \"strết\" — thẳng căng như sợi dây kéo hết cỡ."
     tags: [directions, core]
   - term: "turn left"
     ipa: "/tɜːrn left/"
     meaning_vi: "rẽ trái"
     chunk: "Turn left at the lights."
+    emoji: "⬅️"
+    mnemonic_vi: "\"left\" cũng có nghĩa là \"còn lại, bỏ lại\". Mẹo: tay trái là tay bạn hay BỎ QUÊN không dùng."
     tags: [directions, core]
   - term: "on your right"
     ipa: "/ɒn jʊr raɪt/"
     meaning_vi: "bên tay phải của bạn"
     chunk: "It's on your right."
+    emoji: "➡️"
+    mnemonic_vi: "\"right\" vừa là phải vừa là đúng. Tay phải là tay ĐÚNG — tay đa số người dùng để viết."
     tags: [directions, core]
   - term: "How do I get to"
     ipa: "/haʊ duː aɪ ɡet tuː/"
     meaning_vi: "làm sao để tới"
     chunk: "How do I get to the third floor?"
+    emoji: "🧭"
+    mnemonic_vi: "\"get to\" là ĐẾN được. Câu mở đầu chuẩn khi hỏi đường — hỏi \"where is\" chỉ được vị trí, hỏi câu này mới được lối đi."
     tags: [directions, core]
   - term: "You can't miss it"
     ipa: "/juː kɑːnt mɪs ɪt/"
     meaning_vi: "không thể đi nhầm được đâu"
     chunk: "Big blue sign, you can't miss it."
+    emoji: "🎯"
+    mnemonic_vi: "\"miss\" là TRƯỢT, bắn trượt mục tiêu. Không thể bắn trượt được — nó to và rõ lắm."
     tags: [directions]
   - term: "across from"
     ipa: "/əˈkrɒs frɒm/"
     meaning_vi: "đối diện với"
     chunk: "It's across from the lift."
+    emoji: "↔️"
+    mnemonic_vi: "\"cross\" là băng qua. Đối diện là phải BĂNG QUA lối đi mới tới được."
     tags: [directions]
 
 sentence_patterns:

@@ -35,31 +35,43 @@ vocabulary:
     ipa: "/pɪk miː ʌp/"
     meaning_vi: "đón tôi"
     chunk: "Can you pick me up at the main gate?"
+    emoji: "🚗"
+    mnemonic_vi: "\"pick up\" là NHẶT LÊN — hình dung tài xế nhặt bạn lên khỏi vỉa hè bỏ vào xe. Vô lý nên nhớ."
     tags: [transport, core]
   - term: "drop me off"
     ipa: "/drɒp miː ɒf/"
     meaning_vi: "cho tôi xuống"
     chunk: "Drop me off at the corner, please."
+    emoji: "🛑"
+    mnemonic_vi: "\"drop\" là THẢ RƠI — ngược hẳn với \"pick up\" nhặt lên. Nhớ một cặp nhặt-lên / thả-xuống là xong cả hai từ."
     tags: [transport, core]
   - term: "I'm waiting at"
     ipa: "/aɪm ˈweɪtɪŋ æt/"
     meaning_vi: "tôi đang đứng ở"
     chunk: "I'm waiting at the lobby."
+    emoji: "🧍"
+    mnemonic_vi: "Giới từ \"at\" cho một ĐIỂM cụ thể. \"In\" là ở trong một vùng, \"at\" là đúng một chỗ — tài xế cần điểm, không cần vùng."
     tags: [transport, core]
   - term: "How long will it take"
     ipa: "/haʊ lɒŋ wɪl ɪt teɪk/"
     meaning_vi: "mất bao lâu"
     chunk: "How long will it take to the airport?"
+    emoji: "⏱️"
+    mnemonic_vi: "\"take\" ở đây là NGỐN thời gian. Tiếng Việt cũng nói \"việc này ngốn hai tiếng\" — cùng một hình ảnh."
     tags: [transport]
   - term: "stuck in traffic"
     ipa: "/stʌk ɪn ˈtræfɪk/"
     meaning_vi: "kẹt xe"
     chunk: "Sorry, I'm stuck in traffic."
+    emoji: "🚦"
+    mnemonic_vi: "\"stuck\" nghe như \"tắc\" trong \"tắc đường\" — gần âm và đúng nghĩa luôn, hiếm khi may thế."
     tags: [transport, office]
   - term: "on my way"
     ipa: "/ɒn maɪ weɪ/"
     meaning_vi: "tôi đang trên đường"
     chunk: "On my way, five minutes out."
+    emoji: "🏃"
+    mnemonic_vi: "Viết tắt \"OMW\" trong tin nhắn. Đây là câu nhắn khi bạn đến muộn — kèm luôn số phút còn lại thì người chờ đỡ sốt ruột."
     tags: [transport, office]
 
 sentence_patterns:

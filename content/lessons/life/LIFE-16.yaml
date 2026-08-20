@@ -43,31 +43,43 @@ vocabulary:
     ipa: "/let miː kənˈfɜːrm/"
     meaning_vi: "để tôi xác nhận lại"
     chunk: "Let me confirm: Thursday, two thirty."
+    emoji: "✅"
+    mnemonic_vi: "Ôn lại từ bài chốt lịch: \"confirm\" nghe như \"cần phơm\", cần chốt cho chắc. Nhắc lại giờ hẹn ngay sau câu này."
     tags: [review, core]
   - term: "Something came up"
     ipa: "/ˈsʌmθɪŋ keɪm ʌp/"
     meaning_vi: "có việc đột xuất"
     chunk: "Sorry, something came up."
+    emoji: "🌪️"
+    mnemonic_vi: "Ôn lại: một việc TRỒI LÊN chắn đường. Không phải khai cụ thể việc gì — đó là chỗ lịch sự của câu này."
     tags: [review, core]
   - term: "on my way"
     ipa: "/ɒn maɪ weɪ/"
     meaning_vi: "tôi đang trên đường"
     chunk: "On my way, ten minutes out."
+    emoji: "🏃"
+    mnemonic_vi: "Ôn lại: viết tắt \"OMW\". Kèm luôn số phút còn lại thì người chờ đỡ sốt ruột."
     tags: [review]
   - term: "I'll have"
     ipa: "/aɪl hæv/"
     meaning_vi: "cho tôi (gọi món)"
     chunk: "I'll have the set lunch."
+    emoji: "🍽️"
+    mnemonic_vi: "Ôn lại: \"tôi sẽ có\" nghe lạ nhưng đây mới là câu gọi món chuẩn. \"I want\" nghe như ra lệnh."
     tags: [review]
   - term: "under the weather"
     ipa: "/ˈʌndər ðə ˈweðər/"
     meaning_vi: "hơi mệt trong người"
     chunk: "She's a bit under the weather."
+    emoji: "🤒"
+    mnemonic_vi: "Ôn lại: thuỷ thủ say sóng xuống DƯỚI boong tránh thời tiết xấu. Đang ốm, không liên quan gì tới trời mưa nắng."
     tags: [review]
   - term: "wrapped up"
     ipa: "/ræpt ʌp/"
     meaning_vi: "kết thúc, làm xong"
     chunk: "I wrapped up around six."
+    emoji: "🎁"
+    mnemonic_vi: "Ôn lại: GÓI LẠI như gói quà, buộc nơ lên đống việc trong ngày là xong."
     tags: [review]
 
 sentence_patterns:

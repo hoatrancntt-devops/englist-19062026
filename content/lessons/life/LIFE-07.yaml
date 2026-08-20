@@ -35,31 +35,43 @@ vocabulary:
     ipa: "/aɪ wɜːrk ɒn/"
     meaning_vi: "tôi làm mảng, tôi phụ trách"
     chunk: "I work on the network side."
+    emoji: "🛠️"
+    mnemonic_vi: "Chữ \"on\" là ĐỨNG TRÊN một mảng việc. \"Work in\" là ở trong công ty nào, \"work on\" là làm mảng gì — nhớ hai giới từ này khác nhau."
     tags: [work, core]
   - term: "I've been here"
     ipa: "/aɪv biːn hɪr/"
     meaning_vi: "tôi ở đây được (bao lâu)"
     chunk: "I've been here about a month."
+    emoji: "📍"
+    mnemonic_vi: "Thì hoàn thành: bắt đầu trong quá khứ và VẪN CÒN tới giờ. Người Việt hay nói \"I am here one month\" — sai thì, người nghe tưởng bạn chỉ ở đúng hôm nay."
     tags: [work, core]
   - term: "I'm based in"
     ipa: "/aɪm beɪst ɪn/"
     meaning_vi: "tôi làm việc ở (thành phố nào)"
     chunk: "I'm based in Da Nang."
+    emoji: "🏙️"
+    mnemonic_vi: "\"base\" là căn cứ — như căn cứ quân sự. Đóng căn cứ ở đâu thì làm việc ở đó, kể cả khi hay đi công tác."
     tags: [work]
   - term: "Nice to meet you"
     ipa: "/naɪs tuː miːt juː/"
     meaning_vi: "rất vui được gặp bạn"
     chunk: "Nice to meet you, David."
+    emoji: "🤝"
+    mnemonic_vi: "Chỉ dùng cho lần gặp ĐẦU TIÊN. Gặp lại lần hai phải đổi thành \"nice to see you\" — nhầm chỗ này là lộ ngay rằng mình quên đã từng gặp nhau."
     tags: [social, core]
   - term: "I handle"
     ipa: "/aɪ ˈhændl/"
     meaning_vi: "tôi lo phần, tôi xử lý"
     chunk: "I handle the backup jobs."
+    emoji: "🤲"
+    mnemonic_vi: "\"hand\" là bàn tay — cái gì nằm trong tay tôi thì tôi lo. Tiếng Việt cũng nói \"việc này trong tay tôi\"."
     tags: [work]
   - term: "before that"
     ipa: "/bɪˈfɔːr ðæt/"
     meaning_vi: "trước đó"
     chunk: "Before that, I was at a bank."
+    emoji: "⏮️"
+    mnemonic_vi: "Hai chữ này là bản lề để kể ngược thời gian trong lúc giới thiệu bản thân — nói xong việc hiện tại thì bắc cầu về việc cũ."
     tags: [work]
 
 sentence_patterns:

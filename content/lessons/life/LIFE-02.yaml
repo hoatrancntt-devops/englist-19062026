@@ -36,31 +36,43 @@ vocabulary:
     ipa: "/ˌθɜːrˈtiːn/"
     meaning_vi: "mười ba (nhấn cuối)"
     chunk: "Thirteen, one three."
+    emoji: "1️⃣3️⃣"
+    mnemonic_vi: "Đuôi \"-teen\" kéo dài và ĐƯỢC NHẤN: thơ-TIIN. Teen là tuổi mới lớn, tuổi nào cũng ồn ào — nên phần đuôi kêu to."
     tags: [number, core]
   - term: "thirty"
     ipa: "/ˈθɜːrti/"
     meaning_vi: "ba mươi (nhấn đầu)"
     chunk: "Thirty, three zero."
+    emoji: "3️⃣0️⃣"
+    mnemonic_vi: "Đuôi \"-ty\" cụt và KHÔNG nhấn: THƠ-ti. Ba mươi tuổi rồi thì trầm tính, đuôi tắt ngấm. Nhấn sai chỗ là người ta nghe nhầm 13 với 30 — lỗi hay làm sai số điện thoại nhất."
     tags: [number, core]
   - term: "zero"
     ipa: "/ˈzɪroʊ/"
     meaning_vi: "số không"
     chunk: "Zero four seven."
+    emoji: "0️⃣"
+    mnemonic_vi: "\"zi-rô\" nghe gần như \"ri-rô\". Người Anh Mỹ đọc số điện thoại từng chữ số một, không gộp thành \"không bốn bảy\" như ta."
     tags: [number]
   - term: "extension"
     ipa: "/ɪkˈstenʃn/"
     meaning_vi: "số máy lẻ"
     chunk: "My extension is 214."
+    emoji: "☎️"
+    mnemonic_vi: "\"extend\" là kéo dài ra. Số máy lẻ là phần KÉO DÀI THÊM sau số tổng đài của công ty."
     tags: [office]
   - term: "phone number"
     ipa: "/foʊn ˈnʌmbər/"
     meaning_vi: "số điện thoại"
     chunk: "Can I get your phone number?"
+    emoji: "📱"
+    mnemonic_vi: "\"phone\" nghe như \"phôn\" — tiếng Việt mượn nguyên chữ này rồi (a lô, phôn cho tôi nhé)."
     tags: [core]
   - term: "one more time"
     ipa: "/wʌn mɔːr taɪm/"
     meaning_vi: "một lần nữa"
     chunk: "One more time, please."
+    emoji: "🔂"
+    mnemonic_vi: "\"mo\" nghe như \"mo\" trong \"thêm mo cơm\" — thêm một lần nữa. Câu ngắn nhất để xin nhắc lại mà không phải giải thích gì."
     tags: [rescue]
 
 sentence_patterns:

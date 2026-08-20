@@ -36,31 +36,43 @@ vocabulary:
     ipa: "/aɪl hæv/"
     meaning_vi: "cho tôi (cách gọi món tự nhiên nhất)"
     chunk: "I'll have the chicken rice."
+    emoji: "🍽️"
+    mnemonic_vi: "Dịch sát là \"tôi sẽ có\" — nghe lạ, nhưng đây mới là câu người bản xứ dùng để gọi món. Nói \"I want\" nghe như ra lệnh."
     tags: [food, core]
   - term: "to go"
     ipa: "/tuː ɡoʊ/"
     meaning_vi: "mang đi (không ăn tại chỗ)"
     chunk: "One coffee to go, please."
+    emoji: "🥡"
+    mnemonic_vi: "\"go\" là ĐI — đồ ăn đi theo mình. Người Anh nói \"takeaway\", người Mỹ nói \"to go\"."
     tags: [food, core]
   - term: "for here"
     ipa: "/fɔːr hɪr/"
     meaning_vi: "ăn tại chỗ"
     chunk: "For here, please."
+    emoji: "🪑"
+    mnemonic_vi: "Cặp với \"to go\" ở trên: \"here\" là ở ĐÂY, \"go\" là ĐI. Nhân viên quầy sẽ hỏi đúng hai chữ này, nghe được là trả lời được."
     tags: [food]
   - term: "How much is"
     ipa: "/haʊ mʌtʃ ɪz/"
     meaning_vi: "bao nhiêu tiền"
     chunk: "How much is the set lunch?"
+    emoji: "💰"
+    mnemonic_vi: "\"much\" dùng cho thứ không đếm được — tiền là một khối, không đếm từng đồng. Đếm được thì phải hỏi \"how many\"."
     tags: [food, money]
   - term: "Want to grab lunch"
     ipa: "/wɒnt tuː ɡræb lʌntʃ/"
     meaning_vi: "đi ăn trưa không (cách rủ tự nhiên nhất)"
     chunk: "Want to grab lunch?"
+    emoji: "🍜"
+    mnemonic_vi: "\"grab\" là CHỘP LẤY — hình dung chộp vội bữa trưa giữa hai cuộc họp. Chữ này làm lời rủ nghe nhẹ và không trịnh trọng."
     tags: [food, social]
   - term: "I'm good"
     ipa: "/aɪm ɡʊd/"
     meaning_vi: "thôi tôi ổn rồi (từ chối nhẹ nhàng)"
     chunk: "I'm good, thanks. Already ate."
+    emoji: "✋"
+    mnemonic_vi: "Bẫy: \"I'm good\" trong ngữ cảnh mời mọc là TỪ CHỐI, không phải khen mình ổn. Người mời rót thêm bia mà bạn nói câu này là họ dừng tay."
     tags: [food, social]
 
 sentence_patterns:

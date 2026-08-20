@@ -36,31 +36,43 @@ vocabulary:
     ipa: "/hɑːf pɑːst/"
     meaning_vi: "rưỡi (30 phút)"
     chunk: "Half past nine."
+    emoji: "🕤"
+    mnemonic_vi: "\"half\" là một nửa, \"past\" là đã qua. Nửa giờ ĐÃ QUA mốc chín giờ — nên là 9 giờ rưỡi, không phải 8 giờ rưỡi."
     tags: [time, core]
   - term: "a quarter to"
     ipa: "/ə ˈkwɔːrtər tuː/"
     meaning_vi: "kém mười lăm"
     chunk: "A quarter to five."
+    emoji: "🕓"
+    mnemonic_vi: "\"quarter\" là một phần tư — một phần tư của 60 phút là 15. Chữ \"to\" nghĩa là ĐI TỚI: còn 15 phút nữa mới tới 5 giờ, tức 4 giờ 45."
     tags: [time]
   - term: "in the morning"
     ipa: "/ɪn ðə ˈmɔːrnɪŋ/"
     meaning_vi: "vào buổi sáng"
     chunk: "Nine in the morning."
+    emoji: "🌅"
+    mnemonic_vi: "\"morning\" nghe gần \"mo-ning\", có chữ \"mo\" như \"mở\" — buổi MỞ đầu một ngày."
     tags: [time, core]
   - term: "does that work"
     ipa: "/dʌz ðæt wɜːrk/"
     meaning_vi: "vậy có được không"
     chunk: "Tuesday at ten. Does that work?"
+    emoji: "🤔"
+    mnemonic_vi: "Dịch sát là \"cái đó có CHẠY không\" — hình dung cái lịch hẹn như một cỗ máy: chạy được thì hẹn, kẹt thì đổi giờ."
     tags: [core, meeting]
   - term: "the day after tomorrow"
     ipa: "/ðə deɪ ˈæftər təˈmɒroʊ/"
     meaning_vi: "ngày kia"
     chunk: "The day after tomorrow."
+    emoji: "📆"
+    mnemonic_vi: "Tiếng Anh không có một từ riêng cho \"ngày kia\" — phải nói vòng: ngày SAU ngày mai. Đếm hai bước là ra."
     tags: [time]
   - term: "let me confirm"
     ipa: "/let miː kənˈfɜːrm/"
     meaning_vi: "để tôi xác nhận lại"
     chunk: "Let me confirm: Tuesday, ten."
+    emoji: "✅"
+    mnemonic_vi: "\"confirm\" nghe như \"cần phơm\" — cần chốt cho chắc. Nói câu này rồi nhắc lại giờ hẹn là cách an toàn nhất để khỏi nhầm lịch."
     tags: [rescue, meeting]
 
 sentence_patterns:

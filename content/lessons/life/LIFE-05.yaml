@@ -35,31 +35,43 @@ vocabulary:
     ipa: "/ɡʊd ˈmɔːrnɪŋ/"
     meaning_vi: "chào buổi sáng (trước 12 giờ trưa)"
     chunk: "Good morning, Linh."
+    emoji: "🌞"
+    mnemonic_vi: "Cắt mốc ở 12 giờ trưa. Sau đó phải đổi sang \"good afternoon\" — chào \"good morning\" lúc 2 giờ chiều là lỗi ai cũng nhận ra ngay."
     tags: [social, core]
   - term: "How's it going?"
     ipa: "/haʊz ɪt ˈɡoʊɪŋ/"
     meaning_vi: "dạo này thế nào (thân mật)"
     chunk: "Hey, how's it going?"
+    emoji: "👋"
+    mnemonic_vi: "Dịch sát là \"nó đang ĐI thế nào\" — hình dung cuộc sống như một chiếc xe đang chạy, hỏi xe chạy êm không. Đây là câu chào, không phải câu hỏi thật: đừng kể lể."
     tags: [social]
   - term: "Not bad"
     ipa: "/nɒt bæd/"
     meaning_vi: "cũng ổn (câu đáp an toàn nhất)"
     chunk: "Not bad, thanks. You?"
+    emoji: "👌"
+    mnemonic_vi: "\"Không tệ\" nghe như dè dặt trong tiếng Việt, nhưng trong tiếng Anh nó là câu đáp BÌNH THƯỜNG và tích cực. Không cần nghĩ ra gì hay hơn."
     tags: [social, core]
   - term: "See you tomorrow"
     ipa: "/siː juː təˈmɒroʊ/"
     meaning_vi: "hẹn gặp ngày mai"
     chunk: "See you tomorrow."
+    emoji: "👀"
+    mnemonic_vi: "\"see you\" nói nhanh thành \"si-ợ\". Người bản xứ nuốt gần hết, nghe như một tiếng — quen tai rồi thì bắt được."
     tags: [social]
   - term: "Have a good one"
     ipa: "/hæv ə ɡʊd wʌn/"
     meaning_vi: "chúc một ngày tốt lành (câu tạm biệt phổ biến)"
     chunk: "Have a good one."
+    emoji: "🙌"
+    mnemonic_vi: "\"one\" ở đây là \"một ngày\" bị lược đi. Tiện ở chỗ dùng được mọi lúc trong ngày, không phải chọn sáng hay chiều."
     tags: [social]
   - term: "Take care"
     ipa: "/teɪk ker/"
     meaning_vi: "giữ gìn sức khoẻ nhé"
     chunk: "Take care, see you Monday."
+    emoji: "🤗"
+    mnemonic_vi: "\"care\" nghe như \"ke\" trong \"quan tâm, để ý\". Dịch sát: hãy CẦM LẤY sự quan tâm mà tự lo cho mình."
     tags: [social]
 
 sentence_patterns:

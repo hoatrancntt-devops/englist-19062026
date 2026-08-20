@@ -36,31 +36,43 @@ vocabulary:
     ipa: "/aɪ spent ðə ˈmɔːrnɪŋ/"
     meaning_vi: "tôi dành cả buổi sáng để"
     chunk: "I spent the morning fixing the backup job."
+    emoji: "🌤️"
+    mnemonic_vi: "\"spend\" dùng cho cả TIỀN lẫn THỜI GIAN — tiêu thời gian y như tiêu tiền. Sau nó là động từ đuôi -ing: spent the morning FIXING."
     tags: [past, work]
   - term: "ended up"
     ipa: "/ˈendɪd ʌp/"
     meaning_vi: "cuối cùng thì (kết quả ngoài dự tính)"
     chunk: "I ended up restarting the whole service."
+    emoji: "🔚"
+    mnemonic_vi: "Hàm ý NGOÀI DỰ TÍNH: định làm nhẹ mà cuối cùng phải làm to. Kể sự cố mà thiếu chữ này thì mất nửa câu chuyện."
     tags: [past, work]
   - term: "took longer than"
     ipa: "/tʊk ˈlɒŋɡər ðæn/"
     meaning_vi: "mất nhiều thời gian hơn"
     chunk: "It took longer than I expected."
+    emoji: "🐌"
+    mnemonic_vi: "Lại là \"take\" nghĩa NGỐN thời gian, cộng \"than\" để so sánh. Câu an toàn nhất để báo trễ mà không phải xin lỗi dài dòng."
     tags: [past, work]
   - term: "first thing"
     ipa: "/fɜːrst θɪŋ/"
     meaning_vi: "việc đầu tiên trong ngày"
     chunk: "First thing, I checked the alerts."
+    emoji: "1️⃣"
+    mnemonic_vi: "Còn dùng để hẹn: \"first thing tomorrow\" là sáng sớm mai, việc đầu tiên khi vừa tới."
     tags: [past, work]
   - term: "after that"
     ipa: "/ˈæftər ðæt/"
     meaning_vi: "sau đó"
     chunk: "After that, I joined the review."
+    emoji: "▶️"
+    mnemonic_vi: "Cặp với \"before that\" đã học: một cái lùi về quá khứ, một cái tiến tới. Hai bản lề để kể chuyện theo trình tự."
     tags: [past, core]
   - term: "wrapped up"
     ipa: "/ræpt ʌp/"
     meaning_vi: "kết thúc, làm xong"
     chunk: "I wrapped up around six."
+    emoji: "🎁"
+    mnemonic_vi: "\"wrap\" là GÓI LẠI như gói quà. Gói xong tức là xong việc — hình dung buộc nơ lên đống việc trong ngày."
     tags: [past, work]
 
 sentence_patterns:

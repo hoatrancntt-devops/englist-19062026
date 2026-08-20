@@ -36,31 +36,43 @@ vocabulary:
     ipa: "/ɪts ˈpɔːrɪŋ/"
     meaning_vi: "mưa như trút"
     chunk: "It's pouring out there."
+    emoji: "🌧️"
+    mnemonic_vi: "\"pour\" là RÓT — rót nước từ ấm ra. Trời rót nước xuống chứ không phải nhỏ giọt."
     tags: [weather, core]
   - term: "boiling"
     ipa: "/ˈbɔɪlɪŋ/"
     meaning_vi: "nóng kinh khủng"
     chunk: "It's boiling today."
+    emoji: "🥵"
+    mnemonic_vi: "\"boil\" là SÔI. Nóng tới mức sôi lên — nói quá cho vui, người bản xứ dùng suốt."
     tags: [weather]
   - term: "under the weather"
     ipa: "/ˈʌndər ðə ˈweðər/"
     meaning_vi: "hơi mệt trong người (không phải nói về thời tiết)"
     chunk: "I'm feeling a bit under the weather."
+    emoji: "🤒"
+    mnemonic_vi: "Gốc từ đi biển: thuỷ thủ say sóng phải xuống DƯỚI boong để tránh thời tiết xấu. Nằm dưới thời tiết = đang ốm. Đừng dịch sát nghĩa."
     tags: [health, core]
   - term: "take the day off"
     ipa: "/teɪk ðə deɪ ɒf/"
     meaning_vi: "nghỉ một ngày"
     chunk: "I'll take the day off and rest."
+    emoji: "🛌"
+    mnemonic_vi: "\"off\" là TẮT — tắt một ngày khỏi lịch làm việc, như tắt công tắc."
     tags: [health, office]
   - term: "get well soon"
     ipa: "/ɡet wel suːn/"
     meaning_vi: "chóng khoẻ nhé"
     chunk: "Get well soon, take care."
+    emoji: "💐"
+    mnemonic_vi: "\"well\" ở đây không phải \"giếng\" mà là KHOẺ. Câu chuẩn viết trong thiệp thăm bệnh."
     tags: [health]
   - term: "I'll work from home"
     ipa: "/aɪl wɜːrk frɒm hoʊm/"
     meaning_vi: "tôi sẽ làm ở nhà"
     chunk: "I'll work from home today."
+    emoji: "🏠"
+    mnemonic_vi: "Viết tắt \"WFH\" — gặp khắp nơi trong chat công sở. Giới từ là \"from\" (từ nhà), không phải \"at home\"."
     tags: [health, office]
 
 sentence_patterns:

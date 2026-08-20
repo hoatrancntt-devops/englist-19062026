@@ -36,31 +36,43 @@ vocabulary:
     ipa: "/kʊd juː/"
     meaning_vi: "bạn có thể... được không (nhờ người khác)"
     chunk: "Could you send me the file?"
+    emoji: "🙏"
+    mnemonic_vi: "\"Could\" là dạng lùi của \"can\" — lùi một bước thì lịch sự hơn một bậc. Nhờ việc thì luôn lùi, đừng dùng \"can you\" trống không."
     tags: [request, core]
   - term: "Can I"
     ipa: "/kæn aɪ/"
     meaning_vi: "tôi có thể... không (xin phép cho mình)"
     chunk: "Can I use this room?"
+    emoji: "🖐️"
+    mnemonic_vi: "Cặp đôi dễ lẫn: \"Could YOU\" là nhờ NGƯỜI KHÁC làm, \"Can I\" là xin phép cho CHÍNH MÌNH. Nhìn chủ ngữ là biết ai làm việc đó."
     tags: [request, core]
   - term: "Is it OK if"
     ipa: "/ɪz ɪt oʊˈkeɪ ɪf/"
     meaning_vi: "có được không nếu (xin phép việc ảnh hưởng người khác)"
     chunk: "Is it OK if I join late?"
+    emoji: "🤷"
+    mnemonic_vi: "Dùng khi việc mình làm ĐỘNG tới người khác. \"Can I\" hỏi mình có được phép không; câu này hỏi người kia có chịu thiệt không."
     tags: [request, core]
   - term: "when you get a chance"
     ipa: "/wen juː ɡet ə tʃɑːns/"
     meaning_vi: "khi nào bạn rảnh (làm lời nhờ bớt gấp)"
     chunk: "Could you check it when you get a chance?"
+    emoji: "⏳"
+    mnemonic_vi: "\"chance\" là cơ hội — khi nào bạn có cơ hội. Thêm đuôi này vào lời nhờ là gỡ áp lực, người nhận thấy dễ chịu hơn hẳn."
     tags: [request, office]
   - term: "Would you mind"
     ipa: "/wʊd juː maɪnd/"
     meaning_vi: "bạn có phiền... không (lịch sự nhất)"
     chunk: "Would you mind checking this?"
+    emoji: "🎩"
+    mnemonic_vi: "Bẫy lớn: trả lời \"NO\" mới là ĐỒNG Ý (không, tôi không phiền). Trả lời \"yes\" là từ chối. Ngược hoàn toàn với trực giác tiếng Việt."
     tags: [request]
   - term: "Sure thing"
     ipa: "/ʃʊr θɪŋ/"
     meaning_vi: "được chứ (đáp đồng ý, thân mật)"
     chunk: "Sure thing, give me five minutes."
+    emoji: "👌"
+    mnemonic_vi: "\"sure\" nghe như \"sua\" — chắc chắn. Thêm \"thing\" cho tự nhiên kiểu nói miệng, dùng với đồng nghiệp chứ không dùng với khách hàng lớn."
     tags: [request, office]
 
 sentence_patterns:

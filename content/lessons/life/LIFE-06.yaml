@@ -36,31 +36,43 @@ vocabulary:
     ipa: "/ɪkˈskjuːz miː/"
     meaning_vi: "xin phép (trước khi làm phiền ai đó)"
     chunk: "Excuse me, could I ask something?"
+    emoji: "🙋"
+    mnemonic_vi: "Dùng TRƯỚC khi làm phiền. Nhớ mốc thời gian: excuse đi trước, sorry đi sau. Gõ cửa thì excuse, làm đổ cà phê rồi thì sorry."
     tags: [polite, core]
   - term: "Sorry"
     ipa: "/ˈsɒri/"
     meaning_vi: "xin lỗi (sau khi đã làm phiền hoặc sai)"
     chunk: "Sorry, my fault."
+    emoji: "😔"
+    mnemonic_vi: "Dùng SAU khi việc đã rồi. Cặp với \"excuse me\" ở trên: một cái xin phép trước, một cái nhận lỗi sau."
     tags: [polite, core]
   - term: "Thanks a lot"
     ipa: "/θæŋks ə lɒt/"
     meaning_vi: "cảm ơn nhiều"
     chunk: "Thanks a lot for your help."
+    emoji: "🙏"
+    mnemonic_vi: "\"a lot\" là \"một lô\" — cảm ơn cả một lô. Chữ \"lot\" tiếng Việt cũng có nghĩa gần vậy nên dễ nhớ."
     tags: [polite]
   - term: "No worries"
     ipa: "/noʊ ˈwʌriz/"
     meaning_vi: "không sao đâu (đáp lại lời xin lỗi hoặc cảm ơn)"
     chunk: "No worries, happens to everyone."
+    emoji: "😌"
+    mnemonic_vi: "\"worry\" là lo lắng. \"No worries\" = đừng lo. Một câu đáp được cho CẢ lời xin lỗi lẫn lời cảm ơn, nên nhớ đúng câu này là đủ dùng."
     tags: [polite, core]
   - term: "my fault"
     ipa: "/maɪ fɔːlt/"
     meaning_vi: "lỗi của tôi"
     chunk: "That was my fault, sorry."
+    emoji: "🙇"
+    mnemonic_vi: "\"fault\" nghe như \"phôn\" nhưng viết gần \"false\" — cái sai. Nhận \"my fault\" ở công sở phương Tây được coi là chuyên nghiệp, không phải yếu thế."
     tags: [polite, office]
   - term: "Appreciate it"
     ipa: "/əˈpriːʃieɪt ɪt/"
     meaning_vi: "cảm ơn nhé (thân mật, dùng nhiều ở công sở)"
     chunk: "Appreciate it, Linh."
+    emoji: "👍"
+    mnemonic_vi: "Trong có chữ \"price\" — định GIÁ. Cảm ơn kiểu này là nói việc bạn làm CÓ GIÁ TRỊ với tôi, nặng hơn \"thanks\" một chút."
     tags: [polite, office]
 
 sentence_patterns:

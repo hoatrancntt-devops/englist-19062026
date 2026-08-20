@@ -36,31 +36,43 @@ vocabulary:
     ipa: "/dʌz ðæt wɜːrk fɔːr juː/"
     meaning_vi: "vậy có tiện cho bạn không"
     chunk: "Tuesday at ten. Does that work for you?"
+    emoji: "🗓️"
+    mnemonic_vi: "Cùng hình ảnh với \"does that work\": lịch hẹn như cỗ máy, chạy được thì chốt. Thêm \"for you\" là hỏi riêng phía người kia."
     tags: [meeting, core]
   - term: "Something came up"
     ipa: "/ˈsʌmθɪŋ keɪm ʌp/"
     meaning_vi: "có việc đột xuất"
     chunk: "Sorry, something came up."
+    emoji: "🌪️"
+    mnemonic_vi: "\"came up\" là TRỒI LÊN — một việc bất ngờ trồi lên chắn đường. Câu này lịch sự ở chỗ không cần khai cụ thể việc gì."
     tags: [meeting, core]
   - term: "push it to"
     ipa: "/pʊʃ ɪt tuː/"
     meaning_vi: "dời sang"
     chunk: "Can we push it to Thursday?"
+    emoji: "👉"
+    mnemonic_vi: "\"push\" là ĐẨY — đẩy cuộc hẹn trượt trên lịch sang ngày khác."
     tags: [meeting, core]
   - term: "Let's lock it in"
     ipa: "/lets lɒk ɪt ɪn/"
     meaning_vi: "chốt lịch nhé"
     chunk: "Thursday at two. Let's lock it in."
+    emoji: "🔒"
+    mnemonic_vi: "\"lock\" là KHOÁ. Khoá cuộc hẹn lại, không đẩy qua đẩy lại nữa — ngược hẳn với \"push it to\" ở trên."
     tags: [meeting]
   - term: "reschedule"
     ipa: "/ˌriːˈskedʒuːl/"
     meaning_vi: "dời lịch"
     chunk: "I need to reschedule our call."
+    emoji: "🔄"
+    mnemonic_vi: "Tiền tố \"re-\" là LÀM LẠI: re-schedule là xếp lịch lại. Người Mỹ đọc \"SKED-jul\", người Anh đọc \"SHED-yul\" — nghe cả hai đều được."
     tags: [meeting, office]
   - term: "whenever suits you"
     ipa: "/wenˈevər suːts juː/"
     meaning_vi: "lúc nào tiện cho bạn cũng được"
     chunk: "Friday or Monday, whenever suits you."
+    emoji: "🤝"
+    mnemonic_vi: "\"suit\" là BỘ VEST VỪA NGƯỜI — giờ nào vừa vặn với bạn thì chọn giờ đó."
     tags: [meeting]
 
 sentence_patterns:

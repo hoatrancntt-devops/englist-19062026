@@ -39,31 +39,43 @@ vocabulary:
     ipa: "/kənˈteɪnmənt/"
     meaning_vi: "khoanh vùng — chặn lan rộng, chưa xoá gì"
     chunk: "Containment first, then eradication."
+    emoji: "🧯"
+    mnemonic_vi: "\"contain\" là CHỨA, giữ trong hộp. Như đám cháy: việc đầu tiên là dựng vành đai chặn lửa lan, không phải dọn tro."
     tags: [nist, core]
   - term: "eradication"
     ipa: "/ɪˌrædɪˈkeɪʃn/"
     meaning_vi: "loại bỏ — xoá sạch dấu vết kẻ tấn công"
     chunk: "Eradication starts after we have the evidence."
+    emoji: "🧹"
+    mnemonic_vi: "Gốc Latin \"radix\" là RỄ — nhổ tận rễ. Bước SAU khoanh vùng. Nhổ trước khi khoanh thì kẻ tấn công vẫn còn đường khác để quay lại."
     tags: [nist, core]
   - term: "preserve the evidence"
     ipa: "/prɪˈzɜːrv ði ˈevɪdəns/"
     meaning_vi: "giữ nguyên bằng chứng"
     chunk: "Do not reboot - we need to preserve the evidence."
+    emoji: "🔬"
+    mnemonic_vi: "Phản xạ đầu tiên của kỹ thuật viên là khởi động lại máy — và đó là hành động XOÁ SẠCH bộ nhớ, nơi chứa nhiều bằng chứng nhất."
     tags: [security, core]
   - term: "isolate"
     ipa: "/ˈaɪsəleɪt/"
     meaning_vi: "cách ly (khỏi mạng)"
     chunk: "We isolated the machine from the network."
+    emoji: "🏝️"
+    mnemonic_vi: "Cùng gốc với \"island\" — biến máy thành HÒN ĐẢO. Rút mạng chứ KHÔNG tắt máy: tắt máy là mất bằng chứng trong bộ nhớ."
     tags: [security, core]
   - term: "suspected"
     ipa: "/səˈspektɪd/"
     meaning_vi: "nghi ngờ (chưa xác nhận)"
     chunk: "This is a suspected compromise, not confirmed."
+    emoji: "❔"
+    mnemonic_vi: "Chữ này quan trọng về mặt pháp lý lẫn truyền thông. Nói \"đã bị xâm nhập\" khi mới chỉ nghi là tự tạo ra một cuộc khủng hoảng chưa chắc có thật."
     tags: [security, core]
   - term: "indicator of compromise"
     ipa: "/ˈɪndɪkeɪtər ɒv ˈkɒmprəmaɪz/"
     meaning_vi: "dấu hiệu bị xâm nhập"
     chunk: "We found three indicators of compromise."
+    emoji: "🔎"
+    mnemonic_vi: "Viết tắt \"IOC\". \"Compromise\" ở đây KHÔNG phải \"thoả hiệp\" mà là BỊ CHIẾM. Dấu vết để lại — như dấu chân kẻ trộm trên nền nhà."
     tags: [security]
 
 sentence_patterns:

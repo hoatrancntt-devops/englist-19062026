@@ -36,31 +36,43 @@ vocabulary:
     ipa: "/lʊks səˈspɪʃəs/"
     meaning_vi: "trông đáng ngờ"
     chunk: "This email looks suspicious."
+    emoji: "🤨"
+    mnemonic_vi: "Ôn lại \"suspected\" — cùng gốc. Chữ \"looks\" giữ cho câu ở mức cảm nhận: bạn báo cái mình thấy, không kết luận thay đội bảo mật."
     tags: [security, core]
   - term: "sense of urgency"
     ipa: "/sens əv ˈɜːrdʒənsi/"
     meaning_vi: "tạo cảm giác gấp gáp (dấu hiệu phishing kinh điển)"
     chunk: "It creates a false sense of urgency."
+    emoji: "⏰"
+    mnemonic_vi: "Vũ khí số một của kẻ lừa đảo: bắt bạn vội để bạn khỏi kịp nghĩ. \"Tài khoản sẽ khoá trong 2 giờ\" — thấy gấp bất thường là dấu hiệu nên chậm lại."
     tags: [security, phishing]
   - term: "spoofed"
     ipa: "/spuːft/"
     meaning_vi: "bị giả mạo (địa chỉ gửi)"
     chunk: "The sender address is spoofed."
+    emoji: "🎭"
+    mnemonic_vi: "\"spoof\" là NHẠI, giả giọng ai đó. Địa chỉ người gửi trong email dễ giả như ghi tên người gửi lên phong bì — không chứng minh được gì."
     tags: [security, phishing]
   - term: "I didn't click"
     ipa: "/aɪ ˈdɪdnt klɪk/"
     meaning_vi: "tôi chưa bấm vào (thông tin đội bảo mật cần đầu tiên)"
     chunk: "I didn't click the link."
+    emoji: "🙅"
+    mnemonic_vi: "Câu đội bảo mật cần nghe TRƯỚC TIÊN — nó quyết định vụ này là dọn dẹp nhẹ hay điều tra lớn. Lỡ bấm rồi thì cũng phải nói thật ngay."
     tags: [security, report]
   - term: "forwarding it to"
     ipa: "/ˈfɔːrwərdɪŋ ɪt tuː/"
     meaning_vi: "đang chuyển tiếp cho"
     chunk: "I'm forwarding it to the security team."
+    emoji: "📨"
+    mnemonic_vi: "\"forward\" là ĐẨY VỀ PHÍA TRƯỚC. Chuyển tiếp nguyên email chứ đừng chụp màn hình — đội bảo mật cần phần đầu thư ẩn để lần ra nguồn."
     tags: [security, report]
   - term: "false alarm"
     ipa: "/fɔːls əˈlɑːrm/"
     meaning_vi: "báo động nhầm"
     chunk: "Better a false alarm than a breach."
+    emoji: "🔔"
+    mnemonic_vi: "Câu văn hoá quan trọng nhất bài: báo nhầm mười lần vẫn rẻ hơn bỏ sót một lần. Ai sợ bị chê nhát mà im lặng thì cả tổ chức trả giá."
     tags: [security]
 
 sentence_patterns:

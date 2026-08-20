@@ -43,31 +43,43 @@ vocabulary:
     ipa: "/ðæts ə fer pɔɪnt/"
     meaning_vi: "ý đó xác đáng"
     chunk: "That's a fair point, I hadn't measured that."
+    emoji: "👏"
+    mnemonic_vi: "\"fair\" là CÔNG BẰNG, xác đáng. Nhận ý người khác đúng không làm mình yếu đi — trong họp kỹ thuật phương Tây, nó làm mình đáng tin hơn."
     tags: [review, core]
   - term: "I hadn't considered"
     ipa: "/aɪ ˈhædnt kənˈsɪdərd/"
     meaning_vi: "tôi chưa tính tới"
     chunk: "I hadn't considered the backup window."
+    emoji: "💭"
+    mnemonic_vi: "Thừa nhận một lỗ hổng CỤ THỂ chứ không nói chung chung. Nêu đích danh thứ mình bỏ sót cho thấy bạn đã hiểu vấn đề."
     tags: [review, core]
   - term: "let me check and come back"
     ipa: "/let miː tʃek ænd kʌm bæk/"
     meaning_vi: "để tôi kiểm rồi trả lời lại"
     chunk: "I don't know. Let me check and come back to you."
+    emoji: "🔍"
+    mnemonic_vi: "Câu cứu mạng khi bị hỏi thứ mình không biết. Đoán bừa trong họp kiến trúc rồi sai là thứ người ta nhớ rất lâu."
     tags: [review, core]
   - term: "the constraint is"
     ipa: "/ðə kənˈstreɪnt ɪz/"
     meaning_vi: "ràng buộc ở đây là"
     chunk: "The constraint is the vendor's API rate limit."
+    emoji: "⛓️"
+    mnemonic_vi: "\"constrain\" là TRÓI BUỘC. Nêu ràng buộc là cách đổi cuộc tranh luận từ \"ai đúng\" sang \"cái gì chặn ta\" — dễ đi tới kết luận hơn nhiều."
     tags: [review, core]
   - term: "we ruled out"
     ipa: "/wiː ruːld aʊt/"
     meaning_vi: "chúng tôi đã loại phương án"
     chunk: "We ruled out Kubernetes because nobody can run it on call."
+    emoji: "🚫"
+    mnemonic_vi: "Ôn lại: GẠCH KHỎI danh sách nghi phạm. Luôn kèm chữ \"because\" — loại phương án mà không nói lý do thì người ta sẽ đề xuất lại nó ở cuộc họp sau."
     tags: [review, core]
   - term: "reversible"
     ipa: "/rɪˈvɜːrsəbl/"
     meaning_vi: "quay lại được nếu sai"
     chunk: "This decision is reversible in one sprint."
+    emoji: "↩️"
+    mnemonic_vi: "\"reverse\" là ĐI LÙI, như số lùi của xe. Quyết định lùi được thì bàn nhanh, quyết định không lùi được mới đáng họp lâu."
     tags: [review, core]
 
 sentence_patterns:

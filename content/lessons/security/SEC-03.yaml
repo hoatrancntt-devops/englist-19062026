@@ -36,31 +36,43 @@ vocabulary:
     ipa: "/ˌvʌlnərəˈbɪləti/"
     meaning_vi: "lỗ hổng"
     chunk: "The vulnerability affects our web tier."
+    emoji: "🕳️"
+    mnemonic_vi: "Gốc Latin \"vulnus\" là VẾT THƯƠNG. Chỗ có thể bị đâm vào. Trong đời thường \"vulnerable\" nghĩa dễ tổn thương — cùng một hình ảnh."
     tags: [security, core]
   - term: "actively exploited"
     ipa: "/ˈæktɪvli ɪkˈsplɔɪtɪd/"
     meaning_vi: "đang bị khai thác thật ngoài thực tế"
     chunk: "This one is being actively exploited."
+    emoji: "🔥"
+    mnemonic_vi: "Hai chữ đổi mọi thứ: từ \"có lỗ hổng trên lý thuyết\" thành \"kẻ xấu đang chui vào NGAY LÚC NÀY\". Chúng đẩy việc vá lên trước mọi việc khác."
     tags: [security, core]
   - term: "exposed to the internet"
     ipa: "/ɪkˈspoʊzd tuː ði ˈɪntərnet/"
     meaning_vi: "có mở ra Internet"
     chunk: "Only two servers are exposed to the internet."
+    emoji: "🌐"
+    mnemonic_vi: "\"expose\" là PHƠI RA. Cùng một lỗ hổng: máy phơi ra Internet thì cả thế giới với tới được, máy nằm trong mạng nội bộ thì rủi ro thấp hơn hẳn."
     tags: [security, core]
   - term: "patch window"
     ipa: "/pætʃ ˈwɪndoʊ/"
     meaning_vi: "khung giờ được phép vá"
     chunk: "The next patch window is Saturday."
+    emoji: "🪟"
+    mnemonic_vi: "\"patch\" là MIẾNG VÁ áo, \"window\" là ô cửa sổ thời gian. Vá ngoài khung giờ này là làm gián đoạn người dùng đang làm việc."
     tags: [security, core]
   - term: "compensating control"
     ipa: "/ˈkɒmpenseɪtɪŋ kənˈtroʊl/"
     meaning_vi: "biện pháp bù — giảm rủi ro khi chưa vá được"
     chunk: "A firewall rule is our compensating control."
+    emoji: "🛡️"
+    mnemonic_vi: "\"compensate\" là BÙ ĐẮP. Chưa vá được cửa thì dựng hàng rào phía ngoài. Bà con gần với \"workaround\" nhưng dùng cho rủi ro bảo mật."
     tags: [security]
   - term: "accept the risk"
     ipa: "/əkˈsept ðə rɪsk/"
     meaning_vi: "chấp nhận rủi ro (có người ký nhận)"
     chunk: "The business accepted the risk until December."
+    emoji: "✍️"
+    mnemonic_vi: "Điểm mấu chốt: phải có NGƯỜI CỤ THỂ ký và một HẠN CHÓT. Chấp nhận rủi ro mà không ai ký thì lúc xảy ra chuyện, người bị hỏi là kỹ thuật viên."
     tags: [security, core]
 
 sentence_patterns:

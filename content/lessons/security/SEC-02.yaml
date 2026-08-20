@@ -36,31 +36,43 @@ vocabulary:
     ipa: "/liːst ˈprɪvəlɪdʒ/"
     meaning_vi: "quyền tối thiểu — chỉ cấp đúng thứ cần để làm việc"
     chunk: "We work on least privilege here."
+    emoji: "🔑"
+    mnemonic_vi: "\"least\" là ÍT NHẤT. Như đưa chìa khoá phòng làm việc chứ không đưa chìa khoá cả toà nhà. Nguyên tắc nền của mọi hệ thống phân quyền."
     tags: [security, core]
   - term: "read-only"
     ipa: "/riːd ˈoʊnli/"
     meaning_vi: "chỉ đọc, không sửa được"
     chunk: "Read-only would cover what you need."
+    emoji: "👓"
+    mnemonic_vi: "Câu trả lời hay nhất cho lời xin quyền quá rộng: không từ chối, mà đề nghị mức vừa đủ. Phần lớn người xin quyền ghi chỉ cần nhìn."
     tags: [security, core]
   - term: "revoke"
     ipa: "/rɪˈvoʊk/"
     meaning_vi: "thu hồi quyền"
     chunk: "We revoke access on the last working day."
+    emoji: "🔒"
+    mnemonic_vi: "\"re-\" là ngược lại, \"voke\" cùng gốc \"voice\" — GỌI LẠI lời đã nói. Rút lại thứ đã cấp."
     tags: [security, core]
   - term: "access review"
     ipa: "/ˈækses rɪˈvjuː/"
     meaning_vi: "đợt rà soát quyền định kỳ"
     chunk: "The quarterly access review starts Monday."
+    emoji: "📋"
+    mnemonic_vi: "Ôn lại \"review\" — nhìn LẠI một lượt. Quyền chỉ được cấp thêm mà không bao giờ rà lại thì sau vài năm ai cũng có quyền của mọi vị trí từng làm."
     tags: [security, core]
   - term: "approver"
     ipa: "/əˈpruːvər/"
     meaning_vi: "người duyệt"
     chunk: "Your line manager is the approver."
+    emoji: "🖊️"
+    mnemonic_vi: "Đuôi \"-er\" là NGƯỜI LÀM việc đó. Người duyệt phải khác người xin — cùng một người thì chữ ký không còn ý nghĩa gì."
     tags: [security]
   - term: "orphaned account"
     ipa: "/ˈɔːrfənd əˈkaʊnt/"
     meaning_vi: "tài khoản mồ côi — chủ đã nghỉ nhưng chưa bị khoá"
     chunk: "We found four orphaned accounts."
+    emoji: "👻"
+    mnemonic_vi: "\"orphan\" là ĐỨA TRẺ MỒ CÔI — không còn ai làm chủ. Đây là cánh cửa sau ưa thích của kẻ tấn công: còn hoạt động mà không ai để ý."
     tags: [security]
 
 sentence_patterns:

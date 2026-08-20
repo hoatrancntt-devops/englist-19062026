@@ -40,36 +40,50 @@ vocabulary:
     ipa: "/skeɪl aʊt/"
     meaning_vi: "thêm máy chạy song song"
     chunk: "We scale out to six instances at peak."
+    emoji: "↔️"
+    mnemonic_vi: "\"out\" là RA NGANG — bày thêm nhiều máy nằm cạnh nhau. Như mở thêm quầy thu ngân trong siêu thị."
     tags: [cloud, core]
   - term: "scale up"
     ipa: "/skeɪl ʌp/"
     meaning_vi: "làm máy hiện tại to hơn"
     chunk: "Scaling up is simpler but hits a ceiling."
+    emoji: "↕️"
+    mnemonic_vi: "\"up\" là LÊN CAO — một máy to dần lên. Như thuê một thu ngân làm nhanh gấp đôi. Dễ làm hơn nhưng có TRẦN: máy to nhất cũng chỉ tới thế."
     tags: [cloud, core]
   - term: "peak"
     ipa: "/piːk/"
     meaning_vi: "giờ cao điểm"
     chunk: "Traffic peaks between nine and eleven."
+    emoji: "⛰️"
+    mnemonic_vi: "\"peak\" là ĐỈNH NÚI. Điểm cao nhất của đồ thị lưu lượng. Dùng được cả làm danh từ lẫn động từ."
     tags: [cloud, core]
   - term: "the biggest line item"
     ipa: "/ðə ˈbɪɡɪst laɪn ˈaɪtəm/"
     meaning_vi: "khoản lớn nhất trong hoá đơn"
     chunk: "The biggest line item is egress traffic."
+    emoji: "🧾"
+    mnemonic_vi: "\"line item\" là MỘT DÒNG trong hoá đơn. Muốn cắt chi phí thì nhìn dòng to nhất trước, đừng ngồi tối ưu mấy dòng lẻ."
     tags: [cost, core]
   - term: "egress"
     ipa: "/ˈiːɡres/"
     meaning_vi: "dữ liệu đi ra khỏi nhà cung cấp, thường bị tính tiền"
     chunk: "Egress costs more than storage here."
+    emoji: "📤"
+    mnemonic_vi: "Cùng gốc với \"exit\" — LỐI RA. Bẫy tiền lớn nhất của điện toán đám mây: đưa dữ liệu VÀO thì miễn phí, lấy RA mới tính tiền."
     tags: [cost, core]
   - term: "idle"
     ipa: "/ˈaɪdl/"
     meaning_vi: "chạy không, không làm gì mà vẫn tính tiền"
     chunk: "Four machines sit idle overnight."
+    emoji: "😴"
+    mnemonic_vi: "\"idle\" nghe giống \"idol\" (thần tượng) nhưng nghĩa ngược hẳn: ngồi không. Như xe nổ máy đứng yên vẫn tốn xăng."
     tags: [cost, core]
   - term: "we can cut X by Y"
     ipa: "/wiː kæn kʌt/"
     meaning_vi: "chúng tôi có thể giảm X đi Y"
     chunk: "We can cut the bill by about thirty percent."
+    emoji: "✂️"
+    mnemonic_vi: "Giới từ \"by\" chỉ MỨC GIẢM (giảm đi 30%), còn \"to\" chỉ MỨC CÒN LẠI (giảm xuống còn 30%). Nhầm hai chữ này là sai gấp đôi con số."
     tags: [cost, core]
 
 sentence_patterns:

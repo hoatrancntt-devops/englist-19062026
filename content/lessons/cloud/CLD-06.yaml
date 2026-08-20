@@ -43,31 +43,43 @@ vocabulary:
     ipa: "/kʌt ˈoʊvər/"
     meaning_vi: "chuyển hẳn sang hệ mới"
     chunk: "We cut over on a Saturday morning."
+    emoji: "✂️"
+    mnemonic_vi: "\"cut\" là CẮT — cắt đứt hệ cũ, nối sang hệ mới. Như thợ điện cắt cầu dao rồi đấu sang nguồn khác: khoảnh khắc dứt điểm."
     tags: [migration, core]
   - term: "roll back"
     ipa: "/roʊl bæk/"
     meaning_vi: "quay lại hệ cũ"
     chunk: "We can roll back in under ten minutes."
+    emoji: "⏪"
+    mnemonic_vi: "Ôn lại: LĂN NGƯỢC lại. Con số \"trong mười phút\" mới là phần quan trọng — nói lùi được mà không nói mất bao lâu thì vô nghĩa."
     tags: [migration, core]
   - term: "run in parallel"
     ipa: "/rʌn ɪn ˈpærəlel/"
     meaning_vi: "chạy song song hai hệ"
     chunk: "Both systems run in parallel for one week."
+    emoji: "🛤️"
+    mnemonic_vi: "\"parallel\" là SONG SONG như hai đường ray. Tốn gấp đôi tiền trong giai đoạn đó, đổi lại có đường lùi an toàn."
     tags: [migration, core]
   - term: "wave"
     ipa: "/weɪv/"
     meaning_vi: "đợt chuyển"
     chunk: "Wave one is the read-only services."
+    emoji: "🌊"
+    mnemonic_vi: "\"wave\" là CON SÓNG — sóng vỗ từng đợt chứ không đổ ập một lần. Chia đợt để nếu đợt đầu hỏng thì phần còn lại vẫn nguyên."
     tags: [migration, core]
   - term: "success criteria"
     ipa: "/səkˈses kraɪˈtɪriə/"
     meaning_vi: "tiêu chí coi là thành công"
     chunk: "Success criteria: error rate stays under one percent."
+    emoji: "📏"
+    mnemonic_vi: "Phải là CON SỐ ĐO ĐƯỢC, chốt TRƯỚC khi bắt đầu. Không có nó thì lúc 3 giờ sáng cả đội sẽ cãi nhau xem thế này đã coi là xong chưa."
     tags: [migration, core]
   - term: "point of no return"
     ipa: "/pɔɪnt ɒv noʊ rɪˈtɜːrn/"
     meaning_vi: "điểm không quay lại được nữa"
     chunk: "The point of no return is the DNS change."
+    emoji: "🚪"
+    mnemonic_vi: "Gốc từ ngành hàng không: điểm mà máy bay không còn đủ dầu bay ngược về. Cả đội phải biết chính xác bước nào là cánh cửa đóng lại sau lưng."
     tags: [migration, core]
 
 sentence_patterns:

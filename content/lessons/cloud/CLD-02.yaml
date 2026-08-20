@@ -40,31 +40,43 @@ vocabulary:
     ipa: "/haɪ əˌveɪləˈbɪləti/"
     meaning_vi: "sẵn sàng cao — chịu được hỏng lẻ mà không gián đoạn"
     chunk: "High availability handles a single node failure."
+    emoji: "🔁"
+    mnemonic_vi: "Viết tắt \"HA\". Lo chuyện MỘT máy chết trong khi các máy khác vẫn chạy. Phạm vi nhỏ, tự động, không ai phải thức dậy."
     tags: [cloud, core]
   - term: "disaster recovery"
     ipa: "/dɪˈzɑːstər rɪˈkʌvəri/"
     meaning_vi: "khôi phục thảm hoạ — khi mất cả một vùng"
     chunk: "Disaster recovery is for losing the whole region."
+    emoji: "🌊"
+    mnemonic_vi: "Viết tắt \"DR\". Cặp đối với HA: HA lo một máy chết, DR lo CẢ TRUNG TÂM DỮ LIỆU chìm. Lẫn hai khái niệm này là lỗi phổ biến nhất khi thiết kế."
     tags: [cloud, core]
   - term: "fail over"
     ipa: "/feɪl ˈoʊvər/"
     meaning_vi: "chuyển sang hệ dự phòng"
     chunk: "It fails over to the second node automatically."
+    emoji: "🔀"
+    mnemonic_vi: "Ôn lại: HỎNG THÌ NGÃ SANG bên kia. Viết rời là động từ, viết liền \"failover\" là danh từ."
     tags: [cloud, core]
   - term: "RTO"
     ipa: "/ɑːr tiː ˈoʊ/"
     meaning_vi: "thời gian tối đa được phép chết trước khi chạy lại"
     chunk: "Our RTO is four hours."
+    emoji: "⏱️"
+    mnemonic_vi: "Ôn lại: chữ T là TIME, nhìn về tương lai — bao lâu nữa thì chạy lại."
     tags: [cloud, core]
   - term: "RPO"
     ipa: "/ɑːr piː ˈoʊ/"
     meaning_vi: "lượng dữ liệu tối đa được phép mất, tính bằng thời gian"
     chunk: "Our RPO is fifteen minutes."
+    emoji: "💾"
+    mnemonic_vi: "Ôn lại: chữ P là POINT, nhìn về quá khứ — mất dữ liệu của bao nhiêu phút vừa rồi."
     tags: [cloud, core]
   - term: "we have never tested it"
     ipa: "/wiː hæv ˈnevər ˈtestɪd ɪt/"
     meaning_vi: "bọn tôi chưa bao giờ thử nó"
     chunk: "We have a DR plan, but we have never tested it."
+    emoji: "😬"
+    mnemonic_vi: "Câu khó nói nhất nhưng đáng giá nhất trong bài. Nói ra sớm thì còn kịp sửa; giấu tới lúc thảm hoạ thật thì bản kế hoạch chỉ là tờ giấy."
     tags: [honesty, core]
 
 sentence_patterns:

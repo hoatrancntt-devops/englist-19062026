@@ -46,31 +46,43 @@ vocabulary:
     ipa: "/ˈtreɪd ɔːf/"
     meaning_vi: "sự đánh đổi — được cái này thì mất cái kia"
     chunk: "The trade-off is cost against control."
+    emoji: "⚖️"
+    mnemonic_vi: "\"trade\" là ĐỔI CHÁC. Hình dung cái cân: bỏ thêm vào bên này thì bên kia nhẹ đi. Không có phương án nào chỉ toàn ưu điểm."
     tags: [cloud, core]
   - term: "we chose X over Y"
     ipa: "/wiː tʃoʊz ˈoʊvər/"
     meaning_vi: "chúng tôi chọn X thay vì Y"
     chunk: "We chose containers over plain VMs."
+    emoji: "🅰️"
+    mnemonic_vi: "\"over\" là BÊN TRÊN — cái được chọn nằm trên cái bị bỏ. Nói rõ mình bỏ gì mới cho thấy đã cân nhắc thật."
     tags: [cloud, core]
   - term: "operational overhead"
     ipa: "/ˌɒpəˈreɪʃənl ˈoʊvərhed/"
     meaning_vi: "công sức vận hành phải bỏ ra"
     chunk: "Serverless has the lowest operational overhead."
+    emoji: "🏋️"
+    mnemonic_vi: "\"overhead\" là thứ ĐỘI TRÊN ĐẦU — gánh nặng phải mang mà không tạo ra giá trị trực tiếp. Chi phí thật của một hệ thống nằm ở đây, không phải ở hoá đơn."
     tags: [cloud, core]
   - term: "lock-in"
     ipa: "/ˈlɒk ɪn/"
     meaning_vi: "bị buộc chặt vào một nhà cung cấp"
     chunk: "The downside is vendor lock-in."
+    emoji: "🔗"
+    mnemonic_vi: "Ôn lại \"lock\" — KHOÁ, như \"lock it in\". Bị khoá vào bên trong, muốn ra phải phá cửa. Càng dùng dịch vụ riêng của một hãng thì khoá càng chặt."
     tags: [cloud, core]
   - term: "cold start"
     ipa: "/koʊld stɑːrt/"
     meaning_vi: "độ trễ lần gọi đầu khi hàm chưa sẵn sàng"
     chunk: "Cold start adds about two seconds."
+    emoji: "🥶"
+    mnemonic_vi: "Như xe máy để qua đêm, đề lần đầu phải chờ nổ. Máy đã chạy rồi thì vọt ngay — chỉ lần đầu mới lạnh."
     tags: [cloud, core]
   - term: "it depends on"
     ipa: "/ɪt dɪˈpendz ɒn/"
     meaning_vi: "còn tuỳ vào"
     chunk: "It depends on how often the job runs."
+    emoji: "🤷"
+    mnemonic_vi: "Câu trả lời trung thực nhất cho câu hỏi kiến trúc — nhưng phải nói rõ TUỲ VÀO CÁI GÌ. Nói \"còn tuỳ\" rồi im là né tránh."
     tags: [discussion, core]
 
 sentence_patterns:

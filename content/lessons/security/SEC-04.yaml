@@ -43,31 +43,43 @@ vocabulary:
     ipa: "/wɒt juː niːd tuː duː/"
     meaning_vi: "việc bạn cần làm"
     chunk: "What you need to do: change your password today."
+    emoji: "👉"
+    mnemonic_vi: "Đặt gần ĐẦU thông báo, không phải cuối. Người đọc thông báo bảo mật chỉ muốn biết một điều: tôi phải làm gì bây giờ."
     tags: [advisory, core]
   - term: "no action required"
     ipa: "/noʊ ˈækʃn rɪˈkwaɪərd/"
     meaning_vi: "không cần làm gì"
     chunk: "For everyone else: no action required."
+    emoji: "😌"
+    mnemonic_vi: "Ôn lại cặp \"action needed / no action needed\". Nói rõ ai KHÔNG phải làm gì cũng quan trọng như nói ai phải làm — nó chặn cả trăm cuộc gọi hoảng loạn."
     tags: [advisory, core]
   - term: "we are not aware of"
     ipa: "/wiː ɑːr nɒt əˈwer ɒv/"
     meaning_vi: "chúng tôi chưa ghi nhận"
     chunk: "We are not aware of any data being accessed."
+    emoji: "🔍"
+    mnemonic_vi: "Cực kỳ chính xác về mặt câu chữ: \"chưa ghi nhận\" KHÁC \"chắc chắn không có\". Nói câu thứ hai rồi hoá ra có là mất sạch uy tín."
     tags: [advisory, core]
   - term: "if you notice"
     ipa: "/ɪf juː ˈnoʊtɪs/"
     meaning_vi: "nếu bạn thấy"
     chunk: "If you notice anything unusual, call the service desk."
+    emoji: "👀"
+    mnemonic_vi: "Luôn kèm ĐỊA CHỈ BÁO CÁO cụ thể. Bảo người ta cảnh giác mà không nói báo cho ai thì họ sẽ không báo cho ai cả."
     tags: [advisory, core]
   - term: "phishing"
     ipa: "/ˈfɪʃɪŋ/"
     meaning_vi: "lừa đảo qua email giả mạo"
     chunk: "A phishing email is circulating."
+    emoji: "🎣"
+    mnemonic_vi: "Đọc y hệt \"fishing\" — CÂU CÁ. Kẻ xấu thả mồi ra cả biển và chờ ai cắn câu. Viết \"ph\" theo lối cũ của giới hacker."
     tags: [security, core]
   - term: "do not click"
     ipa: "/duː nɒt klɪk/"
     meaning_vi: "đừng bấm vào"
     chunk: "Do not click the link, forward it to us."
+    emoji: "🚫"
+    mnemonic_vi: "Viết đầy đủ \"do not\" chứ không viết tắt \"don't\" — trong thông báo bảo mật, dạng đầy đủ đọc dứt khoát hơn và khó lướt qua hơn."
     tags: [advisory, core]
 
 sentence_patterns:

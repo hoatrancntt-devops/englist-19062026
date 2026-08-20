@@ -40,31 +40,43 @@ vocabulary:
     ipa: "/ˈkɒntekst/"
     meaning_vi: "bối cảnh — tình hình lúc ra quyết định"
     chunk: "Context: we had two weeks and one engineer."
+    emoji: "🖼️"
+    mnemonic_vi: "\"con-\" là CÙNG, \"text\" là văn bản — những gì nằm quanh câu chuyện. Người đọc ba năm sau cần biết bạn có bao nhiêu thời gian và bao nhiêu người."
     tags: [writing, core]
   - term: "we considered"
     ipa: "/wiː kənˈsɪdərd/"
     meaning_vi: "chúng tôi đã cân nhắc"
     chunk: "We considered three options."
+    emoji: "🤔"
+    mnemonic_vi: "Ghi cả những phương án BỊ LOẠI. Bản ghi chỉ nêu phương án được chọn thì người sau sẽ tưởng bạn chưa từng nghĩ tới cái họ đang định đề xuất."
     tags: [writing, core]
   - term: "consequences"
     ipa: "/ˈkɒnsɪkwensɪz/"
     meaning_vi: "hệ quả kéo theo sau"
     chunk: "Consequences: we now depend on one vendor's API."
+    emoji: "🪤"
+    mnemonic_vi: "Bao gồm cả hệ quả XẤU. Mục này mà chỉ toàn điều tốt thì đó là quảng cáo, không phải bản ghi quyết định."
     tags: [writing, core]
   - term: "at the time"
     ipa: "/æt ðə taɪm/"
     meaning_vi: "vào thời điểm đó"
     chunk: "At the time, the second region was not available."
+    emoji: "🕰️"
+    mnemonic_vi: "Ba chữ bảo vệ bạn khỏi bị phán xét bằng thông tin của tương lai. Quyết định đúng hay sai phải xét theo thứ biết được LÚC ĐÓ."
     tags: [writing, core]
   - term: "revisit"
     ipa: "/riːˈvɪzɪt/"
     meaning_vi: "xem lại quyết định"
     chunk: "Revisit this when traffic doubles."
+    emoji: "🔄"
+    mnemonic_vi: "\"re-\" là LẠI, \"visit\" là ghé thăm — ghé lại một lần nữa. Nêu ĐIỀU KIỆN kích hoạt (khi lưu lượng gấp đôi) chứ đừng nêu một ngày tuỳ tiện."
     tags: [writing, core]
   - term: "superseded by"
     ipa: "/ˈsuːpərsiːdɪd baɪ/"
     meaning_vi: "bị thay thế bởi"
     chunk: "Superseded by note 12 in March 2027."
+    emoji: "📌"
+    mnemonic_vi: "\"super-\" là TRÊN, \"sed\" là ngồi — cái mới ngồi lên trên cái cũ. Không xoá bản ghi cũ, chỉ đánh dấu: lịch sử quyết định cũng là thông tin."
     tags: [writing, core]
 
 sentence_patterns:

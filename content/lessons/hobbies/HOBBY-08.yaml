@@ -37,31 +37,43 @@ vocabulary:
     ipa: "/haʊ wʌz jɔːr ˈwiːkend/"
     meaning_vi: "cuối tuần của bạn thế nào"
     chunk: "How was your weekend?"
+    emoji: "🗓️"
+    mnemonic_vi: "Ôn lại: câu MỞ của một cuộc tán gẫu. Bài này ghép trọn bốn nhịp — mở, đáp, nối, và đóng."
     tags: [hobbies, smalltalk]
   - term: "How about you"
     ipa: "/haʊ əˈbaʊt juː/"
     meaning_vi: "còn bạn thì sao (đẩy lượt lại)"
     chunk: "It was quiet. How about you?"
+    emoji: "🔄"
+    mnemonic_vi: "Nhịp thứ hai: ĐẨY LƯỢT. Đáp một câu ngắn rồi chuyền bóng lại ngay — đây là chỗ phần lớn người học dừng và làm hội thoại chết."
     tags: [hobbies, smalltalk]
   - term: "That sounds"
     ipa: "/ðæt saʊndz/"
     meaning_vi: "nghe có vẻ ..."
     chunk: "That sounds fun."
+    emoji: "😊"
+    mnemonic_vi: "Nhịp thứ ba: PHẢN ỨNG. \"sound\" là nghe có vẻ. Ba chữ này chứng tỏ bạn đang nghe thật — im lặng gật đầu thì người kia không biết."
     tags: [hobbies, smalltalk]
   - term: "Anyway"
     ipa: "/ˈeniweɪ/"
     meaning_vi: "thôi, dù sao thì (dấu hiệu sắp kết thúc)"
     chunk: "Anyway, I should get back to it."
+    emoji: "🚪"
+    mnemonic_vi: "Nhịp thứ tư: BÁO SẮP DỪNG. Nghe thấy chữ này là biết đối phương muốn kết — quan trọng để không nói tiếp khi người ta đã muốn đi."
     tags: [hobbies, smalltalk]
   - term: "Catch you later"
     ipa: "/kætʃ juː ˈleɪtər/"
     meaning_vi: "gặp lại sau nhé"
     chunk: "Catch you later!"
+    emoji: "👋"
+    mnemonic_vi: "Ôn lại \"catch\" — BẮT, như trong \"I didn't catch that\". Ở đây là bắt gặp nhau lần sau. Thân mật, dùng với đồng nghiệp."
     tags: [hobbies, smalltalk]
   - term: "Have you tried"
     ipa: "/hæv juː traɪd/"
     meaning_vi: "bạn thử ... chưa"
     chunk: "Have you tried the new coffee place?"
+    emoji: "☕"
+    mnemonic_vi: "Câu mở một chủ đề mới khi cuộc nói chuyện sắp cạn. Cùng khuôn với \"have you seen this before\" và \"have you been to\" — hỏi trải nghiệm là an toàn nhất."
     tags: [hobbies, smalltalk]
 
 sentence_patterns:

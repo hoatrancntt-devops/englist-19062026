@@ -36,31 +36,43 @@ vocabulary:
     ipa: "/duː juː wɒnt tuː/"
     meaning_vi: "bạn có muốn ... không (lời rủ chuẩn)"
     chunk: "Do you want to join us?"
+    emoji: "🙋"
+    mnemonic_vi: "Nói nhanh thành \"d'you wanna\" — nghe được dạng rút gọn này quan trọng hơn nói đúng dạng đầy đủ."
     tags: [hobbies, social]
   - term: "Are you free"
     ipa: "/ɑːr juː friː/"
     meaning_vi: "bạn có rảnh không"
     chunk: "Are you free on Saturday?"
+    emoji: "📅"
+    mnemonic_vi: "\"free\" ở đây là RẢNH, không phải miễn phí. Hỏi lịch trước rồi mới rủ thì người ta dễ từ chối mà không ngại."
     tags: [hobbies, time]
   - term: "I'd love to"
     ipa: "/aɪd lʌv tuː/"
     meaning_vi: "tôi rất muốn (nhận lời nhiệt tình)"
     chunk: "I'd love to. What time?"
+    emoji: "😃"
+    mnemonic_vi: "Nhiệt tình hơn hẳn \"OK\" hay \"sure\". Hỏi luôn giờ ngay sau đó cho thấy bạn nhận thật, không nói cho qua."
     tags: [hobbies, social]
   - term: "I can't make it"
     ipa: "/aɪ kɑːnt meɪk ɪt/"
     meaning_vi: "tôi không đi được (từ chối chuẩn)"
     chunk: "Sorry, I can't make it."
+    emoji: "😔"
+    mnemonic_vi: "\"make it\" là ĐẾN ĐƯỢC, xoay xở tới nơi. Ôn lại mẹo từ chối: nói không THỂ chứ không nói không MUỐN."
     tags: [hobbies, social]
   - term: "Maybe next time"
     ipa: "/ˈmeɪbi nekst taɪm/"
     meaning_vi: "để lần sau nhé (giữ cửa cho lần rủ tiếp)"
     chunk: "Maybe next time."
+    emoji: "🚪"
+    mnemonic_vi: "Đuôi bắt buộc sau lời từ chối. Thiếu nó thì người rủ hiểu là bạn không muốn, và họ sẽ không rủ nữa."
     tags: [hobbies, social]
   - term: "Let's say"
     ipa: "/lets seɪ/"
     meaning_vi: "chốt là (dùng để chốt giờ)"
     chunk: "Let's say seven o'clock."
+    emoji: "🕖"
+    mnemonic_vi: "Dịch sát là \"ta cứ nói là\" — đề nghị một con số cụ thể để thoát khỏi vòng \"mấy giờ cũng được\". Ai cũng dễ chịu hơn khi có mốc."
     tags: [hobbies, time]
 
 sentence_patterns:

@@ -36,31 +36,43 @@ vocabulary:
     ipa: "/aɪ ˈnoʊtɪst/"
     meaning_vi: "tôi để ý thấy (mở đầu bằng thứ riêng của họ)"
     chunk: "I noticed you just opened a second data centre."
+    emoji: "👀"
+    mnemonic_vi: "Ôn lại \"notice\" từ \"if you notice\". Mở email bằng một chi tiết RIÊNG của họ chứng minh bạn không gửi hàng loạt — thứ quyết định thư có bị xoá ngay không."
     tags: [business, email, core]
   - term: "worth a short call"
     ipa: "/wɜːrθ ə ʃɔːrt kɔːl/"
     meaning_vi: "đáng để gọi nhau một cuộc ngắn"
     chunk: "Might be worth a short call."
+    emoji: "📞"
+    mnemonic_vi: "Ôn lại \"worth\" — đáng giá. Chữ \"short\" hạ rào cản: xin mười lăm phút dễ được gật hơn xin một buổi trình bày."
     tags: [business, email]
   - term: "circling back"
     ipa: "/ˈsɜːrklɪŋ bæk/"
     meaning_vi: "quay lại chuyện cũ (theo đuổi)"
     chunk: "Circling back on my note from last week."
+    emoji: "🔄"
+    mnemonic_vi: "\"circle\" là VÒNG TRÒN — bay một vòng rồi quay lại. Lịch sự hơn \"anh chưa trả lời tôi\", cùng tác dụng với \"bumping this\" trong chat."
     tags: [business, email]
   - term: "no rush"
     ipa: "/noʊ rʌʃ/"
     meaning_vi: "không gấp đâu (giảm áp lực)"
     chunk: "No rush — just let me know either way."
+    emoji: "🍃"
+    mnemonic_vi: "Ôn lại: \"rush\" là vội vã, xô đẩy. Nghịch lý của bán hàng: bỏ áp lực đi thì người ta hay trả lời hơn."
     tags: [business, email]
   - term: "either way"
     ipa: "/ˈaɪðər weɪ/"
     meaning_vi: "dù có hay không"
     chunk: "Let me know either way."
+    emoji: "↔️"
+    mnemonic_vi: "Cho phép người ta nói KHÔNG một cách dễ dàng. Một lời từ chối rõ ràng còn giá trị hơn nhiều so với im lặng kéo dài."
     tags: [business, email]
   - term: "close the loop"
     ipa: "/kloʊz ðə luːp/"
     meaning_vi: "chốt lại cho xong (email cuối cùng)"
     chunk: "Just closing the loop on this."
+    emoji: "🔚"
+    mnemonic_vi: "Ôn lại \"loop\" — vòng dây. Khép vòng lại, không để treo lơ lửng. Email cuối trước khi dừng theo đuổi, và nó vẫn giữ cửa mở cho sau này."
     tags: [business, email]
 
 sentence_patterns:

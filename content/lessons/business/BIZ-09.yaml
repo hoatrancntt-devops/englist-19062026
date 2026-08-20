@@ -36,31 +36,43 @@ vocabulary:
     ipa: "/aɪm ˈɑːskɪŋ fɔːr/"
     meaning_vi: "tôi đề xuất xin (nói thẳng thứ mình cần)"
     chunk: "I'm asking for two engineers for six months."
+    emoji: "🙋"
+    mnemonic_vi: "Nói THẲNG con số và thời hạn. Trình bày hai mươi phút rồi kết bằng \"mong ban lãnh đạo xem xét\" là chưa xin gì cả."
     tags: [business, presenting, core]
   - term: "the cost of doing nothing"
     ipa: "/ðə kɒst əv ˈduːɪŋ ˈnʌθɪŋ/"
     meaning_vi: "cái giá của việc không làm gì"
     chunk: "The cost of doing nothing is two more outages a quarter."
+    emoji: "⚖️"
+    mnemonic_vi: "Đòn bẩy mạnh nhất khi xin ngân sách. Lãnh đạo mặc định coi \"không làm gì\" là phương án miễn phí — câu này gắn giá tiền vào nó."
     tags: [business, presenting]
   - term: "Let me finish this point"
     ipa: "/let miː ˈfɪnɪʃ ðɪs pɔɪnt/"
     meaning_vi: "cho tôi nói nốt ý này (giữ mạch khi bị cắt)"
     chunk: "Let me finish this point, then I'll come to that."
+    emoji: "✋"
+    mnemonic_vi: "Giữ lời một cách lịch sự. Vế sau (\"rồi tôi sẽ tới chuyện đó\") là phần bắt buộc — thiếu nó thì nghe như gạt phăng người hỏi."
     tags: [business, presenting]
   - term: "I'll come back to that"
     ipa: "/aɪl kʌm bæk tuː ðæt/"
     meaning_vi: "tôi sẽ quay lại chuyện đó"
     chunk: "Good question — I'll come back to that in slide three."
+    emoji: "↩️"
+    mnemonic_vi: "Hoãn một câu hỏi mà không né. Nêu ĐÍCH DANH chỗ sẽ quay lại (\"ở trang ba\") thì người hỏi tin là bạn không định lờ đi."
     tags: [business, presenting]
   - term: "the ask is"
     ipa: "/ði ɑːsk ɪz/"
     meaning_vi: "điều tôi xin là (nói gọn phần đề xuất)"
     chunk: "The ask is one hundred thousand and two engineers."
+    emoji: "🎯"
+    mnemonic_vi: "\"ask\" ở đây là DANH TỪ — lối nói của giới doanh nghiệp. Một câu, một con số. Đặt ở đầu và nhắc lại ở cuối bài trình bày."
     tags: [business, presenting]
   - term: "if we do nothing"
     ipa: "/ɪf wiː duː ˈnʌθɪŋ/"
     meaning_vi: "nếu mình không làm gì"
     chunk: "If we do nothing, churn keeps rising."
+    emoji: "📉"
+    mnemonic_vi: "Cặp với \"the cost of doing nothing\": một cái nêu giá, một cái vẽ viễn cảnh. Chữ \"we\" gộp cả phòng họp vào cùng một phía."
     tags: [business, presenting]
 
 sentence_patterns:

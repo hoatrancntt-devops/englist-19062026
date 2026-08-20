@@ -36,31 +36,43 @@ vocabulary:
     ipa: "/lets kiːp ðɪs tuː/"
     meaning_vi: "mình gói buổi này trong (đặt giới hạn thời gian)"
     chunk: "Let's keep this to fifteen minutes."
+    emoji: "⏲️"
+    mnemonic_vi: "Ôn lại \"keep it to\" — GIỮ trong khung, đừng cho tràn. Nói ngay câu mở đầu thì cả phòng tự điều chỉnh độ dài phát biểu."
     tags: [business, meeting, core]
   - term: "Can you take"
     ipa: "/kæn juː teɪk/"
     meaning_vi: "anh chị nhận việc này nhé"
     chunk: "Can you take the vendor call?"
+    emoji: "🫱"
+    mnemonic_vi: "Ôn lại \"take\" — CẦM LẤY. Giao việc bằng câu hỏi chứ không bằng mệnh lệnh: người ta nhận việc chủ động thì làm khác hẳn bị sai."
     tags: [business, delegation]
   - term: "by end of day"
     ipa: "/baɪ end əv deɪ/"
     meaning_vi: "trước cuối ngày"
     chunk: "I need it by end of day Thursday."
+    emoji: "🌆"
+    mnemonic_vi: "Ôn lại: viết tắt EOD, và \"by\" là CHẬM NHẤT chứ không phải đúng lúc đó. Nhớ bẫy múi giờ khi làm với đội nước ngoài."
     tags: [business, deadline]
   - term: "let's take that offline"
     ipa: "/lets teɪk ðæt ˈɒflaɪn/"
     meaning_vi: "chuyện đó mình bàn riêng (cắt phần lạc đề)"
     chunk: "Good point — let's take that offline."
+    emoji: "🔕"
+    mnemonic_vi: "Ôn lại: \"offline\" ở đây là ra NGOÀI cuộc họp, không liên quan mạng. Mở đầu bằng \"good point\" để cắt lời mà không làm ai mất mặt."
     tags: [business, meeting]
   - term: "anything blocking you"
     ipa: "/ˈeniθɪŋ ˈblɒkɪŋ juː/"
     meaning_vi: "có gì đang chặn anh chị không"
     chunk: "Anything blocking you this week?"
+    emoji: "🚧"
+    mnemonic_vi: "Ôn lại \"block\" — tảng đá chắn đường. Người quản lý hỏi câu này để DỌN ĐÁ, không phải để kiểm tra tiến độ."
     tags: [business, meeting]
   - term: "who's the owner"
     ipa: "/huːz ði ˈoʊnər/"
     meaning_vi: "ai là người chịu trách nhiệm chính"
     chunk: "Who's the owner on this?"
+    emoji: "🔑"
+    mnemonic_vi: "Ôn lại \"owner\" — người CHỊU TRÁCH NHIỆM, và \"accountable\" chỉ có MỘT người. Việc mà cả đội cùng chịu là việc không ai chịu."
     tags: [business, delegation]
 
 sentence_patterns:

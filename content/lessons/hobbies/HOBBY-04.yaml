@@ -37,31 +37,43 @@ vocabulary:
     ipa: "/wɜːrk aʊt/"
     meaning_vi: "tập thể dục, tập gym"
     chunk: "I work out twice a week."
+    emoji: "🏋️"
+    mnemonic_vi: "Viết RỜI là động từ (I work out), viết LIỀN \"workout\" là danh từ (a good workout). Cùng luật với \"hand over\" và \"handover\"."
     tags: [hobbies, sport]
   - term: "play football"
     ipa: "/pleɪ ˈfʊtbɔːl/"
     meaning_vi: "chơi bóng đá"
     chunk: "I play football on Sundays."
+    emoji: "⚽"
+    mnemonic_vi: "Luật động từ thể thao: \"PLAY\" cho môn có bóng và có đối thủ — play football, play tennis. Người Mỹ gọi môn này là \"soccer\"."
     tags: [hobbies, sport]
   - term: "go running"
     ipa: "/ɡoʊ ˈrʌnɪŋ/"
     meaning_vi: "đi chạy bộ"
     chunk: "I go running in the morning."
+    emoji: "🏃"
+    mnemonic_vi: "Cặp với luật trên: \"GO\" cho môn đuôi -ing làm một mình — go running, go swimming. Nhớ hai luật play/go là dùng đúng gần hết các môn."
     tags: [hobbies, sport]
   - term: "membership"
     ipa: "/ˈmembərʃɪp/"
     meaning_vi: "thẻ hội viên, thẻ tập"
     chunk: "How much is a membership?"
+    emoji: "🎫"
+    mnemonic_vi: "Đuôi \"-ship\" chỉ TƯ CÁCH, trạng thái — như friendship, leadership. Không liên quan gì tới con tàu."
     tags: [hobbies, gym]
   - term: "book a court"
     ipa: "/bʊk ə kɔːrt/"
     meaning_vi: "đặt sân"
     chunk: "I'd like to book a court."
+    emoji: "🎾"
+    mnemonic_vi: "\"book\" ở đây là ĐỘNG TỪ ĐẶT CHỖ, không phải quyển sách — ngày xưa ghi tên vào sổ. \"Court\" là sân có vạch kẻ: tennis, cầu lông, bóng rổ."
     tags: [hobbies, sport]
   - term: "Do you want to join"
     ipa: "/duː juː wɑːnt tə dʒɔɪn/"
     meaning_vi: "bạn có muốn tham gia không"
     chunk: "Do you want to join us?"
+    emoji: "🤝"
+    mnemonic_vi: "Ôn lại khuôn rủ chuẩn. Chữ \"us\" ở cuối quan trọng: rủ vào một NHÓM có sẵn thì người ta thấy nhẹ hơn là gặp riêng."
     tags: [hobbies, invite]
 
 sentence_patterns:

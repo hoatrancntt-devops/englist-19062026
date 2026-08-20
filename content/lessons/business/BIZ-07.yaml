@@ -36,31 +36,43 @@ vocabulary:
     ipa: "/ʌp frɒm/"
     meaning_vi: "tăng từ (mức cũ)"
     chunk: "Revenue is up from 1.2 to 1.5 million."
+    emoji: "📈"
+    mnemonic_vi: "Ôn lại nguyên tắc từ bài đo lường AI: nêu CẢ HAI mốc. \"Từ 1,2 lên 1,5\" cho thấy hướng đi; chỉ nói \"1,5\" thì không nói lên gì."
     tags: [business, numbers, core]
   - term: "quarter on quarter"
     ipa: "/ˈkwɔːrtər ɒn ˈkwɔːrtər/"
     meaning_vi: "so với quý trước"
     chunk: "Costs fell eight percent quarter on quarter."
+    emoji: "🗓️"
+    mnemonic_vi: "Ôn lại \"quarter\" — một phần tư, ở đây là một phần tư của năm. Viết tắt QoQ. Anh em với \"year on year\" (YoY) so với cùng kỳ năm trước."
     tags: [business, numbers]
   - term: "flat"
     ipa: "/flæt/"
     meaning_vi: "đi ngang, không đổi"
     chunk: "Headcount stayed flat."
+    emoji: "➖"
+    mnemonic_vi: "\"flat\" là BẰNG PHẲNG — đường đồ thị nằm ngang. Chữ trung tính: không tăng cũng không giảm, và đôi khi đó là tin tốt."
     tags: [business, numbers]
   - term: "margin"
     ipa: "/ˈmɑːrdʒɪn/"
     meaning_vi: "biên lợi nhuận"
     chunk: "Our margin improved by two points."
+    emoji: "💹"
+    mnemonic_vi: "\"margin\" là LỀ GIẤY — phần trống còn lại sau khi trừ hết chi phí. Doanh thu to mà lề mỏng thì công ty vẫn khó."
     tags: [business, numbers]
   - term: "driven by"
     ipa: "/ˈdrɪvn baɪ/"
     meaning_vi: "do ... mà có (nêu nguyên nhân)"
     chunk: "That's driven by the new enterprise deals."
+    emoji: "🚗"
+    mnemonic_vi: "Ôn lại \"drive\" — lái xe, đẩy đi. Nêu con số mà không nêu cái gì lái nó thì lãnh đạo sẽ hỏi ngay — chuẩn bị sẵn phần này."
     tags: [business, numbers, core]
   - term: "the headline is"
     ipa: "/ðə ˈhedlaɪn ɪz/"
     meaning_vi: "điểm chính là (mở đầu bằng kết luận)"
     chunk: "The headline is: we grew, but slower than planned."
+    emoji: "📰"
+    mnemonic_vi: "\"headline\" là TIÊU ĐỀ báo — dòng chữ to nhất. Nói kết luận TRƯỚC rồi mới giải thích; lãnh đạo bận hay chỉ nghe được đúng câu đầu."
     tags: [business, report]
 
 sentence_patterns:

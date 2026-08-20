@@ -37,31 +37,43 @@ vocabulary:
     ipa: "/haʊ əˈbaʊt/"
     meaning_vi: "hay là ... thì sao (đề xuất)"
     chunk: "How about Saturday morning?"
+    emoji: "💡"
+    mnemonic_vi: "Cùng khuôn với \"how about you\" nhưng theo sau là một ĐỀ XUẤT. Nhẹ hơn \"let's\" — vẫn để ngỏ cho người kia nói không."
     tags: [hobbies, plan]
   - term: "works for me"
     ipa: "/wɜːrks fər miː/"
     meaning_vi: "với tôi thì được"
     chunk: "Saturday works for me."
+    emoji: "👍"
+    mnemonic_vi: "Ôn lại \"work\" nghĩa CHẠY ĐƯỢC — cùng hình ảnh cỗ máy với \"does that work\". Đây là câu đáp cho chính câu hỏi đó."
     tags: [hobbies, plan]
   - term: "I'd rather"
     ipa: "/aɪd ˈræðər/"
     meaning_vi: "tôi thích ... hơn (từ chối nhẹ nhàng)"
     chunk: "I'd rather go in the afternoon."
+    emoji: "🔄"
+    mnemonic_vi: "Ôn lại \"rather\" — THÀ, như trong \"I'd rather not\". Ở đây không từ chối hẳn mà đề xuất phương án khác: từ chối kèm lối ra."
     tags: [hobbies, plan]
   - term: "count me in"
     ipa: "/kaʊnt miː ɪn/"
     meaning_vi: "cho tôi tham gia với"
     chunk: "Count me in!"
+    emoji: "🙌"
+    mnemonic_vi: "\"count\" là ĐẾM — đếm cả tôi vào danh sách. Cặp đối là \"count me out\" (khỏi tính tôi). Ba chữ, nhiệt tình, không cần câu đầy đủ."
     tags: [hobbies, plan]
   - term: "I might be late"
     ipa: "/aɪ maɪt biː leɪt/"
     meaning_vi: "chắc tôi tới muộn một chút"
     chunk: "I might be late, start without me."
+    emoji: "⏰"
+    mnemonic_vi: "\"might\" là CÓ THỂ, chưa chắc. Báo trước khả năng muộn kèm câu \"cứ bắt đầu đi\" là phép lịch sự cơ bản của nhóm."
     tags: [hobbies, plan]
   - term: "Let's say"
     ipa: "/lets seɪ/"
     meaning_vi: "cứ chốt là (khi chốt giờ)"
     chunk: "Let's say two o'clock then."
+    emoji: "🕑"
+    mnemonic_vi: "Ôn lại: đề nghị một con số cụ thể để thoát vòng \"mấy giờ cũng được\". Chữ \"then\" ở cuối nghĩa \"vậy thì\", báo hiệu đang chốt."
     tags: [hobbies, plan]
 
 sentence_patterns:

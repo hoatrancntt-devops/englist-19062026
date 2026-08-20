@@ -41,31 +41,43 @@ vocabulary:
     ipa: "/nekst steps/"
     meaning_vi: "bước tiếp theo"
     chunk: "Let's agree the next steps."
+    emoji: "👣"
+    mnemonic_vi: "Ôn lại \"next action\" từ bài bàn giao ca — cùng một nguyên tắc. Cuộc họp không chốt bước tiếp theo là cuộc họp sẽ phải họp lại."
     tags: [business, closing, core]
   - term: "who needs to sign off"
     ipa: "/huː niːdz tuː saɪn ɒf/"
     meaning_vi: "ai cần phê duyệt"
     chunk: "Who needs to sign off on this?"
+    emoji: "✍️"
+    mnemonic_vi: "\"sign off\" là KÝ DUYỆT. Câu này lộ ra người quyết định thật — nhiều thương vụ chết ở phút chót vì quên hỏi nó từ đầu."
     tags: [business, closing]
   - term: "put it in writing"
     ipa: "/pʊt ɪt ɪn ˈraɪtɪŋ/"
     meaning_vi: "ghi lại bằng văn bản"
     chunk: "I'll put it in writing today."
+    emoji: "📝"
+    mnemonic_vi: "Thoả thuận miệng bay hơi sau hai ngày. Người chủ động gửi bản ghi lại là người định nghĩa nội dung đã thống nhất — nên hãy là người đó."
     tags: [business, closing]
   - term: "by when"
     ipa: "/baɪ wen/"
     meaning_vi: "trước khi nào"
     chunk: "And by when do you need it?"
+    emoji: "⏰"
+    mnemonic_vi: "Ôn lại: \"by\" là CHẬM NHẤT lúc đó. Hai chữ ngắn nhưng biến một lời hứa mơ hồ thành một cam kết đo được."
     tags: [business, closing]
   - term: "does that sound fair"
     ipa: "/dʌz ðæt saʊnd fer/"
     meaning_vi: "như vậy có hợp lý không"
     chunk: "Does that sound fair?"
+    emoji: "🤝"
+    mnemonic_vi: "Ôn lại \"fair\" — công bằng, xác đáng. Chốt bằng câu này chứ không phải \"anh đồng ý chứ\": nó mời họ gật trên cơ sở hợp lý, không phải áp lực."
     tags: [business, closing]
   - term: "I'll follow up on"
     ipa: "/aɪl ˈfɒloʊ ʌp ɒn/"
     meaning_vi: "tôi sẽ theo sát việc"
     chunk: "I'll follow up on the security review."
+    emoji: "📌"
+    mnemonic_vi: "\"follow up\" là ĐI THEO SÁT phía sau. Nhận về mình một việc cụ thể ở cuối họp là cách chứng minh bạn sẽ không để nó rơi."
     tags: [business, closing]
 
 sentence_patterns:

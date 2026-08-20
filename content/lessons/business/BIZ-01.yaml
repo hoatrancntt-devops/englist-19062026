@@ -37,31 +37,43 @@ vocabulary:
     ipa: "/θæŋks fɔːr ˈmeɪkɪŋ ðə taɪm/"
     meaning_vi: "cảm ơn anh chị đã dành thời gian"
     chunk: "Thanks for making the time today."
+    emoji: "🙏"
+    mnemonic_vi: "\"make time\" là NẶN RA thời gian từ lịch kín. Mạnh hơn \"thanks for your time\" — nó thừa nhận họ đã phải gạt việc khác sang bên."
     tags: [business, meeting]
   - term: "We help companies"
     ipa: "/wiː help ˈkʌmpəniz/"
     meaning_vi: "chúng tôi giúp các công ty (cách giới thiệu theo giá trị)"
     chunk: "We help companies cut cloud costs."
+    emoji: "🎯"
+    mnemonic_vi: "Khuôn giới thiệu theo VIỆC MÌNH GIÚP, không theo sản phẩm mình bán. \"Chúng tôi bán phần mềm X\" không nói lên điều gì; \"chúng tôi giúp công ty giảm chi phí\" thì có."
     tags: [business, pitch]
   - term: "What I'd like to cover"
     ipa: "/wɒt aɪd laɪk tuː ˈkʌvər/"
     meaning_vi: "những gì tôi muốn trao đổi (đặt chương trình)"
     chunk: "What I'd like to cover today is three things."
+    emoji: "📋"
+    mnemonic_vi: "\"cover\" ở đây là ĐI QUA, bao quát các mục — khác nghĩa che chắn ở \"cover for me\". Nêu SỐ LƯỢNG mục thì người nghe biết cuộc họp dài bao nhiêu."
     tags: [business, meeting]
   - term: "Does that work for you"
     ipa: "/dʌz ðæt wɜːrk fɔːr juː/"
     meaning_vi: "như vậy có được với anh chị không"
     chunk: "Does that work for you?"
+    emoji: "🤝"
+    mnemonic_vi: "Ôn lại: kế hoạch như cỗ máy, chạy được không. Hỏi ngay sau khi nêu chương trình họp — khách được quyền thêm mục của họ."
     tags: [business, meeting, core]
   - term: "Before I go further"
     ipa: "/bɪˈfɔːr aɪ ɡoʊ ˈfɜːrðər/"
     meaning_vi: "trước khi tôi nói tiếp (nhường lời cho khách)"
     chunk: "Before I go further, tell me about your setup."
+    emoji: "✋"
+    mnemonic_vi: "Câu tự cắt lời mình. Người bán hàng nói liền mười phút là mất khách — dừng lại hỏi sớm mới biết họ thật sự cần gì."
     tags: [business, meeting]
   - term: "on your side"
     ipa: "/ɒn jɔːr saɪd/"
     meaning_vi: "về phía anh chị"
     chunk: "Who handles this on your side?"
+    emoji: "↔️"
+    mnemonic_vi: "Ôn lại \"side\" — bên cạnh, phía. Cụm vẽ ra hai phía của một bàn làm việc chung, nghe hợp tác hơn là \"bên các anh\"."
     tags: [business]
 
 sentence_patterns:

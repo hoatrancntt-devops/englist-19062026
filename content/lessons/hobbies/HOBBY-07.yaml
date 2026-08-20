@@ -37,31 +37,43 @@ vocabulary:
     ipa: "/ə fjuː jɪrz əˈɡoʊ/"
     meaning_vi: "cách đây vài năm (mở đầu chuyện kể)"
     chunk: "A few years ago, I went to Sapa."
+    emoji: "📖"
+    mnemonic_vi: "\"ago\" luôn đứng SAU khoảng thời gian, không đứng trước: \"two years ago\" chứ không phải \"ago two years\". Câu mở màn kinh điển của mọi câu chuyện."
     tags: [hobbies, story]
   - term: "At first"
     ipa: "/æt fɜːrst/"
     meaning_vi: "lúc đầu thì"
     chunk: "At first, I didn't want to go."
+    emoji: "1️⃣"
+    mnemonic_vi: "Mốc thứ nhất của khung kể chuyện. Nó ngầm hứa hẹn sẽ có một khúc ngoặt — người nghe biết là còn chuyện phía sau."
     tags: [hobbies, story]
   - term: "Then suddenly"
     ipa: "/ðen ˈsʌdnli/"
     meaning_vi: "rồi bỗng nhiên"
     chunk: "Then suddenly it started raining."
+    emoji: "⚡"
+    mnemonic_vi: "Mốc thứ hai: KHÚC NGOẶT. Đây là chỗ câu chuyện bắt đầu đáng nghe — chuyện không có khúc ngoặt thì không phải chuyện."
     tags: [hobbies, story]
   - term: "In the end"
     ipa: "/ɪn ði end/"
     meaning_vi: "cuối cùng thì"
     chunk: "In the end, we made it."
+    emoji: "🏁"
+    mnemonic_vi: "Mốc thứ ba: KẾT. Phân biệt với \"at the end\" là ở cuối một thứ cụ thể (at the end of the street) — chữ này là kết cục của câu chuyện."
     tags: [hobbies, story]
   - term: "It turned out"
     ipa: "/ɪt tɜːrnd aʊt/"
     meaning_vi: "hoá ra là"
     chunk: "It turned out to be the best part."
+    emoji: "🔄"
+    mnemonic_vi: "\"turn out\" là LẬT NGỬA RA — sự thật lật ra khác điều mình tưởng. Câu này biến một chuyện xui thành một chuyện hay."
     tags: [hobbies, story]
   - term: "I'll never forget"
     ipa: "/aɪl ˈnevər fərˈɡet/"
     meaning_vi: "tôi không bao giờ quên"
     chunk: "I'll never forget that night."
+    emoji: "💭"
+    mnemonic_vi: "Câu khép chuyện, cho người nghe biết đã hết và đây là phần đọng lại. Thiếu câu kết thì người nghe không biết lúc nào tới lượt mình nói."
     tags: [hobbies, story]
 
 sentence_patterns:

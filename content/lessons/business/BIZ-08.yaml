@@ -36,31 +36,43 @@ vocabulary:
     ipa: "/tel miː əˈbaʊt ə taɪm wen/"
     meaning_vi: "kể tôi nghe một lần khi (câu hỏi lấy ví dụ thật)"
     chunk: "Tell me about a time when a deploy went wrong."
+    emoji: "📖"
+    mnemonic_vi: "Khuôn câu hỏi phỏng vấn hành vi. Nó ép ứng viên kể một CHUYỆN THẬT ĐÃ XẢY RA, không cho trả lời chung chung kiểu \"tôi luôn cẩn thận\"."
     tags: [business, hiring, core]
   - term: "What did you do specifically"
     ipa: "/wɒt dɪd juː duː spəˈsɪfɪkli/"
     meaning_vi: "cụ thể anh chị đã làm gì (tách phần của họ khỏi phần của đội)"
     chunk: "What did you do specifically?"
+    emoji: "🔍"
+    mnemonic_vi: "Câu tách \"chúng tôi\" thành \"tôi\". Ứng viên hay kể thành tích của cả đội — chữ \"specifically\" buộc họ nêu đúng phần mình làm."
     tags: [business, hiring, core]
   - term: "walk me through it"
     ipa: "/wɔːk miː θruː ɪt/"
     meaning_vi: "kể tôi nghe từng bước"
     chunk: "Walk me through it from the alert to the fix."
+    emoji: "🚶"
+    mnemonic_vi: "Ôn lại: dắt người nghe ĐI BỘ qua từng chặng. Nêu điểm đầu và điểm cuối (\"từ cảnh báo tới lúc sửa xong\") thì câu chuyện có khung."
     tags: [business, hiring]
   - term: "take your time"
     ipa: "/teɪk jɔːr taɪm/"
     meaning_vi: "cứ từ từ (làm ứng viên bớt căng)"
     chunk: "Take your time, there's no rush."
+    emoji: "🍃"
+    mnemonic_vi: "Ôn lại từ bài hướng dẫn qua điện thoại — cùng tác dụng hạ nhịp. Ứng viên căng thẳng trả lời tệ hơn năng lực thật của họ."
     tags: [business, hiring]
   - term: "we'll get back to you by"
     ipa: "/wiːl ɡet bæk tuː juː baɪ/"
     meaning_vi: "chúng tôi sẽ phản hồi trước ngày"
     chunk: "We'll get back to you by Friday."
+    emoji: "📅"
+    mnemonic_vi: "Ôn lại: LUÔN kèm mốc thời gian. Để ứng viên chờ trong im lặng là điều bị phàn nàn nhiều nhất về các công ty tuyển dụng."
     tags: [business, hiring]
   - term: "What questions do you have"
     ipa: "/wɒt ˈkwestʃənz duː juː hæv/"
     meaning_vi: "anh chị có câu hỏi gì (mở hơn Any questions)"
     chunk: "What questions do you have for us?"
+    emoji: "❓"
+    mnemonic_vi: "Khác tinh tế với \"any questions?\": hỏi \"any\" thì dễ nhận câu trả lời \"không\", hỏi \"what\" thì giả định họ CÓ câu hỏi. Cùng mẹo với \"when\" thay \"if\"."
     tags: [business, hiring]
 
 sentence_patterns:

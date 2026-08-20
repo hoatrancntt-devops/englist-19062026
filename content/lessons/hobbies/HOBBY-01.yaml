@@ -33,31 +33,43 @@ vocabulary:
     ipa: "/fɔːr fʌn/"
     meaning_vi: "để giải trí, lúc rảnh"
     chunk: "What do you do for fun?"
+    emoji: "🎉"
+    mnemonic_vi: "Lưu ý chữ \"do\" lặp hai lần trong câu hỏi: \"what do you DO for fun\". Khác hẳn \"what do you do\" trống không — câu đó là hỏi nghề nghiệp."
     tags: [hobbies, core]
   - term: "I'm into"
     ipa: "/aɪm ˈɪntuː/"
     meaning_vi: "tôi khoái, tôi mê (tự nhiên hơn I like)"
     chunk: "I'm into photography."
+    emoji: "🤿"
+    mnemonic_vi: "\"into\" là VÀO TRONG — mình chui hẳn vào thứ đó, không chỉ đứng ngoài thích. Mạnh hơn \"I like\" và nghe tự nhiên hơn nhiều."
     tags: [hobbies, core]
   - term: "once a week"
     ipa: "/wʌns ə wiːk/"
     meaning_vi: "một tuần một lần"
     chunk: "I play football once a week."
+    emoji: "1️⃣"
+    mnemonic_vi: "Khuôn tần suất: once / twice / three times a week. Chú ý \"twice\" là riêng cho hai lần — không nói \"two times\"."
     tags: [hobbies, time]
   - term: "I've been doing it for"
     ipa: "/aɪv biːn ˈduːɪŋ ɪt fɔːr/"
     meaning_vi: "tôi làm việc đó được ... rồi"
     chunk: "I've been doing it for two years."
+    emoji: "⏳"
+    mnemonic_vi: "Ôn lại thì hoàn thành từ \"I've been here\": bắt đầu trong quá khứ và VẪN CÒN tới giờ. Đi với \"for\" cho khoảng dài."
     tags: [hobbies, time]
   - term: "not really my thing"
     ipa: "/nɒt ˈrɪəli maɪ θɪŋ/"
     meaning_vi: "không hợp gu tôi lắm (từ chối nhẹ)"
     chunk: "Running is not really my thing."
+    emoji: "🤷"
+    mnemonic_vi: "\"my thing\" là GU CỦA TÔI. Chê sở thích của người khác là điều tối kỵ trong tán gẫu — câu này đặt vấn đề ở gu mình, không ở thứ đó."
     tags: [hobbies, social]
   - term: "How about you"
     ipa: "/haʊ əˈbaʊt juː/"
     meaning_vi: "còn bạn thì sao (câu giữ cuộc nói chuyện)"
     chunk: "How about you?"
+    emoji: "🔄"
+    mnemonic_vi: "Ba chữ cứu mọi cuộc tán gẫu. Trả lời xong mà không hỏi ngược là hội thoại chết — đây là quả bóng chuyền lại."
     tags: [hobbies, social]
 
 sentence_patterns:

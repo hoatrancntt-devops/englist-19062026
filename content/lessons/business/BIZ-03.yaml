@@ -36,31 +36,43 @@ vocabulary:
     ipa: "/kʌmz tuː/"
     meaning_vi: "tổng cộng là (cách nói giá trung tính)"
     chunk: "That comes to forty thousand a year."
+    emoji: "🧮"
+    mnemonic_vi: "Con số TỰ NÓ đi tới, không phải mình đòi. Nghe khách quan hơn hẳn \"chúng tôi tính anh 40 nghìn\" — cùng một số tiền, cảm giác khác hẳn."
     tags: [business, price, core]
   - term: "based on"
     ipa: "/beɪst ɒn/"
     meaning_vi: "tính theo, dựa trên"
     chunk: "That's based on three hundred users."
+    emoji: "🏗️"
+    mnemonic_vi: "Ôn lại \"base\" — CĂN CỨ, nền móng, như \"I'm based in\". Nêu căn cứ tính giá thì khách hiểu con số thay đổi thế nào nếu quy mô đổi."
     tags: [business, price]
   - term: "what's included"
     ipa: "/wɒts ɪnˈkluːdɪd/"
     meaning_vi: "gồm những gì"
     chunk: "Let me walk you through what's included."
+    emoji: "📦"
+    mnemonic_vi: "Ôn lại \"walk you through\" từ bài phỏng vấn — dắt đi từng chặng. Nêu rõ cái gì có trong giá là cách chặn tranh cãi phát sinh về sau."
     tags: [business, price]
   - term: "compared to"
     ipa: "/kəmˈperd tuː/"
     meaning_vi: "so với"
     chunk: "Compared to what you spend today, it pays back in eight months."
+    emoji: "⚖️"
+    mnemonic_vi: "Một con số đứng một mình luôn nghe đắt. Đặt cạnh chi phí họ ĐANG trả thì nó thành một phép so sánh, không còn là một hoá đơn."
     tags: [business, price]
   - term: "pays back in"
     ipa: "/peɪz bæk ɪn/"
     meaning_vi: "hoàn vốn sau"
     chunk: "It pays back in eight months."
+    emoji: "📈"
+    mnemonic_vi: "Đổi câu chuyện từ CHI PHÍ sang ĐẦU TƯ. Sếp duyệt ngân sách quan tâm bao lâu lấy lại vốn hơn là con số ban đầu."
     tags: [business, price]
   - term: "What budget do you have"
     ipa: "/wɒt ˈbʌdʒɪt duː juː hæv/"
     meaning_vi: "anh chị có ngân sách bao nhiêu"
     chunk: "What budget do you have in mind?"
+    emoji: "💰"
+    mnemonic_vi: "Đuôi \"in mind\" làm câu bớt sỗ sàng — hỏi con số họ đang NGHĨ TỚI, không phải bắt khai tài chính. Hỏi sớm thì khỏi mất công báo giá lệch xa."
     tags: [business, price]
 
 sentence_patterns:

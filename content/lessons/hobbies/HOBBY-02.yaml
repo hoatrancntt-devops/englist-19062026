@@ -36,31 +36,43 @@ vocabulary:
     ipa: "/haʊ wɒz jɔːr ˈwiːkend/"
     meaning_vi: "cuối tuần của bạn thế nào (câu sáng thứ Hai)"
     chunk: "How was your weekend?"
+    emoji: "🗓️"
+    mnemonic_vi: "Ôn lại từ bài tán gẫu công sở. Đáp một câu ngắn rồi HỎI NGƯỢC — không ai chờ nghe bản tường thuật chi tiết."
     tags: [hobbies, social]
   - term: "went to"
     ipa: "/went tuː/"
     meaning_vi: "đã đi tới (quá khứ của go)"
     chunk: "I went to the beach."
+    emoji: "🏖️"
+    mnemonic_vi: "\"go\" thành \"went\" — hoàn toàn không theo quy tắc, phải nhớ thuộc. Một trong những động từ bất quy tắc gặp nhiều nhất."
     tags: [hobbies, past]
   - term: "It was great"
     ipa: "/ɪt wɒz ɡreɪt/"
     meaning_vi: "vui lắm, tuyệt lắm"
     chunk: "It was great, thanks."
+    emoji: "😄"
+    mnemonic_vi: "Câu đáp tích cực gọn nhất. Thêm \"thanks\" là ghi nhận người ta đã quan tâm hỏi."
     tags: [hobbies, past]
   - term: "pretty quiet"
     ipa: "/ˈprɪti ˈkwaɪət/"
     meaning_vi: "khá yên tĩnh, chẳng làm gì nhiều"
     chunk: "It was pretty quiet."
+    emoji: "🤫"
+    mnemonic_vi: "\"pretty\" ở đây KHÔNG phải \"xinh đẹp\" mà là \"khá\" — pretty good, pretty quiet. Câu đáp an toàn cho cuối tuần chẳng có gì kể."
     tags: [hobbies, past]
   - term: "ended up"
     ipa: "/ˈendɪd ʌp/"
     meaning_vi: "cuối cùng lại (kết quả ngoài dự tính)"
     chunk: "We ended up staying home."
+    emoji: "🏠"
+    mnemonic_vi: "Ôn lại từ bài kể việc: hàm ý NGOÀI DỰ TÍNH. Định đi chơi mà cuối cùng ở nhà — chính cái ngoài dự tính đó làm câu chuyện đáng kể."
     tags: [hobbies, past]
   - term: "next time"
     ipa: "/nekst taɪm/"
     meaning_vi: "lần tới"
     chunk: "You should come next time."
+    emoji: "👋"
+    mnemonic_vi: "Hai chữ biến một câu kể thành một lời mời. Đây là chỗ tán gẫu công sở chuyển thành quan hệ thật."
     tags: [hobbies, social]
 
 sentence_patterns:

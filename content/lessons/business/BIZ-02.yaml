@@ -36,31 +36,43 @@ vocabulary:
     ipa: "/wɒts ˈdraɪvɪŋ ðɪs/"
     meaning_vi: "điều gì thúc đẩy việc này (hỏi lý do thật)"
     chunk: "What's driving this project now?"
+    emoji: "🚗"
+    mnemonic_vi: "\"drive\" là LÁI XE, đẩy đi. Cái gì đang lái dự án này? Chữ \"now\" ở cuối rất quan trọng: vì sao là BÂY GIỜ chứ không phải năm ngoái."
     tags: [business, discovery, core]
   - term: "How are you handling it today"
     ipa: "/haʊ ɑːr juː ˈhændlɪŋ ɪt təˈdeɪ/"
     meaning_vi: "hiện giờ anh chị đang xử lý thế nào"
     chunk: "How are you handling it today?"
+    emoji: "🔧"
+    mnemonic_vi: "Ôn lại \"handle\" — cái gì trong tay thì mình lo. Hỏi cách làm HIỆN TẠI trước khi đề xuất cách mới: không biết họ đang làm gì thì không so sánh được."
     tags: [business, discovery]
   - term: "What happens if"
     ipa: "/wɒt ˈhæpənz ɪf/"
     meaning_vi: "chuyện gì xảy ra nếu (làm rõ mức độ nghiêm trọng)"
     chunk: "What happens if it isn't fixed this quarter?"
+    emoji: "⚠️"
+    mnemonic_vi: "Câu đo mức nghiêm trọng thật. Nếu câu trả lời là \"cũng chẳng sao\" thì họ sẽ không mua — biết sớm còn hơn theo đuổi ba tháng."
     tags: [business, discovery]
   - term: "Can you give me an example"
     ipa: "/kæn juː ɡɪv miː ən ɪɡˈzɑːmpl/"
     meaning_vi: "cho tôi một ví dụ được không (đào sâu)"
     chunk: "Can you give me an example?"
+    emoji: "🔍"
+    mnemonic_vi: "Câu đơn giản nhất nhưng hiệu quả nhất. Nó biến lời than chung chung (\"hệ thống chậm\") thành một câu chuyện cụ thể có số liệu."
     tags: [business, discovery, core]
   - term: "So if I understand right"
     ipa: "/soʊ ɪf aɪ ˌʌndərˈstænd raɪt/"
     meaning_vi: "vậy nếu tôi hiểu đúng (tóm lại để xác nhận)"
     chunk: "So if I understand right, the issue is cost, not speed."
+    emoji: "🔁"
+    mnemonic_vi: "Ôn lại kỹ năng NHẮC LẠI từ bài hỏi đường. Nêu cả cái ĐÚNG và cái SAI (\"vấn đề là chi phí, không phải tốc độ\") thì họ sửa được ngay nếu bạn lệch."
     tags: [business, discovery]
   - term: "Who else is affected"
     ipa: "/huː els ɪz əˈfektɪd/"
     meaning_vi: "còn ai bị ảnh hưởng"
     chunk: "Who else is affected by this?"
+    emoji: "👥"
+    mnemonic_vi: "Ôn lại \"affected\" từ bài sự cố. Câu này lộ ra những người khác sẽ tham gia quyết định — biết sớm thì không bị bất ngờ ở phút chót."
     tags: [business, discovery]
 
 sentence_patterns:

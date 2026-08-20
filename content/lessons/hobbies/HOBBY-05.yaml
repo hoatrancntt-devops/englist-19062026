@@ -37,31 +37,43 @@ vocabulary:
     ipa: "/aɪm ˈɪntuː/"
     meaning_vi: "tôi mê, tôi thích lắm"
     chunk: "I'm into sci-fi films."
+    emoji: "🤿"
+    mnemonic_vi: "Ôn lại: \"into\" là chui hẳn VÀO TRONG thứ đó. \"Sci-fi\" đọc \"XAI-phai\", rút gọn của science fiction."
     tags: [hobbies, opinion]
   - term: "I'm not really a fan of"
     ipa: "/aɪm nɑːt ˈrɪəli ə fæn ʌv/"
     meaning_vi: "tôi không thích lắm (cách chê nhẹ nhàng)"
     chunk: "I'm not really a fan of horror."
+    emoji: "🙃"
+    mnemonic_vi: "\"fan\" là người hâm mộ, rút gọn của \"fanatic\". Chữ \"really\" làm mềm cả câu — bỏ nó đi thì thành lời chê thẳng."
     tags: [hobbies, opinion]
   - term: "What kind of"
     ipa: "/wʌt kaɪnd ʌv/"
     meaning_vi: "loại nào, thể loại gì"
     chunk: "What kind of music do you like?"
+    emoji: "🎵"
+    mnemonic_vi: "\"kind\" ở đây là LOẠI, không phải tử tế. Hỏi thể loại mở ra cuộc nói chuyện dài hơn hẳn hỏi \"bạn có thích nhạc không\"."
     tags: [hobbies, opinion]
   - term: "It's worth watching"
     ipa: "/ɪts wɜːrθ ˈwɑːtʃɪŋ/"
     meaning_vi: "đáng xem"
     chunk: "It's worth watching."
+    emoji: "👍"
+    mnemonic_vi: "Ôn lại \"worth\" — đáng giá, như \"worth the extra\". Sau \"worth\" luôn là động từ đuôi -ing: worth watching, worth trying."
     tags: [hobbies, opinion]
   - term: "I'm halfway through"
     ipa: "/aɪm ˈhæfweɪ θruː/"
     meaning_vi: "tôi xem hoặc đọc được nửa rồi"
     chunk: "I'm halfway through the book."
+    emoji: "◐"
+    mnemonic_vi: "Ôn lại \"halfway\" từ bài báo tiến độ — nửa quãng đường. Dùng được cho cả sách, phim, lẫn công việc."
     tags: [hobbies, opinion]
   - term: "no spoilers"
     ipa: "/noʊ ˈspɔɪlərz/"
     meaning_vi: "đừng tiết lộ nội dung"
     chunk: "No spoilers, please!"
+    emoji: "🤐"
+    mnemonic_vi: "\"spoil\" là LÀM HỎNG — tiết lộ trước là làm hỏng niềm vui xem. Cùng chữ với \"spoiled child\" (đứa trẻ hư vì được chiều)."
     tags: [hobbies, opinion]
 
 sentence_patterns:

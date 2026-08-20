@@ -36,31 +36,43 @@ vocabulary:
     ipa: "/ɪf juː kæn ðen wiː kæn/"
     meaning_vi: "nếu anh chị làm được thì bên tôi làm được (nhượng bộ có điều kiện)"
     chunk: "If you can commit to two years, then we can hold this price."
+    emoji: "🔗"
+    mnemonic_vi: "Nguyên tắc vàng của đàm phán: KHÔNG BAO GIỜ nhượng bộ một chiều. Mỗi lần cho đi phải buộc vào một điều kiện, nếu không giá của bạn thành vô nghĩa."
     tags: [business, negotiation, core]
   - term: "I hear you"
     ipa: "/aɪ hɪr juː/"
     meaning_vi: "tôi hiểu ý anh chị (ghi nhận trước khi trả lời)"
     chunk: "I hear you. Let me address that."
+    emoji: "👂"
+    mnemonic_vi: "Ba chữ hạ nhiệt. Chú ý: nó nghĩa \"tôi NGHE THẤY\", không phải \"tôi đồng ý\" — ghi nhận mà chưa nhượng bộ gì cả."
     tags: [business, objection]
   - term: "help me understand"
     ipa: "/help miː ˌʌndərˈstænd/"
     meaning_vi: "giúp tôi hiểu rõ hơn"
     chunk: "Help me understand what's behind that."
+    emoji: "🤲"
+    mnemonic_vi: "Đảo vị thế: bạn nhờ họ giúp thay vì chất vấn họ. Cùng mẹo với \"just so I'm clear\" — đặt sự chưa rõ về phía mình."
     tags: [business, objection]
   - term: "the sticking point"
     ipa: "/ðə ˈstɪkɪŋ pɔɪnt/"
     meaning_vi: "điểm vướng mắc"
     chunk: "Is price the sticking point, or is it timing?"
+    emoji: "📌"
+    mnemonic_vi: "\"stick\" là DÍNH, mắc kẹt — ôn lại \"I'm stuck on\". Đưa ra hai lựa chọn cụ thể (giá hay thời điểm) thì họ dễ nói thật hơn là hỏi trống không."
     tags: [business, negotiation]
   - term: "walk away from"
     ipa: "/wɔːk əˈweɪ frɒm/"
     meaning_vi: "rút khỏi, bỏ thương vụ"
     chunk: "We'd rather walk away than promise a date we can't hit."
+    emoji: "🚶"
+    mnemonic_vi: "Ôn lại \"I'd rather\" — THÀ, từ chối vì nguyên tắc. Sẵn sàng bỏ đi là đòn bẩy mạnh nhất trong đàm phán, và cũng là cách giữ uy tín."
     tags: [business, negotiation]
   - term: "where does that leave us"
     ipa: "/wer dʌz ðæt liːv ʌs/"
     meaning_vi: "vậy giờ mình đứng ở đâu (chốt lại tình hình)"
     chunk: "So where does that leave us?"
+    emoji: "🧭"
+    mnemonic_vi: "Câu kéo cuộc thương lượng ra khỏi vòng lặp. Nó buộc cả hai bên nhìn lại đang đứng đâu và bước tiếp là gì."
     tags: [business, negotiation]
 
 sentence_patterns:

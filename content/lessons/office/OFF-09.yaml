@@ -36,31 +36,43 @@ vocabulary:
     ipa: "/ˈækʃn ˈniːdɪd/"
     meaning_vi: "cần bạn xử lý (đặt ở đầu tiêu đề)"
     chunk: "Action needed: approve change 8842"
+    emoji: "❗"
+    mnemonic_vi: "Đặt ngay ĐẦU TIÊU ĐỀ, trước cả nội dung. Người nhận trăm email một ngày chỉ đọc lướt dòng tiêu đề — chôn nó ở cuối thân thư là mất."
     tags: [email, core]
   - term: "by end of day"
     ipa: "/baɪ end ɒv deɪ/"
     meaning_vi: "trước cuối ngày"
     chunk: "Please confirm by end of day."
+    emoji: "🌆"
+    mnemonic_vi: "Viết tắt \"EOD\". Bẫy múi giờ: cuối ngày của ai? Làm với đội nước ngoài thì ghi rõ giờ và múi giờ, đừng để họ đoán."
     tags: [email, core]
   - term: "as discussed"
     ipa: "/æz dɪˈskʌst/"
     meaning_vi: "như đã trao đổi"
     chunk: "As discussed, here are the numbers."
+    emoji: "🔗"
+    mnemonic_vi: "Hai chữ nối email với cuộc họp trước đó — người nhận nhớ ngay bối cảnh mà không phải đọc lại chuỗi thư cũ."
     tags: [email, core]
   - term: "let me know if"
     ipa: "/let miː noʊ ɪf/"
     meaning_vi: "cho tôi biết nếu"
     chunk: "Let me know if you need anything else."
+    emoji: "✉️"
+    mnemonic_vi: "Câu khép thư chuẩn mực nhất. Không có nó thì email kết thúc cụt lủn, người nhận không rõ có cần đáp hay không."
     tags: [email, core]
   - term: "for your review"
     ipa: "/fɔːr jʊr rɪˈvjuː/"
     meaning_vi: "gửi anh chị xem"
     chunk: "Attached for your review."
+    emoji: "📎"
+    mnemonic_vi: "Tiền tố \"re-\" là LẠI, \"view\" là nhìn — nhìn lại một lượt. Nhẹ hơn \"for your approval\" (cần duyệt)."
     tags: [email]
   - term: "looping in"
     ipa: "/ˈluːpɪŋ ɪn/"
     meaning_vi: "cho thêm người vào email"
     chunk: "Looping in Priya for the storage part."
+    emoji: "➰"
+    mnemonic_vi: "Ôn lại \"loop\" — kéo người vào trong vòng dây. Nói rõ kéo vào VÌ VIỆC GÌ, nếu không người mới vào không biết mình cần làm gì."
     tags: [email, office]
 
 sentence_patterns:

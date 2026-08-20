@@ -36,31 +36,43 @@ vocabulary:
     ipa: "/aɪ woʊnt biː ˈeɪbl tuː/"
     meaning_vi: "tôi sẽ không thể (từ chối mềm)"
     chunk: "I won't be able to finish it by Friday."
+    emoji: "🚫"
+    mnemonic_vi: "Nói \"không THỂ\" thay vì \"không MUỐN\" — đổ cho hoàn cảnh chứ không phải ý chí. Đây là chỗ khiến lời từ chối nghe được ở công sở."
     tags: [refuse, core]
   - term: "on my plate"
     ipa: "/ɒn maɪ pleɪt/"
     meaning_vi: "đang có trong tay (khối lượng việc)"
     chunk: "I have two incidents on my plate."
+    emoji: "🍽️"
+    mnemonic_vi: "\"plate\" là CÁI ĐĨA. Hình dung đĩa thức ăn đã đầy ự, chất thêm là đổ. Cách nói khối lượng việc mà không nghe như than phiền."
     tags: [refuse, office]
   - term: "what should I drop"
     ipa: "/wɒt ʃʊd aɪ drɒp/"
     meaning_vi: "vậy em bỏ việc nào"
     chunk: "If this is urgent, what should I drop?"
+    emoji: "⚖️"
+    mnemonic_vi: "Câu mạnh nhất trong bài: không từ chối, mà đẩy quyền quyết định ưu tiên về cho sếp. Ôn lại \"drop\" — thả rơi, như \"drop me off\"."
     tags: [refuse, core]
   - term: "the earliest I can"
     ipa: "/ðə ˈɜːrliɪst aɪ kæn/"
     meaning_vi: "sớm nhất tôi có thể"
     chunk: "The earliest I can do it is Tuesday."
+    emoji: "📆"
+    mnemonic_vi: "Từ chối mà vẫn CHO một mốc thay thế. Từ chối trống không là đóng cửa; kèm mốc mới là vẫn mở đường."
     tags: [refuse, core]
   - term: "I'd rather not"
     ipa: "/aɪd ˈrɑːðər nɒt/"
     meaning_vi: "tôi không muốn (từ chối có chính kiến)"
     chunk: "I'd rather not push it without testing."
+    emoji: "🛑"
+    mnemonic_vi: "\"rather\" là THÀ. Thà không làm còn hơn. Đây là từ chối vì NGUYÊN TẮC chứ không vì bận — dùng khi việc đó rủi ro."
     tags: [refuse]
   - term: "happy to help with"
     ipa: "/ˈhæpi tuː help wɪð/"
     meaning_vi: "sẵn sàng giúp phần"
     chunk: "Happy to help with the review though."
+    emoji: "🤝"
+    mnemonic_vi: "Đuôi khép lại sau khi từ chối: đóng một cửa thì mở một cửa khác. Chữ \"though\" ở cuối câu nghĩa \"tuy vậy\"."
     tags: [refuse, core]
 
 sentence_patterns:

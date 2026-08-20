@@ -36,31 +36,43 @@ vocabulary:
     ipa: "/hæv juː tuː met/"
     meaning_vi: "hai người gặp nhau chưa"
     chunk: "Have you two met?"
+    emoji: "👥"
+    mnemonic_vi: "Câu mở màn khi giới thiệu hai người với nhau. Hỏi trước cho lịch sự — có thể họ đã quen mà mình không biết."
     tags: [intro, core]
   - term: "This is X, she looks after"
     ipa: "/ðɪs ɪz ʃiː lʊks ˈæftər/"
     meaning_vi: "đây là X, chị ấy phụ trách"
     chunk: "This is Priya, she looks after storage."
+    emoji: "👩‍💼"
+    mnemonic_vi: "\"look after\" là TRÔNG NOM, như trông em bé. Giới thiệu ai thì kèm luôn việc họ trông — người kia biết ngay có thể hỏi gì."
     tags: [intro, core]
   - term: "Who owns"
     ipa: "/huː oʊnz/"
     meaning_vi: "ai phụ trách (hệ thống nào đó)"
     chunk: "Who owns the VPN gateway?"
+    emoji: "🔑"
+    mnemonic_vi: "\"own\" là SỞ HỮU. Trong ngành IT, \"owner\" của một hệ thống là người chịu trách nhiệm về nó — không phải chủ sở hữu theo nghĩa tài sản."
     tags: [intro, core]
   - term: "the right person to ask"
     ipa: "/ðə raɪt ˈpɜːrsn tuː ɑːsk/"
     meaning_vi: "người đúng để hỏi"
     chunk: "She's the right person to ask about backups."
+    emoji: "🎯"
+    mnemonic_vi: "Lại là \"right\" nghĩa ĐÚNG. Hỏi đúng người tiết kiệm hơn hỏi nhiều người."
     tags: [intro]
   - term: "I'll put you in touch"
     ipa: "/aɪl pʊt juː ɪn tʌtʃ/"
     meaning_vi: "tôi sẽ kết nối hai người"
     chunk: "I'll put you in touch with Minh."
+    emoji: "🤝"
+    mnemonic_vi: "\"touch\" là CHẠM. Đặt hai người vào tầm chạm của nhau. Thực tế nghĩa là gửi một email giới thiệu."
     tags: [intro, office]
   - term: "reports to"
     ipa: "/rɪˈpɔːrts tuː/"
     meaning_vi: "báo cáo cho, thuộc quyền"
     chunk: "The helpdesk team reports to Linh."
+    emoji: "🏢"
+    mnemonic_vi: "Cách nói sơ đồ tổ chức. Hỏi \"who does she report to?\" là hỏi sếp trực tiếp của ai đó — câu hữu ích khi mới vào công ty."
     tags: [intro, office]
 
 sentence_patterns:

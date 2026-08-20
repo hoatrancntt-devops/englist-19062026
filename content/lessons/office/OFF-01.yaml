@@ -36,31 +36,43 @@ vocabulary:
     ipa: "/haʊ wɒz jʊr ˈwiːkend/"
     meaning_vi: "cuối tuần của bạn thế nào"
     chunk: "How was your weekend?"
+    emoji: "🗓️"
+    mnemonic_vi: "Câu mở màn sáng thứ Hai ở mọi văn phòng phương Tây. Đáp một câu ngắn rồi HỎI NGƯỢC LẠI — im lặng sau khi đáp là hội thoại chết."
     tags: [smalltalk, core]
   - term: "Anything exciting"
     ipa: "/ˈeniθɪŋ ɪkˈsaɪtɪŋ/"
     meaning_vi: "có gì hay không"
     chunk: "Anything exciting planned?"
+    emoji: "✨"
+    mnemonic_vi: "\"excite\" nghe như \"ếch-xai\" — con ếch nhảy vọt lên vì phấn khích. Câu này dùng để nối tiếp sau câu chào, tránh cụt lủn."
     tags: [smalltalk]
   - term: "Same here"
     ipa: "/seɪm hɪr/"
     meaning_vi: "tôi cũng vậy"
     chunk: "Same here, pretty quiet weekend."
+    emoji: "🙂"
+    mnemonic_vi: "Ngắn gọn hơn hẳn \"me too\" và nghe tự nhiên hơn ở công sở. Hai chữ, dùng được cho gần như mọi câu đồng tình."
     tags: [smalltalk, core]
   - term: "I'd better get back"
     ipa: "/aɪd ˈbetər ɡet bæk/"
     meaning_vi: "tôi phải quay lại làm việc đây"
     chunk: "I'd better get back to it."
+    emoji: "💻"
+    mnemonic_vi: "Câu THOÁT khỏi cuộc tán gẫu mà không mất lịch sự — đổ cho công việc chứ không phải chán người đối diện."
     tags: [smalltalk, core]
   - term: "How's the project going"
     ipa: "/haʊz ðə ˈprɒdʒekt ˈɡoʊɪŋ/"
     meaning_vi: "dự án của bạn thế nào rồi"
     chunk: "How's the migration going?"
+    emoji: "📊"
+    mnemonic_vi: "Cùng khuôn \"how's it going\" đã học, chỉ thay chủ ngữ. Học một khuôn dùng được nhiều chỗ."
     tags: [smalltalk, office]
   - term: "Getting there"
     ipa: "/ˈɡetɪŋ ðer/"
     meaning_vi: "cũng đang tiến triển (đáp an toàn khi việc chưa xong)"
     chunk: "Getting there, slowly."
+    emoji: "🚶"
+    mnemonic_vi: "Dịch sát: ĐANG TỚI ĐÓ. Hình dung mình đang đi bộ tới đích, chưa tới nhưng không đứng yên. Câu đáp cứu nguy khi việc chậm mà không muốn kể khổ."
     tags: [smalltalk, office]
 
 sentence_patterns:

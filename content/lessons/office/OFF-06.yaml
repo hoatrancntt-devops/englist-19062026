@@ -38,31 +38,43 @@ vocabulary:
     ipa: "/set ʌp ə kɔːl/"
     meaning_vi: "đặt một cuộc gọi"
     chunk: "Can we set up a call this week?"
+    emoji: "📞"
+    mnemonic_vi: "\"set up\" là DỰNG LÊN, như dựng cái lều. Dựng một cuộc gọi từ chỗ chưa có gì."
     tags: [meeting, core]
   - term: "agenda"
     ipa: "/əˈdʒendə/"
     meaning_vi: "nội dung họp"
     chunk: "I'll send the agenda beforehand."
+    emoji: "📋"
+    mnemonic_vi: "\"a-gien-đa\" — tiếng Việt công sở mượn nguyên chữ này rồi. Gốc Latin nghĩa \"những việc PHẢI LÀM\"."
     tags: [meeting, core]
   - term: "do we need"
     ipa: "/duː wiː niːd/"
     meaning_vi: "mình có cần (dùng để đặt câu hỏi về sự cần thiết)"
     chunk: "Do we need a call, or can we sort it on chat?"
+    emoji: "🤔"
+    mnemonic_vi: "Câu hỏi cứu cả lịch làm việc: hỏi trước khi đặt họp, phân nửa cuộc họp sẽ biến thành một tin nhắn."
     tags: [meeting, core]
   - term: "double-booked"
     ipa: "/ˈdʌbl bʊkt/"
     meaning_vi: "trùng lịch"
     chunk: "Sorry, I'm double-booked at two."
+    emoji: "📚"
+    mnemonic_vi: "Ôn lại \"double\" — đắp thêm một cái nữa chồng lên. Đặt chồng hai lịch vào cùng một giờ."
     tags: [meeting]
   - term: "keep it to"
     ipa: "/kiːp ɪt tuː/"
     meaning_vi: "giới hạn trong"
     chunk: "Let's keep it to thirty minutes."
+    emoji: "⏲️"
+    mnemonic_vi: "\"keep\" là GIỮ — giữ cuộc họp trong khung đó, đừng cho tràn ra. Nói câu này lúc mở họp là cách giữ giờ hiệu quả nhất."
     tags: [meeting]
   - term: "loop in"
     ipa: "/luːp ɪn/"
     meaning_vi: "mời thêm vào, cho biết cùng"
     chunk: "Should we loop in the DBA team?"
+    emoji: "➰"
+    mnemonic_vi: "\"loop\" là VÒNG DÂY. Kéo thêm người vào trong vòng để họ cùng biết chuyện."
     tags: [meeting, office]
 
 sentence_patterns:

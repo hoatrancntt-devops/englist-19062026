@@ -36,31 +36,43 @@ vocabulary:
     ipa: "/teɪk ə deɪ ɒf/"
     meaning_vi: "nghỉ một ngày"
     chunk: "I'd like to take Friday off."
+    emoji: "🏖️"
+    mnemonic_vi: "Ôn lại: \"off\" là TẮT — tắt một ngày khỏi lịch làm. Để ý trật tự: take FRIDAY off, ngày chen vào giữa."
     tags: [leave, core]
   - term: "annual leave"
     ipa: "/ˈænjuəl liːv/"
     meaning_vi: "phép năm"
     chunk: "I still have five days of annual leave."
+    emoji: "📅"
+    mnemonic_vi: "\"annual\" cùng gốc với \"anniversary\" (kỷ niệm hằng năm) — thứ lặp lại mỗi năm. \"Leave\" ở đây là danh từ NGHỈ PHÉP, không phải động từ rời đi."
     tags: [leave, office]
   - term: "cover for me"
     ipa: "/ˈkʌvər fɔːr miː/"
     meaning_vi: "trực thay tôi"
     chunk: "Minh can cover for me."
+    emoji: "🛡️"
+    mnemonic_vi: "\"cover\" là CHE CHẮN — hình dung đồng nghiệp giương khiên đứng chắn chỗ mình trong lúc mình vắng."
     tags: [leave, core]
   - term: "hand over"
     ipa: "/hænd ˈoʊvər/"
     meaning_vi: "bàn giao"
     chunk: "I'll hand over the open tickets."
+    emoji: "🤝"
+    mnemonic_vi: "\"hand\" là BÀN TAY, \"over\" là chuyển sang — trao tận tay sang người khác. Tiếng Việt cũng nói \"bàn giao\", có chữ bàn tay."
     tags: [leave, office]
   - term: "Would that work"
     ipa: "/wʊd ðæt wɜːrk/"
     meaning_vi: "vậy có được không ạ"
     chunk: "Would that work for you?"
+    emoji: "🙋"
+    mnemonic_vi: "\"Would\" lịch sự hơn \"does\" một bậc — dùng khi hỏi cấp trên. Vẫn cùng hình ảnh: kế hoạch như cỗ máy, chạy được không."
     tags: [leave, core]
   - term: "short notice"
     ipa: "/ʃɔːrt ˈnoʊtɪs/"
     meaning_vi: "báo gấp"
     chunk: "Sorry for the short notice."
+    emoji: "⚡"
+    mnemonic_vi: "\"notice\" là lời báo trước. Báo NGẮN quá tức là gấp. Nói câu này trước là tự nhận thiếu sót, người nghe dễ chịu hơn nhiều."
     tags: [leave, office]
 
 sentence_patterns:

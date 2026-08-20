@@ -37,31 +37,43 @@ vocabulary:
     ipa: "/wɔːk miː θruː/"
     meaning_vi: "kể cho tôi nghe từ đầu (cách người phỏng vấn hay mở màn)"
     chunk: "Walk me through your background."
+    emoji: "🚶"
+    mnemonic_vi: "\"walk\" là ĐI BỘ — dắt người nghe đi bộ qua câu chuyện của bạn, từng chặng một. Nghĩa là họ muốn nghe theo TRÌNH TỰ, không phải một câu tóm tắt."
     tags: [interview, core]
   - term: "I'm currently"
     ipa: "/aɪm ˈkɜːrəntli/"
     meaning_vi: "hiện tại tôi đang"
     chunk: "I'm currently a system engineer at a bank."
+    emoji: "📍"
+    mnemonic_vi: "\"current\" là DÒNG ĐIỆN, dòng chảy — cái đang chảy lúc này. Mở đầu chuẩn: nói hiện tại trước, rồi lùi về quá khứ."
     tags: [interview, core]
   - term: "I led"
     ipa: "/aɪ led/"
     meaning_vi: "tôi đã dẫn dắt, tôi phụ trách (quá khứ của lead)"
     chunk: "I led the migration to Azure."
+    emoji: "🧭"
+    mnemonic_vi: "Bẫy phát âm: \"lead\" đọc \"LÍT\" nhưng quá khứ \"led\" đọc \"LÉT\", viết cũng khác. Dùng động từ mạnh này thay vì \"I joined\" — nó nói bạn cầm lái."
     tags: [interview, past]
   - term: "as a result"
     ipa: "/æz ə rɪˈzʌlt/"
     meaning_vi: "kết quả là (cụm dẫn vào con số)"
     chunk: "As a result, downtime dropped by 40 percent."
+    emoji: "📉"
+    mnemonic_vi: "Cụm quan trọng nhất cả bài: nó dẫn vào CON SỐ. Kể việc mình làm mà không có số thì người phỏng vấn không đo được gì."
     tags: [interview, result]
   - term: "I'm looking for"
     ipa: "/aɪm ˈlʊkɪŋ fɔːr/"
     meaning_vi: "tôi đang tìm kiếm (nói vì sao đổi việc)"
     chunk: "I'm looking for a bigger cloud environment."
+    emoji: "🔭"
+    mnemonic_vi: "Nói mình TÌM GÌ chứ đừng nói mình chạy khỏi cái gì. Chê công ty cũ là điều tệ nhất trong buổi phỏng vấn."
     tags: [interview]
   - term: "Could you tell me about"
     ipa: "/kʊd juː tel miː əˈbaʊt/"
     meaning_vi: "anh chị cho tôi hỏi về (câu hỏi ngược cuối buổi)"
     chunk: "Could you tell me about the team structure?"
+    emoji: "❓"
+    mnemonic_vi: "Cuối buổi họ luôn hỏi \"bạn có câu hỏi gì không\". Trả lời \"không\" bị coi là thiếu quan tâm — chuẩn bị sẵn hai câu bằng khuôn này."
     tags: [interview]
 
 sentence_patterns:

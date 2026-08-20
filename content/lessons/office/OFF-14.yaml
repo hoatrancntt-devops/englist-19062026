@@ -36,31 +36,43 @@ vocabulary:
     ipa: "/ɡet miː set ʌp/"
     meaning_vi: "cài đặt cho tôi, mở quyền cho tôi"
     chunk: "Who can get me set up with VPN access?"
+    emoji: "⚙️"
+    mnemonic_vi: "Ôn lại \"set up\" — dựng lên như dựng lều. Ở đây là dựng sẵn quyền và công cụ cho người mới."
     tags: [onboarding, core]
   - term: "I don't have access to"
     ipa: "/aɪ doʊnt hæv ˈækses tuː/"
     meaning_vi: "tôi chưa có quyền vào"
     chunk: "I don't have access to the repo yet."
+    emoji: "🔒"
+    mnemonic_vi: "Chữ \"yet\" ở cuối rất quan trọng: nó ngụ ý \"đáng lẽ phải có mà chưa được cấp\", chứ không phải \"tôi không được phép\"."
     tags: [onboarding, core]
   - term: "Just so I'm clear"
     ipa: "/dʒʌst soʊ aɪm klɪr/"
     meaning_vi: "cho tôi hỏi lại cho rõ (cách hỏi không làm mất mặt ai)"
     chunk: "Just so I'm clear, you want this by Friday?"
+    emoji: "💡"
+    mnemonic_vi: "Đặt sự chưa rõ về phía MÌNH (\"để tôi rõ\") chứ không về phía người nói. Cùng một mẹo với \"just to make sure\"."
     tags: [onboarding, core]
   - term: "Who should I ask about"
     ipa: "/huː ʃʊd aɪ ɑːsk əˈbaʊt/"
     meaning_vi: "tôi nên hỏi ai về"
     chunk: "Who should I ask about the staging server?"
+    emoji: "🧑‍🤝‍🧑"
+    mnemonic_vi: "Câu đáng dùng nhất trong tuần đầu đi làm. Hỏi ĐÚNG NGƯỜI trước, rồi mới hỏi câu thật — nhanh hơn tự mò rất nhiều."
     tags: [onboarding]
   - term: "I'll take a look"
     ipa: "/aɪl teɪk ə lʊk/"
     meaning_vi: "để tôi xem đã (nhận việc mà không hứa liều)"
     chunk: "I'll take a look and get back to you."
+    emoji: "👀"
+    mnemonic_vi: "Nhận việc mà chưa cam kết kết quả — an toàn khi chưa biết việc to hay nhỏ. Nhớ kèm \"get back to you\", nếu không nghe như hứa suông."
     tags: [onboarding]
   - term: "ramp up"
     ipa: "/ræmp ʌp/"
     meaning_vi: "làm quen dần, bắt nhịp"
     chunk: "Take the first week to ramp up."
+    emoji: "📈"
+    mnemonic_vi: "\"ramp\" là ĐƯỜNG DỐC lên. Hình dung xe chạy lên dốc để tăng tốc dần chứ không vọt ngay — người mới cần dốc đó."
     tags: [onboarding]
 
 sentence_patterns:

@@ -36,31 +36,43 @@ vocabulary:
     ipa: "/kwɪk ˈkwestʃn/"
     meaning_vi: "hỏi nhanh một câu"
     chunk: "Quick question about the backup job."
+    emoji: "⚡"
+    mnemonic_vi: "Mở đầu tin nhắn bằng hai chữ này là báo trước \"sẽ không tốn nhiều thời gian của bạn\" — người nhận mở ra đọc ngay."
     tags: [chat, core]
   - term: "heads up"
     ipa: "/hedz ʌp/"
     meaning_vi: "báo trước cho biết"
     chunk: "Heads up - the portal will be down at 10."
+    emoji: "📢"
+    mnemonic_vi: "Dịch sát: NGẨNG ĐẦU LÊN. Gốc từ sân bóng — hô để người ta ngẩng đầu tránh quả bóng bay tới. Báo trước để khỏi bị bất ngờ."
     tags: [chat, core]
   - term: "FYI"
     ipa: "/ef waɪ aɪ/"
     meaning_vi: "gửi để biết, không cần làm gì"
     chunk: "FYI, the vendor replied."
+    emoji: "ℹ️"
+    mnemonic_vi: "Viết tắt của \"For Your Information\". Đọc từng chữ cái, không đọc thành một từ. Nghĩa quan trọng: KHÔNG cần người nhận làm gì."
     tags: [chat, core]
   - term: "any thoughts"
     ipa: "/ˈeni θɔːts/"
     meaning_vi: "anh chị thấy sao"
     chunk: "Any thoughts on this approach?"
+    emoji: "💭"
+    mnemonic_vi: "Nhẹ hơn \"what do you think\" — không bắt người ta phải có ý kiến dứt khoát, chỉ hỏi có gợn gì không."
     tags: [chat]
   - term: "bumping this"
     ipa: "/ˈbʌmpɪŋ ðɪs/"
     meaning_vi: "nhắc lại tin nhắn cũ chưa ai trả lời"
     chunk: "Bumping this - still blocked."
+    emoji: "🔔"
+    mnemonic_vi: "\"bump\" là HÚC, đẩy lên. Húc tin nhắn cũ trồi lên đầu danh sách. Lịch sự hơn nhiều so với hỏi \"sao chưa ai trả lời\"."
     tags: [chat, office]
   - term: "no action needed"
     ipa: "/noʊ ˈækʃn ˈniːdɪd/"
     meaning_vi: "không cần làm gì cả"
     chunk: "No action needed, just for visibility."
+    emoji: "😌"
+    mnemonic_vi: "Cặp đối với \"Action needed\". Ghi rõ một trong hai ở đầu tin là người nhận biết ngay có phải bỏ việc đang làm hay không."
     tags: [chat, core]
 
 sentence_patterns:

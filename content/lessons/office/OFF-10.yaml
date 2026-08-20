@@ -36,31 +36,43 @@ vocabulary:
     ipa: "/kæn ˈevriwʌn hɪr miː/"
     meaning_vi: "mọi người nghe rõ tôi không"
     chunk: "Can everyone hear me OK?"
+    emoji: "🎧"
+    mnemonic_vi: "Câu đầu tiên của mọi cuộc họp trực tuyến. Hỏi trước còn hơn nói mười phút rồi mới biết micro tắt."
     tags: [meeting, core]
   - term: "You're on mute"
     ipa: "/jʊr ɒn mjuːt/"
     meaning_vi: "bạn đang tắt tiếng"
     chunk: "Sorry, you're on mute."
+    emoji: "🔇"
+    mnemonic_vi: "\"mute\" nghe như \"miu\" — con mèo kêu không ra tiếng. Câu được nói nhiều nhất trong lịch sử họp online."
     tags: [meeting, core]
   - term: "Can I jump in"
     ipa: "/kæn aɪ dʒʌmp ɪn/"
     meaning_vi: "cho tôi nói xen một chút"
     chunk: "Can I jump in here?"
+    emoji: "🙋"
+    mnemonic_vi: "\"jump in\" là NHẢY VÀO. Họp online không thấy mặt nhau nên phải xin lời trước bằng câu này, đừng cắt ngang thẳng."
     tags: [meeting, core]
   - term: "You cut out"
     ipa: "/juː kʌt aʊt/"
     meaning_vi: "tiếng bạn bị ngắt quãng"
     chunk: "Sorry, you cut out for a second."
+    emoji: "📶"
+    mnemonic_vi: "\"cut\" là CẮT — đường truyền cắt vụn tiếng nói. Đổ lỗi cho mạng chứ không phải cho người nói, nên nói câu này rất an toàn."
     tags: [meeting, core]
   - term: "Go ahead"
     ipa: "/ɡoʊ əˈhed/"
     meaning_vi: "mời bạn nói"
     chunk: "Sorry, go ahead."
+    emoji: "👉"
+    mnemonic_vi: "Dùng khi hai người cùng mở miệng một lúc — chuyện xảy ra liên tục trong họp online do độ trễ. Nhường một câu là xong."
     tags: [meeting, core]
   - term: "share my screen"
     ipa: "/ʃer maɪ skriːn/"
     meaning_vi: "chia sẻ màn hình"
     chunk: "Let me share my screen."
+    emoji: "🖥️"
+    mnemonic_vi: "Báo trước rồi mới bấm — người khác kịp dừng việc đang làm để nhìn sang. Bấm chia sẻ đột ngột là kiểu làm người ta hụt mất phần đầu."
     tags: [meeting]
 
 sentence_patterns:

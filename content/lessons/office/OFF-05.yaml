@@ -36,31 +36,43 @@ vocabulary:
     ipa: "/aɪv traɪd/"
     meaning_vi: "tôi đã thử"
     chunk: "I've tried restarting the service."
+    emoji: "🔁"
+    mnemonic_vi: "Luôn nói câu này TRƯỚC khi nhờ giúp. Người giúp cần biết bạn đã thử gì để khỏi bảo lại đúng thứ bạn vừa làm."
     tags: [help, core]
   - term: "I'm stuck on"
     ipa: "/aɪm stʌk ɒn/"
     meaning_vi: "tôi đang kẹt ở"
     chunk: "I'm stuck on the certificate error."
+    emoji: "🪤"
+    mnemonic_vi: "Ôn lại: \"stuck\" nghe như \"tắc\" — kẹt cứng. Cùng chữ với \"stuck in traffic\", chỉ đổi bối cảnh từ đường sá sang công việc."
     tags: [help, core]
   - term: "Have you seen this before"
     ipa: "/hæv juː siːn ðɪs bɪˈfɔːr/"
     meaning_vi: "anh chị gặp cái này bao giờ chưa"
     chunk: "Have you seen this error before?"
+    emoji: "👁️"
+    mnemonic_vi: "Cách nhờ giúp khéo nhất: hỏi kinh nghiệm chứ không đòi họ làm hộ. Người ta trả lời dễ hơn nhiều."
     tags: [help, core]
   - term: "point me in the right direction"
     ipa: "/pɔɪnt miː ɪn ðə raɪt dəˈrekʃn/"
     meaning_vi: "chỉ giúp tôi hướng đi"
     chunk: "Could you point me in the right direction?"
+    emoji: "🧭"
+    mnemonic_vi: "\"point\" là CHỈ TAY. Chỉ hướng thôi, không phải dắt đi — câu này nói rõ bạn tự làm được, chỉ cần biết đi lối nào."
     tags: [help]
   - term: "no rush"
     ipa: "/noʊ rʌʃ/"
     meaning_vi: "không gấp đâu"
     chunk: "No rush, whenever you have a minute."
+    emoji: "🍃"
+    mnemonic_vi: "\"rush\" là VỘI VÃ, xô đẩy. Thêm câu này vào lời nhờ là gỡ áp lực — cùng tác dụng với \"when you get a chance\" đã học."
     tags: [help, core]
   - term: "That did it"
     ipa: "/ðæt dɪd ɪt/"
     meaning_vi: "cách đó được rồi (báo đã giải quyết xong)"
     chunk: "That did it, thanks a lot."
+    emoji: "🎉"
+    mnemonic_vi: "Dịch sát: cái đó LÀM ĐƯỢC RỒI. Nhớ báo lại khi đã xong — im lặng sau khi được giúp là thói quen làm người ta ngại giúp lần sau."
     tags: [help]
 
 sentence_patterns:

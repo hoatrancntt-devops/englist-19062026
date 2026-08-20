@@ -36,31 +36,43 @@ vocabulary:
     ipa: "/dʒʌst tuː meɪk ʃʊr/"
     meaning_vi: "cho chắc thì (mở đầu câu xác nhận)"
     chunk: "Just to make sure I got it right..."
+    emoji: "🔍"
+    mnemonic_vi: "Chữ \"just\" làm nhẹ cả câu — không phải nghi ngờ người kia, chỉ là cẩn thận. Bỏ \"just\" đi thì nghe như đang chất vấn."
     tags: [clarify, core]
   - term: "Do you mean"
     ipa: "/duː juː miːn/"
     meaning_vi: "ý anh chị là"
     chunk: "Do you mean all servers, or just production?"
+    emoji: "❓"
+    mnemonic_vi: "Mẹo dùng: kèm luôn HAI LỰA CHỌN cụ thể (A hay B). Hỏi trống không thì người kia lặp lại y nguyên câu cũ và bạn vẫn không rõ hơn."
     tags: [clarify, core]
   - term: "by when"
     ipa: "/baɪ wen/"
     meaning_vi: "hạn tới khi nào"
     chunk: "By when do you need it?"
+    emoji: "⏰"
+    mnemonic_vi: "\"by\" là TRƯỚC MỐC đó, không phải đúng lúc đó. \"By Friday\" là chậm nhất thứ Sáu, xong sớm hơn càng tốt."
     tags: [clarify, core]
   - term: "which one"
     ipa: "/wɪtʃ wʌn/"
     meaning_vi: "cái nào (khi có nhiều lựa chọn)"
     chunk: "Which one should I start with?"
+    emoji: "🔀"
+    mnemonic_vi: "\"which\" dùng khi có TẬP HỢP CÓ HẠN để chọn; \"what\" khi mở rộng vô hạn. Ba máy chủ thì hỏi which, hỏi ý tưởng thì what."
     tags: [clarify]
   - term: "So the priority is"
     ipa: "/soʊ ðə praɪˈɒrəti ɪz/"
     meaning_vi: "vậy ưu tiên là"
     chunk: "So the priority is the database first?"
+    emoji: "🥇"
+    mnemonic_vi: "\"prior\" là TRƯỚC. Ưu tiên là cái đứng trước. Bắt đầu bằng \"So\" là dấu hiệu bạn đang tóm tắt lại — người nghe biết cần gật hay sửa."
     tags: [clarify, office]
   - term: "That's right"
     ipa: "/ðæts raɪt/"
     meaning_vi: "đúng vậy"
     chunk: "That's right, database first."
+    emoji: "✔️"
+    mnemonic_vi: "Lại là \"right\" nghĩa ĐÚNG, như trong \"tay phải là tay đúng\". Câu xác nhận gọn nhất."
     tags: [clarify, core]
 
 sentence_patterns:

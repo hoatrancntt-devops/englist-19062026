@@ -43,31 +43,43 @@ vocabulary:
     ipa: "/dʒʌst tuː meɪk ʃʊr/"
     meaning_vi: "cho chắc thì"
     chunk: "Just to make sure I got it right..."
+    emoji: "🔍"
+    mnemonic_vi: "Ôn lại: chữ \"just\" làm nhẹ cả câu, không phải nghi ngờ người kia. Bỏ nó đi là nghe như chất vấn."
     tags: [review, core]
   - term: "blocked on"
     ipa: "/blɒkt ɒn/"
     meaning_vi: "đang kẹt vì"
     chunk: "I'm blocked on console access."
+    emoji: "🚧"
+    mnemonic_vi: "Ôn lại: TẢNG ĐÁ chắn đường. Luôn ghép với \"I need\" — kẹt vì gì và cần gì để hết kẹt."
     tags: [review, core]
   - term: "what should I drop"
     ipa: "/wɒt ʃʊd aɪ drɒp/"
     meaning_vi: "vậy em bỏ việc nào"
     chunk: "If this is urgent, what should I drop?"
+    emoji: "⚖️"
+    mnemonic_vi: "Ôn lại: không từ chối, mà đẩy quyền quyết định ưu tiên về cho sếp. Câu mạnh nhất trong bài từ chối."
     tags: [review, core]
   - term: "Action needed"
     ipa: "/ˈækʃn ˈniːdɪd/"
     meaning_vi: "cần bạn xử lý"
     chunk: "Action needed: approve by Thursday"
+    emoji: "❗"
+    mnemonic_vi: "Ôn lại: đặt ngay ĐẦU TIÊU ĐỀ. Chôn ở cuối thân thư là người nhận không thấy."
     tags: [review]
   - term: "Can I jump in"
     ipa: "/kæn aɪ dʒʌmp ɪn/"
     meaning_vi: "cho tôi nói xen"
     chunk: "Can I jump in here?"
+    emoji: "🙋"
+    mnemonic_vi: "Ôn lại: NHẢY VÀO. Họp online không thấy mặt nên phải xin lời trước, đừng cắt ngang thẳng."
     tags: [review]
   - term: "Who owns"
     ipa: "/huː oʊnz/"
     meaning_vi: "ai phụ trách"
     chunk: "Who owns the backup jobs?"
+    emoji: "🔑"
+    mnemonic_vi: "Ôn lại: \"owner\" trong IT là người CHỊU TRÁCH NHIỆM, không phải chủ sở hữu tài sản."
     tags: [review]
 
 sentence_patterns:

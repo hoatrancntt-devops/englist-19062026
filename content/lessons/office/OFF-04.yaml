@@ -39,31 +39,43 @@ vocabulary:
     ipa: "/ɒn træk/"
     meaning_vi: "đúng tiến độ"
     chunk: "We're on track for Friday."
+    emoji: "🛤️"
+    mnemonic_vi: "\"track\" là ĐƯỜNG RAY. Tàu còn trên ray thì còn tới ga đúng giờ — trật ray là hỏng."
     tags: [progress, core]
   - term: "behind schedule"
     ipa: "/bɪˈhaɪnd ˈskedʒuːl/"
     meaning_vi: "chậm tiến độ"
     chunk: "We're a day behind schedule."
+    emoji: "🐢"
+    mnemonic_vi: "\"behind\" là ĐẰNG SAU — đang tụt lại phía sau cái lịch. Nói kèm con số cụ thể (một ngày, hai ngày) thì đáng tin hơn nói suông."
     tags: [progress, core]
   - term: "blocked on"
     ipa: "/blɒkt ɒn/"
     meaning_vi: "đang bị kẹt vì"
     chunk: "I'm blocked on the firewall rule."
+    emoji: "🚧"
+    mnemonic_vi: "\"block\" là TẢNG ĐÁ chắn đường. Từ khoá quan trọng nhất trong họp tiến độ: nói ra là người khác biết đường gỡ cho bạn."
     tags: [progress, core]
   - term: "about halfway"
     ipa: "/əˈbaʊt ˈhɑːfweɪ/"
     meaning_vi: "được khoảng một nửa"
     chunk: "I'm about halfway through."
+    emoji: "◐"
+    mnemonic_vi: "\"half\" là nửa, \"way\" là quãng đường — nửa quãng đường. Chữ \"about\" chừa chỗ sai số, an toàn hơn nói chính xác 50%."
     tags: [progress]
   - term: "should be done by"
     ipa: "/ʃʊd biː dʌn baɪ/"
     meaning_vi: "chắc xong trước"
     chunk: "It should be done by Thursday."
+    emoji: "🎯"
+    mnemonic_vi: "\"should\" là DỰ KIẾN chứ không phải cam kết chắc chắn — chừa đường lui nếu có sự cố. Lại là \"by\" nghĩa trước mốc đó."
     tags: [progress, core]
   - term: "I need"
     ipa: "/aɪ niːd/"
     meaning_vi: "tôi cần (nêu rõ điều cần để gỡ vướng)"
     chunk: "I need access to the console."
+    emoji: "🔑"
+    mnemonic_vi: "Nói \"blocked on\" mà không nói \"I need\" thì mới kể khổ chứ chưa xin gì. Luôn ghép hai câu: kẹt vì gì, và cần gì để hết kẹt."
     tags: [progress, core]
 
 sentence_patterns:

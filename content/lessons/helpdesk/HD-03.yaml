@@ -36,31 +36,43 @@ vocabulary:
     ipa: "/ˈbɒtəm raɪt ˈkɔːrnər/"
     meaning_vi: "góc dưới bên phải"
     chunk: "Look at the bottom right corner of your screen."
+    emoji: "↘️"
+    mnemonic_vi: "Trật tự tiếng Anh: DỌC trước, NGANG sau — bottom right, top left. Ngược với thói quen tiếng Việt \"bên phải phía dưới\"."
     tags: [guide, core]
   - term: "click on"
     ipa: "/klɪk ɒn/"
     meaning_vi: "bấm vào"
     chunk: "Click on the network icon."
+    emoji: "🖱️"
+    mnemonic_vi: "\"click\" là tiếng CẠCH của nút chuột — từ tượng thanh. Giới từ luôn là \"on\", bấm LÊN một thứ gì đó."
     tags: [guide, core]
   - term: "you should see"
     ipa: "/juː ʃʊd siː/"
     meaning_vi: "bạn sẽ thấy"
     chunk: "You should see a list of networks."
+    emoji: "👁️"
+    mnemonic_vi: "Mỗi bước hướng dẫn nên kết bằng câu này — nó cho người dùng một MỐC ĐỐI CHIẾU. Không thấy đúng thứ đó thì biết ngay là lệch bước."
     tags: [guide, core]
   - term: "Let me know when"
     ipa: "/let miː noʊ wen/"
     meaning_vi: "xong thì báo tôi"
     chunk: "Let me know when you see it."
+    emoji: "🗣️"
+    mnemonic_vi: "Chữ \"when\" chứ không phải \"if\" — giả định họ sẽ làm được. Dùng \"if\" nghe như bạn nghi ngờ khả năng của họ."
     tags: [guide, core]
   - term: "drop-down"
     ipa: "/drɒp daʊn/"
     meaning_vi: "menu thả xuống"
     chunk: "Open the drop-down at the top."
+    emoji: "🔽"
+    mnemonic_vi: "Ôn lại \"drop\" — THẢ RƠI. Danh sách rơi xuống khi bấm vào."
     tags: [guide]
   - term: "take your time"
     ipa: "/teɪk jʊr taɪm/"
     meaning_vi: "cứ từ từ"
     chunk: "No rush, take your time."
+    emoji: "🍃"
+    mnemonic_vi: "Người dùng lúng túng thường thao tác vội rồi sai. Ba chữ này hạ nhịp cuộc gọi xuống và thường làm mọi thứ nhanh hơn."
     tags: [guide, core]
 
 sentence_patterns:

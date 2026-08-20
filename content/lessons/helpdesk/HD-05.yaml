@@ -39,31 +39,43 @@ vocabulary:
     ipa: "/ˈeskəleɪt/"
     meaning_vi: "leo thang — chuyển lên cấp có chuyên môn hoặc quyền cao hơn"
     chunk: "I'm escalating this to the network team."
+    emoji: "🛗"
+    mnemonic_vi: "\"ét-ca-lây\" nghe như ESCALATOR — thang cuốn. Hình dung đẩy cái ticket lên thang cuốn cho nó trôi lên tầng trên."
     tags: [itil, core]
   - term: "out of my scope"
     ipa: "/aʊt ɒv maɪ skoʊp/"
     meaning_vi: "ngoài phạm vi của tôi"
     chunk: "The firewall change is out of my scope."
+    emoji: "🔭"
+    mnemonic_vi: "\"scope\" là ống nhòm, TẦM NHÌN. Nằm ngoài tầm nhìn của tôi. Nói câu này rồi phải kèm ai làm được — không thì thành đá bóng."
     tags: [escalate, core]
   - term: "breaching SLA"
     ipa: "/ˈbriːtʃɪŋ es el eɪ/"
     meaning_vi: "sắp vi phạm cam kết dịch vụ"
     chunk: "We're two hours from breaching SLA."
+    emoji: "⏳"
+    mnemonic_vi: "\"breach\" là CHỌC THỦNG, phá vỡ — như vỡ đê. SLA đọc từng chữ cái. Nêu số giờ còn lại là cách khiến người khác ưu tiên việc của bạn."
     tags: [itil, core]
   - term: "handover"
     ipa: "/ˈhændoʊvər/"
     meaning_vi: "bàn giao ca"
     chunk: "Here's the handover for the night shift."
+    emoji: "🌗"
+    mnemonic_vi: "Ôn lại \"hand over\" — trao tận tay. Viết liền thành danh từ thì là bản bàn giao ca."
     tags: [itil, core]
   - term: "what's been tried"
     ipa: "/wɒts biːn traɪd/"
     meaning_vi: "những gì đã thử"
     chunk: "Here's what's been tried so far."
+    emoji: "📜"
+    mnemonic_vi: "Phần bắt buộc khi chuyển việc lên cấp trên. Thiếu nó thì người tiếp nhận làm lại đúng những gì bạn đã làm — mất thêm một vòng thời gian."
     tags: [escalate, core]
   - term: "next action"
     ipa: "/nekst ˈækʃn/"
     meaning_vi: "việc cần làm tiếp"
     chunk: "Next action: chase the vendor at 09:00."
+    emoji: "➡️"
+    mnemonic_vi: "Mỗi lần bàn giao phải kết bằng MỘT việc cụ thể kèm giờ. \"Đang chờ\" không phải next action — nó là chỗ ticket nằm chết."
     tags: [escalate, core]
 
 sentence_patterns:

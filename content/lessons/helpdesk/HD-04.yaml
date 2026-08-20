@@ -36,31 +36,43 @@ vocabulary:
     ipa: "/ɪn ˈsɪmpl tɜːrmz/"
     meaning_vi: "nói đơn giản thì"
     chunk: "In simple terms, your new laptop wasn't on the list."
+    emoji: "🗝️"
+    mnemonic_vi: "\"terms\" ở đây là TỪ NGỮ, không phải điều khoản. Báo trước rằng bạn sắp bỏ thuật ngữ — người nghe thả lỏng và chịu nghe tiếp."
     tags: [explain, core]
   - term: "think of it like"
     ipa: "/θɪŋk ɒv ɪt laɪk/"
     meaning_vi: "cứ hình dung nó giống như"
     chunk: "Think of it like a guest list at the door."
+    emoji: "🎭"
+    mnemonic_vi: "Cụm mở ra một PHÉP SO SÁNH. Giải thích kỹ thuật cho người ngoài ngành mà không có phép so sánh thì gần như luôn thất bại."
     tags: [explain, core]
   - term: "nothing you did wrong"
     ipa: "/ˈnʌθɪŋ juː dɪd rɒŋ/"
     meaning_vi: "không phải lỗi của bạn"
     chunk: "Nothing you did wrong - it was a setup step we missed."
+    emoji: "🫶"
+    mnemonic_vi: "Người dùng gặp lỗi thường ngầm sợ mình làm hỏng. Gỡ nỗi sợ đó trước thì họ mới hợp tác kể lại đúng sự việc."
     tags: [explain, core]
   - term: "what this means for you"
     ipa: "/wɒt ðɪs miːnz fɔːr juː/"
     meaning_vi: "điều này có nghĩa gì với bạn"
     chunk: "What this means for you is about ten minutes of waiting."
+    emoji: "🎯"
+    mnemonic_vi: "Bản lề chuyển từ NGUYÊN NHÂN sang HỆ QUẢ với người nghe. Họ không quan tâm máy chủ nào hỏng, họ quan tâm mình phải chờ bao lâu."
     tags: [explain, core]
   - term: "won't happen again"
     ipa: "/woʊnt ˈhæpən əˈɡen/"
     meaning_vi: "sẽ không tái diễn"
     chunk: "We've fixed the process so it won't happen again."
+    emoji: "🛡️"
+    mnemonic_vi: "Chỉ nói câu này khi đã SỬA QUY TRÌNH thật. Hứa suông rồi lỗi lặp lại là mất uy tín nặng hơn cả sự cố ban đầu."
     tags: [explain]
   - term: "does that make sense"
     ipa: "/dʌz ðæt meɪk sens/"
     meaning_vi: "vậy có dễ hiểu không ạ"
     chunk: "Does that make sense so far?"
+    emoji: "💡"
+    mnemonic_vi: "Hỏi \"cách tôi giải thích có ổn không\" chứ không phải \"bạn có hiểu không\". Cùng mẹo với \"just so I'm clear\": đặt trách nhiệm về phía mình."
     tags: [explain, core]
 
 sentence_patterns:

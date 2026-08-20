@@ -36,31 +36,43 @@ vocabulary:
     ipa: "/ˈɪnsɪdənt/"
     meaning_vi: "sự cố — dịch vụ bị gián đoạn hoặc giảm chất lượng ngoài kế hoạch"
     chunk: "This is an incident, the portal is down."
+    emoji: "🚨"
+    mnemonic_vi: "Mốc phân biệt: có thứ gì đó ĐANG HỎNG. Không hỏng gì mà chỉ xin cấp thêm thì là \"service request\" — phân loại sai ngay từ đầu là cả quy trình đi sai."
     tags: [itil, core]
   - term: "service request"
     ipa: "/ˈsɜːrvɪs rɪˈkwest/"
     meaning_vi: "yêu cầu dịch vụ — người dùng xin cấp thứ gì đó, không có gì hỏng"
     chunk: "That's a service request, not an incident."
+    emoji: "📝"
+    mnemonic_vi: "Cặp đối với \"incident\": XIN THÊM chứ không phải SỬA HỎNG. Xin cấp laptop mới là request; laptop đang dùng chết máy là incident."
     tags: [itil, core]
   - term: "problem"
     ipa: "/ˈprɒbləm/"
     meaning_vi: "vấn đề gốc — nguyên nhân của một hoặc nhiều sự cố"
     chunk: "Three incidents, one underlying problem."
+    emoji: "🔬"
+    mnemonic_vi: "Trong ITIL, \"problem\" KHÔNG có nghĩa thông thường. Nó là cái GỐC nằm dưới nhiều sự cố — nhiều lá rụng là incident, cái rễ bệnh là problem."
     tags: [itil, core]
   - term: "I've logged it"
     ipa: "/aɪv lɒɡd ɪt/"
     meaning_vi: "tôi đã ghi nhận vào hệ thống"
     chunk: "I've logged it as INC-2291."
+    emoji: "🎫"
+    mnemonic_vi: "\"log\" là KHÚC GỖ — ngày xưa thuỷ thủ ghi nhật ký hành trình lên khúc gỗ. Nhớ đọc luôn MÃ SỐ cho người dùng, đó là thứ họ cầm đi hỏi lại."
     tags: [helpdesk, core]
   - term: "impact"
     ipa: "/ˈɪmpækt/"
     meaning_vi: "mức ảnh hưởng — bao nhiêu người, bao nhiêu dịch vụ"
     chunk: "What's the impact - one user or the whole team?"
+    emoji: "💥"
+    mnemonic_vi: "\"impact\" là VA CHẠM — vụ va chạm rộng bao nhiêu. Đây là con số quyết định mức ưu tiên, nên phải hỏi ngay câu đầu."
     tags: [itil, core]
   - term: "get back to you"
     ipa: "/ɡet bæk tuː juː/"
     meaning_vi: "báo lại cho bạn"
     chunk: "I'll get back to you within the hour."
+    emoji: "↩️"
+    mnemonic_vi: "Luôn kèm MỐC THỜI GIAN. \"I'll get back to you\" trống không là câu người dùng ghét nhất — họ không biết chờ tới bao giờ."
     tags: [helpdesk]
 
 sentence_patterns:

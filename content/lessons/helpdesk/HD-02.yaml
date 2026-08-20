@@ -36,31 +36,43 @@ vocabulary:
     ipa: "/wen dɪd ɪt stɑːrt/"
     meaning_vi: "bắt đầu từ khi nào"
     chunk: "When did it start happening?"
+    emoji: "🕐"
+    mnemonic_vi: "Câu hỏi số một khi chẩn đoán: mốc thời gian cho bạn đối chiếu với nhật ký thay đổi. Trùng giờ một lần cập nhật là gần như ra thủ phạm."
     tags: [diagnose, core]
   - term: "Has anything changed"
     ipa: "/hæz ˈeniθɪŋ tʃeɪndʒd/"
     meaning_vi: "có gì thay đổi không (hỏi không đổ lỗi)"
     chunk: "Has anything changed on your side recently?"
+    emoji: "🔄"
+    mnemonic_vi: "Chủ ngữ là \"anything\" chứ không phải \"you\". Hỏi \"what did you do?\" là buộc tội, người dùng sẽ chối và bạn mất manh mối."
     tags: [diagnose, core]
   - term: "the exact error"
     ipa: "/ði ɪɡˈzækt ˈerər/"
     meaning_vi: "thông báo lỗi nguyên văn"
     chunk: "Can you read me the exact error?"
+    emoji: "🔤"
+    mnemonic_vi: "Nhấn chữ \"exact\": người dùng hay tóm tắt thành \"nó báo lỗi gì đó\". Nguyên văn mới tra được, bản tóm tắt thì không."
     tags: [diagnose, core]
   - term: "Does it happen every time"
     ipa: "/dʌz ɪt ˈhæpən ˈevri taɪm/"
     meaning_vi: "có xảy ra mọi lần không"
     chunk: "Does it happen every time, or now and then?"
+    emoji: "🎲"
+    mnemonic_vi: "Lỗi lặp đều thì dễ tìm; lỗi thi thoảng thường là mạng hoặc tải cao. Câu này chia đôi hướng điều tra ngay từ đầu."
     tags: [diagnose, core]
   - term: "reproduce"
     ipa: "/ˌriːprəˈdjuːs/"
     meaning_vi: "tái hiện lại lỗi"
     chunk: "Can you reproduce it while I'm on the line?"
+    emoji: "🔁"
+    mnemonic_vi: "\"re-\" là LẠI, \"produce\" là tạo ra — tạo lại lần nữa. Lỗi không tái hiện được là lỗi gần như không sửa được."
     tags: [diagnose]
   - term: "screenshot"
     ipa: "/ˈskriːnʃɒt/"
     meaning_vi: "ảnh chụp màn hình"
     chunk: "Could you send me a screenshot?"
+    emoji: "📸"
+    mnemonic_vi: "\"shot\" là CÚ BẮN, cú chụp. Bắn một phát vào màn hình. Một ảnh tiết kiệm mười phút mô tả qua điện thoại."
     tags: [diagnose, core]
 
 sentence_patterns:

@@ -36,36 +36,50 @@ vocabulary:
     ipa: "/ˈhændɪŋ ˈoʊvər/"
     meaning_vi: "đang bàn giao"
     chunk: "I'm handing over three open issues."
+    emoji: "🤝"
+    mnemonic_vi: "Ôn lại: trao tận tay. Mở đầu bằng SỐ LƯỢNG (\"ba việc\") để người nhận ca biết cần nghe bao nhiêu mục."
     tags: [oncall, core]
   - term: "still open"
     ipa: "/stɪl ˈoʊpən/"
     meaning_vi: "chưa xử lý xong"
     chunk: "The database alert is still open."
+    emoji: "🔓"
+    mnemonic_vi: "\"open\" là CỬA CÒN MỞ — việc chưa đóng lại được. Ngược với \"closed\"."
     tags: [oncall, status]
   - term: "workaround in place"
     ipa: "/ˈwɜːrkəraʊnd ɪn pleɪs/"
     meaning_vi: "đã có cách vá tạm"
     chunk: "There's a workaround in place until Monday."
+    emoji: "🩹"
+    mnemonic_vi: "\"work around\" là LÀM VÒNG QUA chỗ hỏng chứ không sửa nó. Miếng băng dán tạm — nhớ nói kèm HẠN, nếu không nó nằm đó vĩnh viễn."
     tags: [oncall, status]
   - term: "keep an eye on"
     ipa: "/kiːp ən aɪ ɒn/"
     meaning_vi: "để mắt tới, theo dõi"
     chunk: "Keep an eye on disk usage on node three."
+    emoji: "👁️"
+    mnemonic_vi: "Tiếng Việt cũng nói \"để mắt tới\" — trùng khít hình ảnh, hiếm khi may thế."
     tags: [oncall, core]
   - term: "if it goes above"
     ipa: "/ɪf ɪt ɡoʊz əˈbʌv/"
     meaning_vi: "nếu vượt quá (nêu ngưỡng hành động)"
     chunk: "If it goes above 90 percent, page me."
+    emoji: "📈"
+    mnemonic_vi: "Bàn giao phải có NGƯỠNG SỐ, không phải \"nếu thấy cao\". Cao là bao nhiêu? Mỗi người một mức, và ca đêm sẽ đoán sai."
     tags: [oncall, threshold]
   - term: "page me"
     ipa: "/peɪdʒ miː/"
     meaning_vi: "gọi tôi dậy (dù đang đêm)"
     chunk: "Don't hesitate to page me."
+    emoji: "📟"
+    mnemonic_vi: "\"pager\" là máy nhắn tin ngày xưa — thứ kêu inh ỏi lúc nửa đêm. Nay không còn máy nhưng chữ vẫn dùng, nghĩa là ĐÁNH THỨC người trực."
     tags: [oncall]
   - term: "nothing pending"
     ipa: "/ˈnʌθɪŋ ˈpendɪŋ/"
     meaning_vi: "không còn gì treo lại"
     chunk: "Everything else is closed, nothing pending."
+    emoji: "✅"
+    mnemonic_vi: "\"pend\" cùng gốc với \"pendulum\" (quả lắc) — thứ ĐANG TREO LƠ LỬNG. Câu kết bàn giao, cho người nhận ca biết đã hết mục."
     tags: [oncall, status]
 
 sentence_patterns:

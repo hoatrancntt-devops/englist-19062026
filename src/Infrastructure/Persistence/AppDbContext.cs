@@ -72,10 +72,74 @@ public class AppDbContext(DbContextOptions<AppDbContext> options) : DbContext(op
     public DbSet<AuditLog> AuditLogs => Set<AuditLog>();
     public DbSet<SystemSetting> SystemSettings => Set<SystemSetting>();
 
+    /// <summary>
+    /// Mọi bảng có cột <c>UserId</c> đều phải có khoá ngoại cascade về <c>users</c>.
+    ///
+    /// Đây là QUY ƯỚC chứ không phải mười dòng cấu hình tay, vì lỗi này đã xảy ra ba lần:
+    /// story_progresses, writing_attempts, rồi tới lượt speech_attempts và chín bảng khác.
+    /// Mỗi lần thêm bảng mới mà quên khai khoá ngoại là mỗi lần xoá một học viên để lại rác
+    /// trỏ về tài khoản không còn tồn tại — và không có gì báo cho ai biết.
+    ///
+    /// Cấu hình khai tay ở IEntityTypeConfiguration vẫn được tôn trọng: chỗ nào đã có khoá
+    /// ngoại rồi thì quy ước này bỏ qua, nên nó chỉ vá phần bị sót.
+    /// </summary>
+    private static void EnsureUserCascade(ModelBuilder b)
+    {
+        var userType = b.Model.FindEntityType(typeof(User));
+
+        if (userType is null)
+        {
+            return;
+        }
+
+        foreach (var entity in b.Model.GetEntityTypes())
+        {
+            if (entity.ClrType == typeof(User))
+            {
+                continue;
+            }
+
+            var userId = entity.FindProperty("UserId");
+
+            if (userId is null)
+            {
+                continue;
+            }
+
+            // Cột cho phép rỗng thì SET NULL chứ không cascade.
+            //
+            // ai_usages là bảng kiểm toán mức dùng AI: một lượt gọi có thể do hệ thống chạy nền
+            // chứ không thuộc học viên nào. Xoá theo học viên sẽ làm mất số liệu chi phí, nên
+            // chỉ cắt liên kết và giữ lại dòng.
+            var optional = userId.ClrType == typeof(Guid?);
+
+            if (!optional && userId.ClrType != typeof(Guid))
+            {
+                continue;
+            }
+
+            var alreadyLinked = entity.GetForeignKeys().Any(fk =>
+                fk.PrincipalEntityType.ClrType == typeof(User)
+                && fk.Properties.Count == 1
+                && fk.Properties[0] == userId);
+
+            if (alreadyLinked)
+            {
+                continue;
+            }
+
+            var foreignKey = entity.AddForeignKey([userId], userType.FindPrimaryKey()!, userType);
+            foreignKey.DeleteBehavior = optional ? DeleteBehavior.SetNull : DeleteBehavior.Cascade;
+            foreignKey.IsRequired = !optional;
+        }
+    }
+
     protected override void OnModelCreating(ModelBuilder b)
     {
         base.OnModelCreating(b);
         b.ApplyConfigurationsFromAssembly(Assembly.GetExecutingAssembly());
+
+        EnsureUserCascade(b);
 
         // Tên bảng và cột theo snake_case để truy vấn tay trong psql không phải trích dẫn kép.
         foreach (var entity in b.Model.GetEntityTypes())
